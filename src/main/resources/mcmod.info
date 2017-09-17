@@ -1,0 +1,16 @@
+[
+{
+  "modid": "bonsaitrees",
+  "name": "Bonsai Trees",
+  "description": "Tiny trees",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Davenonymous"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
