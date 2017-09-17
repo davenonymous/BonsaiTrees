@@ -24,7 +24,6 @@ import org.dave.bonsaitrees.base.BaseBlockWithTile;
 import org.dave.bonsaitrees.render.TESRBonsaiPot;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 import org.dave.bonsaitrees.trees.TreeTypeRegistry;
-import org.dave.bonsaitrees.utility.Logz;
 
 import javax.annotation.Nullable;
 import java.util.Random;
@@ -56,7 +55,7 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         }
 
         if (world.isRemote || !(player instanceof EntityPlayerMP)) {
-            return true;
+            return false;
         }
 
         if (!(world.getTileEntity(pos) instanceof TileBonsaiPot)) {
@@ -82,16 +81,17 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         // Harvest sapling?
         boolean playerHasAxe = playerStack.getItem().getHarvestLevel(playerStack, "axe", player, Blocks.PLANKS.getDefaultState()) != -1;
         if(!playerHasAxe) {
-            return true;
+            return false;
         }
 
         if(pot.getProgress() < pot.getTreeType().getGrowTime()) {
             return true;
         }
 
-        //Logz.info("Sapling in pot: label=%s, name=%s, meta=%d; shape=%s", pot.getSapling().getDisplayName(), pot.getSapling().getItem().getRegistryName(), pot.getSapling().getMetadata(), pot.getBonsaiShapeName());
-        pot.dropLoot();
+        int droppedItems = pot.dropLoot();
         pot.setSapling(pot.getSapling());
+
+        playerStack.damageItem(droppedItems, player);
 
         return true;
     }
@@ -131,7 +131,7 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         }
 
         TileBonsaiPot pot = (TileBonsaiPot) world.getTileEntity(pos);
-        return pot.hasSapling();
+        return pot.isGrowing();
     }
 
     @Override
@@ -141,7 +141,7 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         }
 
         TileBonsaiPot pot = (TileBonsaiPot) world.getTileEntity(pos);
-        if(!pot.hasSapling()) {
+        if(!pot.isGrowing()) {
             return false;
         }
 
@@ -155,5 +155,6 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         }
 
         TileBonsaiPot pot = (TileBonsaiPot) world.getTileEntity(pos);
+        pot.boostProgress();
     }
 }

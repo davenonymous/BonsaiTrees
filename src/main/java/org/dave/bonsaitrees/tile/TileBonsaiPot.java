@@ -16,11 +16,29 @@ public class TileBonsaiPot extends BaseTileTicking {
     protected TreeType treeType = null;
 
     public boolean hasSapling() {
-        return sapling != ItemStack.EMPTY;
+        return sapling != ItemStack.EMPTY && treeType != null && bonsaiShape != null;
+    }
+
+    public boolean isHarvestable() {
+        return hasSapling() && progress >= treeType.getGrowTime();
+    }
+
+    public boolean isGrowing() {
+        return hasSapling() && progress < treeType.getGrowTime();
     }
 
     public ItemStack getSapling() {
         return sapling;
+    }
+
+    public void boostProgress() {
+        if(!isGrowing()) {
+            return;
+        }
+
+        this.progress += treeType.getGrowTime() / 4;
+        this.markDirty();
+        world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }
 
     public void dropSapling() {
@@ -45,8 +63,9 @@ public class TileBonsaiPot extends BaseTileTicking {
         world.spawnEntity(entityItem);
     }
 
-    public void dropLoot() {
+    public int dropLoot() {
         Random rand = new Random();
+        int totalDrops = 0;
         for(TreeTypeDrop drop : treeType.getDrops()) {
             int tries = drop.stack.getCount();
             float chance = (float)drop.chance / 100.0f;
@@ -71,7 +90,10 @@ public class TileBonsaiPot extends BaseTileTicking {
             dropCopy.setCount(count);
 
             spawnItem(dropCopy);
+            totalDrops += count;
         }
+
+        return totalDrops;
     }
 
     public String getBonsaiShapeName() {
