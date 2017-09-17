@@ -58,12 +58,12 @@ public abstract class CommandBaseMenu extends CommandBaseExt {
         }
 
         if(found) {
-            sender.sendMessage(new TextComponentTranslation("commands.compactmachines3.denied"));
+            sender.sendMessage(new TextComponentTranslation("commands.bonsaitrees.denied"));
             return;
         }
 
         if(args.length == 0 || found == false) {
-            TextComponentTranslation tc = new TextComponentTranslation("commands.compactmachines3.available");
+            TextComponentTranslation tc = new TextComponentTranslation("commands.bonsaitrees.available");
             tc.getStyle().setUnderlined(true);
             tc.appendText("\n");
 

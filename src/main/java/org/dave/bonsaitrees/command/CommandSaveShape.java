@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
-import net.minecraft.util.text.TextComponentString;
+import net.minecraft.util.text.TextComponentTranslation;
 import org.dave.bonsaitrees.base.CommandBaseExt;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.FloodFill;
@@ -47,14 +47,14 @@ public class CommandSaveShape extends CommandBaseExt {
         ItemStack holdStack = player.getHeldItemMainhand();
 
         if(holdStack.isEmpty()) {
-            player.sendMessage(new TextComponentString("You'll need to hold an itemstack in your main hand"));
+            player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.exception.no_itemstack_in_mainhand"));
             return;
         }
 
         // Get the block set we are looking at
         RayTraceResult result = player.rayTrace(16.0d, 0.0f);
         if(result.typeOfHit != RayTraceResult.Type.BLOCK) {
-            player.sendMessage(new TextComponentString("You are not looking at a block!"));
+            player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.exception.not_looking_at_block"));
             return;
         }
 
@@ -64,7 +64,7 @@ public class CommandSaveShape extends CommandBaseExt {
         FloodFill floodFill = new FloodFill(player.getEntityWorld(), targetPos);
         Map<BlockPos, IBlockState> connectedBlocks = floodFill.getConnectedBlocks();
         if(connectedBlocks.size() == 0) {
-            player.sendMessage(new TextComponentString("Can not determine shape, 0 blocks found. Maybe the block you are looking at is on the ignore list?"));
+            player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.exception.can_not_determine_shape"));
             return;
         }
 
@@ -89,8 +89,7 @@ public class CommandSaveShape extends CommandBaseExt {
                 e.printStackTrace();
             }
 
-            // TODO: Localization
-            sender.sendMessage(new TextComponentString("Wrote shape to file: " + dstFile.getName()));
+            player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.wrote_shape_to_file", dstFile.getName()));
         }
     }
 
@@ -108,7 +107,6 @@ public class CommandSaveShape extends CommandBaseExt {
                 continue;
             }
 
-            Logz.info("Parsing to int: %s", m.group(1));
             int num = Integer.parseInt(m.group(1));
             if(num > highestNum) {
                 highestNum = num;
