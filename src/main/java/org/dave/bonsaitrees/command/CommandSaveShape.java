@@ -25,8 +25,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CommandSaveShape extends CommandBaseExt {
-
-
     @Override
     public String getName() {
         return "saveTreeShape";
