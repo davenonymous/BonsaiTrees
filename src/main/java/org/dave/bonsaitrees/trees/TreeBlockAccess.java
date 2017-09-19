@@ -1,6 +1,7 @@
 package org.dave.bonsaitrees.trees;
 
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Biomes;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -14,8 +15,13 @@ import javax.annotation.Nullable;
 
 public class TreeBlockAccess implements IBlockAccess {
     private TreeShape shape;
+
     private World bonsaiPotWorld;
     private BlockPos bonsaiPotPosition;
+
+    public TreeBlockAccess(TreeShape shape) {
+        this.shape = shape;
+    }
 
     public TreeBlockAccess(TreeShape shape, World bonsaiPotWorld, BlockPos bonsaiPotPosition) {
         this.shape = shape;
@@ -31,7 +37,7 @@ public class TreeBlockAccess implements IBlockAccess {
 
     @Override
     public int getCombinedLight(BlockPos pos, int lightValue) {
-        return bonsaiPotWorld.getCombinedLight(bonsaiPotPosition, lightValue);
+        return bonsaiPotWorld == null ? 255 : bonsaiPotWorld.getCombinedLight(bonsaiPotPosition, lightValue);
     }
 
     @Override
@@ -50,7 +56,7 @@ public class TreeBlockAccess implements IBlockAccess {
 
     @Override
     public Biome getBiome(BlockPos pos) {
-        return bonsaiPotWorld.getBiome(bonsaiPotPosition);
+        return bonsaiPotWorld == null ? Biomes.FOREST : bonsaiPotWorld.getBiome(bonsaiPotPosition);
     }
 
     @Override

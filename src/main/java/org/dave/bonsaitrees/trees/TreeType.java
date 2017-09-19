@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TreeType {
-    ItemStack sapling = ItemStack.EMPTY;
-    List<TreeTypeDrop> drops = new ArrayList<>();
-    int growTime = 600;
+    public ItemStack sapling = ItemStack.EMPTY;
+    public List<TreeTypeDrop> drops = new ArrayList<>();
+    public int growTime = 600;
 
     public TreeType(String blockName, int meta) {
         Block saplingBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(blockName));
@@ -48,5 +48,13 @@ public class TreeType {
 
     public List<TreeTypeDrop> getDrops() {
         return drops;
+    }
+
+    public String getGrowTimeHuman() {
+        int fullSeconds = growTime / 20;
+        int minutes = fullSeconds / 60;
+        int seconds = fullSeconds % 60;
+
+        return minutes + ":" + seconds;
     }
 }

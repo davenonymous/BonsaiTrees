@@ -1,45 +1,80 @@
-package org.dave.bonsaitrees.render;
+package org.dave.bonsaitrees.jei;
 
+import mezz.jei.api.gui.ITooltipCallback;
+import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.recipe.IRecipeWrapper;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.renderer.texture.TextureMap;
-import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.ForgeHooksClient;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import org.dave.bonsaitrees.tile.TileBonsaiPot;
-import org.dave.bonsaitrees.trees.TreeBlockAccess;
-import org.dave.bonsaitrees.trees.TreeShape;
+import org.dave.bonsaitrees.misc.RenderTickCounter;
+import org.dave.bonsaitrees.trees.*;
 import org.lwjgl.opengl.GL11;
 
+import java.util.ArrayList;
 import java.util.List;
 
-@SideOnly(Side.CLIENT)
-public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
+public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback<ItemStack> {
+    public final TreeType type;
+    public int[] slotChances;
     private IBlockAccess blockAccess;
     private TreeShape treeShape;
 
+    public BonsaiTreeRecipeWrapper(TreeType type) {
+        this.type = type;
+    }
+
     @Override
-    public void render(TileBonsaiPot te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
-        //super.render(te, x, y, z, partialTicks, destroyStage, alpha);
-        if(te.getBonsaiShapeName() == null) {
-            return;
+    public void getIngredients(IIngredients ingredients) {
+        ingredients.setInput(ItemStack.class, type.sapling);
+
+        List<ItemStack> drops = new ArrayList<>();
+        slotChances = new int[type.getDrops().size()];
+        int slot = 0;
+        for(TreeTypeDrop drop : type.getDrops()) {
+            drops.add(drop.stack.copy());
+            slotChances[slot] = drop.chance;
+            slot++;
         }
 
-        treeShape = te.getBonsaiShape();
+        ingredients.setOutputs(ItemStack.class, drops);
+    }
+
+    @Override
+    public void drawInfo(Minecraft mc, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
+        GlStateManager.pushMatrix();
+        GlStateManager.translate(0F, 0F, 216.5F);
+
+        mc.fontRenderer.drawString(type.getGrowTimeHuman(), 20-mc.fontRenderer.getStringWidth(type.getGrowTimeHuman()), 21, 0x444444);
+
+        GlStateManager.popMatrix();
+
+        float angle = RenderTickCounter.renderTicks * 45.0f / 128.0f;
+
+        if(treeShape == null) {
+            String shapeName = TreeShapeRegistry.getRandomShapeForStack(type.sapling);
+            if (shapeName == null) {
+                return;
+            }
+
+            treeShape = TreeShapeRegistry.treeShapes.get(shapeName);
+        }
 
         List<BlockPos> toRender = treeShape.getToRenderPositions();
         if(toRender.isEmpty()) {
             return;
         }
 
-        blockAccess = new TreeBlockAccess(treeShape, te.getWorld(), te.getPos());
+        blockAccess = new TreeBlockAccess(treeShape);
         BlockRendererDispatcher blockrendererdispatcher = Minecraft.getMinecraft().getBlockRendererDispatcher();
 
         GlStateManager.pushAttrib();
@@ -67,30 +102,32 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
             GlStateManager.shadeModel(GL11.GL_FLAT);
         }
 
-        GlStateManager.translate(x, y, z);
         GlStateManager.disableRescaleNormal();
 
-        float rotateOffsetX = (float)(treeShape.getWidth()+1) / 2.0f;
-        float rotateOffsetY = 0.0f;
-        float rotateOffsetZ = (float)(treeShape.getDepth()+1) / 2.0f;
+        GlStateManager.translate(0F, 0F, 216.5F);
 
-        GlStateManager.translate(0.5f, 0.0f, 0.5f);
 
-        // Translate up a bit, so we actually grow out of the bonsai pot, not through it
-        GlStateManager.translate(0.0d, 0.10d, 0.0d);
+        GlStateManager.translate(50.0f, 20.0f, 0.0f);
 
-        // Scale the whole tree to a single block width/depth
-        double scale = treeShape.getScaleRatio();
-        GlStateManager.scale(scale, scale, scale);
+        // Shift it a bit down so one can properly see 3d
+        GlStateManager.rotate(-25.0f, 1.0f, 0.0f, 0.0f);
 
-        // Scale it down even further so we get leave a bit of room on all sides
-        GlStateManager.scale(0.9f, 0.9f, 0.9f);
+        // Rotate per our calculated time
+        GlStateManager.rotate(angle, 0.0f, 1.0f, 0.0f);
 
-        double progress = (double)te.getProgress() / (double)te.getTreeType().getGrowTime();
+
+        double progress = 4.0d;
         GlStateManager.scale(progress, progress, progress);
 
+        GlStateManager.rotate(180.0f, 1.0f, 0.0f, 0.0f);
 
-        GlStateManager.translate(-rotateOffsetX, -rotateOffsetY, -rotateOffsetZ);
+        GlStateManager.translate(
+                (treeShape.getWidth() + 1) / -2.0f,
+                (treeShape.getHeight() + 1) / -2.0f,
+                (treeShape.getDepth() + 1) / -2.0f
+        );
+
+        //GlStateManager.translate(-rotateOffsetX, -rotateOffsetY, -rotateOffsetZ);
 
         Tessellator tessellator = Tessellator.getInstance();
         BufferBuilder buffer = tessellator.getBuffer();
@@ -102,6 +139,7 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
         GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
 
+        GL11.glFrontFace(GL11.GL_CW);
         // Aaaand render
         buffer.begin(GL11.GL_QUADS, DefaultVertexFormats.BLOCK);
         GlStateManager.disableAlpha();
@@ -113,6 +151,8 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.TRANSLUCENT, toRender);
 
         tessellator.draw();
+
+        GL11.glFrontFace(GL11.GL_CCW);
 
         GlStateManager.disableBlend();
 
@@ -136,5 +176,13 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
             }
             ForgeHooksClient.setRenderLayer(null);
         }
+    }
+    @Override
+    public void onTooltip(int slotIndex, boolean input, ItemStack ingredient, List<String> tooltip) {
+        if(input) {
+            return;
+        }
+
+        tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", slotChances[slotIndex-1]));
     }
 }
