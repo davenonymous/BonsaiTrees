@@ -84,24 +84,17 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
 
         GlStateManager.translate(0.5f, 0.0f, 0.5f);
 
-
-        double progress = (double)te.getProgress() / (double)te.getTreeType().getGrowTime();
-
-        double scale = treeShape.getScaleRatio();
-
+        // Translate up a bit, so we actually grow out of the bonsai pot, not through it
         GlStateManager.translate(0.0d, 0.10d, 0.0d);
 
-        //GlStateManager.translate(-rotateOffsetX, -rotateOffsetY, -rotateOffsetZ);
-
-        //GlStateManager.translate(rotateOffsetX, rotateOffsetY, rotateOffsetZ);
-
-
-        //GlStateManager.rotate(angle, 0.0f, 1.0f, 0.0f);
+        // Scale the whole tree to a single block width/depth
+        double scale = treeShape.getScaleRatio();
         GlStateManager.scale(scale, scale, scale);
 
-        if(RenderTickCounter.renderTicks % 100 == 0) {
-            //Logz.info("ProgressScale: %.2f", progress);
-        }
+        // Scale it down even further so we get leave a bit of room on all sides
+        GlStateManager.scale(0.9f, 0.9f, 0.9f);
+
+        double progress = (double)te.getProgress() / (double)te.getTreeType().getGrowTime();
         GlStateManager.scale(progress, progress, progress);
 
 
@@ -128,6 +121,8 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.TRANSLUCENT, toRender);
 
         tessellator.draw();
+
+        GlStateManager.disableBlend();
 
         GlStateManager.popMatrix();
         GlStateManager.popAttrib();
