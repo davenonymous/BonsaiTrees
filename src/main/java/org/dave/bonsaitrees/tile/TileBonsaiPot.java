@@ -180,6 +180,5 @@ public class TileBonsaiPot extends BaseTileTicking {
         progress = 0;
         this.markDirty();
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
-        //Logz.info("Shape: %s", getBonsaiShape().getBlocks());
     }
 }
