@@ -146,9 +146,20 @@ public class TileBonsaiPot extends BaseTileTicking {
     public void update() {
         super.update();
 
-        if(!sapling.isEmpty() && progress < treeType.getGrowTime()) {
-            progress++;
-            this.markDirty();
+        if(!sapling.isEmpty()) {
+            // Only grow if the space above it is AIR, otherwise reset to third of the progress
+            boolean hasAir = getWorld().isAirBlock(getPos().up());
+            if(!hasAir && progress > treeType.getGrowTime() / 3) {
+                progress = treeType.getGrowTime() / 3;
+                this.markDirty();
+                return;
+            }
+
+            if(progress < treeType.getGrowTime() && hasAir) {
+                progress++;
+                this.markDirty();
+                return;
+            }
         }
     }
 
