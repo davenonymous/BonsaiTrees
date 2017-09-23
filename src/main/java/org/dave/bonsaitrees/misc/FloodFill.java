@@ -24,8 +24,8 @@ public class FloodFill {
             Blocks.SANDSTONE,
             Blocks.WATER
     });
-    private int MAX_SEARCH_DEPTH = 128;
-    private int MAX_BLOCKS = 512;
+    private int MAX_SEARCH_DEPTH = 2048;
+    private int MAX_BLOCKS = 4196;
 
     private World world;
     private BlockPos startingPosition;

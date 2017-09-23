@@ -7,7 +7,7 @@ commands.bonsaitrees.available=Available sub-commands:
 commands.bonsaitrees.denied=You do not have the permission to use this command.
 
 commands.bonsaitrees.saveTreeShape.description=Save the treeshape you are currently looking at as .json file
-commands.bonsaitrees.saveTreeShape.usage=/bonsaitrees saveTreeShape <file-prefix>, while holding the item the grows into this shape
+commands.bonsaitrees.saveTreeShape.usage=/bonsaitrees saveTreeShape <tree-type-id>, e.g. "forestry:hillCherry"
 
 commands.bonsaitrees.saveTreeShape.exception.no_itemstack_in_mainhand=You'll need to hold an itemstack in your main hand!
 commands.bonsaitrees.saveTreeShape.exception.not_looking_at_block=You are not looking at a block!

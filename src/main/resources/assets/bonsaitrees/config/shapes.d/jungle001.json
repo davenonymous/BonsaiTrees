@@ -1,8 +1,5 @@
 {
-  "sapling": {
-    "name": "minecraft:sapling",
-    "meta": 3
-  },
+  "type": "minecraft:jungle",
   "ref": {
     "a": {
       "name": "minecraft:log",

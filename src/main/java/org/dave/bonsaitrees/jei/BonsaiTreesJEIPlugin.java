@@ -5,8 +5,9 @@ import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
 import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import net.minecraft.item.ItemStack;
+import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.init.Blockss;
-import org.dave.bonsaitrees.trees.TreeType;
+import org.dave.bonsaitrees.trees.TreeTypeSimple;
 import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 
 @JEIPlugin
@@ -14,8 +15,8 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
     @Override
     public void register(IModRegistry registry) {
         registry.addRecipeCatalyst(new ItemStack(Blockss.bonsaiPot), BonsaiTreeRecipeCategory.UID);
-        registry.handleRecipes(TreeType.class, new BonsaiTreeRecipeWrapperFactory(), BonsaiTreeRecipeCategory.UID);
-        registry.addRecipes(TreeTypeRegistry.treeTypes.values(), BonsaiTreeRecipeCategory.UID);
+        registry.handleRecipes(BaseTreeType.class, new BonsaiTreeRecipeWrapperFactory(), BonsaiTreeRecipeCategory.UID);
+        registry.addRecipes(TreeTypeRegistry.getAllTypes(), BonsaiTreeRecipeCategory.UID);
     }
 
     @Override

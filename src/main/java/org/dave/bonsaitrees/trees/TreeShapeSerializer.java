@@ -3,9 +3,6 @@ package org.dave.bonsaitrees.trees;
 import com.google.gson.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.JsonToNBT;
-import net.minecraft.nbt.NBTException;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
@@ -37,28 +34,13 @@ public class TreeShapeSerializer implements JsonSerializer<TreeShape>, JsonDeser
             return null;
         }
 
-        // First grab the info about the sapling
-        JsonObject saplingInfo = root.getAsJsonObject().getAsJsonObject("sapling");
-        String saplingBlockName = saplingInfo.get("name").getAsString();
-        Block saplingBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(saplingBlockName));
-        if(saplingBlock == null) {
-            Logz.warn("Invalid block used for sapling");
+        // First get the name of the tree type
+        if(!root.getAsJsonObject().has("type")) {
+            Logz.warn("Missing type name in shape config");
             return null;
         }
-        int saplingMeta = saplingInfo.has("meta") ? saplingInfo.get("meta").getAsInt() : 0;
 
-        ItemStack saplingStack = new ItemStack(saplingBlock, 1, saplingMeta);
-
-        if(saplingInfo.has("nbt")) {
-            String nbt = saplingInfo.get("nbt").getAsString();
-            try {
-                saplingStack.setTagCompound(JsonToNBT.getTagFromJson(nbt));
-            } catch (NBTException e) {
-                Logz.warn("Could not read NBT data of sapling block");
-                return null;
-            }
-        }
-
+        String treeType = root.getAsJsonObject().get("type").getAsString();
 
         // Get the reference map
         Map<String, IBlockState> refMap = new HashMap<>();
@@ -111,7 +93,7 @@ public class TreeShapeSerializer implements JsonSerializer<TreeShape>, JsonDeser
             blocks.put(new BlockPos(x, y, z), refMap.get(refString));
         }
 
-        TreeShape result = new TreeShape(saplingStack);
+        TreeShape result = new TreeShape(treeType);
         result.setBlocks(blocks);
         return result;
     }
@@ -120,14 +102,7 @@ public class TreeShapeSerializer implements JsonSerializer<TreeShape>, JsonDeser
     public JsonElement serialize(TreeShape src, Type typeOfSrc, JsonSerializationContext context) {
         JsonObject root = new JsonObject();
 
-        JsonObject saplingJson = new JsonObject();
-        saplingJson.addProperty("name", src.sapling.getItem().getRegistryName().toString());
-        saplingJson.addProperty("meta", src.sapling.getMetadata());
-        if(src.sapling.hasTagCompound()) {
-            saplingJson.addProperty("nbt", src.sapling.getTagCompound().toString());
-        }
-
-        root.add("sapling", saplingJson);
+        root.addProperty("type", src.getTreeType().typeName);
 
         Map<String, String> refMap = new HashMap<>();
         JsonObject references = new JsonObject();
@@ -158,9 +133,7 @@ public class TreeShapeSerializer implements JsonSerializer<TreeShape>, JsonDeser
 
                 JsonObject blockRefJson = new JsonObject();
                 blockRefJson.addProperty("name", blockName);
-                if(meta != 0) {
-                    blockRefJson.addProperty("meta", meta);
-                }
+                blockRefJson.addProperty("meta", meta);
 
                 references.add(refName, blockRefJson);
             }

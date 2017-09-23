@@ -1,8 +1,5 @@
 {
-  "sapling": {
-    "name": "minecraft:sapling",
-    "meta": 0
-  },
+  "type": "minecraft:oak",
   "ref": {
     "a": {
       "name": "minecraft:leaves",

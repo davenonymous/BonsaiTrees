@@ -2,6 +2,7 @@ package org.dave.bonsaitrees.trees;
 
 import com.google.gson.stream.JsonReader;
 import net.minecraft.item.ItemStack;
+import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.utility.Logz;
 import org.dave.bonsaitrees.utility.SerializationHelper;
@@ -12,37 +13,43 @@ import java.io.FileReader;
 import java.util.*;
 
 public class TreeShapeRegistry {
-    public static Map<String, TreeShape> treeShapes;
+    private static Map<String, TreeShape> treeShapesByFilename;
+    private static Map<BaseTreeType, List<TreeShape>> treeShapesByType;
+    private static final Random rand = new Random();
 
     public static void init() {
         reload();
     }
 
-    public static String getRandomShapeForStack(ItemStack stack) {
+    public static TreeShape getTreeShapeByFilename(String name) {
+        return treeShapesByFilename.get(name);
+    }
+
+    public static TreeShape getRandomShapeForStack(ItemStack stack) {
         if(stack.isEmpty()) {
             return null;
         }
 
-        List<String> options = new ArrayList<>();
-        for(Map.Entry<String, TreeShape> shapeEntry : treeShapes.entrySet()) {
-            ItemStack sapling = shapeEntry.getValue().sapling;
-            boolean sameItem = sapling.getItem() == stack.getItem();
-            boolean sameMeta = sapling.getMetadata() == stack.getMetadata();
-            boolean sameNbt = ItemStack.areItemStackTagsEqual(sapling, stack);
-            if(sameItem && sameMeta && sameNbt) {
-                options.add(shapeEntry.getKey());
-            }
-        }
-
-        if(options.size() == 0) {
+        BaseTreeType type = TreeTypeRegistry.getTypeByStack(stack);
+        if(type == null) {
             return null;
         }
 
-        return options.get(new Random().nextInt(options.size()));
+        return getRandomShapeByType(type);
+    }
+
+    private static TreeShape getRandomShapeByType(BaseTreeType type) {
+        if(!treeShapesByType.containsKey(type)) {
+            return null;
+        }
+
+        List<TreeShape> shapes = treeShapesByType.get(type);
+        return shapes.get(rand.nextInt(shapes.size()));
     }
 
     public static void reload() {
-        treeShapes = new HashMap<>();
+        treeShapesByFilename = new HashMap<>();
+        treeShapesByType = new HashMap<>();
 
         if(!ConfigurationHandler.treeShapesDir.exists()) {
             Logz.warn("Tree Shapes folder does not exist!");
@@ -66,13 +73,20 @@ public class TreeShapeRegistry {
                 continue;
             }
 
-            treeShapes.put(file.getName().substring(0, file.getName().length()-4), shape);
+            String shortenedFilename = file.getName().substring(0, file.getName().length()-4);
+            shape.setFileName(shortenedFilename);
+
+            treeShapesByFilename.put(shortenedFilename, shape);
+            if(!treeShapesByType.containsKey(shape.getTreeType())) {
+                treeShapesByType.put(shape.getTreeType(), new ArrayList<>());
+            }
+            treeShapesByType.get(shape.getTreeType()).add(shape);
         }
 
-        if(treeShapes.size() == 0) {
+        if(treeShapesByFilename.size() == 0) {
             Logz.warn("No tree shapes registered. This is bad!");
         } else {
-            Logz.info("Loaded %d tree shapes.", treeShapes.size());
+            Logz.info("Loaded %d tree shapes.", treeShapesByFilename.size());
         }
     }
 }

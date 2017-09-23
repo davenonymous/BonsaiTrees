@@ -1,13 +1,7 @@
 package org.dave.bonsaitrees.trees;
 
-import net.minecraft.block.Block;
-import net.minecraft.init.Blocks;
-import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTUtil;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.utility.Logz;
 
@@ -18,42 +12,42 @@ import javax.script.ScriptException;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
 public class TreeTypeRegistry {
-    public static Map<String, TreeType> treeTypes;
+    private static Map<String, BaseTreeType> treeTypes;
 
     public static void init() {
         reload();
     }
 
-    public static TreeType getTypeForStack(ItemStack stack) {
+    public static Collection<BaseTreeType> getAllTypes() {
+        return treeTypes.values();
+    }
+
+    public static BaseTreeType getTypeByName(String name) {
+        return treeTypes.get(name);
+    }
+
+    public static BaseTreeType getTypeByStack(ItemStack stack) {
         if(stack == ItemStack.EMPTY) {
             return null;
         }
 
-        for(TreeType type : treeTypes.values()) {
-            boolean sameItem = type.sapling.getItem() == stack.getItem();
-            boolean sameMeta = type.sapling.getMetadata() == stack.getMetadata();
-            boolean sameNbt = ItemStack.areItemStackTagsEqual(type.sapling, stack);
-            if(sameItem && sameMeta && sameNbt) {
-                return type;
-            }
-        }
-
-        return null;
-
+        // Find the first treetype that works with the given stack
+        return treeTypes.values().stream().filter(treeType -> treeType.worksWith(stack)).findFirst().orElse(null);
     }
 
-    public static void registerTreeType(String name, TreeType treeType) {
-        if(treeTypes.containsKey(name)) {
-            Logz.warn("Overwriting tree type: %s", name);
+    public static void registerTreeType(BaseTreeType treeType) {
+        if(treeTypes.containsKey(treeType.typeName)) {
+            Logz.warn("Overwriting tree type: %s", treeType.typeName);
         } else {
-            Logz.info("Registering tree type: %s", name);
+            Logz.info("Registering tree type: %s", treeType.typeName);
         }
 
-        treeTypes.put(name, treeType);
+        treeTypes.put(treeType.typeName, treeType);
     }
 
     public static void reload() {
@@ -65,7 +59,7 @@ public class TreeTypeRegistry {
         }
 
         for(File file : ConfigurationHandler.treeTypesDir.listFiles()) {
-            if(!file.getName().endsWith(".js")) {
+            if(!file.getName().endsWith(".js") || file.getName().equals("defaults.js")) {
                 continue;
             }
 

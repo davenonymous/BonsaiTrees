@@ -65,7 +65,7 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
             return false;
         }
 
-        if(TreeTypeRegistry.getTypeForStack(stack) != null) {
+        if(TreeTypeRegistry.getTypeByStack(stack) != null) {
             return true;
         }
 

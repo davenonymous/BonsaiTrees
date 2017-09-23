@@ -1,32 +1,36 @@
 package org.dave.bonsaitrees.trees;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fml.common.registry.ForgeRegistries;
-import org.dave.bonsaitrees.utility.Logz;
+import org.dave.bonsaitrees.base.BaseTreeType;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 public class TreeShape {
-    ItemStack sapling = ItemStack.EMPTY;
     private Map<BlockPos, IBlockState> blocks;
+    private final String typeName;
+    private String fileName;
 
     private int width = 0;
     private int height = 0;
     private int depth = 0;
 
-    public TreeShape(String blockName, int meta) {
-        Block saplingBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(blockName));
-        this.sapling = new ItemStack(saplingBlock, meta);
+    public TreeShape(String typeName) {
+        this.typeName = typeName;
     }
 
-    public TreeShape(ItemStack sapling) {
-        this.sapling = sapling;
+    public BaseTreeType getTreeType() {
+        return TreeTypeRegistry.getTypeByName(typeName);
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getFileName() {
+        return fileName;
     }
 
     public void setBlocks(Map<BlockPos, IBlockState> blocks) {
@@ -65,8 +69,13 @@ public class TreeShape {
         return depth;
     }
 
-    public double getScaleRatio() {
-        int dim = Math.max(width, depth)+1;
+    public double getScaleRatio(boolean inclHeight) {
+        int dim = Math.max(width, depth);
+        if(inclHeight) {
+            dim = Math.max(height, dim);
+        }
+
+        dim += 1;
         return 1.0d / (double)dim;
     }
 }

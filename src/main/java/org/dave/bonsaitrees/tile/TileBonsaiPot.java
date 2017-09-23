@@ -4,19 +4,19 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import org.dave.bonsaitrees.base.BaseTileTicking;
+import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.trees.*;
-import org.dave.bonsaitrees.utility.Logz;
 
 import java.util.Random;
 
 public class TileBonsaiPot extends BaseTileTicking {
     protected ItemStack sapling = ItemStack.EMPTY;
-    protected String bonsaiShape = null;
-    protected int progress = 0;
-    protected TreeType treeType = null;
+    protected String shapeFilename = null;
+    protected double progress = 0;
+    protected BaseTreeType treeType = null;
 
     public boolean hasSapling() {
-        return sapling != ItemStack.EMPTY && treeType != null && bonsaiShape != null;
+        return sapling != ItemStack.EMPTY && treeType != null && shapeFilename != null;
     }
 
     public boolean isHarvestable() {
@@ -97,47 +97,47 @@ public class TileBonsaiPot extends BaseTileTicking {
     }
 
     public String getBonsaiShapeName() {
-        return bonsaiShape;
+        return shapeFilename;
     }
 
-    public TreeShape getBonsaiShape() {
-        return TreeShapeRegistry.treeShapes.get(bonsaiShape);
+    public TreeShape getShapeFilename() {
+        return TreeShapeRegistry.getTreeShapeByFilename(shapeFilename);
     }
 
-    public TreeType getTreeType() {
+    public BaseTreeType getTreeType() {
         return treeType;
     }
 
     @Override
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
-        if(compound.hasKey("bonsaiShape")) {
-            bonsaiShape = compound.getString("bonsaiShape");
+        if(compound.hasKey("shapeFilename")) {
+            shapeFilename = compound.getString("shapeFilename");
         } else {
-            bonsaiShape = null;
+            shapeFilename = null;
         }
 
         if(compound.hasKey("sapling")) {
             sapling = new ItemStack(compound.getCompoundTag("sapling"));
-            treeType = TreeTypeRegistry.getTypeForStack(sapling);
+            treeType = TreeTypeRegistry.getTypeByStack(sapling);
         } else {
             sapling = ItemStack.EMPTY;
             treeType = null;
         }
 
-        progress = compound.getInteger("progress");
+        progress = compound.getDouble("progress");
     }
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound compound) {
         compound = super.writeToNBT(compound);
-        if(bonsaiShape != null) {
-            compound.setString("bonsaiShape", bonsaiShape);
+        if(shapeFilename != null) {
+            compound.setString("shapeFilename", shapeFilename);
         }
         if(sapling != ItemStack.EMPTY) {
             compound.setTag("sapling", sapling.writeToNBT(new NBTTagCompound()));
         }
-        compound.setInteger("progress", progress);
+        compound.setDouble("progress", progress);
 
         return compound;
     }
@@ -147,23 +147,11 @@ public class TileBonsaiPot extends BaseTileTicking {
         super.update();
 
         if(!sapling.isEmpty()) {
-            // Only grow if the space above it is AIR, otherwise reset to third of the progress
-            boolean hasAir = getWorld().isAirBlock(getPos().up());
-            if(!hasAir && progress > treeType.getGrowTime() / 3) {
-                progress = treeType.getGrowTime() / 3;
-                this.markDirty();
-                return;
-            }
-
-            if(progress < treeType.getGrowTime() && hasAir) {
-                progress++;
-                this.markDirty();
-                return;
-            }
+            progress = treeType.growTick(getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
         }
     }
 
-    public int getProgress() {
+    public double getProgress() {
         return progress;
     }
 
@@ -171,10 +159,10 @@ public class TileBonsaiPot extends BaseTileTicking {
         this.sapling = sapling;
         if(sapling.isEmpty()) {
             treeType = null;
-            bonsaiShape = null;
+            shapeFilename = null;
         } else {
-            treeType = TreeTypeRegistry.getTypeForStack(sapling);
-            bonsaiShape = TreeShapeRegistry.getRandomShapeForStack(sapling);
+            treeType = TreeTypeRegistry.getTypeByStack(sapling);
+            shapeFilename = TreeShapeRegistry.getRandomShapeForStack(sapling).getFileName();
         }
 
         progress = 0;

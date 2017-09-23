@@ -1,14 +1,16 @@
-var TreeType = Java.type("org.dave.bonsaitrees.trees.TreeType");
-var TreeTypeRegistry = Java.type("org.dave.bonsaitrees.trees.TreeTypeRegistry");
+load("config/bonsaitrees/types.d/defaults.js");
 
 var main = function() {
-    var rubberTreeType = new TreeType("ic2:sapling", 0);
-    rubberTreeType.addDrop("minecraft:stick", 0, 3, 50);
-    rubberTreeType.addDrop("ic2:rubber_wood", 0, 1, 20);
-    rubberTreeType.addDrop("ic2:sapling", 0, 1, 5);
-    rubberTreeType.addDrop("ic2:leaves", 0, 1, 10);
-    rubberTreeType.addDrop("ic2:misc_resource", 4, 3, 20);
-    rubberTreeType.setGrowTime(900);
+    var rubberTreeType = new TreeTypeSimple("ic2:rubber", "ic2:sapling", 0);
+    rubberTreeType.addDrop("minecraft:stick", 0, stickAmount, stickChance);
+    rubberTreeType.addDrop("ic2:rubber_wood", 0, logAmount, logChance);
+    rubberTreeType.addDrop("ic2:sapling", 0, saplingAmount, saplingChance);
+    rubberTreeType.addDrop("ic2:leaves", 0, leafAmount, leafChance);
 
-    TreeTypeRegistry.registerTreeType("ic2_rubber", rubberTreeType);
+    // resin
+    rubberTreeType.addDrop("ic2:misc_resource", 4, fruitAmount, fruitChance);
+
+    rubberTreeType.setGrowTime(defaultGrowTime * 1.5);
+
+    TreeTypeRegistry.registerTreeType(rubberTreeType);
 };

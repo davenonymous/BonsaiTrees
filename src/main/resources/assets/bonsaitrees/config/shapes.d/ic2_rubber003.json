@@ -1,8 +1,5 @@
 {
-  "sapling": {
-    "name": "ic2:sapling",
-    "meta": 0
-  },
+  "type": "ic2:rubber",
   "ref": {
     "a": {
       "name": "ic2:leaves",

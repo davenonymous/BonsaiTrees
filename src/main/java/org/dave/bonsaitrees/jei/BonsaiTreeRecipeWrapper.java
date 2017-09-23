@@ -16,31 +16,38 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.ForgeHooksClient;
+import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.misc.RenderTickCounter;
-import org.dave.bonsaitrees.trees.*;
+import org.dave.bonsaitrees.trees.TreeBlockAccess;
+import org.dave.bonsaitrees.trees.TreeShape;
+import org.dave.bonsaitrees.trees.TreeShapeRegistry;
+import org.dave.bonsaitrees.trees.TreeTypeDrop;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback<ItemStack> {
-    public final TreeType type;
+    public final BaseTreeType type;
     public int[] slotChances;
     private IBlockAccess blockAccess;
     private TreeShape treeShape;
 
-    public BonsaiTreeRecipeWrapper(TreeType type) {
+    public BonsaiTreeRecipeWrapper(BaseTreeType type) {
         this.type = type;
     }
 
     @Override
     public void getIngredients(IIngredients ingredients) {
-        ingredients.setInput(ItemStack.class, type.sapling);
+        ingredients.setInput(ItemStack.class, type.getExampleStack());
+
+        List<TreeTypeDrop> ttDrops = type.getDrops();
+        ttDrops.sort((a, b) -> b.chance - a.chance);
 
         List<ItemStack> drops = new ArrayList<>();
-        slotChances = new int[type.getDrops().size()];
+        slotChances = new int[ttDrops.size()];
         int slot = 0;
-        for(TreeTypeDrop drop : type.getDrops()) {
+        for(TreeTypeDrop drop : ttDrops) {
             drops.add(drop.stack.copy());
             slotChances[slot] = drop.chance;
             slot++;
@@ -61,12 +68,10 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
         float angle = RenderTickCounter.renderTicks * 45.0f / 128.0f;
 
         if(treeShape == null) {
-            String shapeName = TreeShapeRegistry.getRandomShapeForStack(type.sapling);
-            if (shapeName == null) {
-                return;
-            }
-
-            treeShape = TreeShapeRegistry.treeShapes.get(shapeName);
+            treeShape = TreeShapeRegistry.getRandomShapeForStack(type.getExampleStack());
+        }
+        if(treeShape == null) {
+            return;
         }
 
         List<BlockPos> toRender = treeShape.getToRenderPositions();
@@ -115,9 +120,13 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
         // Rotate per our calculated time
         GlStateManager.rotate(angle, 0.0f, 1.0f, 0.0f);
 
+        double scale = treeShape.getScaleRatio(true);
+        GlStateManager.scale(scale, scale, scale);
 
-        double progress = 4.0d;
+        double progress = 40.0d;
         GlStateManager.scale(progress, progress, progress);
+
+
 
         GlStateManager.rotate(180.0f, 1.0f, 0.0f, 0.0f);
 

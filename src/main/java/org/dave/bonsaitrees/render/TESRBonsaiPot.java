@@ -32,7 +32,7 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
             return;
         }
 
-        treeShape = te.getBonsaiShape();
+        treeShape = te.getShapeFilename();
 
         List<BlockPos> toRender = treeShape.getToRenderPositions();
         if(toRender.isEmpty()) {
@@ -80,13 +80,13 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         GlStateManager.translate(0.0d, 0.10d, 0.0d);
 
         // Scale the whole tree to a single block width/depth
-        double scale = treeShape.getScaleRatio();
+        double scale = treeShape.getScaleRatio(false);
         GlStateManager.scale(scale, scale, scale);
 
         // Scale it down even further so we get leave a bit of room on all sides
         GlStateManager.scale(0.9f, 0.9f, 0.9f);
 
-        double progress = (double)te.getProgress() / (double)te.getTreeType().getGrowTime();
+        double progress = te.getProgress() / (double)te.getTreeType().getGrowTime();
         GlStateManager.scale(progress, progress, progress);
 
 
