@@ -7,7 +7,6 @@ import mezz.jei.api.recipe.IRecipeCategoryRegistration;
 import net.minecraft.item.ItemStack;
 import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.init.Blockss;
-import org.dave.bonsaitrees.trees.TreeTypeSimple;
 import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 
 @JEIPlugin

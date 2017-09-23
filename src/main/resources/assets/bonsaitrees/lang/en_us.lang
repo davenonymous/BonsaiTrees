@@ -14,5 +14,5 @@ commands.bonsaitrees.saveTreeShape.exception.not_looking_at_block=You are not lo
 commands.bonsaitrees.saveTreeShape.exception.can_not_determine_shape=Can not determine shape, 0 blocks found. Maybe the block you are looking at is on the ignore list?
 commands.bonsaitrees.saveTreeShape.wrote_shape_to_file=Wrote shape to file: %s
 
-bonsaitrees.jei.category.growing=Bonsai Tree Growing
+bonsaitrees.jei.category.growing=Bonsai Trees
 bonsaitrees.jei.category.growing.chance=Chance: %d%%
