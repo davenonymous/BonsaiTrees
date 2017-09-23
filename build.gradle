@@ -66,6 +66,17 @@ dependencies {
     //deobfCompile "mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.18-10"
 }
 
+allprojects {
+    if (System.getenv("TRAVIS") != null) {
+        def tag = System.getenv("TRAVIS_TAG");
+        if (tag != null && !tag.isEmpty() && tag.contains("release")) {
+            project.ext.releaseType = "release"
+        } else {
+            version += "-b${System.getenv("TRAVIS_BUILD_NUMBER")}"
+            project.ext.releaseType = "beta"
+        }
+    }
+}
 
 processResources {
     // this will ensure that this task is redone when the versions change.
