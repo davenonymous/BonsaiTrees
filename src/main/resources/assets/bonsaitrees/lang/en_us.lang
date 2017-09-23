@@ -16,3 +16,9 @@ commands.bonsaitrees.saveTreeShape.wrote_shape_to_file=Wrote shape to file: %s
 
 bonsaitrees.jei.category.growing=Bonsai Trees
 bonsaitrees.jei.category.growing.chance=Chance: %d%%
+
+advancements.bonsaitrees.craft_pot.title=Bonsai Trees
+advancements.bonsaitrees.craft_pot.description=Craft a Bonsai Pot
+
+advancements.bonsaitrees.grow_tree.title=Grow a Bonsai Tree
+advancements.bonsaitrees.grow_tree.description=Use it for decoration or as early tree farm

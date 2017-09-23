@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "bonsaitrees:bonsaipot"
+    },
+    "title": { "translate": "advancements.bonsaitrees.craft_pot.title" },
+    "description": { "translate": "advancements.bonsaitrees.craft_pot.description"},
+    "background": "minecraft:textures/gui/advancements/backgrounds/husbandry.png",
+    "show_toast": false,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "bonsaipot_in_inventory": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "item": "bonsaitrees:bonsaipot" }
+        ]
+      }
+    }
+  }
+}

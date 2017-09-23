@@ -1,0 +1,16 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:sapling",
+      "data": 0
+    },
+    "title": { "translate": "advancements.bonsaitrees.grow_tree.title" },
+    "description": { "translate": "advancements.bonsaitrees.grow_tree.description"}
+  },
+  "parent": "bonsaitrees:root",
+  "criteria": {
+    "finished_growing_a_bonsai_tree": {
+      "trigger": "bonsaitrees:tree_grown"
+    }
+  }
+}

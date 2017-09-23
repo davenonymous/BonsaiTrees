@@ -1,12 +1,19 @@
 package org.dave.bonsaitrees.tile;
 
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.management.PlayerList;
 import org.dave.bonsaitrees.base.BaseTileTicking;
 import org.dave.bonsaitrees.base.BaseTreeType;
+import org.dave.bonsaitrees.init.Triggerss;
 import org.dave.bonsaitrees.trees.*;
+import org.dave.bonsaitrees.utility.Logz;
 
+import java.util.List;
 import java.util.Random;
 
 public class TileBonsaiPot extends BaseTileTicking {
@@ -148,6 +155,14 @@ public class TileBonsaiPot extends BaseTileTicking {
 
         if(!sapling.isEmpty()) {
             progress = treeType.growTick(getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
+        }
+
+        if(!world.isRemote && treeType != null && hasOwner() && progress >= treeType.getGrowTime()) {
+            PlayerList list = world.getMinecraftServer().getPlayerList();
+            EntityPlayerMP player = list.getPlayerByUUID(getOwner());
+            if(player != null) {
+                Triggerss.GROW_TREE.trigger(player);
+            }
         }
     }
 
