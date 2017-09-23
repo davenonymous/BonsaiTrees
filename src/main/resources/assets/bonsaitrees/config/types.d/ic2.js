@@ -1,5 +1,10 @@
 load("config/bonsaitrees/types.d/defaults.js");
 
+isEnabled = function() {
+    var Loader = Java.type("net.minecraftforge.fml.common.Loader");
+    return Loader.isModLoaded("ic2");
+}
+
 var main = function() {
     var rubberTreeType = new TreeTypeSimple("ic2:rubber", "ic2:sapling", 0);
     rubberTreeType.addDrop("minecraft:stick", 0, stickAmount, stickChance);

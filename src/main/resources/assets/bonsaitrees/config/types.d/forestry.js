@@ -1,8 +1,13 @@
 load("config/bonsaitrees/types.d/defaults.js");
-var TreeTypeForestry = Java.type("org.dave.bonsaitrees.trees.TreeTypeForestry");
 
+isEnabled = function() {
+    var Loader = Java.type("net.minecraftforge.fml.common.Loader");
+    return Loader.isModLoaded("forestry");
+}
 
 var main = function() {
+    var TreeTypeForestry = Java.type("org.dave.bonsaitrees.trees.TreeTypeForestry");
+
     var defaultDrops = [
         { name: "minecraft:stick", meta: 0, amount: stickAmount, chance: stickChance }
     ];

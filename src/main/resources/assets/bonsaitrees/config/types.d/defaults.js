@@ -22,3 +22,7 @@ var defaultGrowTime = 600;
 
 var TreeTypeSimple = Java.type("org.dave.bonsaitrees.trees.TreeTypeSimple");
 var TreeTypeRegistry = Java.type("org.dave.bonsaitrees.trees.TreeTypeRegistry");
+
+var isEnabled = function() {
+    return true;
+}

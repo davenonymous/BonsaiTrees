@@ -1,5 +1,10 @@
 load("config/bonsaitrees/types.d/defaults.js");
 
+isEnabled = function() {
+    var Loader = Java.type("net.minecraftforge.fml.common.Loader");
+    return Loader.isModLoaded("integrateddynamics");
+}
+
 var main = function() {
     var menrilTree = new TreeTypeSimple("integrateddynamics:menril", "integrateddynamics:menril_sapling", 0);
     menrilTree.addDrop("minecraft:stick", 0, stickAmount, stickChance);

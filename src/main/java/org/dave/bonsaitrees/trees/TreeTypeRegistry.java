@@ -70,7 +70,11 @@ public class TreeTypeRegistry {
                 engine.eval(new FileReader(file));
                 Invocable invocable = (Invocable) engine;
 
-                invocable.invokeFunction("main");
+                boolean isEnabled = (boolean) invocable.invokeFunction("isEnabled");
+
+                if(isEnabled) {
+                    invocable.invokeFunction("main");
+                }
             } catch (ScriptException e) {
                 Logz.warn("Could not compile+eval script=%s: %s", file.getName(), e);
                 continue;
