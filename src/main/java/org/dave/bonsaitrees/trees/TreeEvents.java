@@ -15,6 +15,7 @@ public class TreeEvents {
         if(breakEvent.getState().getBlock() == Blockss.bonsaiPot && breakEvent.getWorld().getTileEntity(breakEvent.getPos()) instanceof TileBonsaiPot) {
             TileBonsaiPot pot = (TileBonsaiPot) breakEvent.getWorld().getTileEntity(breakEvent.getPos());
             if(!pot.hasSapling()) {
+                pot.dropTile();
                 return;
             }
 

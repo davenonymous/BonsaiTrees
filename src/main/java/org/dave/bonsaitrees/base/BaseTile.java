@@ -1,6 +1,8 @@
 package org.dave.bonsaitrees.base;
 
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
@@ -77,5 +79,25 @@ public class BaseTile extends TileEntity {
     @Override
     public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity packet) {
         readFromNBT(packet.getNbtCompound());
+    }
+
+    public void dropTile() {
+        BaseTile tile = world.getTileEntity(pos) instanceof BaseTile ? (BaseTile) world.getTileEntity(pos) : null;
+
+        if(tile != null) {
+            NBTTagCompound tileData = tile.writeToNBT(new NBTTagCompound());
+            ItemStack stack = new ItemStack(world.getBlockState(pos).getBlock(), 1, 0);
+            stack.setTagCompound(tileData);
+
+            EntityItem entityItem = new EntityItem(world, getPos().getX()+0.5f, getPos().getY(), getPos().getZ()+0.5f, stack);
+            entityItem.lifespan = 600;
+            entityItem.setPickupDelay(5);
+
+            entityItem.motionX = 0.0f;
+            entityItem.motionY = 0.10f;
+            entityItem.motionZ = 0.0f;
+
+            world.spawnEntity(entityItem);
+        }
     }
 }

@@ -1,12 +1,10 @@
 package org.dave.bonsaitrees.base;
 
-import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -32,14 +30,6 @@ public abstract class BaseBlockWithTile<T extends BaseTile> extends BaseBlock {
 
     @Override
     public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-        //super.getDrops(drops, world, pos, state, fortune);
-        T tile = world.getTileEntity(pos) instanceof BaseTile ? (T) world.getTileEntity(pos) : null;
-        if(tile != null) {
-            NBTTagCompound tileData = tile.writeToNBT(new NBTTagCompound());
-            ItemStack result = new ItemStack(this, 1, 0);
-            result.setTagCompound(tileData);
-            drops.add(result);
-        }
     }
 
     public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
