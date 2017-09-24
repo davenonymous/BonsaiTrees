@@ -38,7 +38,15 @@ public class TreeShapeRegistry {
         return getRandomShapeByType(type);
     }
 
-    private static TreeShape getRandomShapeByType(BaseTreeType type) {
+    public static int getShapeCountForType(BaseTreeType type) {
+        if(!treeShapesByType.containsKey(type) || treeShapesByType.get(type) == null) {
+            return 0;
+        }
+
+        return treeShapesByType.get(type).size();
+    }
+
+    public static TreeShape getRandomShapeByType(BaseTreeType type) {
         if(!treeShapesByType.containsKey(type)) {
             return null;
         }
