@@ -23,6 +23,15 @@ public class TreeTypeRegistry {
         reload();
     }
 
+    public static void checkMissingShapes() {
+        for(BaseTreeType type : getAllTypes()) {
+            int shapes = TreeShapeRegistry.getShapeCountForType(type);
+            if(shapes == 0) {
+                Logz.warn("Tree type '%s' has no shapes configured", type.typeName);
+            }
+        }
+    }
+
     public static Collection<BaseTreeType> getAllTypes() {
         return treeTypes.values();
     }

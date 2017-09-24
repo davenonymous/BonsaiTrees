@@ -41,14 +41,15 @@ public class BonsaiTrees {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        TreeTypeRegistry.init();
-        TreeShapeRegistry.init();
-
         proxy.init(event);
     }
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        TreeTypeRegistry.init();
+        TreeShapeRegistry.init();
+        TreeTypeRegistry.checkMissingShapes();
+
         proxy.postInit(event);
     }
 
