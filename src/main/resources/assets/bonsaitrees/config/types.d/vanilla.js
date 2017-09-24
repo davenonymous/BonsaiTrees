@@ -15,7 +15,6 @@ var main = function() {
         var vanillaType = new TreeTypeSimple("minecraft:" + type, "minecraft:sapling", meta);
 
         vanillaType.addDrop("minecraft:stick", 0, stickAmount, stickChance);
-        vanillaType.addDrop("minecraft:planks", meta, plankAmount, plankChance);
         vanillaType.addDrop("minecraft:sapling", meta, saplingAmount, saplingChance);
 
         if(type == "oak") {
