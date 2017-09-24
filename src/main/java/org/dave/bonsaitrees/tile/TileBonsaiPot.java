@@ -1,19 +1,18 @@
 package org.dave.bonsaitrees.tile;
 
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.management.PlayerList;
 import org.dave.bonsaitrees.base.BaseTileTicking;
 import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.init.Triggerss;
-import org.dave.bonsaitrees.trees.*;
-import org.dave.bonsaitrees.utility.Logz;
+import org.dave.bonsaitrees.trees.TreeShape;
+import org.dave.bonsaitrees.trees.TreeShapeRegistry;
+import org.dave.bonsaitrees.trees.TreeTypeDrop;
+import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 
-import java.util.List;
 import java.util.Random;
 
 public class TileBonsaiPot extends BaseTileTicking {
@@ -23,7 +22,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     protected BaseTreeType treeType = null;
 
     public boolean hasSapling() {
-        return sapling != ItemStack.EMPTY && treeType != null && shapeFilename != null;
+        return sapling != ItemStack.EMPTY && treeType != null;
     }
 
     public boolean isHarvestable() {
@@ -177,7 +176,12 @@ public class TileBonsaiPot extends BaseTileTicking {
             shapeFilename = null;
         } else {
             treeType = TreeTypeRegistry.getTypeByStack(sapling);
-            shapeFilename = TreeShapeRegistry.getRandomShapeForStack(sapling).getFileName();
+            TreeShape shape = TreeShapeRegistry.getRandomShapeForStack(sapling);
+            if(shape != null) {
+                shapeFilename = shape.getFileName();
+            } else {
+                shapeFilename = null;
+            }
         }
 
         progress = 0;
