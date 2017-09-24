@@ -14,28 +14,19 @@ var main = function() {
     ];
 
     var blockedTrees = [
-        "forestry:giantSequoia",
-        "forestry:coastSequoia"
+        "for.trees.species.giantSequoia",
+        "for.trees.species.coastSequoia"
     ];
 
     TreeManager.treeRoot.getIndividualTemplates().forEach(function(tree) {
         var label = tree.getDisplayName();
         var id = tree.getGenome().getPrimary().getUnlocalizedName();
-        var modId = tree.getGenome().getPrimary().getModID();
 
-        if(modId == "forestry") {
-            id = id.replace('for.trees.species.', '');
-        } else if(modId == "extratrees") {
-            id = id.replace('extratrees.species.', '');
-            id = id.replace('.name', '');
-        }
-
-        var fullId = modId + ":" + id;
-        if(blockedTrees.indexOf(fullId) != -1) {
+        if(blockedTrees.indexOf(id) != -1) {
             return;
         }
 
-        var treeType = new TreeTypeForestry(fullId, saplingAmount, saplingChance);
+        var treeType = new TreeTypeForestry(tree, saplingAmount, saplingChance);
 
         var woodStack = tree.getGenome().getPrimary().getWoodProvider().getWoodStack();
         woodStack.setCount(logAmount);

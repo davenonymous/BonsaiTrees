@@ -36,79 +36,34 @@ public class CommandSaveShape extends CommandBaseExt {
 
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-        if(!(sender.getCommandSenderEntity() instanceof EntityPlayer)) {
+        if (!(sender.getCommandSenderEntity() instanceof EntityPlayer)) {
             return;
         }
 
-        EntityPlayer player = (EntityPlayer)sender.getCommandSenderEntity();
+        EntityPlayer player = (EntityPlayer) sender.getCommandSenderEntity();
 
-        if(args.length != 1) {
+        if (args.length != 1) {
             player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.usage"));
             return;
         }
 
         // Get the block set we are looking at
         RayTraceResult result = player.rayTrace(16.0d, 0.0f);
-        if(result.typeOfHit != RayTraceResult.Type.BLOCK) {
+        if (result.typeOfHit != RayTraceResult.Type.BLOCK) {
             player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.exception.not_looking_at_block"));
             return;
         }
 
         BlockPos targetPos = result.getBlockPos();
 
-        FloodFill floodFill = new FloodFill(player.getEntityWorld(), targetPos);
-        Map<BlockPos, IBlockState> connectedBlocks = floodFill.getConnectedBlocks();
-        if(connectedBlocks.size() == 0) {
+        TreeShape treeShape = new TreeShape(args[0]);
+        treeShape.setBlocksByFloodFill(player.getEntityWorld(), targetPos);
+        if (treeShape.getBlocks().size() == 0) {
             player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.exception.can_not_determine_shape"));
             return;
         }
 
-        TreeShape treeShape = new TreeShape(args[0]);
-        treeShape.setBlocks(connectedBlocks);
-
-        String json = SerializationHelper.GSON.toJson(treeShape);
-
-
-        String sane = args[0].replaceAll("[^a-zA-Z0-9\\._]+", "_").toLowerCase();
-        File dstFile = getNextFile(sane.replace(".json", ""));
-
-        Logz.info("Writing shape to file: %s", dstFile.getName());
-
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(dstFile));
-            writer.write(json);
-            writer.close();
-        } catch (IOException e) {
-            Logz.warn("Could not save shape!");
-            e.printStackTrace();
-        }
-
-        player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.wrote_shape_to_file", dstFile.getName()));
+        String filename = treeShape.saveToFile();
+        player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.wrote_shape_to_file", filename));
     }
-
-    private static final Pattern p = Pattern.compile("0*([0-9]+)\\.json$", Pattern.CASE_INSENSITIVE);
-    private static File getNextFile(String prefix) {
-        int highestNum = 0;
-        for(File file : ConfigurationHandler.treeShapesDir.listFiles()) {
-            String fileName = file.getName();
-            if (!fileName.endsWith(".json") || !fileName.toLowerCase().startsWith(prefix)) {
-                continue;
-            }
-
-            Matcher m = p.matcher(fileName);
-            if(!m.find()) {
-                continue;
-            }
-
-            int num = Integer.parseInt(m.group(1));
-            if(num > highestNum) {
-                highestNum = num;
-            }
-        }
-
-        int nextNum = highestNum+1;
-        String fileName = String.format("%s%03d.json", prefix, nextNum);
-        return new File(ConfigurationHandler.treeShapesDir, fileName);
-    }
-
 }

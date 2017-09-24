@@ -15,14 +15,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TreeTypeForestry extends BaseTreeType {
+    ITree treeType;
     ItemStack exampleStack;
     int saplingChance;
     int saplingAmount;
 
-    public TreeTypeForestry(String typeName, int saplingAmount, int saplingChance) {
-        super(typeName);
+    public TreeTypeForestry(ITree treeType, int saplingAmount, int saplingChance) {
+        super(getCleanIdForTree(treeType));
+        this.treeType = treeType;
         this.saplingAmount = saplingAmount;
         this.saplingChance = saplingChance;
+    }
+
+    public ITree getForestryTreeType() {
+        return treeType;
     }
 
     @Override
@@ -43,6 +49,18 @@ public class TreeTypeForestry extends BaseTreeType {
         return 1.0d;
     }
 
+    public static String getCleanIdForTree(ITree tree) {
+        String modId = tree.getGenome().getPrimary().getModID();
+        String treeId = tree.getGenome().getPrimary().getUnlocalizedName();
+        if(modId.equals("forestry")) {
+            treeId = treeId.replace("for.trees.species.", "");
+        } else if(modId.equals("extratrees")) {
+            treeId = treeId.replace("extratrees.species.", "");
+            treeId = treeId.replace(".name", "");
+        }
+        return tree.getGenome().getPrimary().getModID() + ":" + treeId;
+    }
+
     @Override
     public boolean worksWith(ItemStack stack) {
         if(!TreeManager.treeRoot.isMember(stack)) {
@@ -50,35 +68,14 @@ public class TreeTypeForestry extends BaseTreeType {
         }
 
         ITree forestryTree = TreeManager.treeRoot.getMember(stack);
-        String modId = forestryTree.getGenome().getPrimary().getModID();
-        String treeId = forestryTree.getGenome().getPrimary().getUnlocalizedName();
-        if(modId.equals("forestry")) {
-            treeId = treeId.replace("for.trees.species.", "");
-        } else if(modId.equals("extratrees")) {
-            treeId = treeId.replace("extratrees.species.", "");
-            treeId = treeId.replace(".name", "");
-        }
-        treeId = forestryTree.getGenome().getPrimary().getModID() + ":" + treeId;
-
-        return typeName.equals(treeId);
+        return typeName.equals(getCleanIdForTree(forestryTree));
     }
 
     @Override
     public ItemStack getExampleStack() {
         if(exampleStack == null || exampleStack.isEmpty()) {
             for(ITree forestryTree : TreeManager.treeRoot.getIndividualTemplates()) {
-                String modId = forestryTree.getGenome().getPrimary().getModID();
-
-                String treeId = forestryTree.getGenome().getPrimary().getUnlocalizedName();
-                if(modId.equals("forestry")) {
-                    treeId = treeId.replace("for.trees.species.", "");
-                } else if(modId.equals("extratrees")) {
-                    treeId = treeId.replace("extratrees.species.", "");
-                    treeId = treeId.replace(".name", "");
-                }
-                treeId = forestryTree.getGenome().getPrimary().getModID() + ":" + treeId;
-
-                if(treeId.equals(typeName)) {
+                if(typeName.equals(getCleanIdForTree(forestryTree))) {
                     exampleStack = forestryTree.getGenome().getSpeciesRoot().getMemberStack(forestryTree, EnumGermlingType.SAPLING);
                 }
             }

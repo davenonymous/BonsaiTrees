@@ -8,11 +8,14 @@ commands.bonsaitrees.denied=You do not have the permission to use this command.
 
 commands.bonsaitrees.saveTreeShape.description=Save the treeshape you are currently looking at as .json file
 commands.bonsaitrees.saveTreeShape.usage=/bonsaitrees saveTreeShape <tree-type-id>, e.g. "forestry:hillCherry"
-
 commands.bonsaitrees.saveTreeShape.exception.no_itemstack_in_mainhand=You'll need to hold an itemstack in your main hand!
 commands.bonsaitrees.saveTreeShape.exception.not_looking_at_block=You are not looking at a block!
 commands.bonsaitrees.saveTreeShape.exception.can_not_determine_shape=Can not determine shape, 0 blocks found. Maybe the block you are looking at is on the ignore list?
 commands.bonsaitrees.saveTreeShape.wrote_shape_to_file=Wrote shape to file: %s
+
+commands.bonsaitrees.generateMissingForestryShapes.description=Generate all missing forestry tree shapes by utilizing the area you are looking at. VERY DESTRUCTIVE ACTION!
+commands.bonsaitrees.generateMissingForestryShapes.usage=/bonsaitrees generateMissingForestryShapes yes
+commands.bonsaitrees.generateMissingForestryShapes.exception.confirm_with_yes=Confirm command with "yes" as first parameter! A 32x32x32 area around the block you are looking at will be erased!
 
 bonsaitrees.jei.category.growing=Bonsai Trees
 bonsaitrees.jei.category.growing.chance=Chance: %d%%

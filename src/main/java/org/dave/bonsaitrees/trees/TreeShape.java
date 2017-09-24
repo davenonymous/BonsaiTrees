@@ -2,11 +2,23 @@ package org.dave.bonsaitrees.trees;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.world.World;
 import org.dave.bonsaitrees.base.BaseTreeType;
+import org.dave.bonsaitrees.misc.ConfigurationHandler;
+import org.dave.bonsaitrees.misc.FloodFill;
+import org.dave.bonsaitrees.utility.Logz;
+import org.dave.bonsaitrees.utility.SerializationHelper;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TreeShape {
     private Map<BlockPos, IBlockState> blocks;
@@ -31,6 +43,59 @@ public class TreeShape {
 
     public String getFileName() {
         return fileName;
+    }
+
+    public String saveToFile() {
+        String json = SerializationHelper.GSON.toJson(this);
+
+        String sane = typeName.replaceAll("[^a-zA-Z0-9\\._]+", "_").toLowerCase();
+        File dstFile = getNextFile(sane.replace(".json", ""));
+
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(dstFile));
+            writer.write(json);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        return dstFile.getName();
+    }
+
+    private static final Pattern p = Pattern.compile("0*([0-9]+)\\.json$", Pattern.CASE_INSENSITIVE);
+    private static File getNextFile(String prefix) {
+        int highestNum = 0;
+        for(File file : ConfigurationHandler.treeShapesDir.listFiles()) {
+            String fileName = file.getName();
+            if (!fileName.endsWith(".json") || !fileName.toLowerCase().startsWith(prefix)) {
+                continue;
+            }
+
+            Matcher m = p.matcher(fileName);
+            if(!m.find()) {
+                continue;
+            }
+
+            int num = Integer.parseInt(m.group(1));
+            if(num > highestNum) {
+                highestNum = num;
+            }
+        }
+
+        int nextNum = highestNum+1;
+        String fileName = String.format("%s%03d.json", prefix, nextNum);
+        return new File(ConfigurationHandler.treeShapesDir, fileName);
+    }
+
+    public void setBlocksByFloodFill(World world, BlockPos pos) {
+        FloodFill floodFill = new FloodFill(world, pos);
+        Map<BlockPos, IBlockState> connectedBlocks = floodFill.getConnectedBlocks();
+        if(connectedBlocks.size() == 0) {
+            return;
+        }
+
+        this.setBlocks(connectedBlocks);
     }
 
     public void setBlocks(Map<BlockPos, IBlockState> blocks) {

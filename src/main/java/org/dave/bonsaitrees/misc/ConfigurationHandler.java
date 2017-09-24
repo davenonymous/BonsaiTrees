@@ -25,20 +25,20 @@ public class ConfigurationHandler {
         }
 
         treeTypesDir = new File(configDir, "types.d");
-        if (!treeTypesDir.exists()) {
-            treeTypesDir.mkdirs();
+        //if (!treeTypesDir.exists()) {
+            //treeTypesDir.mkdirs();
 
             int count = JarExtract.copy("assets/bonsaitrees/config/types.d", treeTypesDir);
             Logz.info("Extracted %d tree type configs", count);
-        }
+        //}
 
         treeShapesDir = new File(configDir, "shapes.d");
-        if (!treeShapesDir.exists()) {
-            treeShapesDir.mkdirs();
+        //if (!treeShapesDir.exists()) {
+            //treeShapesDir.mkdirs();
 
-            int count = JarExtract.copy("assets/bonsaitrees/config/shapes.d", treeShapesDir);
-            Logz.info("Extracted %d tree shape configs", count);
-        }
+            int count2 = JarExtract.copy("assets/bonsaitrees/config/shapes.d", treeShapesDir);
+            Logz.info("Extracted %d tree shape configs", count2);
+        //}
 
         configuration = new Configuration(new File(configDir, "settings.cfg"), null);
     }
