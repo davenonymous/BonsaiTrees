@@ -2,12 +2,10 @@ package org.dave.bonsaitrees.trees;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.FloodFill;
-import org.dave.bonsaitrees.utility.Logz;
 import org.dave.bonsaitrees.utility.SerializationHelper;
 
 import java.io.BufferedWriter;

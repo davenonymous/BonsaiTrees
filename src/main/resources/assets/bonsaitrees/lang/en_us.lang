@@ -1,5 +1,5 @@
-tile.bonsaitrees.bonsaipot.name=Bonsai Tree Pot
-
+tile.bonsaitrees.bonsaipot.name=Bonsai Pot
+tile.bonsaitrees.bonsaipot.hopping.name=Hopping Bonsai Pot
 
 commands.bonsaitrees.usage=/bonsaitrees [subcommand, leave empty for list of commands]
 
@@ -16,6 +16,8 @@ commands.bonsaitrees.saveTreeShape.wrote_shape_to_file=Wrote shape to file: %s
 commands.bonsaitrees.generateMissingForestryShapes.description=Generate all missing forestry tree shapes by utilizing the area you are looking at. VERY DESTRUCTIVE ACTION!
 commands.bonsaitrees.generateMissingForestryShapes.usage=/bonsaitrees generateMissingForestryShapes yes
 commands.bonsaitrees.generateMissingForestryShapes.exception.confirm_with_yes=Confirm command with "yes" as first parameter! A 32x32x32 area around the block you are looking at will be erased!
+
+tooltip.bonsaitrees.autoexport=Automatically exports drops to inventories below
 
 bonsaitrees.jei.category.growing=Bonsai Trees
 bonsaitrees.jei.category.growing.chance=Chance: %d%%

@@ -1,5 +1,6 @@
 package org.dave.bonsaitrees.base;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -14,6 +15,10 @@ import java.util.UUID;
 public class BaseTile extends TileEntity {
     protected String customName = "";
     protected UUID owner;
+
+    public boolean retainNbtData() {
+        return true;
+    }
 
     @Override
     public void readFromNBT(NBTTagCompound compound) {
@@ -85,9 +90,13 @@ public class BaseTile extends TileEntity {
         BaseTile tile = world.getTileEntity(pos) instanceof BaseTile ? (BaseTile) world.getTileEntity(pos) : null;
 
         if(tile != null) {
-            NBTTagCompound tileData = tile.writeToNBT(new NBTTagCompound());
-            ItemStack stack = new ItemStack(world.getBlockState(pos).getBlock(), 1, 0);
-            stack.setTagCompound(tileData);
+            IBlockState state = world.getBlockState(pos);
+            ItemStack stack = new ItemStack(state.getBlock(), 1, state.getBlock().getMetaFromState(state));
+
+            if(retainNbtData()) {
+                NBTTagCompound tileData = tile.writeToNBT(new NBTTagCompound());
+                stack.setTagCompound(tileData);
+            }
 
             EntityItem entityItem = new EntityItem(world, getPos().getX()+0.5f, getPos().getY(), getPos().getZ()+0.5f, stack);
             entityItem.lifespan = 600;

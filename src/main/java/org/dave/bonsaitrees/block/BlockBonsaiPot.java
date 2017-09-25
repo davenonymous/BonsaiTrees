@@ -3,8 +3,11 @@ package org.dave.bonsaitrees.block;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
@@ -13,8 +16,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -22,6 +27,7 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.dave.bonsaitrees.base.BaseBlockWithTile;
+import org.dave.bonsaitrees.base.IMetaBlockName;
 import org.dave.bonsaitrees.render.TESRBonsaiPot;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 import org.dave.bonsaitrees.trees.TreeTypeRegistry;
@@ -29,14 +35,18 @@ import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements IGrowable {
+public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements IGrowable, IMetaBlockName {
     private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0f, 0f, 0f, 1.0f, 0.22f, 1.0f);
+    public static final PropertyBool IS_HOPPING = PropertyBool.create("hopping");
 
     public BlockBonsaiPot(Material material) {
         super(material);
 
         this.setHardness(2.0F);
         this.setSoundType(SoundType.WOOD);
+        this.setCreativeTab(CreativeTabs.DECORATIONS);
+
+        this.setDefaultState(blockState.getBaseState().withProperty(IS_HOPPING, false));
     }
 
     @Override
@@ -48,6 +58,37 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
     @Override
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
         return BOUNDING_BOX;
+    }
+
+    @Override
+    public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
+        return new ItemStack(Item.getItemFromBlock(this), 1, this.getMetaFromState(state));
+    }
+
+    @Override
+    public String getSpecialName(ItemStack stack) {
+        return this.getStateFromMeta(stack.getItemDamage()).getValue(IS_HOPPING) ? "hopping" : "";
+    }
+
+    @Override
+    public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
+        items.add(new ItemStack(this, 1, 0));
+        items.add(new ItemStack(this, 1, 1));
+    }
+
+    @Override
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, IS_HOPPING);
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(IS_HOPPING) ? 1 : 0;
+    }
+
+    @Override
+    public IBlockState getStateFromMeta(int meta) {
+        return getDefaultState().withProperty(IS_HOPPING, meta == 1 ? true : false);
     }
 
     @Override
@@ -128,7 +169,8 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
 
     @SideOnly(Side.CLIENT)
     public void initModel() {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "inventory"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName(), "hopping=false"));
+        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 1, new ModelResourceLocation(getRegistryName(), "hopping=true"));
         ClientRegistry.bindTileEntitySpecialRenderer(TileBonsaiPot.class, new TESRBonsaiPot());
     }
 

@@ -5,6 +5,14 @@
   },
   "variants": {
     "normal": [{}],
-    "inventory": [{}]
+    "inventory": [{}],
+    "hopping": {
+      "true": {
+        "textures": {
+          "0": "bonsaitrees:blocks/bonsaipot_hopping"
+        }
+      },
+      "false": {}
+    }
   }
 }

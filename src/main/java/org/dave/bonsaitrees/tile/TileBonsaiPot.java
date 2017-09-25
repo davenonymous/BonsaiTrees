@@ -5,6 +5,11 @@ import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.management.PlayerList;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemHandlerHelper;
 import org.dave.bonsaitrees.base.BaseTileTicking;
 import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.init.Triggerss;
@@ -13,6 +18,8 @@ import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 import org.dave.bonsaitrees.trees.TreeTypeDrop;
 import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class TileBonsaiPot extends BaseTileTicking {
@@ -20,6 +27,11 @@ public class TileBonsaiPot extends BaseTileTicking {
     protected String shapeFilename = null;
     protected double progress = 0;
     protected BaseTreeType treeType = null;
+
+    @Override
+    public boolean retainNbtData() {
+        return false;
+    }
 
     public boolean hasSapling() {
         return sapling != ItemStack.EMPTY && treeType != null;
@@ -69,37 +81,43 @@ public class TileBonsaiPot extends BaseTileTicking {
         world.spawnEntity(entityItem);
     }
 
-    public int dropLoot() {
+    private List<ItemStack> getRandomizedDrops() {
         Random rand = new Random();
-        int totalDrops = 0;
+
+        List<ItemStack> result = new ArrayList<>();
         for(TreeTypeDrop drop : treeType.getDrops()) {
             int tries = drop.stack.getCount();
-            float chance = (float)drop.chance / 100.0f;
+            float chance = (float) drop.chance / 100.0f;
 
             int count = 0;
-            for(int tryNum = 0; tryNum < tries; tryNum++) {
-                if(rand.nextFloat() >= chance) {
+            for (int tryNum = 0; tryNum < tries; tryNum++) {
+                if (rand.nextFloat() >= chance) {
                     continue;
                 }
                 count++;
             }
 
-            if(count == 0) {
+            if (count == 0) {
                 continue;
             }
 
-            if(count > drop.stack.getMaxStackSize()) {
+            if (count > drop.stack.getMaxStackSize()) {
                 count = drop.stack.getMaxStackSize();
             }
 
             ItemStack dropCopy = drop.stack.copy();
             dropCopy.setCount(count);
-
-            spawnItem(dropCopy);
-            totalDrops += count;
+            result.add(dropCopy);
         }
 
-        return totalDrops;
+        return result;
+    }
+
+    public int dropLoot() {
+        List<ItemStack> drops = getRandomizedDrops();
+        drops.forEach(this::spawnItem);
+
+        return drops.size();
     }
 
     public String getBonsaiShapeName() {
@@ -156,11 +174,38 @@ public class TileBonsaiPot extends BaseTileTicking {
             progress = treeType.growTick(getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
         }
 
-        if(!world.isRemote && treeType != null && hasOwner() && progress >= treeType.getGrowTime()) {
-            PlayerList list = world.getMinecraftServer().getPlayerList();
-            EntityPlayerMP player = list.getPlayerByUUID(getOwner());
-            if(player != null) {
-                Triggerss.GROW_TREE.trigger(player);
+        if(!world.isRemote && treeType != null && progress >= treeType.getGrowTime()) {
+            if(hasOwner()) {
+                PlayerList list = world.getMinecraftServer().getPlayerList();
+                EntityPlayerMP player = list.getPlayerByUUID(getOwner());
+                if (player != null) {
+                    Triggerss.GROW_TREE.trigger(player);
+                }
+            }
+
+            if(getBlockMetadata() == 1 && getWorld().getTileEntity(getPos().down()) != null) {
+                TileEntity below = getWorld().getTileEntity(getPos().down());
+                if(below.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP)) {
+                    IItemHandler itemHandler = below.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP);
+                    List<ItemStack> drops = getRandomizedDrops();
+                    boolean canDrop = true;
+                    for(ItemStack drop : drops) {
+                        if(!ItemHandlerHelper.insertItemStacked(itemHandler, drop, true).isEmpty()) {
+                            canDrop = false;
+                            break;
+                        }
+                    }
+
+                    if(canDrop) {
+                        for(ItemStack drop : drops) {
+                            ItemHandlerHelper.insertItemStacked(itemHandler, drop, false);
+                        }
+
+                        progress = 0;
+                        this.markDirty();
+                        world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+                    }
+                }
             }
         }
     }
