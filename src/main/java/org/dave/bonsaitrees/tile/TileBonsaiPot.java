@@ -210,6 +210,10 @@ public class TileBonsaiPot extends BaseTileTicking {
         }
     }
 
+    public double getProgressPercent() {
+        return getProgress() / (double)getTreeType().getGrowTime();
+    }
+
     public double getProgress() {
         return progress;
     }

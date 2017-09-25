@@ -1,5 +1,8 @@
 package org.dave.bonsaitrees.block;
 
+import mcjty.theoneprobe.api.IProbeHitData;
+import mcjty.theoneprobe.api.IProbeInfo;
+import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -28,6 +31,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.dave.bonsaitrees.base.BaseBlockWithTile;
 import org.dave.bonsaitrees.base.IMetaBlockName;
+import org.dave.bonsaitrees.compat.ITopInfoProvider;
 import org.dave.bonsaitrees.render.TESRBonsaiPot;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 import org.dave.bonsaitrees.trees.TreeTypeRegistry;
@@ -35,7 +39,7 @@ import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements IGrowable, IMetaBlockName {
+public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements IGrowable, IMetaBlockName, ITopInfoProvider {
     private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0f, 0f, 0f, 1.0f, 0.22f, 1.0f);
     public static final PropertyBool IS_HOPPING = PropertyBool.create("hopping");
 
@@ -222,5 +226,19 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
 
         TileBonsaiPot pot = (TileBonsaiPot) world.getTileEntity(pos);
         pot.boostProgress();
+    }
+
+    @Override
+    public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, EntityPlayer player, World world, IBlockState blockState, IProbeHitData data) {
+        if(!(world.getTileEntity(data.getPos()) instanceof TileBonsaiPot)) {
+            return;
+        }
+
+        TileBonsaiPot teBonsai = (TileBonsaiPot) world.getTileEntity(data.getPos());
+        if(teBonsai.hasSapling()) {
+            probeInfo.horizontal().item(teBonsai.getSapling()).itemLabel(teBonsai.getSapling());
+            probeInfo.progress((int)(teBonsai.getProgressPercent()*100), 100, probeInfo.defaultProgressStyle().suffix("%").filledColor(0xff44AA44).alternateFilledColor(0xff44AA44).backgroundColor(0xff836953));
+
+        }
     }
 }

@@ -18,6 +18,7 @@ import org.dave.bonsaitrees.block.BlockBonsaiPot;
 import org.dave.bonsaitrees.init.Blockss;
 import org.dave.bonsaitrees.init.Triggerss;
 import org.dave.bonsaitrees.item.ItemBlockPonsaiPot;
+import org.dave.bonsaitrees.compat.CompatHandler;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 
 import java.lang.reflect.InvocationTargetException;
@@ -48,7 +49,7 @@ public class CommonProxy {
     }
 
     public void preInit(FMLPreInitializationEvent event) {
-        // CompatHandler.registerCompat();
+        CompatHandler.registerCompat();
     }
 
     public void init(FMLInitializationEvent event) {
