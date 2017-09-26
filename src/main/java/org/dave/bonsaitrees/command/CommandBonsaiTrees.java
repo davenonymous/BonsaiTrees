@@ -7,7 +7,6 @@ public class CommandBonsaiTrees extends CommandBaseMenu {
     @Override
     public void initEntries() {
         this.addSubcommand(new CommandSaveShape());
-        this.addSubcommand(new CommandReloadIntegration());
         this.addSubcommand(new CommandGenerateMissingShapes());
     }
 

@@ -4,9 +4,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
-import org.dave.bonsaitrees.trees.TreeShape;
-import org.dave.bonsaitrees.trees.TreeShapeRegistry;
-import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 import org.dave.bonsaitrees.utility.Logz;
 
 import javax.script.Invocable;
@@ -70,6 +67,7 @@ public class ShapeGenerator {
             }
 
             Logz.info("Generating shapes for tree: %s", type.typeName);
+
             clearArea(world, pos, 32);
             for(int i = 0; i < NUM_SHAPES; i++) {
                 TreeShape treeShape = generateShape(world, pos, type);

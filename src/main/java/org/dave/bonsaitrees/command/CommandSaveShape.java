@@ -1,27 +1,16 @@
 package org.dave.bonsaitrees.command;
 
-import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.text.TextComponentTranslation;
 import org.dave.bonsaitrees.base.CommandBaseExt;
-import org.dave.bonsaitrees.misc.ConfigurationHandler;
-import org.dave.bonsaitrees.misc.FloodFill;
 import org.dave.bonsaitrees.trees.TreeShape;
-import org.dave.bonsaitrees.utility.Logz;
-import org.dave.bonsaitrees.utility.SerializationHelper;
-
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class CommandSaveShape extends CommandBaseExt {
     @Override

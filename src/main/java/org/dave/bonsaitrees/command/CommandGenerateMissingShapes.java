@@ -25,7 +25,7 @@ public class CommandGenerateMissingShapes extends CommandBaseExt {
         EntityPlayer player = (EntityPlayer)sender.getCommandSenderEntity();
 
         if(args.length < 1 || !args[0].equals("yes")) {
-            player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.generateMissingForestryShapes.exception.confirm_with_yes"));
+            player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.generateMissingShapes.exception.confirm_with_yes"));
             return;
         }
 

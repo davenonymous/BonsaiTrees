@@ -13,9 +13,9 @@ commands.bonsaitrees.saveTreeShape.exception.not_looking_at_block=You are not lo
 commands.bonsaitrees.saveTreeShape.exception.can_not_determine_shape=Can not determine shape, 0 blocks found. Maybe the block you are looking at is on the ignore list?
 commands.bonsaitrees.saveTreeShape.wrote_shape_to_file=Wrote shape to file: %s
 
-commands.bonsaitrees.generateMissingForestryShapes.description=Generate all missing forestry tree shapes by utilizing the area you are looking at. VERY DESTRUCTIVE ACTION!
-commands.bonsaitrees.generateMissingForestryShapes.usage=/bonsaitrees generateMissingForestryShapes yes
-commands.bonsaitrees.generateMissingForestryShapes.exception.confirm_with_yes=Confirm command with "yes" as first parameter! A 32x32x32 area around the block you are looking at will be erased!
+commands.bonsaitrees.generateMissingShapes.description=Generate all missing tree shapes in the area you are looking at. VERY DESTRUCTIVE ACTION!
+commands.bonsaitrees.generateMissingShapes.usage=/bonsaitrees generateMissingShapes yes
+commands.bonsaitrees.generateMissingShapes.exception.confirm_with_yes=Confirm command with "yes" as first parameter! A 32x32x32 area around the block you are looking at will be erased!
 
 tooltip.bonsaitrees.autoexport=Automatically exports drops to inventories below
 
