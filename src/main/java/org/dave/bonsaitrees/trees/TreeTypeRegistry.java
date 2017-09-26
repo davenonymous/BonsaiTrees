@@ -60,6 +60,10 @@ public class TreeTypeRegistry {
     }
 
     public static void reload() {
+        reload(null);
+    }
+
+    public static void reload(String integrationFileName) {
         treeTypes = new HashMap<>();
 
         if(!ConfigurationHandler.treeTypesDir.exists()) {
@@ -69,6 +73,10 @@ public class TreeTypeRegistry {
 
         for(File file : ConfigurationHandler.treeTypesDir.listFiles()) {
             if(!file.getName().endsWith(".js") || file.getName().equals("defaults.js")) {
+                continue;
+            }
+
+            if(integrationFileName != null && !file.getName().equals(integrationFileName)) {
                 continue;
             }
 
@@ -82,7 +90,7 @@ public class TreeTypeRegistry {
                 boolean isEnabled = (boolean) invocable.invokeFunction("isEnabled");
 
                 if(isEnabled) {
-                    invocable.invokeFunction("main");
+                    invocable.invokeFunction("main", file.getName());
                 }
             } catch (ScriptException e) {
                 Logz.warn("Could not compile+eval script=%s: %s", file.getName(), e);

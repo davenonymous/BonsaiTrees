@@ -5,7 +5,7 @@ isEnabled = function() {
     return Loader.isModLoaded("forestry");
 }
 
-var main = function() {
+var main = function(source) {
     var TreeTypeForestry = Java.type("org.dave.bonsaitrees.trees.TreeTypeForestry");
     var TreeManager = Java.type("forestry.api.arboriculture.TreeManager");
 
@@ -27,6 +27,7 @@ var main = function() {
         }
 
         var treeType = new TreeTypeForestry(tree, saplingAmount, saplingChance);
+        treeType.setSource(source);
 
         var woodStack = tree.getGenome().getPrimary().getWoodProvider().getWoodStack();
         woodStack.setCount(logAmount);
@@ -49,5 +50,34 @@ var main = function() {
         });
 
         TreeTypeRegistry.registerTreeType(treeType);
+    });
+};
+
+var generateTree = function(type, world, pos, rand) {
+    var TreeManager = Java.type("forestry.api.arboriculture.TreeManager");
+
+    var tree = type.getForestryTreeType();
+    for (var x = 0; x < tree.getGirth(); x++) {
+        for (var z = 0; z < tree.getGirth(); z++) {
+            TreeManager.treeRoot.plantSapling(world, tree, null, pos.add(x, 0.0, z));
+        }
+    }
+
+    var treeGen = tree.getTreeGenerator(world, pos, true);
+    treeGen.generate(world, rand, pos);
+};
+
+var modifyTreeShape = function(type, blocks) {
+    var ItemBlock = Java.type("net.minecraft.item.ItemBlock");
+
+    var tree = type.getForestryTreeType();
+    blocks.entrySet().forEach(function(entry) {
+        if (entry.getValue().getBlock().getRegistryName().toString() == "forestry:leaves") {
+            var leafStack = tree.getGenome().getPrimary().getLeafProvider().getDecorativeLeaves();
+            var leafItem = leafStack.getItem();
+            if (leafItem instanceof ItemBlock) {
+                blocks.put(entry.getKey(), leafItem.getBlock().getStateFromMeta(leafStack.getMetadata()));
+            }
+        }
     });
 };

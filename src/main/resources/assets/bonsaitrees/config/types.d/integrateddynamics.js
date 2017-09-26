@@ -5,8 +5,9 @@ isEnabled = function() {
     return Loader.isModLoaded("integrateddynamics");
 }
 
-var main = function() {
+var main = function(source) {
     var menrilTree = new TreeTypeSimple("integrateddynamics:menril", "integrateddynamics:menril_sapling", 0);
+    menrilTree.setSource(source);
     menrilTree.addDrop("minecraft:stick", 0, stickAmount, stickChance);
     menrilTree.addDrop("integrateddynamics:menril_log", 0, logAmount, logChance);
     menrilTree.addDrop("integrateddynamics:menril_sapling", 0, saplingAmount, saplingChance);

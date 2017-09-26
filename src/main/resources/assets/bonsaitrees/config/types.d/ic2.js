@@ -5,8 +5,9 @@ isEnabled = function() {
     return Loader.isModLoaded("ic2");
 }
 
-var main = function() {
+var main = function(source) {
     var rubberTreeType = new TreeTypeSimple("ic2:rubber", "ic2:sapling", 0);
+    rubberTreeType.setSource(source);
     rubberTreeType.addDrop("minecraft:stick", 0, stickAmount, stickChance);
     rubberTreeType.addDrop("ic2:rubber_wood", 0, logAmount, logChance);
     rubberTreeType.addDrop("ic2:sapling", 0, saplingAmount, saplingChance);

@@ -18,9 +18,18 @@ public abstract class BaseTreeType {
     public List<TreeTypeDrop> drops = new ArrayList<>();
     public int growTime = 600;
     public final String typeName;
+    public String source = null;
 
     public BaseTreeType(String typeName) {
         this.typeName = typeName;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
     }
 
     public void setGrowTime(int growTime) {

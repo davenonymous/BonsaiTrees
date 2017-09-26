@@ -1,6 +1,6 @@
 load("config/bonsaitrees/types.d/defaults.js");
 
-var main = function() {
+var main = function(source) {
     var treeTypes = {
         'oak': 0,
         'spruce': 1,
@@ -13,6 +13,7 @@ var main = function() {
     Object.keys(treeTypes).forEach(function(type) {
         var meta = treeTypes[type];
         var vanillaType = new TreeTypeSimple("minecraft:" + type, "minecraft:sapling", meta);
+        vanillaType.setSource(source);
 
         vanillaType.addDrop("minecraft:stick", 0, stickAmount, stickChance);
         vanillaType.addDrop("minecraft:sapling", meta, saplingAmount, saplingChance);
