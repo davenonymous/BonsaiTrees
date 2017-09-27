@@ -29,6 +29,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.base.BaseBlockWithTile;
 import org.dave.bonsaitrees.base.IMetaBlockName;
 import org.dave.bonsaitrees.compat.ITopInfoProvider;
@@ -110,7 +111,7 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
             return false;
         }
 
-        if(TreeTypeRegistry.getTypeByStack(stack) != null) {
+        if(BonsaiTrees.instance.typeRegistry.getTypeByStack(stack) != null) {
             return true;
         }
 

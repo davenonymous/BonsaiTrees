@@ -2,75 +2,42 @@ package org.dave.bonsaitrees.trees;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.dave.bonsaitrees.base.BaseTreeType;
-import org.dave.bonsaitrees.misc.ConfigurationHandler;
+import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.api.IBonsaiIntegration;
+import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.utility.Logz;
 
-import javax.script.Invocable;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.Random;
 
 public class ShapeGenerator {
     public static final int NUM_SHAPES = 3;
 
+    private static TreeShape generateShape(World world, BlockPos pos, IBonsaiTreeType type, Random rand) {
+        TreeShape result = new TreeShape(type.getName());
+        IBonsaiIntegration integrator = BonsaiTrees.instance.typeRegistry.getIntegrationForType(type);
+        integrator.generateTree(type, world, pos, rand);
 
-    private static TreeShape generateShape(World world, BlockPos pos, BaseTreeType type) {
-        if(type.getSource() == null) {
-            return null;
-        }
+        result.setBlocksByFloodFill(world, pos);
 
-        Random rand = new Random();
-        TreeShape result = new TreeShape(type.typeName);
-
-        ScriptEngine engine = new ScriptEngineManager().getEngineByName("nashorn");
-
-        File file = new File(ConfigurationHandler.treeTypesDir, type.getSource());
-        try {
-            engine.eval(new FileReader(file));
-            Invocable invocable = (Invocable) engine;
-
-            if(engine.get("generateTree") == null) {
-                Logz.warn("Script '%s' is missing the tree generation function", file.getName());
-                return null;
-            }
-
-            boolean isEnabled = (boolean) invocable.invokeFunction("isEnabled");
-
-            if(isEnabled) {
-                invocable.invokeFunction("generateTree", type, world, pos, rand);
-                result.setBlocksByFloodFill(world, pos);
-                if(engine.get("modifyTreeShape") != null) {
-                    invocable.invokeFunction("modifyTreeShape", type, result.getBlocks());
-                }
-            }
-        } catch (ScriptException e) {
-            Logz.warn("Could not compile+eval script=%s: %s", file.getName(), e);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            Logz.warn("Script %s is missing generateTree method: %s", file.getName(), e);
-        }
+        integrator.modifyTreeShape(type, result.getBlocks());
 
         return result;
     }
 
     public static void generateMissingShapes(World world, BlockPos pos) {
-        for(BaseTreeType type : TreeTypeRegistry.getAllTypes()) {
+        Random rand = new Random();
+
+        for(IBonsaiTreeType type : BonsaiTrees.instance.typeRegistry.getAllTypes()) {
             int shapes = TreeShapeRegistry.getShapeCountForType(type);
             if (shapes > 0) {
                 continue;
             }
 
-            Logz.info("Generating shapes for tree: %s", type.typeName);
+            Logz.info("Generating shapes for tree: %s", type.getName());
 
             clearArea(world, pos, 32);
             for(int i = 0; i < NUM_SHAPES; i++) {
-                TreeShape treeShape = generateShape(world, pos, type);
+                TreeShape treeShape = generateShape(world, pos, type, rand);
                 clearArea(world, pos, 32);
 
                 if(treeShape == null) {

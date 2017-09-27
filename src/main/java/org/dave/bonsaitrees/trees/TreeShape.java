@@ -3,7 +3,8 @@ package org.dave.bonsaitrees.trees;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.dave.bonsaitrees.base.BaseTreeType;
+import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.FloodFill;
 import org.dave.bonsaitrees.utility.SerializationHelper;
@@ -33,8 +34,8 @@ public class TreeShape {
         this.blocks = new HashMap<>();
     }
 
-    public BaseTreeType getTreeType() {
-        return TreeTypeRegistry.getTypeByName(typeName);
+    public IBonsaiTreeType getTreeType() {
+        return BonsaiTrees.instance.typeRegistry.getTypeByName(typeName);
     }
 
     public void setFileName(String fileName) {

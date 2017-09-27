@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import org.dave.bonsaitrees.command.CommandBonsaiTrees;
+import org.dave.bonsaitrees.integration.IntegrationRegistry;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.RenderTickCounter;
 import org.dave.bonsaitrees.proxy.CommonProxy;
@@ -29,8 +30,12 @@ public class BonsaiTrees {
     @SidedProxy(clientSide = "org.dave.bonsaitrees.proxy.ClientProxy", serverSide = "org.dave.bonsaitrees.proxy.ServerProxy")
     public static CommonProxy proxy;
 
+    public TreeTypeRegistry typeRegistry;
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        IntegrationRegistry.loadBonsaiIntegrations(event.getAsmData());
+
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(ConfigurationHandler.class);
         MinecraftForge.EVENT_BUS.register(RenderTickCounter.class);
@@ -46,9 +51,11 @@ public class BonsaiTrees {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        TreeTypeRegistry.init();
+        typeRegistry = new TreeTypeRegistry();
+        IntegrationRegistry.registerBonsaiIntegrations();
+
         TreeShapeRegistry.init();
-        TreeTypeRegistry.checkMissingShapes();
+        typeRegistry.checkMissingShapes();
 
         proxy.postInit(event);
     }

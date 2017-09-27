@@ -19,7 +19,7 @@ public class TreeEvents {
                 return;
             }
 
-            if(pot.getProgress() >= pot.getTreeType().growTime) {
+            if(pot.getProgress() >= pot.getTreeType().getGrowTime()) {
                 pot.dropLoot();
             }
 

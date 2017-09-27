@@ -16,24 +16,24 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.ForgeHooksClient;
-import org.dave.bonsaitrees.base.BaseTreeType;
+import org.dave.bonsaitrees.api.IBonsaiTreeType;
+import org.dave.bonsaitrees.api.TreeTypeDrop;
 import org.dave.bonsaitrees.misc.RenderTickCounter;
 import org.dave.bonsaitrees.trees.TreeBlockAccess;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
-import org.dave.bonsaitrees.trees.TreeTypeDrop;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback<ItemStack> {
-    public final BaseTreeType type;
-    public int[] slotChances;
+    public final IBonsaiTreeType type;
+    public float[] slotChances;
     private IBlockAccess blockAccess;
     private TreeShape treeShape;
 
-    public BonsaiTreeRecipeWrapper(BaseTreeType type) {
+    public BonsaiTreeRecipeWrapper(IBonsaiTreeType type) {
         this.type = type;
     }
 
@@ -42,10 +42,10 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
         ingredients.setInput(ItemStack.class, type.getExampleStack());
 
         List<TreeTypeDrop> ttDrops = type.getDrops();
-        ttDrops.sort((a, b) -> b.chance - a.chance);
+        ttDrops.sort((a, b) -> (int)(b.chance*100) - (int)(a.chance*100));
 
         List<ItemStack> drops = new ArrayList<>();
-        slotChances = new int[ttDrops.size()];
+        slotChances = new float[ttDrops.size()];
         int slot = 0;
         for(TreeTypeDrop drop : ttDrops) {
             drops.add(drop.stack.copy());
@@ -178,7 +178,6 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
 
             ForgeHooksClient.setRenderLayer(renderLayer);
             try {
-                //Logz.info("Rendering: %s", state);
                 blockrendererdispatcher.renderBlock(state, pos, blockAccess, buffer);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -192,6 +191,6 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
             return;
         }
 
-        tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", slotChances[slotIndex-1]));
+        tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", (int)(slotChances[slotIndex-1]*100)));
     }
 }

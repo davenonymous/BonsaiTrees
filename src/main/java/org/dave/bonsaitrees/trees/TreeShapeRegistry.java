@@ -2,19 +2,19 @@ package org.dave.bonsaitrees.trees;
 
 import com.google.gson.stream.JsonReader;
 import net.minecraft.item.ItemStack;
-import org.dave.bonsaitrees.base.BaseTreeType;
+import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.utility.Logz;
+import org.dave.bonsaitrees.utility.ResourceLoader;
 import org.dave.bonsaitrees.utility.SerializationHelper;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.*;
 import java.util.*;
 
 public class TreeShapeRegistry {
     private static Map<String, TreeShape> treeShapesByFilename;
-    private static Map<BaseTreeType, List<TreeShape>> treeShapesByType;
+    private static Map<IBonsaiTreeType, List<TreeShape>> treeShapesByType;
     private static final Random rand = new Random();
 
     public static void init() {
@@ -30,7 +30,7 @@ public class TreeShapeRegistry {
             return null;
         }
 
-        BaseTreeType type = TreeTypeRegistry.getTypeByStack(stack);
+        IBonsaiTreeType type = BonsaiTrees.instance.typeRegistry.getTypeByStack(stack);
         if(type == null) {
             return null;
         }
@@ -38,7 +38,7 @@ public class TreeShapeRegistry {
         return getRandomShapeByType(type);
     }
 
-    public static int getShapeCountForType(BaseTreeType type) {
+    public static int getShapeCountForType(IBonsaiTreeType type) {
         if(!treeShapesByType.containsKey(type) || treeShapesByType.get(type) == null) {
             return 0;
         }
@@ -46,7 +46,7 @@ public class TreeShapeRegistry {
         return treeShapesByType.get(type).size();
     }
 
-    public static TreeShape getRandomShapeByType(BaseTreeType type) {
+    public static TreeShape getRandomShapeByType(IBonsaiTreeType type) {
         if(!treeShapesByType.containsKey(type)) {
             return null;
         }
@@ -59,29 +59,23 @@ public class TreeShapeRegistry {
         treeShapesByFilename = new HashMap<>();
         treeShapesByType = new HashMap<>();
 
-        if(!ConfigurationHandler.treeShapesDir.exists()) {
-            Logz.warn("Tree Shapes folder does not exist!");
-            return;
-        }
+        ResourceLoader loader = new ResourceLoader(ConfigurationHandler.treeShapesDir, "assets/bonsaitrees/config/shapes.d/");
+        for(Map.Entry<String, InputStream> entry : loader.getResources().entrySet()) {
+            String filename = entry.getKey();
+            InputStream is = entry.getValue();
 
-        for(File file : ConfigurationHandler.treeShapesDir.listFiles()) {
-            if (!file.getName().endsWith(".json")) {
+            if (!filename.endsWith(".json")) {
                 continue;
             }
 
-            TreeShape shape = null;
-            Logz.info(" > Loading tree shape from file: '%s'", file.getName());
-            try {
-                shape = SerializationHelper.GSON.fromJson(new JsonReader(new FileReader(file)), TreeShape.class);
-            } catch (FileNotFoundException e) {
-            }
-
+            Logz.debug(" > Loading tree shape from file: '%s'", filename);
+            TreeShape shape = SerializationHelper.GSON.fromJson(new JsonReader(new InputStreamReader(is)), TreeShape.class);
             if(shape == null) {
-                Logz.warn("Could not load shape from file: '%s'", file.getName());
+                Logz.warn("Could not load shape from file: '%s'", filename);
                 continue;
             }
 
-            String shortenedFilename = file.getName().substring(0, file.getName().length()-4);
+            String shortenedFilename = filename.substring(0, filename.length()-4);
             shape.setFileName(shortenedFilename);
 
             treeShapesByFilename.put(shortenedFilename, shape);

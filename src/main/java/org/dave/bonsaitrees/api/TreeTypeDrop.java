@@ -1,12 +1,12 @@
-package org.dave.bonsaitrees.trees;
+package org.dave.bonsaitrees.api;
 
 import net.minecraft.item.ItemStack;
 
 public class TreeTypeDrop {
     public ItemStack stack = ItemStack.EMPTY;
-    public int chance = 0;
+    public float chance = 0.0f;
 
-    public TreeTypeDrop(ItemStack stack, int chance) {
+    public TreeTypeDrop(ItemStack stack, float chance) {
         this.stack = stack;
         this.chance = chance;
     }

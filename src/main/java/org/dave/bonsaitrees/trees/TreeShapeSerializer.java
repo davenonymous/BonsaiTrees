@@ -102,7 +102,7 @@ public class TreeShapeSerializer implements JsonSerializer<TreeShape>, JsonDeser
     public JsonElement serialize(TreeShape src, Type typeOfSrc, JsonSerializationContext context) {
         JsonObject root = new JsonObject();
 
-        root.addProperty("type", src.getTreeType().typeName);
+        root.addProperty("type", src.getTreeType().getName());
 
         Map<String, String> refMap = new HashMap<>();
         JsonObject references = new JsonObject();

@@ -10,13 +10,13 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
+import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.api.IBonsaiTreeType;
+import org.dave.bonsaitrees.api.TreeTypeDrop;
 import org.dave.bonsaitrees.base.BaseTileTicking;
-import org.dave.bonsaitrees.base.BaseTreeType;
 import org.dave.bonsaitrees.init.Triggerss;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
-import org.dave.bonsaitrees.trees.TreeTypeDrop;
-import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +26,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     protected ItemStack sapling = ItemStack.EMPTY;
     protected String shapeFilename = null;
     protected double progress = 0;
-    protected BaseTreeType treeType = null;
+    protected IBonsaiTreeType treeType = null;
 
     @Override
     public boolean retainNbtData() {
@@ -87,11 +87,10 @@ public class TileBonsaiPot extends BaseTileTicking {
         List<ItemStack> result = new ArrayList<>();
         for(TreeTypeDrop drop : treeType.getDrops()) {
             int tries = drop.stack.getCount();
-            float chance = (float) drop.chance / 100.0f;
 
             int count = 0;
             for (int tryNum = 0; tryNum < tries; tryNum++) {
-                if (rand.nextFloat() >= chance) {
+                if (rand.nextFloat() >= drop.chance) {
                     continue;
                 }
                 count++;
@@ -128,7 +127,7 @@ public class TileBonsaiPot extends BaseTileTicking {
         return TreeShapeRegistry.getTreeShapeByFilename(shapeFilename);
     }
 
-    public BaseTreeType getTreeType() {
+    public IBonsaiTreeType getTreeType() {
         return treeType;
     }
 
@@ -143,7 +142,7 @@ public class TileBonsaiPot extends BaseTileTicking {
 
         if(compound.hasKey("sapling")) {
             sapling = new ItemStack(compound.getCompoundTag("sapling"));
-            treeType = TreeTypeRegistry.getTypeByStack(sapling);
+            treeType = BonsaiTrees.instance.typeRegistry.getTypeByStack(sapling);
         } else {
             sapling = ItemStack.EMPTY;
             treeType = null;
@@ -170,7 +169,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     public void update() {
         super.update();
 
-        if(!sapling.isEmpty()) {
+        if(!sapling.isEmpty() && treeType != null) {
             progress = treeType.growTick(getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
         }
 
@@ -224,7 +223,7 @@ public class TileBonsaiPot extends BaseTileTicking {
             treeType = null;
             shapeFilename = null;
         } else {
-            treeType = TreeTypeRegistry.getTypeByStack(sapling);
+            treeType = BonsaiTrees.instance.typeRegistry.getTypeByStack(sapling);
             TreeShape shape = TreeShapeRegistry.getRandomShapeForStack(sapling);
             if(shape != null) {
                 shapeFilename = shape.getFileName();
