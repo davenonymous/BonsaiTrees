@@ -42,7 +42,7 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
     public void getIngredients(IIngredients ingredients) {
         ingredients.setInput(ItemStack.class, type.getExampleStack());
 
-        List<TreeTypeDrop> ttDrops = type.getDrops();
+        List<TreeTypeDrop> ttDrops = type.drops;
         ttDrops.sort((a, b) -> (int)(b.chance*100) - (int)(a.chance*100));
 
         List<ItemStack> drops = new ArrayList<>();

@@ -86,7 +86,7 @@ public class TileBonsaiPot extends BaseTileTicking {
         Random rand = new Random();
 
         List<ItemStack> result = new ArrayList<>();
-        for(TreeTypeDrop drop : treeType.getDrops()) {
+        for(TreeTypeDrop drop : treeType.drops) {
             int tries = drop.stack.getCount();
 
             int count = 0;

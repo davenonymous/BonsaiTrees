@@ -25,10 +25,6 @@ public class TreeTypeForestry implements IBonsaiTreeType {
         this.treeType = treeType;
     }
 
-    public void addDrop(ItemStack stack, float chance) {
-        this.drops.add(new TreeTypeDrop(stack.copy(), chance));
-    }
-
     public ITree getForestryTreeType() {
         return treeType;
     }
@@ -48,11 +44,6 @@ public class TreeTypeForestry implements IBonsaiTreeType {
     @Override
     public String getName() {
         return name;
-    }
-
-    @Override
-    public List<TreeTypeDrop> getDrops() {
-        return drops;
     }
 
     @Override
