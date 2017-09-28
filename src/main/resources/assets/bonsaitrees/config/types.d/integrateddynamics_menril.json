@@ -1,0 +1,39 @@
+{
+    "name": "integrateddynamics:menril",
+    "sapling": {
+        "name": "integrateddynamics:menril_sapling",
+        "data": 0
+    },
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "integrateddynamics:menril_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "integrateddynamics:menril_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "integrateddynamics:menril_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "integrateddynamics:crystalized_menril_chunk",
+            "data": 0,
+            "type": "FRUIT"
+        },
+        {
+            "name": "integrateddynamics:menril_berries",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

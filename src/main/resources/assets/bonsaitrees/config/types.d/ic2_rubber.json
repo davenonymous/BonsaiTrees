@@ -1,0 +1,35 @@
+{
+    "name": "ic2:rubber",
+    "sapling": {
+        "name": "ic2:sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.5,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "ic2:rubber_wood",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "ic2:sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "ic2:leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "ic2:misc_resource",
+            "data": 4,
+            "type": "FRUIT"
+        }
+    ]
+}
