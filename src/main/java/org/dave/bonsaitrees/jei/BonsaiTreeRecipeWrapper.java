@@ -18,6 +18,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.ForgeHooksClient;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.TreeTypeDrop;
+import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.RenderTickCounter;
 import org.dave.bonsaitrees.trees.TreeBlockAccess;
 import org.dave.bonsaitrees.trees.TreeShape;
@@ -187,7 +188,7 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
     }
     @Override
     public void onTooltip(int slotIndex, boolean input, ItemStack ingredient, List<String> tooltip) {
-        if(input) {
+        if(!ConfigurationHandler.ClientSettings.showChanceInJEI || input) {
             return;
         }
 

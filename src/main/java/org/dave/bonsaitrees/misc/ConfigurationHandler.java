@@ -1,7 +1,11 @@
 package org.dave.bonsaitrees.misc;
 
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.api.BonsaiDropChances;
+import org.dave.bonsaitrees.utility.Logz;
 
 import java.io.File;
 
@@ -11,6 +15,11 @@ public class ConfigurationHandler {
     public static File configDir;
     public static File treeTypesDir;
     public static File treeShapesDir;
+
+    public static final String CATEGORY_DROPS = "drops";
+    public static final String CATEGORY_CLIENT = "client";
+    public static final String CATEGORY_INTEGRATION = "integration";
+    public static final String CATEGORY_GENERAL = "general";
 
     public static void init(File configFile) {
         if (configuration != null) {
@@ -32,6 +41,7 @@ public class ConfigurationHandler {
             treeShapesDir.mkdirs();
         }
 
+        // TODO: Add a command to extract the default shapes and json types
         /*
         int count = JarExtract.copy("assets/bonsaitrees/config/types.d", treeTypesDir);
         Logz.info("Extracted %d tree type configs", count);
@@ -41,5 +51,95 @@ public class ConfigurationHandler {
         */
 
         configuration = new Configuration(new File(configDir, "settings.cfg"), null);
+        loadConfiguration();
+    }
+
+    private static void loadConfiguration() {
+        Logz.info("Loading configuration");
+
+        BonsaiDropChances.stickChance = configuration.getFloat(
+                "stickChance", CATEGORY_DROPS, 0.2f, 0.0f, 1.0f, "Default chance for a stick to drop"
+        );
+
+        BonsaiDropChances.logChance = configuration.getFloat(
+                "logChance", CATEGORY_DROPS, 0.75f, 0.0f, 1.0f, "Default chance for a wood log to drop"
+        );
+
+        BonsaiDropChances.leafChance = configuration.getFloat(
+                "leafChance", CATEGORY_DROPS, 0.1f, 0.0f, 1.0f, "Default chance for a leaf to drop"
+        );
+
+        BonsaiDropChances.saplingChance = configuration.getFloat(
+                "saplingChance", CATEGORY_DROPS, 0.05f, 0.0f, 1.0f, "Default chance for a sapling to drop"
+        );
+
+        BonsaiDropChances.fruitChance = configuration.getFloat(
+                "fruitChance", CATEGORY_DROPS, 0.2f, 0.0f, 1.0f, "Default chance for a fruit to drop"
+        );
+
+
+        // TODO: Test what happens when drop amounts are set to 0 and then make it work ;)
+        BonsaiDropChances.stickAmount = configuration.getInt(
+                "stickAmount", CATEGORY_DROPS, 3, 0, 64, "How many sticks to drop by default"
+        );
+
+        BonsaiDropChances.logAmount = configuration.getInt(
+                "logAmount", CATEGORY_DROPS, 1, 0, 64, "How many wood logs to drop by default"
+        );
+
+        BonsaiDropChances.leafAmount = configuration.getInt(
+                "leafAmount", CATEGORY_DROPS, 1, 0, 64, "How many leaves to drop by default"
+        );
+
+        BonsaiDropChances.saplingAmount = configuration.getInt(
+                "saplingAmount", CATEGORY_DROPS, 1, 0, 64, "How many saplings to drop by default"
+        );
+
+        BonsaiDropChances.fruitAmount = configuration.getInt(
+                "fruitAmount", CATEGORY_DROPS, 2, 0, 64, "How many fruits to drop by default"
+        );
+
+
+        ClientSettings.maxTreeScale = configuration.getFloat(
+                "maxTreeScale", CATEGORY_CLIENT, 0.9f, 0.5f, 1.0f, "Maximum width/depth of a block to grow to"
+        );
+
+        ClientSettings.showChanceInJEI = configuration.getBoolean(
+                "showChanceInJEI", CATEGORY_CLIENT, true, "Whether to show the drop chances in JEI"
+        );
+
+        IntegrationSettings.disabledIntegrations = configuration.getStringList(
+                "disabledIntegrations", CATEGORY_INTEGRATION, new String[] {}, "Integrations to disable (by classname, e.g. org.dave.bonsaitrees.integration.mods.PamsHarvestcraft)"
+        );
+
+        GeneralSettings.disableHoppingBonsaiPot = configuration.getBoolean(
+                "disableHoppingBonsaiPot", CATEGORY_GENERAL, false, "Whether to disable the Hopping Bonsai Pot and make it behave like a normal Bonsai Pot"
+        );
+
+        if(configuration.hasChanged()) {
+            configuration.save();
+        }
+    }
+
+    @SubscribeEvent
+    public static void onConfigurationChanged(ConfigChangedEvent event) {
+        if(!event.getModID().equalsIgnoreCase(BonsaiTrees.MODID)) {
+            return;
+        }
+
+        loadConfiguration();
+    }
+
+    public static class ClientSettings {
+        public static float maxTreeScale = 0.9f;
+        public static boolean showChanceInJEI = true;
+    }
+
+    public static class IntegrationSettings {
+        public static String[] disabledIntegrations = new String[] {};
+    }
+
+    public static class GeneralSettings {
+        public static boolean disableHoppingBonsaiPot = false;
     }
 }

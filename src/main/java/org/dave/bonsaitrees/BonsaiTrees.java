@@ -34,9 +34,10 @@ public class BonsaiTrees {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+
         IntegrationRegistry.loadBonsaiIntegrations(event.getAsmData());
 
-        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         MinecraftForge.EVENT_BUS.register(ConfigurationHandler.class);
         MinecraftForge.EVENT_BUS.register(RenderTickCounter.class);
         MinecraftForge.EVENT_BUS.register(TreeEvents.class);

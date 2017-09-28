@@ -13,6 +13,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 import org.dave.bonsaitrees.trees.TreeBlockAccess;
 import org.dave.bonsaitrees.trees.TreeShape;
@@ -87,7 +88,8 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         GlStateManager.scale(scale, scale, scale);
 
         // Scale it down even further so we get leave a bit of room on all sides
-        GlStateManager.scale(0.9f, 0.9f, 0.9f);
+        float maxSize = ConfigurationHandler.ClientSettings.maxTreeScale;
+        GlStateManager.scale(maxSize, maxSize, maxSize);
 
         double progress = te.getProgress() / (double)te.getTreeType().getGrowTime();
         GlStateManager.scale(progress, progress, progress);

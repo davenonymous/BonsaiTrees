@@ -15,6 +15,7 @@ import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.TreeTypeDrop;
 import org.dave.bonsaitrees.base.BaseTileTicking;
 import org.dave.bonsaitrees.init.Triggerss;
+import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 
@@ -182,7 +183,7 @@ public class TileBonsaiPot extends BaseTileTicking {
                 }
             }
 
-            if(getBlockMetadata() == 1 && getWorld().getTileEntity(getPos().down()) != null) {
+            if(getBlockMetadata() == 1 && !ConfigurationHandler.GeneralSettings.disableHoppingBonsaiPot && getWorld().getTileEntity(getPos().down()) != null) {
                 TileEntity below = getWorld().getTileEntity(getPos().down());
                 if(below.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP)) {
                     IItemHandler itemHandler = below.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP);
