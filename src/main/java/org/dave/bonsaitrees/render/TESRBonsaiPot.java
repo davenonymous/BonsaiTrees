@@ -38,6 +38,10 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
             return;
         }
 
+        if(te.getTreeType() == null) {
+            return;
+        }
+
         List<BlockPos> toRender = treeShape.getToRenderPositions();
         if(toRender.isEmpty()) {
             return;

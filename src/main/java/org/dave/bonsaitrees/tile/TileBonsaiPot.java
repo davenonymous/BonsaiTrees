@@ -149,6 +149,11 @@ public class TileBonsaiPot extends BaseTileTicking {
             treeType = null;
         }
 
+        if(treeType == null || sapling.isEmpty()) {
+            sapling = ItemStack.EMPTY;
+            shapeFilename = null;
+        }
+
         progress = compound.getDouble("progress");
     }
 
