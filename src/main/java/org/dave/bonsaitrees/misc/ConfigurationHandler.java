@@ -112,6 +112,10 @@ public class ConfigurationHandler {
                 "disabledIntegrations", CATEGORY_INTEGRATION, new String[] {}, "Integrations to disable (by classname, e.g. org.dave.bonsaitrees.integration.mods.PamsHarvestcraft)"
         );
 
+        IntegrationSettings.disabledTreeTypes = configuration.getStringList(
+                "disabledTreeTypes", CATEGORY_INTEGRATION, new String[] {}, "Tree types to disable (e.g. forestry:hillCherry)"
+        );
+
         GeneralSettings.disableHoppingBonsaiPot = configuration.getBoolean(
                 "disableHoppingBonsaiPot", CATEGORY_GENERAL, false, "Whether to disable the Hopping Bonsai Pot and make it behave like a normal Bonsai Pot"
         );
@@ -137,6 +141,7 @@ public class ConfigurationHandler {
 
     public static class IntegrationSettings {
         public static String[] disabledIntegrations = new String[] {};
+        public static String[] disabledTreeTypes = new String[] {};
     }
 
     public static class GeneralSettings {

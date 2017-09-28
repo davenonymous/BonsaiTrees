@@ -4,11 +4,10 @@ import net.minecraft.item.ItemStack;
 import org.dave.bonsaitrees.api.IBonsaiIntegration;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.ITreeTypeRegistry;
+import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.utility.Logz;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class TreeTypeRegistry implements ITreeTypeRegistry {
     private Map<String, IBonsaiTreeType> treeTypes = new HashMap<>();
@@ -46,10 +45,14 @@ public class TreeTypeRegistry implements ITreeTypeRegistry {
 
     @Override
     public void registerTreeType(IBonsaiIntegration integrator, IBonsaiTreeType treeType) {
+        if(Arrays.asList(ConfigurationHandler.IntegrationSettings.disabledTreeTypes).contains(treeType.getName())) {
+            Logz.info("Tree type %s has been disabled via config. Skipping...", treeType.getName());
+            return;
+        }
+
         if(treeTypes.containsKey(treeType.getName())) {
-            Logz.warn("Overwriting tree type: %s", treeType.getName());
-        } else {
-            Logz.debug("Registering tree type: %s", treeType.getName());
+            Logz.info("Tree type %s has already been loaded before. Skipping...", treeType.getName());
+            return;
         }
 
         treeTypes.put(treeType.getName(), treeType);
