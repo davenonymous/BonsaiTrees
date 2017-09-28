@@ -41,7 +41,7 @@ import javax.annotation.Nullable;
 import java.util.Random;
 
 public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements IGrowable, IMetaBlockName, ITopInfoProvider {
-    private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0f, 0f, 0f, 1.0f, 0.22f, 1.0f);
+    private static final AxisAlignedBB BOUNDING_BOX = new AxisAlignedBB(0.065f, 0.005f, 0.065f, 0.935f, 0.185f, 0.935f);
     public static final PropertyBool IS_HOPPING = PropertyBool.create("hopping");
 
     public BlockBonsaiPot(Material material) {
