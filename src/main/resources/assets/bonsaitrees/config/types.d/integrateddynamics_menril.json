@@ -1,5 +1,6 @@
 {
     "name": "integrateddynamics:menril",
+    "mod": "integrateddynamics",
     "sapling": {
         "name": "integrateddynamics:menril_sapling",
         "data": 0

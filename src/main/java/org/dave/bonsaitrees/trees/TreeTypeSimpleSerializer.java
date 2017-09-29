@@ -1,6 +1,7 @@
 package org.dave.bonsaitrees.trees;
 
 import com.google.gson.*;
+import net.minecraftforge.fml.common.Loader;
 import org.dave.bonsaitrees.api.TreeTypeSimple;
 
 import java.lang.reflect.Type;
@@ -20,6 +21,13 @@ public class TreeTypeSimpleSerializer implements JsonDeserializer<TreeTypeSimple
             throw new JsonParseException("Missing 'name' in tree type definition");
         }
         String typeName = rootObj.get("name").getAsString();
+
+        if(rootObj.has("mod")) {
+            String requiredMod = rootObj.get("mod").getAsString();
+            if(requiredMod.length() > 0 && !Loader.isModLoaded(requiredMod)) {
+                throw new JsonParseException("Mod '"+requiredMod+"' for type '"+typeName+"' is not loaded. Skipping integration!");
+            }
+        }
 
         if(!rootObj.has("sapling") || !rootObj.get("sapling").isJsonObject()) {
             throw new JsonParseException("Missing 'sapling' object section in tree type definition");

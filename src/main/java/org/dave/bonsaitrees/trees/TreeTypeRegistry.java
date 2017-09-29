@@ -55,6 +55,11 @@ public class TreeTypeRegistry implements ITreeTypeRegistry {
             return;
         }
 
+        if(treeType.getExampleStack().isEmpty()) {
+            Logz.info("Tree type %s has no sapling stack. Skipping...", treeType.getName());
+            return;
+        }
+
         treeTypes.put(treeType.getName(), treeType);
         integrationMap.put(treeType, integrator);
     }
