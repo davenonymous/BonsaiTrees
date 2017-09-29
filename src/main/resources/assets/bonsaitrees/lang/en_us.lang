@@ -17,6 +17,10 @@ commands.bonsaitrees.generateMissingShapes.description=Generate all missing tree
 commands.bonsaitrees.generateMissingShapes.usage=/bonsaitrees generateMissingShapes yes
 commands.bonsaitrees.generateMissingShapes.exception.confirm_with_yes=Confirm command with "yes" as first parameter! A 32x32x32 area around the block you are looking at will be erased!
 
+commands.bonsaitrees.listTrees.description=List all currently registered tree types
+commands.bonsaitrees.listTrees.usage=/bonsaitrees listTrees
+commands.bonsaitrees.listTrees.result_title=Registered Trees:
+
 tooltip.bonsaitrees.autoexport=Automatically exports drops to inventories below
 
 bonsaitrees.jei.category.growing=Bonsai Trees
