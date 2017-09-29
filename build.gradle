@@ -54,8 +54,8 @@ repositories {
     }
 
     maven {
-        name = "CoFH Maven"
-        url = "http://maven.covers1624.net"
+        name "CraftTweaker2"
+        url "http://maven.blamejared.com/"
     }
 }
 
@@ -75,6 +75,9 @@ dependencies {
     deobfCompile("mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.18-10") {
         transitive = false
     }
+
+    deobfProvided "CraftTweaker2:CraftTweaker2-API:${config.crafttweaker.version}"
+    runtime "CraftTweaker2:CraftTweaker2-MC1120-Main:1.12-${config.crafttweaker.version}"
 }
 
 allprojects {

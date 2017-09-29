@@ -1,4 +1,4 @@
-package org.dave.bonsaitrees.compat;
+package org.dave.bonsaitrees.compat.TheOneProbe;
 
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;

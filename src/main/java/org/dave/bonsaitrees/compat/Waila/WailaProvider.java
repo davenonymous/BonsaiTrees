@@ -1,4 +1,4 @@
-package org.dave.bonsaitrees.compat;
+package org.dave.bonsaitrees.compat.Waila;
 
 import mcp.mobius.waila.api.IWailaConfigHandler;
 import mcp.mobius.waila.api.IWailaDataAccessor;

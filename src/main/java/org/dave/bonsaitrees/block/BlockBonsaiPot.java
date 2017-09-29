@@ -32,10 +32,9 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.base.BaseBlockWithTile;
 import org.dave.bonsaitrees.base.IMetaBlockName;
-import org.dave.bonsaitrees.compat.ITopInfoProvider;
+import org.dave.bonsaitrees.compat.TheOneProbe.ITopInfoProvider;
 import org.dave.bonsaitrees.render.TESRBonsaiPot;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
-import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 
 import javax.annotation.Nullable;
 import java.util.Random;

@@ -16,6 +16,7 @@ import org.dave.bonsaitrees.api.TreeTypeDrop;
 import org.dave.bonsaitrees.base.BaseTileTicking;
 import org.dave.bonsaitrees.init.Triggerss;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
+import org.dave.bonsaitrees.trees.TreeDropModificationsRegistry;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 
@@ -86,7 +87,8 @@ public class TileBonsaiPot extends BaseTileTicking {
         Random rand = new Random();
 
         List<ItemStack> result = new ArrayList<>();
-        for(TreeTypeDrop drop : treeType.getDrops()) {
+        List<TreeTypeDrop> drops = TreeDropModificationsRegistry.getModifiedDropList(treeType);
+        for(TreeTypeDrop drop : drops) {
             int tries = drop.stack.getCount();
 
             int count = 0;
