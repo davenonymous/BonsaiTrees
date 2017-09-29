@@ -18,6 +18,9 @@ import java.util.List;
 public class ItemBlockPonsaiPot extends ItemBlock {
     public ItemBlockPonsaiPot(Block block) {
         super(block);
+
+        this.setMaxDamage(0);
+        this.setHasSubtypes(true);
     }
 
     @Override
