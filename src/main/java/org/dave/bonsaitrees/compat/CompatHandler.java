@@ -23,7 +23,7 @@ public class CompatHandler {
     private static void registerWaila() {
         if (Loader.isModLoaded("waila")) {
             Logz.info("Trying to tell Waila about us");
-            FMLInterModComms.sendMessage("waila", "register", "org.dave.bonsaitrees.compat.WailaProvider.register");
+            FMLInterModComms.sendMessage("waila", "register", "org.dave.bonsaitrees.compat.Waila.WailaProvider.register");
         }
     }
 

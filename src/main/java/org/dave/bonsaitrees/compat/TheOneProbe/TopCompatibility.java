@@ -19,7 +19,7 @@ public class TopCompatibility {
         }
 
         registered = true;
-        FMLInterModComms.sendFunctionMessage("theoneprobe", "getTheOneProbe", "org.dave.bonsaitrees.compat.TopCompatibility$GetTheOneProbe");
+        FMLInterModComms.sendFunctionMessage("theoneprobe", "getTheOneProbe", "org.dave.bonsaitrees.compat.TheOneProbe.TopCompatibility$GetTheOneProbe");
     }
 
     public static class GetTheOneProbe implements Function<ITheOneProbe, Void> {
