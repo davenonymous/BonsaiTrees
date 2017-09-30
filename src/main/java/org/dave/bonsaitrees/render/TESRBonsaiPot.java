@@ -19,12 +19,15 @@ import org.dave.bonsaitrees.trees.TreeBlockAccess;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.lwjgl.opengl.GL11;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @SideOnly(Side.CLIENT)
 public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
     private IBlockAccess blockAccess;
     private TreeShape treeShape;
+    private static Map<TreeShape, Integer> glLists = new HashMap<>();
 
     @Override
     public void render(TileBonsaiPot te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
@@ -47,103 +50,123 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
             return;
         }
 
-        blockAccess = new TreeBlockAccess(treeShape, te.getWorld(), te.getPos());
-        BlockRendererDispatcher blockrendererdispatcher = Minecraft.getMinecraft().getBlockRendererDispatcher();
+        if(glLists.containsKey(treeShape)) {
+            GlStateManager.pushMatrix();
+            GlStateManager.pushAttrib();
 
-        GlStateManager.pushAttrib();
-        GlStateManager.pushMatrix();
+            GlStateManager.translate(x, y, z);
+            GlStateManager.disableRescaleNormal();
 
-        // Init GlStateManager
-        GlStateManager.enableAlpha();
-        GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+            float rotateOffsetX = (float)(treeShape.getWidth()+1) / 2.0f;
+            float rotateOffsetY = 0.0f;
+            float rotateOffsetZ = (float)(treeShape.getDepth()+1) / 2.0f;
 
-        GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
+            GlStateManager.translate(0.5f, 0.0f, 0.5f);
 
-        GlStateManager.disableFog();
-        GlStateManager.disableLighting();
-        RenderHelper.disableStandardItemLighting();
+            // Translate up a bit, so we actually grow out of the bonsai pot, not through it
+            GlStateManager.translate(0.0d, 0.10d, 0.0d);
 
-        GlStateManager.enableBlend();
-        GlStateManager.enableCull();
-        GlStateManager.enableAlpha();
+            // Scale the whole tree to a single block width/depth
+            double scale = treeShape.getScaleRatio(false);
+            GlStateManager.scale(scale, scale, scale);
 
-        if (Minecraft.isAmbientOcclusionEnabled()) {
-            GlStateManager.shadeModel(GL11.GL_SMOOTH);
+            // Scale it down even further so we get leave a bit of room on all sides
+            float maxSize = ConfigurationHandler.ClientSettings.maxTreeScale;
+            GlStateManager.scale(maxSize, maxSize, maxSize);
+
+            double progress = te.getProgress() / (double)te.getTreeType().getGrowTime();
+            GlStateManager.scale(progress, progress, progress);
+
+            GlStateManager.translate(-rotateOffsetX, -rotateOffsetY, -rotateOffsetZ);
+
+
+            // Init GlStateManager
+            GlStateManager.enableAlpha();
+            GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+            GlStateManager.enableBlend();
+            GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+            GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
+
+            GlStateManager.disableFog();
+            GlStateManager.disableLighting();
+            RenderHelper.disableStandardItemLighting();
+
+            GlStateManager.enableBlend();
+            GlStateManager.enableCull();
+            GlStateManager.enableAlpha();
+
+            if (Minecraft.isAmbientOcclusionEnabled()) {
+                GlStateManager.shadeModel(GL11.GL_SMOOTH);
+            } else {
+                GlStateManager.shadeModel(GL11.GL_FLAT);
+            }
+
+
+            TextureManager textureManager = Minecraft.getMinecraft().getTextureManager();
+            textureManager.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+            textureManager.getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).setBlurMipmap(false, false);
+
+            GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
+            GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
+
+
+            GlStateManager.callList(glLists.get(treeShape));
+
+            GlStateManager.disableBlend();
+            GlStateManager.resetColor();
+
+            GlStateManager.popAttrib();
+            GlStateManager.popMatrix();
         } else {
+            blockAccess = new TreeBlockAccess(treeShape, te.getWorld(), te.getPos());
+            BlockRendererDispatcher blockrendererdispatcher = Minecraft.getMinecraft().getBlockRendererDispatcher();
+
+            int listId = GLAllocation.generateDisplayLists(1);
+            glLists.put(treeShape, listId);
+
+            GlStateManager.glNewList(listId, GL11.GL_COMPILE);
+
+            GlStateManager.pushAttrib();
+            GlStateManager.pushMatrix();
+
+            Tessellator tessellator = Tessellator.getInstance();
+            BufferBuilder buffer = tessellator.getBuffer();
+
+            // Aaaand render
+            buffer.begin(GL11.GL_QUADS, DefaultVertexFormats.BLOCK);
+            GlStateManager.disableAlpha();
+            this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.SOLID, toRender);
+            GlStateManager.enableAlpha();
+            this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.CUTOUT_MIPPED, toRender);
+            this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.CUTOUT, toRender);
             GlStateManager.shadeModel(GL11.GL_FLAT);
+            this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.TRANSLUCENT, toRender);
+
+            tessellator.draw();
+
+            GlStateManager.popMatrix();
+            GlStateManager.popAttrib();
+
+            GlStateManager.glEndList();
         }
-
-        GlStateManager.translate(x, y, z);
-        GlStateManager.disableRescaleNormal();
-
-        float rotateOffsetX = (float)(treeShape.getWidth()+1) / 2.0f;
-        float rotateOffsetY = 0.0f;
-        float rotateOffsetZ = (float)(treeShape.getDepth()+1) / 2.0f;
-
-        GlStateManager.translate(0.5f, 0.0f, 0.5f);
-
-        // Translate up a bit, so we actually grow out of the bonsai pot, not through it
-        GlStateManager.translate(0.0d, 0.10d, 0.0d);
-
-        // Scale the whole tree to a single block width/depth
-        double scale = treeShape.getScaleRatio(false);
-        GlStateManager.scale(scale, scale, scale);
-
-        // Scale it down even further so we get leave a bit of room on all sides
-        float maxSize = ConfigurationHandler.ClientSettings.maxTreeScale;
-        GlStateManager.scale(maxSize, maxSize, maxSize);
-
-        double progress = te.getProgress() / (double)te.getTreeType().getGrowTime();
-        GlStateManager.scale(progress, progress, progress);
-
-
-        GlStateManager.translate(-rotateOffsetX, -rotateOffsetY, -rotateOffsetZ);
-
-        Tessellator tessellator = Tessellator.getInstance();
-        BufferBuilder buffer = tessellator.getBuffer();
-
-        TextureManager textureManager = Minecraft.getMinecraft().getTextureManager();
-        textureManager.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
-        textureManager.getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).setBlurMipmap(false, false);
-
-        GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
-        GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
-
-        // Aaaand render
-        buffer.begin(GL11.GL_QUADS, DefaultVertexFormats.BLOCK);
-        GlStateManager.disableAlpha();
-        this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.SOLID, toRender);
-        GlStateManager.enableAlpha();
-        this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.CUTOUT_MIPPED, toRender);
-        this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.CUTOUT, toRender);
-        GlStateManager.shadeModel(GL11.GL_FLAT);
-        this.renderLayer(blockrendererdispatcher, buffer, BlockRenderLayer.TRANSLUCENT, toRender);
-
-        tessellator.draw();
-
-        GlStateManager.disableBlend();
-
-        GlStateManager.popMatrix();
-        GlStateManager.popAttrib();
     }
 
     public void renderLayer(BlockRendererDispatcher blockrendererdispatcher, BufferBuilder buffer, BlockRenderLayer renderLayer, List<BlockPos> toRender) {
+        ForgeHooksClient.setRenderLayer(renderLayer);
         for (BlockPos pos : toRender) {
             IBlockState state = treeShape.getStateAtPos(pos);
             if (!state.getBlock().canRenderInLayer(state, renderLayer)) {
                 continue;
             }
 
-            ForgeHooksClient.setRenderLayer(renderLayer);
             try {
                 //Logz.info("Rendering: %s", state);
                 blockrendererdispatcher.renderBlock(state, pos, blockAccess, buffer);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            ForgeHooksClient.setRenderLayer(null);
         }
+        ForgeHooksClient.setRenderLayer(null);
     }
 }
