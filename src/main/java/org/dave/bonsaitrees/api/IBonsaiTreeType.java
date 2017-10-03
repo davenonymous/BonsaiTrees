@@ -42,6 +42,6 @@ public interface IBonsaiTreeType {
         int minutes = fullSeconds / 60;
         int seconds = fullSeconds % 60;
 
-        return minutes + ":" + seconds;
+        return String.format("%d:%02d", minutes, seconds);
     }
 }
