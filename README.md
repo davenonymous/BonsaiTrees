@@ -18,12 +18,15 @@ Waila and TheOneProbe will show what sapling is growing and its progress.
 
 ## Sapling compatibility
 
-### Integrated support @ 2017-09-29:
+### Integrated support @ 2017-10-03:
 - All Vanilla trees
 - All Forestry trees incl. mods utilizing the Forestry Tree system (i.e. ExtraTrees)
 - All Pam's Harvestcraft trees
-- IndustrialCraft 2 Rubber Trees
-- Integrated Dynamics Menril Trees
+
+And in no particular order:
+
+IndustrialCraft 2, Integrated Dynamics, Totemic, Rustic, PrimalCore, Traverse,
+Tinkers Construct, Natura, AbyssalCraft
 
 ### Generating Missing Shapes
 Newer versions of Forestry or Pams might add more trees that are invisible when planted
@@ -34,7 +37,7 @@ In case of these mods their tree types are dynamically added via Java, so they a
 missing the corresponding shape files. The server log notifies you about these.
 
 But it is relatively easy to auto-generate those shape files (and I appreciate pull requests
-for them so others can benefit of your work) in case the integration is Java based:
+for them so others can benefit of your work) in most cases:
 1. Create a new super-flat world, the following step will erase a 32x32 block area!
 2. Look somewhere on the ground and enter the command:
    `/bonsaitrees generateMissingShapes yes`
@@ -42,11 +45,11 @@ for them so others can benefit of your work) in case the integration is Java bas
    make sure to have them on both client and server.
 4. Restart the game and continue playing your normal world
 
-If the integration is not Java based, i.e. there is no way for Bonsai Trees to know how
-to actually grow a tree, you will need to create the shape JSON yourself. There is another
-command helping you with this: `/bonsaitrees saveTreeShape <tree-type-name>`. So your
-process in case you want to define some shapes for `mytreemod:redstone_tree` would be
-something like this:
+If there is no way for Bonsai Trees to know how to actually grow a tree, you will need
+to create the shape JSON yourself. There is another command helping you with this:
+ `/bonsaitrees saveTreeShape <tree-type-name>`.
+So your process in case you want to define some shapes for `mytreemod:redstone_tree`
+would be something like this:
 1. Grow a few of your trees or build a structure resembling your tree (maybe you want
    to grow bonsai redstone crystals?). Make sure all they are touching is dirt and air.
    This is really important or your shape will include whatever they were touching.
@@ -76,6 +79,9 @@ Fields:
   to determine the chance and amounts for this item to drop. You can also specify `CUSTOM`,
   but then you'd also have to specify a `count` property between 1 and 64 and a `chance`
   between 0.0 and 1.0.
+- `worldgen`: Allows specifying a class extending WorldGenerator to be used when generating
+  shapes. This can be used if the modded sapling does not extend BlockSapling or does not
+  properly override the generateTree method of it.
 
 Please consider creating a Pull Request for these, so other users can benefit from your
 work as well!
