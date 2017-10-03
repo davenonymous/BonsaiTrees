@@ -2,6 +2,8 @@ package org.dave.bonsaitrees.integration.mods;
 
 import com.google.gson.JsonParseException;
 import com.google.gson.stream.JsonReader;
+import net.minecraft.block.BlockSapling;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.dave.bonsaitrees.api.IBonsaiIntegration;
@@ -51,6 +53,9 @@ public class JSONIntegration implements IBonsaiIntegration {
         TreeTypeSimple simpleType = (TreeTypeSimple)type;
         if(simpleType.getWorldGen() != null) {
             simpleType.getWorldGen().generate(world, rand, pos);
+        } else if(simpleType.getExampleStack().getItem() instanceof ItemBlock && ((ItemBlock) simpleType.getExampleStack().getItem()).getBlock() instanceof BlockSapling) {
+            BlockSapling saplingBlock = (BlockSapling) ((ItemBlock) simpleType.getExampleStack().getItem()).getBlock();
+            saplingBlock.generateTree(world, pos, saplingBlock.getStateFromMeta(simpleType.getExampleStack().getMetadata()), rand);
         }
     }
 }
