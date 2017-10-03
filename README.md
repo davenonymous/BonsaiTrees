@@ -26,7 +26,7 @@ Waila and TheOneProbe will show what sapling is growing and its progress.
 And in no particular order:
 
 IndustrialCraft 2, Integrated Dynamics, Totemic, Rustic, PrimalCore, Traverse,
-Tinkers Construct, Natura, AbyssalCraft
+Tinkers Construct, Natura, AbyssalCraft, Twilight Forest
 
 ### Generating Missing Shapes
 Newer versions of Forestry or Pams might add more trees that are invisible when planted

@@ -1,0 +1,32 @@
+{
+  "name": "twilightforest:treeoftransformation",
+  "mod": "twilightforest",
+  "sapling": {
+    "name": "twilightforest:twilight_sapling",
+    "data": 6
+  },
+  "worldgen": "twilightforest.world.TFGenTreeOfTransformation",
+  "growTimeMultiplier": 5.0,
+  "drops": [
+    {
+      "name": "minecraft:stick",
+      "data": 0,
+      "type": "STICK"
+    },
+    {
+      "name": "twilightforest:magic_log",
+      "data": 1,
+      "type": "WOOD"
+    },
+    {
+      "name": "twilightforest:magic_leaves",
+      "data": 1,
+      "type": "LEAVES"
+    },
+    {
+      "name": "twilightforest:root",
+      "data": 0,
+      "type": "LEAVES"
+    }
+  ]
+}
