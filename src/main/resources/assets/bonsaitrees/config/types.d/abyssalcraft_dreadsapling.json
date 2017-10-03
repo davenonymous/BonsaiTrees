@@ -1,0 +1,32 @@
+{
+  "name": "abyssalcraft:dreadsapling",
+  "mod": "abyssalcraft",
+  "sapling": {
+    "name": "abyssalcraft:dreadsapling",
+    "data": 0
+  },
+  "worldgen": "com.shinoow.abyssalcraft.common.world.gen.WorldGenDrT",
+  "growTimeMultiplier": 1.0,
+  "drops": [
+    {
+      "name": "minecraft:stick",
+      "data": 0,
+      "type": "STICK"
+    },
+    {
+      "name": "abyssalcraft:dreadlog",
+      "data": 0,
+      "type": "WOOD"
+    },
+    {
+      "name": "abyssalcraft:dreadsapling",
+      "data": 0,
+      "type": "SAPLING"
+    },
+    {
+      "name": "abyssalcraft:dreadleaves",
+      "data": 0,
+      "type": "LEAVES"
+    }
+  ]
+}

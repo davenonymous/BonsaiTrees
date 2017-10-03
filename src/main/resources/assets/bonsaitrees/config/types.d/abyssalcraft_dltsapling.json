@@ -1,0 +1,32 @@
+{
+  "name": "abyssalcraft:dltsapling",
+  "mod": "abyssalcraft",
+  "sapling": {
+    "name": "abyssalcraft:dltsapling",
+    "data": 0
+  },
+  "worldgen": "com.shinoow.abyssalcraft.common.world.gen.WorldGenDLT",
+  "growTimeMultiplier": 1.0,
+  "drops": [
+    {
+      "name": "minecraft:stick",
+      "data": 0,
+      "type": "STICK"
+    },
+    {
+      "name": "abyssalcraft:dltlog",
+      "data": 0,
+      "type": "WOOD"
+    },
+    {
+      "name": "abyssalcraft:dltsapling",
+      "data": 0,
+      "type": "SAPLING"
+    },
+    {
+      "name": "abyssalcraft:dltleaves",
+      "data": 0,
+      "type": "LEAVES"
+    }
+  ]
+}

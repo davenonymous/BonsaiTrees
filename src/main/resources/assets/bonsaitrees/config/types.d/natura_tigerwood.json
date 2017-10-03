@@ -1,0 +1,31 @@
+{
+  "name": "natura:tigerwood",
+  "mod": "natura",
+  "sapling": {
+    "name": "natura:overworld_sapling",
+    "data": 3
+  },
+  "growTimeMultiplier": 1.0,
+  "drops": [
+    {
+      "name": "minecraft:stick",
+      "data": 0,
+      "type": "STICK"
+    },
+    {
+      "name": "natura:overworld_logs",
+      "data": 3,
+      "type": "WOOD"
+    },
+    {
+      "name": "natura:overworld_sapling",
+      "data": 3,
+      "type": "SAPLING"
+    },
+    {
+      "name": "natura:overworld_leaves",
+      "data": 3,
+      "type": "LEAVES"
+    }
+  ]
+}
