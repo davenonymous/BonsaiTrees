@@ -1,0 +1,31 @@
+{
+  "name": "tconstruct:magmaslime",
+  "mod": "tconstruct",
+  "sapling": {
+    "name": "tconstruct:slime_sapling",
+    "data": 2
+  },
+  "growTimeMultiplier": 2.0,
+  "drops": [
+    {
+      "name": "tconstruct:slime_congealed",
+      "data": 4,
+      "type": "WOOD"
+    },
+    {
+      "name": "tconstruct:slime_sapling",
+      "data": 2,
+      "type": "SAPLING"
+    },
+    {
+      "name": "tconstruct:slime_leaves",
+      "data": 2,
+      "type": "LEAVES"
+    },
+    {
+      "name": "tconstruct:edible",
+      "data": 4,
+      "type": "FRUIT"
+    }
+  ]
+}
