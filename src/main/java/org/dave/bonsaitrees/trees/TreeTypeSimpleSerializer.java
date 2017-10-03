@@ -1,9 +1,12 @@
 package org.dave.bonsaitrees.trees;
 
 import com.google.gson.*;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.Loader;
 import org.dave.bonsaitrees.api.TreeTypeSimple;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Type;
 
 import static org.dave.bonsaitrees.api.BonsaiDropChances.*;
@@ -81,6 +84,29 @@ public class TreeTypeSimpleSerializer implements JsonDeserializer<TreeTypeSimple
 
                     result.addDrop(dropName, dropAmount, dropMeta, dropChance);
                 }
+            }
+        }
+
+        if(rootObj.has("worldgen")) {
+            String worldGenClassName = rootObj.get("worldgen").getAsString();
+            try {
+                Class worldGenClass = Class.forName(worldGenClassName);
+                Class[] types = {Boolean.TYPE};
+                Constructor constructor = worldGenClass.getConstructor(types);
+
+                Object[] parameters = {true};
+                WorldGenerator worldGen = (WorldGenerator) constructor.newInstance(parameters);
+                result.setWorldGen(worldGen);
+            } catch (ClassNotFoundException e) {
+                throw new JsonParseException("WorldGenClass '" + worldGenClassName + "' does not exist!");
+            } catch (NoSuchMethodException e) {
+                throw new JsonParseException("WorldGenClass '" + worldGenClassName + "' has no constructor with one boolean parameter!");
+            } catch (IllegalAccessException e) {
+                throw new JsonParseException("Could not instantiate WorldGenClass '" + worldGenClassName + "': IllegalAccessException: " + e);
+            } catch (InstantiationException e) {
+                throw new JsonParseException("Could not instantiate WorldGenClass '" + worldGenClassName + "': InstantiationException: " + e);
+            } catch (InvocationTargetException e) {
+                throw new JsonParseException("Could not instantiate WorldGenClass '" + worldGenClassName + "': InvocationTargetException: " + e);
             }
         }
 

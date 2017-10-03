@@ -44,5 +44,13 @@ public class JSONIntegration implements IBonsaiIntegration {
 
     @Override
     public void generateTree(IBonsaiTreeType type, World world, BlockPos pos, Random rand) {
+        if(!(type instanceof TreeTypeSimple)) {
+            return;
+        }
+
+        TreeTypeSimple simpleType = (TreeTypeSimple)type;
+        if(simpleType.getWorldGen() != null) {
+            simpleType.getWorldGen().generate(world, rand, pos);
+        }
     }
 }

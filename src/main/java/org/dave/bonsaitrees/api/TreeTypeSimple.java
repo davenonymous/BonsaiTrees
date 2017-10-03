@@ -5,6 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.ArrayList;
@@ -15,6 +16,8 @@ public class TreeTypeSimple implements IBonsaiTreeType {
     private ItemStack sapling = ItemStack.EMPTY;
     private List<TreeTypeDrop> drops = new ArrayList<>();
     private int growTime = 600;
+    private WorldGenerator worldGen = null;
+
 
     public TreeTypeSimple(String name, ItemStack sapling) {
         this.name = name;
@@ -79,5 +82,13 @@ public class TreeTypeSimple implements IBonsaiTreeType {
     @Override
     public ItemStack getExampleStack() {
         return this.sapling.copy();
+    }
+
+    public WorldGenerator getWorldGen() {
+        return worldGen;
+    }
+
+    public void setWorldGen(WorldGenerator worldGen) {
+        this.worldGen = worldGen;
     }
 }
