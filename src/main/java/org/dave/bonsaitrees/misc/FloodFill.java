@@ -22,7 +22,8 @@ public class FloodFill {
             Blocks.GRAVEL,
             Blocks.SAND,
             Blocks.SANDSTONE,
-            Blocks.WATER
+            Blocks.WATER,
+            Blocks.BEDROCK
     });
     private int MAX_SEARCH_DEPTH = 2048;
     private int MAX_BLOCKS = 4196;
@@ -94,6 +95,10 @@ public class FloodFill {
         }
 
         if(state.getBlock().getRegistryName().toString().equals("tconstruct:slime_grass")) {
+            return;
+        }
+
+        if(state.getBlock().getRegistryName().toString().equals("twilightforest:root")) {
             return;
         }
 

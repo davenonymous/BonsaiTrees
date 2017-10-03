@@ -1,5 +1,6 @@
 package org.dave.bonsaitrees.trees;
 
+import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.dave.bonsaitrees.BonsaiTrees;
@@ -15,7 +16,14 @@ public class ShapeGenerator {
     private static TreeShape generateShape(World world, BlockPos pos, IBonsaiTreeType type, Random rand) {
         TreeShape result = new TreeShape(type.getName());
         IBonsaiIntegration integrator = BonsaiTrees.instance.typeRegistry.getIntegrationForType(type);
+        world.setBlockState(pos.down(), Blocks.GRASS.getDefaultState());
         integrator.generateTree(type, world, pos, rand);
+
+        int heightDiff = 0;
+        while(world.isAirBlock(pos) && heightDiff < 8) {
+            pos = pos.up();
+            heightDiff++;
+        }
 
         result.setBlocksByFloodFill(world, pos);
 
@@ -38,6 +46,7 @@ public class ShapeGenerator {
             clearArea(world, pos, 32);
             for(int i = 0; i < NUM_SHAPES; i++) {
                 TreeShape treeShape = generateShape(world, pos, type, rand);
+
                 clearArea(world, pos, 32);
 
                 if(treeShape == null) {
