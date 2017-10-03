@@ -1,0 +1,36 @@
+{
+    "name": "rustic:ironwood",
+    "mod": "rustic",
+    "sapling": {
+        "name": "rustic:sapling",
+        "data": 1
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "rustic:log",
+            "data": 1,
+            "type": "WOOD"
+        },
+        {
+            "name": "rustic:sapling",
+            "data": 1,
+            "type": "SAPLING"
+        },
+        {
+            "name": "rustic:leaves",
+            "data": 1,
+            "type": "LEAVES"
+        },
+        {
+            "name": "rustic:ironberries",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

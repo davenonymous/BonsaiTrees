@@ -1,0 +1,31 @@
+{
+    "name": "totemic:cedar",
+    "mod": "totemic",
+    "sapling": {
+        "name": "totemic:cedar_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "totemic:cedar_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "totemic:cedar_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "totemic:cedar_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}
