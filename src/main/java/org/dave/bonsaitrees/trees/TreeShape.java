@@ -137,11 +137,15 @@ public class TreeShape {
 
     public double getScaleRatio(boolean inclHeight) {
         int dim = Math.max(width, depth);
-        if(inclHeight) {
+        if(inclHeight || height > 10) {
             dim = Math.max(height, dim);
         }
 
         dim += 1;
+        if(height > 6 || dim <= 4) {
+            dim = Math.max(6, dim);
+        }
+
         return 1.0d / (double)dim;
     }
 }
