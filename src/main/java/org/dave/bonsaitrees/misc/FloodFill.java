@@ -93,6 +93,10 @@ public class FloodFill {
             return;
         }
 
+        if(state.getBlock().getRegistryName().toString().equals("tconstruct:slime_grass")) {
+            return;
+        }
+
         result.put(pos, state);
 
         // The 6 main directions
