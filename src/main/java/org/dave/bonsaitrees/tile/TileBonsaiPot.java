@@ -190,7 +190,12 @@ public class TileBonsaiPot extends BaseTileTicking {
                 }
             }
 
-            if(getBlockMetadata() == 1 && !ConfigurationHandler.GeneralSettings.disableHoppingBonsaiPot && getWorld().getTileEntity(getPos().down()) != null) {
+            boolean isHoppingPot = getBlockMetadata() == 1;
+            boolean hoppingIsEnabled = !ConfigurationHandler.GeneralSettings.disableHoppingBonsaiPot;
+            boolean hasTileEntityBelow = getWorld().getTileEntity(getPos().down()) != null;
+            boolean hasNoRedstoneSignal = !getWorld().isBlockPowered(getPos());
+
+            if(isHoppingPot && hoppingIsEnabled && hasTileEntityBelow && hasNoRedstoneSignal) {
                 TileEntity below = getWorld().getTileEntity(getPos().down());
                 if(below.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP)) {
                     IItemHandler itemHandler = below.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP);
