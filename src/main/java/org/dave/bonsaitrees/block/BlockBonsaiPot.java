@@ -153,7 +153,7 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
             return false;
         }
 
-        if(pot.getProgress() < pot.getTreeType().getGrowTime()) {
+        if(pot.getProgress() < BonsaiTrees.instance.typeRegistry.getGrowTime(pot.getTreeType())) {
             return true;
         }
 

@@ -16,14 +16,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.ForgeHooksClient;
+import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.TreeTypeDrop;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.RenderTickCounter;
-import org.dave.bonsaitrees.trees.TreeBlockAccess;
-import org.dave.bonsaitrees.trees.TreeDropModificationsRegistry;
-import org.dave.bonsaitrees.trees.TreeShape;
-import org.dave.bonsaitrees.trees.TreeShapeRegistry;
+import org.dave.bonsaitrees.trees.*;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -63,7 +61,8 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
         GlStateManager.pushMatrix();
         GlStateManager.translate(0F, 0F, 216.5F);
 
-        mc.fontRenderer.drawString(type.getGrowTimeHuman(), 20-mc.fontRenderer.getStringWidth(type.getGrowTimeHuman()), 21, 0x444444);
+        String growTimeHuman = BonsaiTrees.instance.typeRegistry.getGrowTimeHuman(type);
+        mc.fontRenderer.drawString(growTimeHuman, 20-mc.fontRenderer.getStringWidth(growTimeHuman), 21, 0x444444);
 
         GlStateManager.popMatrix();
 

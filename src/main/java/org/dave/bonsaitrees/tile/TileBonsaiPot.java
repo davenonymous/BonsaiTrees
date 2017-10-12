@@ -36,15 +36,15 @@ public class TileBonsaiPot extends BaseTileTicking {
     }
 
     public boolean hasSapling() {
-        return sapling != ItemStack.EMPTY && treeType != null;
+        return sapling != ItemStack.EMPTY && getTreeType() != null;
     }
 
     public boolean isHarvestable() {
-        return hasSapling() && progress >= treeType.getGrowTime();
+        return hasSapling() && progress >= BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType());
     }
 
     public boolean isGrowing() {
-        return hasSapling() && progress < treeType.getGrowTime();
+        return hasSapling() && progress < BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType());
     }
 
     public ItemStack getSapling() {
@@ -56,7 +56,7 @@ public class TileBonsaiPot extends BaseTileTicking {
             return;
         }
 
-        this.progress += treeType.getGrowTime() / 4;
+        this.progress += BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType()) / 4;
         this.markDirty();
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }
@@ -177,11 +177,11 @@ public class TileBonsaiPot extends BaseTileTicking {
     public void update() {
         super.update();
 
-        if(!sapling.isEmpty() && treeType != null) {
-            progress = treeType.growTick(getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
+        if(!sapling.isEmpty() && getTreeType() != null) {
+            progress = BonsaiTrees.instance.typeRegistry.growTick(getTreeType(), getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
         }
 
-        if(!world.isRemote && treeType != null && progress >= treeType.getGrowTime()) {
+        if(!world.isRemote && treeType != null && progress >= BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType())) {
             if(hasOwner()) {
                 PlayerList list = world.getMinecraftServer().getPlayerList();
                 EntityPlayerMP player = list.getPlayerByUUID(getOwner());
@@ -223,7 +223,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     }
 
     public double getProgressPercent() {
-        return getProgress() / (double)getTreeType().getGrowTime();
+        return getProgress() / (double)BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType());
     }
 
     public double getProgress() {

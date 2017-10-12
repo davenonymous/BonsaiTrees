@@ -2,6 +2,7 @@ package org.dave.bonsaitrees.trees;
 
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.init.Blockss;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 
@@ -19,7 +20,7 @@ public class TreeEvents {
                 return;
             }
 
-            if(pot.getProgress() >= pot.getTreeType().getGrowTime()) {
+            if(pot.getProgress() >= BonsaiTrees.instance.typeRegistry.getGrowTime(pot.getTreeType())) {
                 pot.dropLoot();
             }
 

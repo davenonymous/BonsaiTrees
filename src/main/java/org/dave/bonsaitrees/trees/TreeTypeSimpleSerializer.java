@@ -3,6 +3,7 @@ package org.dave.bonsaitrees.trees;
 import com.google.gson.*;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.Loader;
+import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.api.TreeTypeSimple;
 
 import java.lang.reflect.Constructor;
@@ -45,7 +46,7 @@ public class TreeTypeSimpleSerializer implements JsonDeserializer<TreeTypeSimple
         float growTimeMultiplier = rootObj.has("growTimeMultiplier") ? rootObj.get("growTimeMultiplier").getAsFloat() : 1.0f;
 
         TreeTypeSimple result = new TreeTypeSimple(typeName, saplingName, saplingMeta);
-        result.setGrowTimeMultiplier(growTimeMultiplier);
+        TreeGrowthModificationsRegistry.setMultiplier(typeName, growTimeMultiplier);
 
         if(rootObj.has("drops") && rootObj.get("drops").isJsonArray()) {
             for(JsonElement element : rootObj.get("drops").getAsJsonArray()) {

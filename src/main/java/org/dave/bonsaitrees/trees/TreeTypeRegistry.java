@@ -1,13 +1,19 @@
 package org.dave.bonsaitrees.trees;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.dave.bonsaitrees.api.IBonsaiIntegration;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.ITreeTypeRegistry;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.utility.Logz;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TreeTypeRegistry implements ITreeTypeRegistry {
     private Map<String, IBonsaiTreeType> treeTypes = new HashMap<>();
@@ -20,6 +26,36 @@ public class TreeTypeRegistry implements ITreeTypeRegistry {
                 Logz.warn("Tree type '%s' has no shapes configured", type.getName());
             }
         }
+    }
+
+    public double growTick(IBonsaiTreeType treeType, World world, BlockPos pos, IBlockState state, double progress) {
+        boolean hasAir = world.isAirBlock(pos.up());
+
+        float actualGrowTime = this.getGrowTime(treeType);
+
+        // Only grow if the space above it is AIR, otherwise reset to third of the progress
+        if(!hasAir && progress > actualGrowTime / 3) {
+            return actualGrowTime / 3;
+        }
+
+        if(progress < actualGrowTime && hasAir) {
+            return progress + treeType.getGrowthRate(world, pos, state, progress);
+        }
+
+        return progress;
+    }
+
+    public String getGrowTimeHuman(IBonsaiTreeType treeType) {
+        float actualGrowTime = this.getGrowTime(treeType);
+        int fullSeconds = (int)actualGrowTime / 20;
+        int minutes = fullSeconds / 60;
+        int seconds = fullSeconds % 60;
+
+        return String.format("%d:%02d", minutes, seconds);
+    }
+
+    public int getGrowTime(IBonsaiTreeType treeType) {
+        return TreeGrowthModificationsRegistry.getModifiedGrowTime(treeType);
     }
 
     public Collection<IBonsaiTreeType> getAllTypes() {
