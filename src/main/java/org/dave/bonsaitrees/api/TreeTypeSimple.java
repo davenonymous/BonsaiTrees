@@ -15,9 +15,8 @@ public class TreeTypeSimple implements IBonsaiTreeType {
     private String name;
     private ItemStack sapling = ItemStack.EMPTY;
     private List<TreeTypeDrop> drops = new ArrayList<>();
-    private int growTime = 600;
     private WorldGenerator worldGen = null;
-
+    private float growTimeMultiplier = 1.0f;
 
     public TreeTypeSimple(String name, ItemStack sapling) {
         this.name = name;
@@ -48,8 +47,8 @@ public class TreeTypeSimple implements IBonsaiTreeType {
         }
     }
 
-    public void setGrowTime(int growTime) {
-        this.growTime = growTime;
+    public void setGrowTimeMultiplier(float growTimeMultiplier) {
+        this.growTimeMultiplier = growTimeMultiplier;
     }
 
     @Override
@@ -58,8 +57,8 @@ public class TreeTypeSimple implements IBonsaiTreeType {
     }
 
     @Override
-    public int getGrowTime() {
-        return growTime;
+    public float getGrowTimeMultiplier() {
+        return this.growTimeMultiplier;
     }
 
     @Override

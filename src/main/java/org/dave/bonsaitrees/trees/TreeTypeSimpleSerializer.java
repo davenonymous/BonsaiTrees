@@ -45,7 +45,7 @@ public class TreeTypeSimpleSerializer implements JsonDeserializer<TreeTypeSimple
         float growTimeMultiplier = rootObj.has("growTimeMultiplier") ? rootObj.get("growTimeMultiplier").getAsFloat() : 1.0f;
 
         TreeTypeSimple result = new TreeTypeSimple(typeName, saplingName, saplingMeta);
-        result.setGrowTime((int)(result.getGrowTime() * growTimeMultiplier));
+        result.setGrowTimeMultiplier(growTimeMultiplier);
 
         if(rootObj.has("drops") && rootObj.get("drops").isJsonArray()) {
             for(JsonElement element : rootObj.get("drops").getAsJsonArray()) {

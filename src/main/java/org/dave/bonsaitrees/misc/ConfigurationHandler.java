@@ -120,6 +120,10 @@ public class ConfigurationHandler {
                 "disableHoppingBonsaiPot", CATEGORY_GENERAL, false, "Whether to disable the Hopping Bonsai Pot and make it behave like a normal Bonsai Pot"
         );
 
+        GeneralSettings.baseGrowTicks = configuration.getInt(
+                "baseGrowTicks", CATEGORY_GENERAL, 600, 1, Integer.MAX_VALUE, "How many ticks trees need to fully grow. Some tree types modify this value"
+        );
+
         if(configuration.hasChanged()) {
             configuration.save();
         }
@@ -146,5 +150,6 @@ public class ConfigurationHandler {
 
     public static class GeneralSettings {
         public static boolean disableHoppingBonsaiPot = false;
+        public static int baseGrowTicks = 600;
     }
 }
