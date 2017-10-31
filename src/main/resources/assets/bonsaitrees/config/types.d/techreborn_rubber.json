@@ -18,12 +18,12 @@
             "type": "WOOD"
         },
         {
-            "name": "techreborn_rubber_sapling",
+            "name": "techreborn:rubber_sapling",
             "data": 0,
             "type": "SAPLING"
         },
         {
-            "name": "techreborn_rubber_leaves",
+            "name": "techreborn:rubber_leaves",
             "data": 0,
             "type": "LEAVES"
         },
