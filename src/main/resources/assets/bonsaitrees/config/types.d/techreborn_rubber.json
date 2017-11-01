@@ -1,0 +1,36 @@
+{
+    "name": "techreborn:rubber",
+    "mod": "techreborn",
+    "sapling": {
+        "name": "techreborn:rubber_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.5,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "techreborn:rubber_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "techreborn:rubber_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "techreborn:rubber_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "techreborn:part",
+            "data": 31,
+            "type": "FRUIT"
+        }
+    ]
+}
