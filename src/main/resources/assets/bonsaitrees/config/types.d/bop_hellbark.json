@@ -1,0 +1,31 @@
+{
+    "name": "biomesoplenty:hellbark",
+    "mod": "biomesoplenty",
+    "sapling": {
+        "name": "biomesoplenty:sapling_1",
+        "data": 4
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "biomesoplenty:log_2",
+            "data": 7,
+            "type": "WOOD"
+        },
+        {
+            "name": "biomesoplenty:sapling_1",
+            "data": 4,
+            "type": "SAPLING"
+        },
+        {
+            "name": "biomesoplenty:leaves_3",
+            "data": 8,
+            "type": "LEAVES"
+        }
+    ]
+}

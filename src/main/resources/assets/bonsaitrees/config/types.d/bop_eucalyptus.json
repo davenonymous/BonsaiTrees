@@ -1,0 +1,31 @@
+{
+    "name": "biomesoplenty:eucalyptus",
+    "mod": "biomesoplenty",
+    "sapling": {
+        "name": "biomesoplenty:sapling_2",
+        "data": 7
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "biomesoplenty:log_3",
+            "data": 7,
+            "type": "WOOD"
+        },
+        {
+            "name": "biomesoplenty:sapling_2",
+            "data": 7,
+            "type": "SAPLING"
+        },
+        {
+            "name": "biomesoplenty:leaves_5",
+            "data": 11,
+            "type": "LEAVES"
+        }
+    ]
+}

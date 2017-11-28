@@ -1,0 +1,31 @@
+{
+    "name": "biomesoplenty:yellow_autumn",
+    "mod": "biomesoplenty",
+    "sapling": {
+        "name": "biomesoplenty:sapling_0",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "minecraft:log",
+            "data": 2,
+            "type": "WOOD"
+        },
+        {
+            "name": "biomesoplenty:sapling_0",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "biomesoplenty:leaves_0",
+            "data": 8,
+            "type": "LEAVES"
+        }
+    ]
+}
