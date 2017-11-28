@@ -1,0 +1,36 @@
+{
+    "name": "biomesoplenty:flowering_oak",
+    "mod": "biomesoplenty",
+    "sapling": {
+        "name": "biomesoplenty:sapling_1",
+        "data": 5
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "minecraft:log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "biomesoplenty:sapling_1",
+            "data": 5,
+            "type": "SAPLING"
+        },
+        {
+            "name": "biomesoplenty:leaves_3",
+            "data": 9,
+            "type": "LEAVES"
+        },
+        {
+            "name": "minecraft:leaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

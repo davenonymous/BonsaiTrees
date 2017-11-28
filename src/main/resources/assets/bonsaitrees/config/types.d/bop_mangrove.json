@@ -1,0 +1,31 @@
+{
+    "name": "biomesoplenty:mangrove",
+    "mod": "biomesoplenty",
+    "sapling": {
+        "name": "biomesoplenty:sapling_2",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "biomesoplenty:log_1",
+            "data": 6,
+            "type": "WOOD"
+        },
+        {
+            "name": "biomesoplenty:sapling_2",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "biomesoplenty:leaves_4",
+            "data": 8,
+            "type": "LEAVES"
+        }
+    ]
+}

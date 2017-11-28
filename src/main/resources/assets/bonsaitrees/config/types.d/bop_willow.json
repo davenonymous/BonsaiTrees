@@ -1,0 +1,31 @@
+{
+    "name": "biomesoplenty:willow",
+    "mod": "biomesoplenty",
+    "sapling": {
+        "name": "biomesoplenty:sapling_2",
+        "data": 3
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "biomesoplenty:log_2",
+            "data": 5,
+            "type": "WOOD"
+        },
+        {
+            "name": "biomesoplenty:sapling_2",
+            "data": 3,
+            "type": "SAPLING"
+        },
+        {
+            "name": "biomesoplenty:leaves_4",
+            "data": 11,
+            "type": "LEAVES"
+        }
+    ]
+}

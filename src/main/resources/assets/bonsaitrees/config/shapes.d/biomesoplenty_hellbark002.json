@@ -1,0 +1,55 @@
+{
+  "type": "biomesoplenty:hellbark",
+  "ref": {
+    "a": {
+      "name": "biomesoplenty:log_2",
+      "meta": 7
+    },
+    "b": {
+      "name": "biomesoplenty:leaves_3",
+      "meta": 8
+    }
+  },
+  "shape": [
+    {
+      "pos": {
+        "x": 1,
+        "y": 1,
+        "z": 0
+      },
+      "ref": "a"
+    },
+    {
+      "pos": {
+        "x": 1,
+        "y": 0,
+        "z": 0
+      },
+      "ref": "a"
+    },
+    {
+      "pos": {
+        "x": 2,
+        "y": 1,
+        "z": 0
+      },
+      "ref": "b"
+    },
+    {
+      "pos": {
+        "x": 1,
+        "y": 2,
+        "z": 0
+      },
+      "ref": "b"
+    },
+    {
+      "pos": {
+        "x": 0,
+        "y": 1,
+        "z": 0
+      },
+      "ref": "b"
+    }
+  ]
+}
