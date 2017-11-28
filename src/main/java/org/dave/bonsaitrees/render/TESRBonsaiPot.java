@@ -114,6 +114,9 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
 
             GlStateManager.callList(glLists.get(treeShape));
 
+            textureManager.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+            textureManager.getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
+
             GlStateManager.disableBlend();
             GlStateManager.resetColor();
 
