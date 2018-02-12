@@ -94,8 +94,6 @@ public class TileBonsaiPot extends BaseTileTicking {
     }
 
     private List<ItemStack> getRandomizedDrops() {
-        Random rand = new Random();
-
         List<ItemStack> result = new ArrayList<>();
         List<TreeTypeDrop> drops = TreeDropModificationsRegistry.getModifiedDropList(treeType);
         for(TreeTypeDrop drop : drops) {
@@ -103,7 +101,7 @@ public class TileBonsaiPot extends BaseTileTicking {
 
             int count = 0;
             for (int tryNum = 0; tryNum < tries; tryNum++) {
-                if (rand.nextFloat() >= drop.chance) {
+                if (world.rand.nextFloat() >= drop.chance) {
                     continue;
                 }
                 count++;
