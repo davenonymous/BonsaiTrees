@@ -260,7 +260,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     
 	@Override
 	public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-		boolean result = !ConfigurationHandler.IntegrationSettings.disableItemDuctSupport && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && facing == EnumFacing.DOWN;
+		boolean result = capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && facing == EnumFacing.DOWN;
 		return result;
 	}
 
