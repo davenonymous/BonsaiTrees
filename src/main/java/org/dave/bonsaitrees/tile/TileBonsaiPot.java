@@ -8,9 +8,12 @@ import net.minecraft.server.management.PlayerList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
+import net.minecraftforge.items.wrapper.EmptyHandler;
+
 import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.TreeTypeDrop;
@@ -30,6 +33,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     protected String shapeFilename = null;
     protected double progress = 0;
     protected IBonsaiTreeType treeType = null;
+    private final static EmptyHandler handler = new EmptyHandler();
 
     @Override
     public AxisAlignedBB getRenderBoundingBox() {
@@ -254,5 +258,17 @@ public class TileBonsaiPot extends BaseTileTicking {
         progress = 0;
         this.markDirty();
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+    }
+    
+	@Override
+	public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+		boolean result = !ConfigurationHandler.IntegrationSettings.disableItemDuctSupport && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && facing == EnumFacing.DOWN;
+		return result;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+    public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
+    	return (T)handler;
     }
 }
