@@ -123,6 +123,10 @@ public class ConfigurationHandler {
         GeneralSettings.baseGrowTicks = configuration.getInt(
                 "baseGrowTicks", CATEGORY_GENERAL, 600, 1, Integer.MAX_VALUE, "How many ticks trees need to fully grow. Some tree types modify this value"
         );
+        
+        IntegrationSettings.disableItemDuctSupport = configuration.getBoolean(
+                "disableItemDuctSupport", CATEGORY_INTEGRATION, false, "If True, then no ItemDucts (Thermal Dynamics) will be supported by the Hopping Bonsai Pot."
+        );
 
         if(configuration.hasChanged()) {
             configuration.save();
@@ -146,6 +150,7 @@ public class ConfigurationHandler {
     public static class IntegrationSettings {
         public static String[] disabledIntegrations = new String[] {};
         public static String[] disabledTreeTypes = new String[] {};
+        public static boolean disableItemDuctSupport = false;
     }
 
     public static class GeneralSettings {
