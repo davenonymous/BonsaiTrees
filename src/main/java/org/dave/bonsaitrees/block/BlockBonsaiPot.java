@@ -33,10 +33,13 @@ import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.base.BaseBlockWithTile;
 import org.dave.bonsaitrees.base.IMetaBlockName;
 import org.dave.bonsaitrees.compat.TheOneProbe.ITopInfoProvider;
+import org.dave.bonsaitrees.init.Blockss;
 import org.dave.bonsaitrees.render.TESRBonsaiPot;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 
 import javax.annotation.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements IGrowable, IMetaBlockName, ITopInfoProvider {
@@ -62,6 +65,43 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
     @Override
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
         return BOUNDING_BOX;
+    }
+
+    @Override
+    public void getDrops(NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+    }
+
+    @Override
+    public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
+        super.onBlockHarvested(world, pos, state, player);
+
+        if(world.isRemote) {
+            return;
+        }
+
+        if(player.isCreative()) {
+            return;
+        }
+
+        if (!(world.getTileEntity(pos) instanceof TileBonsaiPot)) {
+            return;
+        }
+
+        List<ItemStack> drops = new ArrayList<>();
+        TileBonsaiPot pot = (TileBonsaiPot) world.getTileEntity(pos);
+        if(pot.hasSapling()) {
+            if(pot.isHarvestable()) {
+                drops.addAll(pot.getRandomizedDrops());
+            }
+            drops.add(pot.getSapling());
+        }
+
+        ItemStack potStack = new ItemStack(Blockss.bonsaiPot, 1, getMetaFromState(state));
+        drops.add(potStack);
+
+        for(ItemStack drop: drops) {
+            spawnAsEntity(world, pos, drop);
+        }
     }
 
     @Override

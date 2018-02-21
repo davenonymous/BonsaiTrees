@@ -71,16 +71,6 @@ public class TileBonsaiPot extends BaseTileTicking {
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }
 
-    public void dropSapling() {
-        if(sapling == ItemStack.EMPTY) {
-            return;
-        }
-
-        spawnItem(sapling);
-
-        setSapling(ItemStack.EMPTY);
-    }
-
     private void spawnItem(ItemStack stack) {
         EntityItem entityItem = new EntityItem(world, getPos().getX()+0.5f, getPos().getY(), getPos().getZ()+0.5f, stack);
         entityItem.lifespan = 600;
@@ -93,7 +83,7 @@ public class TileBonsaiPot extends BaseTileTicking {
         world.spawnEntity(entityItem);
     }
 
-    private List<ItemStack> getRandomizedDrops() {
+    public List<ItemStack> getRandomizedDrops() {
         List<ItemStack> result = new ArrayList<>();
         List<TreeTypeDrop> drops = TreeDropModificationsRegistry.getModifiedDropList(treeType);
         for(TreeTypeDrop drop : drops) {
@@ -257,7 +247,7 @@ public class TileBonsaiPot extends BaseTileTicking {
         this.markDirty();
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }
-    
+
 	@Override
 	public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
 		boolean result = capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && facing == EnumFacing.DOWN;
