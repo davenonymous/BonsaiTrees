@@ -8,6 +8,7 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.base.IMetaBlockName;
 import org.dave.bonsaitrees.block.BlockBonsaiPot;
 import org.dave.bonsaitrees.init.Blockss;
@@ -43,8 +44,14 @@ public class ItemBlockPonsaiPot extends ItemBlock {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
 
-        if(GuiScreen.isShiftKeyDown() && Blockss.bonsaiPot.getStateFromMeta(stack.getMetadata()).getValue(BlockBonsaiPot.IS_HOPPING)) {
-            tooltip.add(TextFormatting.YELLOW + I18n.format("tooltip.bonsaitrees.autoexport"));
+        if(GuiScreen.isShiftKeyDown()) {
+            if(Blockss.bonsaiPot.getStateFromMeta(stack.getMetadata()).getValue(BlockBonsaiPot.IS_HOPPING)) {
+                tooltip.add(TextFormatting.YELLOW + I18n.format("tooltip.bonsaitrees.autoexport"));
+            } else {
+                tooltip.add(TextFormatting.YELLOW + I18n.format("tooltip.bonsaitrees.use_jei_for_compatible_sapling"));
+            }
+        } else {
+            tooltip.add(TextFormatting.GRAY + I18n.format("tooltip." + BonsaiTrees.MODID + ".hold_shift_hint"));
         }
     }
 }
