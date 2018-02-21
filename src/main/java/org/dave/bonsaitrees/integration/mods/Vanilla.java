@@ -41,6 +41,10 @@ public class Vanilla implements IBonsaiIntegration {
                 vanillaType.addDrop(new ItemStack(Items.APPLE, fruitAmount, 0), fruitChance);
             }
 
+            if(type.equals("jungle")) {
+                vanillaType.addDrop(new ItemStack(Items.DYE, fruitAmount, 3), fruitChance);
+            }
+
             registry.registerTreeType(this, vanillaType);
         }
     }
