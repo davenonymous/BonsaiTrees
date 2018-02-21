@@ -39,7 +39,7 @@ public class TopCompatibility {
             probe.registerProvider(new IProbeInfoProvider() {
                 @Override
                 public String getID() {
-                    return "compactmachines3:default";
+                    return "bonsaitrees:default";
                 }
 
                 @Override
