@@ -172,8 +172,12 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
             return false;
         }
 
-        // No items in hand -> no action here
-        ItemStack playerStack = player.getHeldItem(hand);
+        ItemStack playerStack = player.getHeldItem(EnumHand.MAIN_HAND);
+        if(playerStack.isEmpty()) {
+            playerStack = player.getHeldItem(EnumHand.OFF_HAND);
+        }
+
+        // No items in either of the hands -> no action here
         if(playerStack.isEmpty()) {
             return false;
         }
