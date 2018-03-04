@@ -53,6 +53,7 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         this.setHardness(2.0F);
         this.setSoundType(SoundType.WOOD);
         this.setCreativeTab(CreativeTabs.DECORATIONS);
+        this.setHarvestLevel("axe", 0);
 
         this.setDefaultState(blockState.getBaseState().withProperty(IS_HOPPING, false));
     }
