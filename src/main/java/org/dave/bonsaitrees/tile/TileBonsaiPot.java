@@ -13,7 +13,6 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.wrapper.EmptyHandler;
-
 import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.TreeTypeDrop;
@@ -26,7 +25,6 @@ import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class TileBonsaiPot extends BaseTileTicking {
     protected ItemStack sapling = ItemStack.EMPTY;
@@ -248,15 +246,18 @@ public class TileBonsaiPot extends BaseTileTicking {
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }
 
-	@Override
-	public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
-		boolean result = capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && facing == EnumFacing.DOWN;
-		return result;
-	}
+    @Override
+    public boolean hasCapability(Capability<?> capability, EnumFacing facing) {
+        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && facing == EnumFacing.DOWN;
+    }
 
-	@SuppressWarnings("unchecked")
-	@Override
+    @SuppressWarnings("unchecked")
+    @Override
     public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-    	return (T)handler;
+        if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && facing == EnumFacing.DOWN) {
+            return (T) handler;
+        }
+
+        return null;
     }
 }
