@@ -1,0 +1,33 @@
+{
+  "name": "thaumcraft:silverwood",
+  "mod": "thaumcraft",
+  "sapling": {
+    "name": "thaumcraft:sapling_silverwood",
+    "data": 0
+  },
+  "worldgen": "thaumcraft.common.world.objects.WorldGenSilverwoodTrees",
+  "worldgenParams": [false, 3, 4],
+  "growTimeMultiplier": 3.0,
+  "drops": [
+    {
+      "name": "minecraft:stick",
+      "data": 0,
+      "type": "STICK"
+    },
+    {
+      "name": "thaumcraft:log_silverwood",
+      "data": 0,
+      "type": "WOOD"
+    },
+    {
+      "name": "thaumcraft:sapling_silverwood",
+      "data": 0,
+      "type": "SAPLING"
+    },
+    {
+      "name": "thaumcraft:leaves_silverwood",
+      "data": 0,
+      "type": "LEAVES"
+    }
+  ]
+}

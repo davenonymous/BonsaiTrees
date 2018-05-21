@@ -1,0 +1,33 @@
+{
+  "name": "thaumcraft:greatwood",
+  "mod": "thaumcraft",
+  "sapling": {
+    "name": "thaumcraft:sapling_greatwood",
+    "data": 0
+  },
+  "worldgen": "thaumcraft.common.world.objects.WorldGenGreatwoodTrees",
+  "worldgenParams": [false, false],
+  "growTimeMultiplier": 2.0,
+  "drops": [
+    {
+      "name": "minecraft:stick",
+      "data": 0,
+      "type": "STICK"
+    },
+    {
+      "name": "thaumcraft:log_greatwood",
+      "data": 0,
+      "type": "WOOD"
+    },
+    {
+      "name": "thaumcraft:sapling_greatwood",
+      "data": 0,
+      "type": "SAPLING"
+    },
+    {
+      "name": "thaumcraft:leaves_greatwood",
+      "data": 0,
+      "type": "LEAVES"
+    }
+  ]
+}
