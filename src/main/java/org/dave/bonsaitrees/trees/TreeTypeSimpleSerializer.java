@@ -3,12 +3,12 @@ package org.dave.bonsaitrees.trees;
 import com.google.gson.*;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.Loader;
-import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.api.TreeTypeSimple;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 import static org.dave.bonsaitrees.api.BonsaiDropChances.*;
 
@@ -89,13 +89,36 @@ public class TreeTypeSimpleSerializer implements JsonDeserializer<TreeTypeSimple
         }
 
         if(rootObj.has("worldgen")) {
+            Class[] types = {Boolean.TYPE};
+            Object[] parameters = {true};
+
+            if(rootObj.has("worldgenParams")) {
+                JsonArray paramArray = rootObj.getAsJsonArray("worldgenParams");
+                ArrayList<Object> tmpTypeList = new ArrayList<>();
+                ArrayList<Object> tmpValueList = new ArrayList<>();
+                for(JsonElement element : paramArray) {
+                    JsonPrimitive primitive = element.getAsJsonPrimitive();
+                    if(primitive.isBoolean()) {
+                        tmpTypeList.add(Boolean.TYPE);
+                        tmpValueList.add(primitive.getAsBoolean());
+                    } else if(primitive.isNumber()) {
+                        tmpTypeList.add(Integer.TYPE);
+                        tmpValueList.add(primitive.getAsInt());
+                    } else if(primitive.isString()) {
+                        tmpTypeList.add(String.class);
+                        tmpValueList.add(primitive.getAsString());
+                    }
+                }
+
+                types = tmpTypeList.toArray(types);
+                parameters = tmpValueList.toArray(parameters);
+            }
+
             String worldGenClassName = rootObj.get("worldgen").getAsString();
             try {
                 Class worldGenClass = Class.forName(worldGenClassName);
-                Class[] types = {Boolean.TYPE};
                 Constructor constructor = worldGenClass.getConstructor(types);
 
-                Object[] parameters = {true};
                 WorldGenerator worldGen = (WorldGenerator) constructor.newInstance(parameters);
                 result.setWorldGen(worldGen);
             } catch (ClassNotFoundException e) {
