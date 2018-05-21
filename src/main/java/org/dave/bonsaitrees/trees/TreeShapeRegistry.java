@@ -75,6 +75,11 @@ public class TreeShapeRegistry {
                 continue;
             }
 
+            if(shape.getTreeType() == null) {
+                Logz.debug("Tree not registered. Skipping shape from file: %s", filename);
+                continue;
+            }
+
             String shortenedFilename = filename.substring(0, filename.length()-4);
             shape.setFileName(shortenedFilename);
 
