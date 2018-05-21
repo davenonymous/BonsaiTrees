@@ -1,6 +1,5 @@
 package org.dave.bonsaitrees;
 
-import net.minecraft.init.Blocks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -17,6 +16,7 @@ import org.dave.bonsaitrees.proxy.CommonProxy;
 import org.dave.bonsaitrees.trees.TreeEvents;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 import org.dave.bonsaitrees.trees.TreeTypeRegistry;
+import org.dave.bonsaitrees.utility.Logz;
 
 
 @Mod(modid = BonsaiTrees.MODID, version = BonsaiTrees.VERSION, acceptedMinecraftVersions = "[1.12,1.13)")
@@ -54,6 +54,7 @@ public class BonsaiTrees {
     public void postInit(FMLPostInitializationEvent event) {
         typeRegistry = new TreeTypeRegistry();
         IntegrationRegistry.registerBonsaiIntegrations();
+        Logz.info("Registered %d tree types", typeRegistry.getAllTypes().size());
 
         TreeShapeRegistry.init();
         typeRegistry.checkMissingShapes();

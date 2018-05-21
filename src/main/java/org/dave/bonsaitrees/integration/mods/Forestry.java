@@ -3,6 +3,7 @@ package org.dave.bonsaitrees.integration.mods;
 
 import forestry.api.arboriculture.ITree;
 import forestry.api.arboriculture.TreeManager;
+import forestry.api.core.ForestryAPI;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -16,6 +17,7 @@ import org.dave.bonsaitrees.api.IBonsaiIntegration;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.ITreeTypeRegistry;
 import org.dave.bonsaitrees.integration.TreeTypeForestry;
+import org.dave.bonsaitrees.utility.Logz;
 
 import java.util.Arrays;
 import java.util.List;
@@ -33,6 +35,11 @@ public class Forestry implements IBonsaiIntegration {
 
     @Override
     public void registerTrees(ITreeTypeRegistry registry) {
+        if(!ForestryAPI.moduleManager.isModuleEnabled("forestry", "arboriculture")) {
+            Logz.info("Arboriculture module is disabled. Not loading forestry trees!");
+            return;
+        }
+
         for(ITree tree : TreeManager.treeRoot.getIndividualTemplates()) {
             String id = tree.getGenome().getPrimary().getUnlocalizedName();
             if(blockedTrees.contains(id)) {
