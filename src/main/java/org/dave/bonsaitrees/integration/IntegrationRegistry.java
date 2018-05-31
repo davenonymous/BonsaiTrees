@@ -38,4 +38,8 @@ public class IntegrationRegistry {
             integration.registerTrees(BonsaiTrees.instance.typeRegistry);
         }
     }
+
+    public static List<IBonsaiIntegration> getIntegrations() {
+        return integrations;
+    }
 }

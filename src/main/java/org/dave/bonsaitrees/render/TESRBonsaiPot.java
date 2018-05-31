@@ -29,6 +29,11 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
     private IBlockAccess blockAccess;
     private TreeShape treeShape;
     private static Map<TreeShape, Integer> glLists = new HashMap<>();
+    private static boolean clearLists = false;
+
+    public static void clearGlLists() {
+        TESRBonsaiPot.clearLists = true;
+    }
 
     @Override
     public void render(TileBonsaiPot te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
@@ -49,6 +54,15 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         List<BlockPos> toRender = treeShape.getToRenderPositions();
         if(toRender.isEmpty()) {
             return;
+        }
+
+        if(clearLists) {
+            for(int listId : glLists.values()) {
+                GlStateManager.glDeleteLists(listId, 1);
+            }
+
+            glLists = new HashMap<>();
+            clearLists = false;
         }
 
         if(glLists.containsKey(treeShape)) {

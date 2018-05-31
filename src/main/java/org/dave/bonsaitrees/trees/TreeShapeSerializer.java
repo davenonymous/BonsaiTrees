@@ -12,7 +12,7 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TreeShapeSerializer implements JsonSerializer<TreeShape>, JsonDeserializer<TreeShape> {
+public class TreeShapeSerializer implements JsonDeserializer<TreeShape> {
     /**
      * Gson invokes this call-back method during deserialization when it encounters a field of the
      * specified type.
@@ -34,17 +34,26 @@ public class TreeShapeSerializer implements JsonSerializer<TreeShape>, JsonDeser
             return null;
         }
 
-        // First get the name of the tree type
-        if(!root.getAsJsonObject().has("type")) {
-            Logz.warn("Missing type name in shape config");
-            return null;
+        JsonObject rootObj = root.getAsJsonObject();
+
+        int version = rootObj.has("version") ? rootObj.get("version").getAsInt() : 1;
+        switch (version) {
+            case 1: {
+                return deserializeV1(rootObj, typeOfT, context);
+            }
+            case 2: {
+                return deserializeV2(rootObj, typeOfT, context);
+            }
+
+            default: {
+                Logz.warn("Invalid version in shape file: '%s', skipping shape! Maybe the shape file is from a newer mod version?", rootObj.get("version"));
+                return null;
+            }
         }
+    }
 
-        String treeType = root.getAsJsonObject().get("type").getAsString();
-
-        // Get the reference map
+    private Map<String, IBlockState> getReferenceMapV1(JsonObject jsonRefMap) {
         Map<String, IBlockState> refMap = new HashMap<>();
-        JsonObject jsonRefMap = root.getAsJsonObject().getAsJsonObject("ref");
         for(Map.Entry<String,JsonElement> jsonRefEntry : jsonRefMap.entrySet()) {
             JsonObject jsonBlockInfo = jsonRefEntry.getValue().getAsJsonObject();
             String blockName = jsonBlockInfo.get("name").getAsString();
@@ -59,9 +68,70 @@ public class TreeShapeSerializer implements JsonSerializer<TreeShape>, JsonDeser
             refMap.put(jsonRefEntry.getKey(), state);
         }
 
+        return refMap;
+    }
+
+    public TreeShape deserializeV2(JsonObject root, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+        // First get the name of the tree type
+        if(!root.has("type")) {
+            Logz.warn("Missing type name in shape config");
+            return null;
+        }
+
+        String treeType = root.get("type").getAsString();
+
+        // Get the reference map
+        Map<String, IBlockState> refMap = getReferenceMapV1(root.getAsJsonObject("ref"));
+
         // And use it to build the actual block map
         Map<BlockPos, IBlockState> blocks = new HashMap<>();
-        JsonArray jsonBlocks = root.getAsJsonObject().getAsJsonArray("shape");
+        JsonArray jsonBlocks = root.getAsJsonArray("shape");
+
+
+        int x = jsonBlocks.size()-1;
+        for(JsonElement zSliceElement : jsonBlocks) {
+            int y = zSliceElement.getAsJsonArray().size()-1;
+            for(JsonElement ySliceElement : zSliceElement.getAsJsonArray()) {
+                for(int z = 0; z < ySliceElement.getAsString().length(); z++) {
+                    String ref = ySliceElement.getAsString().charAt(z) + "";
+                    if(ref.equals(" ")) {
+                        continue;
+                    }
+
+                    if(!refMap.containsKey(ref)) {
+                        Logz.warn("Shape-Entry is using an unknown block reference '%s'! Skipping shape!", ref);
+                        return null;
+                    }
+
+                    blocks.put(new BlockPos(x, y, z), refMap.get(ref));
+                }
+
+                y--;
+            }
+
+            x--;
+        }
+
+        TreeShape result = new TreeShape(treeType);
+        result.setBlocks(blocks);
+        return result;
+    }
+
+    public TreeShape deserializeV1(JsonObject root, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+        // First get the name of the tree type
+        if(!root.has("type")) {
+            Logz.warn("Missing type name in shape config");
+            return null;
+        }
+
+        String treeType = root.get("type").getAsString();
+
+        // Get the reference map
+        Map<String, IBlockState> refMap = getReferenceMapV1(root.getAsJsonObject("ref"));
+
+        // And use it to build the actual block map
+        Map<BlockPos, IBlockState> blocks = new HashMap<>();
+        JsonArray jsonBlocks = root.getAsJsonArray("shape");
         for(JsonElement voxel : jsonBlocks) {
             /*
             {
@@ -98,53 +168,78 @@ public class TreeShapeSerializer implements JsonSerializer<TreeShape>, JsonDeser
         return result;
     }
 
-    @Override
-    public JsonElement serialize(TreeShape src, Type typeOfSrc, JsonSerializationContext context) {
-        JsonObject root = new JsonObject();
+    public static String serializePretty(TreeShape shape) {
+        if(shape.getWidth() == 0 || shape.getHeight() == 0 || shape.getDepth() == 0) {
+            Logz.warn("Can not serialize tree shape for type: '%s', invalid dimensions: w=%d, h=%d, d=%d", shape.getTreeTypeName(), shape.getWidth(), shape.getHeight(), shape.getDepth());
+            return null;
+        }
 
-        root.addProperty("type", src.getTreeType().getName());
+        int width = shape.getWidth()+1;
+        int height = shape.getHeight()+1;
+        int depth = shape.getDepth()+1;
 
-        Map<String, String> refMap = new HashMap<>();
-        JsonObject references = new JsonObject();
+        char[][][] map = new char[width][height][depth];
 
+        StringBuilder refMapBuilder = new StringBuilder();
+        refMapBuilder.append("  \"ref\": {\n");
         char nextRef = 'a';
-        JsonArray shapeJson = new JsonArray();
-        for(Map.Entry<BlockPos, IBlockState> blockInfo : src.getBlocks().entrySet()) {
-            BlockPos pos = blockInfo.getKey();
-            IBlockState state = blockInfo.getValue();
+        Map<String, Character> refMap = new HashMap<>();
+        for(Map.Entry<BlockPos, IBlockState> entry : shape.getBlocks().entrySet()) {
+            BlockPos pos = entry.getKey();
+            IBlockState state = entry.getValue();
 
-            JsonObject posJson = new JsonObject();
-            posJson.addProperty("x", pos.getX());
-            posJson.addProperty("y", pos.getY());
-            posJson.addProperty("z", pos.getZ());
-
-            JsonObject blockJson = new JsonObject();
-            blockJson.add("pos", posJson);
+            // Get new or already used reference char for this block
             String blockName = state.getBlock().getRegistryName().toString();
             int meta = state.getBlock().getMetaFromState(state);
             String fullName = blockName + ":" + meta;
 
-            String refName;
+            char thisRef;
             if(refMap.containsKey(fullName)) {
-                refName = refMap.get(fullName);
+                thisRef = refMap.get(fullName);
             } else {
-                refName = "" + nextRef++;
-                refMap.put(fullName, refName);
+                thisRef = nextRef++;
+                refMap.put(fullName, thisRef);
 
-                JsonObject blockRefJson = new JsonObject();
-                blockRefJson.addProperty("name", blockName);
-                blockRefJson.addProperty("meta", meta);
-
-                references.add(refName, blockRefJson);
+                refMapBuilder.append("    \""+thisRef+"\": {\n");
+                refMapBuilder.append("      \"name\": \""+ blockName +"\",\n");
+                refMapBuilder.append("      \"meta\": "+ meta +"\n");
+                refMapBuilder.append("    },\n");
             }
 
-            blockJson.addProperty("ref", refName);
-
-            shapeJson.add(blockJson);
+            map[pos.getX()][pos.getY()][pos.getZ()] = thisRef;
         }
-        root.add("ref", references);
-        root.add("shape", shapeJson);
+        refMapBuilder.deleteCharAt(refMapBuilder.length()-2);
+        refMapBuilder.append("  },\n");
 
-        return root;
+        StringBuilder output = new StringBuilder("{\n");
+
+        output.append("  \"type\": \"" + shape.getTreeTypeName() + "\",\n");
+        output.append("  \"version\": 2,\n");
+        output.append(refMapBuilder);
+
+        output.append("  \"shape\": [\n");
+
+        for(int x = map.length-1; x >= 0; x--) {
+            output.append("    [\n");
+            for(int y = map[x].length-1; y >= 0; y--) {
+                StringBuilder builder = new StringBuilder();
+                for(int z = 0; z < map[x][y].length; z++) {
+                    char chr = ' ';
+                    if(map[x][y][z] != '\u0000') {
+                        chr = map[x][y][z];
+                    }
+                    builder.append(chr);
+                }
+
+                output.append("      \"" + builder + "\",\n");
+            }
+            output.deleteCharAt(output.length()-2);
+            output.append("    ],\n");
+        }
+        output.deleteCharAt(output.length()-2);
+
+        output.append("  ]\n}\n");
+
+        return output.toString();
     }
 }

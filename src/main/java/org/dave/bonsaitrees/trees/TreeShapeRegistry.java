@@ -21,6 +21,10 @@ public class TreeShapeRegistry {
         reload();
     }
 
+    public static Collection<TreeShape> getTreeShapes() {
+        return treeShapesByFilename.values();
+    }
+
     public static TreeShape getTreeShapeByFilename(String name) {
         return treeShapesByFilename.get(name);
     }
@@ -75,7 +79,7 @@ public class TreeShapeRegistry {
                 continue;
             }
 
-            if(shape.getTreeType() == null) {
+            if(!ConfigurationHandler.IntegrationSettings.loadShapesOfUnloadedTrees && shape.getTreeType() == null) {
                 Logz.debug("Tree not registered. Skipping shape from file: %s", filename);
                 continue;
             }

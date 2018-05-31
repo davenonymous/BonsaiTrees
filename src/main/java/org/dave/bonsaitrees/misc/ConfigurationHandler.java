@@ -116,6 +116,10 @@ public class ConfigurationHandler {
                 "disabledTreeTypes", CATEGORY_INTEGRATION, new String[] {}, "Tree types to disable (e.g. forestry:hillCherry)"
         );
 
+        IntegrationSettings.loadShapesOfUnloadedTrees = configuration.getBoolean(
+                "loadShapesOfUnloadedTrees", CATEGORY_INTEGRATION, false, "Can be enabled for development purposes mostly."
+        );
+
         GeneralSettings.disableHoppingBonsaiPot = configuration.getBoolean(
                 "disableHoppingBonsaiPot", CATEGORY_GENERAL, false, "Whether to disable the Hopping Bonsai Pot and make it behave like a normal Bonsai Pot"
         );
@@ -123,7 +127,7 @@ public class ConfigurationHandler {
         GeneralSettings.baseGrowTicks = configuration.getInt(
                 "baseGrowTicks", CATEGORY_GENERAL, 600, 1, Integer.MAX_VALUE, "How many ticks trees need to fully grow. Some tree types modify this value"
         );
-        
+
         if(configuration.hasChanged()) {
             configuration.save();
         }
@@ -146,6 +150,7 @@ public class ConfigurationHandler {
     public static class IntegrationSettings {
         public static String[] disabledIntegrations = new String[] {};
         public static String[] disabledTreeTypes = new String[] {};
+        public static boolean loadShapesOfUnloadedTrees = false;
     }
 
     public static class GeneralSettings {

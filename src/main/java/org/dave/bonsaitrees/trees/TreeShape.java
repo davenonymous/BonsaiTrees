@@ -7,7 +7,7 @@ import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.FloodFill;
-import org.dave.bonsaitrees.utility.SerializationHelper;
+import org.dave.bonsaitrees.utility.Logz;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -34,6 +34,10 @@ public class TreeShape {
         this.blocks = new HashMap<>();
     }
 
+    public String getTreeTypeName() {
+        return typeName;
+    }
+
     public IBonsaiTreeType getTreeType() {
         return BonsaiTrees.instance.typeRegistry.getTypeByName(typeName);
     }
@@ -47,7 +51,10 @@ public class TreeShape {
     }
 
     public String saveToFile() {
-        String json = SerializationHelper.GSON.toJson(this);
+        String json = TreeShapeSerializer.serializePretty(this);
+        if(json == null) {
+            return null;
+        }
 
         String sane = typeName.replaceAll("[^a-zA-Z0-9\\._]+", "_").toLowerCase();
         File dstFile = getNextFile(sane.replace(".json", ""));

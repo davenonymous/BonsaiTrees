@@ -59,7 +59,10 @@ public class ShapeGenerator {
                 }
 
                 String filename = treeShape.saveToFile();
-                Logz.info("Created shape file: %s", filename);
+                if(filename != null) {
+                    Logz.info("Created shape file: %s", filename);
+                }
+
             }
         }
     }

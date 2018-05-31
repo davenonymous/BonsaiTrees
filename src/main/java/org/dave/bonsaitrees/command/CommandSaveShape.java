@@ -51,6 +51,11 @@ public class CommandSaveShape extends CommandBaseExt {
         }
 
         String filename = treeShape.saveToFile();
-        player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.wrote_shape_to_file", filename));
+        if(filename != null) {
+            player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.wrote_shape_to_file", filename));
+        } else {
+            player.sendMessage(new TextComponentTranslation("commands.bonsaitrees.saveTreeShape.error_while_saving_shape", filename));
+        }
+
     }
 }

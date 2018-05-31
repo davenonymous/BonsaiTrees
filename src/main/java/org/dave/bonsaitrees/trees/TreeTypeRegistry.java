@@ -19,6 +19,11 @@ public class TreeTypeRegistry implements ITreeTypeRegistry {
     private Map<String, IBonsaiTreeType> treeTypes = new HashMap<>();
     private Map<IBonsaiTreeType, IBonsaiIntegration> integrationMap = new HashMap<>();
 
+    public void clear() {
+        treeTypes = new HashMap<>();
+        integrationMap = new HashMap<>();
+    }
+
     public void checkMissingShapes() {
         for(IBonsaiTreeType type : getAllTypes()) {
             int shapes = TreeShapeRegistry.getShapeCountForType(type);
