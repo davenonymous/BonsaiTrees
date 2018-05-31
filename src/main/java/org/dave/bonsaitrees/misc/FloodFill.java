@@ -104,19 +104,16 @@ public class FloodFill {
 
         result.put(pos, state);
 
-        // The 6 main directions
-        for(EnumFacing direction : EnumFacing.values()) {
-            floodFill(world, pos.offset(direction), depth++);
-        }
+        for(int x = -1; x < 2; x++) {
+            for(int y = -1; y < 2; y++) {
+                for(int z = -1; z < 2; z++) {
+                    if(x == 0 && y == 0 && z == 0) {
+                        continue;
+                    }
 
-        // The 8 diagonals
-        floodFill(world, pos.add(1, 1, 1), depth+1);
-        floodFill(world, pos.add(-1, 1, -1), depth+1);
-        floodFill(world, pos.add(1, 1, -1), depth+1);
-        floodFill(world, pos.add(-1, 1, 1), depth+1);
-        floodFill(world, pos.add(1, -1, 1), depth+1);
-        floodFill(world, pos.add(-1, -1, -1), depth+1);
-        floodFill(world, pos.add(1, -1, -1), depth+1);
-        floodFill(world, pos.add(-1, -1, 1), depth+1);
+                    floodFill(world, pos.add(x, y, z), depth+1);
+                }
+            }
+        }
     }
 }
