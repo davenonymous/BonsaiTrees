@@ -1,5 +1,6 @@
 # BonsaiTrees :deciduous_tree: :palm_tree: :evergreen_tree:
 A Minecraft mod adding a block that grows small trees in two block spaces.
+You can grab the latest Travis build from [here](https://www.dropbox.com/sh/7yyd9dgii1epibu/AADARWLwgjOBu9wU-zZVHp-ra?dl=0).
 
 ## How to get started
 
@@ -26,7 +27,7 @@ Waila and TheOneProbe will show what sapling is growing and its progress.
 And in no particular order:
 
 IndustrialCraft 2, Integrated Dynamics, Totemic, Rustic, PrimalCore, Traverse,
-Tinkers Construct, Natura, AbyssalCraft, Twilight Forest
+Tinkers Construct, Natura, AbyssalCraft, Twilight Forest, Thaumcraft
 
 ### Generating Missing Shapes
 Newer versions of Forestry or Pams might add more trees that are invisible when planted
