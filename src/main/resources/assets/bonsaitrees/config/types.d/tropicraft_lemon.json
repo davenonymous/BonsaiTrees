@@ -1,0 +1,36 @@
+{
+    "name": "tropicraft:lemon",
+    "mod": "tropicraft",
+    "sapling": {
+        "name": "tropicraft:sapling",
+        "data": 3
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "minecraft:log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "tropicraft:sapling",
+            "data": 3,
+            "type": "SAPLING"
+        },
+        {
+            "name": "tropicraft:leaves",
+            "data": 3,
+            "type": "LEAVES"
+        },
+        {
+            "name": "tropicraft:lemon",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

@@ -1,0 +1,60 @@
+{
+  "type": "tropicraft:grapefruit",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "minecraft:log",
+      "meta": 0
+    },
+    "b": {
+      "name": "tropicraft:leaves_fruit",
+      "meta": 0
+    },
+    "c": {
+      "name": "tropicraft:leaves",
+      "meta": 3
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "cbcbb",
+      "bcccb",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      " cbc ",
+      "ccbbc",
+      "bcbcc",
+      "     ",
+      "     "
+    ],
+    [
+      " ccc ",
+      " cab ",
+      "bbabc",
+      "bcacc",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      " bcc ",
+      "bbbbb",
+      "bbbcc",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "cccb ",
+      " cccb",
+      "     ",
+      "     "
+    ]
+  ]
+}

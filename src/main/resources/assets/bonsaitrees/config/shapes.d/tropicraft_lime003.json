@@ -1,0 +1,60 @@
+{
+  "type": "tropicraft:lime",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "minecraft:log",
+      "meta": 0
+    },
+    "b": {
+      "name": "tropicraft:leaves",
+      "meta": 3
+    },
+    "c": {
+      "name": "tropicraft:leaves_fruit",
+      "meta": 2
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "cbbc ",
+      " bcbc",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      " bbc ",
+      "cbbbb",
+      "bccbb",
+      "     ",
+      "     "
+    ],
+    [
+      " cbb ",
+      " bab ",
+      "ccabc",
+      "bbacb",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  c  ",
+      "  cc ",
+      "ccbbc",
+      "bbbbb",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cccc",
+      " ccbc",
+      "     ",
+      "     "
+    ]
+  ]
+}
