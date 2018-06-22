@@ -1,0 +1,37 @@
+{
+    "name": "terraqueous:banana",
+    "mod": "terraqueous",
+    "sapling": {
+        "name": "terraqueous:banana_sapling",
+        "data": 0
+    },  
+    "growTimeMultipler: 1.0,
+    "drops": [
+        {
+            "name": "minecraft:"stick",
+            "data": 0
+            "tipe": "STICK"
+        },
+        {
+            "name": "terraqueous:banana_wood",
+            "data": 0
+            "type": "WOOD"
+        },
+        {
+            "name": "terraqueous:banana_sapling",
+            "data": 0
+            "type": "SAPLING"
+        },
+        {
+            "name": "terraqueous:banana_leaves",
+            "data": 0
+            "type": "LEAVES"
+        },
+        {
+            "name": "terraqueous:banana",
+            "data": 0
+            "type": "FRUIT"
+        }
+    ]
+}
+        
