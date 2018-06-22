@@ -8,7 +8,7 @@
     "growTimeMultipler: 1.0,
     "drops": [
         {
-            "name": "minecraft:"stick",
+            "name": "minecraft:stick",
             "data": 0
             "tipe": "STICK"
         },
