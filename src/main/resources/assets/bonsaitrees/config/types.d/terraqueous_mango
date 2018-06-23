@@ -1,0 +1,36 @@
+{
+    "name": "terraqueous:mango",
+    "mod": "terraqueous",
+    "sapling": {
+        "name": "terraqueous:mango_sapling",
+        "data": 0,
+    },  
+    "growTimeMultipler: 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "tipe": "STICK"
+        },
+        {
+            "name": "terraqueous:mango_wood",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "terraqueous:mango_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "terraqueous:mango_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "terraqueous:mango",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}        
