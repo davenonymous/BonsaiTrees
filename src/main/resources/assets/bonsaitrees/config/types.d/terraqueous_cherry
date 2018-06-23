@@ -1,0 +1,36 @@
+{
+    "name": "terraqueous:cherry",
+    "mod": "terraqueous",
+    "sapling": {
+        "name": "terraqueous:cherry_sapling",
+        "data": 0,
+    },  
+    "growTimeMultipler: 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "tipe": "STICK"
+        },
+        {
+            "name": "terraqueous:cherry_wood",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "terraqueous:cherry_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "terraqueous:cherry_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "terraqueous:cherry",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}     
