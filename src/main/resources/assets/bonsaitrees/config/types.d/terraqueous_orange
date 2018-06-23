@@ -1,8 +1,8 @@
 {
-    "name": "terraqueous:plum",
+    "name": "terraqueous:orange",
     "mod": "terraqueous",
     "sapling":{
-        "name": "terraqueous:plum_sapling",
+        "name": "terraqueous:orange_sapling",
         "data": 0
     },
     "growTimeMultipler": 1.0,
@@ -13,22 +13,22 @@
             "type": "STICK"
         },
         {
-            "name": "terraqueous:plum_wood",
+            "name": "terraqueous:orange_wood",
             "data": 0,
             "type": "WOOD"
         },
         {
-            "name": "terraqueous:plum_sapling",
+            "name": "terraqueous:orange_sapling",
             "data": 0,
             "type": "SAPLING"
         },
         {
-            "name": "terraqueous:plum_leaves",
+            "name": "terraqueous:orange_leaves",
             "data": 0,
             "type": "LEAVES"
         },
         {
-            "name": "terraqueous:plum",
+            "name": "terraqueous:orange",
             "data": 0,
             "type": "FRUIT"
         }
