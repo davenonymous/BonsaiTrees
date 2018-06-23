@@ -1,0 +1,36 @@
+{
+    "name": "terraqueous:plum",
+    "mod": "terraqueous",
+    "sapling":{
+        "name": "terraqueous:plum_sapling",
+        "data": 0
+    },
+    "growTimeMultipler": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "terraqueous:plum_wood",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "terraqueous:plum_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "terraqueous:plum_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "terraqueous:plum",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}
