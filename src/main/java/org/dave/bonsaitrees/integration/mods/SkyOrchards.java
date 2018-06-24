@@ -3,8 +3,10 @@ package org.dave.bonsaitrees.integration.mods;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.dave.bonsaitrees.api.*;
@@ -27,6 +29,20 @@ public class SkyOrchards implements IBonsaiIntegration {
             treeType.addDrop(new ItemStack(wood.getLog(), 1, 0), BonsaiDropChances.logChance);
             treeType.addDrop(new ItemStack(wood.getLeaves(), 1, 0), BonsaiDropChances.leafChance);
             treeType.addDrop(new ItemStack(wood.getAcorn(), 1, 0), BonsaiDropChances.leafChance);
+
+            if (!wood.getLeafDrop().equalsIgnoreCase("unused") && !wood.getLeafDrop().equalsIgnoreCase("null")) {
+                String[] finalEntry = wood.getLeafDrop().trim().split("#");
+                if (finalEntry.length != 4) {
+                    // This should not be happening since it is already checked by SkyOrchards in the first place.
+                    continue;
+                }
+
+                ItemStack stack = new ItemStack((Item)Item.REGISTRY.getObject(new ResourceLocation(finalEntry[0])), Integer.valueOf(finalEntry[1]), Integer.valueOf(finalEntry[2]));
+                int chanceInv = Integer.valueOf(finalEntry[3]);
+                float chance = chanceInv == 0 ? 0.0f : 1.0f / chanceInv;
+
+                treeType.addDrop(stack, chance);
+            }
 
             registry.registerTreeType(this, treeType);
         }
