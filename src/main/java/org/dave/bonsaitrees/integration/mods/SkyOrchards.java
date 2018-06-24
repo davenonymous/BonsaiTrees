@@ -1,6 +1,7 @@
 package org.dave.bonsaitrees.integration.mods;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSapling;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
@@ -8,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.dave.bonsaitrees.api.*;
 import org.dave.bonsaitrees.utility.Logz;
-import sky_orchards.blocks.BlockOreSapling;
+
 import sky_orchards.blocks.EnumWood;
 
 import java.util.Random;
@@ -38,14 +39,14 @@ public class SkyOrchards implements IBonsaiIntegration {
         }
 
         Block sapling = ((ItemBlock) type.getExampleStack().getItem()).getBlock();
-        if(!(sapling instanceof BlockOreSapling)) {
+        if(!(sapling instanceof BlockSapling)) {
             Logz.info("Not an ore sapling");
             return;
         }
 
         world.setBlockState(pos, sapling.getDefaultState());
 
-        BlockOreSapling oreSapling = (BlockOreSapling)sapling;
+        BlockSapling oreSapling = (BlockSapling)sapling;
         oreSapling.generateTree(world, pos, null, rand);
     }
 }
