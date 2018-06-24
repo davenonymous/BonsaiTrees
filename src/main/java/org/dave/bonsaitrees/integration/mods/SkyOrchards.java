@@ -26,6 +26,7 @@ public class SkyOrchards implements IBonsaiIntegration {
             treeType.addDrop(new ItemStack(wood.getResin(), 1, 0), BonsaiDropChances.fruitChance);
             treeType.addDrop(new ItemStack(wood.getLog(), 1, 0), BonsaiDropChances.logChance);
             treeType.addDrop(new ItemStack(wood.getLeaves(), 1, 0), BonsaiDropChances.leafChance);
+            treeType.addDrop(new ItemStack(wood.getAcorn(), 1, 0), BonsaiDropChances.leafChance);
 
             registry.registerTreeType(this, treeType);
         }
