@@ -7,6 +7,8 @@ import net.minecraft.server.MinecraftServer;
 import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.base.CommandBaseExt;
 import org.dave.bonsaitrees.integration.IntegrationRegistry;
+import org.dave.bonsaitrees.network.MessageReloadTrees;
+import org.dave.bonsaitrees.network.PackageHandler;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 
 public class CommandReloadTrees extends CommandBaseExt {
@@ -26,7 +28,7 @@ public class CommandReloadTrees extends CommandBaseExt {
         IntegrationRegistry.registerBonsaiIntegrations();
         TreeShapeRegistry.init();
 
-        // We can not call this here as this call can only exist on the client
-        //TESRBonsaiPot.clearGlLists();
+        // We can not call this here as this call can only exist on the client, so send a message to all clients
+        PackageHandler.instance.sendToAll(new MessageReloadTrees());
     }
 }

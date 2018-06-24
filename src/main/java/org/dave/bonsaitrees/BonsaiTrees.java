@@ -12,6 +12,7 @@ import org.dave.bonsaitrees.command.CommandBonsaiTrees;
 import org.dave.bonsaitrees.integration.IntegrationRegistry;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.RenderTickCounter;
+import org.dave.bonsaitrees.network.PackageHandler;
 import org.dave.bonsaitrees.proxy.CommonProxy;
 import org.dave.bonsaitrees.trees.TreeEvents;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
@@ -47,6 +48,8 @@ public class BonsaiTrees {
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        PackageHandler.init();
+
         proxy.init(event);
     }
 
