@@ -1,0 +1,36 @@
+{
+    "name": "terraqueous:peach",
+    "mod": "terraqueous",
+    "sapling": {
+        "name": "terraqueous:sapling",
+        "data": 4
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "terraqueous:trunk1",
+            "data": 4,
+            "type": "WOOD"
+        },
+        {
+            "name": "terraqueous:sapling",
+            "data": 4,
+            "type": "SAPLING"
+        },
+        {
+            "name": "terraqueous:foliage3",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "terraqueous:multifood",
+            "data": 3,
+            "type": "FRUIT"
+        }
+    ]
+}

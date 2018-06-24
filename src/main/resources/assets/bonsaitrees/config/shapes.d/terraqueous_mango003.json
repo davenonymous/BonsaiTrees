@@ -1,0 +1,122 @@
+{
+  "type": "terraqueous:mango",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "terraqueous:foliage3",
+      "meta": 4
+    },
+    "b": {
+      "name": "terraqueous:foliage3",
+      "meta": 6
+    },
+    "c": {
+      "name": "terraqueous:foliage3",
+      "meta": 5
+    },
+    "d": {
+      "name": "terraqueous:trunk2",
+      "meta": 0
+    },
+    "e": {
+      "name": "terraqueous:trunk2",
+      "meta": 1
+    },
+    "f": {
+      "name": "terraqueous:trunk2",
+      "meta": 2
+    }
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "         ",
+      "   aca   ",
+      "   aaa   ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    a    ",
+      "   aaa   ",
+      "  aadaa  ",
+      "  aaaaa  ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "   aaa   ",
+      "  caaaa  ",
+      " aaaaaaa ",
+      " aaadaaa ",
+      "    d    ",
+      "         ",
+      "         "
+    ],
+    [
+      "   aaa   ",
+      "  aaaaa  ",
+      " aaaaaac ",
+      "aaaaaaaaa",
+      "aaaaaaaaa",
+      "    f    ",
+      "         ",
+      "         "
+    ],
+    [
+      "   aaa   ",
+      " aaadaaa ",
+      " baadaaa ",
+      "adaadaada",
+      "aadadadaa",
+      "  deded  ",
+      "    d    ",
+      "    d    "
+    ],
+    [
+      "   aaa   ",
+      "  aaaaa  ",
+      " aaaaaab ",
+      "aaaaaaaab",
+      "aaaaaaaaa",
+      "    f    ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "   aaa   ",
+      "  baaaa  ",
+      " aaaaaaa ",
+      " aaadaab ",
+      "    d    ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    a    ",
+      "   aaa   ",
+      "  cadaa  ",
+      "  aaaab  ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "   aaa   ",
+      "   baa   ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}

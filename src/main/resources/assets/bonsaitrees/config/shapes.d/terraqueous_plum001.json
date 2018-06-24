@@ -1,0 +1,74 @@
+{
+  "type": "terraqueous:plum",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "terraqueous:foliage4",
+      "meta": 4
+    },
+    "b": {
+      "name": "terraqueous:trunk2",
+      "meta": 6
+    },
+    "c": {
+      "name": "terraqueous:foliage4",
+      "meta": 5
+    },
+    "d": {
+      "name": "terraqueous:foliage4",
+      "meta": 6
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      " aaa ",
+      "acaaa",
+      " aaa ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  a  ",
+      " daa ",
+      "aaaaa",
+      "daaaa",
+      "aaaaa",
+      "  a  ",
+      "     "
+    ],
+    [
+      "  c  ",
+      " aaa ",
+      " aba ",
+      "aabac",
+      "cabaa",
+      "aabaa",
+      " dba ",
+      "  b  "
+    ],
+    [
+      "     ",
+      "  a  ",
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "aaaaa",
+      "  a  ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      " aad ",
+      "aaaaa",
+      " aaa ",
+      "     ",
+      "     "
+    ]
+  ]
+}

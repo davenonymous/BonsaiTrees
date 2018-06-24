@@ -1,0 +1,69 @@
+{
+  "type": "terraqueous:apple",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "terraqueous:trunk1",
+      "meta": 0
+    },
+    "b": {
+      "name": "terraqueous:foliage1",
+      "meta": 0
+    },
+    "c": {
+      "name": "terraqueous:foliage1",
+      "meta": 2
+    },
+    "d": {
+      "name": "terraqueous:foliage1",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      " bbb ",
+      " cbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "bbbbb",
+      "bbbbb",
+      " cbb ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "bbabb",
+      "bbabb",
+      " bab ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      " bdb ",
+      "bbbbb",
+      "bbbbb",
+      " bbb ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " bbc ",
+      " bdb ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

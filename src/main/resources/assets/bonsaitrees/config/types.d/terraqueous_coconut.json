@@ -1,0 +1,36 @@
+{
+    "name": "terraqueous:coconut",
+    "mod": "terraqueous",
+    "sapling": {
+        "name": "terraqueous:sapling",
+        "data": 8
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "terraqueous:trunk2",
+            "data": 3,
+            "type": "WOOD"
+        },
+        {
+            "name": "terraqueous:sapling",
+            "data": 8,
+            "type": "SAPLING"
+        },
+        {
+            "name": "terraqueous:foliage5",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "terraqueous:multifood",
+            "data": 7,
+            "type": "FRUIT"
+        }
+    ]
+}

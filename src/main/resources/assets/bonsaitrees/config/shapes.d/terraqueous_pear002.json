@@ -1,0 +1,122 @@
+{
+  "type": "terraqueous:pear",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "terraqueous:foliage2",
+      "meta": 4
+    },
+    "b": {
+      "name": "terraqueous:trunk1",
+      "meta": 9
+    },
+    "c": {
+      "name": "terraqueous:foliage2",
+      "meta": 6
+    },
+    "d": {
+      "name": "terraqueous:foliage2",
+      "meta": 5
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  aaa  ",
+      "  aaa  ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  aaa  ",
+      "  aac  ",
+      "       ",
+      "  aaa  ",
+      " aaaac ",
+      " aaaaa ",
+      "  aaa  ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  aaa  ",
+      " aaaaa ",
+      " aaaaa ",
+      "  aaa  ",
+      " aaaaa ",
+      "daaaaaa",
+      "aaaaaaa",
+      " aaaac ",
+      "  dda  ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "  aaa  ",
+      " aabaa ",
+      " aabac ",
+      "  aba  ",
+      " aabaa ",
+      "aaabaaa",
+      "aaabaaa",
+      " aabaa ",
+      "  abd  ",
+      "   b   ",
+      "   b   "
+    ],
+    [
+      "       ",
+      "  aaa  ",
+      " aaaaa ",
+      " daaaa ",
+      "  aaa  ",
+      " aaaaa ",
+      "aaaaaaa",
+      "aaaaaaa",
+      " daaaa ",
+      "  aaa  ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  aaa  ",
+      "  cac  ",
+      "       ",
+      "  cda  ",
+      " aaaaa ",
+      " aaaac ",
+      "  aaa  ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  aaa  ",
+      "  ada  ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "type": "terraqueous:lemon",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "terraqueous:foliage4",
+      "meta": 0
+    },
+    "b": {
+      "name": "terraqueous:foliage4",
+      "meta": 1
+    },
+    "c": {
+      "name": "terraqueous:trunk2",
+      "meta": 3
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " aaa ",
+      "     "
+    ],
+    [
+      "     ",
+      " aaa ",
+      "aaaaa",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aca ",
+      "aacaa",
+      "  c  "
+    ],
+    [
+      "     ",
+      " aba ",
+      "aaaaa",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " aaa ",
+      "     "
+    ]
+  ]
+}

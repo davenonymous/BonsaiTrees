@@ -1,0 +1,69 @@
+{
+  "type": "terraqueous:peach",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "terraqueous:foliage3",
+      "meta": 0
+    },
+    "b": {
+      "name": "terraqueous:trunk1",
+      "meta": 12
+    },
+    "c": {
+      "name": "terraqueous:foliage3",
+      "meta": 1
+    },
+    "d": {
+      "name": "terraqueous:foliage3",
+      "meta": 2
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  d  ",
+      " aaa ",
+      "     "
+    ],
+    [
+      "     ",
+      "  a  ",
+      " caa ",
+      "  a  ",
+      " aaa ",
+      "aaaaa",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aaa ",
+      " aba ",
+      " aba ",
+      "aabaa",
+      "aabaa",
+      "  b  "
+    ],
+    [
+      "     ",
+      "  a  ",
+      " aaa ",
+      "  a  ",
+      " aaa ",
+      "aaaaa",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  c  ",
+      " aaa ",
+      "     "
+    ]
+  ]
+}

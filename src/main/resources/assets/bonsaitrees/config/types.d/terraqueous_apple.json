@@ -1,0 +1,36 @@
+{
+    "name": "terraqueous:apple",
+    "mod": "terraqueous",
+    "sapling": {
+        "name": "terraqueous:sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "terraqueous:trunk1",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "terraqueous:sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "terraqueous:foliage1",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "minecraft:apple",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

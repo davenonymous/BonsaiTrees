@@ -1,0 +1,73 @@
+{
+  "type": "terraqueous:orange",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "terraqueous:foliage2",
+      "meta": 0
+    },
+    "b": {
+      "name": "terraqueous:foliage2",
+      "meta": 2
+    },
+    "c": {
+      "name": "terraqueous:trunk1",
+      "meta": 6
+    },
+    "d": {
+      "name": "terraqueous:foliage2",
+      "meta": 1
+    },
+    "e": {
+      "name": "terraqueous:trunk1",
+      "meta": 8
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " aaa ",
+      "aaaaa",
+      "  a  ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aaa ",
+      "aacaa",
+      "aaeaa",
+      " aaa ",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      " baa ",
+      "aaaaa",
+      "aacaa",
+      "aacaa",
+      "  c  ",
+      "  c  "
+    ],
+    [
+      "  a  ",
+      " aaa ",
+      "aacab",
+      "aaeaa",
+      " aaa ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " baa ",
+      "daaaa",
+      "  a  ",
+      "     ",
+      "     "
+    ]
+  ]
+}

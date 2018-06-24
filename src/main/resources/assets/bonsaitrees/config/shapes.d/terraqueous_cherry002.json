@@ -1,0 +1,80 @@
+{
+  "type": "terraqueous:cherry",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "terraqueous:foliage1",
+      "meta": 4
+    },
+    "b": {
+      "name": "terraqueous:trunk1",
+      "meta": 3
+    },
+    "c": {
+      "name": "terraqueous:foliage1",
+      "meta": 6
+    },
+    "d": {
+      "name": "terraqueous:foliage1",
+      "meta": 5
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "  aaa  ",
+      "  aca  ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   a   ",
+      " aaaaa ",
+      " aaaaa ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "  aaa  ",
+      "aaaaaaa",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      " aabaa ",
+      "aaabaaa",
+      "aaabaaa",
+      "   b   ",
+      "   b   "
+    ],
+    [
+      "   d   ",
+      "  aaa  ",
+      "aaaaaac",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   a   ",
+      " aaaaa ",
+      " aaaaa ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  caa  ",
+      "  aaa  ",
+      "       ",
+      "       "
+    ]
+  ]
+}
