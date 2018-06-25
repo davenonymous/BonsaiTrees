@@ -123,3 +123,11 @@ mods.bonsaitrees.TreeDrops.removeTreeDrop("minecraft:oak", <minecraft:leaves>);
 mods.bonsaitrees.TreeDrops.removeTreeDrop("minecraft:oak", <minecraft:stick>);
 mods.bonsaitrees.TreeGrowth.setTickMultiplier("minecraft:oak", 0.1);
 ```
+
+If you want to change the drops of a Bonsai Tree, you have to remove the original drop first and
+then re-add it with the new amount and chance, for example to make Sky Orchard Iron Trees drop more
+Resin (4) with a higher chance (50%) use this:
+```
+mods.bonsaitrees.TreeDrops.removeTreeDrop("sky_orchard:iron", <sky_orchards:resin_iron>);
+mods.bonsaitrees.TreeDrops.addTreeDrop("sky_orchard:iron", <sky_orchards:resin_iron> * 4, 0.5);
+```
