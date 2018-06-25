@@ -2,6 +2,7 @@ package org.dave.bonsaitrees.integration.mods;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSapling;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -26,7 +27,7 @@ public class SkyOrchards implements IBonsaiIntegration {
             treeType.addDrop(new ItemStack(wood.getSapling(), 1, 0), BonsaiDropChances.saplingChance);
             treeType.addDrop(new ItemStack(Items.STICK, BonsaiDropChances.stickAmount), BonsaiDropChances.stickChance);
             treeType.addDrop(new ItemStack(wood.getResin(), 1, 0), BonsaiDropChances.fruitChance);
-            treeType.addDrop(new ItemStack(wood.getLog(), 1, 0), BonsaiDropChances.logChance);
+            treeType.addDrop(new ItemStack(Blocks.LOG, 1, 0), BonsaiDropChances.logChance);
             treeType.addDrop(new ItemStack(wood.getLeaves(), 1, 0), BonsaiDropChances.leafChance);
             treeType.addDrop(new ItemStack(wood.getAcorn(), 1, 0), BonsaiDropChances.leafChance);
 
