@@ -1,7 +1,9 @@
 package org.dave.bonsaitrees.trees;
 
+import net.minecraft.command.ICommandSender;
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.api.IBonsaiIntegration;
@@ -32,7 +34,7 @@ public class ShapeGenerator {
         return result;
     }
 
-    public static void generateMissingShapes(World world, BlockPos pos) {
+    public static void generateMissingShapes(ICommandSender sender, World world, BlockPos pos) {
         Random rand = new Random();
 
         for(IBonsaiTreeType type : BonsaiTrees.instance.typeRegistry.getAllTypes()) {
@@ -41,6 +43,7 @@ public class ShapeGenerator {
                 continue;
             }
 
+            sender.sendMessage(new TextComponentTranslation("commands.bonsaitrees.generateMissingShapes.info", type.getName()));
             Logz.info("Generating shapes for tree: %s", type.getName());
 
             clearArea(world, pos, 32);
@@ -54,15 +57,16 @@ public class ShapeGenerator {
                 }
 
                 if (treeShape.getBlocks().size() == 0) {
+                    sender.sendMessage(new TextComponentTranslation("commands.bonsaitrees.generateMissingShapes.exception.no_shape"));
                     Logz.warn("Can not determine shape");
                     continue;
                 }
 
                 String filename = treeShape.saveToFile();
                 if(filename != null) {
+                    sender.sendMessage(new TextComponentTranslation("commands.bonsaitrees.generateMissingShapes.created_shape_file", filename));
                     Logz.info("Created shape file: %s", filename);
                 }
-
             }
         }
     }

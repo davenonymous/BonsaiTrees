@@ -17,6 +17,9 @@ commands.bonsaitrees.saveTreeShape.wrote_shape_to_file=Wrote shape to file: %s
 commands.bonsaitrees.generateMissingShapes.description=Generate all missing tree shapes in the area you are looking at. VERY DESTRUCTIVE ACTION!
 commands.bonsaitrees.generateMissingShapes.usage=/bonsaitrees generateMissingShapes yes
 commands.bonsaitrees.generateMissingShapes.exception.confirm_with_yes=Confirm command with "yes" as first parameter! A 32x32x32 area around the block you are looking at will be erased!
+commands.bonsaitrees.generateMissingShapes.info=Generating shapes for tree: %s
+commands.bonsaitrees.generateMissingShapes.created_shape_file=Created shape file: %s
+commands.bonsaitrees.generateMissingShapes.exception.no_shape=Can not determine shape
 
 commands.bonsaitrees.upgradeJsonFiles.description=Upgrade shape files to the latest supported version. This is a development command and will probably not be useful for you.
 commands.bonsaitrees.upgradeJsonFiles.usage=/bonsaitrees upgradeJsonFiles

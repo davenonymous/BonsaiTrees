@@ -36,6 +36,6 @@ public class CommandGenerateMissingShapes extends CommandBaseExt {
         }
 
         BlockPos targetPos = result.getBlockPos().up();
-        ShapeGenerator.generateMissingShapes(sender.getEntityWorld(), targetPos);
+        ShapeGenerator.generateMissingShapes(sender, sender.getEntityWorld(), targetPos);
     }
 }
