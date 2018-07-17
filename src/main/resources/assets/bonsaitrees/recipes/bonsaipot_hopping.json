@@ -5,9 +5,8 @@
     "count": 1
   },
   "pattern": [
-    "   ",
-    " b ",
-    " h "
+    "b",
+    "h"
   ],
   "type": "minecraft:crafting_shaped",
   "key": {
