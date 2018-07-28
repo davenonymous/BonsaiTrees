@@ -179,6 +179,9 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
 
         tessellator.draw();
 
+        textureManager.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+        textureManager.getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
+
         GL11.glFrontFace(GL11.GL_CCW);
 
         GlStateManager.disableBlend();
