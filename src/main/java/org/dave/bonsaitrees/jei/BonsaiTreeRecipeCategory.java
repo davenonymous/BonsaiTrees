@@ -18,7 +18,7 @@ public class BonsaiTreeRecipeCategory implements IRecipeCategory<BonsaiTreeRecip
 
     public BonsaiTreeRecipeCategory(IGuiHelper guiHelper) {
         localizedName = I18n.format("bonsaitrees.jei.category.growing");
-        background = guiHelper.createBlankDrawable(150, 46);
+        background = guiHelper.createBlankDrawable(155, 40);
         slotDrawable = guiHelper.getSlotDrawable();
     }
 
