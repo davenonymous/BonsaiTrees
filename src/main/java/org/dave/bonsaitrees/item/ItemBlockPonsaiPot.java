@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
@@ -12,6 +13,7 @@ import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.base.IMetaBlockName;
 import org.dave.bonsaitrees.block.BlockBonsaiPot;
 import org.dave.bonsaitrees.init.Blockss;
+import org.dave.bonsaitrees.render.PotColorizer;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -45,6 +47,10 @@ public class ItemBlockPonsaiPot extends ItemBlock {
         super.addInformation(stack, worldIn, tooltip, flagIn);
 
         if(GuiScreen.isShiftKeyDown()) {
+            if(stack.hasTagCompound() && stack.getTagCompound().hasKey("color")) {
+                EnumDyeColor color = EnumDyeColor.byMetadata(stack.getTagCompound().getInteger("color"));
+                tooltip.add(PotColorizer.textFormattingForDye(color) + I18n.format("item.fireworksCharge." + color.getUnlocalizedName()));
+            }
             if(Blockss.bonsaiPot.getStateFromMeta(stack.getMetadata()).getValue(BlockBonsaiPot.IS_HOPPING)) {
                 tooltip.add(TextFormatting.YELLOW + I18n.format("tooltip.bonsaitrees.autoexport"));
             } else {

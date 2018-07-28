@@ -2,6 +2,7 @@ package org.dave.bonsaitrees.tile;
 
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.server.management.PlayerList;
@@ -19,6 +20,7 @@ import org.dave.bonsaitrees.api.TreeTypeDrop;
 import org.dave.bonsaitrees.base.BaseTileTicking;
 import org.dave.bonsaitrees.init.Triggerss;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
+import org.dave.bonsaitrees.render.PotColorizer;
 import org.dave.bonsaitrees.trees.TreeDropModificationsRegistry;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
@@ -32,6 +34,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     protected double progress = 0;
     protected IBonsaiTreeType treeType = null;
     private final static EmptyHandler handler = new EmptyHandler();
+    protected EnumDyeColor color = PotColorizer.DEFAULT_COLOR;
 
     @Override
     public AxisAlignedBB getRenderBoundingBox() {
@@ -57,6 +60,14 @@ public class TileBonsaiPot extends BaseTileTicking {
 
     public ItemStack getSapling() {
         return sapling;
+    }
+
+    public EnumDyeColor getColor() {
+        return color;
+    }
+
+    public void setColor(EnumDyeColor color) {
+        this.color = color;
     }
 
     public void boostProgress() {
@@ -152,6 +163,12 @@ public class TileBonsaiPot extends BaseTileTicking {
             shapeFilename = null;
         }
 
+        if(compound.hasKey("color")) {
+            color = EnumDyeColor.byMetadata(compound.getInteger("color"));
+        } else {
+            color = PotColorizer.DEFAULT_COLOR;
+        }
+
         progress = compound.getDouble("progress");
     }
 
@@ -165,6 +182,7 @@ public class TileBonsaiPot extends BaseTileTicking {
             compound.setTag("sapling", sapling.writeToNBT(new NBTTagCompound()));
         }
         compound.setDouble("progress", progress);
+        compound.setInteger("color", color.getMetadata());
 
         return compound;
     }

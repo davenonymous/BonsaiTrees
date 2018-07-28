@@ -12,11 +12,14 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -30,11 +33,13 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.oredict.DyeUtils;
 import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.base.BaseBlockWithTile;
 import org.dave.bonsaitrees.base.IMetaBlockName;
 import org.dave.bonsaitrees.compat.TheOneProbe.ITopInfoProvider;
 import org.dave.bonsaitrees.init.Blockss;
+import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.render.TESRBonsaiPot;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 
@@ -74,6 +79,27 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
     }
 
     @Override
+    public void onBlockPlacedBy(World world, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+        super.onBlockPlacedBy(world, pos, state, placer, stack);
+
+        if(!stack.hasTagCompound()) {
+            return;
+        }
+
+        if(!(world.getTileEntity(pos) instanceof TileBonsaiPot)) {
+            return;
+        }
+
+        TileBonsaiPot bonsaiPot = (TileBonsaiPot)world.getTileEntity(pos);
+        NBTTagCompound potStack = stack.getTagCompound();
+        if(potStack.hasKey("color")) {
+            bonsaiPot.setColor(EnumDyeColor.byMetadata(potStack.getInteger("color")));
+            bonsaiPot.markDirty();
+            world.notifyBlockUpdate(pos, state, state, 11);
+        }
+    }
+
+    @Override
     public void onBlockHarvested(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
         super.onBlockHarvested(world, pos, state, player);
 
@@ -99,6 +125,12 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         }
 
         ItemStack potStack = new ItemStack(Blockss.bonsaiPot, 1, getMetaFromState(state));
+        if(pot.getColor() != null) {
+            NBTTagCompound potNbt = new NBTTagCompound();
+            potNbt.setInteger("color", pot.getColor().getMetadata());
+            potStack.setTagCompound(potNbt);
+        }
+
         drops.add(potStack);
 
         for(ItemStack drop: drops) {
@@ -108,7 +140,19 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
 
     @Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-        return new ItemStack(Item.getItemFromBlock(this), 1, this.getMetaFromState(state));
+        ItemStack result = new ItemStack(Item.getItemFromBlock(this), 1, this.getMetaFromState(state));
+        if (!(world.getTileEntity(pos) instanceof TileBonsaiPot)) {
+            return result;
+        }
+
+        TileBonsaiPot pot = (TileBonsaiPot) world.getTileEntity(pos);
+        if(pot.getColor() != null) {
+            NBTTagCompound potNbt = new NBTTagCompound();
+            potNbt.setInteger("color", pot.getColor().getMetadata());
+            result.setTagCompound(potNbt);
+        }
+
+        return result;
     }
 
     @Override
@@ -165,10 +209,6 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
             return false;
         }
 
-        if (world.isRemote || !(player instanceof EntityPlayerMP)) {
-            return false;
-        }
-
         if (!(world.getTileEntity(pos) instanceof TileBonsaiPot)) {
             return false;
         }
@@ -184,6 +224,26 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         }
 
         TileBonsaiPot pot = (TileBonsaiPot) world.getTileEntity(pos);
+
+        if(DyeUtils.isDye(playerStack)) {
+            EnumDyeColor color = DyeUtils.colorFromStack(playerStack).orElse(EnumDyeColor.GRAY);
+            if(color == pot.getColor()) {
+                return true;
+            }
+
+            if(!world.isRemote && !player.isCreative() && !ConfigurationHandler.GeneralSettings.noDyeCost) {
+                playerStack.splitStack(1);
+            }
+
+            pot.setColor(color);
+            pot.markDirty();
+            world.notifyBlockUpdate(pos, state, state, 11);
+            return false;
+        }
+
+        if (world.isRemote || !(player instanceof EntityPlayerMP)) {
+            return false;
+        }
 
         // Plant sapling?
         if(!pot.hasSapling()) {
@@ -289,7 +349,6 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         if(teBonsai.hasSapling()) {
             probeInfo.horizontal().item(teBonsai.getSapling()).itemLabel(teBonsai.getSapling());
             probeInfo.progress((int)(teBonsai.getProgressPercent()*100), 100, probeInfo.defaultProgressStyle().suffix("%").filledColor(0xff44AA44).alternateFilledColor(0xff44AA44).backgroundColor(0xff836953));
-
         }
     }
 }

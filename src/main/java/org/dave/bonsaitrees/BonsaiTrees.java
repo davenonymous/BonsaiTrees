@@ -14,6 +14,7 @@ import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.RenderTickCounter;
 import org.dave.bonsaitrees.network.PackageHandler;
 import org.dave.bonsaitrees.proxy.CommonProxy;
+import org.dave.bonsaitrees.render.PotColorizer;
 import org.dave.bonsaitrees.trees.TreeEvents;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 import org.dave.bonsaitrees.trees.TreeTypeRegistry;
@@ -42,6 +43,7 @@ public class BonsaiTrees {
         MinecraftForge.EVENT_BUS.register(ConfigurationHandler.class);
         MinecraftForge.EVENT_BUS.register(RenderTickCounter.class);
         MinecraftForge.EVENT_BUS.register(TreeEvents.class);
+        MinecraftForge.EVENT_BUS.register(PotColorizer.class);
 
         proxy.preInit(event);
     }

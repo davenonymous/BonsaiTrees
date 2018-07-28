@@ -128,6 +128,10 @@ public class ConfigurationHandler {
                 "baseGrowTicks", CATEGORY_GENERAL, 600, 1, Integer.MAX_VALUE, "How many ticks trees need to fully grow. Some tree types modify this value"
         );
 
+        GeneralSettings.noDyeCost = configuration.getBoolean(
+                "noDyeCost", CATEGORY_GENERAL, true, "If set to false, then dye is being used up when painting bonsai pots"
+        );
+
         if(configuration.hasChanged()) {
             configuration.save();
         }
@@ -156,5 +160,6 @@ public class ConfigurationHandler {
     public static class GeneralSettings {
         public static boolean disableHoppingBonsaiPot = false;
         public static int baseGrowTicks = 600;
+        public static boolean noDyeCost = true;
     }
 }
