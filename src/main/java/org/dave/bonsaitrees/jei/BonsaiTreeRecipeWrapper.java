@@ -21,7 +21,10 @@ import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.TreeTypeDrop;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.RenderTickCounter;
-import org.dave.bonsaitrees.trees.*;
+import org.dave.bonsaitrees.trees.TreeBlockAccess;
+import org.dave.bonsaitrees.trees.TreeDropModificationsRegistry;
+import org.dave.bonsaitrees.trees.TreeShape;
+import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -54,6 +57,20 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
         }
 
         ingredients.setOutputs(ItemStack.class, drops);
+    }
+
+    @Override
+    public boolean handleClick(Minecraft minecraft, int mouseX, int mouseY, int mouseButton) {
+        if(mouseButton != 0) {
+            return false;
+        }
+
+        if(mouseX < 30 || mouseX >= 75 || mouseY < 0 || mouseY > 40) {
+            return false;
+        }
+
+        this.treeShape = TreeShapeRegistry.getNextTreeShape(type, treeShape);
+        return true;
     }
 
     @Override

@@ -9,7 +9,8 @@ import org.dave.bonsaitrees.utility.Logz;
 import org.dave.bonsaitrees.utility.ResourceLoader;
 import org.dave.bonsaitrees.utility.SerializationHelper;
 
-import java.io.*;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class TreeShapeRegistry {
@@ -27,6 +28,28 @@ public class TreeShapeRegistry {
 
     public static TreeShape getTreeShapeByFilename(String name) {
         return treeShapesByFilename.get(name);
+    }
+
+    public static TreeShape getNextTreeShape(IBonsaiTreeType type, TreeShape shape) {
+        List<TreeShape> shapeList = treeShapesByType.get(type);
+        if(shapeList == null || shapeList.size() == 0) {
+            return shape;
+        }
+
+        if(shape == null) {
+            return shapeList.get(0);
+        }
+
+        int index = shapeList.indexOf(shape);
+        if(index == -1) {
+            return shape;
+        }
+
+        if(index == shapeList.size()-1) {
+            return shapeList.get(0);
+        }
+
+        return shapeList.get(index+1);
     }
 
     public static TreeShape getRandomShapeForStack(ItemStack stack) {
