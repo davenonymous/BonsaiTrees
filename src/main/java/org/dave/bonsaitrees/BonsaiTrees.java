@@ -15,6 +15,8 @@ import org.dave.bonsaitrees.misc.RenderTickCounter;
 import org.dave.bonsaitrees.network.PackageHandler;
 import org.dave.bonsaitrees.proxy.CommonProxy;
 import org.dave.bonsaitrees.render.PotColorizer;
+import org.dave.bonsaitrees.soils.BonsaiSoilRegistry;
+import org.dave.bonsaitrees.soils.SoilCompatibility;
 import org.dave.bonsaitrees.trees.TreeEvents;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 import org.dave.bonsaitrees.trees.TreeTypeRegistry;
@@ -32,7 +34,9 @@ public class BonsaiTrees {
     @SidedProxy(clientSide = "org.dave.bonsaitrees.proxy.ClientProxy", serverSide = "org.dave.bonsaitrees.proxy.ServerProxy")
     public static CommonProxy proxy;
 
+    public BonsaiSoilRegistry soilRegistry;
     public TreeTypeRegistry typeRegistry;
+    public SoilCompatibility soilCompatibility;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -57,9 +61,17 @@ public class BonsaiTrees {
 
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
+        soilRegistry = new BonsaiSoilRegistry();
         typeRegistry = new TreeTypeRegistry();
-        IntegrationRegistry.registerBonsaiIntegrations();
+        soilCompatibility = new SoilCompatibility();
+
+        IntegrationRegistry.registerTreeIntegrations();
         Logz.info("Registered %d tree types", typeRegistry.getAllTypes().size());
+
+        IntegrationRegistry.registerSoilIntegrations();
+        Logz.info("Registered %d soil types", soilRegistry.getAllSoils().size());
+
+        soilCompatibility.updateCompatibility(soilRegistry, typeRegistry);
 
         TreeShapeRegistry.init();
         typeRegistry.checkMissingShapes();

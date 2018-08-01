@@ -27,6 +27,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
@@ -35,6 +36,8 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.DyeUtils;
 import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.api.IBonsaiSoil;
+import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.base.BaseBlockWithTile;
 import org.dave.bonsaitrees.base.IMetaBlockName;
 import org.dave.bonsaitrees.compat.TheOneProbe.ITopInfoProvider;
@@ -42,10 +45,12 @@ import org.dave.bonsaitrees.init.Blockss;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.render.TESRBonsaiPot;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
+import org.dave.bonsaitrees.utility.Logz;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements IGrowable, IMetaBlockName, ITopInfoProvider {
@@ -122,6 +127,10 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
                 drops.addAll(pot.getRandomizedDrops());
             }
             drops.add(pot.getSapling());
+        }
+
+        if(pot.hasSoil()) {
+            drops.add(pot.getSoilStack());
         }
 
         ItemStack potStack = new ItemStack(Blockss.bonsaiPot, 1, getMetaFromState(state));
@@ -236,37 +245,90 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
             }
 
             pot.setColor(color);
-            pot.markDirty();
-            world.notifyBlockUpdate(pos, state, state, 11);
-            return false;
+            return true;
+        }
+
+        boolean playerHasSoil = BonsaiTrees.instance.soilRegistry.isValidSoil(playerStack);
+        if(playerHasSoil) {
+            if(pot.hasSoil()) {
+                return false;
+            }
+
+            if(pot.hasSapling()) {
+                return false;
+            }
+
+            pot.setSoil(playerStack.splitStack(1));
+            return true;
         }
 
         if (world.isRemote || !(player instanceof EntityPlayerMP)) {
-            return false;
-        }
-
-        // Plant sapling?
-        if(!pot.hasSapling()) {
-            if(canGrow(playerStack)) {
-                pot.setSapling(playerStack.splitStack(1));
-            }
             return true;
         }
 
-        // Harvest sapling?
         boolean playerHasAxe = playerStack.getItem().getHarvestLevel(playerStack, "axe", player, Blocks.PLANKS.getDefaultState()) != -1;
-        if(!playerHasAxe) {
-            return false;
-        }
+        if(playerHasAxe) {
+            // No sapling in pot
+            if(!pot.hasSapling()) {
+                return false;
+            }
 
-        if(pot.getProgress() < BonsaiTrees.instance.typeRegistry.getGrowTime(pot.getTreeType())) {
+            if(pot.isHarvestable()) {
+                int droppedItems = pot.dropLoot();
+                pot.setSapling(pot.getSapling());
+                playerStack.damageItem(droppedItems, player);
+                return true;
+            } else if(pot.getProgress() >= 20 && pot.getProgressPercent() <= 0.9f) {
+                // Not ready and still under 90%
+                pot.dropSapling();
+                return true;
+            }
+
             return true;
         }
 
-        int droppedItems = pot.dropLoot();
-        pot.setSapling(pot.getSapling());
+        boolean playerHasShovel = playerStack.getItem().getHarvestLevel(playerStack, "shovel", player, Blocks.DIRT.getDefaultState()) != -1;
+        if(playerHasShovel) {
+            if(pot.hasSapling()) {
+                player.sendStatusMessage(new TextComponentTranslation("hint.bonsaitrees.can_not_remove_soil_with_sapling"), true);
+                return false;
+            }
 
-        playerStack.damageItem(droppedItems, player);
+            if(!pot.hasSoil()) {
+                return false;
+            }
+
+            pot.dropSoil();
+            return true;
+        }
+
+        IBonsaiTreeType treeType = BonsaiTrees.instance.typeRegistry.getTypeByStack(playerStack);
+        boolean playerHasSapling = treeType != null;
+        if(playerHasSapling) {
+            if(!pot.hasSoil()) {
+                int randomSlot = world.rand.nextInt(BonsaiTrees.instance.soilRegistry.getAllSoils().size());
+                Optional<IBonsaiSoil> optionalSoil = BonsaiTrees.instance.soilRegistry.getAllSoils().stream().skip(randomSlot).findFirst();
+                if(optionalSoil.isPresent()) {
+                    player.sendStatusMessage(new TextComponentTranslation("hint.bonsaitrees.pot_has_no_soil", optionalSoil.get().getSoilStack().getDisplayName()), true);
+                } else {
+                    Logz.warn("There is no soil available. Please check the config and logs for errors!");
+                }
+
+                return false;
+            }
+
+            if(pot.hasSapling()) {
+                return false;
+            }
+
+            if(!BonsaiTrees.instance.soilCompatibility.getValidSoilsForTree(treeType).contains(pot.getBonsaiSoil())) {
+                player.sendStatusMessage(new TextComponentTranslation("hint.bonsaitrees.incompatible_soil"), true);
+                return false;
+            }
+
+            pot.setSapling(playerStack.splitStack(1));
+            return true;
+        }
 
         return true;
     }
@@ -348,6 +410,13 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         TileBonsaiPot teBonsai = (TileBonsaiPot) world.getTileEntity(data.getPos());
         if(teBonsai.hasSapling()) {
             probeInfo.horizontal().item(teBonsai.getSapling()).itemLabel(teBonsai.getSapling());
+        }
+
+        if(teBonsai.hasSoil()) {
+            probeInfo.horizontal().item(teBonsai.getSoilStack()).itemLabel(teBonsai.getSoilStack());
+        }
+
+        if(teBonsai.hasSapling()) {
             probeInfo.progress((int)(teBonsai.getProgressPercent()*100), 100, probeInfo.defaultProgressStyle().suffix("%").filledColor(0xff44AA44).alternateFilledColor(0xff44AA44).backgroundColor(0xff836953));
         }
     }

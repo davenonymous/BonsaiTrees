@@ -6,6 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.List;
+import java.util.Set;
 
 public interface IBonsaiTreeType {
     String getName();
@@ -14,6 +15,7 @@ public interface IBonsaiTreeType {
     boolean worksWith(ItemStack stack);
     ItemStack getExampleStack();
 
+    Set<String> getCompatibleSoilTags();
     default double getGrowthRate(World world, BlockPos pos, IBlockState state, double progress) {
         return 1.0d;
     }

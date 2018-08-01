@@ -9,8 +9,7 @@ import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.TreeTypeDrop;
 import org.dave.bonsaitrees.utility.Logz;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class TreeTypeForestry implements IBonsaiTreeType {
     private String name;
@@ -53,6 +52,11 @@ public class TreeTypeForestry implements IBonsaiTreeType {
     @Override
     public List<TreeTypeDrop> getDrops() {
         return drops;
+    }
+
+    @Override
+    public Set<String> getCompatibleSoilTags() {
+        return new HashSet<>(Arrays.asList("dirt", "grass"));
     }
 
     @Override

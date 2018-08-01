@@ -4,6 +4,7 @@ import com.google.gson.*;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.Loader;
 import org.dave.bonsaitrees.api.TreeTypeSimple;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.TreeGrowthModificationsRegistry;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -47,6 +48,17 @@ public class TreeTypeSimpleSerializer implements JsonDeserializer<TreeTypeSimple
 
         TreeTypeSimple result = new TreeTypeSimple(typeName, saplingName, saplingMeta);
         TreeGrowthModificationsRegistry.setMultiplier(typeName, growTimeMultiplier);
+
+        if(rootObj.has("compatibleSoilTags") && rootObj.get("compatibleSoilTags").isJsonArray()) {
+            for(JsonElement element : rootObj.get("compatibleSoilTags").getAsJsonArray()) {
+                if(!element.isJsonPrimitive()) {
+                    throw new JsonParseException("Entry in 'drops' array is no json primitive!");
+                }
+
+                String tag = element.getAsString();
+                result.addCompatibleSoilTag(tag);
+            }
+        }
 
         if(rootObj.has("drops") && rootObj.get("drops").isJsonArray()) {
             for(JsonElement element : rootObj.get("drops").getAsJsonArray()) {

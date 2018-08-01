@@ -8,14 +8,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class TreeTypeSimple implements IBonsaiTreeType {
     private String name;
     private ItemStack sapling = ItemStack.EMPTY;
     private List<TreeTypeDrop> drops = new ArrayList<>();
     private WorldGenerator worldGen = null;
+    private Set<String> compatibleSoilTags = new HashSet<>();
 
     public TreeTypeSimple(String name, ItemStack sapling) {
         this.name = name;
@@ -23,9 +23,19 @@ public class TreeTypeSimple implements IBonsaiTreeType {
     }
 
     public TreeTypeSimple(String name, String saplingName, int saplingMeta) {
-        Block block = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(saplingName));
+        ResourceLocation saplingNameResource = new ResourceLocation(saplingName);
+        Block block = ForgeRegistries.BLOCKS.getValue(saplingNameResource);
+        if(block != null && block != Blocks.AIR) {
+            this.sapling = new ItemStack(block, 1, saplingMeta);
+        } else {
+            Item item = ForgeRegistries.ITEMS.getValue(saplingNameResource);
+            if(item != null) {
+                this.sapling = new ItemStack(item, 1, saplingMeta);
+            }
+        }
+
         this.name = name;
-        this.sapling = new ItemStack(block, 1, saplingMeta);
+
     }
 
     public void addDrop(ItemStack stack, float chance) {
@@ -44,6 +54,10 @@ public class TreeTypeSimple implements IBonsaiTreeType {
             this.drops.add(new TreeTypeDrop(new ItemStack(dropItem, count, itemMeta), chance));
             return;
         }
+    }
+
+    public void addCompatibleSoilTag(String tag) {
+        this.compatibleSoilTags.add(tag);
     }
 
     @Override
@@ -66,6 +80,15 @@ public class TreeTypeSimple implements IBonsaiTreeType {
         }
 
         return false;
+    }
+
+    @Override
+    public Set<String> getCompatibleSoilTags() {
+        if(compatibleSoilTags == null || compatibleSoilTags.size() == 0) {
+            return new HashSet<>(Arrays.asList("dirt", "grass"));
+        }
+
+        return compatibleSoilTags;
     }
 
     @Override

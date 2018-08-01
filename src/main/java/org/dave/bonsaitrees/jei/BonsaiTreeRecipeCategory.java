@@ -45,6 +45,7 @@ public class BonsaiTreeRecipeCategory implements IRecipeCategory<BonsaiTreeRecip
     @Override
     public void drawExtras(Minecraft minecraft) {
         slotDrawable.draw(minecraft,         0, 19*0);
+        slotDrawable.draw(minecraft,         0, 19*1);
 
         slotDrawable.draw(minecraft, 80 + 19*0, 19*0);
         slotDrawable.draw(minecraft, 80 + 19*1, 19*0);
@@ -60,16 +61,17 @@ public class BonsaiTreeRecipeCategory implements IRecipeCategory<BonsaiTreeRecip
     @Override
     public void setRecipe(IRecipeLayout recipeLayout, BonsaiTreeRecipeWrapper recipeWrapper, IIngredients ingredients) {
         recipeLayout.getItemStacks().init(0, true,        0, 19*0);
+        recipeLayout.getItemStacks().init(1, true,        0, 19*1);
 
-        recipeLayout.getItemStacks().init(1, false, 80+19*0, 19*0);
-        recipeLayout.getItemStacks().init(2, false, 80+19*1, 19*0);
-        recipeLayout.getItemStacks().init(3, false, 80+19*2, 19*0);
-        recipeLayout.getItemStacks().init(4, false, 80+19*3, 19*0);
+        recipeLayout.getItemStacks().init(2, false, 80+19*0, 19*0);
+        recipeLayout.getItemStacks().init(3, false, 80+19*1, 19*0);
+        recipeLayout.getItemStacks().init(4, false, 80+19*2, 19*0);
+        recipeLayout.getItemStacks().init(5, false, 80+19*3, 19*0);
 
-        recipeLayout.getItemStacks().init(5, false, 80+19*0, 19*1);
-        recipeLayout.getItemStacks().init(6, false, 80+19*1, 19*1);
-        recipeLayout.getItemStacks().init(7, false, 80+19*2, 19*1);
-        recipeLayout.getItemStacks().init(8, false, 80+19*3, 19*1);
+        recipeLayout.getItemStacks().init(6, false, 80+19*0, 19*1);
+        recipeLayout.getItemStacks().init(7, false, 80+19*1, 19*1);
+        recipeLayout.getItemStacks().init(8, false, 80+19*2, 19*1);
+        recipeLayout.getItemStacks().init(9, false, 80+19*3, 19*1);
 
         recipeLayout.getItemStacks().addTooltipCallback(recipeWrapper);
         recipeLayout.getItemStacks().set(ingredients);

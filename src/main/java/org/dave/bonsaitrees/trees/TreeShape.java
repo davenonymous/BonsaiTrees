@@ -7,7 +7,6 @@ import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.FloodFill;
-import org.dave.bonsaitrees.utility.Logz;
 
 import java.io.BufferedWriter;
 import java.io.File;

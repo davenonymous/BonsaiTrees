@@ -17,18 +17,22 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.ForgeHooksClient;
 import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.api.IBonsaiSoil;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.TreeTypeDrop;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.SoilStatsModificationsRegistry;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.misc.RenderTickCounter;
 import org.dave.bonsaitrees.trees.TreeBlockAccess;
-import org.dave.bonsaitrees.trees.TreeDropModificationsRegistry;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.TreeDropModificationsRegistry;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback<ItemStack> {
     public final IBonsaiTreeType type;
@@ -42,7 +46,16 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
 
     @Override
     public void getIngredients(IIngredients ingredients) {
-        ingredients.setInput(ItemStack.class, type.getExampleStack());
+        List<List<ItemStack>> inputs = new ArrayList<>();
+
+        // Slot 0: The Sapling
+        inputs.add(Arrays.asList(type.getExampleStack()));
+
+        // Slot 1: The Soils
+        List<ItemStack> soilList = BonsaiTrees.instance.soilCompatibility.getValidSoilsForTree(type).stream().map(IBonsaiSoil::getSoilStack).collect(Collectors.toList());
+        inputs.add(soilList);
+
+        ingredients.setInputLists(ItemStack.class, inputs);
 
         List<TreeTypeDrop> ttDrops = TreeDropModificationsRegistry.getModifiedDropList(type);
         ttDrops.sort((a, b) -> (int)(b.chance*100) - (int)(a.chance*100));
@@ -75,14 +88,6 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
 
     @Override
     public void drawInfo(Minecraft mc, int recipeWidth, int recipeHeight, int mouseX, int mouseY) {
-        GlStateManager.pushMatrix();
-        GlStateManager.translate(0F, 0F, 216.5F);
-
-        String growTimeHuman = BonsaiTrees.instance.typeRegistry.getGrowTimeHuman(type);
-        mc.fontRenderer.drawString(growTimeHuman, 20-mc.fontRenderer.getStringWidth(growTimeHuman), 21, 0x444444);
-
-        GlStateManager.popMatrix();
-
         float angle = RenderTickCounter.renderTicks * 45.0f / 128.0f;
 
         if(treeShape == null) {
@@ -208,10 +213,25 @@ public class BonsaiTreeRecipeWrapper implements IRecipeWrapper, ITooltipCallback
     }
     @Override
     public void onTooltip(int slotIndex, boolean input, ItemStack ingredient, List<String> tooltip) {
+        if(slotIndex == 0) {
+            String growTimeHuman = BonsaiTrees.instance.typeRegistry.getBaseGrowTimeHuman(type);
+            tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.sapling.growtime", growTimeHuman));
+        }
+
+        if(slotIndex == 1) {
+            IBonsaiSoil soil = BonsaiTrees.instance.soilRegistry.getTypeByStack(ingredient);
+
+            float speedModifier = SoilStatsModificationsRegistry.getModifiedGrowTimeModifier(soil) * 100;
+            float dropModifier = SoilStatsModificationsRegistry.getModifiedDropChanceModifier(soil) * 100;
+            tooltip.add(tooltip.size()-1, TextFormatting.AQUA + I18n.format("bonsaitrees.jei.category.soil.hint"));
+            tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.soil.growTimeModifier", speedModifier));
+            tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.soil.dropChanceModifier", dropModifier));
+        }
+
         if(!ConfigurationHandler.ClientSettings.showChanceInJEI || input) {
             return;
         }
 
-        tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", (int)(slotChances[slotIndex-1]*100)));
+        tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", (int)(slotChances[slotIndex-2]*100)));
     }
 }

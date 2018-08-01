@@ -15,6 +15,7 @@ public class ConfigurationHandler {
     public static File configDir;
     public static File treeTypesDir;
     public static File treeShapesDir;
+    public static File soilsDir;
 
     public static final String CATEGORY_DROPS = "drops";
     public static final String CATEGORY_CLIENT = "client";
@@ -39,6 +40,11 @@ public class ConfigurationHandler {
         treeShapesDir = new File(configDir, "shapes.d");
         if (!treeShapesDir.exists()) {
             treeShapesDir.mkdirs();
+        }
+
+        soilsDir = new File(configDir, "soils.d");
+        if (!soilsDir.exists()) {
+            soilsDir.mkdirs();
         }
 
         // TODO: Add a command to extract the default shapes and json types
@@ -116,6 +122,10 @@ public class ConfigurationHandler {
                 "disabledTreeTypes", CATEGORY_INTEGRATION, new String[] {}, "Tree types to disable (e.g. forestry:hillCherry)"
         );
 
+        IntegrationSettings.disabledSoils = configuration.getStringList(
+                "disabledSoils", CATEGORY_INTEGRATION, new String[] {}, "Bonsai Soils to disable (e.g. minecraft:grass)"
+        );
+
         IntegrationSettings.loadShapesOfUnloadedTrees = configuration.getBoolean(
                 "loadShapesOfUnloadedTrees", CATEGORY_INTEGRATION, false, "Can be enabled for development purposes mostly."
         );
@@ -154,6 +164,7 @@ public class ConfigurationHandler {
     public static class IntegrationSettings {
         public static String[] disabledIntegrations = new String[] {};
         public static String[] disabledTreeTypes = new String[] {};
+        public static String[] disabledSoils = new String[] {};
         public static boolean loadShapesOfUnloadedTrees = false;
     }
 

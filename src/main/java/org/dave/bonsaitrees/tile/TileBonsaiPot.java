@@ -1,10 +1,15 @@
 package org.dave.bonsaitrees.tile;
 
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumDyeColor;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.server.management.PlayerList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -15,26 +20,43 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.wrapper.EmptyHandler;
 import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.api.IBonsaiSoil;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.TreeTypeDrop;
 import org.dave.bonsaitrees.base.BaseTileTicking;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.SoilStatsModificationsRegistry;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.TreeDropModificationsRegistry;
 import org.dave.bonsaitrees.init.Triggerss;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.render.PotColorizer;
-import org.dave.bonsaitrees.trees.TreeDropModificationsRegistry;
+import org.dave.bonsaitrees.trees.TreeGrowthHelper;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
+import org.dave.bonsaitrees.utility.Logz;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TileBonsaiPot extends BaseTileTicking {
     protected ItemStack sapling = ItemStack.EMPTY;
+    protected ItemStack soilStack = ItemStack.EMPTY;
+
     protected String shapeFilename = null;
     protected double progress = 0;
     protected IBonsaiTreeType treeType = null;
     private final static EmptyHandler handler = new EmptyHandler();
     protected EnumDyeColor color = PotColorizer.DEFAULT_COLOR;
+
+    @Override
+    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity packet) {
+        EnumDyeColor before = color;
+        super.onDataPacket(net, packet);
+        EnumDyeColor after = color;
+
+        if(before != after) {
+            world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+        }
+    }
 
     @Override
     public AxisAlignedBB getRenderBoundingBox() {
@@ -50,12 +72,33 @@ public class TileBonsaiPot extends BaseTileTicking {
         return sapling != ItemStack.EMPTY && getTreeType() != null;
     }
 
+    public boolean hasSoil() {
+        return soilStack != null && !soilStack.isEmpty() && soilStack.getItem() instanceof ItemBlock;
+    }
+
+    public ItemStack getSoilStack() {
+        return soilStack.copy();
+    }
+
+    public IBonsaiSoil getBonsaiSoil() {
+        return BonsaiTrees.instance.soilRegistry.getTypeByStack(soilStack);
+    }
+
+    public IBlockState getSoilBlockState() {
+        if(!hasSoil()) {
+            return null;
+        }
+
+        ItemBlock soilBlock = (ItemBlock)soilStack.getItem();
+        return soilBlock.getBlock().getStateFromMeta(soilStack.getMetadata());
+    }
+
     public boolean isHarvestable() {
-        return hasSapling() && progress >= BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType());
+        return hasSapling() && progress >= BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil());
     }
 
     public boolean isGrowing() {
-        return hasSapling() && progress < BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType());
+        return hasSapling() && progress < BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil());
     }
 
     public ItemStack getSapling() {
@@ -68,6 +111,8 @@ public class TileBonsaiPot extends BaseTileTicking {
 
     public void setColor(EnumDyeColor color) {
         this.color = color;
+        this.markDirty();
+        world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }
 
     public void boostProgress() {
@@ -75,14 +120,32 @@ public class TileBonsaiPot extends BaseTileTicking {
             return;
         }
 
-        this.progress += BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType()) / 4;
+        this.progress += BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil()) / 4;
         this.markDirty();
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }
 
+    public void dropSapling() {
+        if (sapling.isEmpty()) {
+            return;
+        }
+
+        spawnItem(this.sapling.copy());
+
+        setSapling(ItemStack.EMPTY);
+    }
+
+    public void dropSoil() {
+        this.spawnItem(this.soilStack.copy());
+        this.soilStack = ItemStack.EMPTY;
+        this.markDirty();
+        world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+    }
+
+
     private void spawnItem(ItemStack stack) {
-        EntityItem entityItem = new EntityItem(world, getPos().getX()+0.5f, getPos().getY(), getPos().getZ()+0.5f, stack);
-        entityItem.lifespan = 600;
+        EntityItem entityItem = new EntityItem(world, getPos().getX()+0.5f, getPos().getY()+0.7f, getPos().getZ()+0.5f, stack);
+        entityItem.lifespan = 1200;
         entityItem.setPickupDelay(5);
 
         entityItem.motionX = 0.0f;
@@ -94,13 +157,15 @@ public class TileBonsaiPot extends BaseTileTicking {
 
     public List<ItemStack> getRandomizedDrops() {
         List<ItemStack> result = new ArrayList<>();
+
         List<TreeTypeDrop> drops = TreeDropModificationsRegistry.getModifiedDropList(treeType);
         for(TreeTypeDrop drop : drops) {
             int tries = drop.stack.getCount();
 
+            float dropChance = drop.chance * SoilStatsModificationsRegistry.getModifiedDropChanceModifier(this.getBonsaiSoil());
             int count = 0;
             for (int tryNum = 0; tryNum < tries; tryNum++) {
-                if (world.rand.nextFloat() >= drop.chance) {
+                if (world.rand.nextFloat() >= dropChance) {
                     continue;
                 }
                 count++;
@@ -158,6 +223,12 @@ public class TileBonsaiPot extends BaseTileTicking {
             treeType = null;
         }
 
+        if(compound.hasKey("soil")) {
+            soilStack = new ItemStack(compound.getCompoundTag("soil"));
+        } else {
+            soilStack = new ItemStack(Blocks.DIRT, 1, 0);
+        }
+
         if(treeType == null || sapling.isEmpty()) {
             sapling = ItemStack.EMPTY;
             shapeFilename = null;
@@ -183,6 +254,7 @@ public class TileBonsaiPot extends BaseTileTicking {
         }
         compound.setDouble("progress", progress);
         compound.setInteger("color", color.getMetadata());
+        compound.setTag("soil", soilStack.writeToNBT(new NBTTagCompound()));
 
         return compound;
     }
@@ -191,11 +263,16 @@ public class TileBonsaiPot extends BaseTileTicking {
     public void update() {
         super.update();
 
-        if(!sapling.isEmpty() && getTreeType() != null) {
-            progress = BonsaiTrees.instance.typeRegistry.growTick(getTreeType(), getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
+        if(soilStack == null || soilStack.isEmpty()) {
+            progress = 0;
+            return;
         }
 
-        if(!world.isRemote && treeType != null && progress >= BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType())) {
+        if(!sapling.isEmpty() && getTreeType() != null) {
+            progress = TreeGrowthHelper.growTick(getTreeType(), getBonsaiSoil(), getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
+        }
+
+        if(!world.isRemote && treeType != null && progress >= BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil())) {
             if(hasOwner()) {
                 PlayerList list = world.getMinecraftServer().getPlayerList();
                 EntityPlayerMP player = list.getPlayerByUUID(getOwner());
@@ -237,7 +314,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     }
 
     public double getProgressPercent() {
-        return getProgress() / (double)BonsaiTrees.instance.typeRegistry.getGrowTime(getTreeType());
+        return getProgress() / (double)BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil());
     }
 
     public double getProgress() {
@@ -260,6 +337,12 @@ public class TileBonsaiPot extends BaseTileTicking {
         }
 
         progress = 0;
+        this.markDirty();
+        world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+    }
+
+    public void setSoil(ItemStack soilStack) {
+        this.soilStack = soilStack;
         this.markDirty();
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }

@@ -1,12 +1,12 @@
 package org.dave.bonsaitrees.trees;
 
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import org.dave.bonsaitrees.api.IBonsaiIntegration;
+import org.dave.bonsaitrees.api.IBonsaiSoil;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.api.ITreeTypeRegistry;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.SoilStatsModificationsRegistry;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.TreeGrowthModificationsRegistry;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.utility.Logz;
 
@@ -33,25 +33,8 @@ public class TreeTypeRegistry implements ITreeTypeRegistry {
         }
     }
 
-    public double growTick(IBonsaiTreeType treeType, World world, BlockPos pos, IBlockState state, double progress) {
-        boolean hasAir = world.isAirBlock(pos.up());
-
-        float actualGrowTime = this.getGrowTime(treeType);
-
-        // Only grow if the space above it is AIR, otherwise reset to third of the progress
-        if(!hasAir && progress > actualGrowTime / 3) {
-            return actualGrowTime / 3;
-        }
-
-        if(progress < actualGrowTime && hasAir) {
-            return progress + treeType.getGrowthRate(world, pos, state, progress);
-        }
-
-        return progress;
-    }
-
-    public String getGrowTimeHuman(IBonsaiTreeType treeType) {
-        float actualGrowTime = this.getGrowTime(treeType);
+    public String getBaseGrowTimeHuman(IBonsaiTreeType treeType) {
+        float actualGrowTime = this.getBaseGrowTime(treeType);
         int fullSeconds = (int)actualGrowTime / 20;
         int minutes = fullSeconds / 60;
         int seconds = fullSeconds % 60;
@@ -59,8 +42,12 @@ public class TreeTypeRegistry implements ITreeTypeRegistry {
         return String.format("%d:%02d", minutes, seconds);
     }
 
-    public int getGrowTime(IBonsaiTreeType treeType) {
+    public int getBaseGrowTime(IBonsaiTreeType treeType) {
         return TreeGrowthModificationsRegistry.getModifiedGrowTime(treeType);
+    }
+
+    public int getFinalGrowTime(IBonsaiTreeType treeType, IBonsaiSoil soil) {
+        return (int) Math.floor(this.getBaseGrowTime(treeType) * SoilStatsModificationsRegistry.getModifiedGrowTimeModifier(soil));
     }
 
     public Collection<IBonsaiTreeType> getAllTypes() {

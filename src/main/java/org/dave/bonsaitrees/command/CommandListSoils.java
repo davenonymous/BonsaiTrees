@@ -7,7 +7,7 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
 import org.dave.bonsaitrees.BonsaiTrees;
-import org.dave.bonsaitrees.api.IBonsaiTreeType;
+import org.dave.bonsaitrees.api.IBonsaiSoil;
 import org.dave.bonsaitrees.base.CommandBaseExt;
 import org.dave.bonsaitrees.compat.CraftTweaker2.registries.TagModificationsRegistry;
 
@@ -15,10 +15,10 @@ import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class CommandListTrees extends CommandBaseExt {
+public class CommandListSoils extends CommandBaseExt {
     @Override
     public String getName() {
-        return "listTrees";
+        return "listSoils";
     }
 
     @Override
@@ -28,10 +28,10 @@ public class CommandListTrees extends CommandBaseExt {
 
     @Override
     public void execute(MinecraftServer server, ICommandSender sender, String[] args) throws CommandException {
-        sender.sendMessage(new TextComponentTranslation("commands.bonsaitrees.listTrees.result_title"));
-        List<IBonsaiTreeType> types = new LinkedList<>(BonsaiTrees.instance.typeRegistry.getAllTypes());
-        types.sort(Comparator.comparing(IBonsaiTreeType::getName));
-        for(IBonsaiTreeType type : types) {
+        sender.sendMessage(new TextComponentTranslation("commands.bonsaitrees.listSoils.result_title"));
+        List<IBonsaiSoil> types = new LinkedList<>(BonsaiTrees.instance.soilRegistry.getAllSoils());
+        types.sort(Comparator.comparing(IBonsaiSoil::getName));
+        for(IBonsaiSoil type : types) {
             sender.sendMessage(new TextComponentString(" - " + type.getName() + " " + TagModificationsRegistry.getModifiedTagList(type)));
         }
     }

@@ -1,4 +1,4 @@
-package org.dave.bonsaitrees.trees;
+package org.dave.bonsaitrees.compat.CraftTweaker2.registries;
 
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;

@@ -5,17 +5,13 @@
     "count": 1
   },
   "pattern": [
-    "bdb",
+    "b b",
     "bbb"
   ],
   "type": "minecraft:crafting_shaped",
   "key": {
     "b": {
       "item": "minecraft:brick"
-    },
-    "d": {
-      "item": "minecraft:dirt",
-      "data": 0
     }
   }
 }

@@ -8,7 +8,11 @@ import java.util.Map;
 import java.util.Random;
 
 public interface IBonsaiIntegration {
-    void registerTrees(ITreeTypeRegistry registry);
+    default void registerTrees(ITreeTypeRegistry registry) {
+    }
+
+    default void registerSoils(IBonsaiSoilRegistry registry) {
+    }
 
     void generateTree(IBonsaiTreeType type, World world, BlockPos pos, Random rand);
 

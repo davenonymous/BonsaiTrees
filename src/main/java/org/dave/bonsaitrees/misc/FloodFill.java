@@ -23,7 +23,8 @@ public class FloodFill {
             Blocks.SAND,
             Blocks.SANDSTONE,
             Blocks.WATER,
-            Blocks.BEDROCK
+            Blocks.BEDROCK,
+            Blocks.END_STONE
     });
     private int MAX_SEARCH_DEPTH = 2048;
     private int MAX_BLOCKS = 4196;
@@ -90,7 +91,7 @@ public class FloodFill {
             return;
         }
 
-        if(ignoredBlocks.contains(state.getBlock())) {
+        if(ignoredBlocks.contains(state.getBlock()) || state.getBlock() == Blocks.END_STONE) {
             return;
         }
 

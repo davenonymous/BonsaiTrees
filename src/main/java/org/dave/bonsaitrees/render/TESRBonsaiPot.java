@@ -14,6 +14,7 @@ import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.SoilStatsModificationsRegistry;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 import org.dave.bonsaitrees.trees.TreeBlockAccess;
@@ -35,9 +36,82 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         TESRBonsaiPot.clearLists = true;
     }
 
+    private void renderSoil(TileBonsaiPot te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+        if(te.getSoilBlockState() == null) {
+            return;
+        }
+
+        GlStateManager.pushMatrix();
+        GlStateManager.pushAttrib();
+
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder buffer = tessellator.getBuffer();
+        buffer.begin(GL11.GL_QUADS, DefaultVertexFormats.BLOCK);
+
+        GlStateManager.translate(x, y, z);
+        GlStateManager.disableRescaleNormal();
+
+        // Init GlStateManager
+        GlStateManager.enableAlpha();
+        GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
+
+        GlStateManager.enableBlend();
+        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+
+        GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
+
+        GlStateManager.disableFog();
+        GlStateManager.disableLighting();
+        RenderHelper.disableStandardItemLighting();
+
+        if (Minecraft.isAmbientOcclusionEnabled()) {
+            GlStateManager.shadeModel(GL11.GL_SMOOTH);
+        } else {
+            GlStateManager.shadeModel(GL11.GL_FLAT);
+        }
+
+        GlStateManager.scale(1 / 16.0f, 1 / 16.0f, 1 / 16.0f);
+        GlStateManager.translate(2.0d, 1.1d, 2.0d);
+        GlStateManager.scale(12.0f, 1.0f, 12.0f);
+
+
+        TextureManager textureManager = Minecraft.getMinecraft().getTextureManager();
+        textureManager.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+        textureManager.getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).setBlurMipmap(false, false);
+
+        GlStateManager.setActiveTexture(OpenGlHelper.lightmapTexUnit);
+        GlStateManager.setActiveTexture(OpenGlHelper.defaultTexUnit);
+
+        ForgeHooksClient.setRenderLayer(BlockRenderLayer.TRANSLUCENT);
+        try {
+            BlockRendererDispatcher blockrendererdispatcher = Minecraft.getMinecraft().getBlockRendererDispatcher();
+            blockrendererdispatcher.renderBlock(te.getSoilBlockState(), new BlockPos(0, 0 ,0), te.getWorld(), buffer);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        tessellator.draw();
+
+        textureManager.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+        textureManager.getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
+
+
+        GlStateManager.disableAlpha();
+        GlStateManager.disableBlend();
+        GlStateManager.disableCull();
+        GlStateManager.enableLighting();
+        GlStateManager.enableRescaleNormal();
+        GlStateManager.resetColor();
+
+        GlStateManager.popAttrib();
+        GlStateManager.popMatrix();
+    }
+
     @Override
     public void render(TileBonsaiPot te, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
         //super.render(te, x, y, z, partialTicks, destroyStage, alpha);
+        renderSoil(te, x, y, z, partialTicks, destroyStage, alpha);
+
         if(te.getBonsaiShapeName() == null) {
             return;
         }
@@ -89,7 +163,7 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
             float maxSize = ConfigurationHandler.ClientSettings.maxTreeScale;
             GlStateManager.scale(maxSize, maxSize, maxSize);
 
-            double progress = te.getProgress() / (double)BonsaiTrees.instance.typeRegistry.getGrowTime(te.getTreeType());
+            double progress = te.getProgress() / (double)BonsaiTrees.instance.typeRegistry.getFinalGrowTime(te.getTreeType(), te.getBonsaiSoil());
             GlStateManager.scale(progress, progress, progress);
 
             GlStateManager.translate(-rotateOffsetX, -rotateOffsetY, -rotateOffsetZ);

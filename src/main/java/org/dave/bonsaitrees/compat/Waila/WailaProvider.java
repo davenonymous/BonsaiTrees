@@ -30,6 +30,13 @@ public class WailaProvider {
             TileBonsaiPot teBonsai = (TileBonsaiPot) accessor.getTileEntity();
             if(teBonsai.hasSapling()) {
                 currenttip.add(TextFormatting.GRAY + teBonsai.getSapling().getDisplayName());
+            }
+
+            if(teBonsai.hasSoil()) {
+                currenttip.add(TextFormatting.GRAY + teBonsai.getSoilStack().getDisplayName());
+            }
+
+            if(teBonsai.hasSapling()) {
                 currenttip.add(String.format("%s%.1f%%", TextFormatting.YELLOW, teBonsai.getProgressPercent()*100));
             }
 

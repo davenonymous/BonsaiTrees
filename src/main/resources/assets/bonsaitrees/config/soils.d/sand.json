@@ -1,0 +1,16 @@
+{
+  "name": "minecraft:sand",
+  "mod": "minecraft",
+  "soil": {
+    "name": "minecraft:sand",
+    "data": 0,
+    "ignoreMeta": false
+  },
+
+  "modifiers": {
+    "growTime": 1.0,
+    "dropChance": 1.0
+  },
+
+  "providedTags": [ "sand" ]
+}

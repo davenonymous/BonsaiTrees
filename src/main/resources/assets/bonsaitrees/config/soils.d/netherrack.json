@@ -1,0 +1,16 @@
+{
+  "name": "minecraft:netherrack",
+  "mod": "minecraft",
+  "soil": {
+    "name": "minecraft:netherrack",
+    "data": 0,
+    "ignoreMeta": false
+  },
+
+  "modifiers": {
+    "growTime": 1.0,
+    "dropChance": 1.0
+  },
+
+  "providedTags": [ "netherrack" ]
+}

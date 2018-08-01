@@ -2,7 +2,7 @@ package org.dave.bonsaitrees.compat.CraftTweaker2.handlers;
 
 import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
-import org.dave.bonsaitrees.trees.TreeGrowthModificationsRegistry;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.TreeGrowthModificationsRegistry;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 

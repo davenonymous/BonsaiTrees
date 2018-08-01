@@ -4,7 +4,7 @@ import crafttweaker.CraftTweakerAPI;
 import crafttweaker.IAction;
 import crafttweaker.api.item.IItemStack;
 import org.dave.bonsaitrees.compat.CraftTweaker2.CraftTweakerUtils;
-import org.dave.bonsaitrees.trees.TreeDropModificationsRegistry;
+import org.dave.bonsaitrees.compat.CraftTweaker2.registries.TreeDropModificationsRegistry;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
 
