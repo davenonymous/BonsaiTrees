@@ -32,7 +32,6 @@ import org.dave.bonsaitrees.render.PotColorizer;
 import org.dave.bonsaitrees.trees.TreeGrowthHelper;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
-import org.dave.bonsaitrees.utility.Logz;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -121,6 +120,10 @@ public class TileBonsaiPot extends BaseTileTicking {
         }
 
         this.progress += BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil()) / 4;
+        if(this.progress >= BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil())) {
+            this.progress = BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil());
+        }
+
         this.markDirty();
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }
