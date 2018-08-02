@@ -16,6 +16,7 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -232,7 +233,20 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
             return false;
         }
 
+        if (world.isRemote || !(player instanceof EntityPlayerMP)) {
+            return true;
+        }
+
         TileBonsaiPot pot = (TileBonsaiPot) world.getTileEntity(pos);
+
+        // Check for bonemeal first. Allow using bonemeal when clicked on the soil part of the block.
+        // Otherwise, when clicked on the bonsai pot itself, tint the block accordingly.
+        float epsilon = 0.01f;
+        if(Math.abs(hitY - 0.19f) < epsilon && hitX >= 0.13 && hitX <= 0.87 && hitZ >= 0.13 && hitZ <= 0.87) {
+            if(playerStack.getItem() == Items.DYE && playerStack.getMetadata() == 15) {
+                return false;
+            }
+        }
 
         if(DyeUtils.isDye(playerStack)) {
             EnumDyeColor color = DyeUtils.colorFromStack(playerStack).orElse(EnumDyeColor.GRAY);
@@ -259,10 +273,6 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
             }
 
             pot.setSoil(playerStack.splitStack(1));
-            return true;
-        }
-
-        if (world.isRemote || !(player instanceof EntityPlayerMP)) {
             return true;
         }
 
