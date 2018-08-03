@@ -283,12 +283,13 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
                 return false;
             }
 
-            if(pot.isHarvestable()) {
-                int droppedItems = pot.dropLoot();
+
+            if(pot.isHarvestable() && playerStack.getItemDamage() + 1 < playerStack.getMaxDamage()) {
+                pot.dropLoot();
                 pot.setSapling(pot.getSapling());
-                playerStack.damageItem(droppedItems, player);
+                playerStack.damageItem(1, player);
                 return true;
-            } else if(pot.getProgress() >= 20 && pot.getProgressPercent() <= 0.9f) {
+            } else if(pot.getProgress() >= 20 && pot.getProgressPercent() <= 0.75f) {
                 // Not ready and still under 90%
                 pot.dropSapling();
                 return true;
