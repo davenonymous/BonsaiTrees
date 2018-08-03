@@ -14,7 +14,6 @@ import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.dave.bonsaitrees.BonsaiTrees;
-import org.dave.bonsaitrees.compat.CraftTweaker2.registries.SoilStatsModificationsRegistry;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 import org.dave.bonsaitrees.trees.TreeBlockAccess;
@@ -89,12 +88,12 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        ForgeHooksClient.setRenderLayer(null);
 
         tessellator.draw();
 
         textureManager.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
         textureManager.getTexture(TextureMap.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
-
 
         GlStateManager.disableAlpha();
         GlStateManager.disableBlend();
