@@ -6,12 +6,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import org.dave.bonsaitrees.utility.Logz;
 
 import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
-public class BonsaiSoilSerializer implements JsonDeserializer<BonsaiSoil> {
-    @Override
-    public BonsaiSoil deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+public class BonsaiSoilSerializer implements JsonDeserializer<List<BonsaiSoil>> {
+    private BonsaiSoil deserializeSoil(JsonElement json) throws JsonParseException {
         if(!json.isJsonObject()) {
             throw new JsonParseException("Soil definition is no Json object!");
         }
@@ -82,5 +84,20 @@ public class BonsaiSoilSerializer implements JsonDeserializer<BonsaiSoil> {
         }
 
         return result;
+    }
+
+    @Override
+    public List<BonsaiSoil> deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
+        List<BonsaiSoil> resultList = new ArrayList<>();
+
+        if(json.isJsonArray()) {
+            for(JsonElement soil : json.getAsJsonArray()) {
+                resultList.add(this.deserializeSoil(soil));
+            }
+        } else if(json.isJsonObject()) {
+            resultList.add(this.deserializeSoil(json));
+        }
+
+        return resultList;
     }
 }

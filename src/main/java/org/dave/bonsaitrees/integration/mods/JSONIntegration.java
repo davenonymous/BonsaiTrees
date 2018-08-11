@@ -1,6 +1,7 @@
 package org.dave.bonsaitrees.integration.mods;
 
 import com.google.gson.JsonParseException;
+import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import net.minecraft.block.BlockSapling;
 import net.minecraft.item.ItemBlock;
@@ -15,6 +16,7 @@ import org.dave.bonsaitrees.utility.SerializationHelper;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -53,12 +55,14 @@ public class JSONIntegration implements IBonsaiIntegration {
                 continue;
             }
 
-            Logz.debug(" > Loading soil from file: '%s'", filename);
+            Logz.debug(" > Loading soils from file: '%s'", filename);
             try {
-                BonsaiSoil soil = SerializationHelper.GSON.fromJson(new JsonReader(new InputStreamReader(is)), BonsaiSoil.class);
-                registry.registerBonsaiSoilIntegration(this, soil);
+                List<BonsaiSoil> soils = SerializationHelper.GSON.fromJson(new JsonReader(new InputStreamReader(is)), new TypeToken<List<BonsaiSoil>>(){}.getType());
+                for(BonsaiSoil soil : soils) {
+                    registry.registerBonsaiSoilIntegration(this, soil);
+                }
             } catch(JsonParseException e) {
-                Logz.info("Could not load soil from file '%s': %s", filename, e.getLocalizedMessage());
+                Logz.info("Could not load soils from file '%s': %s", filename, e.getLocalizedMessage());
             }
         }
 
