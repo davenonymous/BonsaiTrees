@@ -1,0 +1,66 @@
+[
+  {
+    "name": "tconstruct:slime_dirt_magma",
+    "mod": "tconstruct",
+    "soil": {
+      "name": "tconstruct:slime_dirt",
+      "data": 3,
+      "ignoreMeta": false
+    },
+
+    "modifiers": {
+      "growTime": 0.125,
+      "dropChance": 3.0
+    },
+
+    "providedTags": ["slime"]
+  },
+  {
+    "name": "tconstruct:slime_grass_green_on_magma",
+    "mod": "tconstruct",
+    "soil": {
+      "name": "tconstruct:slime_grass",
+      "data": 4,
+      "ignoreMeta": false
+    },
+
+    "modifiers": {
+      "growTime": 0.125,
+      "dropChance": 3.0
+    },
+
+    "providedTags": ["slime"]
+  },
+  {
+    "name": "tconstruct:slime_grass_purple_on_magma",
+    "mod": "tconstruct",
+    "soil": {
+      "name": "tconstruct:slime_grass",
+      "data": 9,
+      "ignoreMeta": false
+    },
+
+    "modifiers": {
+      "growTime": 0.125,
+      "dropChance": 3.0
+    },
+
+    "providedTags": ["slime"]
+  },
+  {
+    "name": "tconstruct:slime_grass_magma_on_magma",
+    "mod": "tconstruct",
+    "soil": {
+      "name": "tconstruct:slime_grass",
+      "data": 14,
+      "ignoreMeta": false
+    },
+
+    "modifiers": {
+      "growTime": 0.125,
+      "dropChance": 3.0
+    },
+
+    "providedTags": ["slime"]
+  }
+]

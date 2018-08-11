@@ -27,5 +27,6 @@
       "data": 1,
       "type": "FRUIT"
     }
-  ]
+  ],
+  "compatibleSoilTags": ["slime"]
 }
