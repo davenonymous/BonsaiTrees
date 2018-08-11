@@ -14,6 +14,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
     @Override
     public void register(IModRegistry registry) {
         registry.addRecipeCatalyst(new ItemStack(Blockss.bonsaiPot), BonsaiTreeRecipeCategory.UID);
+        registry.addRecipeCatalyst(new ItemStack(Blockss.bonsaiPot, 1, 1), BonsaiTreeRecipeCategory.UID);
         registry.handleRecipes(IBonsaiTreeType.class, new BonsaiTreeRecipeWrapperFactory(), BonsaiTreeRecipeCategory.UID);
         registry.addRecipes(BonsaiTrees.instance.typeRegistry.getAllTypes(), BonsaiTreeRecipeCategory.UID);
     }
