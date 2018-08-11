@@ -271,7 +271,7 @@ public class TileBonsaiPot extends BaseTileTicking {
             return;
         }
 
-        if(!sapling.isEmpty() && getTreeType() != null) {
+        if(!sapling.isEmpty() && getTreeType() != null && BonsaiTrees.instance.soilCompatibility.canTreeGrowOnSoil(getTreeType(), getBonsaiSoil())) {
             progress = TreeGrowthHelper.growTick(getTreeType(), getBonsaiSoil(), getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
         }
 

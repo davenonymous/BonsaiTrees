@@ -30,6 +30,15 @@ public class SoilCompatibility implements ISoilCompatibilityHelper {
     }
 
     @Override
+    public boolean canTreeGrowOnSoil(IBonsaiTreeType tree, IBonsaiSoil soil) {
+        if(!soilCompatibility.containsKey(tree) || soilCompatibility.get(tree) == null) {
+            return false;
+        }
+
+        return soilCompatibility.get(tree).contains(soil);
+    }
+
+    @Override
     public boolean isValidSoil(ItemStack soilStack) {
         for(IBonsaiSoil soil : treeCompatibility.keySet()) {
             if(soil.matchesStack(soilStack)) {

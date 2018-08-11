@@ -332,7 +332,7 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
                 return false;
             }
 
-            if(!BonsaiTrees.instance.soilCompatibility.getValidSoilsForTree(treeType).contains(pot.getBonsaiSoil())) {
+            if(!BonsaiTrees.instance.soilCompatibility.canTreeGrowOnSoil(treeType, pot.getBonsaiSoil())) {
                 player.sendStatusMessage(new TextComponentTranslation("hint.bonsaitrees.incompatible_soil"), true);
                 return false;
             }
