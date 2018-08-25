@@ -272,7 +272,13 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
                 return false;
             }
 
-            pot.setSoil(playerStack.splitStack(1));
+            if(player.isCreative()) {
+                ItemStack soilStack = playerStack.copy();
+                soilStack.setCount(1);
+                pot.setSoil(soilStack);
+            } else {
+                pot.setSoil(playerStack.splitStack(1));
+            }
             return true;
         }
 
@@ -337,7 +343,15 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
                 return false;
             }
 
-            pot.setSapling(playerStack.splitStack(1));
+
+            if(player.isCreative()) {
+                ItemStack soilStack = playerStack.copy();
+                soilStack.setCount(1);
+                pot.setSapling(soilStack);
+            } else {
+                pot.setSapling(playerStack.splitStack(1));
+            }
+
             return true;
         }
 
