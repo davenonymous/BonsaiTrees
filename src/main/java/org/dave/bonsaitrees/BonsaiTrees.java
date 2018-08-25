@@ -23,10 +23,16 @@ import org.dave.bonsaitrees.trees.TreeTypeRegistry;
 import org.dave.bonsaitrees.utility.Logz;
 
 
-@Mod(modid = BonsaiTrees.MODID, version = BonsaiTrees.VERSION, acceptedMinecraftVersions = "[1.12,1.13)")
+@Mod(
+        modid = BonsaiTrees.MODID,
+        version = BonsaiTrees.VERSION,
+        guiFactory = BonsaiTrees.GUI_FACTORY,
+        acceptedMinecraftVersions = "[1.12,1.13)"
+)
 public class BonsaiTrees {
     public static final String MODID = "bonsaitrees";
     public static final String VERSION = "1.0.5";
+    public static final String GUI_FACTORY = "org.dave.bonsaitrees.misc.ConfigGuiFactory";
 
     @Mod.Instance(BonsaiTrees.MODID)
     public static BonsaiTrees instance;

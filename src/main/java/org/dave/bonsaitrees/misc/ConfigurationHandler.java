@@ -1,6 +1,8 @@
 package org.dave.bonsaitrees.misc;
 
+import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.client.config.IConfigElement;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import org.dave.bonsaitrees.BonsaiTrees;
@@ -8,6 +10,8 @@ import org.dave.bonsaitrees.api.BonsaiDropChances;
 import org.dave.bonsaitrees.utility.Logz;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConfigurationHandler {
     public static Configuration configuration;
@@ -154,6 +158,16 @@ public class ConfigurationHandler {
         }
 
         loadConfiguration();
+    }
+
+    public static List<IConfigElement> getConfigElements() {
+        List<IConfigElement> result = new ArrayList<>();
+        result.add(new ConfigElement(configuration.getCategory(CATEGORY_GENERAL)));
+        result.add(new ConfigElement(configuration.getCategory(CATEGORY_CLIENT)));
+        result.add(new ConfigElement(configuration.getCategory(CATEGORY_DROPS)));
+        result.add(new ConfigElement(configuration.getCategory(CATEGORY_INTEGRATION)));
+
+        return result;
     }
 
     public static class ClientSettings {

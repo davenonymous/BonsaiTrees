@@ -5,7 +5,7 @@
   "description": "Tiny trees",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/thraaawn/BonsaiTrees",
   "updateUrl": "",
   "authorList": ["Davenonymous"],
   "credits": "",
