@@ -18,7 +18,6 @@ import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
-import net.minecraftforge.items.wrapper.EmptyHandler;
 import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.api.IBonsaiSoil;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
@@ -40,10 +39,17 @@ public class TileBonsaiPot extends BaseTileTicking {
     protected ItemStack sapling = ItemStack.EMPTY;
     protected ItemStack soilStack = ItemStack.EMPTY;
 
+    protected HoppingItemStackBufferHandler hoppingItemBuffer = new HoppingItemStackBufferHandler() {
+        @Override
+        protected void onContentsChanged(int slot) {
+            super.onContentsChanged(slot);
+            TileBonsaiPot.this.markDirty();
+        }
+    };
+
     protected String shapeFilename = null;
     protected double progress = 0;
     protected IBonsaiTreeType treeType = null;
-    private final static EmptyHandler handler = new EmptyHandler();
     protected EnumDyeColor color = PotColorizer.DEFAULT_COLOR;
 
     @Override
@@ -243,6 +249,10 @@ public class TileBonsaiPot extends BaseTileTicking {
             color = PotColorizer.DEFAULT_COLOR;
         }
 
+        if(compound.hasKey("hoppingBuffer")) {
+            hoppingItemBuffer.deserializeNBT((NBTTagCompound) compound.getTag("hoppingBuffer"));
+        }
+
         progress = compound.getDouble("progress");
     }
 
@@ -259,61 +269,143 @@ public class TileBonsaiPot extends BaseTileTicking {
         compound.setInteger("color", color.getMetadata());
         compound.setTag("soil", soilStack.writeToNBT(new NBTTagCompound()));
 
+        if(isHoppingPot()) {
+            compound.setTag("hoppingBuffer", hoppingItemBuffer.serializeNBT());
+        }
+
         return compound;
     }
+
+    public boolean isHoppingPot() {
+        return getBlockMetadata() == 1;
+    }
+
+    private void updateHoppingExport() {
+        if(world.isRemote) {
+            return;
+        }
+
+        if(!isHoppingPot()) {
+            return;
+        }
+
+        if(hoppingItemBuffer.isEmpty()) {
+            return;
+        }
+
+        if(getWorld().getTileEntity(getPos().down()) == null) {
+            return;
+        }
+
+        TileEntity below = getWorld().getTileEntity(getPos().down());
+        if(!below.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP)) {
+            return;
+        }
+
+        IItemHandler targetHandler = below.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP);
+
+        for(int srcSlot = 0; srcSlot < hoppingItemBuffer.getSlots(); srcSlot++) {
+            ItemStack stack = hoppingItemBuffer.getStackInSlot(srcSlot);
+            if(stack.isEmpty()) {
+                continue;
+            }
+
+            ItemStack simResult = ItemHandlerHelper.insertItemStacked(targetHandler, stack, true);
+            if(simResult.isEmpty() || simResult.getCount() < stack.getCount()) {
+                ItemStack insertResult = ItemHandlerHelper.insertItemStacked(targetHandler, stack, false);
+                hoppingItemBuffer.setStackInSlotInternal(srcSlot, insertResult);
+            }
+        }
+    }
+
+    public HoppingItemStackBufferHandler getHoppingItemBuffer() {
+        return hoppingItemBuffer;
+    }
+
+    private void updateProgress() {
+        if(!hasSoil() || !hasSapling()) {
+            progress = 0;
+            return;
+        }
+
+        if(!BonsaiTrees.instance.soilCompatibility.canTreeGrowOnSoil(getTreeType(), getBonsaiSoil())) {
+            return;
+        }
+
+        progress = TreeGrowthHelper.growTick(getTreeType(), getBonsaiSoil(), getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
+        this.markDirty();
+    }
+
+    private void tryToCutAndExport() {
+        if(ConfigurationHandler.GeneralSettings.disableHoppingBonsaiPot) {
+            return;
+        }
+
+        if(!isHoppingPot()) {
+            return;
+        }
+
+        if(getWorld().isBlockPowered(getPos())) {
+            return;
+        }
+
+        if(!hoppingItemBuffer.isEmpty()) {
+            // TODO: Add cooldown for check
+            return;
+        }
+
+        List<ItemStack> drops = getRandomizedDrops();
+        int slot = 0;
+        for(ItemStack drop : drops) {
+            hoppingItemBuffer.setStackInSlotInternal(slot, drop);
+            slot++;
+        }
+
+        progress = 0;
+        this.markDirty();
+        world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+    }
+
+    private void checkProgress() {
+        if(world.isRemote) {
+            return;
+        }
+
+        if(!hasSoil()) {
+            return;
+        }
+
+        if(!hasSapling()) {
+            return;
+        }
+
+        if(progress < BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil())) {
+            return;
+        }
+
+        // Tree is fully grown
+
+        // Trigger achievements
+        if(hasOwner()) {
+            PlayerList list = world.getMinecraftServer().getPlayerList();
+            EntityPlayerMP player = list.getPlayerByUUID(getOwner());
+            if (player != null) {
+                Triggerss.GROW_TREE.trigger(player);
+            }
+        }
+
+        // Try to cut the tree if its a hopping bonsai pot
+        tryToCutAndExport();
+    }
+
 
     @Override
     public void update() {
         super.update();
 
-        if(soilStack == null || soilStack.isEmpty()) {
-            progress = 0;
-            return;
-        }
-
-        if(!sapling.isEmpty() && getTreeType() != null && BonsaiTrees.instance.soilCompatibility.canTreeGrowOnSoil(getTreeType(), getBonsaiSoil())) {
-            progress = TreeGrowthHelper.growTick(getTreeType(), getBonsaiSoil(), getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
-        }
-
-        if(!world.isRemote && treeType != null && progress >= BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil())) {
-            if(hasOwner()) {
-                PlayerList list = world.getMinecraftServer().getPlayerList();
-                EntityPlayerMP player = list.getPlayerByUUID(getOwner());
-                if (player != null) {
-                    Triggerss.GROW_TREE.trigger(player);
-                }
-            }
-
-            boolean isHoppingPot = getBlockMetadata() == 1;
-            boolean hoppingIsEnabled = !ConfigurationHandler.GeneralSettings.disableHoppingBonsaiPot;
-            boolean hasTileEntityBelow = getWorld().getTileEntity(getPos().down()) != null;
-            boolean hasNoRedstoneSignal = !getWorld().isBlockPowered(getPos());
-
-            if(isHoppingPot && hoppingIsEnabled && hasTileEntityBelow && hasNoRedstoneSignal) {
-                TileEntity below = getWorld().getTileEntity(getPos().down());
-                if(below.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP)) {
-                    IItemHandler itemHandler = below.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP);
-                    List<ItemStack> drops = getRandomizedDrops();
-                    boolean canDrop = true;
-                    for(ItemStack drop : drops) {
-                        if(!ItemHandlerHelper.insertItemStacked(itemHandler, drop, true).isEmpty()) {
-                            canDrop = false;
-                            break;
-                        }
-                    }
-
-                    if(canDrop) {
-                        for(ItemStack drop : drops) {
-                            ItemHandlerHelper.insertItemStacked(itemHandler, drop, false);
-                        }
-
-                        progress = 0;
-                        this.markDirty();
-                        world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
-                    }
-                }
-            }
-        }
+        updateHoppingExport();
+        updateProgress();
+        checkProgress();
     }
 
     public double getProgressPercent() {
@@ -359,7 +451,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     @Override
     public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
         if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY && facing == EnumFacing.DOWN) {
-            return (T) handler;
+            return (T) hoppingItemBuffer;
         }
 
         return null;

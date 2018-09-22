@@ -45,6 +45,7 @@ import org.dave.bonsaitrees.compat.TheOneProbe.ITopInfoProvider;
 import org.dave.bonsaitrees.init.Blockss;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.render.TESRBonsaiPot;
+import org.dave.bonsaitrees.tile.HoppingItemStackBufferHandler;
 import org.dave.bonsaitrees.tile.TileBonsaiPot;
 import org.dave.bonsaitrees.utility.Logz;
 
@@ -443,6 +444,21 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
 
         if(teBonsai.hasSapling()) {
             probeInfo.progress((int)(teBonsai.getProgressPercent()*100), 100, probeInfo.defaultProgressStyle().suffix("%").filledColor(0xff44AA44).alternateFilledColor(0xff44AA44).backgroundColor(0xff836953));
+        }
+
+        if(mode == ProbeMode.EXTENDED) {
+            HoppingItemStackBufferHandler hoppingItemBuffer = teBonsai.getHoppingItemBuffer();
+            if (hoppingItemBuffer != null && !hoppingItemBuffer.isEmpty()) {
+                IProbeInfo line = probeInfo.horizontal();
+                for (int srcSlot = 0; srcSlot < hoppingItemBuffer.getSlots(); srcSlot++) {
+                    ItemStack stack = hoppingItemBuffer.getStackInSlot(srcSlot);
+                    if (stack.isEmpty()) {
+                        continue;
+                    }
+
+                    line.item(stack);
+                }
+            }
         }
     }
 }
