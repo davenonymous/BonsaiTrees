@@ -1,0 +1,55 @@
+{
+  "type": "randomthings:spectre_tree",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "randomthings:spectreleaf",
+      "meta": 0
+    },
+    "b": {
+      "name": "randomthings:spectreleaf",
+      "meta": 8
+    },
+    "c": {
+      "name": "randomthings:spectrelog",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "aaaaa",
+      "aaaaa",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aba ",
+      "aaaaa",
+      "aaaaa",
+      "     "
+    ],
+    [
+      " aba ",
+      " bbb ",
+      "aacaa",
+      "aacaa",
+      "  c  "
+    ],
+    [
+      "  a  ",
+      " aba ",
+      "aaaaa",
+      "aaaaa",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "aaaaa",
+      "aaaaa",
+      "     "
+    ]
+  ]
+}
