@@ -1,0 +1,60 @@
+{
+  "type": "randomthings:spectre",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "randomthings:spectreleaf",
+      "meta": 0
+    },
+    "b": {
+      "name": "randomthings:spectrelog",
+      "meta": 1
+    },
+    "c": {
+      "name": "randomthings:spectreleaf",
+      "meta": 8
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      " aaa ",
+      "aabaa",
+      "aabaa",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      " aaa ",
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ]
+  ]
+}
