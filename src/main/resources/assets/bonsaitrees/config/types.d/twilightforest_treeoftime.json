@@ -5,7 +5,7 @@
     "name": "twilightforest:twilight_sapling",
     "data": 5
   },
-  "worldgen": "twilightforest.world.TFGenTreeOfTime",
+  "worldgen": "twilightforest.world.feature.TFGenTreeOfTime",
   "growTimeMultiplier": 5.0,
   "drops": [
     {

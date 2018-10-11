@@ -5,7 +5,7 @@
     "name": "twilightforest:twilight_sapling",
     "data": 1
   },
-  "worldgen": "twilightforest.world.TFGenCanopyTree",
+  "worldgen": "twilightforest.world.feature.TFGenCanopyTree",
   "growTimeMultiplier": 1.0,
   "drops": [
     {
