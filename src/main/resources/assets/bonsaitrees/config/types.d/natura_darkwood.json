@@ -1,0 +1,42 @@
+{
+  "name": "natura:darkwood",
+  "mod": "natura",
+  "sapling": {
+    "name": "natura:nether_sapling",
+    "data": 2
+  },
+  "growTimeMultiplier": 1.0,
+  "drops": [
+    {
+      "name": "natura:sticks",
+      "data": 10,
+      "type": "STICK"
+    },
+    {
+      "name": "natura:nether_logs",
+      "data": 1,
+      "type": "WOOD"
+    },
+    {
+      "name": "natura:nether_sapling",
+      "data": 2,
+      "type": "SAPLING"
+    },
+    {
+      "name": "natura:nether_leaves2",
+      "data": 0,
+      "type": "LEAVES"
+    },
+    {
+      "name": "natura:nether_leaves2",
+      "data": 0,
+      "type": "LEAVES"
+    },
+    {
+      "name": "natura:nether_leaves2",
+      "data": 1,
+      "type": "LEAVES"
+    }
+  ],
+  "compatibleSoilTags": ["netherrack"]
+}

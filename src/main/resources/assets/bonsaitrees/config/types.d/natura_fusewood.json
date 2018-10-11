@@ -1,0 +1,32 @@
+{
+  "name": "natura:fusewood",
+  "mod": "natura",
+  "sapling": {
+    "name": "natura:nether_sapling",
+    "data": 1
+  }, 
+  "growTimeMultiplier": 1.0,
+  "drops": [
+    {
+      "name": "natura:sticks",
+      "data": 11,
+      "type": "STICK"
+    },
+    {
+      "name": "natura:nether_logs",
+      "data": 2,
+      "type": "WOOD"
+    },
+    {
+      "name": "natura:nether_sapling",
+      "data": 1,
+      "type": "SAPLING"
+    },
+    {
+      "name": "natura:nether_leaves",
+      "data": 2,
+      "type": "LEAVES"
+    }
+  ],
+  "compatibleSoilTags": ["netherrack"]
+}

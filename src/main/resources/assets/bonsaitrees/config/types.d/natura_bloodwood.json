@@ -1,0 +1,37 @@
+{
+  "name": "natura:bloodwood",
+  "mod": "natura",
+  "sapling": {
+    "name": "natura:nether_sapling2",
+    "data": 0
+  },
+  "growTimeMultiplier": 2.0,
+  "drops": [
+    {
+      "name": "natura:sticks",
+      "data": 12,
+      "type": "STICK"
+    },
+    {
+      "name": "natura:nether_logs2",
+      "data": 0,
+      "type": "WOOD"
+    },
+    {
+      "name": "natura:nether_logs2",
+      "data": 15,
+      "type": "WOOD"
+    },
+    {
+      "name": "natura:nether_sapling2",
+      "data": 0,
+      "type": "SAPLING"
+    },
+    {
+      "name": "natura:nether_leaves",
+      "data": 1,
+      "type": "LEAVES"
+    }
+  ],
+  "compatibleSoilTags": ["netherrack"]
+}
