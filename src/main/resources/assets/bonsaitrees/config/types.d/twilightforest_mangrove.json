@@ -5,7 +5,7 @@
     "name": "twilightforest:twilight_sapling",
     "data": 2
   },
-  "worldgen": "twilightforest.world.TFGenMangroveTree",
+  "worldgen": "twilightforest.world.feature.TFGenMangroveTree",
   "growTimeMultiplier": 1.0,
   "drops": [
     {

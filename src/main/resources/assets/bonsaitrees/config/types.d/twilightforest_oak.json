@@ -5,7 +5,7 @@
     "name": "twilightforest:twilight_sapling",
     "data": 0
   },
-  "worldgen": "twilightforest.world.TFGenSmallTwilightOak",
+  "worldgen": "twilightforest.world.feature.TFGenSmallTwilightOak",
   "growTimeMultiplier": 1.0,
   "drops": [
     {
