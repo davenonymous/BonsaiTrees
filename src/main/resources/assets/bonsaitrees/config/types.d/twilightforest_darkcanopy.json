@@ -1,0 +1,37 @@
+{
+  "name": "twilightforest:darkcanopy",
+  "mod": "twilightforest",
+  "sapling": {
+    "name": "twilightforest:twilight_sapling",
+    "data": 3
+  },
+  "worldgen": "twilightforest.world.feature.TFGenDarkCanopyTree",
+  "growTimeMultiplier": 3.0,
+  "drops": [
+    {
+      "name": "minecraft:stick",
+      "data": 0,
+      "type": "STICK"
+    },
+    {
+      "name": "twilightforest:twilight_log",
+      "data": 3,
+      "type": "WOOD"
+    },
+    {
+      "name": "twilightforest:twilight_sapling",
+      "data": 3,
+      "type": "SAPLING"
+    },
+    {
+      "name": "twilightforest:dark_leaves",
+      "data": 0,
+      "type": "LEAVES"
+    },
+    {
+      "name": "twilightforest:root",
+      "data": 0,
+      "type": "LEAVES"
+    }
+  ]
+}

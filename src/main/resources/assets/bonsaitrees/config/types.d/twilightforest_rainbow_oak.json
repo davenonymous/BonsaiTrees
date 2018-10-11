@@ -1,0 +1,37 @@
+{
+  "name": "twilightforest:rainbow_oak",
+  "mod": "twilightforest",
+  "sapling": {
+    "name": "twilightforest:twilight_sapling",
+    "data": 9
+  },
+  "worldgen": "twilightforest.world.feature.TFGenSmallRainboak",
+  "growTimeMultiplier": 1.0,
+  "drops": [
+    {
+      "name": "minecraft:stick",
+      "data": 0,
+      "type": "STICK"
+    },
+    {
+      "name": "twilightforest:twilight_log",
+      "data": 0,
+      "type": "WOOD"
+    },
+    {
+      "name": "twilightforest:twilight_sapling",
+      "data": 9,
+      "type": "SAPLING"
+    },
+    {
+      "name": "twilightforest:twilight_leaves",
+      "data": 3,
+      "type": "LEAVES"
+    },
+    {
+      "name": "twilightforest:root",
+      "data": 0,
+      "type": "LEAVES"
+    }
+  ]
+}

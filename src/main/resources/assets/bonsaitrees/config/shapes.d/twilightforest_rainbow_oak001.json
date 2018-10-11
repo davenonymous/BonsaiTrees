@@ -1,0 +1,65 @@
+{
+  "type": "twilightforest:rainbow_oak",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "twilightforest:twilight_log",
+      "meta": 0
+    },
+    "b": {
+      "name": "twilightforest:twilight_leaves",
+      "meta": 3
+    },
+    "c": {
+      "name": "twilightforest:twilight_leaves",
+      "meta": 11
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      " bbbb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      "  cb ",
+      "bbbcb",
+      "bcccb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ccc ",
+      " cac ",
+      "bcacb",
+      "bbabb",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      " bbc ",
+      "bbccb",
+      "bcccb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}
