@@ -1,0 +1,55 @@
+{
+  "type": "natura:fusewood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "natura:nether_leaves",
+      "meta": 10
+    },
+    "b": {
+      "name": "natura:nether_leaves",
+      "meta": 2
+    },
+    "c": {
+      "name": "natura:nether_logs",
+      "meta": 2
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " bbb ",
+      "bbbb ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aa  ",
+      "baaab",
+      "bbaab",
+      "     "
+    ],
+    [
+      " aaa ",
+      " aca ",
+      "bbcbb",
+      "bacab",
+      "  c  "
+    ],
+    [
+      "  a  ",
+      " aa  ",
+      "baaab",
+      "baaab",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbbb",
+      "bbbbb",
+      "     "
+    ]
+  ]
+}

@@ -1,0 +1,192 @@
+{
+  "type": "natura:bloodwood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "natura:nether_leaves",
+      "meta": 1
+    },
+    "b": {
+      "name": "natura:nether_leaves",
+      "meta": 9
+    },
+    "c": {
+      "name": "natura:nether_logs2",
+      "meta": 15
+    },
+    "d": {
+      "name": "natura:nether_logs2",
+      "meta": 2
+    },
+    "e": {
+      "name": "natura:nether_logs2",
+      "meta": 3
+    },
+    "f": {
+      "name": "natura:nether_logs2",
+      "meta": 0
+    },
+    "g": {
+      "name": "natura:nether_logs2",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "     aaa    ",
+      "            ",
+      "        aaa ",
+      "            ",
+      "            "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "     aaa    ",
+      "    abbba   ",
+      "      bbaaa ",
+      "      aabbaa",
+      "            "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "     aaa    ",
+      "  aaabcba   ",
+      " aaaababbaa ",
+      "     abbbcaa",
+      "     aaabbb "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "     aaa    ",
+      "  abababa   ",
+      " bbbbbcbbaa ",
+      "aaaabbbcaaaa",
+      "    aabccbb "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "     aaa    ",
+      "  ababbb    ",
+      " bbccbcbaaa ",
+      "aacbbbbbbb  ",
+      "   bbbcbbba "
+    ],
+    [
+      "     ge     ",
+      "     ge     ",
+      "     ge     ",
+      "     ge     ",
+      "     ge     ",
+      "     ge     ",
+      "  abbgeba   ",
+      " bbbbccba   ",
+      "aabccccbaa  ",
+      "aaabbcbba   "
+    ],
+    [
+      "     fd     ",
+      "     fd     ",
+      "     fd     ",
+      "     fd     ",
+      "     fd     ",
+      "     fda    ",
+      "  aaafdba   ",
+      " ababfdbba  ",
+      " abbbcbbb   ",
+      "aacbbcbb    "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "     abba   ",
+      "  aabbbba   ",
+      " aabbbbcaa  ",
+      " abbccbb    ",
+      "aaabbbaa    "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "     abba   ",
+      "  aaabcbba  ",
+      " aacbbcbba  ",
+      " abbbbbb    ",
+      "            "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "     abba   ",
+      "  aaabbcba  ",
+      " aabbbcbba  ",
+      "            ",
+      "            "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "     aaaa   ",
+      "  aaabbbba  ",
+      "    aabcba  ",
+      "            ",
+      "            "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "      aaa   ",
+      "     abba   ",
+      "     aaaaa  ",
+      "            ",
+      "            "
+    ],
+    [
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "      aaa   ",
+      "            ",
+      "            ",
+      "            "
+    ]
+  ]
+}

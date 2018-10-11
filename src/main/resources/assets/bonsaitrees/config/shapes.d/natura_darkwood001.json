@@ -1,0 +1,67 @@
+{
+  "type": "natura:darkwood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "natura:nether_leaves2",
+      "meta": 8
+    },
+    "b": {
+      "name": "natura:nether_leaves2",
+      "meta": 0
+    },
+    "c": {
+      "name": "natura:nether_leaves2",
+      "meta": 10
+    },
+    "d": {
+      "name": "natura:nether_logs",
+      "meta": 1
+    },
+    "e": {
+      "name": "natura:nether_leaves2",
+      "meta": 9
+    },
+    "f": {
+      "name": "natura:nether_leaves2",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bbbbb",
+      "bbbb ",
+      "     "
+    ],
+    [
+      "  c  ",
+      " ea  ",
+      "baaab",
+      "baaab",
+      "     "
+    ],
+    [
+      " aaa ",
+      " ada ",
+      "badab",
+      "badeb",
+      "  d  "
+    ],
+    [
+      "  a  ",
+      " aa  ",
+      "bacab",
+      "baaaf",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      " bbb ",
+      "     "
+    ]
+  ]
+}

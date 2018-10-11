@@ -1,0 +1,182 @@
+{
+  "type": "natura:ghostwood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "natura:nether_leaves",
+      "meta": 0
+    },
+    "b": {
+      "name": "natura:nether_leaves",
+      "meta": 8
+    },
+    "c": {
+      "name": "natura:nether_logs",
+      "meta": 8
+    },
+    "d": {
+      "name": "natura:nether_logs",
+      "meta": 0
+    },
+    "e": {
+      "name": "natura:nether_logs",
+      "meta": 4
+    }
+  },
+  "shape": [
+    [
+      "          ",
+      "          ",
+      "          ",
+      "    aaa   ",
+      "    aaa   ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "     a    ",
+      "   aaaaa  ",
+      "   aaaaa  ",
+      "     a    ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      " aaaaaa   ",
+      " aaaaaaa  ",
+      "   aaaaa  ",
+      "    bbb   ",
+      "   abb    ",
+      "   abb    ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "  a aaa   ",
+      "aaaaaaa   ",
+      "aaaaaaaa  ",
+      "  bbbaaa  ",
+      "    bb    ",
+      "  bbbeba  ",
+      "  aabbba  ",
+      "    a     ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "     a    ",
+      " aaaaaaa  ",
+      "aaaaaaaa  ",
+      "aaaabbb   ",
+      " abbbbb   ",
+      "   cbbbaa ",
+      "  bbbbbaa ",
+      "  aabbbaa ",
+      "   abbb   ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "    aaa   ",
+      "  aaaaaa  ",
+      "aaaaaaaa  ",
+      "aaaaabba  ",
+      "  babdba  ",
+      "   bbbbaaa",
+      "  bbbdbbba",
+      "  aabbabb ",
+      "    bdbb  ",
+      "     d    ",
+      "     d    ",
+      "     d    "
+    ],
+    [
+      "     a    ",
+      "   aaaaa  ",
+      " aaaaaaa  ",
+      " aaabbba  ",
+      "  aabbbaa ",
+      "  aabbbaaa",
+      "  aabbbaba",
+      "   abbbcb ",
+      "      b   ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "    aaa   ",
+      "   aaaa   ",
+      "   aaaaa  ",
+      "  aaaaaa  ",
+      " aaabbbaaa",
+      " aaabebbba",
+      "   a bab  ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "    aaa   ",
+      "  aaaaaa  ",
+      " aaabbbaa ",
+      " aaabbbaa ",
+      "  aab     ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "   aaaa   ",
+      " aaaaaa   ",
+      " aaaaa    ",
+      "   a      ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "  aaa     ",
+      "  aaa     ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ]
+  ]
+}

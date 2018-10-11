@@ -1,0 +1,124 @@
+{
+  "type": "natura:ghostwood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "natura:nether_leaves",
+      "meta": 0
+    },
+    "b": {
+      "name": "natura:nether_leaves",
+      "meta": 8
+    },
+    "c": {
+      "name": "natura:nether_logs",
+      "meta": 8
+    },
+    "d": {
+      "name": "natura:nether_logs",
+      "meta": 0
+    },
+    "e": {
+      "name": "natura:nether_logs",
+      "meta": 4
+    }
+  },
+  "shape": [
+    [
+      "          ",
+      "          ",
+      "          ",
+      " aaa      ",
+      " aaa      ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "    aaa   ",
+      "  a aaa   ",
+      "aaaaa     ",
+      "aabaa     ",
+      "  a       ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "     a    ",
+      "   aaaaa  ",
+      " aaaabaa  ",
+      "aaaaaa    ",
+      "aabbb     ",
+      " aca      ",
+      "   c      ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "    aaa   ",
+      "   aaaaa  ",
+      "  aaaaaa  ",
+      "aaaaada   ",
+      "abaabb    ",
+      "  baadaaa ",
+      "    cdbaa ",
+      "     d    ",
+      "     d    ",
+      "     d    "
+    ],
+    [
+      "     a    ",
+      "   aaaaa  ",
+      "  aaabba  ",
+      " aaaaab   ",
+      " aaaabba  ",
+      "  abbaaaaa",
+      "    aabaaa",
+      "       a  ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "    aaa   ",
+      "  aaaaa   ",
+      "  aaaaa   ",
+      "  aaaaaaa ",
+      "  aabbaaaa",
+      "   beaaaaa",
+      "      aaa ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "   aaa    ",
+      "   aaa    ",
+      "  aaaaaa  ",
+      "  aabaaaaa",
+      "    abaaaa",
+      "       a  ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "   aaa    ",
+      "   aaaaaa ",
+      "      aaa ",
+      "          ",
+      "          ",
+      "          "
+    ]
+  ]
+}
