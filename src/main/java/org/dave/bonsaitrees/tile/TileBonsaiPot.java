@@ -28,7 +28,6 @@ import org.dave.bonsaitrees.compat.CraftTweaker2.registries.TreeDropModification
 import org.dave.bonsaitrees.init.Triggerss;
 import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.render.PotColorizer;
-import org.dave.bonsaitrees.trees.TreeGrowthHelper;
 import org.dave.bonsaitrees.trees.TreeShape;
 import org.dave.bonsaitrees.trees.TreeShapeRegistry;
 
@@ -38,6 +37,9 @@ import java.util.List;
 public class TileBonsaiPot extends BaseTileTicking {
     protected ItemStack sapling = ItemStack.EMPTY;
     protected ItemStack soilStack = ItemStack.EMPTY;
+    private boolean hasCachedData = false;
+    private double calcGrowTime;
+    private boolean calcSoilCompatible;
 
     protected HoppingItemStackBufferHandler hoppingItemBuffer = new HoppingItemStackBufferHandler() {
         @Override
@@ -51,6 +53,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     protected double progress = 0;
     protected IBonsaiTreeType treeType = null;
     protected EnumDyeColor color = PotColorizer.DEFAULT_COLOR;
+
 
     @Override
     public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity packet) {
@@ -99,11 +102,11 @@ public class TileBonsaiPot extends BaseTileTicking {
     }
 
     public boolean isHarvestable() {
-        return hasSapling() && progress >= BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil());
+        return hasSapling() && progress >= calcGrowTime;
     }
 
     public boolean isGrowing() {
-        return hasSapling() && progress < BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil());
+        return hasSapling() && progress < calcGrowTime;
     }
 
     public ItemStack getSapling() {
@@ -120,14 +123,26 @@ public class TileBonsaiPot extends BaseTileTicking {
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
     }
 
+    private void updateCachedData() {
+        if(!hasSapling() || !hasSoil()) {
+            calcGrowTime = 0.0d;
+            calcSoilCompatible = false;
+            hasCachedData = false;
+        } else {
+            calcGrowTime = BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil());
+            calcSoilCompatible = BonsaiTrees.instance.soilCompatibility.canTreeGrowOnSoil(getTreeType(), getBonsaiSoil());
+            hasCachedData = true;
+        }
+    }
+
     public void boostProgress() {
         if(!isGrowing()) {
             return;
         }
 
-        this.progress += BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil()) / 4;
-        if(this.progress >= BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil())) {
-            this.progress = BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil());
+        this.progress += calcGrowTime / 4;
+        if(this.progress >= calcGrowTime) {
+            this.progress = calcGrowTime;
         }
 
         this.markDirty();
@@ -140,15 +155,16 @@ public class TileBonsaiPot extends BaseTileTicking {
         }
 
         spawnItem(this.sapling.copy());
-
         setSapling(ItemStack.EMPTY);
     }
 
     public void dropSoil() {
-        this.spawnItem(this.soilStack.copy());
-        this.soilStack = ItemStack.EMPTY;
-        this.markDirty();
-        world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+        if (soilStack.isEmpty()) {
+            return;
+        }
+
+        spawnItem(this.soilStack.copy());
+        setSoil(ItemStack.EMPTY);
     }
 
 
@@ -328,11 +344,21 @@ public class TileBonsaiPot extends BaseTileTicking {
             return;
         }
 
-        if(!BonsaiTrees.instance.soilCompatibility.canTreeGrowOnSoil(getTreeType(), getBonsaiSoil())) {
+        if(!calcSoilCompatible) {
             return;
         }
 
-        progress = TreeGrowthHelper.growTick(getTreeType(), getBonsaiSoil(), getWorld(), getPos(), getWorld().getBlockState(getPos()), progress);
+        // Only grow if the space above it is AIR, otherwise reset to third of the progress
+        if(!world.isAirBlock(pos.up())) {
+            if(progress > calcGrowTime / 3) {
+                progress = calcGrowTime / 3;
+            }
+        } else {
+            if(progress < calcGrowTime) {
+                progress += 1.0d;
+            }
+        }
+
         this.markDirty();
     }
 
@@ -371,15 +397,11 @@ public class TileBonsaiPot extends BaseTileTicking {
             return;
         }
 
-        if(!hasSoil()) {
+        if(!hasSoil() || !hasSapling()) {
             return;
         }
 
-        if(!hasSapling()) {
-            return;
-        }
-
-        if(progress < BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil())) {
+        if(progress < calcGrowTime) {
             return;
         }
 
@@ -403,13 +425,19 @@ public class TileBonsaiPot extends BaseTileTicking {
     public void update() {
         super.update();
 
+        // If the game reloaded we might not have witnessed the setSapling or setSoil events
+        // so we don't have any cached data. We are tracking that, so we can load it on demand.
+        if(!hasCachedData) {
+            updateCachedData();
+        }
+
         updateHoppingExport();
         updateProgress();
         checkProgress();
     }
 
     public double getProgressPercent() {
-        return getProgress() / (double)BonsaiTrees.instance.typeRegistry.getFinalGrowTime(getTreeType(), getBonsaiSoil());
+        return getProgress() / calcGrowTime;
     }
 
     public double getProgress() {
@@ -434,12 +462,14 @@ public class TileBonsaiPot extends BaseTileTicking {
         progress = 0;
         this.markDirty();
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+        updateCachedData();
     }
 
     public void setSoil(ItemStack soilStack) {
         this.soilStack = soilStack;
         this.markDirty();
         world.notifyBlockUpdate(pos, world.getBlockState(pos), world.getBlockState(pos), 3);
+        updateCachedData();
     }
 
     @Override
