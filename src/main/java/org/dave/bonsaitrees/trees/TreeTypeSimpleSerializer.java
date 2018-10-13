@@ -5,6 +5,7 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.Loader;
 import org.dave.bonsaitrees.api.TreeTypeSimple;
 import org.dave.bonsaitrees.compat.CraftTweaker2.registries.TreeGrowthModificationsRegistry;
+import org.dave.bonsaitrees.utility.Logz;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -134,15 +135,15 @@ public class TreeTypeSimpleSerializer implements JsonDeserializer<TreeTypeSimple
                 WorldGenerator worldGen = (WorldGenerator) constructor.newInstance(parameters);
                 result.setWorldGen(worldGen);
             } catch (ClassNotFoundException e) {
-                throw new JsonParseException("WorldGenClass '" + worldGenClassName + "' does not exist!");
+                Logz.warn("WorldGenClass '%s' does not exist! You won't be able to generate tree shapes for '%s'!", worldGenClassName, result.getName());
             } catch (NoSuchMethodException e) {
-                throw new JsonParseException("WorldGenClass '" + worldGenClassName + "' has no constructor with one boolean parameter!");
+                Logz.warn("WorldGenClass '%s' has no constructor with one boolean parameter! You won't be able to generate tree shapes for '%s'!", worldGenClassName, result.getName());
             } catch (IllegalAccessException e) {
-                throw new JsonParseException("Could not instantiate WorldGenClass '" + worldGenClassName + "': IllegalAccessException: " + e);
+                Logz.warn("Could not instantiate WorldGenClass '%s'! You won't be able to generate tree shapes for '%s'! IllegalAccessException: %s", worldGenClassName, result.getName(), e);
             } catch (InstantiationException e) {
-                throw new JsonParseException("Could not instantiate WorldGenClass '" + worldGenClassName + "': InstantiationException: " + e);
+                Logz.warn("Could not instantiate WorldGenClass '%s'! You won't be able to generate tree shapes for '%s'! InstantiationException: %s", worldGenClassName, result.getName(), e);
             } catch (InvocationTargetException e) {
-                throw new JsonParseException("Could not instantiate WorldGenClass '" + worldGenClassName + "': InvocationTargetException: " + e);
+                Logz.warn("Could not instantiate WorldGenClass '%s'! You won't be able to generate tree shapes for '%s'! InvocationTargetException: %s", worldGenClassName, result.getName(), e);
             }
         }
 
