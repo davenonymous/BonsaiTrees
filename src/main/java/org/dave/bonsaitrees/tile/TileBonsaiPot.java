@@ -376,8 +376,11 @@ public class TileBonsaiPot extends BaseTileTicking {
         }
 
         if(!hoppingItemBuffer.isEmpty()) {
-            // TODO: Add cooldown for check
-            return;
+            if(ConfigurationHandler.GeneralSettings.waitForEmptyItemBuffers) {
+                return;
+            }
+
+            hoppingItemBuffer.clear();
         }
 
         List<ItemStack> drops = getRandomizedDrops();

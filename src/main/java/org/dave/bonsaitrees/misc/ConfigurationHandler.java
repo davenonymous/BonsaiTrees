@@ -146,6 +146,10 @@ public class ConfigurationHandler {
                 "noDyeCost", CATEGORY_GENERAL, true, "If set to false, then dye is being used up when painting bonsai pots"
         );
 
+        GeneralSettings.waitForEmptyItemBuffers = configuration.getBoolean(
+                "waitForEmptyItemBuffers", CATEGORY_GENERAL, false, "Used for Hopping Bonsais only: If this is set to true, trees will only be cut automatically if all previous drops are exported. This breaks compatibility with e.g. storage drawers. If set to false unexported items from the previous cycle are being voided."
+        );
+
         if(configuration.hasChanged()) {
             configuration.save();
         }
@@ -186,5 +190,6 @@ public class ConfigurationHandler {
         public static boolean disableHoppingBonsaiPot = false;
         public static int baseGrowTicks = 600;
         public static boolean noDyeCost = true;
+        public static boolean waitForEmptyItemBuffers = false;
     }
 }

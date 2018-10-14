@@ -36,4 +36,10 @@ public class HoppingItemStackBufferHandler extends ItemStackHandler {
 
         return true;
     }
+
+    public void clear() {
+        for(int slot = 0; slot < this.stacks.size(); slot++) {
+            this.setStackInSlotInternal(slot, ItemStack.EMPTY);
+        }
+    }
 }
