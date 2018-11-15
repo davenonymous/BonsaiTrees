@@ -1,0 +1,132 @@
+{
+  "type": "sugiforest:sugi",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "sugiforest:sugi_leaves",
+      "meta": 0
+    },
+    "b": {
+      "name": "sugiforest:sugi_log",
+      "meta": 0
+    },
+    "c": {
+      "name": "sugiforest:sugi_leaves",
+      "meta": 8
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "    a  ",
+      "  aa   ",
+      "  caa  ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  aaaa ",
+      "  aaa  ",
+      "  aaa  ",
+      "  aa   ",
+      "  aac  ",
+      " a acc ",
+      " acaca ",
+      " ac ca ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "   aa  ",
+      "  aa   ",
+      "  aaa  ",
+      "   a   ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "  aaaa ",
+      " caa a ",
+      "aca aaa",
+      "ccaaaac",
+      "acaaaca",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "  aba  ",
+      "  aba  ",
+      "  aba  ",
+      "  aba  ",
+      " aabaa ",
+      " aabaa ",
+      " aabaa ",
+      " a baa ",
+      " a baa ",
+      "aaabaaa",
+      "aaab aa",
+      "aaabaaa",
+      "   b   "
+    ],
+    [
+      "   a   ",
+      "  aa   ",
+      "   a   ",
+      "  aa   ",
+      "   a   ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "  aaa  ",
+      " caa c ",
+      "aaaaa a",
+      "aaaaac ",
+      "acaaaaa",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      " aaaa  ",
+      "  aaaa ",
+      " aaaaa ",
+      "  aaaa ",
+      "  aac  ",
+      " aaaca ",
+      " aa aa ",
+      " aaaaa ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  aaa  ",
+      "  aaa  ",
+      "  aaa  ",
+      "       "
+    ]
+  ]
+}

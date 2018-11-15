@@ -1,0 +1,55 @@
+{
+  "type": "dcs_climate:morus",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "dcs_climate:dcs_leaves_morus",
+      "meta": 4
+    },
+    "b": {
+      "name": "dcs_climate:dcs_leaves_morus",
+      "meta": 5
+    },
+    "c": {
+      "name": "minecraft:log",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      " aaaa",
+      " aaa ",
+      "aaaaa",
+      "     "
+    ],
+    [
+      "  a  ",
+      "bbaaa",
+      "aaaaa",
+      "aaaab",
+      "     "
+    ],
+    [
+      " baa ",
+      "abcaa",
+      "aacaa",
+      "aacaa",
+      "  c  "
+    ],
+    [
+      "  b  ",
+      "abbaa",
+      "aaaaa",
+      "aaaba",
+      "     "
+    ],
+    [
+      "     ",
+      "abaaa",
+      " aab ",
+      "abaa ",
+      "     "
+    ]
+  ]
+}

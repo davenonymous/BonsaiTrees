@@ -1,0 +1,64 @@
+{
+  "type": "dcs_climate:olive",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "dcs_climate:dcs_leaves_olive",
+      "meta": 4
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 0
+    },
+    "c": {
+      "name": "dcs_climate:dcs_leaves_olive",
+      "meta": 5
+    },
+    "d": {
+      "name": "dcs_climate:dcs_leaves_olive",
+      "meta": 6
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      " aac ",
+      "aaaac",
+      "aaacd",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "aaaaa",
+      "caaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      " aad ",
+      "acbaa",
+      "cabaa",
+      "aabad",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      "aaaaa",
+      "aaaca",
+      "aaaca",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " aaaa",
+      "acaa ",
+      " acaa",
+      "     ",
+      "     "
+    ]
+  ]
+}
