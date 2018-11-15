@@ -1,0 +1,101 @@
+{
+  "type": "dcs_climate:dates",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "dcs_climate:dcs_leaves_dates",
+      "meta": 4
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 3
+    },
+    "c": {
+      "name": "dcs_climate:dcs_leaves_datescrop",
+      "meta": 4
+    },
+    "d": {
+      "name": "dcs_climate:dcs_leaves_datescrop",
+      "meta": 5
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " a a a ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "  a a  ",
+      "   a   ",
+      "   d   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  a a  ",
+      "   a   ",
+      " aaaaa ",
+      "a cbd a",
+      "   b   ",
+      "   b   ",
+      "   b   ",
+      "   b   ",
+      "   b   "
+    ],
+    [
+      "   a   ",
+      "  a a  ",
+      "   a   ",
+      "   c   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " a a a ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "type": "dcs_climate:walnut",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "dcs_climate:dcs_leaves_walnut",
+      "meta": 4
+    },
+    "b": {
+      "name": "dcs_climate:dcs_leaves_walnut",
+      "meta": 5
+    },
+    "c": {
+      "name": "dcs_climate:dcs_leaves_walnut",
+      "meta": 6
+    },
+    "d": {
+      "name": "minecraft:log2",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "  baa  ",
+      "  aaa  ",
+      "  aab  ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " aaab  ",
+      " abaab ",
+      " aaaaa ",
+      " aaaba ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      " abaab ",
+      "aaaaaaa",
+      "abaaaba",
+      "ababaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      " acdaa ",
+      "baadaaa",
+      "aaadaaa",
+      "aaadaaa",
+      "   d   ",
+      "   d   "
+    ],
+    [
+      "   a   ",
+      " aabaa ",
+      "aaaaaba",
+      "aaaaaab",
+      "aaaabaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  aac  ",
+      " baaaa ",
+      " aaaaa ",
+      " abaaa ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  aba  ",
+      "  aaa  ",
+      "  aaa  ",
+      "       ",
+      "       "
+    ]
+  ]
+}

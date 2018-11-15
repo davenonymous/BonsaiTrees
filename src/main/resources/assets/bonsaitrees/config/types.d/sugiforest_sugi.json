@@ -1,0 +1,36 @@
+{
+    "name": "sugiforest:sugi",
+    "mod": "sugiforest",
+    "sapling": {
+        "name": "sugiforest:sugi_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "sugiforest:sugi_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "sugiforest:sugi_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "sugiforest:sugi_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "sugiforest:sugi_fallen_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}
