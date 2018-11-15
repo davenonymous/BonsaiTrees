@@ -1,0 +1,65 @@
+{
+  "type": "dcs_climate:lemon",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "minecraft:log",
+      "meta": 0
+    },
+    "b": {
+      "name": "dcs_climate:dcs_leaves_lemon",
+      "meta": 4
+    },
+    "c": {
+      "name": "dcs_climate:dcs_leaves_lemon",
+      "meta": 5
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      " bbb ",
+      " bbc ",
+      " bbbb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "bbbcb",
+      "bbbbb",
+      "bbbbb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "bbabb",
+      "bbabb",
+      "bbabb",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  c  ",
+      "cbcbb",
+      "bbbbb",
+      "bbcbc",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "bcbbc",
+      " bbb ",
+      " cbbb",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

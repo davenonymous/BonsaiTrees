@@ -1,0 +1,36 @@
+{
+    "name": "dcs_climate:dates",
+    "mod": "dcs_climate",
+    "sapling": {
+        "name": "dcs_climate:dcs_crop_sapling2",
+        "data": 1
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "minecraft:log",
+            "data": 3,
+            "type": "WOOD"
+        },
+        {
+            "name": "dcs_climate:dcs_crop_sapling2",
+            "data": 1,
+            "type": "SAPLING"
+        },
+        {
+            "name": "dcs_climate:dcs_leaves_dates",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "dcs_climate:dcs_food_crops",
+            "data": 17,
+            "type": "FRUIT"
+        }
+    ]
+}
