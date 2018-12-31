@@ -41,7 +41,6 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         }
 
         GlStateManager.pushMatrix();
-        GlStateManager.pushAttrib();
 
         Tessellator tessellator = Tessellator.getInstance();
         BufferBuilder buffer = tessellator.getBuffer();
@@ -101,8 +100,7 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         GlStateManager.enableLighting();
         GlStateManager.enableRescaleNormal();
         GlStateManager.resetColor();
-
-        GlStateManager.popAttrib();
+        
         GlStateManager.popMatrix();
     }
 
