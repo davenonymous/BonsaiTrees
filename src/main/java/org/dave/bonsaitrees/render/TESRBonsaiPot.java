@@ -83,11 +83,13 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
         ForgeHooksClient.setRenderLayer(BlockRenderLayer.TRANSLUCENT);
         try {
             BlockRendererDispatcher blockrendererdispatcher = Minecraft.getMinecraft().getBlockRendererDispatcher();
-            blockrendererdispatcher.renderBlock(te.getSoilBlockState(), new BlockPos(0, 0 ,0), te.getWorld(), buffer);
+            blockrendererdispatcher.renderBlock(te.getSoilBlockState(), te.getPos(), te.getWorld(), buffer);
         } catch (Exception e) {
             e.printStackTrace();
         }
         ForgeHooksClient.setRenderLayer(null);
+
+        GlStateManager.translate(-te.getPos().getX(), -te.getPos().getY(), -te.getPos().getZ());
 
         tessellator.draw();
 
