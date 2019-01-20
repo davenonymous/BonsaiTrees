@@ -2,18 +2,13 @@
   "name": "minecraft:chorus",
   "mod": "minecraft",
   "sapling": {
-    "name": "minecraft:chorus_fruit",
+    "name": "minecraft:chorus_flower",
     "data": 0
   },
   "growTimeMultiplier": 10.0,
   "drops": [
     {
       "name": "minecraft:chorus_fruit",
-      "data": 0,
-      "type": "WOOD"
-    },
-    {
-      "name": "minecraft:chorus_fruit_popped",
       "data": 0,
       "type": "FRUIT"
     },
