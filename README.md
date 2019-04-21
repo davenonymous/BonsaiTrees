@@ -33,7 +33,8 @@ Waila and TheOneProbe will show what sapling is growing on what soil and its pro
 And in no particular order:
 
 IndustrialCraft 2, Integrated Dynamics, Totemic, Rustic, PrimalCore, Traverse,
-Tinkers Construct, Natura, AbyssalCraft, Twilight Forest, Thaumcraft, Terraqueous
+Tinkers Construct, Natura, AbyssalCraft, Twilight Forest, Thaumcraft, Terraqueous,
+Natures Aura, Betweenlands
 
 If you want to see more trees supported and are a tiny bit proficient with minecraft
 and git, please read the "Making a Sapling compatible yourself" section below and create

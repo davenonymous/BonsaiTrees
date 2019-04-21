@@ -1,0 +1,36 @@
+{
+    "name": "thebetweenlands:hearthgrove",
+    "mod": "thebetweenlands",
+    "sapling": {
+        "name": "thebetweenlands:sapling_hearthgrove",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "thebetweenlands:log_hearthgrove",
+            "data": 3,
+            "type": "WOOD"
+        },
+        {
+            "name": "thebetweenlands:log_hearthgrove",
+            "data": 1,
+            "type": "SAPLING"
+        },
+        {
+            "name": "thebetweenlands:sapling_hearthgrove",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "thebetweenlands:leaves_hearthgrove_tree",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

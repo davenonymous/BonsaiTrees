@@ -1,0 +1,41 @@
+{
+    "name": "thebetweenlands:spirit",
+    "mod": "thebetweenlands",
+    "sapling": {
+        "name": "thebetweenlands:sapling_spirit_tree",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "thebetweenlands:log_spirit_tree",
+            "data": 0,
+            "type": "WOOD"
+        },       
+        {
+            "name": "thebetweenlands:sapling_spirit_tree",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "thebetweenlands:leaves_spirit_tree_top",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "thebetweenlands:leaves_spirit_tree_middle",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "thebetweenlands:leaves_spirit_tree_bottom",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

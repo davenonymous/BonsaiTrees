@@ -1,0 +1,36 @@
+{
+    "name": "naturesaura:ancient",
+    "mod": "naturesaura",
+    "sapling": {
+        "name": "naturesaura:ancient_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "naturesaura:ancient_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "naturesaura:ancient_bark",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "naturesaura:ancient_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "naturesaura:ancient_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}
