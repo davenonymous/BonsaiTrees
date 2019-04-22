@@ -162,8 +162,12 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
             float maxSize = ConfigurationHandler.ClientSettings.maxTreeScale;
             GlStateManager.scale(maxSize, maxSize, maxSize);
 
-            double progress = te.getProgress() / (double)BonsaiTrees.instance.typeRegistry.getFinalGrowTime(te.getTreeType(), te.getBonsaiSoil());
-            GlStateManager.scale(progress, progress, progress);
+
+            // Allow client to decide if it wants to do the scaled rendering
+            if(ConfigurationHandler.ClientSettings.renderGrowth) {
+                double progress = te.getProgress() / (double)BonsaiTrees.instance.typeRegistry.getFinalGrowTime(te.getTreeType(), te.getBonsaiSoil());
+                GlStateManager.scale(progress, progress, progress);
+            }
 
             GlStateManager.translate(-rotateOffsetX, -rotateOffsetY, -rotateOffsetZ);
 

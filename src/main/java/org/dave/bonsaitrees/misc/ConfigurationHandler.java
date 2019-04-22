@@ -118,6 +118,10 @@ public class ConfigurationHandler {
                 "showChanceInJEI", CATEGORY_CLIENT, true, "Whether to show the drop chances in JEI"
         );
 
+        ClientSettings.renderGrowth = configuration.getBoolean(
+                "renderGrowth", CATEGORY_CLIENT, true, "Whether to render bonsai tree growth. If false, just show it fully grown"
+        );
+
         IntegrationSettings.disabledIntegrations = configuration.getStringList(
                 "disabledIntegrations", CATEGORY_INTEGRATION, new String[] {}, "Integrations to disable (by classname, e.g. org.dave.bonsaitrees.integration.mods.PamsHarvestcraft)"
         );
@@ -177,6 +181,7 @@ public class ConfigurationHandler {
     public static class ClientSettings {
         public static float maxTreeScale = 0.9f;
         public static boolean showChanceInJEI = true;
+        public static boolean renderGrowth = true;
     }
 
     public static class IntegrationSettings {
