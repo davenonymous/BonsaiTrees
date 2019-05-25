@@ -40,6 +40,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     private boolean hasCachedData = false;
     private double calcGrowTime;
     private boolean calcSoilCompatible;
+    private int timer;
 
     protected HoppingItemStackBufferHandler hoppingItemBuffer = new HoppingItemStackBufferHandler() {
         @Override
@@ -312,6 +313,10 @@ public class TileBonsaiPot extends BaseTileTicking {
         if(getWorld().getTileEntity(getPos().down()) == null) {
             return;
         }
+        if(timer > 0) {
+            timer--;
+            return;
+        }
 
         TileEntity below = getWorld().getTileEntity(getPos().down());
         if(!below.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP)) {
@@ -330,8 +335,11 @@ public class TileBonsaiPot extends BaseTileTicking {
             if(simResult.isEmpty() || simResult.getCount() < stack.getCount()) {
                 ItemStack insertResult = ItemHandlerHelper.insertItemStacked(targetHandler, stack, false);
                 hoppingItemBuffer.setStackInSlotInternal(srcSlot, insertResult);
+            } else {
+                timer = 100;
             }
         }
+        timer = 20;
     }
 
     public HoppingItemStackBufferHandler getHoppingItemBuffer() {
