@@ -1,0 +1,74 @@
+tile.bonsaitrees.bonsaipot.name=Bonsaikruka
+tile.bonsaitrees.bonsaipot.hopping.name=Trattförsedd bonsaikruka
+
+commands.bonsaitrees.usage=/bonsaitrees [underkommando, lämna tomt för en lista över kommandon]
+
+commands.bonsaitrees.available=Tillgängliga underkommandon:
+commands.bonsaitrees.denied=Du har inte behörighet att använda detta kommando.
+
+commands.bonsaitrees.saveTreeShape.description=Sparar trädformen du för tillfället tittar på som en .json-fil
+commands.bonsaitrees.saveTreeShape.usage=/bonsaitrees saveTreeShape <trädtypens ID>, t.ex. "forestry:hillCherry"
+commands.bonsaitrees.saveTreeShape.exception.no_itemstack_in_mainhand=Du måste hålla i en föremålsgrupp i din primära hand!
+commands.bonsaitrees.saveTreeShape.exception.not_looking_at_block=Du tittar inte på ett block!
+commands.bonsaitrees.saveTreeShape.exception.can_not_determine_shape=Kan inte avgöra formen, 0 block hittades. Blocket du tittar på kanske finns i ignoreringslistan?
+commands.bonsaitrees.saveTreeShape.error_while_saving_shape=Kunde inte spara formen till filen! Kontrollera serverloggarna för detaljer.
+commands.bonsaitrees.saveTreeShape.wrote_shape_to_file=Skrev formen till filen: %s
+
+commands.bonsaitrees.generateMissingShapes.description=Genererar alla trädformer som saknas i området du tittar på. MYCKET DESTRUKTIV HANDLING!
+commands.bonsaitrees.generateMissingShapes.usage=/bonsaitrees generateMissingShapes yes
+commands.bonsaitrees.generateMissingShapes.exception.confirm_with_yes=Bekräfta kommandot med "yes" (ja) som den första parametern! Ett område på 32x32x32 runtomkring blocket du tittar på kommer att raderas!
+commands.bonsaitrees.generateMissingShapes.info=Genererar former för träd: %s
+commands.bonsaitrees.generateMissingShapes.created_shape_file=Skapade formfil: %s
+commands.bonsaitrees.generateMissingShapes.exception.no_shape=Kan inte avgöra formen
+
+commands.bonsaitrees.upgradeJsonFiles.description=Uppgraderar formfiler till den senaste versionen som stöds. Detta är ett kommando avsett för utveckling och kommer förmodligen inte vara speciellt användbart för dig.
+commands.bonsaitrees.upgradeJsonFiles.usage=/bonsaitrees upgradeJsonFiles
+
+commands.bonsaitrees.reloadTrees.description=Uppdaterar alla träd från .json-filer och modintegreringar. Detta är ett kommando avsett för utveckling och kommer förmodligen inte vara speciellt användbart för dig. Detta kommer också att uppdatera alla konfigurerade jordtyper!
+commands.bonsaitrees.reloadTrees.usage=/bonsaitrees reloadTrees
+
+commands.bonsaitrees.reloadSoils.description=Uppdaterar alla jordtyper från .json-filer och modintegreringar. Detta är ett kommando avsett för utveckling och kommer förmodligen inte vara speciellt användbart för dig.
+commands.bonsaitrees.reloadSoils.usage=/bonsaitrees reloadSoils
+
+commands.bonsaitrees.listIntegrations.description=Listar upp alla modintegreringar och antalet träd de tillhandahåller
+commands.bonsaitrees.listIntegrations.usage=/bonsaitrees listIntegrations
+commands.bonsaitrees.listIntegrations.result_title=Integreringar:
+commands.bonsaitrees.listIntegrations.result_entry=- %s: Trädtyper: %d, jordtyper: %d
+commands.bonsaitrees.listIntegrations.result_entry_total=Totalt: Trädtyper: %d, jordtyper: %d, kombinerat: %d
+
+commands.bonsaitrees.listTrees.description=Listar upp alla trädtyper som är för tillfället registrerade
+commands.bonsaitrees.listTrees.usage=/bonsaitrees listTrees
+commands.bonsaitrees.listTrees.result_title=Registrerade trädtyper:
+
+commands.bonsaitrees.listSoils.description=Listar upp alla jordtyper som är för tillfället registrerade
+commands.bonsaitrees.listSoils.usage=/bonsaitrees listSoils
+commands.bonsaitrees.listSoils.result_title=Registrerade jordtyper:
+
+commands.bonsaitrees.checkCompatibility.description=Visar kompatibla träd-/jordtyper för den angivna jord-/trädtypen
+commands.bonsaitrees.checkCompatibility.usage=/bonsaitrees checkCompatibility <tree/soil>
+commands.bonsaitrees.checkCompatibility.result_title_trees=Kompatibla trädtyper: %d
+commands.bonsaitrees.checkCompatibility.result_title_soils=Kompatibla jordtyper: %d
+commands.bonsaitrees.checkCompatibility.exception.specify_tree_or_soil=Ange en träd- eller jordtyp, t.ex. /bonsaitrees checkCompatibility minecraft:oak
+commands.bonsaitrees.checkCompatibility.exception.no_valid_soil_or_tree_found=Hittade ingen träd- eller jordtyp med detta namn. Använd /bonsaitrees listTrees eller /bonsaitrees listSoils
+
+
+tooltip.bonsaitrees.autoexport=Exporterar automatiskt föremål till utrustningar nedanför.
+tooltip.bonsaitrees.use_jei_for_compatible_sapling=Använd JEI för att kolla upp kompatibla jordtyper, plantor och chansen att avge föremål.
+tooltip.bonsaitrees.hold_shift_hint=Håll ned Shift för detaljer
+
+hint.bonsaitrees.incompatible_soil=Detta träd behöver en annan sorts jord.
+hint.bonsaitrees.can_not_remove_soil_with_sapling=Jord kan inte tas bort när en planta växer.
+hint.bonsaitrees.pot_has_no_soil=Lägg först lite jord i krukan. %s till exempel.
+
+bonsaitrees.jei.category.growing=Bonsaiträd
+bonsaitrees.jei.category.growing.chance=Chans: %d %%
+bonsaitrees.jei.category.sapling.growtime=Det tar vanligtvis %sm för denna bonsai att växa upp
+bonsaitrees.jei.category.soil.hint=Träd växer inte utan jord!
+bonsaitrees.jei.category.soil.growTimeModifier=Växttid: %.1f %%
+bonsaitrees.jei.category.soil.dropChanceModifier=Chans att avge föremål: %.1f %%
+
+advancements.bonsaitrees.craft_pot.title=Bonsai Trees
+advancements.bonsaitrees.craft_pot.description=Tillverka en bonsaikruka
+
+advancements.bonsaitrees.grow_tree.title=Odla ett bonsaiträd
+advancements.bonsaitrees.grow_tree.description=Använd det som dekoration eller en tidig trädfarm
