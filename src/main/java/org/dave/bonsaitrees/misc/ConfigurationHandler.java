@@ -191,5 +191,7 @@ public class ConfigurationHandler {
         public static int baseGrowTicks = 600;
         public static boolean noDyeCost = true;
         public static boolean waitForEmptyItemBuffers = false;
+        public static int defaultHoppingCooldown = 10;
+        public static int punishHoppingCooldown = 40;
     }
 }

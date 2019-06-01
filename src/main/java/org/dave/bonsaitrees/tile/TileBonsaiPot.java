@@ -40,7 +40,7 @@ public class TileBonsaiPot extends BaseTileTicking {
     private boolean hasCachedData = false;
     private double calcGrowTime;
     private boolean calcSoilCompatible;
-    private int timer;
+    private int hoppingCooldown;
 
     protected HoppingItemStackBufferHandler hoppingItemBuffer = new HoppingItemStackBufferHandler() {
         @Override
@@ -270,6 +270,10 @@ public class TileBonsaiPot extends BaseTileTicking {
             hoppingItemBuffer.deserializeNBT((NBTTagCompound) compound.getTag("hoppingBuffer"));
         }
 
+        if(compound.hasKey("hoppingCD")) {
+            hoppingCooldown = compound.getInteger("hoppingCD");
+        }
+
         progress = compound.getDouble("progress");
     }
 
@@ -288,6 +292,7 @@ public class TileBonsaiPot extends BaseTileTicking {
 
         if(isHoppingPot()) {
             compound.setTag("hoppingBuffer", hoppingItemBuffer.serializeNBT());
+            compound.setInteger("hoppingCD", hoppingCooldown);
         }
 
         return compound;
@@ -313,15 +318,18 @@ public class TileBonsaiPot extends BaseTileTicking {
         if(getWorld().getTileEntity(getPos().down()) == null) {
             return;
         }
-        if(timer > 0) {
-            timer--;
-            return;
-        }
 
         TileEntity below = getWorld().getTileEntity(getPos().down());
         if(!below.hasCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP)) {
             return;
         }
+
+        if(hoppingCooldown > 0) {
+            hoppingCooldown--;
+            return;
+        }
+
+        hoppingCooldown = ConfigurationHandler.GeneralSettings.defaultHoppingCooldown;
 
         IItemHandler targetHandler = below.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, EnumFacing.UP);
 
@@ -336,10 +344,9 @@ public class TileBonsaiPot extends BaseTileTicking {
                 ItemStack insertResult = ItemHandlerHelper.insertItemStacked(targetHandler, stack, false);
                 hoppingItemBuffer.setStackInSlotInternal(srcSlot, insertResult);
             } else {
-                timer = 100;
+                hoppingCooldown = ConfigurationHandler.GeneralSettings.punishHoppingCooldown;
             }
         }
-        timer = 20;
     }
 
     public HoppingItemStackBufferHandler getHoppingItemBuffer() {
