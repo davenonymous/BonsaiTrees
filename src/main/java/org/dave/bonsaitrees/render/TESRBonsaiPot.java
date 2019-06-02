@@ -140,7 +140,6 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
 
         if(glLists.containsKey(treeShape)) {
             GlStateManager.pushMatrix();
-            GlStateManager.pushAttrib();
 
             GlStateManager.translate(x, y, z);
             GlStateManager.disableRescaleNormal();
@@ -207,7 +206,6 @@ public class TESRBonsaiPot extends TileEntitySpecialRenderer<TileBonsaiPot> {
             GlStateManager.disableBlend();
             GlStateManager.resetColor();
 
-            GlStateManager.popAttrib();
             GlStateManager.popMatrix();
         } else {
             blockAccess = new TreeBlockAccess(treeShape, te.getWorld(), te.getPos());
