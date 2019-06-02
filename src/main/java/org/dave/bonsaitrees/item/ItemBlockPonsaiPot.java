@@ -13,6 +13,7 @@ import org.dave.bonsaitrees.BonsaiTrees;
 import org.dave.bonsaitrees.base.IMetaBlockName;
 import org.dave.bonsaitrees.block.BlockBonsaiPot;
 import org.dave.bonsaitrees.init.Blockss;
+import org.dave.bonsaitrees.misc.ConfigurationHandler;
 import org.dave.bonsaitrees.render.PotColorizer;
 
 import javax.annotation.Nullable;
@@ -46,18 +47,23 @@ public class ItemBlockPonsaiPot extends ItemBlock {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         super.addInformation(stack, worldIn, tooltip, flagIn);
 
+        boolean isHopping = Blockss.bonsaiPot.getStateFromMeta(stack.getMetadata()).getValue(BlockBonsaiPot.IS_HOPPING);
         if(GuiScreen.isShiftKeyDown()) {
             if(stack.hasTagCompound() && stack.getTagCompound().hasKey("color")) {
                 EnumDyeColor color = EnumDyeColor.byMetadata(stack.getTagCompound().getInteger("color"));
                 tooltip.add(PotColorizer.textFormattingForDye(color) + I18n.format("item.fireworksCharge." + color.getUnlocalizedName()));
             }
-            if(Blockss.bonsaiPot.getStateFromMeta(stack.getMetadata()).getValue(BlockBonsaiPot.IS_HOPPING)) {
+            if(isHopping) {
                 tooltip.add(TextFormatting.YELLOW + I18n.format("tooltip.bonsaitrees.autoexport"));
             } else {
                 tooltip.add(TextFormatting.YELLOW + I18n.format("tooltip.bonsaitrees.use_jei_for_compatible_sapling"));
             }
         } else {
             tooltip.add(TextFormatting.GRAY + I18n.format("tooltip." + BonsaiTrees.MODID + ".hold_shift_hint"));
+
+            if(isHopping && ConfigurationHandler.GeneralSettings.disableHoppingBonsaiPot) {
+                tooltip.add(TextFormatting.RED + I18n.format("tooltip." + BonsaiTrees.MODID + ".warn_hopping_pots_disabled"));
+            }
         }
     }
 }

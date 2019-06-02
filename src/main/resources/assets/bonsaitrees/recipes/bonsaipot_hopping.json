@@ -1,4 +1,7 @@
 {
+  "conditions": [
+    { "type": "bonsaitrees:hopping_bonsai_enabled", "value": true }
+  ],
   "result": {
     "item": "bonsaitrees:bonsaipot",
     "data": 1,
