@@ -10,8 +10,7 @@ import org.dave.bonsaitrees.api.BonsaiDropChances;
 import org.dave.bonsaitrees.utility.Logz;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ConfigurationHandler {
     public static Configuration configuration;
@@ -109,7 +108,6 @@ public class ConfigurationHandler {
                 "fruitAmount", CATEGORY_DROPS, 2, 0, 64, "How many fruits to drop by default"
         );
 
-
         ClientSettings.maxTreeScale = configuration.getFloat(
                 "maxTreeScale", CATEGORY_CLIENT, 0.9f, 0.5f, 1.0f, "Maximum width/depth of a block to grow to"
         );
@@ -129,6 +127,11 @@ public class ConfigurationHandler {
         IntegrationSettings.disabledSoils = configuration.getStringList(
                 "disabledSoils", CATEGORY_INTEGRATION, new String[] {}, "Bonsai Soils to disable (e.g. minecraft:grass)"
         );
+
+        String[] additionalTools = configuration.getStringList(
+                "additionalCuttingTools", CATEGORY_INTEGRATION, new String[] {"minecraft:shears"}, "Additional items that are able to cut bonsai trees"
+        );
+        IntegrationSettings.additionalCuttingTools = new HashSet<>(Arrays.asList(additionalTools));
 
         IntegrationSettings.loadShapesOfUnloadedTrees = configuration.getBoolean(
                 "loadShapesOfUnloadedTrees", CATEGORY_INTEGRATION, false, "Can be enabled for development purposes mostly."
@@ -184,6 +187,7 @@ public class ConfigurationHandler {
         public static String[] disabledTreeTypes = new String[] {};
         public static String[] disabledSoils = new String[] {};
         public static boolean loadShapesOfUnloadedTrees = false;
+        public static HashSet<String> additionalCuttingTools = new HashSet<>();
     }
 
     public static class GeneralSettings {

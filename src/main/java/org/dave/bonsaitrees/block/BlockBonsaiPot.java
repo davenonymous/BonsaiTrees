@@ -37,6 +37,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.DyeUtils;
 import org.dave.bonsaitrees.BonsaiTrees;
+import org.dave.bonsaitrees.api.IBonsaiCuttingTool;
 import org.dave.bonsaitrees.api.IBonsaiSoil;
 import org.dave.bonsaitrees.api.IBonsaiTreeType;
 import org.dave.bonsaitrees.base.BaseBlockWithTile;
@@ -214,6 +215,23 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
         return false;
     }
 
+    private boolean canCutBonsaiTree(ItemStack stack, EntityPlayer player) {
+        if(stack.getItem().getHarvestLevel(stack, "axe", player, Blocks.PLANKS.getDefaultState()) != -1) {
+            return true;
+        }
+
+        if(stack.getItem() instanceof IBonsaiCuttingTool) {
+            return true;
+        }
+
+        String regName = stack.getItem().getRegistryName().toString();
+        if(ConfigurationHandler.IntegrationSettings.additionalCuttingTools.contains(regName)) {
+            return true;
+        }
+
+        return false;
+    }
+
     @Override
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
         if (player.isSneaking()) {
@@ -283,7 +301,7 @@ public class BlockBonsaiPot extends BaseBlockWithTile<TileBonsaiPot> implements 
             return true;
         }
 
-        boolean playerHasAxe = playerStack.getItem().getHarvestLevel(playerStack, "axe", player, Blocks.PLANKS.getDefaultState()) != -1;
+        boolean playerHasAxe = canCutBonsaiTree(playerStack, player);
         if(playerHasAxe) {
             // No sapling in pot
             if(!pot.hasSapling()) {
