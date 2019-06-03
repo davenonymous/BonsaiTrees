@@ -153,6 +153,14 @@ public class ConfigurationHandler {
                 "waitForEmptyItemBuffers", CATEGORY_GENERAL, false, "Used for Hopping Bonsais only: If this is set to true, trees will only be cut automatically if all previous drops are exported. This breaks compatibility with e.g. storage drawers. If set to false unexported items from the previous cycle are being voided."
         );
 
+        GeneralSettings.defaultHoppingCooldown = configuration.getInt(
+                "defaultHoppingCooldown", CATEGORY_GENERAL, 10, 0, 1200, "How many ticks to wait between exports."
+        );
+
+        GeneralSettings.punishHoppingCooldown = configuration.getInt(
+                "punishHoppingCooldown", CATEGORY_GENERAL, 40, 0, 1200, "How many ticks to wait between exports, if not all items were exported last time."
+        );
+
         if(configuration.hasChanged()) {
             configuration.save();
         }
