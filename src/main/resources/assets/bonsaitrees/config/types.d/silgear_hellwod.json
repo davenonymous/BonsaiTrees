@@ -5,6 +5,7 @@
         "name": "silentgear:netherwood_sapling",
         "data": 0
     },
+    "compatibleSoilTags": ["netherrack"],
     "growTimeMultiplier": 1.0,
     "drops": [
         {
