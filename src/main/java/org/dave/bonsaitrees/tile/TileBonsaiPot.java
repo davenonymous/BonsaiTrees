@@ -15,6 +15,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -41,6 +42,12 @@ public class TileBonsaiPot extends BaseTileTicking {
     private double calcGrowTime;
     private boolean calcSoilCompatible;
     private int hoppingCooldown;
+
+    @Override
+    public double getMaxRenderDistanceSquared() {
+        int gameRenderDistance = FMLClientHandler.instance().getClient().gameSettings.renderDistanceChunks;
+        return gameRenderDistance * 128; // No particular reason to choose 128, just feels about right....
+    }
 
     protected HoppingItemStackBufferHandler hoppingItemBuffer = new HoppingItemStackBufferHandler() {
         @Override
