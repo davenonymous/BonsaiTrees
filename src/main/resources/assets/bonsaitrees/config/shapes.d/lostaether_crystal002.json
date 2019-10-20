@@ -1,0 +1,70 @@
+{
+  "type": "lostaether:crystal",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "aether_legacy:crystal_leaves",
+      "meta": 1
+    },
+    "b": {
+      "name": "aether_legacy:crystal_leaves",
+      "meta": 0
+    },
+    "d": {
+      "name": "aether_legacy:aether_log",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "  b  ",
+      "     ",
+      "  b  ",
+      " baa ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  b  ",
+      " aab ",
+      "  b  ",
+      " abb ",
+      "bbabb",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " ada ",
+      "aabba",
+      " bdb ",
+      "aaabb",
+      "aabba",
+      "  d  ",
+      "  d  "
+    ],
+    [
+      "     ",
+      "  b  ",
+      " aab ",
+      "  a  ",
+      " aaa ",
+      "bbbaa",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "  b  ",
+      "     ",
+      "  a  ",
+      " bba ",
+      "     ",
+      "     "
+    ]
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "type": "byg:red_spruce",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "byg:spruceleavesred",
+      "meta": 0
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      " aaaaa ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  aaa  ",
+      "       ",
+      "  aaa  ",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   a   ",
+      "       ",
+      "   a   ",
+      " aaaaa ",
+      "   a   ",
+      " aaaaa ",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "  aaa  ",
+      "   b   ",
+      "  aba  ",
+      " aabaa ",
+      "  aba  ",
+      " aabaa ",
+      "aaabaaa",
+      "   b   ",
+      "   b   "
+    ],
+    [
+      "       ",
+      "   a   ",
+      "       ",
+      "   a   ",
+      " aaaaa ",
+      "   a   ",
+      " aaaaa ",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  aaa  ",
+      "       ",
+      "  aaa  ",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      " aaaaa ",
+      "       ",
+      "       "
+    ]
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "type": "byg:yellow_spruce",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "minecraft:log",
+      "meta": 1
+    },
+    "b": {
+      "name": "byg:spruceleavesyellow",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      " bbb ",
+      "     ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  b  ",
+      "     ",
+      "  b  ",
+      "bbbbb",
+      "  b  ",
+      "bbbbb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      " bbb ",
+      "  b  ",
+      " bab ",
+      "bbabb",
+      " bab ",
+      "bbabb",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "     ",
+      "  b  ",
+      "     ",
+      "  b  ",
+      "bbbbb",
+      "  b  ",
+      "bbbbb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      " bbb ",
+      "     ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

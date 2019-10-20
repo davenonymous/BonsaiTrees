@@ -1,0 +1,66 @@
+{
+  "type": "byg:yellow_birch",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "byg:birchleavesyellow",
+      "meta": 0
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 2
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " aaa ",
+      " aaaa",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      " aba ",
+      "aabaa",
+      "aabaa",
+      "  b  ",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      " aa  ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " aaa ",
+      " aaaa",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

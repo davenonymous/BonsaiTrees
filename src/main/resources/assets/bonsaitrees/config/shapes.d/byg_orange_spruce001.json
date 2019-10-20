@@ -1,0 +1,81 @@
+{
+  "type": "byg:orange_spruce",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "byg:spruceleavesorange",
+      "meta": 0
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      " aaa ",
+      "     ",
+      " aaa ",
+      "     ",
+      " aaa ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  a  ",
+      "     ",
+      "  a  ",
+      "aaaaa",
+      "  a  ",
+      "aaaaa",
+      "  a  ",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aaa ",
+      "  a  ",
+      " aba ",
+      "aabaa",
+      " aba ",
+      "aabaa",
+      " aba ",
+      "aabaa",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "     ",
+      "  a  ",
+      "     ",
+      "  a  ",
+      "aaaaa",
+      "  a  ",
+      "aaaaa",
+      "  a  ",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      " aaa ",
+      "     ",
+      " aaa ",
+      "     ",
+      " aaa ",
+      "     ",
+      "     "
+    ]
+  ]
+}

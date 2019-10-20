@@ -1,0 +1,84 @@
+{
+  "type": "byg:palo_verde",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "byg:paloverdelog",
+      "meta": 3
+    },
+    "b": {
+      "name": "byg:paloverdeleavesflowering",
+      "meta": 0
+    },
+    "c": {
+      "name": "byg:paloverdeleaves",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "          ",
+      "      cbb ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "       cc ",
+      "     ccccc",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "      cbc ",
+      "     bcacc",
+      "       a  ",
+      "     aa   ",
+      "    a     ",
+      "    a     "
+    ],
+    [
+      "       b  ",
+      " cbc ccccc",
+      "          ",
+      "   a      ",
+      "          ",
+      "          "
+    ],
+    [
+      " ccc      ",
+      "cbbcc ccc ",
+      "   a      ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      " ccb      ",
+      "ccacc     ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      " bcc      ",
+      "ccccb     ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      " cbc      ",
+      "          ",
+      "          ",
+      "          ",
+      "          "
+    ]
+  ]
+}

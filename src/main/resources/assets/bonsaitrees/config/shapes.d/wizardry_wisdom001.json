@@ -1,0 +1,55 @@
+{
+  "type": "wizardry:wisdom",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "wizardry:wisdom_leaves",
+      "meta": 8
+    },
+    "b": {
+      "name": "wizardry:wisdom_wood_log",
+      "meta": 0
+    },
+    "c": {
+      "name": "wizardry:wisdom_leaves",
+      "meta": 12
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " aaa ",
+      "aaaca",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  a  ",
+      "aaaaa",
+      "aaaaa",
+      "     "
+    ],
+    [
+      " aaa ",
+      " aba ",
+      "aabaa",
+      "aabaa",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      " ca  ",
+      "aaaaa",
+      "aaaaa",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " aaaa",
+      " aaa ",
+      "     "
+    ]
+  ]
+}

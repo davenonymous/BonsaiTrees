@@ -1,0 +1,84 @@
+{
+  "type": "byg:enchanted",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "byg:enchantedleavespurple",
+      "meta": 0
+    },
+    "b": {
+      "name": "byg:enchantedlog",
+      "meta": 5
+    },
+    "c": {
+      "name": "byg:enchantedlog",
+      "meta": 3
+    },
+    "d": {
+      "name": "byg:enchantedlog",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "           ",
+      "           ",
+      "           ",
+      " a         ",
+      "aaa        ",
+      " aa        ",
+      " aa        ",
+      "           "
+    ],
+    [
+      "     a     ",
+      "    aa     ",
+      " a  a      ",
+      "aaa aa  a  ",
+      "aca        ",
+      "abda       ",
+      " aa        ",
+      "           "
+    ],
+    [
+      "   aaa     ",
+      "  aaaaa a  ",
+      "   aaaaaaa ",
+      "aaaaaaaaaa ",
+      "aaaa       ",
+      "aabc       ",
+      "  abd      ",
+      "           "
+    ],
+    [
+      "  aaaa     ",
+      "  aacaaaaa ",
+      "  aaca acaa",
+      "   acaacbaa",
+      " aaac cbaa ",
+      " aaacbb    ",
+      "    c      ",
+      "    c      "
+    ],
+    [
+      "   aa      ",
+      "  aaaa  a  ",
+      "  aaaa aaa ",
+      "   aa  aaa ",
+      "        a  ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "   aa      ",
+      "   aa      ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ]
+}

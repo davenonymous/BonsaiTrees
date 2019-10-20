@@ -1,0 +1,86 @@
+{
+  "type": "byg:enchanted",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "byg:enchantedleavespink",
+      "meta": 0
+    },
+    "b": {
+      "name": "byg:enchantedlog",
+      "meta": 3
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  aa ",
+      " aaa ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      " aaa ",
+      " aaa ",
+      " aaaa",
+      "aaaaa",
+      "aaaaa",
+      " a a ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  a  ",
+      "  aa ",
+      " aaa ",
+      " aba ",
+      " aba ",
+      "aabaa",
+      "aabaa",
+      "aabaa",
+      "aabaa",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  ",
+      "  aa ",
+      " aaa ",
+      " aaa ",
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "  a  ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  ",
+      " aaa ",
+      " aaa ",
+      " a   ",
+      "     ",
+      "     "
+    ]
+  ]
+}
