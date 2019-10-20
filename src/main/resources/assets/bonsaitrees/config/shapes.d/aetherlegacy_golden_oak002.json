@@ -1,0 +1,118 @@
+{
+  "type": "aetherlegacy:golden_oak",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "aether_legacy:aether_log",
+      "meta": 1
+    },
+    "b": {
+      "name": "aether_legacy:aether_leaves",
+      "meta": 1
+    },
+    "c": {
+      "name": "aether_legacy:aether_leaves",
+      "meta": 9
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "  bb   ",
+      " bbccb ",
+      " bbbbb ",
+      " bbbcb ",
+      "  bbb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   bb  ",
+      "  bbcb ",
+      "bbbbbc ",
+      "bcccbbb",
+      "cbbccb ",
+      " cbbb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  bbb  ",
+      " bbbbbc",
+      "bbbbcbb",
+      "bcbbbbb",
+      "bbcbbbb",
+      " bbbbcb",
+      " cbbbc ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " ccbbc ",
+      "bbcbbc ",
+      "bbbbbbb",
+      "bbbabcb",
+      "bcbabbb",
+      "cccacb ",
+      " bbabb ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   a   "
+    ],
+    [
+      "  bbbb ",
+      " cbbbb ",
+      "bcbbcbb",
+      "bcbcbbb",
+      "cbbbcbb",
+      "bbbbbc ",
+      " bbbb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  bbb  ",
+      " bbcb  ",
+      " bbbbbb",
+      " bbbbcb",
+      " bbbcb ",
+      " ccbbb ",
+      "   bb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   bb  ",
+      " bbbbb ",
+      " bbbbc ",
+      " bbbbc ",
+      "   bb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

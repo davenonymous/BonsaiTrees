@@ -1,0 +1,125 @@
+{
+  "type": "aetherlegacy:golden_oak",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "aether_legacy:aether_log",
+      "meta": 1
+    },
+    "b": {
+      "name": "aether_legacy:aether_leaves",
+      "meta": 1
+    },
+    "c": {
+      "name": "aether_legacy:aether_dirt",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "   bb  ",
+      " bbbbb ",
+      "  bbbb ",
+      " bbbbb ",
+      "  bb   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   bb  ",
+      " bbbbb ",
+      "bbbbbb ",
+      "bbbbbbb",
+      " bbbbb ",
+      "  bbbb ",
+      "    b  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  bbbb ",
+      "bbbbbb ",
+      "bbbbbbb",
+      "bbbbbbb",
+      "bbbbbbb",
+      " bbbbb ",
+      "  abb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " bbbbb ",
+      " bbbbbb",
+      "bbbbbbb",
+      "bbbabbb",
+      "bbbabbb",
+      "bbbabbb",
+      "  babb ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   c   "
+    ],
+    [
+      "  bbb  ",
+      "bbbbbbb",
+      "bbbbbbb",
+      "bbbbbbb",
+      "bbbbbbb",
+      " bbbbb ",
+      " bbbb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  bb   ",
+      " bbbbb ",
+      " bbbbbb",
+      "bbbbbbb",
+      " bbbbb ",
+      " bbbbb ",
+      "  bbb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  bb   ",
+      " bbbb  ",
+      " bbbbb ",
+      " bbbb  ",
+      "   b   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

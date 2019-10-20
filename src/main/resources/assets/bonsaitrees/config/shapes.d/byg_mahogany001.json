@@ -1,0 +1,150 @@
+{
+  "type": "byg:mahogany",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "byg:mahogany_leaves",
+      "meta": 0
+    },
+    "b": {
+      "name": "byg:mahogany_log",
+      "meta": 3
+    },
+    "c": {
+      "name": "byg:mahogany_log",
+      "meta": 5
+    },
+    "d": {
+      "name": "byg:mahogany_log",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "         ",
+      " aaaaaaa ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "  aaaaa  ",
+      "aaaaaaaaa",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "   aaa   ",
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      "    b    ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "    a    ",
+      "  aaaaa  ",
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      "         ",
+      "         ",
+      "    d    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "   aaa   ",
+      "  aaaaa  ",
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      "  b   b  ",
+      "  b   b  ",
+      "   cbc   ",
+      "    b    ",
+      "    b    ",
+      "    b    ",
+      "    b    ",
+      "    b    "
+    ],
+    [
+      "    a    ",
+      "  aaaaa  ",
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      "         ",
+      "         ",
+      "    d    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "   aaa   ",
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      "    b    ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "  aaaaa  ",
+      "aaaaaaaaa",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      " aaaaaaa ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}

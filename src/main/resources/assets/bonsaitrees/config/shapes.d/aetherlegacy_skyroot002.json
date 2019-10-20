@@ -1,0 +1,61 @@
+{
+  "type": "aetherlegacy:skyroot",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "aether_legacy:aether_leaves",
+      "meta": 0
+    },
+    "b": {
+      "name": "aether_legacy:aether_log",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " aaaa",
+      "aaaa ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  a  ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      " aba ",
+      "aabaa",
+      "aabaa",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      "  aa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " aaaa",
+      "aaaaa",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

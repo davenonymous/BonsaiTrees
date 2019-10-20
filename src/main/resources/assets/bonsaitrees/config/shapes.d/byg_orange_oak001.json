@@ -1,0 +1,90 @@
+{
+  "type": "byg:orange_maple",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "byg:oakleavesorange",
+      "meta": 0
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 0
+    },
+    "c": {
+      "name": "minecraft:log",
+      "meta": 4
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "   aaa ",
+      "   aaa ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  aaa  ",
+      "  aaaaa",
+      "  aaaaa",
+      "    a  ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      " aaaaa ",
+      " aaaaaa",
+      " aaaaaa",
+      " aaaca ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      " aaaaa ",
+      " aaaaaa",
+      "aaabaaa",
+      "aaaba  ",
+      "  ab   ",
+      "   b   ",
+      "   b   "
+    ],
+    [
+      "   a   ",
+      " aaaaa ",
+      " aaaaa ",
+      "aaaaaa ",
+      "aaaaa  ",
+      " aaa   ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  aaa  ",
+      "  aaa  ",
+      " aaaa  ",
+      " aaaa  ",
+      "  a    ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "  aa   ",
+      "  aa   ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

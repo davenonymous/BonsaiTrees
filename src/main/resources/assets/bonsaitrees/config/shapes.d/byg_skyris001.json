@@ -1,0 +1,155 @@
+{
+  "type": "byg:skyris",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "byg:skyrisleaves",
+      "meta": 0
+    },
+    "b": {
+      "name": "byg:skyrislog",
+      "meta": 3
+    },
+    "c": {
+      "name": "byg:skyrislog",
+      "meta": 5
+    }
+  },
+  "shape": [
+    [
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "  aaaa     ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "  aaaaaa   ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "   a       ",
+      " aaaaaa    ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "    aaa    ",
+      " aaaaaaaa  ",
+      "           ",
+      "           ",
+      "  aaaaa    ",
+      "           ",
+      "           ",
+      "  aaa      ",
+      "aaaaaaa    ",
+      "           ",
+      "    aaa    ",
+      "           ",
+      "           "
+    ],
+    [
+      "   aaaaa   ",
+      " aaaaabaa  ",
+      "    bb     ",
+      "    b      ",
+      " aaabaaa   ",
+      "    b      ",
+      "    b  aaa ",
+      " aaaba     ",
+      "aaacbaa    ",
+      "     a     ",
+      "   aabaa   ",
+      "     b     ",
+      "     b     "
+    ],
+    [
+      "  aaaaa    ",
+      " aaabaaaa  ",
+      "           ",
+      "   aaa     ",
+      " aaaaaaa   ",
+      "       aaa ",
+      "      aaaaa",
+      "  aaa      ",
+      "aaaaaaa    ",
+      "    aba    ",
+      "   aaaaa   ",
+      "           ",
+      "           "
+    ],
+    [
+      "   aaa     ",
+      " aaaaaaa   ",
+      "           ",
+      "  aaaaa    ",
+      " aaabaaa   ",
+      "     b aaa ",
+      "      babaa",
+      "   a  bb   ",
+      " aaaaab    ",
+      "     a     ",
+      "   aaaaa   ",
+      "           ",
+      "           "
+    ],
+    [
+      "    a      ",
+      " aaaaaaa   ",
+      "           ",
+      "   aaa     ",
+      " aaaaaaa   ",
+      "       aaa ",
+      "      aaaaa",
+      "           ",
+      "  aaa      ",
+      "           ",
+      "    aaa    ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "  aaaaa    ",
+      "           ",
+      "    a      ",
+      " aaaaaaa   ",
+      "           ",
+      "       aaa ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "  aaaaa    ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ]
+}

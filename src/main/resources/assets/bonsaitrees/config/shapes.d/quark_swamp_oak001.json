@@ -1,0 +1,72 @@
+{
+  "type": "quark:swamp_oak",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "quark:variant_leaves",
+      "meta": 4
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " aaaaaa",
+      " aaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      " aaaaa ",
+      "aaaaaaa",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      " aaaaa ",
+      " aaaaa ",
+      "aaaaaaa",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      " aaaaa ",
+      " aabaa ",
+      "aaabaaa",
+      "aaabaaa",
+      "   b   ",
+      "   b   "
+    ],
+    [
+      " aaaaa ",
+      " aaaaa ",
+      "aaaaaaa",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      " aaaaa ",
+      "aaaaaaa",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " aaaaaa",
+      " aaaaaa",
+      "       ",
+      "       "
+    ]
+  ]
+}

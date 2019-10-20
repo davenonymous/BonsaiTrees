@@ -1,0 +1,145 @@
+{
+  "type": "jurassicraft:ginkgo",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "jurassicraft:ginkgo_leaves",
+      "meta": 1
+    },
+    "b": {
+      "name": "jurassicraft:ginkgo_log",
+      "meta": 1
+    },
+    "c": {
+      "name": "jurassicraft:ginkgo_log",
+      "meta": 0
+    },
+    "d": {
+      "name": "jurassicraft:ginkgo_log",
+      "meta": 2
+    },
+    "e": {
+      "name": "jurassicraft:ginkgo_leaves",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "    a    ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    a    ",
+      "         ",
+      "         ",
+      "    a    ",
+      "         ",
+      "    a    ",
+      "   aca   ",
+      "    a    ",
+      "         ",
+      "         "
+    ],
+    [
+      "    a    ",
+      "   aca   ",
+      "   aaa   ",
+      "    a    ",
+      "   aca   ",
+      "   aaa   ",
+      "    a    ",
+      "   aca   ",
+      "   aaa   ",
+      "         ",
+      "         "
+    ],
+    [
+      "    a    ",
+      "  a a a  ",
+      "  aacaa  ",
+      "   aaa   ",
+      "  aaaaa  ",
+      "  aacaa  ",
+      "   aea   ",
+      " aaaaaaa ",
+      "  aacae  ",
+      "    a    ",
+      "         "
+    ],
+    [
+      "  aaaaa  ",
+      " adaaada ",
+      "  adbda  ",
+      "  aabaa  ",
+      " adabada ",
+      "  adbda  ",
+      " aaabaaa ",
+      "addabadda",
+      " aadbdaa ",
+      "   aba   ",
+      "    b    "
+    ],
+    [
+      "    a    ",
+      "  a a a  ",
+      "  aacaa  ",
+      "   aaa   ",
+      "  aaeaa  ",
+      "  aacaa  ",
+      "   aaa   ",
+      " aaaaaaa ",
+      "  aacaa  ",
+      "    a    ",
+      "         "
+    ],
+    [
+      "    a    ",
+      "   aca   ",
+      "   aaa   ",
+      "    a    ",
+      "   aca   ",
+      "   aaa   ",
+      "    a    ",
+      "   aca   ",
+      "   eaa   ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    a    ",
+      "         ",
+      "         ",
+      "    a    ",
+      "         ",
+      "    a    ",
+      "   aca   ",
+      "    a    ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "    a    ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}
