@@ -1,0 +1,31 @@
+{
+	"name": "byg:ironwood",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:ironwoodsapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.1,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:ironwoodlog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:ironwoodsapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:ironwoodleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

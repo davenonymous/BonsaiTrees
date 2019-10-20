@@ -1,0 +1,36 @@
+{
+	"name": "byg:rowan",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:rowansapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.9,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:rowanlog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:rowansapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:rowanleaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "byg:rowanberries",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

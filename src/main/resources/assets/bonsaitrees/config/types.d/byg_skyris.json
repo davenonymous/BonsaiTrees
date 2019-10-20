@@ -1,0 +1,31 @@
+{
+	"name": "byg:skyris",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:skyrissapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.9,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:skyrislog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:skyrissapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:skyrisleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

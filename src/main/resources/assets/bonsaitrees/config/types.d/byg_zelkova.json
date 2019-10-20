@@ -1,0 +1,31 @@
+{
+	"name": "byg:zelkova",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:zelkovasapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.1,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:zelkovalog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:zelkovasapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:zelkovaleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

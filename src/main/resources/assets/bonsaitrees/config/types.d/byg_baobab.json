@@ -1,0 +1,31 @@
+{
+	"name": "byg:baobab",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:baobabsapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.4,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:baobablog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:baobabsapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:baobableaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

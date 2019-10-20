@@ -1,0 +1,31 @@
+{
+	"name": "byg:jacaranda",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:jacarandasapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.9,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:jacarandalog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:jacarandasapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:jacarandaleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

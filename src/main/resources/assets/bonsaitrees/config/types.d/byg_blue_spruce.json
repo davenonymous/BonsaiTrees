@@ -1,0 +1,31 @@
+{
+	"name": "byg:blue_spruce",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:bluesprucesapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.1,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "minecraft:log",
+            "data": 1,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:bluesprucesapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:spruceleavesblue",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+	"name": "wizardry:wisdom",
+    "mod": "wizardry",
+    "sapling": {
+        "name": "wizardry:wisdom_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.05,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "wizardry:wisdom_wood_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "wizardry:wisdom_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "wizardry:wisdom_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

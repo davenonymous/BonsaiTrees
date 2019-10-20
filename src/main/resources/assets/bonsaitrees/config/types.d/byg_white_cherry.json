@@ -1,0 +1,31 @@
+{
+	"name": "byg:white_cherry",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:whitecherrysapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.1,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:cherrylog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:whitecherrysapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:cherryleaveswhite",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+	"name": "jurassicraft:calamites",
+    "mod": "jurassicraft",
+    "sapling": {
+        "name": "jurassicraft:calamites_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.9,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "jurassicraft:calamites_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "jurassicraft:calamites_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "jurassicraft:calamites_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

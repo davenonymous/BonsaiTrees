@@ -1,0 +1,31 @@
+{
+	"name": "jurassicraft:phoenix",
+    "mod": "jurassicraft",
+    "sapling": {
+        "name": "jurassicraft:phoenix_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.8,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "jurassicraft:phoenix_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "jurassicraft:phoenix_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "jurassicraft:phoenix_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

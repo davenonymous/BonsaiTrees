@@ -1,0 +1,31 @@
+{
+	"name": "byg:hawthorn",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:hawthornsapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.9,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:hawthornlog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:hawthornsapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:hawthornleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

@@ -1,0 +1,31 @@
+{
+	"name": "byg:mangrove",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:mangrovesapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.1,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:mangrovelog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:mangrovesapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:mangroveleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

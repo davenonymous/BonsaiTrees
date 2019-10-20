@@ -1,0 +1,31 @@
+{
+	"name": "byg:holly",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:hollysapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.9,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "minecraft:log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:hollysapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:hollyleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}
