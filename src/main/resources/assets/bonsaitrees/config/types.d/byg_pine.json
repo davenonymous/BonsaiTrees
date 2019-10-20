@@ -1,0 +1,31 @@
+{
+	"name": "byg:pine",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:pinesapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.9,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:pinelog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:pinesapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:pineleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

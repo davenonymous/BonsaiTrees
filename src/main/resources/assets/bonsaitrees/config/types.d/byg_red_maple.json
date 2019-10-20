@@ -1,0 +1,31 @@
+{
+	"name": "byg:red_maple",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:redmaplesapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.9,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:maplelog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:redmaplesapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:mapleleavesred",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

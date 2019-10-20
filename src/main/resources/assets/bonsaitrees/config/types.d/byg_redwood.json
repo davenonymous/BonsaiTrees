@@ -1,0 +1,31 @@
+{
+	"name": "byg:redwood",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:redwoodsapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.3,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:redwoodlog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:redwoodsapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:redwoodleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

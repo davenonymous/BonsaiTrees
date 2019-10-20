@@ -1,0 +1,35 @@
+{
+	"name": "aetherlegacy:skyroot",
+    "mod": "aether_legacy",
+    "sapling": {
+        "name": "aether_legacy:skyroot_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "aether_legacy:aether_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "aether_legacy:skyroot_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "aether_legacy:aether_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ],
+	"compatibleSoilTags": [
+		"aether_dirt", 
+		"aether_grass"
+	]
+}

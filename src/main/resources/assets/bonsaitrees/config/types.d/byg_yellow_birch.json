@@ -1,0 +1,31 @@
+{
+	"name": "byg:yellow_birch",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:yellow_birch_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.9,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "minecraft:log",
+            "data": 2,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:yellow_birch_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:birchleavesyellow",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

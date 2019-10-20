@@ -1,0 +1,31 @@
+{
+	"name": "jurassicraft:psaronius",
+    "mod": "jurassicraft",
+    "sapling": {
+        "name": "jurassicraft:psaronius_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.8,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "jurassicraft:psaronius_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "jurassicraft:psaronius_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "jurassicraft:psaronius_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ]
+}

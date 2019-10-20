@@ -1,0 +1,45 @@
+{
+	"name": "byg:witch_hazel",
+    "mod": "byg",
+    "sapling": {
+        "name": "byg:witchhazelsapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.7,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "byg:witchhazellog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "byg:witchhazelsapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "byg:witchhazelleaves",
+            "data": 0,
+            "type": "CUSTOM",
+			"count": 1,
+			"chance": 0.05
+        },
+        {
+            "name": "byg:witchhazelleavesflowering",
+            "data": 0,
+            "type": "CUSTOM",
+			"count": 1,
+			"chance": 0.005
+        },
+		{
+			"name": "minecraft:dark_oak_fence",
+			"data": 0,
+			"type": "FRUIT"
+		}
+    ]
+}

@@ -1,0 +1,42 @@
+{
+	"name": "lostaether:crystal",
+    "mod": "lost_aether",
+    "sapling": {
+        "name": "lost_aether:crystal_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "aether_legacy:aether_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "lost_aether:crystal_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "aether_legacy:crystal_leaves",
+            "data": 4,
+            "type": "LEAVES"
+        },
+        {
+            "name": "aether_legacy:white_apple",
+            "data": 0,
+            "type": "CUSTOM",
+			"count": 6,
+			"chance": 0.5
+        }
+    ],
+	"compatibleSoilTags": [
+		"aether_dirt", 
+		"aether_grass"
+	]
+}
