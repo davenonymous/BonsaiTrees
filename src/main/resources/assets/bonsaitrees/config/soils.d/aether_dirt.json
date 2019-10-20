@@ -1,0 +1,16 @@
+{
+  "name": "aether_legacy:aether_dirt",
+  "mod": "aether_legacy",
+  "soil": {
+    "name": "aether_legacy:aether_dirt",
+    "data": 0,
+    "ignoreMeta": true
+  },
+
+  "modifiers": {
+    "growTime": 0.7,
+    "dropChance": 0.9
+  },
+
+  "providedTags": [ "aether_dirt", "aether_grass" ]
+}
