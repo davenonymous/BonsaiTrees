@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import org.dave.bonsaitrees.utility.Logz;
 
 import java.util.*;
 
@@ -27,11 +28,17 @@ public class TreeTypeSimple implements IBonsaiTreeType {
         Block block = ForgeRegistries.BLOCKS.getValue(saplingNameResource);
         if(block != null && block != Blocks.AIR) {
             this.sapling = new ItemStack(block, 1, saplingMeta);
-        } else {
+        }
+
+        if(this.sapling == null || this.sapling.isEmpty()) {
             Item item = ForgeRegistries.ITEMS.getValue(saplingNameResource);
             if(item != null) {
                 this.sapling = new ItemStack(item, 1, saplingMeta);
             }
+        }
+
+        if(this.sapling == null || this.sapling.isEmpty()) {
+            Logz.warn("Could not find an ItemStack for the sapling resource: %s", saplingName);
         }
 
         this.name = name;
@@ -45,15 +52,23 @@ public class TreeTypeSimple implements IBonsaiTreeType {
     public void addDrop(String itemName, int count, int itemMeta, float chance) {
         Block dropBlock = ForgeRegistries.BLOCKS.getValue(new ResourceLocation(itemName));
         if(dropBlock != null && dropBlock != Blocks.AIR) {
-            this.drops.add(new TreeTypeDrop(new ItemStack(dropBlock, count, itemMeta), chance));
-            return;
+            ItemStack dropStack = new ItemStack(dropBlock, count, itemMeta);
+            if(!dropStack.isEmpty()) {
+                this.drops.add(new TreeTypeDrop(dropStack, chance));
+                return;
+            }
         }
 
         Item dropItem = ForgeRegistries.ITEMS.getValue(new ResourceLocation(itemName));
         if(dropItem != null) {
-            this.drops.add(new TreeTypeDrop(new ItemStack(dropItem, count, itemMeta), chance));
-            return;
+            ItemStack dropStack = new ItemStack(dropItem, count, itemMeta);
+            if(!dropStack.isEmpty()) {
+                this.drops.add(new TreeTypeDrop(dropStack, chance));
+                return;
+            }
         }
+
+        Logz.warn("Could not find an ItemStack for the drop resource: %s", itemName);
     }
 
     public void addCompatibleSoilTag(String tag) {

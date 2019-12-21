@@ -169,14 +169,14 @@ public class TreeShapeSerializer implements JsonDeserializer<TreeShape> {
     }
 
     public static String serializePretty(TreeShape shape) {
-        if(shape.getWidth() == 0 || shape.getHeight() == 0 || shape.getDepth() == 0) {
-            Logz.warn("Can not serialize tree shape for type: '%s', invalid dimensions: w=%d, h=%d, d=%d", shape.getTreeTypeName(), shape.getWidth(), shape.getHeight(), shape.getDepth());
-            return null;
-        }
-
         int width = shape.getWidth()+1;
         int height = shape.getHeight()+1;
         int depth = shape.getDepth()+1;
+
+        if(width == 0 || height == 0 || depth == 0) {
+            Logz.warn("Can not serialize tree shape for type: '%s', invalid dimensions: w=%d, h=%d, d=%d", shape.getTreeTypeName(), shape.getWidth(), shape.getHeight(), shape.getDepth());
+            return null;
+        }
 
         char[][][] map = new char[width][height][depth];
 
