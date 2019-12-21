@@ -1,13 +1,13 @@
 {
-  "type": "wizardry:wisdom",
+  "type": "thaumicbases:ender",
   "version": 2,
   "ref": {
     "a": {
-      "name": "wizardry:wisdom_wood_log",
+      "name": "thaumicbases:enderlogs",
       "meta": 0
     },
     "b": {
-      "name": "wizardry:wisdom_leaves",
+      "name": "thaumicbases:enderleaves",
       "meta": 3
     }
   },

@@ -1,0 +1,51 @@
+{
+  "type": "thaumicbases:ender",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "thaumicbases:enderleaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "thaumicbases:enderlogs",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      " aaa ",
+      " aaa ",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aabaa",
+      "aabaa",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "aaaa ",
+      "aaaa ",
+      "     ",
+      "     "
+    ]
+  ]
+}

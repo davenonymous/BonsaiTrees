@@ -1,0 +1,69 @@
+{
+  "type": "harvestcraft:guava",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "minecraft:leaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 3
+    },
+    "c": {
+      "name": "minecraft:leaves",
+      "meta": 11
+    },
+    "d": {
+      "name": "harvestcraft:pamguava",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "aaaa ",
+      " aaa ",
+      "  dd ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      "  cc ",
+      "accca",
+      "accca",
+      " dddd",
+      "     ",
+      "     "
+    ],
+    [
+      " ccc ",
+      " cbc ",
+      "acbca",
+      "acbca",
+      "d b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  c  ",
+      "  c  ",
+      "accca",
+      "accca",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " aaaa",
+      " aaa ",
+      " d   ",
+      "     ",
+      "     "
+    ]
+  ]
+}

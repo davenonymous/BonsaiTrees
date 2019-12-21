@@ -1,13 +1,13 @@
 {
-  "type": "wizardry:wisdom",
+  "type": "bewitchment:elder",
   "version": 2,
   "ref": {
     "a": {
-      "name": "wizardry:wisdom_wood_log",
+      "name": "bewitchment:elder_wood",
       "meta": 0
     },
     "b": {
-      "name": "wizardry:wisdom_leaves",
+      "name": "bewitchment:elder_leaves",
       "meta": 3
     }
   },

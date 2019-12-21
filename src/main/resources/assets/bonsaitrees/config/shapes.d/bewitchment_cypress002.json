@@ -1,0 +1,67 @@
+{
+  "type": "bewitchment:cypress",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "bewitchment:cypress_wood",
+      "meta": 0
+    },
+    "b": {
+      "name": "bewitchment:cypress_leaves",
+      "meta": 3
+    }
+  },
+  "shape": [
+    [
+      "   ",
+      "   ",
+      " b ",
+      " b ",
+      " b ",
+      " b ",
+      " b ",
+      "bbb",
+      "bbb",
+      "bbb",
+      "bbb",
+      "bbb",
+      " b ",
+      "   ",
+      "   "
+    ],
+    [
+      " b ",
+      " b ",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      " a ",
+      " a "
+    ],
+    [
+      "   ",
+      "   ",
+      " b ",
+      " b ",
+      " b ",
+      " b ",
+      " b ",
+      "bbb",
+      "bbb",
+      "bbb",
+      "bbb",
+      "bbb",
+      " b ",
+      "   ",
+      "   "
+    ]
+  ]
+}

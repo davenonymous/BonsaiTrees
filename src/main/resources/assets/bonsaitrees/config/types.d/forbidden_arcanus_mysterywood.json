@@ -1,0 +1,36 @@
+{
+    "name": "forbidden_arcanus:mysterywood",
+    "mod": "forbidden_arcanus",
+    "sapling": {
+        "name": "forbidden_arcanus:mysterywood_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.5,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "forbidden_arcanus:mysterywood_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "forbidden_arcanus:mysterywood_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "forbidden_arcanus:mysterywood_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "minecraft:golden_apple",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

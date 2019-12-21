@@ -1,0 +1,51 @@
+{
+  "type": "thaumicbases:nether",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "thaumicbases:netherleaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "thaumicbases:netherlogs",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      " aaa ",
+      " aaa ",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aabaa",
+      "aabaa",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " aaa ",
+      "aaaa ",
+      "     ",
+      "     "
+    ]
+  ]
+}

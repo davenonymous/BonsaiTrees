@@ -1,0 +1,36 @@
+{
+    "name": "bewitchment:dragons_blood",
+    "mod": "bewitchment",
+    "sapling": {
+        "name": "bewitchment:dragons_blood_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "bewitchment:dragons_blood_wood",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "bewitchment:dragons_blood_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "bewitchment:dragons_blood_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "bewitchment:dragons_blood_resin",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

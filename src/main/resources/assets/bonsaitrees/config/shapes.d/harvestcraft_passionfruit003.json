@@ -1,0 +1,74 @@
+{
+  "type": "harvestcraft:passionfruit",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "minecraft:leaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 3
+    },
+    "c": {
+      "name": "minecraft:leaves",
+      "meta": 11
+    },
+    "d": {
+      "name": "harvestcraft:pampassionfruit",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "aaaaa",
+      "aaaa ",
+      "d d  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      "  cc ",
+      "accca",
+      "accca",
+      "    d",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ccc ",
+      " cbc ",
+      "acbca",
+      "acbca",
+      "  b d",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  c  ",
+      " ccc ",
+      "accca",
+      "accca",
+      "  d  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "aaaaa",
+      "aaaaa",
+      "d    ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

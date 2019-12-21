@@ -1,0 +1,74 @@
+{
+  "type": "harvestcraft:breadfruit",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "minecraft:leaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "minecraft:log",
+      "meta": 3
+    },
+    "c": {
+      "name": "minecraft:leaves",
+      "meta": 11
+    },
+    "d": {
+      "name": "harvestcraft:pambreadfruit",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " aaa ",
+      "aaaa ",
+      " d   ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      " cc  ",
+      "accca",
+      "accca",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ccc ",
+      " cbc ",
+      "acbca",
+      "acbca",
+      "  bd ",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  c  ",
+      "  cc ",
+      "accca",
+      "accca",
+      "  d  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " aaaa",
+      " aaaa",
+      "    d",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

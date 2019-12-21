@@ -1,0 +1,36 @@
+{
+    "name": "thaumicbases:nether",
+    "mod": "thaumicbases",
+    "sapling": {
+        "name": "thaumicbases:nethersapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.5,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "thaumicbases:netherlogs",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "thaumicbases:nethersapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "thaumicbases:netherleaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "minecraft:magma_cream",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

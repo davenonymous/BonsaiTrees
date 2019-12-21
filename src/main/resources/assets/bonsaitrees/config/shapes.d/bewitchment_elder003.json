@@ -1,0 +1,51 @@
+{
+  "type": "bewitchment:elder",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "bewitchment:elder_leaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "bewitchment:elder_wood",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      " aaa ",
+      " aaa ",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aabaa",
+      "aabaa",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " aaa ",
+      "aaaa ",
+      "     ",
+      "     "
+    ]
+  ]
+}

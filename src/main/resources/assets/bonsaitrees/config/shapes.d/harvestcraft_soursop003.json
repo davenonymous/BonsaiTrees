@@ -1,0 +1,74 @@
+{
+  "type": "harvestcraft:soursop",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "minecraft:log",
+      "meta": 0
+    },
+    "b": {
+      "name": "minecraft:leaves",
+      "meta": 0
+    },
+    "c": {
+      "name": "minecraft:leaves",
+      "meta": 8
+    },
+    "d": {
+      "name": "harvestcraft:pamsoursop",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " bbb ",
+      "bbbbb",
+      " d  d",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      "  c  ",
+      "bcccb",
+      "bcccb",
+      "d  d ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ccc ",
+      " cac ",
+      "bcacb",
+      "bcacb",
+      "d ad ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  c  ",
+      " cc  ",
+      "bcccb",
+      "bcccb",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " bbb ",
+      " bbb ",
+      " ddd ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

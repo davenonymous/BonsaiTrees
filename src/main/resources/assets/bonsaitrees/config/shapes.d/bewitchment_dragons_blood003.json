@@ -1,0 +1,119 @@
+{
+  "type": "bewitchment:dragons_blood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "bewitchment:dragons_blood_leaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "bewitchment:dragons_blood_wood",
+      "meta": 13
+    },
+    "c": {
+      "name": "bewitchment:dragons_blood_wood",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "         ",
+      "aaaaaaaaa",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      " baaaaab ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      " aaaaaaa ",
+      "  baaab  ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      " aaaaaaa ",
+      "  aaaaa  ",
+      "   bab   ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      "baaacaaab",
+      " baacaab ",
+      "  bacab  ",
+      "   bcb   ",
+      "    c    ",
+      "    c    ",
+      "    c    "
+    ],
+    [
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      " aaaaaaa ",
+      "  aaaaa  ",
+      "   bab   ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      " aaaaaaa ",
+      "  baaab  ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      " aaaaaaa ",
+      "aaaaaaaaa",
+      " baaaaab ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "aaaaaaaaa",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}

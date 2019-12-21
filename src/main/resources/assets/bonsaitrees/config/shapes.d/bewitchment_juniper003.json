@@ -1,0 +1,51 @@
+{
+  "type": "bewitchment:juniper",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "bewitchment:juniper_leaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "bewitchment:juniper_wood",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "      ",
+      "      ",
+      "  a a ",
+      "      ",
+      "      "
+    ],
+    [
+      " a    ",
+      "aaa a ",
+      " aaaaa",
+      "  a   ",
+      "      "
+    ],
+    [
+      "aaa a ",
+      "abaaaa",
+      "aababa",
+      "  abaa",
+      "   b  "
+    ],
+    [
+      " a    ",
+      "aaa   ",
+      " aaaaa",
+      "  a a ",
+      "      "
+    ],
+    [
+      "      ",
+      " a    ",
+      "    a ",
+      "      ",
+      "      "
+    ]
+  ]
+}

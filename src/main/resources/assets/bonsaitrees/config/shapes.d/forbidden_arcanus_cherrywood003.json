@@ -1,0 +1,51 @@
+{
+  "type": "forbidden_arcanus:cherrywood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "forbidden_arcanus:cherrywood_leaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "forbidden_arcanus:cherrywood_log",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "      ",
+      "      ",
+      "  a a ",
+      "      ",
+      "      "
+    ],
+    [
+      " a    ",
+      "aaa a ",
+      " aaaaa",
+      "  a   ",
+      "      "
+    ],
+    [
+      "aaa a ",
+      "abaaaa",
+      "aababa",
+      "  abaa",
+      "   b  "
+    ],
+    [
+      " a    ",
+      "aaa   ",
+      " aaaaa",
+      "  a a ",
+      "      "
+    ],
+    [
+      "      ",
+      " a    ",
+      "    a ",
+      "      ",
+      "      "
+    ]
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "type": "bewitchment:dragons_blood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "bewitchment:dragons_blood_wood",
+      "meta": 1
+    },
+    "b": {
+      "name": "bewitchment:dragons_blood_leaves",
+      "meta": 3
+    },
+    "c": {
+      "name": "bewitchment:dragons_blood_wood",
+      "meta": 13
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "bbbbbbb",
+      "   c   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " bbbbb ",
+      "bbbbbbb",
+      " cbbbc ",
+      "   c   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " bbbbb ",
+      "bbbbbbb",
+      " bbbbb ",
+      "  cbc  ",
+      "   c   ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " bbbbb ",
+      "bbbbbbb",
+      "cbbabbc",
+      " cbabc ",
+      "  cac  ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   a   "
+    ],
+    [
+      " bbbbb ",
+      "bbbbbbb",
+      " bbbbb ",
+      "  cbc  ",
+      "   c   ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " bbbbb ",
+      "bbbbbbb",
+      " cbbbc ",
+      "   c   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "bbbbbbb",
+      "   c   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

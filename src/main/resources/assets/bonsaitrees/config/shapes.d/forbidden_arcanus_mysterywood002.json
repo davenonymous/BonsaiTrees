@@ -1,0 +1,58 @@
+{
+  "type": "forbidden_arcanus:mysterywood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "forbidden_arcanus:mysterywood_leaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "forbidden_arcanus:mysterywood_log",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " aaa ",
+      "  a  ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aa  ",
+      "aabaa",
+      " aaa ",
+      "     "
+    ],
+    [
+      "     ",
+      "  a  ",
+      " aaa ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      " aaa ",
+      "aabaa",
+      " aaa ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aabaa",
+      " aaa ",
+      "  a  ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aaa ",
+      "  a  ",
+      "     ",
+      "     "
+    ]
+  ]
+}

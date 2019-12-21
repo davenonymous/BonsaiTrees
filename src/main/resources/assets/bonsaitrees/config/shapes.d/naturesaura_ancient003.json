@@ -1,0 +1,51 @@
+{
+  "type": "naturesaura:ancient",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "naturesaura:ancient_leaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "naturesaura:ancient_log",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "      ",
+      "      ",
+      "  a a ",
+      "      ",
+      "      "
+    ],
+    [
+      " a    ",
+      "aaa a ",
+      " aaaaa",
+      "  a   ",
+      "      "
+    ],
+    [
+      "aaa a ",
+      "abaaaa",
+      "aababa",
+      "  abaa",
+      "   b  "
+    ],
+    [
+      " a    ",
+      "aaa   ",
+      " aaaaa",
+      "  a a ",
+      "      "
+    ],
+    [
+      "      ",
+      " a    ",
+      "    a ",
+      "      ",
+      "      "
+    ]
+  ]
+}

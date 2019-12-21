@@ -1,0 +1,27 @@
+{
+  "name": "minecraft:reeds",
+  "mod": "minecraft",
+  "sapling": {
+    "name": "minecraft:reeds",
+    "data": 0
+  },
+  "growTimeMultiplier": 1.5,
+  "drops": [
+    {
+      "name": "minecraft:reeds",
+      "data": 0,
+      "type": "WOOD"
+    },
+    {
+      "name": "minecraft:reeds",
+      "data": 0,
+      "type": "SAPLING"
+    },
+    {
+      "name": "minecraft:sugar",
+      "data": 0,
+      "type": "FRUIT"
+    }
+  ],
+  "compatibleSoilTags": [ "sand", "grass", "dirt" ]
+}

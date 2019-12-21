@@ -1,0 +1,69 @@
+{
+  "type": "harvestcraft:tamarind",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "minecraft:log",
+      "meta": 3
+    },
+    "b": {
+      "name": "minecraft:leaves",
+      "meta": 3
+    },
+    "c": {
+      "name": "minecraft:leaves",
+      "meta": 11
+    },
+    "d": {
+      "name": "harvestcraft:pamtamarind",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " bbbb",
+      " bbb ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      " ccc ",
+      "bcccb",
+      "bcccb",
+      "  dd ",
+      "     ",
+      "     "
+    ],
+    [
+      " ccc ",
+      " cac ",
+      "bcacb",
+      "bcacb",
+      "  ad ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  c  ",
+      " ccc ",
+      "bcccb",
+      "bcccb",
+      "   d ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      "bbbb ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

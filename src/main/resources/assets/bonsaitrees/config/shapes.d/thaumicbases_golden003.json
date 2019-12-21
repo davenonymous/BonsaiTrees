@@ -1,0 +1,51 @@
+{
+  "type": "thaumicbases:golden",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "thaumicbases:goldenleaves",
+      "meta": 3
+    },
+    "b": {
+      "name": "thaumicbases:goldenlogs",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      " aaa ",
+      " aaa ",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aabaa",
+      "aabaa",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      " aaa ",
+      "aaaaa",
+      "aaaaa",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " aaa ",
+      "aaaa ",
+      "     ",
+      "     "
+    ]
+  ]
+}

@@ -1,0 +1,36 @@
+{
+    "name": "bewitchment:elder",
+    "mod": "bewitchment",
+    "sapling": {
+        "name": "bewitchment:elder_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "bewitchment:elder_wood",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "bewitchment:elder_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "bewitchment:elder_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "bewitchment:elderberries",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

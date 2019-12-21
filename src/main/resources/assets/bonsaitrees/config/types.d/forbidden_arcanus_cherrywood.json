@@ -1,0 +1,36 @@
+{
+    "name": "forbidden_arcanus:cherrywood",
+    "mod": "forbidden_arcanus",
+    "sapling": {
+        "name": "forbidden_arcanus:cherrywood_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.0,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "forbidden_arcanus:cherrywood_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "forbidden_arcanus:cherrywood_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "forbidden_arcanus:cherrywood_leaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "forbidden_arcanus:cherry_peach",
+            "data": 0,
+            "type": "FRUIT"
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+{
+  "type": "harvestcraft:pawpaw",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "harvestcraft:pampawpaw",
+      "meta": 0
+    },
+    "b": {
+      "name": "minecraft:leaves",
+      "meta": 0
+    },
+    "c": {
+      "name": "minecraft:log",
+      "meta": 0
+    },
+    "d": {
+      "name": "minecraft:leaves",
+      "meta": 8
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " bbb ",
+      " bbbb",
+      " a a ",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      " ddd ",
+      "bdddb",
+      "bdddb",
+      "  aa ",
+      "     ",
+      "     "
+    ],
+    [
+      " ddd ",
+      " dcd ",
+      "bdcdb",
+      "bdcdb",
+      "aac a",
+      "  c  ",
+      "  c  "
+    ],
+    [
+      "  d  ",
+      "  d  ",
+      "bdddb",
+      "bdddb",
+      " a a ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbbb",
+      " bbbb",
+      " a a ",
+      "     ",
+      "     "
+    ]
+  ]
+}
