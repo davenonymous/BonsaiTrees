@@ -1,5 +1,6 @@
 package org.dave.bonsaitrees.tile;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -14,6 +15,7 @@ import net.minecraft.server.management.PlayerList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -364,7 +366,7 @@ public class TileBonsaiPot extends BaseTileTicking {
         }
 
         // Only grow if the space above it is AIR, otherwise reset to third of the progress
-        if(!world.isAirBlock(pos.up())) {
+        if(!canGrowIntoBlockAbove()) {
             if(progress > calcGrowTime / 3) {
                 progress = calcGrowTime / 3;
             }
@@ -375,6 +377,21 @@ public class TileBonsaiPot extends BaseTileTicking {
         }
 
         this.markDirty();
+    }
+
+    private boolean canGrowIntoBlockAbove() {
+        BlockPos upPos = pos.up();
+        if(world.isAirBlock(upPos)) {
+            return true;
+        }
+
+        IBlockState blockState = world.getBlockState(upPos);
+        AxisAlignedBB collisionBB = blockState.getCollisionBoundingBox(world, upPos);
+        if (collisionBB == null || collisionBB.equals(Block.NULL_AABB)) {
+            return true;
+        }
+
+        return false;
     }
 
     private void tryToCutAndExport() {
