@@ -13,8 +13,8 @@
             "type": "STICK"
         },
         {
-            "name": "biomesoplenty:log_0",
-            "data": 5,
+            "name": "minecraft:log",
+            "data": 0,
             "type": "WOOD"
         },
         {
