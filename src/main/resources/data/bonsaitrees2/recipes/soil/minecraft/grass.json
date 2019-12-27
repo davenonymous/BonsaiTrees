@@ -1,0 +1,16 @@
+{
+  "type": "bonsaitrees2:soil",
+  "mod": "minecraft",
+
+  "soil": {
+    "item": "minecraft:grass_block"
+  },
+
+  "display": {
+    "block": "minecraft:grass_block"
+  },
+
+  "tickModifier": 0.2,
+
+  "compatibleSoilTags": ["grass"]
+}

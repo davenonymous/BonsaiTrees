@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bonsaitrees2",
+  "result": {
+    "item": "bonsaitrees2:hopping_bonsaipot",
+    "count": 1
+  },
+  "pattern": [
+    "b",
+    "h"
+  ],
+  "key": {
+    "b": {
+      "item": "bonsaitrees2:bonsaipot"
+    },
+    "h": {
+      "item": "minecraft:hopper"
+    }
+  }
+}

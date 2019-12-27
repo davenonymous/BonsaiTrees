@@ -1,0 +1,12 @@
+{
+  "block.bonsaitrees2.bonsaipot": "Bonsai Pot",
+  "block.bonsaitrees2.hopping_bonsaipot": "Hopping Bonsai Pot",
+
+  "bonsaitrees.jei.category.sapling.growtime": "",
+  "bonsaitrees.jei.category.growing.chance": "Chance: %d%%",
+
+  "hint.bonsaitrees.incompatible_soil": "This tree needs a different kind of soil.",
+  "hint.bonsaitrees.can_not_remove_soil_with_sapling": "Soil can not be removed while a sapling is growing.",
+  "hint.bonsaitrees.pot_has_no_soil": "Place some soil in the pot first. Try %s."
+
+}

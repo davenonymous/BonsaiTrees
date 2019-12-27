@@ -1,0 +1,16 @@
+{
+  "type": "bonsaitrees2:soil",
+  "mod": "minecraft",
+
+  "soil": {
+    "item": "minecraft:sand"
+  },
+
+  "display": {
+    "block": "minecraft:sand"
+  },
+
+  "tickModifier": 1.0,
+
+  "compatibleSoilTags": ["sand"]
+}

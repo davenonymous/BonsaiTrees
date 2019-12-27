@@ -1,0 +1,57 @@
+package com.davenonymous.bonsaitrees2.misc;
+
+import com.davenonymous.bonsaitrees2.block.Blockz;
+import com.davenonymous.libnonymous.misc.ColorProperty;
+import net.minecraft.client.renderer.color.IBlockColor;
+import net.minecraft.client.renderer.color.IItemColor;
+import net.minecraft.item.DyeColor;
+import net.minecraft.nbt.CompoundNBT;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+@Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+public class PotColorizer {
+    private static final Logger LOGGER = LogManager.getLogger();
+    public static final DyeColor DEFAULT_COLOR = DyeColor.LIGHT_GRAY;
+
+    @SubscribeEvent
+    public static void init(ColorHandlerEvent.Block event) {
+        final IBlockColor potColorHandler = (state, blockAccess, pos, tintIndex) -> {
+            if(!state.has(ColorProperty.COLOR)) {
+                return PotColorizer.DEFAULT_COLOR.getColorValue();
+            }
+
+            int color = state.get(ColorProperty.COLOR);
+            int rgb = DyeColor.byId(color).getColorValue();
+            return rgb;
+        };
+
+        event.getBlockColors().register(potColorHandler, Blockz.BONSAIPOT);
+        event.getBlockColors().register(potColorHandler, Blockz.HOPPING_BONSAIPOT);
+    }
+
+    @SubscribeEvent
+    public static void init(ColorHandlerEvent.Item event) {
+        final IItemColor potColorHandler = (stack, tintIndex) -> {
+            if(!stack.hasTag()) {
+                return PotColorizer.DEFAULT_COLOR.getColorValue();
+            }
+
+            CompoundNBT tag = stack.getTag();
+            if(!tag.contains("bonsaitrees2:color")) {
+                return PotColorizer.DEFAULT_COLOR.getColorValue();
+            }
+
+            int color = tag.getInt("bonsaitrees2:color");
+            int rgb = DyeColor.byId(color).getColorValue();
+            return rgb;
+        };
+
+        event.getItemColors().register(potColorHandler, Blockz.BONSAIPOT);
+        event.getItemColors().register(potColorHandler, Blockz.HOPPING_BONSAIPOT);
+    }
+}
