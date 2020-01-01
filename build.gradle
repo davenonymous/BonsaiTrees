@@ -26,6 +26,10 @@ repositories {
         name 'davenonymous maven'
         url "http://maven.davenonymous.com/repository/maven-releases"
     }
+    maven {
+        name 'hwyla'
+        url "https://tehnut.info/maven"
+    }
 }
 
 version = "${mod_version}"
@@ -109,12 +113,20 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-1.14.4:${jei_version}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-1.14.4:${jei_version}")
 
+    compile fg.deobf("mcp.mobius.waila:Hwyla:${hwyla_version}")
+
     if (findProject(':Libnonymous') != null) {
         compile project(':Libnonymous')
     } else {
         compile fg.deobf ("com.davenonymous.libnonymous:libnonymous-1.14.4:${libnonymous_version}:")
     }
 
+}
+
+allprojects {
+    if (System.getenv("GITHUB_BUILD") != null) {
+        version += ".${System.getenv("BUILD_NUMBER")}"
+    }
 }
 
 // Example for how to get properties into the manifest for reading by the runtime..
