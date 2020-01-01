@@ -1,5 +1,6 @@
 package com.davenonymous.bonsaitrees2;
 
+import com.davenonymous.bonsaitrees2.compat.top.TOPPlugin;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees2.setup.IProxy;
 import com.davenonymous.bonsaitrees2.setup.ModSetup;
@@ -8,8 +9,10 @@ import com.davenonymous.bonsaitrees2.setup.ProxyServer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
@@ -29,6 +32,7 @@ public class BonsaiTrees2 {
     public BonsaiTrees2() {
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -37,6 +41,10 @@ public class BonsaiTrees2 {
     private void setup(final FMLCommonSetupEvent event) {
         setup.init();
         proxy.init();
+    }
+
+    private void enqueueIMC(final InterModEnqueueEvent event) {
+        InterModComms.sendTo("theoneprobe", "getTheOneProbe", TOPPlugin::new);
     }
 
     @SubscribeEvent

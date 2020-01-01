@@ -1,6 +1,7 @@
 package com.davenonymous.bonsaitrees2.block;
 
 import com.davenonymous.bonsaitrees2.api.IBonsaiCuttingTool;
+import com.davenonymous.bonsaitrees2.compat.top.ITopInfoProvider;
 import com.davenonymous.bonsaitrees2.misc.PotColorizer;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingHelper;
@@ -10,6 +11,9 @@ import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
 import com.davenonymous.bonsaitrees2.util.Logz;
 import com.davenonymous.libnonymous.base.BaseBlock;
 import com.davenonymous.libnonymous.misc.ColorProperty;
+import mcjty.theoneprobe.api.IProbeHitData;
+import mcjty.theoneprobe.api.IProbeInfo;
+import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -37,7 +41,7 @@ import net.minecraftforge.common.ToolType;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BonsaiPotBlock extends BaseBlock implements IGrowable {
+public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProvider {
     private final Random rand = new Random();
     private final VoxelShape shape = VoxelShapes.create(0.065f, 0.005f, 0.065f, 0.935f, 0.185f, 0.935f);
     boolean hopping;
@@ -289,5 +293,25 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable {
 
         BonsaiPotTileEntity tile = (BonsaiPotTileEntity) world.getTileEntity(pos);
         tile.boostProgress();
+    }
+
+    @Override
+    public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, PlayerEntity player, World world, BlockState blockState, IProbeHitData data) {
+        if(!(world.getTileEntity(data.getPos()) instanceof BonsaiPotTileEntity)) {
+            return;
+        }
+
+        BonsaiPotTileEntity teBonsai = (BonsaiPotTileEntity) world.getTileEntity(data.getPos());
+        if(teBonsai.hasSapling()) {
+            probeInfo.horizontal().item(teBonsai.saplingStack).itemLabel(teBonsai.saplingStack);
+        }
+
+        if(teBonsai.hasSoil()) {
+            probeInfo.horizontal().item(teBonsai.soilStack).itemLabel(teBonsai.soilStack);
+        }
+
+        if(teBonsai.hasSapling()) {
+            probeInfo.progress((int)(teBonsai.getProgress()*100), 100, probeInfo.defaultProgressStyle().suffix("%").filledColor(0xff44AA44).alternateFilledColor(0xff44AA44).backgroundColor(0xff836953));
+        }
     }
 }

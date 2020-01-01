@@ -115,6 +115,10 @@ dependencies {
 
     compile fg.deobf("mcp.mobius.waila:Hwyla:${hwyla_version}")
 
+    compile fg.deobf("mcjty.theoneprobe:TheOneProbe-1.14:1.14-1.4.37-13") {
+        transitive = false
+    }
+
     if (findProject(':Libnonymous') != null) {
         compile project(':Libnonymous')
     } else {
