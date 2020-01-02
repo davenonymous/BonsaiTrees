@@ -26,7 +26,7 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
     protected ItemStack saplingStack = ItemStack.EMPTY;
 
     @Store(sendInUpdatePackage = true)
-    protected int modelRotation;
+    protected int modelRotation = -1;
 
     @Store(sendInUpdatePackage = true)
     protected int growTicks;
@@ -220,10 +220,17 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
         notifyClients();
     }
 
-
     @Override
-    public void read(CompoundNBT compound) {
-        super.read(compound);
+    protected void initialize() {
+        super.initialize();
+
+        if(world == null || this.world.isRemote) {
+            return;
+        }
+
+        if(this.modelRotation == -1) {
+            this.modelRotation = this.world.rand.nextInt(4);
+        }
     }
 
     @Override
