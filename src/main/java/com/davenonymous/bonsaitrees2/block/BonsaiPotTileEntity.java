@@ -54,7 +54,7 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
         this.saplingInfo = null;
         if(this.saplingStack != null && !this.saplingStack.isEmpty()) {
             this.saplingInfo = SaplingHelper.getSaplingInfoForItem(world, this.saplingStack);
-            this.treeId = this.saplingInfo.getTreeId();
+            this.treeId = this.saplingInfo.getId();
         }
 
         this.soilInfo = null;

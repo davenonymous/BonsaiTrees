@@ -12,7 +12,6 @@ import java.util.*;
 
 public class SaplingInfo extends RecipeData {
     private final ResourceLocation id;
-    private final ResourceLocation treeId;
 
     public Ingredient ingredient;
     public int baseTicks;
@@ -24,7 +23,6 @@ public class SaplingInfo extends RecipeData {
     public SaplingInfo(ResourceLocation id, Ingredient ingredient, int baseTicks) {
         this.id = id;
         this.ingredient = ingredient;
-        this.treeId = new ResourceLocation(id.toString().substring(21).replaceFirst("/", ":"));
         this.baseTicks = baseTicks;
         this.drops = new ArrayList<>();
         this.tags = new HashSet<>();
@@ -33,10 +31,6 @@ public class SaplingInfo extends RecipeData {
     @Override
     public ResourceLocation getId() {
         return id;
-    }
-
-    public ResourceLocation getTreeId() {
-        return this.treeId;
     }
 
     @Override

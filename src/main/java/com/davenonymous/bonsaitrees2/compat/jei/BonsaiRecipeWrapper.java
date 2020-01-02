@@ -36,7 +36,10 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 
     @Override
     public void drawInfo(int recipeWidth, int recipeHeight, double mouseX, double mouseY) {
-        MultiblockBlockModel model = TreeModels.get(sapling.getTreeId());
+        MultiblockBlockModel model = TreeModels.get(sapling.getId());
+        if(model == null) {
+            return;
+        }
 
         float angle = RenderTickCounter.renderTicks * 45.0f / 128.0f;
 

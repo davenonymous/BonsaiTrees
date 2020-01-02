@@ -2,7 +2,6 @@ package com.davenonymous.bonsaitrees2.command;
 
 import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
-import com.davenonymous.bonsaitrees2.util.Logz;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.ArgumentBuilder;
@@ -34,7 +33,7 @@ public class CommandListSaplings implements Command<CommandSource> {
 
         List<SaplingInfo> saplings = context.getSource().getWorld().getRecipeManager().getRecipes().stream().filter(r -> r.getType() == RecipeTypes.saplingRecipeType).map(r -> (SaplingInfo)r).collect(Collectors.toList());
         for(SaplingInfo sapling : saplings) {
-            context.getSource().sendFeedback(new StringTextComponent(sapling.getTreeId().toString() + " => " + sapling.ingredient.serialize().toString()), false);
+            context.getSource().sendFeedback(new StringTextComponent(sapling.getId().toString() + " => " + sapling.ingredient.serialize().toString()), false);
         }
 
         return 0;

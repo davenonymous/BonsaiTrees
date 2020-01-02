@@ -81,7 +81,7 @@ public class SoilCompatibility {
                 }
 
                 for(SoilInfo soil : reverseSoilTagMap.get(tag)) {
-                    Logz.debug("Tree '{}' grows on '{}' because of '{}'", sapling.getTreeId(), soil.getId(), tag);
+                    Logz.debug("Tree '{}' grows on '{}' because of '{}'", sapling.getId(), soil.getId(), tag);
                     this.addCompatEntry(soil, sapling);
                 }
             }

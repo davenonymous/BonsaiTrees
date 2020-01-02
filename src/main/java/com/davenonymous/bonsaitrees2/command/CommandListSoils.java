@@ -9,7 +9,6 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.StringTextComponent;
 
 import java.util.List;
@@ -33,8 +32,7 @@ public class CommandListSoils implements Command<CommandSource> {
         context.getSource().sendFeedback(new StringTextComponent("Registered soils:"), false);
         List<SoilInfo> soils = context.getSource().getWorld().getRecipeManager().getRecipes().stream().filter(r -> r.getType() == RecipeTypes.soilRecipeType).map(r -> (SoilInfo)r).collect(Collectors.toList());
         for(SoilInfo soil : soils) {
-            ResourceLocation soilId = new ResourceLocation(soil.getId().toString().substring(18).replaceFirst("/", ":"));
-            context.getSource().sendFeedback(new StringTextComponent(soilId.toString() + " => " + soil.ingredient.serialize().toString()), false);
+            context.getSource().sendFeedback(new StringTextComponent(soil.getId().toString()), false);
         }
 
         return 0;

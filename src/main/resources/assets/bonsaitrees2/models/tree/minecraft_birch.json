@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:birch",
+  "type": "bonsaitrees2:sapling/minecraft/birch",
   "version": 3,
   "ref": {
     "a": {

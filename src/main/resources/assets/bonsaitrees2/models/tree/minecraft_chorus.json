@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:chorus",
+  "type": "bonsaitrees2:sapling/minecraft/chorus",
   "version": 3,
   "ref": {
     "a": {"block":"minecraft:chorus_plant","properties":{"down":"false","east":"true","north":"false","south":"false","up":"true","west":"false"}},

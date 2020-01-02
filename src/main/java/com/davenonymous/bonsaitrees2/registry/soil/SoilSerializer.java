@@ -22,7 +22,6 @@ public class SoilSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> imp
 
     @Override
     public SoilInfo read(ResourceLocation recipeId, JsonObject json) {
-        Logz.info("Reading soil info: {}", recipeId);
         final Ingredient soil = Ingredient.deserialize(json.getAsJsonObject("soil"));
         final BlockState renderState = BlockStateSerializationHelper.deserializeBlockState(json.getAsJsonObject("display"));
 

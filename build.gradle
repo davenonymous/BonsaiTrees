@@ -23,6 +23,10 @@ repositories {
         url "https://dvs1.progwml6.com/files/maven"
     }
     maven {
+        name "crafttweaker maven"
+        url "https://maven.blamejared.com"
+    }
+    maven {
         name 'davenonymous maven'
         url "http://maven.davenonymous.com/repository/maven-releases"
     }
@@ -118,6 +122,8 @@ dependencies {
     compile fg.deobf("mcjty.theoneprobe:TheOneProbe-1.14:1.14-1.4.37-13") {
         transitive = false
     }
+
+    compile fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.14.4:${crafttweaker_version}")
 
     if (findProject(':Libnonymous') != null) {
         compile project(':Libnonymous')
