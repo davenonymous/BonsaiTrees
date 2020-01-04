@@ -1,7 +1,6 @@
 package com.davenonymous.bonsaitrees2.registry.soil;
 
 import com.davenonymous.bonsaitrees2.BonsaiTrees2;
-import com.davenonymous.bonsaitrees2.util.Logz;
 import com.davenonymous.libnonymous.utils.BlockStateSerializationHelper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

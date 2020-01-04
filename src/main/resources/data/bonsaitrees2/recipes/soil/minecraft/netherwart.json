@@ -10,7 +10,7 @@
     "block": "minecraft:nether_wart_block"
   },
 
-  "tickModifier": 0.8,
+  "tickModifier": 0.9,
 
   "compatibleSoilTags": ["netherrack"]
 }

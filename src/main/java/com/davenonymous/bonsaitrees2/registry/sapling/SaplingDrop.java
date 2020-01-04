@@ -55,4 +55,13 @@ public class SaplingDrop {
         result.setCount(count);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "SaplingDrop{" +
+                "stack=" + resultStack +
+                ", chance=" + chance +
+                ", rolls=" + rolls +
+                '}';
+    }
 }

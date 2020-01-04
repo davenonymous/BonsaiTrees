@@ -10,7 +10,7 @@
     "block": "minecraft:grass_block"
   },
 
-  "tickModifier": 0.2,
+  "tickModifier": 1.0,
 
   "compatibleSoilTags": ["grass"]
 }

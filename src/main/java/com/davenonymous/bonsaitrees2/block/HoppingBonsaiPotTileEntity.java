@@ -13,7 +13,7 @@ import java.util.List;
 public class HoppingBonsaiPotTileEntity extends BonsaiPotTileEntity {
 
     public HoppingBonsaiPotTileEntity() {
-        super(Blockz.HOPPING_BONSAIPOT_TILE);
+        super(ModObjects.HOPPING_BONSAIPOT_TILE);
     }
 
     @Override

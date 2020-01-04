@@ -9,7 +9,6 @@ import com.davenonymous.libnonymous.serialization.Store;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -42,7 +41,7 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
     public SoilInfo soilInfo;
 
     public BonsaiPotTileEntity() {
-        super(Blockz.BONSAIPOT_TILE);
+        super(ModObjects.BONSAIPOT_TILE);
     }
 
     public BonsaiPotTileEntity(TileEntityType type) {

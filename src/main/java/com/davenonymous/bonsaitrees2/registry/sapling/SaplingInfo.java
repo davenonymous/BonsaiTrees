@@ -1,7 +1,10 @@
 package com.davenonymous.bonsaitrees2.registry.sapling;
 
 import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
+import com.davenonymous.libnonymous.utils.GsonHelper;
 import com.davenonymous.bonsaitrees2.util.RecipeData;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
@@ -72,5 +75,34 @@ public class SaplingInfo extends RecipeData {
         }
 
         return result;
+    }
+
+    public String serializePretty() {
+        JsonObject result = new JsonObject();
+        result.addProperty("type", "bonsaitrees2:sapling");
+
+        JsonObject saplingObj = new JsonObject();
+        saplingObj.addProperty("item", this.sapling.getItem().getRegistryName().toString());
+        result.add("sapling", saplingObj);
+
+        JsonArray drops = new JsonArray();
+        for(SaplingDrop drop : this.drops) {
+            JsonObject itemObj = new JsonObject();
+            itemObj.addProperty("item", drop.resultStack.getItem().getRegistryName().toString());
+
+            JsonObject dropObj = new JsonObject();
+            dropObj.add("result", itemObj);
+            dropObj.addProperty("rolls", drop.rolls);
+            dropObj.addProperty("chance", drop.chance / 100);
+            drops.add(dropObj);
+        }
+        result.add("drops", drops);
+
+        JsonArray soilTags = new JsonArray();
+        tags.forEach(soilTags::add);
+        result.add("compatibleSoilTags", soilTags);
+        // TODO: Add mod limit field
+
+        return GsonHelper.GSON.toJson(result);
     }
 }

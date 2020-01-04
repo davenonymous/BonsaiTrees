@@ -1,8 +1,8 @@
 package com.davenonymous.bonsaitrees2.render;
 
-import com.davenonymous.bonsaitrees2.util.GsonHelper;
 import com.davenonymous.bonsaitrees2.util.Logz;
 import com.davenonymous.libnonymous.render.MultiblockBlockModel;
+import com.davenonymous.libnonymous.utils.GsonHelper;
 import com.google.gson.stream.JsonReader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;

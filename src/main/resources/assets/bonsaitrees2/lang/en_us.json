@@ -7,6 +7,16 @@
 
   "hint.bonsaitrees.incompatible_soil": "This tree needs a different kind of soil.",
   "hint.bonsaitrees.can_not_remove_soil_with_sapling": "Soil can not be removed while a sapling is growing.",
-  "hint.bonsaitrees.pot_has_no_soil": "Place some soil in the pot first. Try %s."
+  "hint.bonsaitrees.pot_has_no_soil": "Place some soil in the pot first. Try %s.",
 
+  "bonsaitrees.gui.tree_creator.label.preview": "Preview, Blocks: %d",
+  "bonsaitrees.gui.tree_creator.label.sapling": "Sapling Stack",
+  "bonsaitrees.gui.tree_creator.label.treeid": "Tree ID",
+  "bonsaitrees.gui.tree_creator.label.growtime": "Required ticks to grow",
+  "bonsaitrees.gui.tree_creator.label.tags": "Soil tags (separate with comma)",
+  "bonsaitrees.gui.tree_creator.label.properties": "Configure Bonsai Tree",
+
+  "bonsaitrees.gui.tree_creator.label.drop": "Drop",
+  "bonsaitrees.gui.tree_creator.label.rolls": "Rolls",
+  "bonsaitrees.gui.tree_creator.label.chance": "Chance"
 }

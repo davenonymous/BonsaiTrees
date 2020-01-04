@@ -11,6 +11,7 @@ public class ModCommands {
                 Commands.literal("bonsai")
                     .then(Commands.literal("model")
                             .then(CommandModelSave.register(dispatcher))
+                            .then(CommandTreeCreator.register(dispatcher))
                     )
                     .then(Commands.literal("list")
                             .then(CommandListSoils.register(dispatcher))

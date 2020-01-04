@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees2.misc;
 
-import com.davenonymous.bonsaitrees2.block.Blockz;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.libnonymous.misc.ColorProperty;
 import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.client.renderer.color.IItemColor;
@@ -30,8 +30,8 @@ public class PotColorizer {
             return rgb;
         };
 
-        event.getBlockColors().register(potColorHandler, Blockz.BONSAIPOT);
-        event.getBlockColors().register(potColorHandler, Blockz.HOPPING_BONSAIPOT);
+        event.getBlockColors().register(potColorHandler, ModObjects.BONSAIPOT);
+        event.getBlockColors().register(potColorHandler, ModObjects.HOPPING_BONSAIPOT);
     }
 
     @SubscribeEvent
@@ -51,7 +51,7 @@ public class PotColorizer {
             return rgb;
         };
 
-        event.getItemColors().register(potColorHandler, Blockz.BONSAIPOT);
-        event.getItemColors().register(potColorHandler, Blockz.HOPPING_BONSAIPOT);
+        event.getItemColors().register(potColorHandler, ModObjects.BONSAIPOT);
+        event.getItemColors().register(potColorHandler, ModObjects.HOPPING_BONSAIPOT);
     }
 }
