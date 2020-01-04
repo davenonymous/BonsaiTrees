@@ -3,10 +3,12 @@ package com.davenonymous.bonsaitrees2.compat.jei;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingDrop;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
+import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
 import com.davenonymous.bonsaitrees2.render.TreeModels;
 import com.davenonymous.libnonymous.render.MultiblockBlockModel;
 import com.davenonymous.libnonymous.render.MultiblockBlockModelRenderer;
 import com.davenonymous.libnonymous.render.RenderTickCounter;
+import com.davenonymous.libnonymous.utils.TickTimeHelper;
 import com.mojang.blaze3d.platform.GlStateManager;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.ingredient.ITooltipCallback;
@@ -18,17 +20,16 @@ import net.minecraft.client.renderer.texture.AtlasTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 import org.lwjgl.opengl.GL11;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
 
 public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCallback<ItemStack> {
     SaplingInfo sapling;
     public float[] slotChances;
+    public Map<ResourceLocation, Float> tickModifiers;
 
     public BonsaiRecipeWrapper(SaplingInfo sapling) {
         this.sapling = sapling;
@@ -115,11 +116,26 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 
     @Override
     public void onTooltip(int slot, boolean isInput, ItemStack stack, List<String> tooltip) {
-        if(isInput) {
+        if(stack.isEmpty()) {
             return;
         }
 
-        tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", (int)(slotChances[slot-2]*100)));
+        if(isInput) {
+            if(slot == 0) {
+                // Sapling slot
+                String timeToGrow = TickTimeHelper.getDuration(sapling.baseTicks);
+                tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.sapling.growtime", timeToGrow));
+            }
+
+            if(slot == 1) {
+                float tickModifier = tickModifiers.getOrDefault(stack.getItem().getRegistryName(), 1.0f);
+                String timeToGrow = TickTimeHelper.getDuration((int) (sapling.baseTicks * tickModifier));
+                tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.sapling.soiltime", timeToGrow));
+            }
+        } else {
+            // Some output slot
+            tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", (int)(slotChances[slot-2]*100)));
+        }
     }
 
     @Override
@@ -127,7 +143,15 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
         //sapling.ingredient
         List<List<ItemStack>> inputs = new ArrayList<>();
         inputs.add(Collections.singletonList(sapling.ingredient.getMatchingStacks()[0]));
-        inputs.add(SoilCompatibility.INSTANCE.getValidSoilsForSapling(sapling).stream().map(s -> s.ingredient.getMatchingStacks()[0]).collect(Collectors.toList()));
+
+        tickModifiers = new HashMap<>();
+        List<ItemStack> soilStacks = new ArrayList<>();
+        for(SoilInfo soil : SoilCompatibility.INSTANCE.getValidSoilsForSapling(sapling)) {
+            ItemStack representation = soil.ingredient.getMatchingStacks()[0];
+            tickModifiers.put(representation.getItem().getRegistryName(), soil.getTickModifier());
+            soilStacks.add(representation);
+        }
+        inputs.add(soilStacks);
 
         iIngredients.setInputLists(VanillaTypes.ITEM, inputs);
 

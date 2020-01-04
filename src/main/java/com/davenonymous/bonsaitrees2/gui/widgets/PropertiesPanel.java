@@ -53,8 +53,7 @@ public class PropertiesPanel extends WidgetPanel {
             }
 
             ResourceLocation id = newValue.getItem().getRegistryName();
-            //String suggestedTreeId = String.format("mydatapack:sapling/%s/%s", id.getNamespace(), id.getPath());
-            String suggestedTreeId = id.toString();
+            String suggestedTreeId = id.toString().replaceAll("_sapling$", "");
             idInput.setText(suggestedTreeId);
             return WidgetEventResult.CONTINUE_PROCESSING;
         });

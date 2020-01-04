@@ -2,7 +2,8 @@
   "block.bonsaitrees2.bonsaipot": "Bonsai Pot",
   "block.bonsaitrees2.hopping_bonsaipot": "Hopping Bonsai Pot",
 
-  "bonsaitrees.jei.category.sapling.growtime": "",
+  "bonsaitrees.jei.category.sapling.growtime": "Time to grow: %s",
+  "bonsaitrees.jei.category.sapling.soiltime": "Changes growtime to: %s",
   "bonsaitrees.jei.category.growing.chance": "Chance: %d%%",
 
   "hint.bonsaitrees.incompatible_soil": "This tree needs a different kind of soil.",
