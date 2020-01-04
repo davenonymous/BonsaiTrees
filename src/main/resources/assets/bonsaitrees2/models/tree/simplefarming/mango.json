@@ -1,0 +1,32 @@
+{
+  "type": "bonsaitrees2:sapling/simplefarming/mango",
+  "version": 3,
+  "ref": {
+    "a": {"block":"simplefarming:fruit_log","properties":{"waterlogged":"false"}},
+    "b": {"block":"simplefarming:mango_leaves","properties":{"age":"0"}},
+    "c": {"block":"simplefarming:mango_leaves","properties":{"age":"7"}}
+  },
+  "shape": [
+    [
+      "   ",
+      "ccc",
+      " c ",
+      "   ",
+      "   "
+    ],
+    [
+      " c ",
+      "bab",
+      "bac",
+      " a ",
+      " a "
+    ],
+    [
+      "   ",
+      "cbb",
+      " c ",
+      "   ",
+      "   "
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "type": "bonsaitrees2:sapling/simplefarming/banana",
+  "version": 3,
+  "ref": {
+    "a": {"block":"simplefarming:fruit_log","properties":{"waterlogged":"false"}},
+    "b": {"block":"simplefarming:banana_leaves","properties":{"age":"7"}},
+    "c": {"block":"simplefarming:banana_leaves","properties":{"age":"0"}}
+  },
+  "shape": [
+    [
+      "   ",
+      "bcb",
+      " b ",
+      "   ",
+      "   "
+    ],
+    [
+      " c ",
+      "bab",
+      "cac",
+      " a ",
+      " a "
+    ],
+    [
+      "   ",
+      "bcb",
+      " b ",
+      "   ",
+      "   "
+    ]
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "type": "bonsaitrees2:sapling/biomesoplenty/dead",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:dead_leaves","properties":{"distance":"4","persistent":"false"}},
+    "b": {"block":"biomesoplenty:dead_log","properties":{"axis":"y"}},
+    "c": {"block":"biomesoplenty:dead_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"biomesoplenty:dead_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"biomesoplenty:dead_leaves","properties":{"distance":"2","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cec ",
+      " ceca",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      "  de ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ede ",
+      " dbd ",
+      "edbde",
+      "edbde",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  e  ",
+      "  d  ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " ceca",
+      " ceca",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

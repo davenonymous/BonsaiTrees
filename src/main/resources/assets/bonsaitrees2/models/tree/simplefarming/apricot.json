@@ -1,0 +1,32 @@
+{
+  "type": "bonsaitrees2:sapling/simplefarming/apricot",
+  "version": 3,
+  "ref": {
+    "a": {"block":"simplefarming:fruit_log","properties":{"waterlogged":"false"}},
+    "b": {"block":"simplefarming:apricot_leaves","properties":{"age":"0"}},
+    "c": {"block":"simplefarming:apricot_leaves","properties":{"age":"7"}}
+  },
+  "shape": [
+    [
+      "   ",
+      "bbc",
+      " c ",
+      "   ",
+      "   "
+    ],
+    [
+      " b ",
+      "cab",
+      "bac",
+      " a ",
+      " a "
+    ],
+    [
+      "   ",
+      "cbc",
+      " c ",
+      "   ",
+      "   "
+    ]
+  ]
+}

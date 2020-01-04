@@ -2,10 +2,12 @@ package com.davenonymous.bonsaitrees2.registry.sapling;
 
 import com.davenonymous.bonsaitrees2.BonsaiTrees2;
 import com.davenonymous.bonsaitrees2.util.Logz;
+import com.davenonymous.libnonymous.utils.MCJsonUtils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.network.PacketBuffer;
@@ -20,16 +22,33 @@ public class SaplingSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> 
         this.setRegistryName(new ResourceLocation(BonsaiTrees2.MODID, "sapling"));
     }
 
+    private boolean isValidIngredient(JsonObject obj) {
+        if(obj == null) {
+            return false;
+        }
+        Item item = MCJsonUtils.getItem(obj, "item");
+        if(item.getRegistryName().toString().equals("minecraft:air")) {
+            return false;
+        }
+
+        return true;
+    }
+
     @Override
     public SaplingInfo read(ResourceLocation recipeId, JsonObject json) {
-        final Ingredient sapling = Ingredient.deserialize(json.getAsJsonObject("sapling"));
-
         if(json.has("mod")) {
             String requiredMod = json.get("mod").getAsString();
             if(requiredMod.length() > 0 && !ModList.get().isLoaded(requiredMod)) {
                 throw new JsonParseException("Mod '"+requiredMod+"' for sapling '"+recipeId+"' is not loaded. Skipping integration.");
             }
         }
+
+        if(!isValidIngredient(json.getAsJsonObject("sapling"))) {
+            Logz.warn("Skipping recipe '{}', contains unknown sapling.", recipeId);
+            return null;
+        }
+
+        final Ingredient sapling = Ingredient.deserialize(json.getAsJsonObject("sapling"));
 
         int baseTicks = 200;
         if(json.has("ticks")) {
@@ -42,6 +61,12 @@ public class SaplingSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> 
             for(JsonElement element : dropsJson) {
                 if(!element.isJsonObject()) {
                     continue;
+                }
+
+                JsonObject dropObj = element.getAsJsonObject();
+                if(!isValidIngredient(dropObj.getAsJsonObject("result"))) {
+                    Logz.warn("Skipping recipe '{}', contains unknown drop.", recipeId);
+                    return null;
                 }
 
                 SaplingDrop drop = new SaplingDrop(element.getAsJsonObject());

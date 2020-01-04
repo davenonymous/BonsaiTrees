@@ -1,0 +1,68 @@
+{
+  "type": "bonsaitrees2:sapling/traverse/yellow_autumnal",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:birch_log","properties":{"axis":"y"}},
+    "b": {"block":"traverse:yellow_autumnal_leaves","properties":{"distance":"2","persistent":"false"}},
+    "c": {"block":"traverse:yellow_autumnal_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"traverse:yellow_autumnal_leaves","properties":{"distance":"4","persistent":"false"}},
+    "e": {"block":"traverse:yellow_autumnal_leaves","properties":{"distance":"1","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cbcd",
+      "dcbc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "  e  ",
+      "cbebc",
+      "cbebc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " beb ",
+      " eae ",
+      "beaeb",
+      "beaeb",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      " be  ",
+      "cbebc",
+      "cbebc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "dcbcd",
+      "dcbcd",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

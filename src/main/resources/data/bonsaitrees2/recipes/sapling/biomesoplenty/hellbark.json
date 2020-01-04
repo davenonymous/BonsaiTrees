@@ -1,0 +1,40 @@
+{
+  "type": "bonsaitrees2:sapling",
+  "sapling": {
+    "item": "biomesoplenty:hellbark_sapling"
+  },
+  "drops": [
+    {
+      "result": {
+        "item": "biomesoplenty:hellbark_leaves"
+      },
+      "rolls": 1,
+      "chance": 0.5
+    },
+    {
+      "result": {
+        "item": "biomesoplenty:hellbark_log"
+      },
+      "rolls": 1,
+      "chance": 0.25
+    },
+    {
+      "result": {
+        "item": "minecraft:stick"
+      },
+      "rolls": 1,
+      "chance": 0.2
+    },
+    {
+      "result": {
+        "item": "biomesoplenty:hellbark_sapling"
+      },
+      "rolls": 1,
+      "chance": 0.15
+    }
+  ],
+  "compatibleSoilTags": [
+    "grass",
+    "dirt"
+  ]
+}

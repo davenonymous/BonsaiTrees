@@ -1,0 +1,33 @@
+{
+  "type": "bonsaitrees2:sapling/simplefarming/cherry",
+  "version": 3,
+  "ref": {
+    "a": {"block":"simplefarming:fruit_log","properties":{"waterlogged":"false"}},
+    "b": {"block":"simplefarming:cherry_leaves","properties":{"age":"0"}},
+    "c": {"block":"simplefarming:cherry_leaves","properties":{"age":"7"}},
+    "d": {"block":"simplefarming:cherry_leaves","properties":{"age":"1"}}
+  },
+  "shape": [
+    [
+      "   ",
+      "ccb",
+      " d ",
+      "   ",
+      "   "
+    ],
+    [
+      " c ",
+      "bab",
+      "dac",
+      " a ",
+      " a "
+    ],
+    [
+      "   ",
+      "ccb",
+      " c ",
+      "   ",
+      "   "
+    ]
+  ]
+}

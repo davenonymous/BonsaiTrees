@@ -1,0 +1,35 @@
+{
+  "type": "bonsaitrees2:sapling/simplefarming/apple",
+  "version": 3,
+  "ref": {
+    "a": {"block":"simplefarming:fruit_log","properties":{"waterlogged":"false"}},
+    "b": {"block":"simplefarming:apple_leaves","properties":{"age":"0"}},
+    "c": {"block":"simplefarming:apple_leaves","properties":{"age":"7"}},
+    "d": {"block":"simplefarming:apple_leaves","properties":{"age":"3"}},
+    "e": {"block":"simplefarming:apple_leaves","properties":{"age":"1"}},
+    "f": {"block":"simplefarming:apple_leaves","properties":{"age":"4"}}
+  },
+  "shape": [
+    [
+      "   ",
+      "fcc",
+      " d ",
+      "   ",
+      "   "
+    ],
+    [
+      " b ",
+      "bab",
+      "cac",
+      " a ",
+      " a "
+    ],
+    [
+      "   ",
+      "cce",
+      " c ",
+      "   ",
+      "   "
+    ]
+  ]
+}

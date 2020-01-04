@@ -1,0 +1,32 @@
+{
+  "type": "bonsaitrees2:sapling/simplefarming/orange",
+  "version": 3,
+  "ref": {
+    "a": {"block":"simplefarming:fruit_log","properties":{"waterlogged":"false"}},
+    "b": {"block":"simplefarming:orange_leaves","properties":{"age":"7"}},
+    "c": {"block":"simplefarming:orange_leaves","properties":{"age":"0"}}
+  },
+  "shape": [
+    [
+      "   ",
+      "bcb",
+      " b ",
+      "   ",
+      "   "
+    ],
+    [
+      " b ",
+      "cab",
+      "bab",
+      " a ",
+      " a "
+    ],
+    [
+      "   ",
+      "bbc",
+      " b ",
+      "   ",
+      "   "
+    ]
+  ]
+}

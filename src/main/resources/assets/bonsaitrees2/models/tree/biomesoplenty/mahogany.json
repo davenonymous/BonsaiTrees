@@ -1,0 +1,132 @@
+{
+  "type": "bonsaitrees2:sapling/biomesoplenty/mahogany",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:mahogany_leaves","properties":{"distance":"2","persistent":"false"}},
+    "b": {"block":"biomesoplenty:mahogany_leaves","properties":{"distance":"1","persistent":"false"}},
+    "c": {"block":"biomesoplenty:mahogany_log","properties":{"axis":"y"}},
+    "d": {"block":"biomesoplenty:mahogany_log","properties":{"axis":"z"}},
+    "e": {"block":"biomesoplenty:mahogany_leaves","properties":{"distance":"3","persistent":"false"}},
+    "f": {"block":"biomesoplenty:mahogany_log","properties":{"axis":"x"}},
+    "g": {"block":"biomesoplenty:mahogany_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "         ",
+      " eabbbae ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "  abbbae ",
+      "eabdddbae",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "  eabae  ",
+      " aabcbaa ",
+      "ababcbaba",
+      "    c    ",
+      "    c    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "    e    ",
+      "  aeaea  ",
+      " bbababb ",
+      "bfbababfb",
+      "         ",
+      "         ",
+      "    f    ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "   ege   ",
+      "  baeab  ",
+      " bcbabcb ",
+      "bfcbabcfb",
+      "  c   c  ",
+      "  c   c  ",
+      "   d d   ",
+      "    c    ",
+      "    c    ",
+      "    c    ",
+      "    c    "
+    ],
+    [
+      "    e    ",
+      "  aeaea  ",
+      " bbababb ",
+      "bfbababfb",
+      "         ",
+      "         ",
+      "    f    ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "  eaba   ",
+      " aabcbaa ",
+      "ababcbaba",
+      "    c    ",
+      "    c    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "  abbba  ",
+      "eabdddbae",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "geabbbae ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}

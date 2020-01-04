@@ -28,6 +28,8 @@ public class TreeModels {
                 MultiblockBlockModel model = GsonHelper.GSON.fromJson(new JsonReader(new InputStreamReader(is)), MultiblockBlockModel.class);
                 if (model != null) {
                     models.add(model);
+                } else {
+                    Logz.warn("Unable to read model from: {}", resource);
                 }
             } catch (IOException e) {
                 e.printStackTrace();

@@ -1,0 +1,63 @@
+{
+  "type": "bonsaitrees2:sapling/biomesoplenty/yellow_autumn",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:yellow_autumn_leaves","properties":{"distance":"4","persistent":"false"}},
+    "b": {"block":"minecraft:birch_log","properties":{"axis":"y"}},
+    "c": {"block":"biomesoplenty:yellow_autumn_leaves","properties":{"distance":"2","persistent":"false"}},
+    "d": {"block":"biomesoplenty:yellow_autumn_leaves","properties":{"distance":"3","persistent":"false"}},
+    "e": {"block":"biomesoplenty:yellow_autumn_leaves","properties":{"distance":"1","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " dcda",
+      " dcda",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      " cec ",
+      "dcecd",
+      "dcecd",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " cec ",
+      " ebe ",
+      "cebec",
+      "cebec",
+      "  b  ",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  c  ",
+      "  ec ",
+      "dcecd",
+      "dcecd",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " dcd ",
+      " dcda",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}
