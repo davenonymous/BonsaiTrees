@@ -2,6 +2,7 @@ package com.davenonymous.bonsaitrees2.block;
 
 import com.davenonymous.bonsaitrees2.api.IBonsaiCuttingTool;
 import com.davenonymous.bonsaitrees2.compat.top.ITopInfoProvider;
+import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.misc.PotColorizer;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingHelper;
@@ -150,7 +151,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
                     return true;
                 }
 
-                if(!player.isCreative()) {
+                if(!player.isCreative() && !Config.NO_DYE_COST.get()) {
                     playerStack.split(1);
                 }
 
@@ -165,8 +166,9 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
             if(!pot.hasSapling()) {
                 return false;
             }
-
-            if(pot.getProgress() >= 1.0f && playerStack.getDamage() + 1 < playerStack.getMaxDamage()) {
+            
+            boolean inWorkingCondition = !playerStack.isDamageable() || playerStack.getDamage() + 1 < playerStack.getMaxDamage();
+            if(pot.getProgress() >= 1.0f && inWorkingCondition) {
                 pot.dropLoot();
                 pot.setSapling(pot.saplingStack);
                 playerStack.attemptDamageItem(1, rand, (ServerPlayerEntity) player);
@@ -222,13 +224,10 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
             return true;
         }
 
-        // TODO: Allow configuration of additional cutting tools in a config
-        /*
         String regName = stack.getItem().getRegistryName().toString();
-        if(ConfigurationHandler.IntegrationSettings.additionalCuttingTools.contains(regName)) {
+        if(Config.ADDITIONAL_CUTTING_TOOLS.get().contains(regName)) {
             return true;
         }
-        */
 
         return false;
     }

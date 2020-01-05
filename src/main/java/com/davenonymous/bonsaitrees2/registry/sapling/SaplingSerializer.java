@@ -36,13 +36,6 @@ public class SaplingSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> 
 
     @Override
     public SaplingInfo read(ResourceLocation recipeId, JsonObject json) {
-        if(json.has("mod")) {
-            String requiredMod = json.get("mod").getAsString();
-            if(requiredMod.length() > 0 && !ModList.get().isLoaded(requiredMod)) {
-                throw new JsonParseException("Mod '"+requiredMod+"' for sapling '"+recipeId+"' is not loaded. Skipping integration.");
-            }
-        }
-
         if(!isValidIngredient(json.getAsJsonObject("sapling"))) {
             Logz.warn("Skipping recipe '{}', contains unknown sapling.", recipeId);
             return null;

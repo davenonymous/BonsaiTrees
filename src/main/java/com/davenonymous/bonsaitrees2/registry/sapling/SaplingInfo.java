@@ -101,7 +101,6 @@ public class SaplingInfo extends RecipeData {
         JsonArray soilTags = new JsonArray();
         tags.forEach(soilTags::add);
         result.add("compatibleSoilTags", soilTags);
-        // TODO: Add mod limit field
 
         return GsonHelper.GSON.toJson(result);
     }

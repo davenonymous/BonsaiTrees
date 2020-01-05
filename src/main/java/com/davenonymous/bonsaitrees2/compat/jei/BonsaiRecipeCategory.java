@@ -7,6 +7,7 @@ import mezz.jei.api.gui.drawable.IDrawableStatic;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.IRecipeCategory;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
 
 public class BonsaiRecipeCategory implements IRecipeCategory<BonsaiRecipeWrapper> {
@@ -31,8 +32,7 @@ public class BonsaiRecipeCategory implements IRecipeCategory<BonsaiRecipeWrapper
 
     @Override
     public String getTitle() {
-        // TODO: Localize
-        return "Bonsais";
+        return I18n.format("bonsaitrees2.title");
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.davenonymous.bonsaitrees2.compat.jei;
 
+import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingDrop;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
@@ -134,7 +135,9 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
             }
         } else {
             // Some output slot
-            tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", (int)(slotChances[slot-2]*100)));
+            if(Config.SHOW_CHANCE_IN_JEI.get()) {
+                tooltip.add(tooltip.size() - 1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", (int) (slotChances[slot - 2] * 100)));
+            }
         }
     }
 
