@@ -26,7 +26,7 @@ public class CommandTreeCreator implements Command<CommandSource> {
     private static final CommandTreeCreator CMD = new CommandTreeCreator();
 
     public static ArgumentBuilder<CommandSource, ?> register(CommandDispatcher<CommandSource> dispatcher) {
-        return Commands.literal("creator")
+        return Commands.literal("maker")
                 .requires(cs -> cs.hasPermissionLevel(0))
                 .executes(CMD);
     }

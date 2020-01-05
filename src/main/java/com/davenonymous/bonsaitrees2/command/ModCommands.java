@@ -8,16 +8,13 @@ import net.minecraft.command.Commands;
 public class ModCommands {
     public static void register(CommandDispatcher<CommandSource> dispatcher) {
         LiteralCommandNode<CommandSource> cmdBonsai = dispatcher.register(
-                Commands.literal("bonsai")
-                    .then(Commands.literal("model")
-                            .then(CommandModelSave.register(dispatcher))
-                            .then(CommandTreeCreator.register(dispatcher))
-                    )
-                    .then(Commands.literal("list")
-                            .then(CommandListSoils.register(dispatcher))
-                            .then(CommandListSaplings.register(dispatcher))
-                            .then(CommandListSaplingDrops.register(dispatcher))
-                    )
+            Commands.literal("bonsai")
+                .then(CommandTreeCreator.register(dispatcher))
+                .then(Commands.literal("list")
+                    .then(CommandListSoils.register(dispatcher))
+                    .then(CommandListSaplings.register(dispatcher))
+                    .then(CommandListSaplingDrops.register(dispatcher))
+                )
         );
     }
 }
