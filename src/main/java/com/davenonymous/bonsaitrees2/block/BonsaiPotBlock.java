@@ -166,7 +166,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
             if(!pot.hasSapling()) {
                 return false;
             }
-            
+
             boolean inWorkingCondition = !playerStack.isDamageable() || playerStack.getDamage() + 1 < playerStack.getMaxDamage();
             if(pot.getProgress() >= 1.0f && inWorkingCondition) {
                 pot.dropLoot();
