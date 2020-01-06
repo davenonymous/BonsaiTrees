@@ -23,8 +23,11 @@ public class Config {
 
     public static ForgeConfigSpec.BooleanValue NO_DYE_COST;
     public static ForgeConfigSpec.BooleanValue SHOW_CHANCE_IN_JEI;
+    public static ForgeConfigSpec.EnumValue<WaterLogEffect> WATERLOG_EFFECT;
 
     public static ForgeConfigSpec.ConfigValue<List<String>> ADDITIONAL_CUTTING_TOOLS;
+
+
 
     static {
         COMMON_BUILDER.comment("General Settings").push(CATEGORY_GENERAL);
@@ -39,8 +42,9 @@ public class Config {
     }
 
     private static void setupGeneralConfig(ForgeConfigSpec.Builder b) {
-        NO_DYE_COST = b.comment("If set to true, then dye is not being used up when painting bonsai pots").define("noDyeCost", false);
-        ADDITIONAL_CUTTING_TOOLS = b.comment("Additional items that are able to cut bonsai trees").define("additionalCuttingTools", Arrays.asList("minecraft:shears"));
+        NO_DYE_COST = b.comment("If set to true, then dye is not being used up when painting bonsai pots.").define("noDyeCost", false);
+        WATERLOG_EFFECT = b.comment("How to handle waterlogged bonsai pots.").defineEnum("waterloggedEffect", WaterLogEffect.DROP_LOOT);
+        ADDITIONAL_CUTTING_TOOLS = b.comment("Additional items that are able to cut bonsai trees.").define("additionalCuttingTools", Arrays.asList("minecraft:shears"));
     }
 
     private static void setupClientConfig(ForgeConfigSpec.Builder b) {

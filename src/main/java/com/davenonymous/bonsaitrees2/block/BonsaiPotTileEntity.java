@@ -1,5 +1,7 @@
 package com.davenonymous.bonsaitrees2.block;
 
+import com.davenonymous.bonsaitrees2.config.Config;
+import com.davenonymous.bonsaitrees2.config.WaterLogEffect;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingHelper;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilHelper;
@@ -174,7 +176,7 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
 
         if(canGrowIntoBlockAbove()) {
             if(getProgress() < 1.0f) {
-                this.setGrowTicks(growTicks+1);
+                this.setGrowTicks(growTicks + 1);
             }
         } else {
             if(getProgress() > 0.3f) {
@@ -233,10 +235,27 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
         }
     }
 
+    private void checkWaterlogged() {
+        if(this.isWaterlogged()) {
+            WaterLogEffect mode = Config.WATERLOG_EFFECT.get();
+            if(mode.shouldDropLoot() && getProgress() >= 1.0f) {
+                // Drop loot
+                this.dropLoot();
+                this.setSapling(this.saplingStack);
+            }
+
+            if(mode == WaterLogEffect.DROP_SAPLING){
+                // Drop sapling
+                this.dropSapling();
+            }
+        }
+    }
+
     @Override
     public void tick() {
         super.tick();
 
+        this.checkWaterlogged();
         this.updateGrowth();
     }
 
