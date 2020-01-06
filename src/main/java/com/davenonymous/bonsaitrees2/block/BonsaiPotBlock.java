@@ -21,12 +21,17 @@ import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.fluid.Fluids;
+import net.minecraft.fluid.IFluidState;
+import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.StateContainer;
+import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -35,6 +40,7 @@ import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolType;
@@ -42,7 +48,7 @@ import net.minecraftforge.common.ToolType;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProvider {
+public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProvider, IWaterLoggable {
     private final Random rand = new Random();
     private final VoxelShape shape = VoxelShapes.create(0.065f, 0.005f, 0.065f, 0.935f, 0.185f, 0.935f);
     boolean hopping;
@@ -55,6 +61,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
                 .harvestLevel(0)
         );
 
+        this.setDefaultState(this.stateContainer.getBaseState().with(ColorProperty.COLOR, 8).with(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false)));
         this.hopping = hopping;
     }
 
@@ -236,6 +243,34 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
     protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
         super.fillStateContainer(builder);
         builder.add(ColorProperty.COLOR);
+        builder.add(BlockStateProperties.WATERLOGGED);
+    }
+
+    @Nullable
+    @Override
+    public BlockState getStateForPlacement(BlockItemUseContext context) {
+        IFluidState fluidState = context.getWorld().getFluidState(context.getPos());
+        return super.getStateForPlacement(context).with(BlockStateProperties.WATERLOGGED, Boolean.valueOf(fluidState.getFluid() == Fluids.WATER));
+    }
+
+    @Override
+    public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+        if (stateIn.get(BlockStateProperties.WATERLOGGED)) {
+            worldIn.getPendingFluidTicks().scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickRate(worldIn));
+        }
+
+        return super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
+    }
+
+    @Override
+    public boolean propagatesSkylightDown(BlockState state, IBlockReader reader, BlockPos pos) {
+        return !state.get(BlockStateProperties.WATERLOGGED);
+    }
+
+
+    @Override
+    public IFluidState getFluidState(BlockState state) {
+        return state.get(BlockStateProperties.WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
     }
 
     @Override
