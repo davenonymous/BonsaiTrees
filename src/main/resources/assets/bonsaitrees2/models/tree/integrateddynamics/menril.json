@@ -1,0 +1,74 @@
+{
+  "type": "bonsaitrees2:sapling/integrateddynamics/menril",
+  "version": 3,
+  "ref": {
+    "a": {"block":"integrateddynamics:menril_log","properties":{"axis":"y"}},
+    "b": {"block":"integrateddynamics:menril_leaves","properties":{"distance":"7","persistent":"true"}},
+    "c": {"block":"integrateddynamics:menril_log_filled","properties":{"axis":"y","facing":"east"}},
+    "d": {"block":"integrateddynamics:menril_log","properties":{"axis":"x"}},
+    "e": {"block":"integrateddynamics:menril_leaves","properties":{"distance":"7","persistent":"false"}},
+    "f": {"block":"integrateddynamics:menril_log_filled","properties":{"axis":"x","facing":"north"}}
+  },
+  "shape": [
+    [
+      "     ",
+      " bbb ",
+      " bebb",
+      " ebbb",
+      "  bb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      " bab ",
+      "b abb",
+      "bba b",
+      " bcbb",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "  f  "
+    ],
+    [
+      " ebb ",
+      "baaab",
+      "baaab",
+      "baaae",
+      "baaae",
+      " bab ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      " dcd "
+    ],
+    [
+      " bbb ",
+      "bbab ",
+      "bbcbb",
+      "bbabb",
+      " eabb",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "  d  "
+    ],
+    [
+      "     ",
+      " bbb ",
+      " bbb ",
+      " bbb ",
+      "  b  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees2.registry.soil;
 
 import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
-import com.davenonymous.bonsaitrees2.util.RecipeData;
+import com.davenonymous.libnonymous.utils.RecipeData;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;

@@ -2,7 +2,7 @@ package com.davenonymous.bonsaitrees2.registry.sapling;
 
 import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
 import com.davenonymous.libnonymous.utils.GsonHelper;
-import com.davenonymous.bonsaitrees2.util.RecipeData;
+import com.davenonymous.libnonymous.utils.RecipeData;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
