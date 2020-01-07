@@ -3,14 +3,15 @@ package com.davenonymous.bonsaitrees2;
 import com.davenonymous.bonsaitrees2.compat.top.TOPPlugin;
 import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
-import com.davenonymous.bonsaitrees2.setup.IProxy;
 import com.davenonymous.bonsaitrees2.setup.ModSetup;
 import com.davenonymous.bonsaitrees2.setup.ProxyClient;
 import com.davenonymous.bonsaitrees2.setup.ProxyServer;
+import com.davenonymous.libnonymous.setup.IProxy;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -19,16 +20,11 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLPaths;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(BonsaiTrees2.MODID)
 public class BonsaiTrees2 {
     public static final String MODID = "bonsaitrees2";
-
-    // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger();
 
     public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ProxyClient(), () -> () -> new ProxyServer());
     public static ModSetup setup = new ModSetup();
@@ -55,7 +51,9 @@ public class BonsaiTrees2 {
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
-        InterModComms.sendTo("theoneprobe", "getTheOneProbe", TOPPlugin::new);
+        if(ModList.get().isLoaded("theoneprobe")) {
+            InterModComms.sendTo("theoneprobe", "getTheOneProbe", TOPPlugin::new);
+        }
     }
 
     @SubscribeEvent
