@@ -64,10 +64,3 @@ Bonsai Pots allows growing trees in small spaces.
     versionRange="[1.0.0,)"
     ordering="AFTER"
     side="BOTH"
-
-[[dependencies.bonsaitrees2]]
-    modId="theoneprobe"
-    mandatory=false
-    versionRange="[1.14,)"
-    ordering="AFTER"
-    side="BOTH"
