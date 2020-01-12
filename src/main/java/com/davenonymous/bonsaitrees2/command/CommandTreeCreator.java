@@ -42,7 +42,7 @@ public class CommandTreeCreator implements Command<CommandSource> {
         return 0;
     }
 
-
+    // TODO: Refactor to BaseNamedContainer
     private static class ContainerProvider implements INamedContainerProvider {
         BlockPos pos;
 

@@ -6,14 +6,14 @@ import com.davenonymous.libnonymous.utils.MCJsonUtils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParseException;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.ForgeRegistryEntry;
+import org.apache.logging.log4j.Marker;
+import org.apache.logging.log4j.MarkerManager;
 
 import javax.annotation.Nullable;
 
@@ -21,6 +21,8 @@ public class SaplingSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> 
     public SaplingSerializer() {
         this.setRegistryName(new ResourceLocation(BonsaiTrees2.MODID, "sapling"));
     }
+
+    private Marker mark = MarkerManager.getMarker("Serializer");
 
     private boolean isValidIngredient(JsonObject obj) {
         if(obj == null) {
@@ -37,7 +39,7 @@ public class SaplingSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> 
     @Override
     public SaplingInfo read(ResourceLocation recipeId, JsonObject json) {
         if(!isValidIngredient(json.getAsJsonObject("sapling"))) {
-            Logz.warn("Skipping recipe '{}', contains unknown sapling.", recipeId);
+            Logz.info(mark, "Skipping recipe '{}', contains unknown sapling.", recipeId);
             return null;
         }
 
@@ -58,7 +60,7 @@ public class SaplingSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> 
 
                 JsonObject dropObj = element.getAsJsonObject();
                 if(!isValidIngredient(dropObj.getAsJsonObject("result"))) {
-                    Logz.warn("Skipping recipe '{}', contains unknown drop.", recipeId);
+                    Logz.info(mark, "Skipping recipe '{}', contains unknown drop.", recipeId);
                     return null;
                 }
 

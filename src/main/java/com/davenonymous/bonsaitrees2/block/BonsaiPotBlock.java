@@ -61,7 +61,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
                 .harvestLevel(0)
         );
 
-        this.setDefaultState(this.stateContainer.getBaseState().with(ColorProperty.COLOR, 8).with(BlockStateProperties.WATERLOGGED, Boolean.valueOf(false)));
+        this.setDefaultState(this.stateContainer.getBaseState().with(ColorProperty.COLOR, 8).with(BlockStateProperties.WATERLOGGED, Boolean.FALSE));
         this.hopping = hopping;
     }
 
