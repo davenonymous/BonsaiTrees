@@ -254,8 +254,8 @@ public class BonsaiPotTileEntityRenderer extends TileEntityRenderer<BonsaiPotTil
         float progress = (float)tile.getProgress(partialTicks);
         matrix.scale(progress, progress, progress);
 
-        //float rotate = tile.modelRotation * 90.0f;
-        //matrix.rotate(new Quaternion(rotate, 0.0f, 1.0f, 0.0f));
+        float rotate = tile.modelRotation * 90.0f;
+        matrix.rotate(Vector3f.YP.rotationDegrees(rotate));
 
         float translateOffsetX = (float)(model.width+1) / 2.0f;
         float translateOffsetY = 0.0f;
