@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees2;
 
-import com.davenonymous.bonsaitrees2.compat.top.TOPPlugin;
+//import com.davenonymous.bonsaitrees2.compat.top.TOPPlugin;
 import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees2.setup.ModSetup;
@@ -52,7 +52,7 @@ public class BonsaiTrees2 {
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
         if(ModList.get().isLoaded("theoneprobe")) {
-            InterModComms.sendTo("theoneprobe", "getTheOneProbe", TOPPlugin::new);
+            //InterModComms.sendTo("theoneprobe", "getTheOneProbe", TOPPlugin::new);
         }
     }
 

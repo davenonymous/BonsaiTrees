@@ -1,26 +1,36 @@
 package com.davenonymous.bonsaitrees2.compat.jei;
 
+import com.davenonymous.bonsaitrees2.BonsaiTrees2;
 import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingDrop;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
 import com.davenonymous.bonsaitrees2.render.TreeModels;
+import com.davenonymous.libnonymous.render.MultiBlockModelWorldReader;
 import com.davenonymous.libnonymous.render.MultiblockBlockModel;
 import com.davenonymous.libnonymous.render.MultiblockBlockModelRenderer;
 import com.davenonymous.libnonymous.render.RenderTickCounter;
 import com.davenonymous.libnonymous.utils.TickTimeHelper;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.ingredient.ITooltipCallback;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.extensions.IRecipeCategoryExtension;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BufferBuilder;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.texture.AtlasTexture;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.client.settings.AmbientOcclusionStatus;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
 import org.lwjgl.opengl.GL11;
@@ -45,54 +55,55 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 
         float angle = RenderTickCounter.renderTicks * 45.0f / 128.0f;
 
-        GlStateManager.pushMatrix();
+        RenderSystem.pushMatrix();
 
-        // Init GlStateManager
-        GlStateManager.enableAlphaTest();
-        GlStateManager.alphaFunc(GL11.GL_GREATER, 0.1f);
-        GlStateManager.enableBlend();
-        GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
+        // Init RenderSystem
+        RenderSystem.enableAlphaTest();
+        RenderSystem.alphaFunc(GL11.GL_GREATER, 0.1f);
+        RenderSystem.enableBlend();
+        RenderSystem.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
 
-        GlStateManager.color4f(1.0f, 1.0f, 1.0f, 1.0f);
 
-        GlStateManager.disableFog();
-        GlStateManager.disableLighting();
+        RenderSystem.color4f(1.0f, 1.0f, 1.0f, 1.0f);
+
+        RenderSystem.disableFog();
+        RenderSystem.disableLighting();
         RenderHelper.disableStandardItemLighting();
 
-        GlStateManager.enableBlend();
-        GlStateManager.enableCull();
-        GlStateManager.enableAlphaTest();
+        RenderSystem.enableBlend();
+        RenderSystem.enableCull();
+        RenderSystem.enableAlphaTest();
 
         if (Minecraft.isAmbientOcclusionEnabled()) {
-            GlStateManager.shadeModel(GL11.GL_SMOOTH);
+            RenderSystem.shadeModel(GL11.GL_SMOOTH);
         } else {
-            GlStateManager.shadeModel(GL11.GL_FLAT);
+            RenderSystem.shadeModel(GL11.GL_FLAT);
         }
 
-        GlStateManager.disableRescaleNormal();
+        RenderSystem.disableRescaleNormal();
 
-        GlStateManager.translatef(0F, 0F, 216.5F);
+        RenderSystem.translatef(0F, 0F, 216.5F);
 
 
-        GlStateManager.translatef(50.0f, 20.0f, 0.0f);
+        RenderSystem.translatef(50.0f, 20.0f, 0.0f);
 
         // Shift it a bit down so one can properly see 3d
-        GlStateManager.rotatef(-25.0f, 1.0f, 0.0f, 0.0f);
+        RenderSystem.rotatef(-25.0f, 1.0f, 0.0f, 0.0f);
 
         // Rotate per our calculated time
-        GlStateManager.rotatef(angle, 0.0f, 1.0f, 0.0f);
+        RenderSystem.rotatef(angle, 0.0f, 1.0f, 0.0f);
 
         double scale = model.getScaleRatio(true);
-        GlStateManager.scaled(scale, scale, scale);
+        RenderSystem.scaled(scale, scale, scale);
 
         double progress = 40.0d;
-        GlStateManager.scaled(progress, progress, progress);
+        RenderSystem.scaled(progress, progress, progress);
 
 
 
-        GlStateManager.rotatef(180.0f, 1.0f, 0.0f, 0.0f);
+        RenderSystem.rotatef(180.0f, 1.0f, 0.0f, 0.0f);
 
-        GlStateManager.translatef(
+        RenderSystem.translatef(
                 (model.width + 1) / -2.0f,
                 (model.height + 1) / -2.0f,
                 (model.depth + 1) / -2.0f
@@ -100,19 +111,29 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 
         TextureManager textureManager = Minecraft.getInstance().getTextureManager();
         textureManager.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
-        textureManager.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).setBlurMipmap(false, false);
+        textureManager.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).setBlurMipmapDirect(false, false);
 
         GL11.glFrontFace(GL11.GL_CW);
-        MultiblockBlockModelRenderer.renderModel(model);
+
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder builder = tessellator.getBuffer();
+        IRenderTypeBuffer buffer = IRenderTypeBuffer.getImpl(builder);
+
+        AmbientOcclusionStatus before = Minecraft.getInstance().gameSettings.ambientOcclusionStatus;
+        Minecraft.getInstance().gameSettings.ambientOcclusionStatus = AmbientOcclusionStatus.OFF;
+        MultiblockBlockModelRenderer.renderModel(model, new MatrixStack(), buffer, 0xff0000,  OverlayTexture.DEFAULT_LIGHT, BonsaiTrees2.proxy.getClientWorld(), BonsaiTrees2.proxy.getClientPlayer().getPosition());
+        Minecraft.getInstance().gameSettings.ambientOcclusionStatus = before;
 
         textureManager.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
         textureManager.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
 
+        ((IRenderTypeBuffer.Impl) buffer).finish();
+
         GL11.glFrontFace(GL11.GL_CCW);
 
-        GlStateManager.disableBlend();
+        RenderSystem.disableBlend();
 
-        GlStateManager.popMatrix();
+        RenderSystem.popMatrix();
     }
 
     @Override

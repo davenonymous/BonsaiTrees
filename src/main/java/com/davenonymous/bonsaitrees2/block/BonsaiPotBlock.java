@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees2.block;
 
 import com.davenonymous.bonsaitrees2.api.IBonsaiCuttingTool;
-import com.davenonymous.bonsaitrees2.compat.top.ITopInfoProvider;
+
 import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.misc.PotColorizer;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
@@ -12,9 +12,6 @@ import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
 import com.davenonymous.bonsaitrees2.util.Logz;
 import com.davenonymous.libnonymous.base.BaseBlock;
 import com.davenonymous.libnonymous.misc.ColorProperty;
-import mcjty.theoneprobe.api.IProbeHitData;
-import mcjty.theoneprobe.api.IProbeInfo;
-import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -30,7 +27,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockRenderLayer;
+
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -42,13 +40,14 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProvider, IWaterLoggable {
+public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggable {
     private final Random rand = new Random();
     private final VoxelShape shape = VoxelShapes.create(0.065f, 0.005f, 0.065f, 0.935f, 0.185f, 0.935f);
     boolean hopping;
@@ -59,6 +58,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
                 .sound(SoundType.WOOD)
                 .harvestTool(ToolType.AXE)
                 .harvestLevel(0)
+                .func_226896_b_()
         );
 
         this.setDefaultState(this.stateContainer.getBaseState().with(ColorProperty.COLOR, 8).with(BlockStateProperties.WATERLOGGED, Boolean.FALSE));
@@ -81,13 +81,13 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
     }
 
     @Override
-    public boolean onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
-        if (player.isSneaking()) {
-            return false;
+    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit) {
+        if (player.isCrouching()) {
+            return ActionResultType.FAIL;
         }
 
         if (!(world.getTileEntity(pos) instanceof BonsaiPotTileEntity)) {
-            return false;
+            return ActionResultType.FAIL;
         }
 
         ItemStack playerStack = player.getHeldItem(Hand.MAIN_HAND);
@@ -97,11 +97,11 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
 
         // No items in either of the hands -> no action here
         if(playerStack.isEmpty()) {
-            return false;
+            return ActionResultType.FAIL;
         }
 
         if (world.isRemote) {
-            return true;
+            return ActionResultType.SUCCESS;
         }
 
         BonsaiPotTileEntity pot = (BonsaiPotTileEntity)world.getTileEntity(pos);
@@ -116,7 +116,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
             } else {
                 pot.setSoil(playerStack.split(1));
             }
-            return true;
+            return ActionResultType.SUCCESS;
         }
 
         // Sapling?
@@ -130,13 +130,13 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
                     Logz.warn("There is no soil available. Please check the config and logs for errors!");
                 }
 
-                return true;
+                return ActionResultType.SUCCESS;
             }
 
             SoilInfo potSoil = SoilHelper.getSoilForItem(world, pot.getSoilStack());
             if(!SoilCompatibility.INSTANCE.canTreeGrowOnSoil(sapling, potSoil)) {
                 player.sendStatusMessage(new TranslationTextComponent("hint.bonsaitrees.incompatible_soil"), true);
-                return true;
+                return ActionResultType.SUCCESS;
             }
 
             if(player.isCreative()) {
@@ -146,7 +146,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
             } else {
                 pot.setSapling(playerStack.split(1));
             }
-            return true;
+            return ActionResultType.SUCCESS;
         }
 
         // Dye?
@@ -155,7 +155,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
             DyeColor color = DyeColor.getColor(playerStack);
             if(color != null) {
                 if(blockColor == color) {
-                    return true;
+                    return ActionResultType.SUCCESS;
                 }
 
                 if(!player.isCreative() && !Config.NO_DYE_COST.get()) {
@@ -163,7 +163,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
                 }
 
                 world.setBlockState(pos, state.with(ColorProperty.COLOR, color.getId()), 2);
-                return true;
+                return ActionResultType.SUCCESS;
             }
         }
 
@@ -171,7 +171,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
         if(playerHasAxe) {
             // No sapling in pot
             if(!pot.hasSapling()) {
-                return false;
+                return ActionResultType.FAIL;
             }
 
             boolean inWorkingCondition = !playerStack.isDamageable() || playerStack.getDamage() + 1 < playerStack.getMaxDamage();
@@ -179,29 +179,29 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
                 pot.dropLoot();
                 pot.setSapling(pot.saplingStack);
                 playerStack.attemptDamageItem(1, rand, (ServerPlayerEntity) player);
-                return true;
+                return ActionResultType.SUCCESS;
             } else if(pot.growTicks >= 20 && pot.getProgress() <= 0.75f) {
                 // Not ready and still under 75%
                 pot.dropSapling();
-                return true;
+                return ActionResultType.SUCCESS;
             }
 
-            return true;
+            return ActionResultType.SUCCESS;
         }
 
         boolean playerHasShovel = playerStack.getItem().getHarvestLevel(playerStack, ToolType.SHOVEL, player, Blocks.DIRT.getDefaultState()) != -1;
         if(playerHasShovel) {
             if(pot.hasSapling()) {
                 player.sendStatusMessage(new TranslationTextComponent("hint.bonsaitrees.can_not_remove_soil_with_sapling"), true);
-                return false;
+                return ActionResultType.FAIL;
             }
 
             if(!pot.hasSoil()) {
-                return false;
+                return ActionResultType.FAIL;
             }
 
             pot.dropSoil();
-            return true;
+            return ActionResultType.SUCCESS;
         }
 
         return super.onBlockActivated(state, world, pos, player, handIn, hit);
@@ -278,20 +278,12 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
         return shape;
     }
 
-    @Override
-    public BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.CUTOUT;
-    }
 
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
     }
 
-    @Override
-    public boolean isSolid(BlockState state) {
-        return false;
-    }
 
 
 
@@ -320,7 +312,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
     }
 
     @Override
-    public void grow(World world, Random rand, BlockPos pos, BlockState state) {
+    public void grow(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
         if(!(world.getTileEntity(pos) instanceof BonsaiPotTileEntity)) {
             return;
         }
@@ -329,6 +321,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
         tile.boostProgress();
     }
 
+    /*
     @Override
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, PlayerEntity player, World world, BlockState blockState, IProbeHitData data) {
         if(!(world.getTileEntity(data.getPos()) instanceof BonsaiPotTileEntity)) {
@@ -348,4 +341,5 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, ITopInfoProv
             probeInfo.progress((int)(teBonsai.getProgress()*100), 100, probeInfo.defaultProgressStyle().suffix("%").filledColor(0xff44AA44).alternateFilledColor(0xff44AA44).backgroundColor(0xff836953));
         }
     }
+    */
 }

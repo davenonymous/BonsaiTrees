@@ -1,7 +1,6 @@
 package com.davenonymous.bonsaitrees2.setup;
 
 import com.davenonymous.bonsaitrees2.BonsaiTrees2;
-import com.davenonymous.bonsaitrees2.block.BonsaiPotTileEntity;
 import com.davenonymous.bonsaitrees2.block.BonsaiPotTileEntityRenderer;
 import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.config.Config;
@@ -20,7 +19,7 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 public class ProxyClient implements IProxy {
     @Override
     public void init() {
-        ClientRegistry.bindTileEntitySpecialRenderer(BonsaiPotTileEntity.class, new BonsaiPotTileEntityRenderer());
+        ClientRegistry.bindTileEntityRenderer(ModObjects.BONSAIPOT_TILE, tileEntityRendererDispatcher -> new BonsaiPotTileEntityRenderer(tileEntityRendererDispatcher));
         TreeModels.init();
         ScreenManager.registerFactory(ModObjects.TREE_CREATOR_CONTAINER, TreeCreatorScreen::new);
 
