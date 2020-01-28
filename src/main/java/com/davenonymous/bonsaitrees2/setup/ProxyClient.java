@@ -20,6 +20,8 @@ public class ProxyClient implements IProxy {
     @Override
     public void init() {
         ClientRegistry.bindTileEntityRenderer(ModObjects.BONSAIPOT_TILE, tileEntityRendererDispatcher -> new BonsaiPotTileEntityRenderer(tileEntityRendererDispatcher));
+        ClientRegistry.bindTileEntityRenderer(ModObjects.HOPPING_BONSAIPOT_TILE, tileEntityRendererDispatcher -> new BonsaiPotTileEntityRenderer(tileEntityRendererDispatcher));
+
         TreeModels.init();
         ScreenManager.registerFactory(ModObjects.TREE_CREATOR_CONTAINER, TreeCreatorScreen::new);
 
