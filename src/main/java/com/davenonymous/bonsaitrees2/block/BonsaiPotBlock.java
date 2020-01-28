@@ -20,6 +20,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.fluid.IFluidState;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemStack;
@@ -78,6 +79,38 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
         } else {
             return new BonsaiPotTileEntity();
         }
+    }
+
+    public static BonsaiPotTileEntity getOwnTile(IBlockReader world, BlockPos pos) {
+        TileEntity te = world.getTileEntity(pos);
+        if(!(te instanceof BonsaiPotTileEntity)) {
+            return null;
+        }
+
+        return (BonsaiPotTileEntity)te;
+    }
+
+    @Override
+    public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
+        BonsaiPotTileEntity tile = getOwnTile(worldIn, pos);
+        if(tile == null) {
+            super.onReplaced(state, worldIn, pos, newState, isMoving);
+            return;
+        }
+
+        if(tile.hasSapling()) {
+            InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), tile.getSaplingStack());
+        }
+
+        if(tile.hasSoil()) {
+            InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), tile.getSoilStack());
+        }
+
+        if(tile.hasSoil() && tile.hasSapling() && tile.getProgress() >= 1.0f) {
+            tile.dropLoot();
+        }
+
+        super.onReplaced(state, worldIn, pos, newState, isMoving);
     }
 
     @Override

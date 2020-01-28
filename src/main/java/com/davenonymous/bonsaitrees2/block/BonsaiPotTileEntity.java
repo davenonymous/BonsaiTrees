@@ -56,7 +56,9 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
         this.saplingInfo = null;
         if(this.saplingStack != null && !this.saplingStack.isEmpty()) {
             this.saplingInfo = SaplingHelper.getSaplingInfoForItem(world, this.saplingStack);
-            this.treeId = this.saplingInfo.getId();
+            if(this.saplingInfo != null) { // This shouldn't happen, but does in case of Immersive Portals?!
+                this.treeId = this.saplingInfo.getId();
+            }
         }
 
         this.soilInfo = null;
