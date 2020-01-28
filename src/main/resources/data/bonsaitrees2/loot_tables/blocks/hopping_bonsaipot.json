@@ -7,7 +7,10 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bonsaitrees2:hopping_bonsaipot"
+          "name": "bonsaitrees2:hopping_bonsaipot",
+          "functions": [
+            { "function": "bonsaitrees2:copy_color" }
+          ]
         }
       ],
       "conditions": [
