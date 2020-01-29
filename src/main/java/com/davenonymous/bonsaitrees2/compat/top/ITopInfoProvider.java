@@ -1,6 +1,5 @@
 package com.davenonymous.bonsaitrees2.compat.top;
 
-/*
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
@@ -11,4 +10,3 @@ import net.minecraft.world.World;
 public interface ITopInfoProvider {
     void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, PlayerEntity player, World world, BlockState blockState, IProbeHitData data);
 }
-*/

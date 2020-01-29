@@ -119,11 +119,9 @@ dependencies {
 
     compile fg.deobf("mcp.mobius.waila:Hwyla:${hwyla_version}")
 
-    /*
-    compile fg.deobf("mcjty.theoneprobe:TheOneProbe-1.14:${top_version}") {
+    compile fg.deobf("mcjty.theoneprobe:TheOneProbe-1.15:${top_version}") {
         transitive = false
     }
-    */
 
     compile fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.15.1:${crafttweaker_version}")
 

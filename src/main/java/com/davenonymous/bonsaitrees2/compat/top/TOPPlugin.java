@@ -1,6 +1,5 @@
 package com.davenonymous.bonsaitrees2.compat.top;
 
-/*
 import mcjty.theoneprobe.api.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
@@ -28,4 +27,3 @@ public class TOPPlugin implements Function<ITheOneProbe, Void> {
         return null;
     }
 }
-*/
