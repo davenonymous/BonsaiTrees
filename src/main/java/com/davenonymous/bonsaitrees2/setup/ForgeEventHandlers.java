@@ -5,6 +5,7 @@ import com.davenonymous.bonsaitrees2.compat.jei.BonsaiTrees2JEIPlugin;
 import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
+import com.davenonymous.bonsaitrees2.render.TreeModels;
 import net.minecraft.resources.IReloadableResourceManager;
 import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraftforge.client.event.RecipesUpdatedEvent;
@@ -37,5 +38,6 @@ public class ForgeEventHandlers {
         }
 
         SoilCompatibility.INSTANCE.update(event.getRecipeManager().getRecipes());
+        TreeModels.init();
     }
 }

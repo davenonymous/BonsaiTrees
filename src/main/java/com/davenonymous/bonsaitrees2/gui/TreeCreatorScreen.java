@@ -73,7 +73,8 @@ public class TreeCreatorScreen extends WidgetContainerScreen<TreeCreatorContaine
 
             WidgetSlot widgetSlot = (WidgetSlot)slot;
             if(widgetSlot.matches(TreeCreatorContainer.SLOTGROUP_PLAYER)) {
-                widgetSlot.bindToWidget(gui);
+                widgetSlot.bindToWidget(propertiesPanel);
+                widgetSlot.bindToWidget(dropsPanel);
             } else if(widgetSlot.matches(TreeCreatorContainer.SLOTGROUP_SETUP)) {
                 widgetSlot.bindToWidget(propertiesPanel);
             }
