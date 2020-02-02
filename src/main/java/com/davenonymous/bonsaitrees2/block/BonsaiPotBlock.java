@@ -1,15 +1,13 @@
 package com.davenonymous.bonsaitrees2.block;
 
 import com.davenonymous.bonsaitrees2.api.IBonsaiCuttingTool;
-
 import com.davenonymous.bonsaitrees2.compat.top.ITopInfoProvider;
 import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.misc.PotColorizer;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
-import com.davenonymous.bonsaitrees2.registry.sapling.SaplingHelper;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
-import com.davenonymous.bonsaitrees2.registry.soil.SoilHelper;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
+import com.davenonymous.bonsaitrees2.registry.soil.SoilRecipeHelper;
 import com.davenonymous.bonsaitrees2.util.Logz;
 import com.davenonymous.libnonymous.base.BaseBlock;
 import com.davenonymous.libnonymous.misc.ColorProperty;
@@ -32,7 +30,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
-
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -144,7 +141,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
         BonsaiPotTileEntity pot = (BonsaiPotTileEntity)world.getTileEntity(pos);
 
         // Soil?
-        SoilInfo soil = SoilHelper.getSoilForItem(world, playerStack);
+        SoilInfo soil = ModObjects.soilRecipeHelper.getSoilForItem(world, playerStack);
         if(soil != null && !pot.hasSoil()) {
             if(player.isCreative()) {
                 ItemStack soilStack = playerStack.copy();
@@ -157,10 +154,10 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
         }
 
         // Sapling?
-        SaplingInfo sapling = SaplingHelper.getSaplingInfoForItem(world, playerStack);
+        SaplingInfo sapling = ModObjects.saplingRecipeHelper.getSaplingInfoForItem(world, playerStack);
         if(sapling != null && !pot.hasSapling()) {
             if(!pot.hasSoil()) {
-                SoilInfo randomSoil = SoilHelper.getRandomSoil(world);
+                SoilInfo randomSoil = ModObjects.soilRecipeHelper.getRandomRecipe(world.getRecipeManager(), world.rand);
                 if(randomSoil != null) {
                     player.sendStatusMessage(new TranslationTextComponent("hint.bonsaitrees.pot_has_no_soil", randomSoil.ingredient.getMatchingStacks()[0].getDisplayName()), true);
                 } else {
@@ -170,7 +167,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
                 return ActionResultType.SUCCESS;
             }
 
-            SoilInfo potSoil = SoilHelper.getSoilForItem(world, pot.getSoilStack());
+            SoilInfo potSoil = ModObjects.soilRecipeHelper.getSoilForItem(world, pot.getSoilStack());
             if(!SoilCompatibility.INSTANCE.canTreeGrowOnSoil(sapling, potSoil)) {
                 player.sendStatusMessage(new TranslationTextComponent("hint.bonsaitrees.incompatible_soil"), true);
                 return ActionResultType.SUCCESS;

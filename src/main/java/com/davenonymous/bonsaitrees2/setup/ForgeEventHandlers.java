@@ -1,10 +1,9 @@
 package com.davenonymous.bonsaitrees2.setup;
 
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.command.ModCommands;
 import com.davenonymous.bonsaitrees2.compat.jei.BonsaiTrees2JEIPlugin;
-import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
-import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees2.render.TreeModels;
 import net.minecraft.resources.IReloadableResourceManager;
 import net.minecraft.resources.IResourceManagerReloadListener;
@@ -14,8 +13,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.server.FMLServerAboutToStartEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
-
-import java.util.stream.Collectors;
 
 public class ForgeEventHandlers {
     @SubscribeEvent
@@ -34,7 +31,7 @@ public class ForgeEventHandlers {
     @SubscribeEvent
     public void recipesUpdated(RecipesUpdatedEvent event) {
         if(ModList.get().isLoaded("jei")) {
-            BonsaiTrees2JEIPlugin.saplings = event.getRecipeManager().getRecipes().stream().filter(r -> r.getType() == RecipeTypes.saplingRecipeType).map(r -> (SaplingInfo) r).collect(Collectors.toList());
+            BonsaiTrees2JEIPlugin.saplings = ModObjects.saplingRecipeHelper.getRecipesList(event.getRecipeManager());
         }
 
         SoilCompatibility.INSTANCE.update(event.getRecipeManager().getRecipes());

@@ -4,7 +4,7 @@ import com.blamejared.crafttweaker.api.actions.IRuntimeAction;
 import com.blamejared.crafttweaker.api.logger.ILogger;
 import com.blamejared.crafttweaker.impl.managers.CTCraftingTableManager;
 import com.davenonymous.bonsaitrees2.BonsaiTrees2;
-import com.davenonymous.bonsaitrees2.registry.sapling.SaplingHelper;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import net.minecraft.util.ResourceLocation;
 
@@ -14,7 +14,7 @@ public abstract class SaplingAction implements IRuntimeAction {
 
     public SaplingAction(String saplingId) {
         this.saplingId = saplingId;
-        this.sapling = SaplingHelper.getSapling(CTCraftingTableManager.recipeManager, ResourceLocation.tryCreate(saplingId));
+        this.sapling = ModObjects.saplingRecipeHelper.getRecipe(CTCraftingTableManager.recipeManager, ResourceLocation.tryCreate(saplingId));
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.davenonymous.bonsaitrees2.registry;
 
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
 import com.davenonymous.bonsaitrees2.util.Logz;
@@ -57,8 +58,8 @@ public class SoilCompatibility {
             return;
         }
 
-        List<SaplingInfo> saplings = recipes.stream().filter(r -> r.getType() == RecipeTypes.saplingRecipeType).map(r -> (SaplingInfo)r).collect(Collectors.toList());
-        List<SoilInfo> soils = recipes.stream().filter(r -> r.getType() == RecipeTypes.soilRecipeType).map(r -> (SoilInfo)r).collect(Collectors.toList());
+        List<SaplingInfo> saplings = recipes.stream().filter(r -> r.getType() == ModObjects.saplingRecipeType).map(r -> (SaplingInfo)r).collect(Collectors.toList());
+        List<SoilInfo> soils = recipes.stream().filter(r -> r.getType() == ModObjects.soilRecipeType).map(r -> (SoilInfo)r).collect(Collectors.toList());
 
         treeCompatibility = new HashMap<>();
         soilCompatibility = new HashMap<>();

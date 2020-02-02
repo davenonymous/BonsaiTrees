@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees2.registry.sapling;
 
-import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.libnonymous.utils.GsonHelper;
 import com.davenonymous.libnonymous.utils.RecipeData;
 import com.google.gson.JsonArray;
@@ -38,12 +38,12 @@ public class SaplingInfo extends RecipeData {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        return RecipeTypes.saplingRecipeSerializer;
+        return ModObjects.saplingRecipeSerializer;
     }
 
     @Override
     public IRecipeType<?> getType() {
-        return RecipeTypes.saplingRecipeType;
+        return ModObjects.saplingRecipeType;
     }
 
     public int getRequiredTicks() {

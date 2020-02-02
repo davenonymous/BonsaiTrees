@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees2.command;
 
-import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingDrop;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import com.mojang.brigadier.Command;
@@ -26,7 +26,7 @@ public class CommandListSaplingDrops implements Command<CommandSource> {
                 .then(
                     Commands.argument("type", StringArgumentType.string())
                         .suggests((context, builder) -> {
-                            Stream<String> saplingIds = context.getSource().getWorld().getRecipeManager().getRecipes().stream().filter(r -> r.getType() == RecipeTypes.saplingRecipeType).map(r -> ((SaplingInfo)r).getId().toString());
+                            Stream<String> saplingIds = ModObjects.saplingRecipeHelper.getRecipeStream(context.getSource().getWorld().getRecipeManager()).map(r -> r.getId().toString());
                             return ISuggestionProvider.suggest(saplingIds, builder);
                         })
                         .executes(CMD)
@@ -42,7 +42,7 @@ public class CommandListSaplingDrops implements Command<CommandSource> {
         }
 
         String type = StringArgumentType.getString(context, "type");
-        Optional<SaplingInfo> optSaplingInfo = context.getSource().getWorld().getRecipeManager().getRecipes().stream().filter(r -> r.getType() == RecipeTypes.saplingRecipeType).map(r -> (SaplingInfo)r).filter(s -> s.getId().toString().equals(type)).findFirst();
+        Optional<SaplingInfo> optSaplingInfo = ModObjects.saplingRecipeHelper.getRecipeStream(context.getSource().getWorld().getRecipeManager()).filter(s -> s.getId().toString().equals(type)).findFirst();
         if(!optSaplingInfo.isPresent()) {
             context.getSource().sendFeedback(new StringTextComponent("Unknown bonsai tree: " + type), false);
             return 0;

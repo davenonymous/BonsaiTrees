@@ -3,7 +3,7 @@ package com.davenonymous.bonsaitrees2.compat.crafttweaker.sapling;
 import com.blamejared.crafttweaker.api.actions.IRuntimeAction;
 import com.blamejared.crafttweaker.impl.managers.CTCraftingTableManager;
 import com.davenonymous.bonsaitrees2.BonsaiTrees2;
-import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.libnonymous.utils.RecipeHelper;
 
 public class SaplingActionRemove implements IRuntimeAction {
@@ -15,7 +15,7 @@ public class SaplingActionRemove implements IRuntimeAction {
 
     @Override
     public void apply() {
-        RecipeHelper.removeRecipe(CTCraftingTableManager.recipeManager, RecipeTypes.saplingRecipeType, this.id);
+        RecipeHelper.removeRecipe(CTCraftingTableManager.recipeManager, ModObjects.saplingRecipeType, this.id);
     }
 
     @Override

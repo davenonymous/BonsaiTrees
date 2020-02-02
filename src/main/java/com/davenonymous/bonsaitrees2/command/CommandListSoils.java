@@ -1,7 +1,6 @@
 package com.davenonymous.bonsaitrees2.command;
 
-import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
-import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.ArgumentBuilder;
@@ -10,9 +9,6 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.util.text.StringTextComponent;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class CommandListSoils implements Command<CommandSource> {
     private static final CommandListSoils CMD = new CommandListSoils();
@@ -30,10 +26,9 @@ public class CommandListSoils implements Command<CommandSource> {
         }
 
         context.getSource().sendFeedback(new StringTextComponent("Registered soils:"), false);
-        List<SoilInfo> soils = context.getSource().getWorld().getRecipeManager().getRecipes().stream().filter(r -> r.getType() == RecipeTypes.soilRecipeType).map(r -> (SoilInfo)r).collect(Collectors.toList());
-        for(SoilInfo soil : soils) {
+        ModObjects.soilRecipeHelper.getRecipeStream(context.getSource().getWorld().getRecipeManager()).forEach(soil -> {
             context.getSource().sendFeedback(new StringTextComponent(soil.getId().toString()), false);
-        }
+        });
 
         return 0;
     }

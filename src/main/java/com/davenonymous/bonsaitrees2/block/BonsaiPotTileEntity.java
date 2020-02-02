@@ -2,9 +2,9 @@ package com.davenonymous.bonsaitrees2.block;
 
 import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.config.WaterLogEffect;
-import com.davenonymous.bonsaitrees2.registry.sapling.SaplingHelper;
+import com.davenonymous.bonsaitrees2.registry.sapling.SaplingRecipeHelper;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
-import com.davenonymous.bonsaitrees2.registry.soil.SoilHelper;
+import com.davenonymous.bonsaitrees2.registry.soil.SoilRecipeHelper;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
 import com.davenonymous.libnonymous.base.BaseTileEntity;
 import com.davenonymous.libnonymous.serialization.Store;
@@ -55,7 +55,7 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
     protected void updateInfoObjects() {
         this.saplingInfo = null;
         if(this.saplingStack != null && !this.saplingStack.isEmpty()) {
-            this.saplingInfo = SaplingHelper.getSaplingInfoForItem(world, this.saplingStack);
+            this.saplingInfo = ModObjects.saplingRecipeHelper.getSaplingInfoForItem(world, this.saplingStack);
             if(this.saplingInfo != null) { // This shouldn't happen, but does in case of Immersive Portals?!
                 this.treeId = this.saplingInfo.getId();
             }
@@ -63,7 +63,7 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
 
         this.soilInfo = null;
         if(this.soilStack != null && !this.soilStack.isEmpty()) {
-            this.soilInfo = SoilHelper.getSoilForItem(world, this.soilStack);
+            this.soilInfo = ModObjects.soilRecipeHelper.getSoilForItem(world, this.soilStack);
         }
 
         if(this.soilInfo != null && this.saplingInfo != null) {

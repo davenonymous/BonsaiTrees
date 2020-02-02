@@ -5,7 +5,7 @@ import com.blamejared.crafttweaker.api.annotations.ZenRegister;
 import com.blamejared.crafttweaker.api.item.IIngredient;
 import com.blamejared.crafttweaker.api.item.IItemStack;
 import com.blamejared.crafttweaker.impl.managers.CTCraftingTableManager;
-import com.davenonymous.bonsaitrees2.registry.sapling.SaplingHelper;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import org.openzen.zencode.java.ZenCodeType;
 
 @ZenRegister
@@ -13,9 +13,7 @@ import org.openzen.zencode.java.ZenCodeType;
 public class Sapling {
     @ZenCodeType.Method
     public static String[] getAllIds () {
-        String[] result = SaplingHelper.getSaplings(CTCraftingTableManager.recipeManager).map(s -> s.getId().toString()).toArray(String[]::new);
-
-        return result;
+        return ModObjects.saplingRecipeHelper.getRecipeStream(CTCraftingTableManager.recipeManager).map(s -> s.getId().toString()).toArray(String[]::new);
     }
 
     @ZenCodeType.Method

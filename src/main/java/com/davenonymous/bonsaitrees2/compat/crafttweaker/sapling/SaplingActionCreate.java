@@ -4,7 +4,7 @@ import com.blamejared.crafttweaker.api.actions.IRuntimeAction;
 import com.blamejared.crafttweaker.api.item.IIngredient;
 import com.blamejared.crafttweaker.impl.managers.CTCraftingTableManager;
 import com.davenonymous.bonsaitrees2.BonsaiTrees2;
-import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import com.davenonymous.libnonymous.utils.RecipeHelper;
 import net.minecraft.util.ResourceLocation;
@@ -30,7 +30,7 @@ public class SaplingActionCreate implements IRuntimeAction {
 
     @Override
     public void apply() {
-        RecipeHelper.registerRecipe(CTCraftingTableManager.recipeManager, RecipeTypes.saplingRecipeType, this.sapling);
+        RecipeHelper.registerRecipe(CTCraftingTableManager.recipeManager, ModObjects.saplingRecipeType, this.sapling);
     }
 
     @Override

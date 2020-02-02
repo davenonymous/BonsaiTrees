@@ -3,7 +3,7 @@ package com.davenonymous.bonsaitrees2.compat.crafttweaker.soil;
 import com.blamejared.crafttweaker.api.actions.IRuntimeAction;
 import com.blamejared.crafttweaker.api.logger.ILogger;
 import com.blamejared.crafttweaker.impl.managers.CTCraftingTableManager;
-import com.davenonymous.bonsaitrees2.registry.soil.SoilHelper;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
 import net.minecraft.util.ResourceLocation;
 
@@ -15,7 +15,7 @@ public abstract class SoilAction implements IRuntimeAction {
         this.soilId = soilId;
 
         ResourceLocation soilResource = ResourceLocation.tryCreate(soilId);
-        this.soil = SoilHelper.getSoil(CTCraftingTableManager.recipeManager, soilResource);
+        this.soil = ModObjects.soilRecipeHelper.getRecipe(CTCraftingTableManager.recipeManager, soilResource);
     }
 
     @Override

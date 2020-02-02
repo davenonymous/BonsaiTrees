@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees2.registry.soil;
 
-import com.davenonymous.bonsaitrees2.registry.RecipeTypes;
+import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.libnonymous.utils.RecipeData;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -44,12 +44,12 @@ public class SoilInfo extends RecipeData {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        return RecipeTypes.soilRecipeSerializer;
+        return ModObjects.soilRecipeSerializer;
     }
 
     @Override
     public IRecipeType<?> getType() {
-        return RecipeTypes.soilRecipeType;
+        return ModObjects.soilRecipeType;
     }
 
     public float getTickModifier() {
