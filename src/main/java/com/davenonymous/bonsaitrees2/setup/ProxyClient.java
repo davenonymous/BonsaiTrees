@@ -2,7 +2,6 @@ package com.davenonymous.bonsaitrees2.setup;
 
 import com.davenonymous.bonsaitrees2.BonsaiTrees2;
 import com.davenonymous.bonsaitrees2.block.BonsaiPotTileEntityRenderer;
-import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.gui.TreeCreatorScreen;
 import com.davenonymous.bonsaitrees2.render.TreeModels;
@@ -19,11 +18,11 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 public class ProxyClient implements IProxy {
     @Override
     public void init() {
-        ClientRegistry.bindTileEntityRenderer(ModObjects.BONSAIPOT_TILE, tileEntityRendererDispatcher -> new BonsaiPotTileEntityRenderer(tileEntityRendererDispatcher));
-        ClientRegistry.bindTileEntityRenderer(ModObjects.HOPPING_BONSAIPOT_TILE, tileEntityRendererDispatcher -> new BonsaiPotTileEntityRenderer(tileEntityRendererDispatcher));
+        ClientRegistry.bindTileEntityRenderer(Registration.BONSAIPOT_TILE.get(), tileEntityRendererDispatcher -> new BonsaiPotTileEntityRenderer(tileEntityRendererDispatcher));
+        ClientRegistry.bindTileEntityRenderer(Registration.HOPPING_BONSAIPOT_TILE.get(), tileEntityRendererDispatcher -> new BonsaiPotTileEntityRenderer(tileEntityRendererDispatcher));
 
         TreeModels.init();
-        ScreenManager.registerFactory(ModObjects.TREE_CREATOR_CONTAINER, TreeCreatorScreen::new);
+        ScreenManager.registerFactory(Registration.TREE_CREATOR_CONTAINER.get(), TreeCreatorScreen::new);
 
         ModList.get().getModContainerById(BonsaiTrees2.MODID).ifPresent(c -> c.registerExtensionPoint(ExtensionPoint.CONFIGGUIFACTORY, () -> (mc, parent) -> {
             return new WidgetGuiConfig(parent, Config.COMMON_CONFIG, Config.CLIENT_CONFIG);

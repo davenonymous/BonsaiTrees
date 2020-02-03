@@ -3,6 +3,7 @@ package com.davenonymous.bonsaitrees2.compat.jei;
 import com.davenonymous.bonsaitrees2.BonsaiTrees2;
 import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
+import com.davenonymous.bonsaitrees2.setup.Registration;
 import com.davenonymous.bonsaitrees2.util.Logz;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
@@ -28,8 +29,8 @@ public class BonsaiTrees2JEIPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addRecipeCatalyst(new ItemStack(ModObjects.BONSAIPOT), BonsaiRecipeCategory.ID);
-        registration.addRecipeCatalyst(new ItemStack(ModObjects.HOPPING_BONSAIPOT), BonsaiRecipeCategory.ID);
+        registration.addRecipeCatalyst(new ItemStack(Registration.BONSAIPOT.get()), BonsaiRecipeCategory.ID);
+        registration.addRecipeCatalyst(new ItemStack(Registration.HOPPING_BONSAIPOT.get()), BonsaiRecipeCategory.ID);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.davenonymous.bonsaitrees2.block;
 
+import com.davenonymous.bonsaitrees2.setup.Registration;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -13,7 +14,7 @@ import java.util.List;
 public class HoppingBonsaiPotTileEntity extends BonsaiPotTileEntity {
 
     public HoppingBonsaiPotTileEntity() {
-        super(ModObjects.HOPPING_BONSAIPOT_TILE);
+        super(Registration.HOPPING_BONSAIPOT_TILE.get());
     }
 
     @Override

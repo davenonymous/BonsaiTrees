@@ -6,6 +6,7 @@ import com.davenonymous.bonsaitrees2.registry.sapling.SaplingRecipeHelper;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilRecipeHelper;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
+import com.davenonymous.bonsaitrees2.setup.Registration;
 import com.davenonymous.libnonymous.base.BaseTileEntity;
 import com.davenonymous.libnonymous.serialization.Store;
 import net.minecraft.block.BlockState;
@@ -44,7 +45,7 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
     public SoilInfo soilInfo;
 
     public BonsaiPotTileEntity() {
-        super(ModObjects.BONSAIPOT_TILE);
+        super(Registration.BONSAIPOT_TILE.get());
     }
 
     public BonsaiPotTileEntity(TileEntityType type) {

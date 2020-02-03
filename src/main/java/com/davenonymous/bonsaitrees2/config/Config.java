@@ -51,21 +51,8 @@ public class Config {
         SHOW_CHANCE_IN_JEI = b.comment("Whether to show the drop chances in JEI").define("showChanceInJEI", true);
     }
 
-    public static void loadConfig(ForgeConfigSpec spec, Path path) {
-
-        final CommentedFileConfig configData = CommentedFileConfig.builder(path)
-                .sync()
-                .autosave()
-                .writingMode(WritingMode.REPLACE)
-                .build();
-
-        configData.load();
-        spec.setConfig(configData);
-    }
-
     @SubscribeEvent
     public static void onLoad(final ModConfig.Loading configEvent) {
-
     }
 
     @SubscribeEvent

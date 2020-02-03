@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees2.misc;
 
-import com.davenonymous.bonsaitrees2.block.ModObjects;
+import com.davenonymous.bonsaitrees2.setup.Registration;
 import com.davenonymous.libnonymous.misc.ColorProperty;
 import net.minecraft.client.renderer.color.IBlockColor;
 import net.minecraft.client.renderer.color.IItemColor;
@@ -10,12 +10,9 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class PotColorizer {
-    private static final Logger LOGGER = LogManager.getLogger();
     public static final DyeColor DEFAULT_COLOR = DyeColor.LIGHT_GRAY;
 
     @SubscribeEvent
@@ -30,8 +27,8 @@ public class PotColorizer {
             return rgb;
         };
 
-        event.getBlockColors().register(potColorHandler, ModObjects.BONSAIPOT);
-        event.getBlockColors().register(potColorHandler, ModObjects.HOPPING_BONSAIPOT);
+        event.getBlockColors().register(potColorHandler, Registration.BONSAIPOT.get());
+        event.getBlockColors().register(potColorHandler, Registration.HOPPING_BONSAIPOT.get());
     }
 
     @SubscribeEvent
@@ -51,7 +48,7 @@ public class PotColorizer {
             return rgb;
         };
 
-        event.getItemColors().register(potColorHandler, ModObjects.BONSAIPOT);
-        event.getItemColors().register(potColorHandler, ModObjects.HOPPING_BONSAIPOT);
+        event.getItemColors().register(potColorHandler, Registration.BONSAIPOT.get());
+        event.getItemColors().register(potColorHandler, Registration.HOPPING_BONSAIPOT.get());
     }
 }
