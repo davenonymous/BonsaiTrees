@@ -1,0 +1,40 @@
+{
+  "type": "bonsaitrees2:sapling",
+  "sapling": {
+    "item": "ferroustry:iron_sapling"
+  },
+  "drops": [
+    {
+      "result": {
+        "item": "ferroustry:iron_log"
+      },
+      "rolls": 1,
+      "chance": 0.75
+    },
+    {
+      "result": {
+        "item": "minecraft:stick"
+      },
+      "rolls": 3,
+      "chance": 0.2
+    },
+    {
+      "result": {
+        "item": "minecraft:iron_ingot"
+      },
+      "rolls": 1,
+      "chance": 0.1
+    },
+    {
+      "result": {
+        "item": "ferroustry:iron_sapling"
+      },
+      "rolls": 1,
+      "chance": 0.05
+    }
+  ],
+  "compatibleSoilTags": [
+    "grass",
+    "dirt"
+  ]
+}
