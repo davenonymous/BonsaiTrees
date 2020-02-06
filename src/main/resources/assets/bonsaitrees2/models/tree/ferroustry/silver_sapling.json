@@ -1,0 +1,54 @@
+{
+  "type": "bonsaitrees2:sapling/ferroustry/silver_sapling",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "ferroustry:silver_log"
+    },
+    "b": {
+      "block": "ferroustry:silver_leaves"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      " bbb ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      " bb  ",
+      "bbbbb",
+      "bbbbb",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      " bab ",
+      "bbabb",
+      "bbabb",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      "  b  ",
+      "bbbbb",
+      "bbbbb",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      "bbbb ",
+      "     ",
+      "     "
+    ]
+  ]
+}
