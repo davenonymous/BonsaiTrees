@@ -1,0 +1,96 @@
+{
+  "type": "theaurorian:silentwood",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "theaurorian:silentwoodlog",
+      "meta": 0
+    },
+    "b": {
+      "name": "theaurorian:silentwoodleaves",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      " bbb ",
+      "     ",
+      " bbb ",
+      "     ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "     ",
+      "  b  ",
+      "bbbbb",
+      "  b  ",
+      "bbbbb",
+      "  b  ",
+      "bbbbb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "  b  ",
+      " bab ",
+      "bbabb",
+      " bab ",
+      "bbabb",
+      " bab ",
+      "bbabb",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      "     ",
+      "  b  ",
+      "bbbbb",
+      "  b  ",
+      "bbbbb",
+      "  b  ",
+      "bbbbb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      " bbb ",
+      "     ",
+      " bbb ",
+      "     ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}
