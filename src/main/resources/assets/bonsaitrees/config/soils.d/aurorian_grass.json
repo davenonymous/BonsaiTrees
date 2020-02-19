@@ -1,0 +1,17 @@
+{
+    "name": "theaurorian:auroriangrass",
+    "mod": "theaurorian",
+    "soil": {
+        "name": "theaurorian:auroriangrass",
+        "data": 0,
+        "ignoreMeta": false
+    },
+    "modifiers": {
+        "growTime": 1.0,
+        "dropChance": 1.0
+    },
+    "providedTags": [
+        "aurorian_dirt",
+        "aurorian_grass"
+    ]
+}
