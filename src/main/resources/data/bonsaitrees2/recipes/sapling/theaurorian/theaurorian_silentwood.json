@@ -1,0 +1,34 @@
+{
+    "name": "theaurorian:silentwood",
+    "mod": "theaurorian",
+    "sapling": {
+        "name": "theaurorian:silentwoodsapling",
+        "data": 0
+    },
+    "drops": [
+        {
+            "name": "theaurorian:silentwoodstick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "theaurorian:silentwoodlog",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "theaurorian:silentwoodsapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "theaurorian:silentwoodleaves",
+            "data": 0,
+            "type": "LEAVES"
+        }
+    ],
+    "compatibleSoilTags": [
+        "aurorian_grass",
+        "aurorian_dirt"
+    ]
+}
