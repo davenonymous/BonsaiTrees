@@ -1,0 +1,34 @@
+{
+  "bonsaitrees2.title": "Bonsai Trees",
+
+  "block.bonsaitrees2.bonsaipot": "Горшок бонсай",
+  "block.bonsaitrees2.hopping_bonsaipot": "Горшок бонсай с воронкой",
+
+  "bonsaitrees.jei.category.sapling.growtime": "Время для роста: %s",
+  "bonsaitrees.jei.category.sapling.soiltime": "Изменяет время роста до: %s",
+  "bonsaitrees.jei.category.growing.chance": "Шанс: %d%%",
+
+  "hint.bonsaitrees.incompatible_soil": "Это дерево нуждается в другом виде почвы.",
+  "hint.bonsaitrees.can_not_remove_soil_with_sapling": "Почва не может быть удалена, пока растет саженец.",
+  "hint.bonsaitrees.pot_has_no_soil": "Для начала поместите немного почвы в горшок. Пытаться %s.",
+
+  "bonsaitrees.gui.tree_creator.label.preview": "Предварительный просмотр, блоки: %d",
+  "bonsaitrees.gui.tree_creator.label.sapling": "Стек саженцев",
+  "bonsaitrees.gui.tree_creator.label.treeid": "Идентификатор дерева",
+  "bonsaitrees.gui.tree_creator.label.growtime": "Требуемые тики для роста",
+  "bonsaitrees.gui.tree_creator.label.tags": "Тэги почви (разделить запятой)",
+  "bonsaitrees.gui.tree_creator.label.properties": "Настроить дерево бонсай",
+  "bonsaitrees.gui.tree_creator.label.blocktypes": "Типы: %d",
+
+  "bonsaitrees.gui.tree_creator.warning.too_many_types": "Слишком много типов блоков. Макс: 26",
+  "bonsaitrees.gui.tree_creator.warning.too_many_blocks": "Слишком много блоков. Всё выше 512 слишком много! Жесткий лимит 4096!",
+  "bonsaitrees.gui.tree_creator.warning.isolate": "Вы изолировали дерево от каких-либо блоков, не принадлежащих ему?",
+
+  "bonsaitrees.gui.tree_creator.button.save_to_disk": "Сохранить на диск",
+  "bonsaitrees.gui.tree_creator.warning.files_already_exists": "Файл(ы) уже есть",
+  "bonsaitrees.gui.tree_creator.warning.missing_tree_id": "Не указан идентификатор дерева!",
+  "bonsaitrees.gui.tree_creator.checkbox.overwrite_files": "Перезаписать существующие файлы",
+  "bonsaitrees.gui.tree_creator.label.saved_files": "Сохраненные файлы в '<mc>/openloader/' директории!",
+  "bonsaitrees.gui.tree_creator.hint.openloader": "Вы хотите использовать мод Open Loader для использования ваших новых бонсаев! Если он уже установлен и вы играете в одиночную игру, можете просто перезагрузить ресурсы [F3+T], с последующей командой /reload. В противном случае установите мод и перезапустите игру.",
+  "bonsaitrees.gui.tree_creator.button.go_to_openloader": "Open Loader",
+}
