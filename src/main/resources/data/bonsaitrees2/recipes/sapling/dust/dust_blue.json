@@ -1,0 +1,31 @@
+{
+    "name": "dust:blue/saplingblue",
+    "mod": "dust",
+    "sapling": {
+        "name": "dust:blue/saplingblue",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.5,
+    "drops": [
+        {
+            "name": "dust:blue/log_blue",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "dust:blue/saplingblue",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "dust:leaves",
+            "data": 1,
+            "type": "LEAVES"
+        },
+        {
+            "name": "dust:dust",
+            "data": 1,
+            "type": "FRUIT"
+        }
+    ]
+}
