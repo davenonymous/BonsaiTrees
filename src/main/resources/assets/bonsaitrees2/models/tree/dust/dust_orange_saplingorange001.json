@@ -1,0 +1,93 @@
+{
+  "type": "dust:orange/saplingorange",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "dust:leaves",
+      "meta": 5
+    },
+    "b": {
+      "name": "dust:orange/log_orange",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "aaaaaaa",
+      "aaaaaaa",
+      "aaabaaa",
+      "aaabaaa",
+      "  aba  ",
+      "   b   ",
+      "   b   ",
+      "   b   "
+    ],
+    [
+      "   a   ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

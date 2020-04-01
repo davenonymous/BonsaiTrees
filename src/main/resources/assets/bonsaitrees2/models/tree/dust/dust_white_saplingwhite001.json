@@ -1,0 +1,86 @@
+{
+  "type": "dust:white/saplingwhite",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "dust:leaves",
+      "meta": 6
+    },
+    "b": {
+      "name": "dust:white/log_white",
+      "meta": 1
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "   a   ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "aaaaaaa",
+      "aaaaaaa",
+      "aaabaaa",
+      "aaabaaa",
+      "  aba  ",
+      "   b   ",
+      "   b   "
+    ],
+    [
+      "   a   ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "   a   ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      " aaaaa ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}
