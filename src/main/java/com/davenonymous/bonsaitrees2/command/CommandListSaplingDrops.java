@@ -12,6 +12,7 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.Commands;
 import net.minecraft.command.ISuggestionProvider;
+import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -51,8 +52,8 @@ public class CommandListSaplingDrops implements Command<CommandSource> {
         SaplingInfo saplingInfo = optSaplingInfo.get();
         context.getSource().sendFeedback(new StringTextComponent("Registered drops for bonsai tree: " + type), false);
         for(SaplingDrop drop : saplingInfo.drops) {
-            ITextComponent stackName = drop.resultStack.getDisplayName();
-            stackName = stackName.appendSibling(new StringTextComponent(String.format(" [chance=%.2f, rolls=%d]", drop.chance, drop.rolls)));
+            IFormattableTextComponent stackName = drop.resultStack.getDisplayName().copyRaw();
+            stackName = stackName.append(new StringTextComponent(String.format(" [chance=%.2f, rolls=%d]", drop.chance, drop.rolls)));
             context.getSource().sendFeedback(stackName, false);
         }
 

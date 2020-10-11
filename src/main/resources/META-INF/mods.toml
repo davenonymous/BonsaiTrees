@@ -6,7 +6,7 @@ loaderVersion="[28,)" #mandatory (28 is current forge version)
 
 # A URL to refer people to when problems occur with this mod
 issueTrackerURL="https://github.com/thraaawn/BonsaiTrees/issues/" #optional
-
+license="MIT"
 
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
@@ -45,7 +45,7 @@ Bonsai Pots allows growing trees in small spaces.
 [[dependencies.bonsaitrees2]] #optional
     modId="forge" #mandatory
     mandatory=true #mandatory
-    versionRange="[31,)" #mandatory
+    versionRange="[34,)" #mandatory
 
     # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
     ordering="NONE"
@@ -54,13 +54,13 @@ Bonsai Pots allows growing trees in small spaces.
 [[dependencies.bonsaitrees2]]
     modId="minecraft"
     mandatory=true
-    versionRange="[1.15.2]"
+    versionRange="[1.16.3]"
     ordering="NONE"
     side="BOTH"
 
 [[dependencies.bonsaitrees2]]
     modId="libnonymous"
     mandatory=true
-    versionRange="[1.1.1,)"
+    versionRange="[1.0.0,)"
     ordering="AFTER"
     side="BOTH"

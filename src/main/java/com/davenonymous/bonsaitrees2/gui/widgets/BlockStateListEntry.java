@@ -6,7 +6,7 @@ import com.davenonymous.libnonymous.gui.framework.widgets.WidgetFontAwesome;
 import com.davenonymous.libnonymous.gui.framework.widgets.WidgetListEntry;
 import com.davenonymous.libnonymous.gui.framework.widgets.WidgetTextBox;
 import net.minecraft.block.BlockState;
-import net.minecraft.state.IProperty;
+import net.minecraft.state.Property;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -23,10 +23,10 @@ public class BlockStateListEntry extends WidgetListEntry {
         this.count = count;
 
         this.setSize(columnWidth, 12);
-
-        String fullText = String.format("%dx %s", count, state.getBlock().getNameTextComponent().getFormattedText());
+        //TODO Maybe not working
+        String fullText = String.format("%dx %s", count, state.getBlock().getTranslatedName());
         List<ITextComponent> tooltipLines = new ArrayList<>();
-        for(IProperty property : state.getProperties()) {
+        for(Property property : state.getProperties()) {
             tooltipLines.add(new StringTextComponent(String.format("%s: %s", property.getName(), state.get(property).toString())));
         }
 

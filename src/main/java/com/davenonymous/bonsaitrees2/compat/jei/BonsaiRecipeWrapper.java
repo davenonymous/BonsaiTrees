@@ -32,7 +32,9 @@ import net.minecraft.client.settings.AmbientOcclusionStatus;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import org.lwjgl.opengl.GL11;
 
 import java.util.*;
@@ -46,7 +48,6 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
         this.sapling = sapling;
     }
 
-    @Override
     public void drawInfo(int recipeWidth, int recipeHeight, double mouseX, double mouseY) {
         MultiblockBlockModel model = TreeModels.get(sapling.getId());
         if(model == null) {
@@ -121,7 +122,7 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 
         AmbientOcclusionStatus before = Minecraft.getInstance().gameSettings.ambientOcclusionStatus;
         Minecraft.getInstance().gameSettings.ambientOcclusionStatus = AmbientOcclusionStatus.OFF;
-        MultiblockBlockModelRenderer.renderModel(model, new MatrixStack(), buffer, 0xff0000,  OverlayTexture.DEFAULT_LIGHT, BonsaiTrees2.proxy.getClientWorld(), BonsaiTrees2.proxy.getClientPlayer().getPosition());
+        MultiblockBlockModelRenderer.renderModel(model, new MatrixStack(), buffer, 0xff0000,  OverlayTexture.NO_OVERLAY, BonsaiTrees2.proxy.getClientWorld(), BonsaiTrees2.proxy.getClientPlayer().getPosition());
         Minecraft.getInstance().gameSettings.ambientOcclusionStatus = before;
 
         textureManager.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
@@ -137,7 +138,7 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
     }
 
     @Override
-    public void onTooltip(int slot, boolean isInput, ItemStack stack, List<String> tooltip) {
+    public void onTooltip(int slot, boolean isInput, ItemStack stack, List<ITextComponent> tooltip) {
         if(stack.isEmpty()) {
             return;
         }
@@ -146,18 +147,18 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
             if(slot == 0) {
                 // Sapling slot
                 String timeToGrow = TickTimeHelper.getDuration(sapling.baseTicks);
-                tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.sapling.growtime", timeToGrow));
+                tooltip.add(tooltip.size()-1, new TranslationTextComponent(TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.sapling.growtime", timeToGrow)));
             }
 
             if(slot == 1) {
                 float tickModifier = tickModifiers.getOrDefault(stack.getItem().getRegistryName(), 1.0f);
                 String timeToGrow = TickTimeHelper.getDuration((int) (sapling.baseTicks * tickModifier));
-                tooltip.add(tooltip.size()-1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.sapling.soiltime", timeToGrow));
+                tooltip.add(tooltip.size()-1, new TranslationTextComponent(TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.sapling.soiltime", timeToGrow)));
             }
         } else {
             // Some output slot
             if(Config.SHOW_CHANCE_IN_JEI.get()) {
-                tooltip.add(tooltip.size() - 1, TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", (int) (slotChances[slot - 2] * 100)));
+                tooltip.add(tooltip.size() - 1, new TranslationTextComponent(TextFormatting.YELLOW + I18n.format("bonsaitrees.jei.category.growing.chance", (int) (slotChances[slot - 2] * 100))));
             }
         }
     }

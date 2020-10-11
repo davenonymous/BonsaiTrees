@@ -23,13 +23,13 @@ public class BonsaiPotComponentProvider implements IComponentProvider {
         if(teBonsai.hasSapling()) {
             ItemStack representation = teBonsai.getSaplingStack();
             if(representation != null) {
-                tooltip.add(representation.getDisplayName().applyTextStyle(TextFormatting.GRAY));
+                tooltip.add(new StringTextComponent(representation.getDisplayName().getStyle().applyFormatting(TextFormatting.GRAY).toString()));
             }
         }
 
         if(teBonsai.hasSoil()) {
             ItemStack representation = teBonsai.getSoilStack();
-            tooltip.add(representation.getDisplayName().applyTextStyle(TextFormatting.GRAY));
+            tooltip.add(new StringTextComponent(representation.getDisplayName().getStyle().applyFormatting(TextFormatting.GRAY).toString()));
         }
 
         if(teBonsai.hasSapling()) {

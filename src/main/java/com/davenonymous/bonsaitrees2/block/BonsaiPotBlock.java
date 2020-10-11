@@ -21,7 +21,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluids;
-import net.minecraft.fluid.IFluidState;
+import net.minecraft.fluid.FluidState;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.DyeColor;
@@ -60,7 +60,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
                 .sound(SoundType.WOOD)
                 .harvestTool(ToolType.AXE)
                 .harvestLevel(0)
-                .func_226896_b_()
+                .notSolid()
         );
 
         this.setDefaultState(this.stateContainer.getBaseState().with(ColorProperty.COLOR, 8).with(BlockStateProperties.WATERLOGGED, Boolean.FALSE));
@@ -283,7 +283,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockItemUseContext context) {
-        IFluidState fluidState = context.getWorld().getFluidState(context.getPos());
+        FluidState fluidState = context.getWorld().getFluidState(context.getPos());
         return super.getStateForPlacement(context).with(BlockStateProperties.WATERLOGGED, Boolean.valueOf(fluidState.getFluid() == Fluids.WATER));
     }
 
@@ -303,7 +303,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
 
 
     @Override
-    public IFluidState getFluidState(BlockState state) {
+    public FluidState getFluidState(BlockState state) {
         return state.get(BlockStateProperties.WATERLOGGED) ? Fluids.WATER.getStillFluidState(false) : super.getFluidState(state);
     }
 

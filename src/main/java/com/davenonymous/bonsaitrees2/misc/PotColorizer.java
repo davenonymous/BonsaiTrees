@@ -18,7 +18,7 @@ public class PotColorizer {
     @SubscribeEvent
     public static void init(ColorHandlerEvent.Block event) {
         final IBlockColor potColorHandler = (state, blockAccess, pos, tintIndex) -> {
-            if(!state.has(ColorProperty.COLOR)) {
+            if(!state.hasProperty(ColorProperty.COLOR)) {
                 return PotColorizer.DEFAULT_COLOR.getColorValue();
             }
 

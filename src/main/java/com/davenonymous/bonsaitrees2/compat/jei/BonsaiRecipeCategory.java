@@ -50,7 +50,8 @@ public class BonsaiRecipeCategory implements IRecipeCategory<BonsaiRecipeWrapper
         bonsaiRecipeWrapper.setIngredients(iIngredients);
     }
 
-    @Override
+    //TODO
+    /*@Override
     public void draw(BonsaiRecipeWrapper recipe, double mouseX, double mouseY) {
         slotDrawable.draw(0, 19*0);
         slotDrawable.draw(0, 19*1);
@@ -65,7 +66,7 @@ public class BonsaiRecipeCategory implements IRecipeCategory<BonsaiRecipeWrapper
         slotDrawable.draw(80 + 19*2, 19*1);
         slotDrawable.draw(80 + 19*3, 19*1);
         recipe.drawInfo(getBackground().getWidth(), getBackground().getHeight(), mouseX, mouseY);
-    }
+    }*/
 
     @Override
     public void setRecipe(IRecipeLayout recipeLayout, BonsaiRecipeWrapper recipeWrapper, IIngredients ingredients) {
