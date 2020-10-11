@@ -1,0 +1,91 @@
+{
+  "type": "bonsaitrees2:sapling/silentgear/netherwood",
+  "version": 3,
+  "ref": {
+    "a": {"block":"silentgear:netherwood_leaves","properties":{"distance":"1","persistent":"false"}},
+    "b": {"block":"silentgear:netherwood_leaves","properties":{"distance":"3","persistent":"false"}},
+    "c": {"block":"silentgear:netherwood_log","properties":{"axis":"y"}},
+    "d": {"block":"silentgear:netherwood_leaves","properties":{"distance":"5","persistent":"false"}},
+    "e": {"block":"silentgear:netherwood_leaves","properties":{"distance":"4","persistent":"false"}},
+    "f": {"block":"silentgear:netherwood_leaves","properties":{"distance":"2","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "       ",
+      " debed ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   b   ",
+      "debfbed",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  bfb  ",
+      "ebfafbe",
+      "       ",
+      " faf   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " bfafb ",
+      "bfacafb",
+      " aca   ",
+      "facaf  ",
+      "  c    ",
+      "  c    ",
+      "  c    ",
+      "  c    ",
+      "  c    "
+    ],
+    [
+      "  bfb  ",
+      "ebfafbe",
+      " faf   ",
+      "facaf  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   b   ",
+      "debfbed",
+      " bfb   ",
+      "bfafb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " debed ",
+      "       ",
+      " bfb   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}
