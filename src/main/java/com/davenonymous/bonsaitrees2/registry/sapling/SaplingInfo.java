@@ -5,11 +5,13 @@ import com.davenonymous.libnonymous.utils.GsonHelper;
 import com.davenonymous.libnonymous.utils.RecipeData;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
 import java.util.*;
 
@@ -30,7 +32,27 @@ public class SaplingInfo extends RecipeData {
         this.drops = new ArrayList<>();
         this.tags = new HashSet<>();
     }
+    //TODO from here
+    @Override
+    public boolean matches(IInventory inv, World worldIn) {
+        return false;
+    }
 
+    @Override
+    public ItemStack getCraftingResult(IInventory inv) {
+        return null;
+    }
+
+    @Override
+    public boolean canFit(int width, int height) {
+        return false;
+    }
+
+    @Override
+    public ItemStack getRecipeOutput() {
+        return null;
+    }
+    //TODO till here
     @Override
     public ResourceLocation getId() {
         return id;

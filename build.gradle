@@ -123,7 +123,7 @@ dependencies {
         transitive = false
     }
 
-    compile fg.deobf("com.blamejared.crafttweaker:CraftTweaker-1.16.3:${crafttweaker_version}")
+    compile fg.deobf("com.blamejared.crafttweaker:CraftTweaker-${minecraft_version}:${crafttweaker_version}")
 
     /*if (findProject(':Libnonymous') != null) {
         compile project(':Libnonymous')

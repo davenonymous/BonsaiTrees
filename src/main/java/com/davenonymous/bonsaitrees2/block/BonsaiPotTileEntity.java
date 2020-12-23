@@ -256,7 +256,8 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
 
     @Override
     public void tick() {
-        super.tick();
+        //TODO cant be accessed
+        //super.tick();
 
         this.checkWaterlogged();
         this.updateGrowth();
