@@ -60,7 +60,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
                 .sound(SoundType.WOOD)
                 .harvestTool(ToolType.AXE)
                 .harvestLevel(0)
-                .func_226896_b_()
+                .notSolid()
         );
 
         this.setDefaultState(this.stateContainer.getBaseState().with(ColorProperty.COLOR, 8).with(BlockStateProperties.WATERLOGGED, Boolean.FALSE));

@@ -29,6 +29,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.texture.TextureManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.settings.AmbientOcclusionStatus;
+import net.minecraft.inventory.container.PlayerContainer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
@@ -110,8 +111,8 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
         );
 
         TextureManager textureManager = Minecraft.getInstance().getTextureManager();
-        textureManager.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
-        textureManager.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).setBlurMipmapDirect(false, false);
+        textureManager.bindTexture(PlayerContainer.LOCATION_BLOCKS_TEXTURE);
+        textureManager.getTexture(PlayerContainer.LOCATION_BLOCKS_TEXTURE).setBlurMipmapDirect(false, false);
 
         GL11.glFrontFace(GL11.GL_CW);
 
@@ -121,11 +122,11 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 
         AmbientOcclusionStatus before = Minecraft.getInstance().gameSettings.ambientOcclusionStatus;
         Minecraft.getInstance().gameSettings.ambientOcclusionStatus = AmbientOcclusionStatus.OFF;
-        MultiblockBlockModelRenderer.renderModel(model, new MatrixStack(), buffer, 0xff0000,  OverlayTexture.DEFAULT_LIGHT, BonsaiTrees2.proxy.getClientWorld(), BonsaiTrees2.proxy.getClientPlayer().getPosition());
+        MultiblockBlockModelRenderer.renderModel(model, new MatrixStack(), buffer, 0xff0000,  OverlayTexture.NO_OVERLAY, BonsaiTrees2.proxy.getClientWorld(), BonsaiTrees2.proxy.getClientPlayer().getPosition());
         Minecraft.getInstance().gameSettings.ambientOcclusionStatus = before;
 
-        textureManager.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
-        textureManager.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
+        textureManager.bindTexture(PlayerContainer.LOCATION_BLOCKS_TEXTURE);
+        textureManager.getTexture(PlayerContainer.LOCATION_BLOCKS_TEXTURE).restoreLastBlurMipmap();
 
         ((IRenderTypeBuffer.Impl) buffer).finish();
 

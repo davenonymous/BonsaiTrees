@@ -18,9 +18,9 @@ repositories {
         name 'tterrag maven'
         url "https://maven.tterrag.com/"
     }
-    maven { // JEI
-        name 'jei maven'
-        url "https://dvs1.progwml6.com/files/maven"
+    maven { // Mantle and JEI
+        name 'DVS1 Maven FS'
+        url 'https://dvs1.progwml6.com/files/maven'
     }
     maven {
         name "crafttweaker maven"
@@ -30,9 +30,9 @@ repositories {
         name 'davenonymous maven'
         url "http://maven.davenonymous.com/repository/maven-releases"
     }
-    maven {
-        name 'hwyla'
-        url "https://tehnut.info/maven"
+    maven { // HWYLA, last since it 403s anything not present
+        name "Tehnut Maven FS"
+        url "https://maven.tehnut.info"
     }
 }
 
@@ -48,7 +48,7 @@ minecraft {
     // stable_#            Stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not always work.
     // Simply re-run your setup task after changing the mappings to update your workspace.
-    mappings channel: 'snapshot', version: "${mcp_mappings}"
+    mappings channel: "snapshot", version: "${mappings_version}"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
 
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
@@ -114,10 +114,12 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    compileOnly fg.deobf("mezz.jei:jei-1.15.2:${jei_version}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.15.2:${jei_version}")
+    // compile against the JEI API but do not include it at runtime
+    compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}:api")
+    // at runtime, use the full JEI jar
+    runtimeOnly fg.deobf("mezz.jei:jei-${minecraft_version}:${jei_version}")
 
-    compile fg.deobf("mcp.mobius.waila:Hwyla:${hwyla_version}")
+    compile fg.deobf("mcp.mobius.waila:Hwyla:${hwyla_version}_${minecraft_version}")
 
     compile fg.deobf("mcjty.theoneprobe:TheOneProbe-1.15:${top_version}") {
         transitive = false

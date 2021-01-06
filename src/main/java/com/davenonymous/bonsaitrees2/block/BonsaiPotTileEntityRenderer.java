@@ -279,7 +279,7 @@ public class BonsaiPotTileEntityRenderer extends TileEntityRenderer<BonsaiPotTil
         matrix.translate(2.0d, 1.1d, 2.0d);
         matrix.scale(12.0f, 1.0f, 12.0f);
 
-        brd.renderModel(tile.getSoilBlockState(), tile.getPos(), tile.getWorld(), matrix, buffer.getBuffer(RenderType.cutoutMipped()), false, tile.getWorld().rand, EmptyModelData.INSTANCE);
+        brd.renderModel(tile.getSoilBlockState(), tile.getPos(), tile.getWorld(), matrix, buffer.getBuffer(RenderType.getCutoutMipped()), false, tile.getWorld().rand, EmptyModelData.INSTANCE);
 
         matrix.pop();
     }
