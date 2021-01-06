@@ -14,7 +14,7 @@ public class TreeCreatorContainer extends WidgetContainer {
 
     public static ResourceLocation SLOTGROUP_SETUP = new ResourceLocation(BonsaiTrees2.MODID, "setup_slots");
 
-    private BlockPos pos;
+    private final BlockPos pos;
 
     public TreeCreatorContainer(int id, PlayerInventory inv, BlockPos pos) {
         super(Registration.TREE_CREATOR_CONTAINER.get(), id, inv);

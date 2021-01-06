@@ -1,7 +1,6 @@
 package com.davenonymous.bonsaitrees2.command;
 
 import com.davenonymous.bonsaitrees2.gui.TreeCreatorContainer;
-import com.davenonymous.libnonymous.base.BaseNamedContainerProvider;
 import com.davenonymous.libnonymous.utils.RaytraceHelper;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;

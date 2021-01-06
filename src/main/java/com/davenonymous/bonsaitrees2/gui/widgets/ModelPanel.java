@@ -1,7 +1,6 @@
 package com.davenonymous.bonsaitrees2.gui.widgets;
 
 import com.davenonymous.libnonymous.gui.framework.ColorHelper;
-import com.davenonymous.libnonymous.gui.framework.GUIHelper;
 import com.davenonymous.libnonymous.gui.framework.event.MouseClickEvent;
 import com.davenonymous.libnonymous.gui.framework.event.WidgetEventResult;
 import com.davenonymous.libnonymous.gui.framework.util.FontAwesomeIcons;

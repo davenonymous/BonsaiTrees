@@ -4,7 +4,6 @@ import com.davenonymous.bonsaitrees2.BonsaiTrees2;
 import com.davenonymous.bonsaitrees2.gui.TreeCreatorScreen;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingDrop;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
-import com.davenonymous.bonsaitrees2.util.Logz;
 import com.davenonymous.libnonymous.gui.framework.GUI;
 import com.davenonymous.libnonymous.gui.framework.event.MouseClickEvent;
 import com.davenonymous.libnonymous.gui.framework.event.WidgetEventResult;

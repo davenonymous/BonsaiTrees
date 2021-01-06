@@ -33,7 +33,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class BonsaiTrees2 {
     public static final String MODID = "bonsaitrees2";
 
-    public static IProxy proxy = DistExecutor.runForDist(() -> () -> new ProxyClient(), () -> () -> new ProxyServer());
+    public static IProxy proxy = DistExecutor.unsafeRunForDist(() -> ProxyClient::new, () -> ProxyServer::new);
     public static ModSetup setup = new ModSetup();
 
     public BonsaiTrees2() {

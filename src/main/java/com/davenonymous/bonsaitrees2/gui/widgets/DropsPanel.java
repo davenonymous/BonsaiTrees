@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class DropsPanel extends WidgetPanelWithValue<List<SaplingDrop>> {
-    private List<DropRowPanel> dropRows = new ArrayList<>();
+    private final List<DropRowPanel> dropRows = new ArrayList<>();
 
     public DropsPanel(int width, int height) {
         super();

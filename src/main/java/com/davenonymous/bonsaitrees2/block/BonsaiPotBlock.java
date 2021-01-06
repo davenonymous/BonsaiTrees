@@ -7,7 +7,6 @@ import com.davenonymous.bonsaitrees2.misc.PotColorizer;
 import com.davenonymous.bonsaitrees2.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
-import com.davenonymous.bonsaitrees2.registry.soil.SoilRecipeHelper;
 import com.davenonymous.bonsaitrees2.util.Logz;
 import com.davenonymous.libnonymous.base.BaseBlock;
 import com.davenonymous.libnonymous.misc.ColorProperty;
@@ -75,7 +74,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
     @Nullable
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        if(this.hopping) {
+        if (this.hopping) {
             return new HoppingBonsaiPotTileEntity();
         } else {
             return new BonsaiPotTileEntity();
@@ -84,30 +83,30 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
 
     public static BonsaiPotTileEntity getOwnTile(IBlockReader world, BlockPos pos) {
         TileEntity te = world.getTileEntity(pos);
-        if(!(te instanceof BonsaiPotTileEntity)) {
+        if (!(te instanceof BonsaiPotTileEntity)) {
             return null;
         }
 
-        return (BonsaiPotTileEntity)te;
+        return (BonsaiPotTileEntity) te;
     }
 
     @Override
     public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
         BonsaiPotTileEntity tile = getOwnTile(worldIn, pos);
-        if(tile == null) {
+        if (tile == null) {
             super.onReplaced(state, worldIn, pos, newState, isMoving);
             return;
         }
 
-        if(tile.hasSapling()) {
+        if (tile.hasSapling()) {
             InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), tile.getSaplingStack());
         }
 
-        if(tile.hasSoil()) {
+        if (tile.hasSoil()) {
             InventoryHelper.spawnItemStack(worldIn, pos.getX(), pos.getY(), pos.getZ(), tile.getSoilStack());
         }
 
-        if(tile.hasSoil() && tile.hasSapling() && tile.getProgress() >= 1.0f) {
+        if (tile.hasSoil() && tile.hasSapling() && tile.getProgress() >= 1.0f) {
             tile.dropLoot();
         }
 
@@ -125,12 +124,12 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
         }
 
         ItemStack playerStack = player.getHeldItem(Hand.MAIN_HAND);
-        if(playerStack.isEmpty()) {
+        if (playerStack.isEmpty()) {
             playerStack = player.getHeldItem(Hand.OFF_HAND);
         }
 
         // No items in either of the hands -> no action here
-        if(playerStack.isEmpty()) {
+        if (playerStack.isEmpty()) {
             return ActionResultType.FAIL;
         }
 
@@ -138,12 +137,12 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
             return ActionResultType.SUCCESS;
         }
 
-        BonsaiPotTileEntity pot = (BonsaiPotTileEntity)world.getTileEntity(pos);
+        BonsaiPotTileEntity pot = (BonsaiPotTileEntity) world.getTileEntity(pos);
 
         // Soil?
         SoilInfo soil = ModObjects.soilRecipeHelper.getSoilForItem(world, playerStack);
-        if(soil != null && !pot.hasSoil()) {
-            if(player.isCreative()) {
+        if (soil != null && !pot.hasSoil()) {
+            if (player.isCreative()) {
                 ItemStack soilStack = playerStack.copy();
                 soilStack.setCount(1);
                 pot.setSoil(soilStack);
@@ -155,10 +154,10 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
 
         // Sapling?
         SaplingInfo sapling = ModObjects.saplingRecipeHelper.getSaplingInfoForItem(world, playerStack);
-        if(sapling != null && !pot.hasSapling()) {
-            if(!pot.hasSoil()) {
+        if (sapling != null && !pot.hasSapling()) {
+            if (!pot.hasSoil()) {
                 SoilInfo randomSoil = ModObjects.soilRecipeHelper.getRandomRecipe(world.getRecipeManager(), world.rand);
-                if(randomSoil != null) {
+                if (randomSoil != null) {
                     player.sendStatusMessage(new TranslationTextComponent("hint.bonsaitrees.pot_has_no_soil", randomSoil.ingredient.getMatchingStacks()[0].getDisplayName()), true);
                 } else {
                     Logz.warn("There is no soil available. Please check the config and logs for errors!");
@@ -168,12 +167,12 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
             }
 
             SoilInfo potSoil = ModObjects.soilRecipeHelper.getSoilForItem(world, pot.getSoilStack());
-            if(!SoilCompatibility.INSTANCE.canTreeGrowOnSoil(sapling, potSoil)) {
+            if (!SoilCompatibility.INSTANCE.canTreeGrowOnSoil(sapling, potSoil)) {
                 player.sendStatusMessage(new TranslationTextComponent("hint.bonsaitrees.incompatible_soil"), true);
                 return ActionResultType.SUCCESS;
             }
 
-            if(player.isCreative()) {
+            if (player.isCreative()) {
                 ItemStack saplingStack = playerStack.copy();
                 saplingStack.setCount(1);
                 pot.setSapling(saplingStack);
@@ -185,14 +184,14 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
 
         // Dye?
         DyeColor blockColor = DyeColor.byId(state.get(ColorProperty.COLOR));
-        if(Tags.Items.DYES.contains(playerStack.getItem())) {
+        if (Tags.Items.DYES.contains(playerStack.getItem())) {
             DyeColor color = DyeColor.getColor(playerStack);
-            if(color != null) {
-                if(blockColor == color) {
+            if (color != null) {
+                if (blockColor == color) {
                     return ActionResultType.SUCCESS;
                 }
 
-                if(!player.isCreative() && !Config.NO_DYE_COST.get()) {
+                if (!player.isCreative() && !Config.NO_DYE_COST.get()) {
                     playerStack.split(1);
                 }
 
@@ -202,19 +201,19 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
         }
 
         boolean playerHasAxe = canCutBonsaiTree(playerStack, player);
-        if(playerHasAxe) {
+        if (playerHasAxe) {
             // No sapling in pot
-            if(!pot.hasSapling()) {
+            if (!pot.hasSapling()) {
                 return ActionResultType.FAIL;
             }
 
             boolean inWorkingCondition = !playerStack.isDamageable() || playerStack.getDamage() + 1 < playerStack.getMaxDamage();
-            if(pot.getProgress() >= 1.0f && inWorkingCondition) {
+            if (pot.getProgress() >= 1.0f && inWorkingCondition) {
                 pot.dropLoot();
                 pot.setSapling(pot.saplingStack);
                 playerStack.attemptDamageItem(1, rand, (ServerPlayerEntity) player);
                 return ActionResultType.SUCCESS;
-            } else if(pot.growTicks >= 20 && pot.getProgress() <= 0.75f) {
+            } else if (pot.growTicks >= 20 && pot.getProgress() <= 0.75f) {
                 // Not ready and still under 75%
                 pot.dropSapling();
                 return ActionResultType.SUCCESS;
@@ -224,13 +223,13 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
         }
 
         boolean playerHasShovel = playerStack.getItem().getHarvestLevel(playerStack, ToolType.SHOVEL, player, Blocks.DIRT.getDefaultState()) != -1;
-        if(playerHasShovel) {
-            if(pot.hasSapling()) {
+        if (playerHasShovel) {
+            if (pot.hasSapling()) {
                 player.sendStatusMessage(new TranslationTextComponent("hint.bonsaitrees.can_not_remove_soil_with_sapling"), true);
                 return ActionResultType.FAIL;
             }
 
-            if(!pot.hasSoil()) {
+            if (!pot.hasSoil()) {
                 return ActionResultType.FAIL;
             }
 
@@ -246,7 +245,7 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
         super.onBlockPlacedBy(world, pos, state, entity, stack);
 
         CompoundNBT tag = stack.getTag();
-        if(tag == null || !tag.contains("bonsaitrees2:color")) {
+        if (tag == null || !tag.contains("bonsaitrees2:color")) {
             world.setBlockState(pos, state.with(ColorProperty.COLOR, PotColorizer.DEFAULT_COLOR.getId()), 2);
             return;
         }
@@ -257,20 +256,16 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
     }
 
     private boolean canCutBonsaiTree(ItemStack stack, PlayerEntity player) {
-        if(stack.getItem().getHarvestLevel(stack, ToolType.AXE, player, Blocks.OAK_PLANKS.getDefaultState()) != -1) {
+        if (stack.getItem().getHarvestLevel(stack, ToolType.AXE, player, Blocks.OAK_PLANKS.getDefaultState()) != -1) {
             return true;
         }
 
-        if(stack.getItem() instanceof IBonsaiCuttingTool) {
+        if (stack.getItem() instanceof IBonsaiCuttingTool) {
             return true;
         }
 
         String regName = stack.getItem().getRegistryName().toString();
-        if(Config.ADDITIONAL_CUTTING_TOOLS.get().contains(regName)) {
-            return true;
-        }
-
-        return false;
+        return Config.ADDITIONAL_CUTTING_TOOLS.get().contains(regName);
     }
 
     @Override
@@ -319,11 +314,9 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
     }
 
 
-
-
     @Override
     public boolean canGrow(IBlockReader world, BlockPos pos, BlockState state, boolean isClient) {
-        if(!(world.getTileEntity(pos) instanceof BonsaiPotTileEntity)) {
+        if (!(world.getTileEntity(pos) instanceof BonsaiPotTileEntity)) {
             return false;
         }
 
@@ -333,21 +326,21 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
 
     @Override
     public boolean canUseBonemeal(World world, Random rand, BlockPos pos, BlockState state) {
-        if(!(world.getTileEntity(pos) instanceof BonsaiPotTileEntity)) {
+        if (!(world.getTileEntity(pos) instanceof BonsaiPotTileEntity)) {
             return false;
         }
 
         BonsaiPotTileEntity tile = (BonsaiPotTileEntity) world.getTileEntity(pos);
-        if(!tile.isGrowing()) {
+        if (!tile.isGrowing()) {
             return false;
         }
 
-        return (double)world.rand.nextFloat() < 0.45D;
+        return (double) world.rand.nextFloat() < 0.45D;
     }
 
     @Override
     public void grow(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
-        if(!(world.getTileEntity(pos) instanceof BonsaiPotTileEntity)) {
+        if (!(world.getTileEntity(pos) instanceof BonsaiPotTileEntity)) {
             return;
         }
 
@@ -358,21 +351,21 @@ public class BonsaiPotBlock extends BaseBlock implements IGrowable, IWaterLoggab
 
     @Override
     public void addProbeInfo(ProbeMode mode, IProbeInfo probeInfo, PlayerEntity player, World world, BlockState blockState, IProbeHitData data) {
-        if(!(world.getTileEntity(data.getPos()) instanceof BonsaiPotTileEntity)) {
+        if (!(world.getTileEntity(data.getPos()) instanceof BonsaiPotTileEntity)) {
             return;
         }
 
         BonsaiPotTileEntity teBonsai = (BonsaiPotTileEntity) world.getTileEntity(data.getPos());
-        if(teBonsai.hasSapling()) {
+        if (teBonsai.hasSapling()) {
             probeInfo.horizontal().item(teBonsai.saplingStack).itemLabel(teBonsai.saplingStack);
         }
 
-        if(teBonsai.hasSoil()) {
+        if (teBonsai.hasSoil()) {
             probeInfo.horizontal().item(teBonsai.soilStack).itemLabel(teBonsai.soilStack);
         }
 
-        if(teBonsai.hasSapling()) {
-            probeInfo.progress((int)(teBonsai.getProgress()*100), 100, probeInfo.defaultProgressStyle().suffix("%").filledColor(0xff44AA44).alternateFilledColor(0xff44AA44).backgroundColor(0xff836953));
+        if (teBonsai.hasSapling()) {
+            probeInfo.progress((int) (teBonsai.getProgress() * 100), 100, probeInfo.defaultProgressStyle().suffix("%").filledColor(0xff44AA44).alternateFilledColor(0xff44AA44).backgroundColor(0xff836953));
         }
     }
 }

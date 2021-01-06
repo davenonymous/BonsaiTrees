@@ -4,22 +4,14 @@ import com.davenonymous.bonsaitrees2.render.TreeModels;
 import com.davenonymous.libnonymous.render.MultiblockBlockModel;
 import com.davenonymous.libnonymous.render.MultiblockBlockModelRenderer;
 import com.mojang.blaze3d.matrix.MatrixStack;
-
-import com.mojang.blaze3d.platform.GlStateManager;
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.*;
-import net.minecraft.client.renderer.model.IBakedModel;
-import net.minecraft.client.renderer.texture.AtlasTexture;
-import net.minecraft.client.renderer.texture.TextureManager;
+import net.minecraft.client.renderer.BlockRendererDispatcher;
+import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
-import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
-
-import net.minecraft.world.biome.Biome;
-import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.model.data.EmptyModelData;
-import org.lwjgl.opengl.GL11;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -29,7 +21,7 @@ public class BonsaiPotTileEntityRenderer extends TileEntityRenderer<BonsaiPotTil
     private static boolean clearLists = false;
     private static final Random rand = new Random();
 
-    private static Map<MultiblockBlockModel, Integer> glLists = new HashMap<>();
+    private static final Map<MultiblockBlockModel, Integer> glLists = new HashMap<>();
 
     public BonsaiPotTileEntityRenderer(TileEntityRendererDispatcher rendererDispatcherIn) {
         super(rendererDispatcherIn);

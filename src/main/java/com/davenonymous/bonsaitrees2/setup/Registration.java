@@ -19,10 +19,10 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class Registration {
-    private static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, BonsaiTrees2.MODID);
-    private static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, BonsaiTrees2.MODID);
-    private static final DeferredRegister<TileEntityType<?>> TILES = new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES, BonsaiTrees2.MODID);
-    private static final DeferredRegister<ContainerType<?>> CONTAINERS = new DeferredRegister<>(ForgeRegistries.CONTAINERS, BonsaiTrees2.MODID);
+    private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, BonsaiTrees2.MODID);
+    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BonsaiTrees2.MODID);
+    private static final DeferredRegister<TileEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, BonsaiTrees2.MODID);
+    private static final DeferredRegister<ContainerType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, BonsaiTrees2.MODID);
 
     public static void init() {
         BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
@@ -34,7 +34,7 @@ public class Registration {
     public static final RegistryObject<BonsaiPotBlock> BONSAIPOT = BLOCKS.register("bonsaipot", () -> new BonsaiPotBlock(false));
     public static final RegistryObject<BonsaiPotBlock> HOPPING_BONSAIPOT = BLOCKS.register("hopping_bonsaipot", () -> new BonsaiPotBlock(true));
 
-    private static Item.Properties properties = new Item.Properties().group(ItemGroup.DECORATIONS);
+    private static final Item.Properties properties = new Item.Properties().group(ItemGroup.DECORATIONS);
     public static final RegistryObject<Item> BONSAIPOT_ITEM = ITEMS.register("bonsaipot", () -> new BlockItem(BONSAIPOT.get(), properties));
     public static final RegistryObject<Item> HOPPING_BONSAIPOT_ITEM = ITEMS.register("hopping_bonsaipot", () -> new BlockItem(HOPPING_BONSAIPOT.get(), properties));
 

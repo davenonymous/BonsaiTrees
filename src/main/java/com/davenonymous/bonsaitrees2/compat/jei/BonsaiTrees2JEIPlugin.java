@@ -1,7 +1,6 @@
 package com.davenonymous.bonsaitrees2.compat.jei;
 
 import com.davenonymous.bonsaitrees2.BonsaiTrees2;
-import com.davenonymous.bonsaitrees2.block.ModObjects;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees2.setup.Registration;
 import com.davenonymous.bonsaitrees2.util.Logz;

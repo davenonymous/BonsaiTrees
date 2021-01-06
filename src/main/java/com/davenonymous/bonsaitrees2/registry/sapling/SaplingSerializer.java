@@ -22,18 +22,14 @@ public class SaplingSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>> 
         this.setRegistryName(new ResourceLocation(BonsaiTrees2.MODID, "sapling"));
     }
 
-    private Marker mark = MarkerManager.getMarker("Serializer");
+    private final Marker mark = MarkerManager.getMarker("Serializer");
 
     private boolean isValidIngredient(JsonObject obj) {
         if(obj == null) {
             return false;
         }
         Item item = MCJsonUtils.getItem(obj, "item");
-        if(item.getRegistryName().toString().equals("minecraft:air")) {
-            return false;
-        }
-
-        return true;
+        return !item.getRegistryName().toString().equals("minecraft:air");
     }
 
     @Override

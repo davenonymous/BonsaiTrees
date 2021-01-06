@@ -2,9 +2,7 @@ package com.davenonymous.bonsaitrees2.block;
 
 import com.davenonymous.bonsaitrees2.config.Config;
 import com.davenonymous.bonsaitrees2.config.WaterLogEffect;
-import com.davenonymous.bonsaitrees2.registry.sapling.SaplingRecipeHelper;
 import com.davenonymous.bonsaitrees2.registry.sapling.SaplingInfo;
-import com.davenonymous.bonsaitrees2.registry.soil.SoilRecipeHelper;
 import com.davenonymous.bonsaitrees2.registry.soil.SoilInfo;
 import com.davenonymous.bonsaitrees2.setup.Registration;
 import com.davenonymous.libnonymous.base.BaseTileEntity;
@@ -200,11 +198,7 @@ public class BonsaiPotTileEntity extends BaseTileEntity {
 
         BlockState blockState = world.getBlockState(upPos);
         VoxelShape collisionShape = blockState.getCollisionShape(world, upPos);
-        if (collisionShape == null || collisionShape.equals(VoxelShapes.empty())) {
-            return true;
-        }
-
-        return false;
+        return collisionShape == null || collisionShape.equals(VoxelShapes.empty());
     }
 
     public void setGrowTicks(int growTicks) {

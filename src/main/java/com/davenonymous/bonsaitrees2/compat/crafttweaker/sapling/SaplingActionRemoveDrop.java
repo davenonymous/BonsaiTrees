@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class SaplingActionRemoveDrop extends SaplingAction {
     private List<SaplingDrop> originalDrops;
-    private IItemStack drop;
+    private final IItemStack drop;
 
     public SaplingActionRemoveDrop(String id, IItemStack drop) {
         super(id);
