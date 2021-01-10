@@ -1,0 +1,57 @@
+{
+  "type": "bonsaitrees2:sapling/pamharvestcraft2trees/olive_tree",
+  "version": 3,
+  "ref": {
+    "b": {
+      "block": "minecraft:jungle_log"
+    },
+    "l": {
+      "block": "minecraft:jungle_leaves"
+    },
+    "f": {
+      "block": "pamhc2trees:pamolive"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "  l  ",
+      "  f  ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  l  ",
+      "  f  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  l  ",
+      " lbl ",
+      "lfbfl",
+      "f b f",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "     ",
+      "  l  ",
+      "  f  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "  l  ",
+      "  f  ",
+      "     ",
+      "     "
+    ]
+  ]
+}

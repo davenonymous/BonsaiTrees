@@ -1,0 +1,57 @@
+{
+  "type": "bonsaitrees2:sapling/pamharvestcraft2trees/pinenut_tree",
+  "version": 3,
+  "ref": {
+    "b": {
+      "block": "minecraft:spruce_log"
+    },
+    "l": {
+      "block": "minecraft:spruce_leaves"
+    },
+    "f": {
+      "block": "pamhc2trees:pampinenut"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      " lll ",
+      " f f ",
+      "lllll"
+    ],
+    [
+      "     ",
+      " lll ",
+      " f f ",
+      "lllll",
+      "f   f",
+      "lllll"
+    ],
+    [
+      "  l  ",
+      " lbl ",
+      "  b ",
+      "llbll",
+      "  b  ",
+      "llbll"
+    ],
+    [
+      "     ",
+      " lll ",
+      " f f ",
+      "lllll",
+      "f   f",
+      "lllll"
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      " lll ",
+      " f f ",
+      "lllll"
+    ]
+  ]
+}
