@@ -1,0 +1,36 @@
+{
+    "name": "sakura:ume",
+    "mod": "sakura",
+    "sapling": {
+        "name": "sakura:ume_sapling",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.5,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "sakura:ume_log",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "sakura:ume_sapling",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "sakura:umeleaves",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "sakura:foodset",
+            "data": 166,
+            "type": "FRUIT"
+        }
+    ]
+  }
