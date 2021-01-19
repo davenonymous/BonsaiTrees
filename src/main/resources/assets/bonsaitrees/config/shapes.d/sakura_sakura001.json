@@ -1,0 +1,70 @@
+{
+    "type": "sakura:sakura",
+    "version": 2,
+    "ref": {
+      "a": {
+        "name": "sakura:sakura_log",
+        "meta": 0
+      },
+      "b": {
+        "name": "sakura:sakuraleaves",
+        "meta": 0
+      }
+    },
+    "shape": [
+      [
+        "     ",
+        "     ",
+        " bbb ",
+        " bbb ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "  b  ",
+        "bbbbb",
+        "bbbbb",
+        " bbb ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        " bbb ",
+        "bbbbb",
+        "bbabb",
+        "bbabb",
+        "  a  ",
+        "  a  ",
+        "  a  "
+      ],
+      [
+        "  b  ",
+        "bbbbb",
+        "bbbbb",
+        "bbbbb",
+        " bbb ",
+        "     ",
+        "     "
+      ],
+      [
+        "     ",
+        " bbb ",
+        "bbbbb",
+        "bbbbb",
+        "  b  ",
+        "     ",
+        "     "
+      ],
+      [
+        "     ",
+        "     ",
+        " bbb ",
+        " bbb ",
+        "     ",
+        "     ",
+        "     "
+      ]
+    ]
+  }

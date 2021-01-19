@@ -1,0 +1,61 @@
+{
+    "type": "sakura:maple_yellow",
+    "version": 2,
+    "ref": {
+      "a": {
+        "name": "sakura:maple_log",
+        "meta": 0
+      },
+      "b": {
+        "name": "sakura:maple_leaves_yellow",
+        "meta": 0
+      }
+    },
+    "shape": [
+      [
+        "     ",
+        "     ",
+        " bbbb",
+        "bbbb ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "  b  ",
+        "  bb ",
+        "bbbbb",
+        "bbbbb",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        " bbb ",
+        " bab ",
+        "bbabb",
+        "bbabb",
+        "  a  ",
+        "  a  ",
+        "  a  "
+      ],
+      [
+        "  b  ",
+        " bb  ",
+        "bbbbb",
+        "bbbbb",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "     ",
+        "     ",
+        "bbbbb",
+        " bbbb",
+        "     ",
+        "     ",
+        "     "
+      ]
+    ]
+  }

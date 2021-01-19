@@ -1,0 +1,30 @@
+{
+    "type": "sakura:bamboo",
+    "version": 2,
+    "ref": {
+      "a": {
+        "name": "sakura:bamboo",
+        "meta": 0
+      }
+    },
+    "shape": [
+      [
+        "a ",
+        "aa",
+        "aa",
+        "aa",
+        "aa",
+        "aa",
+        "aa"
+      ],
+      [
+        "  ",
+        "a ",
+        "aa",
+        "aa",
+        "aa",
+        "aa",
+        "aa"
+      ]
+    ]
+  }
