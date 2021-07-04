@@ -1,0 +1,43 @@
+{
+    "name": "erebus:marshwood",
+    "mod": "erebus",
+    "sapling": {
+        "name": "erebus:sapling_marshwood",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.8,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "erebus:log_marshwood",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "erebus:sapling_marshwood",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "erebus:leaves_marshwood",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "erebus:erebus_food",
+            "data": 11,
+            "type": "FRUIT"
+        },
+        {
+            "name": "erebus:dark_fruit_vine",
+            "data": 0,
+            "type": "CUSTOM",
+					"count": 2,
+					"chance": 0.2
+        }		
+    ]
+}

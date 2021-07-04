@@ -1,0 +1,39 @@
+{
+    "name": "erebus:mahogany",
+    "mod": "erebus",
+    "sapling": {
+        "name": "erebus:sapling_mahogany",
+        "data": 0
+    },
+    "growTimeMultiplier": 0.8,
+    "drops": [
+        {
+            "name": "minecraft:stick",
+            "data": 0,
+            "type": "STICK"
+        },
+        {
+            "name": "erebus:log_mahogany",
+            "data": 0,
+            "type": "WOOD"
+        },
+        {
+            "name": "erebus:sapling_mahogany",
+            "data": 0,
+            "type": "SAPLING"
+        },
+        {
+            "name": "erebus:leaves_mahogany",
+            "data": 0,
+            "type": "LEAVES"
+        },
+        {
+            "name": "erebus:thorns",
+            "data": 0,
+            "type": "CUSTOM",
+					"count": 2,
+					"chance": 0.1
+        }
+		
+    ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "erebus:mud",
+  "mod": "erebus",
+  "soil": {
+    "name": "erebus:mud",
+    "data": 0,
+    "ignoreMeta": false
+  },
+
+  "modifiers": {
+    "growTime": 1.3,
+    "dropChance": 1
+  },
+
+  "providedTags": [ "dirt", "grass" ]
+}

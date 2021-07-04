@@ -1,0 +1,96 @@
+{
+  "type": "erebus:cypress",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "erebus:log_cypress",
+      "meta": 0
+    },
+    "b": {
+      "name": "erebus:leaves_cypress",
+      "meta": 0
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  b  ",
+      " bbb ",
+      " bbb ",
+      " bbb ",
+      " bbb ",
+      "  b  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "  b  ",
+      "  b  ",
+      " bb  ",
+      " bbb ",
+      "bbbbb",
+      "bbbbb",
+      "bbbbb",
+      "bbbbb",
+      " bbb ",
+      "  b  ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "  b  ",
+      " bbb ",
+      " bab ",
+      " bab ",
+      "bbabb",
+      "bbabb",
+      "bbabb",
+      "bbabb",
+      "bbabb",
+      "bbabb",
+      " bab ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "     ",
+      "     ",
+      "  b  ",
+      "  b  ",
+      " bbb ",
+      " bbb ",
+      "bbbb ",
+      "bbbbb",
+      "bbbbb",
+      "bbbbb",
+      " bbb ",
+      "  b  ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  b  ",
+      " bbb ",
+      " bbb ",
+      " bbb ",
+      " bbb ",
+      "  b  ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

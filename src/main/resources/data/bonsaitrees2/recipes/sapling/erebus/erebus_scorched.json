@@ -1,0 +1,20 @@
+{
+    "name": "erebus:scorched",
+    "mod": "erebus",
+    "sapling": {
+        "name": "erebus:log_scorched",
+        "data": 0
+    },
+    "growTimeMultiplier": 1.5,
+    "drops": [
+        {
+            "name": "erebus:log_scorched",
+            "data": 0,
+            "type": "WOOD"
+        }
+    ],
+	"compatibleSoilTags": [
+		"sand", 
+		"red_sand"
+	]
+}

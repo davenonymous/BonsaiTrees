@@ -1,0 +1,62 @@
+{
+  "type": "erebus:scorched",
+  "version": 2,
+  "ref": {
+    "a": {
+      "name": "erebus:log_scorched",
+      "meta": 0
+    },
+    "b": {
+      "name": "erebus:log_scorched",
+      "meta": 4
+    },
+    "c": {
+      "name": "erebus:log_scorched",
+      "meta": 8
+    }
+  },
+  "shape": [
+    [
+      "   ",
+      " b ",
+      "   ",
+      " b ",
+      "   ",
+      " b ",
+      "   ",
+      " b ",
+      "   ",
+      " b ",
+      "   ",
+      " b "
+    ],
+    [
+      " a ",
+      "cac",
+      " a ",
+      "cac",
+      " a ",
+      "cac",
+      " a ",
+      "cac",
+      " a ",
+      "cac",
+      " a ",
+      "cac"
+    ],
+    [
+      "   ",
+      " b ",
+      "   ",
+      " b ",
+      "   ",
+      " b ",
+      "   ",
+      " b ",
+      "   ",
+      " b ",
+      "   ",
+      " b "
+    ]
+  ]
+}
