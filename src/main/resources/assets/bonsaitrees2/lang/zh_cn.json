@@ -1,0 +1,38 @@
+{
+  "bonsaitrees2.title": "盆栽",
+
+  "block.bonsaitrees2.bonsaipot": "盆栽盆",
+  "block.bonsaitrees2.hopping_bonsaipot": "漏斗盆栽盆",
+
+  "bonsaitrees.jei.category.sapling.growtime": "是时候生长了: %s",
+  "bonsaitrees.jei.category.sapling.soiltime": "已更改生长时间至: %s",
+  "bonsaitrees.jei.category.growing.chance": "几率: %d%%",
+
+  "hint.bonsaitrees.incompatible_soil": "这棵树需要一种不同的土壤",
+  "hint.bonsaitrees.can_not_remove_soil_with_sapling": "在树苗生长的时候，土壤无法移除",
+  "hint.bonsaitrees.pot_has_no_soil": "请先在盆里放一些土壤, 试试 %s.",
+
+  "bonsaitrees.gui.tree_creator.label.preview": "预览, 方块数: %d",
+  "bonsaitrees.gui.tree_creator.label.sapling": "种类",
+  "bonsaitrees.gui.tree_creator.label.treeid": "物品ID",
+  "bonsaitrees.gui.tree_creator.label.growtime": "成熟所需的游戏刻",
+  "bonsaitrees.gui.tree_creator.label.tags": "土壤种类 (用逗号分隔)",
+  "bonsaitrees.gui.tree_creator.label.properties": "自定义盆栽配置",	
+  "bonsaitrees.gui.tree_creator.label.blocktypes": "方块种类: %d",
+
+  "bonsaitrees.gui.tree_creator.warning.too_many_types": "太多种类的方块了! 最高值: 26种",
+  "bonsaitrees.gui.tree_creator.warning.too_many_blocks": "太多方块了! 512个方块已经很多了! 最高限制是4096个!",
+  "bonsaitrees.gui.tree_creator.warning.isolate": "你是否将树与任何不属于它的块分隔开了?",
+
+  "bonsaitrees.gui.tree_creator.button.save_to_disk": "保存至硬盘",
+  "bonsaitrees.gui.tree_creator.warning.files_already_exists": "文件已经存在了",
+  "bonsaitrees.gui.tree_creator.warning.missing_tree_id": "未指定树的ID!",
+  "bonsaitrees.gui.tree_creator.checkbox.overwrite_files": "覆盖现有文件",
+  "bonsaitrees.gui.tree_creator.label.saved_files": "Saved files in '<mc>/openloader/' directory!",
+  "bonsaitrees.gui.tree_creator.hint.openloader": "您可以使用Open Loader模组来使用您的新盆栽,如果您已经安装了它并正在玩单人游戏,您可以简单地重新加载资源 [F3+T],然后使用 /reload 命令,或者您可以安装模组并重新启动游戏。",
+  "bonsaitrees.gui.tree_creator.button.go_to_openloader": "模组下载",
+
+  "bonsaitrees.gui.tree_creator.label.drop": "掉落",
+  "bonsaitrees.gui.tree_creator.label.rolls": "物品",
+  "bonsaitrees.gui.tree_creator.label.chance": "几率"
+}
