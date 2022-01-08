@@ -1,0 +1,167 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/huge_brown_mushroom",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:brown_mushroom_block",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "b": {
+      "block": "minecraft:brown_mushroom_block",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "west": "true"
+      }
+    },
+    "c": {
+      "block": "minecraft:brown_mushroom_block",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "true",
+        "south": "false",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "d": {
+      "block": "minecraft:brown_mushroom_block",
+      "properties": {
+        "down": "false",
+        "east": "true",
+        "north": "true",
+        "south": "false",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "e": {
+      "block": "minecraft:brown_mushroom_block",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "true",
+        "up": "true",
+        "west": "true"
+      }
+    },
+    "f": {
+      "block": "minecraft:mushroom_stem",
+      "properties": {
+        "down": "false",
+        "east": "true",
+        "north": "true",
+        "south": "true",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "g": {
+      "block": "minecraft:brown_mushroom_block",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "true",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "h": {
+      "block": "minecraft:brown_mushroom_block",
+      "properties": {
+        "down": "false",
+        "east": "true",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "i": {
+      "block": "minecraft:brown_mushroom_block",
+      "properties": {
+        "down": "false",
+        "east": "true",
+        "north": "false",
+        "south": "true",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "j": {
+      "block": "minecraft:brown_mushroom_block",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "true",
+        "south": "false",
+        "up": "true",
+        "west": "true"
+      }
+    }
+  },
+  "shape": [
+    [
+      " dhhhi ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "daaaaai",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "caaaaag",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "caaaaag",
+      "   f   ",
+      "   f   ",
+      "   f   ",
+      "   f   "
+    ],
+    [
+      "caaaaag",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "jaaaaae",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " jbbbe ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

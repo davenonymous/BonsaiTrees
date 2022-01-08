@@ -23,4 +23,6 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
-mcmodsrepo
+
+# more build artifacts
+src/generated/resources/.cache

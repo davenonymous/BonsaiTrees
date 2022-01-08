@@ -1,0 +1,196 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/bubble_coral",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "b": {
+      "block": "minecraft:sea_pickle",
+      "properties": {
+        "pickles": "3"
+      }
+    },
+    "c": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "d": {
+      "block": "minecraft:bubble_coral_block"
+    },
+    "e": {
+      "block": "minecraft:brain_coral"
+    },
+    "f": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "g": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "h": {
+      "block": "minecraft:tube_coral_fan"
+    },
+    "i": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "j": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "k": {
+      "block": "minecraft:tall_seagrass",
+      "properties": {
+        "half": "lower"
+      }
+    },
+    "l": {
+      "block": "minecraft:tall_seagrass",
+      "properties": {
+        "half": "upper"
+      }
+    },
+    "m": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "n": {
+      "block": "minecraft:brain_coral_block"
+    },
+    "o": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "p": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "q": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "r": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "s": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "t": {
+      "block": "minecraft:horn_coral_fan"
+    },
+    "u": {
+      "block": "minecraft:tube_coral"
+    },
+    "w": {
+      "block": "minecraft:seagrass"
+    },
+    "x": {
+      "block": "minecraft:horn_coral"
+    },
+    "y": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "z": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "v": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    }
+  },
+  "shape": [
+    [
+      "        ",
+      "    l   ",
+      "    kw  ",
+      " jdmddo ",
+      " vdddd  ",
+      "  ddd   "
+    ],
+    [
+      "    l   ",
+      "  h k   ",
+      " udddbu ",
+      " d  yndq",
+      " d      ",
+      " i  p r "
+    ],
+    [
+      "        ",
+      "   x    ",
+      "  ddzd  ",
+      " g    dm",
+      " e    d ",
+      " d    dq"
+    ],
+    [
+      "        ",
+      "        ",
+      " ejdd   ",
+      " d    d ",
+      " i   sd ",
+      "      o "
+    ],
+    [
+      "        ",
+      "    ee  ",
+      "  d dd  ",
+      " bo  gd ",
+      "sd  i d ",
+      "  i   dq"
+    ],
+    [
+      "        ",
+      "        ",
+      "     t  ",
+      "  dddd  ",
+      " sdddd  ",
+      "  dddm  "
+    ],
+    [
+      "        ",
+      "        ",
+      "        ",
+      "   a f  ",
+      "        ",
+      "  c     "
+    ]
+  ]
+}

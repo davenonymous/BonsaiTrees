@@ -1,0 +1,35 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "mod": "minecraft",
+  "sapling": {
+    "item": "minecraft:fire_coral"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "minecraft:dead_fire_coral"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "minecraft:fire_coral"
+      },
+      "requiresSilkTouch": true
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "minecraft:fire_coral_block"
+      },
+      "requiresSilkTouch": true
+    }
+  ],
+  "compatibleSoilTags": [
+    "water"
+  ]
+}

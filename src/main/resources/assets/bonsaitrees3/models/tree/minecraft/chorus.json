@@ -1,0 +1,585 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/chorus",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "false",
+        "east": "true",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "b": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "false",
+        "north": "true",
+        "south": "true",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "d": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "e": {
+      "block": "minecraft:chorus_flower",
+      "properties": {
+        "age": "5"
+      }
+    },
+    "f": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "true",
+        "south": "false",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "g": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "false",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "h": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    "i": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "j": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "true",
+        "up": "true",
+        "west": "false"
+      }
+    },
+    "k": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "true",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "l": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "true",
+        "west": "true"
+      }
+    },
+    "m": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "true",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "n": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "false",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "o": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "false",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    "p": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "true",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    "q": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "false",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    "r": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "true",
+        "north": "false",
+        "south": "true",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    "s": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "true",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "false"
+      }
+    },
+    "t": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "false",
+        "east": "false",
+        "north": "false",
+        "south": "false",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "u": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "true",
+        "north": "true",
+        "south": "false",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "v": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "true",
+        "north": "true",
+        "south": "true",
+        "up": "false",
+        "west": "true"
+      }
+    },
+    "w": {
+      "block": "minecraft:chorus_plant",
+      "properties": {
+        "down": "true",
+        "east": "true",
+        "north": "true",
+        "south": "true",
+        "up": "false",
+        "west": "false"
+      }
+    }
+  },
+  "shape": [
+    [
+      "               e  ",
+      "               d  ",
+      "               d  ",
+      "               d  ",
+      "               jg ",
+      "                d ",
+      "                d ",
+      "                l ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ],
+    [
+      "                  ",
+      "                e ",
+      "                d ",
+      "           e    d ",
+      "           d    a ",
+      "          nf   e e",
+      "          d    d d",
+      "          d    jwf",
+      "          l     d ",
+      "                d ",
+      "                l ",
+      "               t  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ],
+    [
+      "                  ",
+      "   e      e       ",
+      "   d      d       ",
+      "   l      d       ",
+      "          d       ",
+      "          a       ",
+      "                  ",
+      "           e      ",
+      "          rf      ",
+      "          d       ",
+      "          d     m ",
+      "          l    rf ",
+      "               d  ",
+      "               d  ",
+      "               d  ",
+      "               d  ",
+      "               d  ",
+      "               d  "
+    ],
+    [
+      "                  ",
+      "    e             ",
+      "    d             ",
+      "   rf             ",
+      "   d              ",
+      "   d              ",
+      "   d            e ",
+      "   l            d ",
+      "                d ",
+      "                d ",
+      "           e    a ",
+      "          kf      ",
+      "          d       ",
+      "          d       ",
+      "          d       ",
+      "          d       ",
+      "          d       ",
+      "          d       "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "  i               ",
+      "  d               ",
+      "  d               ",
+      "  d               ",
+      "  jp       e      ",
+      "   l      qf      ",
+      "          d       ",
+      "   i      d       ",
+      "   d      a       ",
+      "   d              ",
+      "   d              ",
+      "   d              ",
+      "   d              ",
+      "   d              ",
+      "   d              "
+    ],
+    [
+      "                  ",
+      "  e               ",
+      "  d               ",
+      "  a               ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "   m              ",
+      "   d              ",
+      "   a              ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "   e              ",
+      "   a              ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "     e            ",
+      "     d            ",
+      "     jg           ",
+      "      jo          ",
+      "       jo         ",
+      "        l         ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "      e e         ",
+      "      d d         ",
+      "      d d         ",
+      "      a d         ",
+      "        l         ",
+      "                  ",
+      "        m         ",
+      "        d         ",
+      "        d         ",
+      "        d         ",
+      "        d         "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "         e        ",
+      "         d        ",
+      "         d        ",
+      "         d        ",
+      "        kf        ",
+      "        d         ",
+      "        a         ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "        i         ",
+      "     h  d         ",
+      "     d  a         ",
+      "     d            ",
+      "     l            ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "  e               ",
+      "  d               ",
+      "  jo              ",
+      "   d e  e         ",
+      "   jbf  a         ",
+      "    d             ",
+      "    d e           ",
+      "    d d           ",
+      "    jvf           ",
+      "     d            ",
+      "     d            ",
+      "     d            ",
+      "     d            "
+    ],
+    [
+      "                  ",
+      "      e           ",
+      "      d           ",
+      "     nf           ",
+      "     d            ",
+      "     d            ",
+      "     d            ",
+      " e   l            ",
+      " l  h             ",
+      "    a             ",
+      "                  ",
+      "                  ",
+      "i    e            ",
+      "d    a            ",
+      "d                 ",
+      "d                 ",
+      "d                 ",
+      "d                 "
+    ],
+    [
+      "     e            ",
+      "     d            ",
+      "     d            ",
+      "     a            ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "     m            ",
+      " s   d            ",
+      "qf   d            ",
+      "d    l            ",
+      "d                 ",
+      "a                 ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "    e             ",
+      "    jg            ",
+      "     a            ",
+      "                  ",
+      "                  ",
+      "     s            ",
+      "     d            ",
+      "     d            ",
+      "     l            ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "     e            ",
+      "     d            ",
+      "     d            ",
+      "     a            ",
+      "    h             ",
+      "    d             ",
+      "    l             ",
+      "                  ",
+      "                  ",
+      "    e             ",
+      "    ju            ",
+      "     d            ",
+      "     d            ",
+      "     d            ",
+      "     d            "
+    ],
+    [
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "    s             ",
+      "    d             ",
+      "    jo            ",
+      "     d            ",
+      "     a            ",
+      "                  ",
+      "                  ",
+      "                  ",
+      "                  "
+    ]
+  ]
+}

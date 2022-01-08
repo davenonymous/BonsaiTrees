@@ -1,0 +1,65 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/warped_fungus",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:warped_stem",
+      "properties": {
+        "axis": "y"
+      }
+    },
+    "b": {
+      "block": "minecraft:warped_wart_block"
+    },
+    "c": {
+      "block": "minecraft:shroomlight"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "bbbbb",
+      "     ",
+      " bbb ",
+      "bbbb ",
+      " bbb ",
+      " bb  "
+    ],
+    [
+      "  bb ",
+      "bcb b",
+      " bbb ",
+      "b   b",
+      "    b",
+      "    b",
+      "     "
+    ],
+    [
+      " bbb ",
+      "bbacb",
+      " bab ",
+      "bba b",
+      "  a b",
+      "  a b",
+      "  a  "
+    ],
+    [
+      " bbb ",
+      "bb  b",
+      " bb  ",
+      "b   b",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "bbbbb",
+      "     ",
+      "bbbbb",
+      "  bbb",
+      "  bbb",
+      "  b b"
+    ]
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "mod": "minecraft",
+  "sapling": {
+    "item": "minecraft:crimson_fungus"
+  },
+  "drops": [
+    {
+      "rolls": 3,
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:crimson_fungus"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "minecraft:crimson_stem"
+      }
+    },
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:nether_wart_block"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "minecraft:shroomlight"
+      }
+    }
+  ],
+  "compatibleSoilTags": [
+    "crimson"
+  ]
+}

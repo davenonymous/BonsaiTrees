@@ -1,0 +1,155 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/brain_coral",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:tall_seagrass",
+      "properties": {
+        "half": "lower"
+      }
+    },
+    "b": {
+      "block": "minecraft:sea_pickle",
+      "properties": {
+        "pickles": "3"
+      }
+    },
+    "c": {
+      "block": "minecraft:brain_coral_block"
+    },
+    "d": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "e": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "f": {
+      "block": "minecraft:tube_coral_fan"
+    },
+    "g": {
+      "block": "minecraft:seagrass"
+    },
+    "h": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "i": {
+      "block": "minecraft:tall_seagrass",
+      "properties": {
+        "half": "upper"
+      }
+    },
+    "j": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "k": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "l": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "m": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "n": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "o": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "p": {
+      "block": "minecraft:tube_coral"
+    },
+    "q": {
+      "block": "minecraft:fire_coral_fan"
+    },
+    "r": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "s": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    }
+  },
+  "shape": [
+    [
+      "        ",
+      "        ",
+      "   r    ",
+      "        "
+    ],
+    [
+      "        ",
+      "   fqg  ",
+      "   ccc  ",
+      "        "
+    ],
+    [
+      "        ",
+      "  ncce  ",
+      " m   sc ",
+      "        "
+    ],
+    [
+      "  g     ",
+      "  ccmcp ",
+      " c    c ",
+      " c      "
+    ],
+    [
+      "    g   ",
+      " bmcc   ",
+      "jc    k ",
+      " k      "
+    ],
+    [
+      "  g     ",
+      "  cccco ",
+      " c   rco",
+      " ce     "
+    ],
+    [
+      "   i i  ",
+      "  gaga  ",
+      "  cccc  ",
+      " lcccc  "
+    ],
+    [
+      "        ",
+      "        ",
+      "  hld   ",
+      "    dl  "
+    ]
+  ]
+}

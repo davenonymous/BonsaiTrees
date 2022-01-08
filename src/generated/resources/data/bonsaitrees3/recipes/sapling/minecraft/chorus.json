@@ -1,0 +1,34 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "mod": "minecraft",
+  "sapling": {
+    "item": "minecraft:chorus_fruit"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:chorus_fruit"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.1,
+      "result": {
+        "item": "minecraft:chorus_flower"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.01,
+      "result": {
+        "item": "minecraft:ender_pearl"
+      },
+      "requiresSilkTouch": true
+    }
+  ],
+  "compatibleSoilTags": [
+    "end_stone"
+  ]
+}

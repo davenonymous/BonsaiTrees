@@ -1,0 +1,18 @@
+{
+  "block.bonsaitrees3.bonsaipot": "Bonsai Pot",
+  "container.bonsaitrees3.bonsaipot": "Bonsai Pot",
+  "gui.bonsaitrees3.label.button.cut_tree.tooltip.ok": "Click to cut the tree",
+  "gui.bonsaitrees3.label.button.cut_tree.tooltip.wait": "The tree needs to fully grow before you can cut it",
+  "gui.bonsaitrees3.label.jei.upgrade.autocut": "Automatically cut trees",
+  "gui.bonsaitrees3.label.jei.upgrade.efficiency": "Reduce sapling grow time",
+  "gui.bonsaitrees3.label.jei.upgrade.fortune": "Increase drop rolls and chances",
+  "gui.bonsaitrees3.label.jei.upgrade.hopper": "Export drops to the block below",
+  "gui.bonsaitrees3.label.jei.upgrade.silktouch": "Do not void drops requiring silk touch",
+  "itemGroup.bonsaitrees3": "Bonsai Trees",
+  "jei.bonsaitrees3.chance": "Chance: %d%%",
+  "jei.bonsaitrees3.growtime": "Time to grow: %s",
+  "jei.bonsaitrees3.recipes.title": "Growing in Bonsai Pots",
+  "jei.bonsaitrees3.requiresSilkTouch": "Requires Silk Touch upgrade",
+  "jei.bonsaitrees3.soiltime": "Changes growtime to: %s",
+  "jei.bonsaitrees3.upgrades.title": "Upgrading Bonsai Pots"
+}

@@ -1,0 +1,118 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/dark_oak",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:dark_oak_log"
+    },
+    "b": {
+      "block": "minecraft:dark_oak_leaves"
+    }
+  },
+  "shape": [
+    [
+      "        ",
+      "        ",
+      " bbbbb  ",
+      " bbbbbb ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "   bb   ",
+      " bbbbbb ",
+      "bbbbbbbb",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "  bbbb  ",
+      "bbbbbbbb",
+      "bbabbabb",
+      "  a  a  ",
+      "  a  a  ",
+      "     a  ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   bb   ",
+      " bbbbbb ",
+      "bbbaabbb",
+      "bbbaaabb",
+      "   aaa  ",
+      "   aaa  ",
+      "   aa   ",
+      "   aa   ",
+      "   aa   ",
+      "   aa   ",
+      "   aa   "
+    ],
+    [
+      "   bb   ",
+      " bbbbbb ",
+      "bbbaabbb",
+      "bbaaabbb",
+      "  aaa   ",
+      "  aaa   ",
+      "  aaa   ",
+      "   aa   ",
+      "   aa   ",
+      "   aa   ",
+      "   aa   "
+    ],
+    [
+      "        ",
+      "  bbbb  ",
+      "bbbbbbbb",
+      "bbaababb",
+      "  aa a  ",
+      "  aa    ",
+      "  a     ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "   bb   ",
+      "bbbbbbbb",
+      "bbbbbbbb",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "        ",
+      " bbbbb  ",
+      " bbbbbb ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

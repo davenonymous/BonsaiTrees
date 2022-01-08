@@ -1,0 +1,234 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/horn_coral",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:horn_coral_block"
+    },
+    "b": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "c": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "d": {
+      "block": "minecraft:sea_pickle",
+      "properties": {
+        "pickles": "1"
+      }
+    },
+    "e": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "f": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "g": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "h": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "i": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "j": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "k": {
+      "block": "minecraft:seagrass"
+    },
+    "l": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "m": {
+      "block": "minecraft:horn_coral"
+    },
+    "n": {
+      "block": "minecraft:bubble_coral"
+    },
+    "o": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "p": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "q": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "r": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "s": {
+      "block": "minecraft:sea_pickle",
+      "properties": {
+        "pickles": "3"
+      }
+    },
+    "t": {
+      "block": "minecraft:tall_seagrass",
+      "properties": {
+        "half": "lower"
+      }
+    },
+    "u": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "v": {
+      "block": "minecraft:tall_seagrass",
+      "properties": {
+        "half": "upper"
+      }
+    },
+    "w": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "x": {
+      "block": "minecraft:brain_coral_fan"
+    },
+    "y": {
+      "block": "minecraft:bubble_coral_fan"
+    },
+    "z": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    }
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "ja       ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "   af    ",
+      "ja       ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "   x     ",
+      "   a     ",
+      "ia       ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "   x     ",
+      "   abc   ",
+      " a       ",
+      "      r  "
+    ],
+    [
+      "         ",
+      "         ",
+      "     kr  ",
+      "   aoay  ",
+      "  w  aa  ",
+      " a aeaag "
+    ],
+    [
+      "         ",
+      "   x     ",
+      "  maeaa  ",
+      "  a   ua ",
+      "  aa z a ",
+      " ae    a "
+    ],
+    [
+      "         ",
+      "   s  d  ",
+      "   agha  ",
+      "  c    a ",
+      "       a ",
+      "  a    p "
+    ],
+    [
+      "    v    ",
+      "   dtn   ",
+      "   aaa   ",
+      "  a    p ",
+      "       k ",
+      "       af"
+    ],
+    [
+      "         ",
+      "     m   ",
+      "   aaao  ",
+      "  af cjaf",
+      "  ar r s ",
+      "  a    a "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "    aaaf ",
+      "  uagaa  ",
+      "   abae  "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "      q  ",
+      "   q     ",
+      "   l     "
+    ]
+  ]
+}

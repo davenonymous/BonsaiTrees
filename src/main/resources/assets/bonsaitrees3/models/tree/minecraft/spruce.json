@@ -1,0 +1,91 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/spruce",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:spruce_log"
+    },
+    "b": {
+      "block": "minecraft:spruce_leaves"
+    }
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      " bbbbb ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  bbb  ",
+      "       ",
+      "  bbb  ",
+      "bbbbbbb",
+      "       "
+    ],
+    [
+      "       ",
+      "   b   ",
+      "       ",
+      "   b   ",
+      " bbbbb ",
+      "   b   ",
+      " bbbbb ",
+      "bbbbbbb",
+      "       "
+    ],
+    [
+      "   b   ",
+      "  bab  ",
+      "   a   ",
+      "  bab  ",
+      " bbabb ",
+      "  bab  ",
+      " bbabb ",
+      "bbbabbb",
+      "   a   "
+    ],
+    [
+      "       ",
+      "   b   ",
+      "       ",
+      "   b   ",
+      " bbbbb ",
+      "   b   ",
+      " bbbbb ",
+      "bbbbbbb",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  bbb  ",
+      "       ",
+      "  bbb  ",
+      "bbbbbbb",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      " bbbbb ",
+      "       "
+    ]
+  ]
+}

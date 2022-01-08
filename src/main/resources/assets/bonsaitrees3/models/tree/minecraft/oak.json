@@ -1,0 +1,54 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/oak",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:oak_log"
+    },
+    "b": {
+      "block": "minecraft:oak_leaves"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      " bbb ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "  bb ",
+      "bbbbb",
+      "bbbbb",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      " bab ",
+      "bbabb",
+      "bbabb",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      " bbb ",
+      "bbbbb",
+      "bbbbb",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbbb",
+      " bbbb",
+      "     ",
+      "     "
+    ]
+  ]
+}

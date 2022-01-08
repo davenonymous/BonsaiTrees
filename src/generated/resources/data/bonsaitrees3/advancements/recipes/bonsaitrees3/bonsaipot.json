@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "bonsaitrees3:bonsaipot"
+    ]
+  },
+  "criteria": {
+    "bonsaipot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:brick"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bonsaitrees3:bonsaipot"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "bonsaipot",
+      "has_the_recipe"
+    ]
+  ]
+}

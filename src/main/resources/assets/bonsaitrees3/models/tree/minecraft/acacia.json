@@ -1,0 +1,113 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/acacia",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:acacia_leaves"
+    },
+    "b": {
+      "block": "minecraft:acacia_log"
+    }
+  },
+  "shape": [
+    [
+      "         ",
+      " aaaaa   ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "   a     ",
+      "aaaaaaa  ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "  aaa    ",
+      "aaaaaaa  ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      " aaaaa   ",
+      "aaabaaa  ",
+      "   b     ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "  aaa    ",
+      "aaaaaaa  ",
+      "         ",
+      "   b aaa ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "   a     ",
+      "aaaaaaa  ",
+      "     aaa ",
+      "    aaaaa",
+      "   b     ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      " aaaaa   ",
+      "     aaa ",
+      "    aabaa",
+      "     b   ",
+      "   bb    ",
+      "   b     ",
+      "   b     ",
+      "   b     "
+    ],
+    [
+      "         ",
+      "         ",
+      "     aaa ",
+      "    aaaaa",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "     aaa ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}

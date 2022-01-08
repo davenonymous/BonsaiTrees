@@ -1,0 +1,54 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/birch",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:birch_log"
+    },
+    "b": {
+      "block": "minecraft:birch_leaves"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      " bbb ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      " bb  ",
+      "bbbbb",
+      "bbbbb",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      " bab ",
+      "bbabb",
+      "bbabb",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      "  b  ",
+      "bbbbb",
+      "bbbbb",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      "bbbb ",
+      "     ",
+      "     "
+    ]
+  ]
+}

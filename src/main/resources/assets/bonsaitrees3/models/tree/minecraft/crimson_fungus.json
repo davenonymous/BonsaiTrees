@@ -1,0 +1,101 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/crimson_fungus",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:crimson_stem",
+      "properties": {
+        "axis": "y"
+      }
+    },
+    "b": {
+      "block": "minecraft:nether_wart_block"
+    },
+    "c": {
+      "block": "minecraft:weeping_vines",
+      "properties": {
+        "age": "23"
+      }
+    },
+    "d": {
+      "block": "minecraft:weeping_vines_plant"
+    },
+    "e": {
+      "block": "minecraft:shroomlight"
+    },
+    "f": {
+      "block": "minecraft:weeping_vines",
+      "properties": {
+        "age": "17"
+      }
+    },
+    "g": {
+      "block": "minecraft:weeping_vines",
+      "properties": {
+        "age": "18"
+      }
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "bbbbb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bb  ",
+      "beebb",
+      "dbb d",
+      "f   d",
+      "    d",
+      "    c",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "b abb",
+      " bab ",
+      "b a b",
+      "b a b",
+      "b a b",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      " bbb ",
+      "beb b",
+      " bbb ",
+      "b    ",
+      "b    ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "bbbb ",
+      "     ",
+      "  b  ",
+      "  d  ",
+      "  d  ",
+      "  d  ",
+      "  g  ",
+      "     ",
+      "     "
+    ]
+  ]
+}

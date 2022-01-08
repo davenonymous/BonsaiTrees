@@ -1,0 +1,210 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/fire_coral",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:fire_coral_block"
+    },
+    "b": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "c": {
+      "block": "minecraft:brain_coral_fan"
+    },
+    "d": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "e": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "f": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "g": {
+      "block": "minecraft:fire_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "h": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "i": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "j": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "k": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "l": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "south"
+      }
+    },
+    "m": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "n": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "o": {
+      "block": "minecraft:tall_seagrass",
+      "properties": {
+        "half": "lower"
+      }
+    },
+    "p": {
+      "block": "minecraft:tube_coral"
+    },
+    "q": {
+      "block": "minecraft:fire_coral"
+    },
+    "r": {
+      "block": "minecraft:brain_coral_wall_fan",
+      "properties": {
+        "facing": "north"
+      }
+    },
+    "s": {
+      "block": "minecraft:tube_coral_fan"
+    },
+    "t": {
+      "block": "minecraft:tall_seagrass",
+      "properties": {
+        "half": "upper"
+      }
+    },
+    "u": {
+      "block": "minecraft:tube_coral_wall_fan",
+      "properties": {
+        "facing": "east"
+      }
+    },
+    "v": {
+      "block": "minecraft:horn_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "w": {
+      "block": "minecraft:bubble_coral"
+    },
+    "x": {
+      "block": "minecraft:bubble_coral_wall_fan",
+      "properties": {
+        "facing": "west"
+      }
+    },
+    "y": {
+      "block": "minecraft:sea_pickle",
+      "properties": {
+        "pickles": "3"
+      }
+    }
+  },
+  "shape": [
+    [
+      "           ",
+      "           ",
+      "           ",
+      "     mb    ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      " m   s     ",
+      "    aaa    ",
+      "      ga   ",
+      "        ah ",
+      "         al",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      " aae       ",
+      "gaaa  d    ",
+      "raeak  a   ",
+      " aaak      ",
+      "  m    u a ",
+      "           "
+    ],
+    [
+      "           ",
+      " aaby      ",
+      "u  ra      ",
+      "b   al     ",
+      "q  xaaa t  ",
+      "ac daea o  ",
+      " aaa  naam ",
+      " aaa    ga "
+    ],
+    [
+      "  p        ",
+      " aaa       ",
+      "al         ",
+      "ak  a   w  ",
+      "a   a  ja  ",
+      "a   f   na ",
+      " aaa     a ",
+      " aaa       "
+    ],
+    [
+      "           ",
+      "           ",
+      "jaa        ",
+      "faaav      ",
+      "  al       ",
+      "jaaa     f ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "  i        ",
+      "  f        ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ]
+}

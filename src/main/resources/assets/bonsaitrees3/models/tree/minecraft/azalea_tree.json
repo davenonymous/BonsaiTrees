@@ -1,0 +1,168 @@
+{
+  "type": "bonsaitrees3:sapling/minecraft/azalea_tree",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "minecraft:azalea_leaves",
+      "properties": {
+        "distance": "1",
+        "persistent": "false"
+      }
+    },
+    "b": {
+      "block": "minecraft:flowering_azalea_leaves",
+      "properties": {
+        "distance": "2",
+        "persistent": "false"
+      }
+    },
+    "c": {
+      "block": "minecraft:azalea_leaves",
+      "properties": {
+        "distance": "4",
+        "persistent": "false"
+      }
+    },
+    "d": {
+      "block": "minecraft:oak_log",
+      "properties": {
+        "axis": "y"
+      }
+    },
+    "e": {
+      "block": "minecraft:flowering_azalea_leaves",
+      "properties": {
+        "distance": "3",
+        "persistent": "false"
+      }
+    },
+    "f": {
+      "block": "minecraft:azalea_leaves",
+      "properties": {
+        "distance": "3",
+        "persistent": "false"
+      }
+    },
+    "g": {
+      "block": "minecraft:azalea_leaves",
+      "properties": {
+        "distance": "2",
+        "persistent": "false"
+      }
+    },
+    "h": {
+      "block": "minecraft:flowering_azalea_leaves",
+      "properties": {
+        "distance": "4",
+        "persistent": "false"
+      }
+    },
+    "i": {
+      "block": "minecraft:flowering_azalea_leaves",
+      "properties": {
+        "distance": "5",
+        "persistent": "false"
+      }
+    },
+    "j": {
+      "block": "minecraft:azalea_leaves",
+      "properties": {
+        "distance": "5",
+        "persistent": "false"
+      }
+    },
+    "k": {
+      "block": "minecraft:azalea_leaves",
+      "properties": {
+        "distance": "6",
+        "persistent": "false"
+      }
+    },
+    "l": {
+      "block": "minecraft:azalea_leaves",
+      "properties": {
+        "distance": "7",
+        "persistent": "false"
+      }
+    },
+    "m": {
+      "block": "minecraft:flowering_azalea_leaves",
+      "properties": {
+        "distance": "1",
+        "persistent": "false"
+      }
+    },
+    "n": {
+      "block": "minecraft:flowering_azalea_leaves",
+      "properties": {
+        "distance": "7",
+        "persistent": "false"
+      }
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "  f  ",
+      "   ll",
+      "  m  ",
+      "     ",
+      "     "
+    ],
+    [
+      " cf n",
+      " fgf ",
+      " fgfc",
+      " gm  ",
+      " ad k",
+      "  d  ",
+      "  d  "
+    ],
+    [
+      "cfge ",
+      "f agf",
+      "fgabf",
+      "gadm ",
+      " gm j",
+      "     ",
+      "     "
+    ],
+    [
+      "fgab ",
+      "badag",
+      "badmg",
+      "fgagf",
+      " f  c",
+      "     ",
+      "     "
+    ],
+    [
+      " bagf",
+      "gadag",
+      "fgag ",
+      " fg c",
+      "ic   ",
+      "     ",
+      "     "
+    ],
+    [
+      "he   ",
+      "egabf",
+      "hfge ",
+      "  f  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " c c ",
+      "   fc",
+      " h   ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}
