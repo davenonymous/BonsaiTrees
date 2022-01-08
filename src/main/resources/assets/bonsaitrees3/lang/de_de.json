@@ -1,0 +1,18 @@
+{
+  "block.bonsaitrees3.bonsaipot": "Bonsai Topf",
+  "container.bonsaitrees3.bonsaipot": "Bonsai Topf",
+  "gui.bonsaitrees3.label.button.cut_tree.tooltip.ok": "Klick um den Baum zu fällen",
+  "gui.bonsaitrees3.label.button.cut_tree.tooltip.wait": "Der Baum muss erst ausgewachsen sein",
+  "gui.bonsaitrees3.label.jei.upgrade.autocut": "Baum automatisch fällen",
+  "gui.bonsaitrees3.label.jei.upgrade.efficiency": "Schnellerer Baumwachstum",
+  "gui.bonsaitrees3.label.jei.upgrade.fortune": "Erhöhte Chance auf mehr Drops",
+  "gui.bonsaitrees3.label.jei.upgrade.hopper": "Exportiere Drops in den Block unter dem Bonsai",
+  "gui.bonsaitrees3.label.jei.upgrade.silktouch": "Drops welche Behutsamkeit benötigen können geerntet werden",
+  "itemGroup.bonsaitrees3": "Bonsai Trees",
+  "jei.bonsaitrees3.chance": "Chance: %d%%",
+  "jei.bonsaitrees3.growtime": "Zeit zum Wachsen: %s",
+  "jei.bonsaitrees3.recipes.title": "Baumschule in Bonsai Pots",
+  "jei.bonsaitrees3.requiresSilkTouch": "Benötigt Behutsamkeits upgrade",
+  "jei.bonsaitrees3.soiltime": "Ändert Wachstumszeit zu: %s",
+  "jei.bonsaitrees3.upgrades.title": "Bonsai Pots upgraden"
+}

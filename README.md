@@ -331,3 +331,15 @@ If you create a datapack or resource pack your paths will be slightly different.
 [Open Loader](https://www.curseforge.com/minecraft/mc-mods/open-loader) description and the wiki pages it links to
 ([1](https://minecraft.fandom.com/wiki/Data_pack), [2](https://minecraft.fandom.com/wiki/Resource_Pack)) to learn more
 about this.
+
+## Contributing to the project
+
+You can easily help in multiple ways:
+
+- Add translations using [POEditor](https://poeditor.com/join/project?hash=suslQZqFoE)
+- Create json files to support trees added by other mods
+- Create data packs for originally unintended things:
+  e.g. create a data+resource pack that allows growing iron/copper/gold nuggets. We are happy to promote those here and
+  on the CurseForge project page.
+- I am also looking for someone who can deal with Pull Requests for new trees/soils. If you know your way around json
+  and git and want to help, please feel free to contact me.
