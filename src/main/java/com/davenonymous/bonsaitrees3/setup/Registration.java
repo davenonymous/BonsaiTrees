@@ -11,6 +11,7 @@ import com.davenonymous.bonsaitrees3.registry.soil.SoilRecipeHelper;
 import com.davenonymous.bonsaitrees3.registry.soil.SoilSerializer;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -60,7 +61,7 @@ public class Registration {
 	public static final RegistryObject<MenuType<BonsaiPotContainer>> BONSAI_POT_CONTAINER = CONTAINERS.register("bonsaipot", () -> IForgeMenuType.create((windowId, inv, data) -> new BonsaiPotContainer(windowId, data.readBlockPos(), inv, inv.player)));
 
 	// Convenience function: Take a RegistryObject<Block> and make a corresponding RegistryObject<Item> from it
-	public static final Item.Properties ITEM_PROPERTIES = new Item.Properties().tab(ModSetup.ITEM_GROUP);
+	public static final Item.Properties ITEM_PROPERTIES = new Item.Properties().tab(CreativeModeTab.TAB_DECORATIONS);
 
 	private static <B extends Block> RegistryObject<Item> fromBlock(RegistryObject<B> block) {
 		return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), ITEM_PROPERTIES));

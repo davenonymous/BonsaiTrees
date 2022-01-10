@@ -7,8 +7,6 @@ import com.davenonymous.bonsaitrees3.libnonymous.base.BaseLanguageProvider;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.data.DataGenerator;
 
-import static com.davenonymous.bonsaitrees3.setup.ModSetup.TAB_NAME;
-
 public class DatagenTranslations extends BaseLanguageProvider {
 	public DatagenTranslations(DataGenerator gen, String locale) {
 		super(gen, BonsaiTrees3.MODID, locale);
@@ -16,7 +14,7 @@ public class DatagenTranslations extends BaseLanguageProvider {
 
 	@Override
 	protected void addTranslations() {
-		add("itemGroup." + TAB_NAME, "Bonsai Trees");
+
 		add(Registration.BONSAI_POT.get(), "Bonsai Pot");
 		add(Registration.BONSAI_POT_CONTAINER.get(), "Bonsai Pot");
 		add(BonsaiPotScreen.CUT_BUTTON_TOOLTIP_OK, "Click to cut the tree");
