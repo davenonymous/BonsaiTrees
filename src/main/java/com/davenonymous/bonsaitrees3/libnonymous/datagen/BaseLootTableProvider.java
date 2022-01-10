@@ -1,4 +1,4 @@
-package com.davenonymous.bonsaitrees3.datagen;
+package com.davenonymous.bonsaitrees3.libnonymous.datagen;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

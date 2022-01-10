@@ -1,6 +1,7 @@
 package com.davenonymous.bonsaitrees3.datagen.server;
 
-import com.davenonymous.bonsaitrees3.datagen.BaseDataProvider;
+import com.davenonymous.bonsaitrees3.BonsaiTrees3;
+import com.davenonymous.bonsaitrees3.libnonymous.datagen.BaseDataProvider;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.data.DataGenerator;
@@ -16,6 +17,11 @@ import java.util.Arrays;
 public class DatagenSoils extends BaseDataProvider {
 	public DatagenSoils(DataGenerator generator) {
 		super(generator, Type.DATA);
+	}
+
+	@Override
+	public String getModId() {
+		return BonsaiTrees3.MODID;
 	}
 
 	@Override

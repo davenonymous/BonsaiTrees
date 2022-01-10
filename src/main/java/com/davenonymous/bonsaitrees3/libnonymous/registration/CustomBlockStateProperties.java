@@ -1,4 +1,4 @@
-package com.davenonymous.bonsaitrees3.setup;
+package com.davenonymous.bonsaitrees3.libnonymous.registration;
 
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 

@@ -4,7 +4,7 @@ import com.davenonymous.bonsaitrees3.compat.top.ITopInfoProvider;
 import com.davenonymous.bonsaitrees3.config.CommonConfig;
 import com.davenonymous.bonsaitrees3.libnonymous.base.BaseBlock;
 import com.davenonymous.bonsaitrees3.libnonymous.base.BaseLanguageProvider;
-import com.davenonymous.bonsaitrees3.setup.CustomBlockStateProperties;
+import com.davenonymous.bonsaitrees3.libnonymous.registration.CustomBlockStateProperties;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;

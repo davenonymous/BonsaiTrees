@@ -1,6 +1,5 @@
-package com.davenonymous.bonsaitrees3.datagen;
+package com.davenonymous.bonsaitrees3.libnonymous.datagen;
 
-import com.davenonymous.bonsaitrees3.BonsaiTrees3;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
@@ -27,6 +26,8 @@ public abstract class BaseDataProvider implements DataProvider {
 	private Map<String, JsonObject> values = new HashMap<>();
 
 	public abstract void addValues();
+
+	public abstract String getModId();
 
 	public void add(String path, JsonObject value) {
 		this.values.put(path, value);
@@ -64,7 +65,7 @@ public abstract class BaseDataProvider implements DataProvider {
 
 	private void saveValue(HashCache cache, String key, JsonObject jsonObject) {
 		Path mainOutput = generator.getOutputFolder();
-		String pathSuffix = (type == Type.ASSETS ? "assets" : "data") + "/" + BonsaiTrees3.MODID + "/" + key + ".json";
+		String pathSuffix = (type == Type.ASSETS ? "assets" : "data") + "/" + getModId() + "/" + key + ".json";
 
 		Path outputPath = mainOutput.resolve(pathSuffix);
 		try {

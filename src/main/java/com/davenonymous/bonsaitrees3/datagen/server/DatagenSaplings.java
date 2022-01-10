@@ -1,6 +1,7 @@
 package com.davenonymous.bonsaitrees3.datagen.server;
 
-import com.davenonymous.bonsaitrees3.datagen.BaseDataProvider;
+import com.davenonymous.bonsaitrees3.BonsaiTrees3;
+import com.davenonymous.bonsaitrees3.libnonymous.datagen.BaseDataProvider;
 import com.davenonymous.bonsaitrees3.libnonymous.reflections.BlockStateProviderReflection;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -37,6 +38,11 @@ public class DatagenSaplings extends BaseDataProvider {
 
 	public DatagenSaplings(DataGenerator generator) {
 		super(generator, Type.DATA);
+	}
+
+	@Override
+	public String getModId() {
+		return BonsaiTrees3.MODID;
 	}
 
 	@Override
