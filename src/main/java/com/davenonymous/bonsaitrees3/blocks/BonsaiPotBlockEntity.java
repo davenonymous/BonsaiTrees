@@ -9,6 +9,7 @@ import com.davenonymous.bonsaitrees3.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees3.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees3.registry.soil.SoilInfo;
 import com.davenonymous.bonsaitrees3.setup.Registration;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.EnchantedBookItem;
@@ -411,7 +412,10 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	public void onDataLoaded() {
 		if(this.level != null) {
 			this.updateInfoObjects();
-			ModelDataManager.requestModelDataRefresh(this);
+			if(this.level instanceof ClientLevel) {
+				ModelDataManager.requestModelDataRefresh(this);
+			}
+
 			level.sendBlockUpdated(worldPosition, level.getBlockState(worldPosition), level.getBlockState(worldPosition), UPDATE_ALL);
 		}
 	}
