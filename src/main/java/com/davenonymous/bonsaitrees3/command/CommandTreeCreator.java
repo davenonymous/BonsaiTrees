@@ -42,6 +42,8 @@ public class CommandTreeCreator implements Command<CommandSourceStack> {
 
 		context.getSource().sendSuccess(new TextComponent("Model json copied to the clipboard!"), false);
 
+		context.getSource().sendSuccess(new TextComponent("JSON:" + model.serializePretty()), false);
+
 		return 0;
 	}
 }

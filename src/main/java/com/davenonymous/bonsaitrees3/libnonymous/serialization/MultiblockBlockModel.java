@@ -212,8 +212,8 @@ public class MultiblockBlockModel {
 	}
 
 	public String serializePretty() {
-		if(width == 0 || height == 0 || depth == 0) {
-			LOGGER.warn("Can not serialize model for type: '%s', invalid dimensions: w=%d, h=%d, d=%d", id, width, height, depth);
+		if(width + 1 == 0 || height + 1 == 0 || depth + 1 == 0) {
+			LOGGER.warn("Can not serialize model for type: '{}', invalid dimensions: w={}, h={}, d={}", id, width, height, depth);
 			return "";
 		}
 
