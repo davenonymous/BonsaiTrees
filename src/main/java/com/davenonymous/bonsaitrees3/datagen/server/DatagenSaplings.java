@@ -71,7 +71,7 @@ public class DatagenSaplings extends BaseDataProvider {
 	}
 
 	@SuppressWarnings("unchecked")
-	private ConfiguredFeature<TreeConfiguration, ?> getAsTreeConfiguration(ConfiguredFeature<?, ?> feature) {
+	public ConfiguredFeature<TreeConfiguration, ?> getAsTreeConfiguration(ConfiguredFeature<?, ?> feature) {
 		return (ConfiguredFeature<TreeConfiguration, ?>) feature;
 	}
 
@@ -182,16 +182,18 @@ public class DatagenSaplings extends BaseDataProvider {
 		add("recipes/sapling/" + fungusLocation.getNamespace() + "/" + fungusLocation.getPath(), root);
 	}
 
-	private void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature) {
+	public void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature) {
 		addSapling(saplingItem, treeFeature, new String[]{"dirt", "grass"});
 	}
 
-	private void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags) {
+	public void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags) {
 		var tc = treeFeature.config();
 
 		JsonObject root = new JsonObject();
 		root.addProperty("type", "bonsaitrees3:sapling");
-		root.addProperty("mod", "minecraft");
+		var mod = BuiltinRegistries.CONFIGURED_FEATURE.getResourceKey(treeFeature).get().location().getNamespace();
+		root.addProperty("mod", mod);
+		
 
 		JsonObject saplingObject = new JsonObject();
 		saplingObject.addProperty("item", saplingItem.getRegistryName().toString());
@@ -229,23 +231,27 @@ public class DatagenSaplings extends BaseDataProvider {
 		add("recipes/sapling/" + treeLocation.getNamespace() + "/" + treeLocation.getPath(), root);
 	}
 
-	private void addDrop(JsonArray drops, Block drop, int rolls, double chance) {
+	public void addDrop(JsonArray drops, Block drop, int rolls, double chance) {
 		addDrop(drops, new ItemStack(drop), rolls, chance, false);
 	}
 
-	private void addDrop(JsonArray drops, Block drop, int rolls, double chance, boolean requiresSilkTouch) {
+	public void addDrop(JsonArray drops, Block drop, int rolls, double chance, boolean requiresSilkTouch) {
 		addDrop(drops, new ItemStack(drop), rolls, chance, requiresSilkTouch);
 	}
 
-	private void addDrop(JsonArray drops, Item drop, int rolls, double chance) {
+	public void addDrop(JsonArray drops, Item drop, int rolls, double chance) {
 		addDrop(drops, new ItemStack(drop), rolls, chance, false);
 	}
 
-	private void addDrop(JsonArray drops, Item drop, int rolls, double chance, boolean requiresSilkTouch) {
+	public void addDrop(JsonArray drops, Item drop, int rolls, double chance, boolean requiresSilkTouch) {
 		addDrop(drops, new ItemStack(drop), rolls, chance, requiresSilkTouch);
 	}
 
-	private void addDrop(JsonArray drops, ItemStack drop, int rolls, double chance, boolean requiresSilkTouch) {
+	public void addDrop(JsonArray drops, ItemStack drop, int rolls, double chance, boolean requiresSilkTouch) {
+		if(drop.isEmpty()) {
+			return;
+		}
+
 		JsonObject root = new JsonObject();
 		root.addProperty("rolls", rolls);
 		root.addProperty("chance", getRounded(chance));

@@ -9,12 +9,16 @@ import com.davenonymous.bonsaitrees3.registry.sapling.SaplingSerializer;
 import com.davenonymous.bonsaitrees3.registry.soil.SoilInfo;
 import com.davenonymous.bonsaitrees3.registry.soil.SoilRecipeHelper;
 import com.davenonymous.bonsaitrees3.registry.soil.SoilSerializer;
+import net.minecraft.core.Registry;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -42,6 +46,8 @@ public class Registration {
 		CONTAINERS.register(bus);
 		RECIPE_SERIALIZERS.register(bus);
 	}
+
+	public static final ResourceKey<Level> GROWTOWN = ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(MODID, "growtown"));
 
 	public static RecipeType<SoilInfo> RECIPE_TYPE_SOIL;
 	public static SoilRecipeHelper RECIPE_HELPER_SOIL;
