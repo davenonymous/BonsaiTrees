@@ -1,0 +1,64 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/almond_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:dark_oak_log","properties":{"axis":"y"}},
+    "b": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"4","persistent":"false"}},
+    "c": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"2","persistent":"false"}},
+    "f": {"block":"croptopia:almond_crop","properties":{"age":"3","distance":"1"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bcecb",
+      "bcec ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      " ed  ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ede ",
+      " fad ",
+      "edade",
+      "edade",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  e  ",
+      "  d  ",
+      "cedef",
+      "cedec",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cec ",
+      "bcec ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

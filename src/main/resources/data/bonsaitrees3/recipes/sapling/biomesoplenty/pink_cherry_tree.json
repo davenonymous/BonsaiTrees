@@ -1,0 +1,42 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "mod": "biomesoplenty",
+  "sapling": {
+    "item": "biomesoplenty:pink_cherry_sapling"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "biomesoplenty:pink_cherry_sapling"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "biomesoplenty:cherry_log"
+      }
+    },
+    {
+      "rolls": 3,
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:stick"
+      }
+    },
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "biomesoplenty:pink_cherry_leaves"
+      },
+      "requiresSilkTouch": true
+    }
+  ],
+  "compatibleSoilTags": [
+    "dirt",
+    "grass"
+  ]
+}

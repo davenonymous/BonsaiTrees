@@ -1,0 +1,41 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "mod": "croptopia",
+  "sapling": {
+	"item": "croptopia:cinnamon_sapling"
+  },
+  "drops": [
+	{
+	  "rolls": 1,
+	  "chance": 0.05,
+	  "result": {
+		"item": "croptopia:cinnamon_sapling"
+	  }
+	},
+	{
+	  "rolls": 1,
+	  "chance": 0.75,
+	  "result": {
+		"item": "croptopia:cinnamon_log"
+	  }
+	},
+	{
+	  "rolls": 3,
+	  "chance": 0.2,
+	  "result": {
+		"item": "minecraft:stick"
+	  }
+	},
+	{
+	  "rolls": 1,
+	  "chance": 0.05,
+	  "result": {
+		"item": "croptopia:cinnamon"
+	  }
+	}
+  ],
+  "compatibleSoilTags": [
+	"dirt",
+	"grass"
+  ]
+}

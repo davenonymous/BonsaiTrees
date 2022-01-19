@@ -1,0 +1,64 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/pear_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:oak_leaves","properties":{"distance":"4","persistent":"false"}},
+    "b": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "c": {"block":"croptopia:pear_crop","properties":{"age":"3","distance":"1"}},
+    "d": {"block":"minecraft:oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "e": {"block":"minecraft:oak_leaves","properties":{"distance":"1","persistent":"false"}},
+    "f": {"block":"minecraft:oak_leaves","properties":{"distance":"2","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " dfc ",
+      "adfca",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  f  ",
+      "  cc ",
+      "dfefd",
+      "dfefd",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " fef ",
+      " ebe ",
+      "febef",
+      "cebef",
+      "  b  ",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  f  ",
+      "  e  ",
+      "dfefd",
+      "acefd",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "adfd ",
+      "adfca",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

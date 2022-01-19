@@ -1,0 +1,67 @@
+{
+  "type": "bonsaitrees3:sapling/biomesoplenty/magic_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:magic_leaves","properties":{"distance":"2","persistent":"false"}},
+    "b": {"block":"biomesoplenty:magic_log","properties":{"axis":"y"}},
+    "c": {"block":"biomesoplenty:magic_leaves","properties":{"distance":"1","persistent":"false"}},
+    "d": {"block":"biomesoplenty:magic_leaves","properties":{"distance":"3","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  ad ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  a  ",
+      "  c  ",
+      " aca ",
+      " acad",
+      " aca ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aca ",
+      " cbc ",
+      " cbc ",
+      "acbc ",
+      " cbc ",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "     ",
+      "  a  ",
+      "  c  ",
+      " aca ",
+      "daca ",
+      " aca ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

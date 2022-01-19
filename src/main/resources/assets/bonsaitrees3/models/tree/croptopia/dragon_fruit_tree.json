@@ -1,0 +1,89 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/dragon_fruit_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "b": {"block":"minecraft:oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "c": {"block":"minecraft:oak_leaves","properties":{"distance":"1","persistent":"false"}},
+    "d": {"block":"minecraft:oak_leaves","properties":{"distance":"2","persistent":"false"}},
+    "e": {"block":"croptopia:dragonfruit_crop","properties":{"age":"3","distance":"1"}},
+    "f": {"block":"minecraft:oak_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "fbdb ",
+      " bebf",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      "  c  ",
+      "bdcdb",
+      "bdcdb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " dcd ",
+      " cac ",
+      "dcaed",
+      "dcaed",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  d  ",
+      "  cd ",
+      "bdcdb",
+      "bdcdb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " bdbf",
+      " bdb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

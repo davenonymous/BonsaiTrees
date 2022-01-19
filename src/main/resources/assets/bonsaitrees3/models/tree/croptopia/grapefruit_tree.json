@@ -1,0 +1,69 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/grapefruit_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "b": {"block":"minecraft:jungle_leaves","properties":{"distance":"2","persistent":"false"}},
+    "c": {"block":"minecraft:jungle_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"minecraft:jungle_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"croptopia:grapefruit_crop","properties":{"age":"3","distance":"1"}},
+    "f": {"block":"minecraft:jungle_leaves","properties":{"distance":"7","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cbc ",
+      " cbef",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      " bd  ",
+      "cbdbc",
+      "ebeee",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " beb ",
+      " dae ",
+      "bdadb",
+      "bdadb",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      " bdb ",
+      "ebdbc",
+      "cbdbc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cbc ",
+      " cbc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

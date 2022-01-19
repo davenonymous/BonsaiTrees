@@ -1,0 +1,58 @@
+{
+  "type": "bonsaitrees3:sapling/biomesoplenty/small_dead_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:dead_log","properties":{"axis":"y"}},
+    "b": {"block":"biomesoplenty:dead_leaves","properties":{"distance":"3","persistent":"false"}},
+    "c": {"block":"biomesoplenty:dead_leaves","properties":{"distance":"1","persistent":"false"}},
+    "d": {"block":"biomesoplenty:dead_leaves","properties":{"distance":"2","persistent":"false"}},
+    "e": {"block":"biomesoplenty:dead_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " bdbe",
+      " bdb ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      "  cd ",
+      "bdcdb",
+      "bdcdb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " dcd ",
+      " cac ",
+      "dcacd",
+      "dcacd",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  d  ",
+      "  cd ",
+      "bdcdb",
+      "bdcdb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " bdb ",
+      " bdbe",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

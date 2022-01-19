@@ -1,0 +1,59 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/walnut_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:dark_oak_log","properties":{"axis":"y"}},
+    "b": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "c": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"1","persistent":"false"}},
+    "d": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"2","persistent":"false"}},
+    "e": {"block":"croptopia:walnut_crop","properties":{"age":"3","distance":"1"}},
+    "f": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " bdbf",
+      "fbdb ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      " dcd ",
+      "bdcde",
+      "becdb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " dcd ",
+      " cac ",
+      "ecacd",
+      "dcaed",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  e  ",
+      " dcd ",
+      "bdedb",
+      "bdceb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " bdb ",
+      " bdb ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

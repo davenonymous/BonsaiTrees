@@ -1,0 +1,68 @@
+{
+  "type": "bonsaitrees3:sapling/biomesoplenty/maple_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "b": {"block":"biomesoplenty:maple_leaves","properties":{"distance":"2","persistent":"false"}},
+    "c": {"block":"biomesoplenty:maple_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"biomesoplenty:maple_leaves","properties":{"distance":"4","persistent":"false"}},
+    "e": {"block":"biomesoplenty:maple_leaves","properties":{"distance":"1","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cbcd",
+      "dcbcd",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "  eb ",
+      "cbebc",
+      "cbebc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " beb ",
+      " eae ",
+      "beaeb",
+      "beaeb",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      "  e  ",
+      "cbebc",
+      "cbebc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cbc ",
+      "dcbc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

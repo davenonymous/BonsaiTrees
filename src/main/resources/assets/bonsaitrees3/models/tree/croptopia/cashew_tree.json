@@ -1,0 +1,53 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/cashew_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"2","persistent":"false"}},
+    "b": {"block":"minecraft:dark_oak_log","properties":{"axis":"y"}},
+    "c": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cace",
+      "ecace",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " ad  ",
+      "cadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      " ada ",
+      " dbd ",
+      "adbda",
+      "adbda",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      " ad  ",
+      "cadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "ecac ",
+      " cac ",
+      "     ",
+      "     "
+    ]
+  ]
+}

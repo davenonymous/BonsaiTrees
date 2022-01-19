@@ -1,0 +1,53 @@
+{
+  "type": "bonsaitrees3:sapling/biomesoplenty/white_cherry_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:white_cherry_leaves","properties":{"distance":"2","persistent":"false"}},
+    "b": {"block":"biomesoplenty:cherry_log","properties":{"axis":"y"}},
+    "c": {"block":"biomesoplenty:white_cherry_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"biomesoplenty:white_cherry_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"biomesoplenty:white_cherry_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cac ",
+      "ecac ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  da ",
+      "cadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      " ada ",
+      " dbd ",
+      "adbda",
+      "adbda",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      "  da ",
+      "cadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cac ",
+      " cac ",
+      "     ",
+      "     "
+    ]
+  ]
+}

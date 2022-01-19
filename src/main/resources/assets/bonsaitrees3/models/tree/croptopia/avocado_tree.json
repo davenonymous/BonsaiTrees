@@ -1,0 +1,69 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/avocado_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:spruce_log","properties":{"axis":"y"}},
+    "b": {"block":"minecraft:oak_leaves","properties":{"distance":"2","persistent":"false"}},
+    "c": {"block":"minecraft:oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"minecraft:oak_leaves","properties":{"distance":"4","persistent":"false"}},
+    "e": {"block":"minecraft:oak_leaves","properties":{"distance":"1","persistent":"false"}},
+    "f": {"block":"croptopia:avocado_crop","properties":{"age":"3","distance":"1"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cbc ",
+      "fcbc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "  e  ",
+      "cbebc",
+      "cbebc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " beb ",
+      " eae ",
+      "beaeb",
+      "beaeb",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  f  ",
+      " be  ",
+      "cbebc",
+      "cbebc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cbc ",
+      "dcbc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

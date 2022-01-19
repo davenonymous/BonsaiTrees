@@ -1,0 +1,76 @@
+{
+  "type": "bonsaitrees3:sapling/biomesoplenty/palm_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:palm_log","properties":{"axis":"y"}},
+    "b": {"block":"biomesoplenty:palm_leaves","properties":{"distance":"7","persistent":"true"}},
+    "c": {"block":"biomesoplenty:palm_leaves","properties":{"distance":"1","persistent":"true"}}
+  },
+  "shape": [
+    [
+      "  b  ",
+      "     ",
+      "b   b",
+      "  b  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " b b ",
+      "  c  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "b   b",
+      "  c  ",
+      " cac ",
+      "b a b",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "     ",
+      " b b ",
+      "  c  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "     ",
+      "b   b",
+      "  b  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

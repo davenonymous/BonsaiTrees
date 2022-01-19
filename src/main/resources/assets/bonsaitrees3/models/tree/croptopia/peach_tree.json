@@ -1,0 +1,59 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/peach_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "b": {"block":"minecraft:oak_leaves","properties":{"distance":"4","persistent":"false"}},
+    "c": {"block":"minecraft:oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"croptopia:peach_crop","properties":{"age":"3","distance":"1"}},
+    "e": {"block":"minecraft:oak_leaves","properties":{"distance":"2","persistent":"false"}},
+    "f": {"block":"minecraft:oak_leaves","properties":{"distance":"1","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bcecb",
+      " cec ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      " efe ",
+      "dedec",
+      "cefec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " efe ",
+      " faf ",
+      "efafe",
+      "efafe",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  e  ",
+      " df  ",
+      "cefec",
+      "cefdc",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bcec ",
+      "bcec ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

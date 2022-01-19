@@ -1,0 +1,58 @@
+{
+  "type": "bonsaitrees3:sapling/biomesoplenty/orange_autumn_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:dark_oak_log","properties":{"axis":"y"}},
+    "b": {"block":"biomesoplenty:orange_autumn_leaves","properties":{"distance":"4","persistent":"false"}},
+    "c": {"block":"biomesoplenty:orange_autumn_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"biomesoplenty:orange_autumn_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"biomesoplenty:orange_autumn_leaves","properties":{"distance":"2","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bcec ",
+      "bcecb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      "  de ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ede ",
+      " dad ",
+      "edade",
+      "edade",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  e  ",
+      " ede ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cec ",
+      "bcec ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "type": "bonsaitrees3:sapling/biomesoplenty/rainbow_birch_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:rainbow_birch_leaves","properties":{"distance":"2","persistent":"false"}},
+    "b": {"block":"biomesoplenty:rainbow_birch_leaves","properties":{"distance":"1","persistent":"false"}},
+    "c": {"block":"biomesoplenty:rainbow_birch_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"minecraft:birch_log","properties":{"axis":"y"}},
+    "e": {"block":"biomesoplenty:rainbow_birch_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cace",
+      "ecace",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aba ",
+      "cabac",
+      "cabac",
+      "     "
+    ],
+    [
+      " aba ",
+      " bdb ",
+      "abdba",
+      "abdba",
+      "  d  "
+    ],
+    [
+      "  a  ",
+      " ab  ",
+      "cabac",
+      "cabac",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cace",
+      " cac ",
+      "     "
+    ]
+  ]
+}

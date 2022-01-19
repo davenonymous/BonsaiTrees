@@ -1,0 +1,42 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "mod": "biomesoplenty",
+  "sapling": {
+    "item": "biomesoplenty:dead_sapling"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "biomesoplenty:dead_sapling"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "biomesoplenty:dead_log"
+      }
+    },
+    {
+      "rolls": 3,
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:stick"
+      }
+    },
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "biomesoplenty:dead_leaves"
+      },
+      "requiresSilkTouch": true
+    }
+  ],
+  "compatibleSoilTags": [
+    "dirt",
+    "grass"
+  ]
+}

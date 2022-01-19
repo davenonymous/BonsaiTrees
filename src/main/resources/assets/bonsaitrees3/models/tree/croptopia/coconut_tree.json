@@ -1,0 +1,74 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/coconut_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:jungle_leaves","properties":{"distance":"3","persistent":"false"}},
+    "b": {"block":"minecraft:jungle_leaves","properties":{"distance":"1","persistent":"false"}},
+    "c": {"block":"minecraft:jungle_leaves","properties":{"distance":"2","persistent":"false"}},
+    "d": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "e": {"block":"minecraft:jungle_leaves","properties":{"distance":"4","persistent":"false"}},
+    "f": {"block":"croptopia:coconut_crop","properties":{"age":"3","distance":"1"}}
+  },
+  "shape": [
+    [
+      "      ",
+      " c    ",
+      "cfc   ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "  aae ",
+      "cbccae",
+      "bdb   ",
+      "  dd  ",
+      "   d  ",
+      "   d  ",
+      "   d  ",
+      "   d  "
+    ],
+    [
+      " aacae",
+      " ccbca",
+      "cb d  ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      " acbcf",
+      " cbdbc",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      " eaffe",
+      " acfca",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "  eae ",
+      " facae",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ]
+  ]
+}

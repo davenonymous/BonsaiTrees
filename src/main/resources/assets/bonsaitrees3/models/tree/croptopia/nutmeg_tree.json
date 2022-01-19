@@ -1,0 +1,74 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/nutmeg_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "b": {"block":"minecraft:jungle_leaves","properties":{"distance":"2","persistent":"false"}},
+    "c": {"block":"minecraft:jungle_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"minecraft:jungle_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"croptopia:nutmeg_crop","properties":{"age":"3","distance":"1"}},
+    "f": {"block":"minecraft:jungle_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "fcbc ",
+      " cbce",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "  db ",
+      "cbdbc",
+      "cbdbc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bdb ",
+      " dad ",
+      "beadb",
+      "beade",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      "  db ",
+      "cbdbc",
+      "cedbc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cbc ",
+      "fcbc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

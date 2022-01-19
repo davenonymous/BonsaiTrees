@@ -1,0 +1,54 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/pecan_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"2","persistent":"false"}},
+    "b": {"block":"minecraft:dark_oak_log","properties":{"axis":"y"}},
+    "c": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"croptopia:pecan_crop","properties":{"age":"3","distance":"1"}},
+    "f": {"block":"minecraft:dark_oak_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "fcac ",
+      " cac ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  da ",
+      "cadae",
+      "eadac",
+      "     ",
+      "     "
+    ],
+    [
+      " ada ",
+      " dbd ",
+      "adbee",
+      "edbda",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      " ada ",
+      "cadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "feac ",
+      "fcacf",
+      "     ",
+      "     "
+    ]
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "mod": "croptopia",
+  "sapling": {
+	"item": "croptopia:kumquat_sapling"
+  },
+  "drops": [
+	{
+	  "rolls": 1,
+	  "chance": 0.05,
+	  "result": {
+		"item": "croptopia:kumquat_sapling"
+	  }
+	},
+	{
+	  "rolls": 1,
+	  "chance": 0.75,
+	  "result": {
+		"item": "minecraft:jungle_log"
+	  }
+	},
+	{
+	  "rolls": 3,
+	  "chance": 0.2,
+	  "result": {
+		"item": "minecraft:stick"
+	  }
+	},
+	{
+	  "rolls": 2,
+	  "chance": 0.18,
+	  "result": {
+		"item": "minecraft:jungle_leaves"
+	  },
+	  "requiresSilkTouch": true
+	},
+	{
+	  "rolls": 1,
+	  "chance": 0.05,
+	  "result": {
+		"item": "croptopia:kumquat"
+	  },
+	  "requiresBees": true
+	}
+  ],
+  "compatibleSoilTags": [
+	"dirt",
+	"grass"
+  ]
+}

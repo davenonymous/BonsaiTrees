@@ -1,0 +1,89 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/kumquat_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "b": {"block":"minecraft:jungle_leaves","properties":{"distance":"4","persistent":"false"}},
+    "c": {"block":"croptopia:kumquat_crop","properties":{"age":"3","distance":"1"}},
+    "d": {"block":"minecraft:jungle_leaves","properties":{"distance":"3","persistent":"false"}},
+    "e": {"block":"minecraft:jungle_leaves","properties":{"distance":"1","persistent":"false"}},
+    "f": {"block":"minecraft:jungle_leaves","properties":{"distance":"2","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bdfd ",
+      " dfdb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  f  ",
+      " fe  ",
+      "dfecd",
+      "dcefd",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " fcf ",
+      " eae ",
+      "feaef",
+      "feaec",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  f  ",
+      " cef ",
+      "dfefd",
+      "dfefd",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "cdfd ",
+      "bdfdb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

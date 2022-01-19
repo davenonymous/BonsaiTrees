@@ -1,0 +1,69 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/orange_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "b": {"block":"croptopia:orange_crop","properties":{"age":"3","distance":"1"}},
+    "c": {"block":"minecraft:oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"minecraft:oak_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"minecraft:oak_leaves","properties":{"distance":"2","persistent":"false"}},
+    "f": {"block":"minecraft:oak_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cecf",
+      "fcecf",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      " ed  ",
+      "cedbb",
+      "cedec",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ebe ",
+      " dad ",
+      "edade",
+      "edade",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      "  d  ",
+      "cbbec",
+      "cedec",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " bebb",
+      " cec ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

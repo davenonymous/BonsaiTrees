@@ -1,0 +1,48 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/cinnamon_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"croptopia:cinnamon_leaves","properties":{"distance":"2","persistent":"false"}},
+    "b": {"block":"croptopia:cinnamon_leaves","properties":{"distance":"1","persistent":"false"}},
+    "c": {"block":"croptopia:cinnamon_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"croptopia:cinnamon_log","properties":{"axis":"y"}},
+    "e": {"block":"croptopia:cinnamon_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cace",
+      "ecace",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  ba ",
+      "cabac",
+      "cabac",
+      "     "
+    ],
+    [
+      " aba ",
+      " bdb ",
+      "abdba",
+      "abdba",
+      "  d  "
+    ],
+    [
+      "  a  ",
+      " aba ",
+      "cabac",
+      "cabac",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cac ",
+      "ecace",
+      "     "
+    ]
+  ]
+}

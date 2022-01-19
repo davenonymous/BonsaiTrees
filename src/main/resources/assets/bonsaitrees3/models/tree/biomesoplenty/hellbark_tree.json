@@ -1,0 +1,31 @@
+{
+  "type": "bonsaitrees3:sapling/biomesoplenty/hellbark_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:hellbark_leaves","properties":{"distance":"1","persistent":"false"}},
+    "b": {"block":"biomesoplenty:hellbark_log","properties":{"axis":"y"}}
+  },
+  "shape": [
+    [
+      "   ",
+      " a ",
+      "   ",
+      " a ",
+      "   "
+    ],
+    [
+      " a ",
+      "aba",
+      "ab ",
+      "aba",
+      " b "
+    ],
+    [
+      "   ",
+      "   ",
+      "   ",
+      " a ",
+      "   "
+    ]
+  ]
+}

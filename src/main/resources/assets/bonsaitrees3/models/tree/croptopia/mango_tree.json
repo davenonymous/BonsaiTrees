@@ -1,0 +1,64 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/mango_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:jungle_leaves","properties":{"distance":"4","persistent":"false"}},
+    "b": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "c": {"block":"minecraft:jungle_leaves","properties":{"distance":"2","persistent":"false"}},
+    "d": {"block":"minecraft:jungle_leaves","properties":{"distance":"3","persistent":"false"}},
+    "e": {"block":"minecraft:jungle_leaves","properties":{"distance":"1","persistent":"false"}},
+    "f": {"block":"croptopia:mango_crop","properties":{"age":"3","distance":"1"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "adcd ",
+      "adfd ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      "  ec ",
+      "dcecd",
+      "dcecd",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " cec ",
+      " ebe ",
+      "cebec",
+      "febec",
+      "  b  ",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  c  ",
+      "  e  ",
+      "dcecd",
+      "dcecd",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "adcd ",
+      "adcda",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

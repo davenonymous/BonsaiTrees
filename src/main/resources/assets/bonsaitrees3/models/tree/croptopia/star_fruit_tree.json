@@ -1,0 +1,59 @@
+{
+  "type": "bonsaitrees3:sapling/croptopia/star_fruit_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:oak_leaves","properties":{"distance":"4","persistent":"false"}},
+    "b": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "c": {"block":"minecraft:oak_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"minecraft:oak_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"minecraft:oak_leaves","properties":{"distance":"2","persistent":"false"}},
+    "f": {"block":"croptopia:starfruit_crop","properties":{"age":"3","distance":"1"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "aceca",
+      " cec ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      " ed  ",
+      "cfdfc",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " efe ",
+      " dbd ",
+      "edbde",
+      "edbff",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  e  ",
+      " ede ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "aceca",
+      " ceca",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}
