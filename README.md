@@ -41,6 +41,10 @@ Some of the things a tree produces requires a Silk Touch upgrade. You can either
 appropriately enchanted book into one of the upgrade slots. This does not prevent you from putting additional Fortune
 Upgrades into the Bonsai Pot.
 
+### Bee Hives - or Nests
+
+Your Bonsai won't produce any fruits unless you pollinate them. Easiest is to stick a Bee Hive in there!
+
 ### Fortune
 
 Increases number of rolls and chance for each possible drop. The higher the level the more items you get and the higher
@@ -113,7 +117,7 @@ Create the sapling recipe:
     {
       "rolls": 2, "chance": 0.05,
       "result": { "item": "minecraft:flowering_azalea_leaves" },
-      "requiresSilkTouch": true
+      "requiresBees": true                      // Indicates that this item only drops if a Bee Hive/Nest upgrade is installed
     }
   ],
   "compatibleSoilTags": ["dirt", "grass"]       // What types of soil this tree can grow on
