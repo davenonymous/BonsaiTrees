@@ -33,6 +33,14 @@
         "item": "minecraft:jungle_leaves"
       },
       "requiresSilkTouch": true
+    },
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "minecraft:cocoa_beans"
+      },
+      "requiresBees": true
     }
   ],
   "compatibleSoilTags": [

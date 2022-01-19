@@ -24,7 +24,9 @@
 
 	  "structures": {
 		"stronghold": {
-		  
+		  "distance": 1000,
+		  "count": 0,
+		  "spread": 0
 		},
 		"structures": {
 		}

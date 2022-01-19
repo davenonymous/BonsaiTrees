@@ -33,6 +33,14 @@
         "item": "minecraft:oak_leaves"
       },
       "requiresSilkTouch": true
+    },
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "minecraft:apple"
+      },
+      "requiresBees": true
     }
   ],
   "compatibleSoilTags": [
