@@ -3,6 +3,7 @@ package com.davenonymous.bonsaitrees3.datagen.server;
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
 import com.davenonymous.bonsaitrees3.libnonymous.datagen.BaseDataProvider;
 import com.davenonymous.bonsaitrees3.libnonymous.reflections.BlockStateProviderReflection;
+import com.davenonymous.bonsaitrees3.registry.sapling.SaplingDrop;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.mojang.datafixers.util.Pair;
@@ -50,8 +51,8 @@ public class DatagenSaplings extends BaseDataProvider {
 		addSapling(Items.ACACIA_SAPLING, TreeFeatures.ACACIA);
 		addSapling(Items.BIRCH_SAPLING, TreeFeatures.BIRCH);
 		addSapling(Items.DARK_OAK_SAPLING, TreeFeatures.DARK_OAK);
-		addSapling(Items.JUNGLE_SAPLING, TreeFeatures.JUNGLE_TREE);
-		addSapling(Items.OAK_SAPLING, TreeFeatures.OAK);
+		addSapling(Items.JUNGLE_SAPLING, TreeFeatures.JUNGLE_TREE, fruitDrop(Items.COCOA_BEANS));
+		addSapling(Items.OAK_SAPLING, TreeFeatures.OAK, fruitDrop(Items.APPLE));
 		addSapling(Items.SPRUCE_SAPLING, TreeFeatures.SPRUCE);
 		addSapling(Items.AZALEA, getAsTreeConfiguration(TreeFeatures.AZALEA_TREE));
 
@@ -68,6 +69,10 @@ public class DatagenSaplings extends BaseDataProvider {
 		addCoral(Items.TUBE_CORAL, Items.DEAD_TUBE_CORAL, Blocks.TUBE_CORAL_BLOCK);
 
 		addChorus();
+	}
+
+	public static SaplingDrop fruitDrop(Item item) {
+		return new SaplingDrop(item, 0.05f, 1, false, true);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -186,14 +191,22 @@ public class DatagenSaplings extends BaseDataProvider {
 		addSapling(saplingItem, treeFeature, new String[]{"dirt", "grass"});
 	}
 
+	public void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, SaplingDrop... extraDrops) {
+		addSapling(saplingItem, treeFeature, new String[]{"dirt", "grass"}, extraDrops);
+	}
+
 	public void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags) {
+		addSapling(saplingItem, treeFeature, compatibleTags, null);
+	}
+
+	public void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags, SaplingDrop... extraDrops) {
 		var tc = treeFeature.config();
 
 		JsonObject root = new JsonObject();
 		root.addProperty("type", "bonsaitrees3:sapling");
 		var mod = BuiltinRegistries.CONFIGURED_FEATURE.getResourceKey(treeFeature).get().location().getNamespace();
 		root.addProperty("mod", mod);
-		
+
 
 		JsonObject saplingObject = new JsonObject();
 		saplingObject.addProperty("item", saplingItem.getRegistryName().toString());
@@ -219,6 +232,12 @@ public class DatagenSaplings extends BaseDataProvider {
 			addDrop(drops, foliageItem, 2, 0.2f * chance, true);
 		}
 
+		if(extraDrops != null) {
+			for(var drop : extraDrops) {
+				addDrop(drops, drop);
+			}
+		}
+
 		root.add("drops", drops);
 
 		if(compatibleTags.length > 0) {
@@ -231,23 +250,45 @@ public class DatagenSaplings extends BaseDataProvider {
 		add("recipes/sapling/" + treeLocation.getNamespace() + "/" + treeLocation.getPath(), root);
 	}
 
+	public void addDrop(JsonArray drops, SaplingDrop drop) {
+		JsonObject root = new JsonObject();
+		root.addProperty("rolls", drop.rolls);
+		root.addProperty("chance", getRounded(drop.chance));
+		root.add("result", new Ingredient.ItemValue(drop.resultStack).serialize());
+		if(drop.requiresSilkTouch) {
+			root.addProperty("requiresSilkTouch", true);
+		}
+		if(drop.requiresBees) {
+			root.addProperty("requiresBees", true);
+		}
+		drops.add(root);
+	}
+
 	public void addDrop(JsonArray drops, Block drop, int rolls, double chance) {
-		addDrop(drops, new ItemStack(drop), rolls, chance, false);
+		addDrop(drops, new ItemStack(drop), rolls, chance, false, false);
 	}
 
 	public void addDrop(JsonArray drops, Block drop, int rolls, double chance, boolean requiresSilkTouch) {
-		addDrop(drops, new ItemStack(drop), rolls, chance, requiresSilkTouch);
+		addDrop(drops, new ItemStack(drop), rolls, chance, requiresSilkTouch, false);
+	}
+
+	public void addDrop(JsonArray drops, Block drop, int rolls, double chance, boolean requiresSilkTouch, boolean requiresBees) {
+		addDrop(drops, new ItemStack(drop), rolls, chance, requiresSilkTouch, requiresBees);
 	}
 
 	public void addDrop(JsonArray drops, Item drop, int rolls, double chance) {
-		addDrop(drops, new ItemStack(drop), rolls, chance, false);
+		addDrop(drops, new ItemStack(drop), rolls, chance, false, false);
 	}
 
 	public void addDrop(JsonArray drops, Item drop, int rolls, double chance, boolean requiresSilkTouch) {
-		addDrop(drops, new ItemStack(drop), rolls, chance, requiresSilkTouch);
+		addDrop(drops, new ItemStack(drop), rolls, chance, requiresSilkTouch, false);
 	}
 
-	public void addDrop(JsonArray drops, ItemStack drop, int rolls, double chance, boolean requiresSilkTouch) {
+	public void addDrop(JsonArray drops, Item drop, int rolls, double chance, boolean requiresSilkTouch, boolean requiresBees) {
+		addDrop(drops, new ItemStack(drop), rolls, chance, requiresSilkTouch, requiresBees);
+	}
+
+	public void addDrop(JsonArray drops, ItemStack drop, int rolls, double chance, boolean requiresSilkTouch, boolean requiresBees) {
 		if(drop.isEmpty()) {
 			return;
 		}
@@ -258,6 +299,9 @@ public class DatagenSaplings extends BaseDataProvider {
 		root.add("result", new Ingredient.ItemValue(drop).serialize());
 		if(requiresSilkTouch) {
 			root.addProperty("requiresSilkTouch", true);
+		}
+		if(requiresBees) {
+			root.addProperty("requiresBees", true);
 		}
 		drops.add(root);
 	}

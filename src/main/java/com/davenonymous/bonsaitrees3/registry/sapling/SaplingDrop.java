@@ -4,6 +4,7 @@ import com.davenonymous.bonsaitrees3.config.CommonConfig;
 import com.davenonymous.bonsaitrees3.libnonymous.json.MCJsonUtils;
 import com.google.gson.JsonObject;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Random;
@@ -13,12 +14,22 @@ public class SaplingDrop {
 	public float chance;
 	public int rolls;
 	public boolean requiresSilkTouch;
+	public boolean requiresBees;
 
-	public SaplingDrop(ItemStack resultStack, float chance, int rolls, boolean requiresSilkTouch) {
+	public SaplingDrop(Item item, float chance, int rolls, boolean requiresSilkTouch, boolean requiresBees) {
+		this.resultStack = new ItemStack(item);
+		this.chance = chance;
+		this.rolls = rolls;
+		this.requiresSilkTouch = requiresSilkTouch;
+		this.requiresBees = requiresBees;
+	}
+
+	public SaplingDrop(ItemStack resultStack, float chance, int rolls, boolean requiresSilkTouch, boolean requiresBees) {
 		this.resultStack = resultStack;
 		this.chance = chance;
 		this.rolls = rolls;
 		this.requiresSilkTouch = requiresSilkTouch;
+		this.requiresBees = requiresBees;
 	}
 
 	public SaplingDrop(JsonObject json) {
@@ -26,6 +37,7 @@ public class SaplingDrop {
 		this.chance = json.get("chance").getAsFloat();
 		this.rolls = json.get("rolls").getAsInt();
 		this.requiresSilkTouch = json.has("requiresSilkTouch") && json.get("requiresSilkTouch").getAsBoolean();
+		this.requiresBees = json.has("requiresBees") && json.get("requiresBees").getAsBoolean();
 	}
 
 	public SaplingDrop(FriendlyByteBuf buffer) {
@@ -33,6 +45,7 @@ public class SaplingDrop {
 		this.chance = buffer.readFloat();
 		this.rolls = buffer.readInt();
 		this.requiresSilkTouch = buffer.readBoolean();
+		this.requiresBees = buffer.readBoolean();
 	}
 
 	public void write(FriendlyByteBuf buffer) {
@@ -40,6 +53,7 @@ public class SaplingDrop {
 		buffer.writeFloat(this.chance);
 		buffer.writeInt(this.rolls);
 		buffer.writeBoolean(this.requiresSilkTouch);
+		buffer.writeBoolean(this.requiresBees);
 	}
 
 	public ItemStack getRandomDrop(Random rand, int fortuneLevel) {
@@ -67,6 +81,6 @@ public class SaplingDrop {
 
 	@Override
 	public String toString() {
-		return "SaplingDrop{" + "stack=" + resultStack + ", chance=" + chance + ", rolls=" + rolls + ", silky=" + requiresSilkTouch + "}";
+		return "SaplingDrop{" + "stack=" + resultStack + ", chance=" + chance + ", rolls=" + rolls + ", silky=" + requiresSilkTouch + ", pollinated=" + requiresBees + "}";
 	}
 }

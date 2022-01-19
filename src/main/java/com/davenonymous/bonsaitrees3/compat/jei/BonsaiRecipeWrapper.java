@@ -106,6 +106,10 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 			if(slotDrop[slot - 2].requiresSilkTouch) {
 				tooltip.add(tooltip.size() - 1, new TextComponent(ChatFormatting.RED + I18n.get("jei.bonsaitrees3.requiresSilkTouch")));
 			}
+
+			if(slotDrop[slot - 2].requiresBees) {
+				tooltip.add(tooltip.size() - 1, new TextComponent(ChatFormatting.RED + I18n.get("jei.bonsaitrees3.requiresBees")));
+			}
 		}
 	}
 

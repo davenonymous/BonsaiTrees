@@ -36,6 +36,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 	public static final Translatable UPGRADE_TEXT_FORTUNE = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.fortune");
 	public static final Translatable UPGRADE_TEXT_EFFICIENCY = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.efficiency");
 	public static final Translatable UPGRADE_TEXT_SILKTOUCH = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.silktouch");
+	public static final Translatable UPGRADE_TEXT_BEES = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.bees");
 
 	@Override
 	public ResourceLocation getPluginUid() {
@@ -82,7 +83,19 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 		silkTouchItems.addAll(EnchantmentHelper.getEnchantmentBooks(Enchantments.SILK_TOUCH));
 		silkTouchItems.addAll(axeItems.stream().map(ItemStack::copy).peek(stack -> stack.enchant(Enchantments.SILK_TOUCH, 1)).toList());
 
-		var upgradeRecipes = List.of(new BonsaiUpgradeWrapper(UPGRADE_TEXT_HOPPING, new ItemStack(Blocks.HOPPER)), new BonsaiUpgradeWrapper(UPGRADE_TEXT_AUTOCUT, axeItems), new BonsaiUpgradeWrapper(UPGRADE_TEXT_FORTUNE, fortuneItems), new BonsaiUpgradeWrapper(UPGRADE_TEXT_EFFICIENCY, efficiencyItems), new BonsaiUpgradeWrapper(UPGRADE_TEXT_SILKTOUCH, silkTouchItems));
+		List<ItemStack> beeItems = new ArrayList<>();
+		beeItems.add(new ItemStack(Blocks.BEEHIVE));
+		beeItems.add(new ItemStack(Blocks.BEE_NEST));
+
+
+		var upgradeRecipes = List.of(
+				new BonsaiUpgradeWrapper(UPGRADE_TEXT_HOPPING, new ItemStack(Blocks.HOPPER)),
+				new BonsaiUpgradeWrapper(UPGRADE_TEXT_AUTOCUT, axeItems),
+				new BonsaiUpgradeWrapper(UPGRADE_TEXT_FORTUNE, fortuneItems),
+				new BonsaiUpgradeWrapper(UPGRADE_TEXT_EFFICIENCY, efficiencyItems),
+				new BonsaiUpgradeWrapper(UPGRADE_TEXT_SILKTOUCH, silkTouchItems),
+				new BonsaiUpgradeWrapper(UPGRADE_TEXT_BEES, beeItems)
+		);
 		registration.addRecipes(upgradeRecipes, BonsaiUpgradeCategory.ID);
 	}
 

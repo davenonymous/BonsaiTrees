@@ -24,6 +24,7 @@ public class DatagenTranslations extends BaseLanguageProvider {
 		add("jei.bonsaitrees3.upgrades.title", "Upgrading Bonsai Pots");
 
 		add("jei.bonsaitrees3.requiresSilkTouch", "Requires Silk Touch upgrade");
+		add("jei.bonsaitrees3.requiresBees", "Requires a Bee Hive upgrade");
 		add("jei.bonsaitrees3.growtime", "Time to grow: %s");
 		add("jei.bonsaitrees3.soiltime", "Changes growtime to: %s");
 		add("jei.bonsaitrees3.chance", "Chance: %d%%");
@@ -32,6 +33,8 @@ public class DatagenTranslations extends BaseLanguageProvider {
 		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_FORTUNE, "Increase drop rolls and chances");
 		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_EFFICIENCY, "Reduce sapling grow time");
 		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_HOPPING, "Export drops to the block below");
-		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_SILKTOUCH, "Do not void drops requiring silk touch");
+		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_SILKTOUCH, "Be careful and get leaf drops");
+		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_BEES, "Pollinate and get fruit drops");
+
 	}
 }

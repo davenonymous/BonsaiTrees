@@ -72,6 +72,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	private boolean autoCut = false;
 	private boolean hopping = false;
 	private boolean hasSilkTouch = false;
+	private boolean hasBeeHive = false;
 	private int fortune = 0;
 	private int efficiency = 0;
 
@@ -239,6 +240,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		hopping = false;
 		autoCut = false;
 		hasSilkTouch = false;
+		hasBeeHive = false;
 		fortune = 0;
 		efficiency = 0;
 
@@ -246,6 +248,10 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			var stack = this.upgradeItemStacks.getStackInSlot(slot);
 			if(stack.isEmpty()) {
 				continue;
+			}
+
+			if(stack.is(Blocks.BEE_NEST.asItem()) || stack.is(Blocks.BEEHIVE.asItem())) {
+				hasBeeHive = true;
 			}
 
 			if(stack.is(Blocks.HOPPER.asItem())) {
@@ -310,7 +316,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return false;
 		}
 
-		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(getLevel().random, fortune, hasSilkTouch);
+		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(getLevel().random, fortune, hasSilkTouch, hasBeeHive);
 
 		// Test if all stacks fit in the output slots
 		boolean allFit = true;
@@ -426,6 +432,10 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 	public static boolean isUpgradeItem(ItemStack stack) {
 		if(stack.is(Blocks.HOPPER.asItem())) {
+			return true;
+		}
+
+		if(stack.is(Blocks.BEEHIVE.asItem()) || stack.is(Blocks.BEE_NEST.asItem())) {
 			return true;
 		}
 

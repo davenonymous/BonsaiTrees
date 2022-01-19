@@ -42,7 +42,7 @@ public class CommandListSaplingDrops implements Command<CommandSourceStack> {
 		context.getSource().sendSuccess(new TextComponent("Registered drops for bonsai tree: " + type), false);
 		for(SaplingDrop drop : saplingInfo.drops) {
 			Component stackName = drop.resultStack.getDisplayName();
-			stackName.getSiblings().add(new TextComponent(String.format(" [chance=%.2f, rolls=%d, silky=%s]", drop.chance, drop.rolls, drop.requiresSilkTouch ? "yes" : "false")));
+			stackName.getSiblings().add(new TextComponent(String.format(" [chance=%.2f, rolls=%d, silky=%s, pollinated=%s]", drop.chance, drop.rolls, drop.requiresSilkTouch ? "yes" : "false", drop.requiresBees ? "yes" : "false")));
 			context.getSource().sendSuccess(stackName, false);
 		}
 

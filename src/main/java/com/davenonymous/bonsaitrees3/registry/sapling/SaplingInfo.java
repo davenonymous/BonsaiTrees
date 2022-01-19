@@ -60,10 +60,14 @@ public class SaplingInfo extends RecipeData {
 		return this.tags.contains(tag);
 	}
 
-	public List<ItemStack> getRandomizedDrops(Random rand, int fortune, boolean hasSilkTouch) {
+	public List<ItemStack> getRandomizedDrops(Random rand, int fortune, boolean hasSilkTouch, boolean hasBeeHive) {
 		ArrayList<ItemStack> result = new ArrayList<>();
 		for(SaplingDrop drop : this.drops) {
 			if(drop.requiresSilkTouch && !hasSilkTouch) {
+				continue;
+			}
+
+			if(drop.requiresBees && !hasBeeHive) {
 				continue;
 			}
 
