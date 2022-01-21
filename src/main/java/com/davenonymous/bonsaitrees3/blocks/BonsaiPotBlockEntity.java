@@ -563,6 +563,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			@Override
 			protected void onContentsChanged(int slot) {
 				setChanged();
+				notifyClients();
 			}
 		};
 	}
