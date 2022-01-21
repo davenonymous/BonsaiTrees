@@ -76,6 +76,9 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	private int fortune = 0;
 	private int efficiency = 0;
 
+	private int hoppingCooldown = 0;
+	private int cuttingCooldown = 0;
+
 	public static final ModelProperty<BlockState> SOIL_BLOCK = new ModelProperty<>();
 	public static final ModelProperty<FluidState> FLUID_BLOCK = new ModelProperty<>();
 
@@ -106,8 +109,20 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		this.updateGrowth();
 	}
 
+	@Override
+	public void tickServer() {
+		super.tickServer();
+
+		this.hopOutput();
+	}
+
 	public void hopOutput() {
 		if(!this.hopping) {
+			return;
+		}
+
+		if(this.hoppingCooldown > 0) {
+			this.hoppingCooldown--;
 			return;
 		}
 
@@ -136,6 +151,8 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		if(changed) {
 			this.setChanged();
 			this.notifyClients(false);
+		} else {
+			this.hoppingCooldown = CommonConfig.hoppingCooldown.get();
 		}
 	}
 
@@ -380,12 +397,12 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		}
 
 		if(getLevel() != null && getProgress() >= 1.0f && autoCut) {
-			var success = this.cutTree();
-			if(!success) {
-				this.setGrowTicks(0);
+			if(this.cuttingCooldown > 0) {
+				this.cuttingCooldown--;
 			} else {
-				if(!this.level.isClientSide()) {
-					this.hopOutput();
+				var success = this.cutTree();
+				if(!success) {
+					this.cuttingCooldown = CommonConfig.cuttingCooldown.get();
 				}
 			}
 		}

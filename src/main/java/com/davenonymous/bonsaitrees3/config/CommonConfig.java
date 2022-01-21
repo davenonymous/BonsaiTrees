@@ -25,6 +25,9 @@ public class CommonConfig {
 	public static ForgeConfigSpec.BooleanValue allowBonemeal;
 	public static ForgeConfigSpec.DoubleValue bonemealSuccessChance;
 
+	public static ForgeConfigSpec.IntValue hoppingCooldown;
+	public static ForgeConfigSpec.IntValue cuttingCooldown;
+
 	public static void register() {
 		enableFortuneUpgrade = COMMON_BUILDER.comment("Enable fortune upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)").define("enableFortuneUpgrade", true);
 
@@ -45,6 +48,9 @@ public class CommonConfig {
 		allowBonemeal = COMMON_BUILDER.comment("Allow usage of bone meal on bonsai pots to boost their growth?").define("allowBonemeal", true);
 
 		bonemealSuccessChance = COMMON_BUILDER.comment("How likely is it for bonemeal to succeed in boosting growth?").defineInRange("bonemealSuccessChance", 0.45d, 0.0d, 1.0d);
+
+		hoppingCooldown = COMMON_BUILDER.comment("How many ticks to wait before trying to insert items into the inventory below after failure?").defineInRange("hoppingCooldown", 20 * 3, 20, 20 * 60);
+		cuttingCooldown = COMMON_BUILDER.comment("How many ticks to wait before trying to cut the tree automatically after failing to do so?").defineInRange("cuttingCooldown", 20 * 3, 20, 20 * 60);
 
 		COMMON_CONFIG = COMMON_BUILDER.build();
 
