@@ -7,9 +7,11 @@ import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.WidgetContainerSc
 import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.WidgetSlot;
 import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.event.MouseClickEvent;
 import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.event.UpdateScreenEvent;
+import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.event.ValueChangedEvent;
 import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.event.WidgetEventResult;
 import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.widgets.WidgetItemStack;
 import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.widgets.WidgetProgressBar;
+import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.widgets.WidgetRedstoneMode;
 import com.davenonymous.bonsaitrees3.libnonymous.helper.Translatable;
 import com.davenonymous.bonsaitrees3.network.Networking;
 import net.minecraft.network.chat.Component;
@@ -21,7 +23,7 @@ import net.minecraft.world.item.Items;
 public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 	public static final Translatable CUT_BUTTON_TOOLTIP_OK = new Translatable(BonsaiTrees3.MODID, "button.cut_tree.tooltip.ok");
 	public static final Translatable CUT_BUTTON_TOOLTIP_WAIT = new Translatable(BonsaiTrees3.MODID, "button.cut_tree.tooltip.wait");
-
+	
 	public BonsaiPotScreen(BonsaiPotContainer container, Inventory inv, Component name) {
 		super(container, inv, name);
 
@@ -46,11 +48,20 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 		progressBar.setValue(this.menu.getPot().getProgress() * 100);
 		gui.add(progressBar);
 
+		WidgetRedstoneMode redstoneToggle = new WidgetRedstoneMode();
+		redstoneToggle.setDimensions(BonsaiPotContainer.WIDTH - 16, 5, 10, 10);
+		redstoneToggle.addListener(ValueChangedEvent.class, (event, widget) -> {
+			Networking.sendRedstoneModeToServer(this.menu.getPot().getBlockPos(), redstoneToggle.getValue());
+			return WidgetEventResult.HANDLED;
+		});
+		gui.add(redstoneToggle);
+
 		gui.addListener(UpdateScreenEvent.class, (event, widget) -> {
 			var progress = this.menu.getPot().getProgress();
 			progressBar.setValue(progress * 100);
 			cutButton.setEnabled(progress >= 1.0f);
 			cutButton.setTooltipLines(progress >= 1.0f ? CUT_BUTTON_TOOLTIP_OK : CUT_BUTTON_TOOLTIP_WAIT);
+			redstoneToggle.setValue(this.menu.getPot().redstoneMode, false);
 
 			return WidgetEventResult.CONTINUE_PROCESSING;
 		});

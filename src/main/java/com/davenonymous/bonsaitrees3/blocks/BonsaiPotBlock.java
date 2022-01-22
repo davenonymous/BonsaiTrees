@@ -53,7 +53,6 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 		this.registerDefaultState(this.getStateDefinition().any().setValue(CustomBlockStateProperties.COLOR, DyeColor.LIGHT_GRAY.getId()));
 	}
 
-
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);

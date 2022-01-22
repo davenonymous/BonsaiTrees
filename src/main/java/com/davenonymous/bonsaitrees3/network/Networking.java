@@ -1,6 +1,7 @@
 package com.davenonymous.bonsaitrees3.network;
 
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
+import com.davenonymous.bonsaitrees3.libnonymous.helper.RedstoneMode;
 import com.davenonymous.bonsaitrees3.libnonymous.serialization.MultiblockBlockModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.Connection;
@@ -28,10 +29,15 @@ public class Networking {
 		INSTANCE.registerMessage(nextID(), CutBonsaiPacket.class, CutBonsaiPacket::toBytes, CutBonsaiPacket::new, CutBonsaiPacket::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
 		INSTANCE.registerMessage(nextID(), PacketEnabledSlots.class, PacketEnabledSlots::toBytes, PacketEnabledSlots::new, PacketEnabledSlots::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
 		INSTANCE.registerMessage(nextID(), PacketModelToJson.class, PacketModelToJson::toBytes, PacketModelToJson::new, PacketModelToJson::doWork, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
+		INSTANCE.registerMessage(nextID(), SetRedstoneMode.class, SetRedstoneMode::toBytes, SetRedstoneMode::new, SetRedstoneMode::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
 	}
 
 	public static void sendCutTreeToServer(BlockPos pos) {
 		INSTANCE.sendToServer(new CutBonsaiPacket(pos));
+	}
+
+	public static void sendRedstoneModeToServer(BlockPos pos, RedstoneMode mode) {
+		INSTANCE.sendToServer(new SetRedstoneMode(pos, mode));
 	}
 
 	public static void sendEnabledSlotsMessage(List<Slot> inventorySlots) {

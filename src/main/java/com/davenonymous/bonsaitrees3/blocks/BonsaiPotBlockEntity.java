@@ -3,6 +3,7 @@ package com.davenonymous.bonsaitrees3.blocks;
 import com.davenonymous.bonsaitrees3.config.CommonConfig;
 import com.davenonymous.bonsaitrees3.libnonymous.base.BaseBlockEntity;
 import com.davenonymous.bonsaitrees3.libnonymous.helper.EnchantmentHelper;
+import com.davenonymous.bonsaitrees3.libnonymous.helper.RedstoneMode;
 import com.davenonymous.bonsaitrees3.libnonymous.helper.SpawnHelper;
 import com.davenonymous.bonsaitrees3.libnonymous.serialization.Store;
 import com.davenonymous.bonsaitrees3.registry.SoilCompatibility;
@@ -51,6 +52,9 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 	@Store(sendInUpdatePackage = true)
 	protected int requiredTicks;
+
+	@Store(sendInUpdatePackage = true)
+	public RedstoneMode redstoneMode = RedstoneMode.IGNORE_POWER;
 
 	@Store(sendInUpdatePackage = true)
 	private final ItemStackHandler soilItemStacks = createSoilInputItemHandler();
@@ -330,6 +334,15 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		}
 
 		if(this.getLevel().isClientSide()) {
+			return false;
+		}
+
+		var hasNeigborSignal = this.getLevel().hasNeighborSignal(this.getBlockPos());
+		if(this.redstoneMode == RedstoneMode.REQUIRE_POWER && !hasNeigborSignal) {
+			return false;
+		}
+
+		if(this.redstoneMode == RedstoneMode.REJECT_POWER && hasNeigborSignal) {
 			return false;
 		}
 
