@@ -62,7 +62,6 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 	@Store(sendInUpdatePackage = true)
 	private final ItemStackHandler saplingItemStacks = createSaplingInputItemHandler();
-	private final LazyOptional<IItemHandler> saplingItemStackHandler = LazyOptional.of(() -> saplingItemStacks);
 
 	@Store()
 	private final ItemStackHandler outputItemStacks = createOutputItemHandler();
@@ -70,6 +69,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 	@Store(sendInUpdatePackage = true)
 	private final ItemStackHandler upgradeItemStacks = createUpgradesItemHandler();
+	private final LazyOptional<IItemHandler> upgradeItemStackHandler = LazyOptional.of(() -> upgradeItemStacks);
 
 	private final LazyOptional<IItemHandler> combinedItemStackHandler = LazyOptional.of(this::createCombinedItemHandler);
 
@@ -280,7 +280,9 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			}
 
 			if(stack.getItem().canPerformAction(stack, ToolActions.AXE_DIG)) {
-				autoCut = true;
+				if(!stack.isDamageableItem() || stack.getDamageValue() < stack.getMaxDamage()) {
+					autoCut = true;
+				}
 			}
 
 			var enchantmentHelper = new EnchantmentHelper(stack);
@@ -320,7 +322,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	}
 
 
-	public boolean cutTree() {
+	public boolean cutTree(boolean isAutoCut) {
 		if(this.saplingInfo == null || this.soilInfo == null) {
 			this.updateInfoObjects();
 		}
@@ -344,6 +346,24 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 		if(this.redstoneMode == RedstoneMode.REJECT_POWER && hasNeigborSignal) {
 			return false;
+		}
+
+
+		// If axes should take damage && this was an autocut && some random value
+		// Get axe with remaining durability
+		if(isAutoCut && CommonConfig.autoCuttingDamagesItems.get()) {
+			boolean shouldTakeDamage = level.random.nextDouble() <= CommonConfig.autoCuttingDamageChance.get();
+			if(shouldTakeDamage) {
+				for(int slotNum = 0; slotNum < this.getUpgradeItemStacks().getSlots(); slotNum++) {
+					var stack = this.getUpgradeItemStacks().getStackInSlot(slotNum);
+					if(!stack.isEmpty() && stack.getItem().canPerformAction(stack, ToolActions.AXE_DIG)) {
+						if(stack.isDamageableItem() && stack.getDamageValue() < stack.getMaxDamage()) {
+							stack.setDamageValue(stack.getDamageValue() + 1);
+							break;
+						}
+					}
+				}
+			}
 		}
 
 		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(getLevel().random, fortune, hasSilkTouch, hasBeeHive);
@@ -413,7 +433,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			if(this.cuttingCooldown > 0) {
 				this.cuttingCooldown--;
 			} else {
-				var success = this.cutTree();
+				var success = this.cutTree(true);
 				if(!success) {
 					this.cuttingCooldown = CommonConfig.cuttingCooldown.get();
 				}
@@ -460,6 +480,18 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		return upgradeItemStacks;
 	}
 
+	public ItemStackHandler getSaplingItemStacks() {
+		return saplingItemStacks;
+	}
+
+	public ItemStackHandler getSoilItemStacks() {
+		return soilItemStacks;
+	}
+
+	public ItemStackHandler getOutputItemStacks() {
+		return outputItemStacks;
+	}
+
 	public static boolean isUpgradeItem(ItemStack stack) {
 		if(stack.is(Blocks.HOPPER.asItem())) {
 			return true;
@@ -490,7 +522,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			if(side == null) {
 				return combinedItemStackHandler.cast();
 			} else if(side == Direction.UP) {
-				return saplingItemStackHandler.cast();
+				return upgradeItemStackHandler.cast();
 			} else if(side == Direction.DOWN) {
 				return outputItemStackHandler.cast();
 			} else {

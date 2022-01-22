@@ -26,7 +26,7 @@ public class CutBonsaiPacket extends BasePacket {
 	public void doWork(Supplier<NetworkEvent.Context> ctx) {
 		var level = ctx.get().getSender().getLevel();
 		BonsaiPotBlockEntity potBlock = (BonsaiPotBlockEntity) level.getBlockEntity(pos);
-		if(potBlock.cutTree()) {
+		if(potBlock.cutTree(false)) {
 			potBlock.hopOutput();
 		}
 	}

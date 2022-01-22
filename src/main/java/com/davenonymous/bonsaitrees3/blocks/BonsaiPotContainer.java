@@ -4,11 +4,9 @@ import com.davenonymous.bonsaitrees3.BonsaiTrees3;
 import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.WidgetContainer;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.items.CapabilityItemHandler;
 
 public class BonsaiPotContainer extends WidgetContainer {
 	public static int WIDTH = 176;
@@ -31,20 +29,10 @@ public class BonsaiPotContainer extends WidgetContainer {
 		if(pot != null) {
 			int x = WIDTH - 8 - (18 * 3) + 2;
 
-			pot.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.UP).ifPresent(iItemHandler -> {
-				this.addSlotRange(SLOTGROUP_SAPLING, iItemHandler, 0, 8, yOffset + 0, 1, 0);
-			});
-
-			pot.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.NORTH).ifPresent(iItemHandler -> {
-				this.addSlotRange(SLOTGROUP_SOIL, iItemHandler, 0, 8, yOffset + 20, 1, 0);
-			});
-
-			pot.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, Direction.DOWN).ifPresent(iItemHandler -> {
-				this.addSlotBox(SLOTGROUP_OUTPUT, iItemHandler, 0, x, yOffset + 0, 3, 18, 2, 20);
-			});
-
-			var upgradeItemStackHandler = pot.getUpgradeItemStacks();
-			this.addSlotRange(SLOTGROUP_UPGRADES, upgradeItemStackHandler, 0, 35, yOffset + 20, 4, 18);
+			this.addSlotRange(SLOTGROUP_SAPLING, pot.getSaplingItemStacks(), 0, 8, yOffset + 0, 1, 0);
+			this.addSlotRange(SLOTGROUP_SOIL, pot.getSoilItemStacks(), 0, 8, yOffset + 20, 1, 0);
+			this.addSlotBox(SLOTGROUP_OUTPUT, pot.getOutputItemStacks(), 0, x, yOffset + 0, 3, 18, 2, 20);
+			this.addSlotRange(SLOTGROUP_UPGRADES, pot.getUpgradeItemStacks(), 0, 35, yOffset + 20, 4, 18);
 		}
 
 		this.allowSlotGroupMovement(SLOTGROUP_PLAYER, SLOTGROUP_SOIL, true);
