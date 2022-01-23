@@ -1,23 +1,4 @@
 {
-    "block.bonsaitrees3.bonsaipot": "",
-    "container.bonsaitrees3.bonsaipot": "",
-    "gui.bonsaitrees3.label.button.cut_tree.tooltip.ok": "",
-    "gui.bonsaitrees3.label.button.cut_tree.tooltip.wait": "",
-    "gui.bonsaitrees3.label.jei.upgrade.autocut": "",
-    "gui.bonsaitrees3.label.jei.upgrade.efficiency": "",
-    "gui.bonsaitrees3.label.jei.upgrade.fortune": "",
-    "gui.bonsaitrees3.label.jei.upgrade.hopper": "",
-    "gui.bonsaitrees3.label.jei.upgrade.silktouch": "",
-    "itemGroup.bonsaitrees3": "",
-    "jei.bonsaitrees3.chance": "",
-    "jei.bonsaitrees3.growtime": "",
-    "jei.bonsaitrees3.recipes.title": "",
-    "jei.bonsaitrees3.requiresSilkTouch": "",
-    "jei.bonsaitrees3.soiltime": "",
-    "jei.bonsaitrees3.upgrades.title": "",
-    "gui.bonsaitrees3.label.button.redstone.tooltip.ignore": "",
-    "gui.bonsaitrees3.label.button.redstone.tooltip.rejected": "",
-    "gui.bonsaitrees3.label.button.redstone.tooltip.required": "",
-    "gui.bonsaitrees3.label.jei.upgrade.bees": "",
-    "jei.bonsaitrees3.requiresBees": ""
+    "block.bonsaitrees3.bonsaipot": "Vaso bonsai",
+    "container.bonsaitrees3.bonsaipot": "Vaso bonsai"
 }
