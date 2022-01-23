@@ -155,6 +155,7 @@ dependencies {
     implementation fg.deobf("mezz.jei:jei-${jei_version}")
 
     implementation fg.deobf("curse.maven:the-one-probe-245211:3586969")
+    implementation fg.deobf("curse.maven:configured-457570:3559398")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
