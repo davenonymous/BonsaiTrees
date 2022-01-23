@@ -357,10 +357,11 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 				for(int slotNum = 0; slotNum < this.getUpgradeItemStacks().getSlots(); slotNum++) {
 					var stack = this.getUpgradeItemStacks().getStackInSlot(slotNum);
 					if(!stack.isEmpty() && stack.getItem().canPerformAction(stack, ToolActions.AXE_DIG)) {
-						if(stack.isDamageableItem() && stack.getDamageValue() < stack.getMaxDamage()) {
-							stack.setDamageValue(stack.getDamageValue() + 1);
-							break;
+						if(stack.hurt(1, level.random, null)) {
+							stack.shrink(1);
+							stack.setDamageValue(0);
 						}
+						break;
 					}
 				}
 			}
