@@ -1,0 +1,23 @@
+{
+    "block.bonsaitrees3.bonsaipot": "盆栽盆",
+    "container.bonsaitrees3.bonsaipot": "盆栽盆",
+    "gui.bonsaitrees3.label.button.cut_tree.tooltip.ok": "点击以砍伐树木",
+    "gui.bonsaitrees3.label.button.cut_tree.tooltip.wait": "树木生长完成后才能被砍伐",
+    "gui.bonsaitrees3.label.jei.upgrade.autocut": "自动砍伐树木",
+    "gui.bonsaitrees3.label.jei.upgrade.efficiency": "提高树苗生长效率",
+    "gui.bonsaitrees3.label.jei.upgrade.fortune": "提高掉落几率",
+    "gui.bonsaitrees3.label.jei.upgrade.hopper": "将掉落物输出到下方方块",
+    "gui.bonsaitrees3.label.jei.upgrade.silktouch": "收集需要精准采集的掉落物",
+    "itemGroup.bonsaitrees3": "盆栽树",
+    "jei.bonsaitrees3.chance": "几率：%d%%",
+    "jei.bonsaitrees3.growtime": "剩余生长时间：%s",
+    "jei.bonsaitrees3.recipes.title": "在盆栽盆中生长",
+    "jei.bonsaitrees3.requiresSilkTouch": "需要精准采集升级",
+    "jei.bonsaitrees3.soiltime": "改变后的生长时间：%s",
+    "jei.bonsaitrees3.upgrades.title": "盆栽盆升级",
+    "gui.bonsaitrees3.label.button.redstone.tooltip.ignore": "",
+    "gui.bonsaitrees3.label.button.redstone.tooltip.rejected": "",
+    "gui.bonsaitrees3.label.button.redstone.tooltip.required": "",
+    "gui.bonsaitrees3.label.jei.upgrade.bees": "",
+    "jei.bonsaitrees3.requiresBees": ""
+}
