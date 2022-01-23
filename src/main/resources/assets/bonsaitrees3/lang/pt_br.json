@@ -1,0 +1,23 @@
+{
+    "block.bonsaitrees3.bonsaipot": "Vaso Bonsai",
+    "container.bonsaitrees3.bonsaipot": "Vaso Bonsai",
+    "gui.bonsaitrees3.label.button.cut_tree.tooltip.ok": "Clique para cortar a planta",
+    "gui.bonsaitrees3.label.button.cut_tree.tooltip.wait": "A planta precisa estar crescida para ser cortada",
+    "gui.bonsaitrees3.label.jei.upgrade.autocut": "Corta plantas automaticamente",
+    "gui.bonsaitrees3.label.jei.upgrade.efficiency": "Reduz o tempo de crescimento",
+    "gui.bonsaitrees3.label.jei.upgrade.fortune": "Aumenta chances de drop",
+    "gui.bonsaitrees3.label.jei.upgrade.hopper": "exporta drops para o bloco abaixo",
+    "gui.bonsaitrees3.label.jei.upgrade.silktouch": "Não anula drops que requer Toque Suave",
+    "itemGroup.bonsaitrees3": "Arvores Bonsai",
+    "jei.bonsaitrees3.chance": "Chance: %d%%",
+    "jei.bonsaitrees3.growtime": "Tempo de Crescimento: %s",
+    "jei.bonsaitrees3.recipes.title": "Crescendo em Vasos Bonsai",
+    "jei.bonsaitrees3.requiresSilkTouch": "Requer Upgrade de Toque Suave",
+    "jei.bonsaitrees3.soiltime": "Muda o tempo de crescimento para: %s",
+    "jei.bonsaitrees3.upgrades.title": "Aprimorando Vasos Bonsai",
+    "gui.bonsaitrees3.label.button.redstone.tooltip.ignore": "",
+    "gui.bonsaitrees3.label.button.redstone.tooltip.rejected": "",
+    "gui.bonsaitrees3.label.button.redstone.tooltip.required": "",
+    "gui.bonsaitrees3.label.jei.upgrade.bees": "",
+    "jei.bonsaitrees3.requiresBees": ""
+}
