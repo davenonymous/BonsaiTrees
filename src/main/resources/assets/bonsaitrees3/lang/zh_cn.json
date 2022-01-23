@@ -14,10 +14,5 @@
     "jei.bonsaitrees3.recipes.title": "在盆栽盆中生长",
     "jei.bonsaitrees3.requiresSilkTouch": "需要精准采集升级",
     "jei.bonsaitrees3.soiltime": "改变后的生长时间：%s",
-    "jei.bonsaitrees3.upgrades.title": "盆栽盆升级",
-    "gui.bonsaitrees3.label.button.redstone.tooltip.ignore": "",
-    "gui.bonsaitrees3.label.button.redstone.tooltip.rejected": "",
-    "gui.bonsaitrees3.label.button.redstone.tooltip.required": "",
-    "gui.bonsaitrees3.label.jei.upgrade.bees": "",
-    "jei.bonsaitrees3.requiresBees": ""
+    "jei.bonsaitrees3.upgrades.title": "盆栽盆升级"
 }
