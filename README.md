@@ -54,6 +54,92 @@ the chance to get uncommon drops.
 
 Reduces the time it takes for a bonsai to fully grow. The higher the upgrade level the faster the growth.
 
+## Configuration
+
+### Clientside options
+
+- `alwaysRenderAsItem (default: false)`
+    - Always render trees in bonsai pot as their item equivalent.
+    - Use this if you have performance problem. But please note that this is not the intended way for this mod.
+
+### Shared options
+
+- `enableFortuneUpgrade (default: true)`
+    - Enable fortune upgrades
+    - These increase the drop rolls and chances
+    - Can still be inserted into upgrade slots, but effects are disabled.
+
+
+- `enableEfficiencyUpgrade (default: true)`
+    - Enable efficiency upgrades?
+    - These decrease the required tick time for a tree to fully grow
+    - Can still be inserted into upgrade slots, but effects are disabled.
+
+
+- `enableHoppingUpgrade (default: true)`
+    - Enable hopping upgrade?
+    - Used to auto-push items to the inventory below
+    - Can still be inserted into upgrade slots, but effects are disabled.
+
+
+- `enableAutoCuttingUpgrade (default: true)`
+    - Enable auto cutting upgrades?
+    - Required for trees to get cut automatically
+    - Can still be inserted into upgrade slots, but effects are disabled.
+
+
+- `showChanceInJEI (default: true)`
+    - Show chance for drops in JEI
+    - Not sure why you wouldn't want this.
+
+
+- `sumEnchantmentLevels (default: true)`
+    - Summarize enchantment levels instead of using the highest level?
+    - I.e. is '4 x Fortune III = Fortune XII'?
+    - One can consider this to be quite overpowered.
+
+
+- `extraRollsPerFortuneLevel = (default: 1)`
+    - Drops: How many extra rolls per fortune enchantment level?
+    - The more rolls the more items can be gained
+
+
+- `extraChancePerFortuneLevel = (default: 0.05)`
+    - Drops: What is the bonus chance to get a successful drop per fortune enchantment level?
+    - The higher the chance the more likely it is that a roll counts towards the result.
+    - These sum up, e.g. Fortune V gives a 25% chance boost with the default settings.
+
+
+- `allowBonemeal = (default: true)`
+    - Allow usage of bone meal on bonsai pots to boost their growth?
+    - This is not really efficient - growing a regular sapling with bone meal results in larger amounts of wood than in
+      a Bonsai Pot. Unless the Bonsai Pot is stuffed with Fortune upgrades - then it might be worth it.
+
+
+- `bonemealSuccessChance = 0.45`
+    - How likely is it for bonemeal to succeed in boosting growth?
+
+
+- `hoppingCooldown (default: 60)`
+    - How many ticks to wait before trying to insert items into the inventory below after failure?
+    - Lowering this increases load on the server.
+
+
+- `cuttingCooldown = (default: 60)`
+    - How many ticks to wait before trying to cut the tree automatically after failing to do so?
+    - Lowering this slightly increases load on the server.
+
+
+- `autoCuttingDamagesItems (default: false)`
+    - Auto-cutting does damage to the used axe upgrade
+    - This means tools will break inside the bonsai pot.
+    - The top side of the block can be used to access the upgrade slots and refill automatically.
+
+
+- `autoCuttingDamageChance (default: 0.075)`
+    - How likely is it that the axe upgrade takes damage for each tree it cuts?
+    - This is independent of the Unbreaking enchantment
+
 ## Tree Compatibility
 
 Supported Saplings and Soils are completely configurable via .json files. There are a bunch of examples available in the
@@ -126,8 +212,9 @@ Create the sapling recipe:
 
 ### Step 3, Model
 
-Create the model for the tree or whatever it is that you want to make growable:
-That's pretty easy as long as you don't want to write the json file yourself.
+Create the model for the tree or whatever it is that you want to make growable. That's pretty easy as long as you don't
+want to write the json file yourself. If there is no model for your sapling it will be rendered as the item version
+instead.
 
 a) Start up the game and find the tree, structure that should be grown in the pot.
 
