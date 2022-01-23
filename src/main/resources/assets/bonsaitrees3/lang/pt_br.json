@@ -14,10 +14,5 @@
     "jei.bonsaitrees3.recipes.title": "Crescendo em Vasos Bonsai",
     "jei.bonsaitrees3.requiresSilkTouch": "Requer Upgrade de Toque Suave",
     "jei.bonsaitrees3.soiltime": "Muda o tempo de crescimento para: %s",
-    "jei.bonsaitrees3.upgrades.title": "Aprimorando Vasos Bonsai",
-    "gui.bonsaitrees3.label.button.redstone.tooltip.ignore": "",
-    "gui.bonsaitrees3.label.button.redstone.tooltip.rejected": "",
-    "gui.bonsaitrees3.label.button.redstone.tooltip.required": "",
-    "gui.bonsaitrees3.label.jei.upgrade.bees": "",
-    "jei.bonsaitrees3.requiresBees": ""
+    "jei.bonsaitrees3.upgrades.title": "Aprimorando Vasos Bonsai"
 }
