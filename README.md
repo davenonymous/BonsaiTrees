@@ -35,6 +35,8 @@ Insert any kind of axe into an upgrade slot to make the Bonsai Bot automatically
 grown. But be aware that items that do not fit into the output buffer will be voided. You can enchant the axe with
 Efficiency, Fortune and/or Silk Touch to get additional upgrade benefits!
 
+You can configure in the Bonsai GUI whether applied redstone signals stop auto-cutting.
+
 ### Silk Touch
 
 Some of the things a tree produces requires a Silk Touch upgrade. You can either put an enchanted axe or an

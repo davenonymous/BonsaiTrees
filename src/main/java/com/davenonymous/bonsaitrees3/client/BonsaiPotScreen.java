@@ -23,7 +23,7 @@ import net.minecraft.world.item.Items;
 public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 	public static final Translatable CUT_BUTTON_TOOLTIP_OK = new Translatable(BonsaiTrees3.MODID, "button.cut_tree.tooltip.ok");
 	public static final Translatable CUT_BUTTON_TOOLTIP_WAIT = new Translatable(BonsaiTrees3.MODID, "button.cut_tree.tooltip.wait");
-	
+
 	public BonsaiPotScreen(BonsaiPotContainer container, Inventory inv, Component name) {
 		super(container, inv, name);
 
@@ -62,6 +62,7 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 			cutButton.setEnabled(progress >= 1.0f);
 			cutButton.setTooltipLines(progress >= 1.0f ? CUT_BUTTON_TOOLTIP_OK : CUT_BUTTON_TOOLTIP_WAIT);
 			redstoneToggle.setValue(this.menu.getPot().redstoneMode, false);
+			redstoneToggle.updateToolTips();
 
 			return WidgetEventResult.CONTINUE_PROCESSING;
 		});

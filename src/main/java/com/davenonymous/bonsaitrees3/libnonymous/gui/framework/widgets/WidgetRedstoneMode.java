@@ -22,14 +22,14 @@ public class WidgetRedstoneMode extends WidgetSpriteSelect<RedstoneMode> {
 		this.addChoiceWithSprite(RedstoneMode.REJECT_POWER, new SpriteData(GUI.tabIcons, 40, 84, 2, 11));
 		this.setValue(initial);
 		updateToolTips();
-		
+
 		this.addListener(ValueChangedEvent.class, (event, widget) -> {
 			updateToolTips();
 			return WidgetEventResult.CONTINUE_PROCESSING;
 		});
 	}
 
-	private void updateToolTips() {
+	public void updateToolTips() {
 		if(this.getValue() == RedstoneMode.IGNORE_POWER) {
 			this.setTooltipLines(REDSTONE_IGNORE);
 		} else if(this.getValue() == RedstoneMode.REJECT_POWER) {
