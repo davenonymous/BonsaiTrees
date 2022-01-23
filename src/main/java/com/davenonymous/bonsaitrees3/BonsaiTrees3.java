@@ -1,6 +1,7 @@
 package com.davenonymous.bonsaitrees3;
 
 import com.davenonymous.bonsaitrees3.compat.top.TOPPlugin;
+import com.davenonymous.bonsaitrees3.config.ClientConfig;
 import com.davenonymous.bonsaitrees3.config.CommonConfig;
 import com.davenonymous.bonsaitrees3.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees3.setup.ClientSetup;
@@ -28,6 +29,7 @@ public class BonsaiTrees3 {
 	public static final String MODID = "bonsaitrees3";
 
 	public BonsaiTrees3() {
+		ClientConfig.register();
 		CommonConfig.register();
 
 		Registration.init();

@@ -16,7 +16,6 @@ public class SaplingInfo extends RecipeData {
 	public Ingredient ingredient;
 	public int baseTicks;
 
-	public ItemStack sapling;
 	public ArrayList<SaplingDrop> drops;
 	public Set<String> tags;
 
