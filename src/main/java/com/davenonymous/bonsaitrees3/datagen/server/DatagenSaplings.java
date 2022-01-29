@@ -71,6 +71,11 @@ public class DatagenSaplings extends BaseDataProvider {
 		addChorus();
 	}
 
+	public JsonObject setTicks(JsonObject original, int ticks) {
+		original.addProperty("ticks", ticks);
+		return original;
+	}
+
 	public static SaplingDrop fruitDrop(Item item) {
 		return new SaplingDrop(item, 0.05f, 1, false, true);
 	}
@@ -80,7 +85,7 @@ public class DatagenSaplings extends BaseDataProvider {
 		return (ConfiguredFeature<TreeConfiguration, ?>) feature;
 	}
 
-	private void addChorus() {
+	private JsonObject addChorus() {
 		Item chorusItem = Items.CHORUS_FRUIT;
 		Item enderPeal = Items.ENDER_PEARL;
 		Item chorusFlower = Items.CHORUS_FLOWER;
@@ -103,10 +108,13 @@ public class DatagenSaplings extends BaseDataProvider {
 		tags.add("end_stone");
 		root.add("compatibleSoilTags", tags);
 
+		setTicks(root, 20*300);
+
 		add("recipes/sapling/minecraft/chorus", root);
+		return root;
 	}
 
-	private void addCoral(Item coralItem, Item deadCoralItem, Block coralBlock) {
+	private JsonObject addCoral(Item coralItem, Item deadCoralItem, Block coralBlock) {
 		JsonObject root = new JsonObject();
 		root.addProperty("type", "bonsaitrees3:sapling");
 		root.addProperty("mod", "minecraft");
@@ -126,11 +134,14 @@ public class DatagenSaplings extends BaseDataProvider {
 		tags.add("water");
 		root.add("compatibleSoilTags", tags);
 
+		setTicks(root, 300);
+
 		var coralLocation = coralItem.getRegistryName();
 		add("recipes/sapling/" + coralLocation.getNamespace() + "/" + coralLocation.getPath(), root);
+		return root;
 	}
 
-	private void addMushroom(Item mushroomItem, ConfiguredFeature<?, ?> mushroomFeature, String[] compatibleTags) {
+	private JsonObject addMushroom(Item mushroomItem, ConfiguredFeature<?, ?> mushroomFeature, String[] compatibleTags) {
 		var mc = (HugeMushroomFeatureConfiguration) mushroomFeature.config();
 
 		JsonObject root = new JsonObject();
@@ -154,11 +165,14 @@ public class DatagenSaplings extends BaseDataProvider {
 			root.add("compatibleSoilTags", tags);
 		}
 
+		setTicks(root, 300);
+
 		ResourceLocation mushroomLocation = BuiltinRegistries.CONFIGURED_FEATURE.getResourceKey(mushroomFeature).get().location();
 		add("recipes/sapling/" + mushroomLocation.getNamespace() + "/" + mushroomLocation.getPath(), root);
+		return root;
 	}
 
-	private void addFungus(Item fungusItem, ConfiguredFeature<HugeFungusConfiguration, ?> fungusFeature, String[] compatibleTags) {
+	private JsonObject addFungus(Item fungusItem, ConfiguredFeature<HugeFungusConfiguration, ?> fungusFeature, String[] compatibleTags) {
 		var fc = fungusFeature.config();
 
 		JsonObject root = new JsonObject();
@@ -183,23 +197,26 @@ public class DatagenSaplings extends BaseDataProvider {
 			root.add("compatibleSoilTags", tags);
 		}
 
+		setTicks(root, 400);
+
 		ResourceLocation fungusLocation = BuiltinRegistries.CONFIGURED_FEATURE.getResourceKey(fungusFeature).get().location();
 		add("recipes/sapling/" + fungusLocation.getNamespace() + "/" + fungusLocation.getPath(), root);
+		return root;
 	}
 
-	public void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature) {
-		addSapling(saplingItem, treeFeature, new String[]{"dirt", "grass"});
+	public JsonObject addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature) {
+		return addSapling(saplingItem, treeFeature, new String[]{"dirt", "grass"});
 	}
 
-	public void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, SaplingDrop... extraDrops) {
-		addSapling(saplingItem, treeFeature, new String[]{"dirt", "grass"}, extraDrops);
+	public JsonObject addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, SaplingDrop... extraDrops) {
+		return addSapling(saplingItem, treeFeature, new String[]{"dirt", "grass"}, extraDrops);
 	}
 
-	public void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags) {
-		addSapling(saplingItem, treeFeature, compatibleTags, null);
+	public JsonObject addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags) {
+		return addSapling(saplingItem, treeFeature, compatibleTags, null);
 	}
 
-	public void addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags, SaplingDrop... extraDrops) {
+	public JsonObject addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags, SaplingDrop... extraDrops) {
 		var tc = treeFeature.config();
 
 		JsonObject root = new JsonObject();
@@ -248,6 +265,8 @@ public class DatagenSaplings extends BaseDataProvider {
 
 		ResourceLocation treeLocation = BuiltinRegistries.CONFIGURED_FEATURE.getResourceKey(treeFeature).get().location();
 		add("recipes/sapling/" + treeLocation.getNamespace() + "/" + treeLocation.getPath(), root);
+
+		return root;
 	}
 
 	public void addDrop(JsonArray drops, SaplingDrop drop) {
