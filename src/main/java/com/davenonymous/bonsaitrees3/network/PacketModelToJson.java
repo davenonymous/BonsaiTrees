@@ -1,8 +1,8 @@
 package com.davenonymous.bonsaitrees3.network;
 
-import com.davenonymous.bonsaitrees3.libnonymous.base.BasePacket;
-import com.davenonymous.bonsaitrees3.libnonymous.serialization.MultiblockBlockModel;
-import com.davenonymous.bonsaitrees3.libnonymous.serialization.Sync;
+import com.davenonymous.libnonymous.base.BasePacket;
+import com.davenonymous.libnonymous.serialization.MultiblockBlockModel;
+import com.davenonymous.libnonymous.serialization.Sync;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraftforge.network.NetworkEvent;

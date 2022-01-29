@@ -2,7 +2,7 @@ package com.davenonymous.bonsaitrees3.client;
 
 import com.davenonymous.bonsaitrees3.blocks.BonsaiPotBlockEntity;
 import com.davenonymous.bonsaitrees3.config.ClientConfig;
-import com.davenonymous.bonsaitrees3.libnonymous.render.MultiModelBlockRenderer;
+import com.davenonymous.libnonymous.render.MultiModelBlockRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;

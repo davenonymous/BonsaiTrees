@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.registry.soil;
 
-import com.davenonymous.bonsaitrees3.libnonymous.helper.BlockStateSerializationHelper;
-import com.davenonymous.bonsaitrees3.libnonymous.helper.FluidStateSerializationHelper;
+import com.davenonymous.libnonymous.helper.BlockStateSerializationHelper;
+import com.davenonymous.libnonymous.helper.FluidStateSerializationHelper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

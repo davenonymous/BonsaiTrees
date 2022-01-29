@@ -1,8 +1,8 @@
 package com.davenonymous.bonsaitrees3.datagen.server;
 
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
-import com.davenonymous.bonsaitrees3.libnonymous.datagen.BaseDataProvider;
-import com.davenonymous.bonsaitrees3.libnonymous.reflections.BlockStateProviderReflection;
+import com.davenonymous.libnonymous.datagen.BaseDataProvider;
+import com.davenonymous.libnonymous.reflections.BlockStateProviderReflection;
 import com.davenonymous.bonsaitrees3.registry.sapling.SaplingDrop;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;

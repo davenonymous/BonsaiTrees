@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.datagen.server;
 
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
-import com.davenonymous.bonsaitrees3.libnonymous.datagen.BaseDataProvider;
+import com.davenonymous.libnonymous.datagen.BaseDataProvider;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.minecraft.data.DataGenerator;

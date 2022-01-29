@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.command;
 
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
-import com.davenonymous.bonsaitrees3.libnonymous.serialization.MultiblockBlockModel;
+import com.davenonymous.libnonymous.serialization.MultiblockBlockModel;
 import com.davenonymous.bonsaitrees3.network.Networking;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;

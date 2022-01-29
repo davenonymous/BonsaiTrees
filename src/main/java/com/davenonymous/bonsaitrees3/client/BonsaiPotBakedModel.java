@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.client;
 
 import com.davenonymous.bonsaitrees3.blocks.BonsaiPotBlockEntity;
-import com.davenonymous.bonsaitrees3.libnonymous.render.QuadBaker;
+import com.davenonymous.libnonymous.render.QuadBaker;
 import com.mojang.math.Matrix4f;
 import com.mojang.math.Transformation;
 import net.minecraft.client.Minecraft;

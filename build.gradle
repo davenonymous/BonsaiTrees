@@ -156,6 +156,14 @@ dependencies {
 
     implementation fg.deobf("curse.maven:the-one-probe-245211:3586969")
     implementation fg.deobf("curse.maven:configured-457570:3559398")
+
+    if (findProject(':libnonymous') != null) {
+        implementation project(':libnonymous')
+    }// else {
+    //    implementation fg.deobf (project.dependencies.create("com.davenonymous.libnonymous:libnonymous:${libnonymous_version}") {
+    //        transitive = false
+    //    })
+    //}
 }
 
 // Example for how to get properties into the manifest for reading at runtime.

@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees3.compat.jei;
 
-import com.davenonymous.bonsaitrees3.libnonymous.helper.Translatable;
+import com.davenonymous.libnonymous.helper.Translatable;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.ingredient.ITooltipCallback;
 import mezz.jei.api.ingredients.IIngredients;

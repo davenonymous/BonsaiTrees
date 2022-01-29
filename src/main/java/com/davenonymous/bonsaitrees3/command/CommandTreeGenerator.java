@@ -2,12 +2,12 @@ package com.davenonymous.bonsaitrees3.command;
 
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
 import com.davenonymous.bonsaitrees3.datagen.server.DatagenSaplings;
-import com.davenonymous.bonsaitrees3.libnonymous.commands.SimpleCommandReply;
-import com.davenonymous.bonsaitrees3.libnonymous.reflections.AbstractTreeGrowerReflection;
-import com.davenonymous.bonsaitrees3.libnonymous.reflections.SaplingBlockReflection;
-import com.davenonymous.bonsaitrees3.libnonymous.serialization.MultiblockBlockModel;
-import com.davenonymous.bonsaitrees3.libnonymous.utils.ComponentUtils;
-import com.davenonymous.bonsaitrees3.libnonymous.utils.TeleporterTools;
+import com.davenonymous.libnonymous.commands.SimpleCommandReply;
+import com.davenonymous.libnonymous.reflections.AbstractTreeGrowerReflection;
+import com.davenonymous.libnonymous.reflections.SaplingBlockReflection;
+import com.davenonymous.libnonymous.serialization.MultiblockBlockModel;
+import com.davenonymous.libnonymous.utils.ComponentUtils;
+import com.davenonymous.libnonymous.utils.TeleporterTools;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;

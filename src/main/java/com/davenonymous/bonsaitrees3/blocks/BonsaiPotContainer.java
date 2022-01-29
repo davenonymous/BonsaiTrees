@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.blocks;
 
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
-import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.WidgetContainer;
+import com.davenonymous.libnonymous.gui.framework.WidgetContainer;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;

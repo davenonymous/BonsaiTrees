@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees3.datagen.server;
 
-import com.davenonymous.bonsaitrees3.libnonymous.base.BaseLootTableProvider;
+import com.davenonymous.libnonymous.base.BaseLootTableProvider;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.data.DataGenerator;
 

@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.registry;
 
 import com.davenonymous.bonsaitrees3.client.TreeModels;
-import com.davenonymous.bonsaitrees3.libnonymous.base.RecipeData;
+import com.davenonymous.libnonymous.base.RecipeData;
 import com.davenonymous.bonsaitrees3.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees3.registry.sapling.SaplingRecipeHelper;
 import com.davenonymous.bonsaitrees3.registry.soil.SoilInfo;

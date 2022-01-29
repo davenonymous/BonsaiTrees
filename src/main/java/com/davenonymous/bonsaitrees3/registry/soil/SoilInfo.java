@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees3.registry.soil;
 
-import com.davenonymous.bonsaitrees3.libnonymous.base.RecipeData;
+import com.davenonymous.libnonymous.base.RecipeData;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;

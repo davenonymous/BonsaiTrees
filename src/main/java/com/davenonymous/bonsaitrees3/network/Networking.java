@@ -1,8 +1,8 @@
 package com.davenonymous.bonsaitrees3.network;
 
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
-import com.davenonymous.bonsaitrees3.libnonymous.helper.RedstoneMode;
-import com.davenonymous.bonsaitrees3.libnonymous.serialization.MultiblockBlockModel;
+import com.davenonymous.libnonymous.helper.RedstoneMode;
+import com.davenonymous.libnonymous.serialization.MultiblockBlockModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.Connection;
 import net.minecraft.resources.ResourceLocation;

@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.compat.jei;
 
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
-import com.davenonymous.bonsaitrees3.libnonymous.base.BaseLanguageProvider;
+import com.davenonymous.libnonymous.base.BaseLanguageProvider;
 import com.mojang.blaze3d.vertex.PoseStack;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.gui.drawable.IDrawable;

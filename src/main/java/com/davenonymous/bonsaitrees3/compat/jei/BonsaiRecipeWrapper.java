@@ -3,8 +3,8 @@ package com.davenonymous.bonsaitrees3.compat.jei;
 
 import com.davenonymous.bonsaitrees3.client.TreeModels;
 import com.davenonymous.bonsaitrees3.config.CommonConfig;
-import com.davenonymous.bonsaitrees3.libnonymous.render.MultiModelBlockRenderer;
-import com.davenonymous.bonsaitrees3.libnonymous.utils.TickTimeHelper;
+import com.davenonymous.libnonymous.render.MultiModelBlockRenderer;
+import com.davenonymous.libnonymous.utils.TickTimeHelper;
 import com.davenonymous.bonsaitrees3.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees3.registry.sapling.SaplingDrop;
 import com.davenonymous.bonsaitrees3.registry.sapling.SaplingInfo;

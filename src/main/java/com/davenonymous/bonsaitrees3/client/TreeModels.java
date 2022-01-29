@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.client;
 
-import com.davenonymous.bonsaitrees3.libnonymous.serialization.MultiBlockModelSerializer;
-import com.davenonymous.bonsaitrees3.libnonymous.serialization.MultiblockBlockModel;
+import com.davenonymous.libnonymous.serialization.MultiBlockModelSerializer;
+import com.davenonymous.libnonymous.serialization.MultiblockBlockModel;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;

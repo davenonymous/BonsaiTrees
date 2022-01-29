@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees3.registry.sapling;
 
-import com.davenonymous.bonsaitrees3.libnonymous.json.MCJsonUtils;
+import com.davenonymous.libnonymous.json.MCJsonUtils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;

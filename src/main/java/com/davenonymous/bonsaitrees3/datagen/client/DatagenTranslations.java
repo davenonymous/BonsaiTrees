@@ -3,9 +3,8 @@ package com.davenonymous.bonsaitrees3.datagen.client;
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
 import com.davenonymous.bonsaitrees3.client.BonsaiPotScreen;
 import com.davenonymous.bonsaitrees3.compat.jei.BonsaiTreesJEIPlugin;
-import com.davenonymous.bonsaitrees3.libnonymous.base.BaseLanguageProvider;
-import com.davenonymous.bonsaitrees3.libnonymous.gui.framework.widgets.WidgetRedstoneMode;
 import com.davenonymous.bonsaitrees3.setup.Registration;
+import com.davenonymous.libnonymous.base.BaseLanguageProvider;
 import net.minecraft.data.DataGenerator;
 
 public class DatagenTranslations extends BaseLanguageProvider {
@@ -20,10 +19,6 @@ public class DatagenTranslations extends BaseLanguageProvider {
 		add(Registration.BONSAI_POT_CONTAINER.get(), "Bonsai Pot");
 		add(BonsaiPotScreen.CUT_BUTTON_TOOLTIP_OK, "Click to cut the tree");
 		add(BonsaiPotScreen.CUT_BUTTON_TOOLTIP_WAIT, "The tree needs to fully grow before you can cut it");
-
-		add(WidgetRedstoneMode.REDSTONE_IGNORE, "Ignore nearby redstone signals");
-		add(WidgetRedstoneMode.REDSTONE_REQUIRED, "Only run with a nearby redstone signal");
-		add(WidgetRedstoneMode.REDSTONE_REJECTED, "Prevent running with a nearby redstone signal");
 
 		add("jei.bonsaitrees3.recipes.title", "Growing in Bonsai Pots");
 		add("jei.bonsaitrees3.upgrades.title", "Upgrading Bonsai Pots");

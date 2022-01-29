@@ -1,11 +1,11 @@
 package com.davenonymous.bonsaitrees3.blocks;
 
 import com.davenonymous.bonsaitrees3.config.CommonConfig;
-import com.davenonymous.bonsaitrees3.libnonymous.base.BaseBlockEntity;
-import com.davenonymous.bonsaitrees3.libnonymous.helper.EnchantmentHelper;
-import com.davenonymous.bonsaitrees3.libnonymous.helper.RedstoneMode;
-import com.davenonymous.bonsaitrees3.libnonymous.helper.SpawnHelper;
-import com.davenonymous.bonsaitrees3.libnonymous.serialization.Store;
+import com.davenonymous.libnonymous.base.BaseBlockEntity;
+import com.davenonymous.libnonymous.helper.EnchantmentHelper;
+import com.davenonymous.libnonymous.helper.RedstoneMode;
+import com.davenonymous.libnonymous.helper.SpawnHelper;
+import com.davenonymous.libnonymous.serialization.Store;
 import com.davenonymous.bonsaitrees3.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees3.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees3.registry.soil.SoilInfo;

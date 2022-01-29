@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.client;
 
 import com.davenonymous.bonsaitrees3.blocks.BonsaiPotBlockEntity;
-import com.davenonymous.bonsaitrees3.libnonymous.registration.CustomBlockStateProperties;
+import com.davenonymous.libnonymous.registration.CustomBlockStateProperties;
 import com.davenonymous.bonsaitrees3.setup.NbtConsts;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.client.color.block.BlockColor;

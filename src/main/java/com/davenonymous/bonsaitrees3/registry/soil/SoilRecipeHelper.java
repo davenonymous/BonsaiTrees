@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees3.registry.soil;
 
-import com.davenonymous.bonsaitrees3.libnonymous.helper.BaseRecipeHelper;
+import com.davenonymous.libnonymous.helper.BaseRecipeHelper;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;

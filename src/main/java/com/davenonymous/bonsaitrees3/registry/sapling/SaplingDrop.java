@@ -1,7 +1,7 @@
 package com.davenonymous.bonsaitrees3.registry.sapling;
 
 import com.davenonymous.bonsaitrees3.config.CommonConfig;
-import com.davenonymous.bonsaitrees3.libnonymous.json.MCJsonUtils;
+import com.davenonymous.libnonymous.json.MCJsonUtils;
 import com.google.gson.JsonObject;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.Item;
