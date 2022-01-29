@@ -4,6 +4,7 @@ import com.davenonymous.bonsaitrees3.blocks.BonsaiPotBlockEntity;
 import com.davenonymous.libnonymous.registration.CustomBlockStateProperties;
 import com.davenonymous.bonsaitrees3.setup.NbtConsts;
 import com.davenonymous.bonsaitrees3.setup.Registration;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
@@ -26,13 +27,10 @@ public class PotColorizer {
 				}
 
 				int color = state.getValue(CustomBlockStateProperties.COLOR);
-				int rgb = DyeColor.byId(color).getFireworkColor();
-				return rgb;
-			} else if(blockAccess != null && blockAccess.getBlockEntity(pos) != null) {
-				// TODO: Investigate crash with fluid pots
-				BonsaiPotBlockEntity potBlock = (BonsaiPotBlockEntity) blockAccess.getBlockEntity(pos);
+				return DyeColor.byId(color).getFireworkColor();
+			} else if(blockAccess != null && blockAccess.getBlockEntity(pos) instanceof BonsaiPotBlockEntity potBlock) {
 				if(potBlock.hasSoil() && !potBlock.getSoilInfo().isFluid) {
-					return BlockColors.createDefault().getColor(potBlock.getSoilBlock(), blockAccess, pos, tintIndex);
+					return Minecraft.getInstance().getBlockColors().getColor(potBlock.getSoilBlock(), blockAccess, pos, tintIndex);
 				}
 
 				return PotColorizer.DEFAULT_COLOR.getFireworkColor();
