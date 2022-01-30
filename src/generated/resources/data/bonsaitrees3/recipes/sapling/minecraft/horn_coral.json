@@ -31,5 +31,6 @@
   ],
   "compatibleSoilTags": [
     "water"
-  ]
+  ],
+  "ticks": 300
 }

@@ -31,5 +31,6 @@
   ],
   "compatibleSoilTags": [
     "mycelium"
-  ]
+  ],
+  "ticks": 300
 }

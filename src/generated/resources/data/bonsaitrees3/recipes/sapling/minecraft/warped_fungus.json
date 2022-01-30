@@ -36,5 +36,6 @@
   ],
   "compatibleSoilTags": [
     "warped"
-  ]
+  ],
+  "ticks": 400
 }

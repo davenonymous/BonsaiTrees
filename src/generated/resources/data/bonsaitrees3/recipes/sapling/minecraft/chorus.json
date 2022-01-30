@@ -30,5 +30,6 @@
   ],
   "compatibleSoilTags": [
     "end_stone"
-  ]
+  ],
+  "ticks": 6000
 }
