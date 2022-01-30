@@ -6,6 +6,7 @@ import com.davenonymous.libnonymous.render.MultiModelBlockRenderer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
+import net.minecraft.client.GraphicsStatus;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
@@ -77,7 +78,11 @@ public class BonsaiPotRenderer implements BlockEntityRenderer<BonsaiPotBlockEnti
 			float translateOffsetZ = (float) (multiBlock.depth + 1) / 2.0f;
 			poseStack.translate(-translateOffsetX, -translateOffsetY, -translateOffsetZ);
 
-			var buffer = pBufferSource.getBuffer(RenderType.translucent());
+			var rendertype = RenderType.translucent();
+			if(Minecraft.getInstance().options.graphicsMode.getId() >= GraphicsStatus.FABULOUS.getId()) {
+				rendertype = RenderType.cutout();
+			}
+			var buffer = pBufferSource.getBuffer(rendertype);
 			MultiModelBlockRenderer.renderMultiBlockModel(multiBlock, pPotBlock.getLevel(), buffer, poseStack, pPackedLight);
 		}
 
