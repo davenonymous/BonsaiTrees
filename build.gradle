@@ -17,7 +17,7 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '3.0.1'
+version = '3.0.2'
 group = 'com.davenonymous.bonsaitrees3' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'bonsaitrees3'
 
