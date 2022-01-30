@@ -38,7 +38,6 @@ description='''
 Grow Trees in small pots like Mr. Miyagi!
 '''
 
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.bonsaitrees3]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
@@ -50,7 +49,19 @@ Grow Trees in small pots like Mr. Miyagi!
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
-# Here's another dependency
+
+[[dependencies.libnonymous]] #optional
+    # the modid of the dependency
+    modId="libnonymous" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[2,)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"
+
 [[dependencies.bonsaitrees3]]
     modId="minecraft"
     mandatory=true
