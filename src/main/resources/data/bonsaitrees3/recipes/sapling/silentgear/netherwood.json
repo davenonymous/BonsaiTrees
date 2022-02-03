@@ -1,0 +1,49 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "mod": "silentgear",
+    "sapling": {
+        "item": "silentgear:netherwood_sapling"
+    },
+    "drops": [
+        {
+            "rolls": 1,
+            "chance": 0.05,
+            "result": {
+                "item": "silentgear:netherwood_sapling"
+            }
+        },
+        {
+            "rolls": 1,
+            "chance": 0.75,
+            "result": {
+                "item": "silentgear:netherwood_log"
+            }
+        },
+        {
+            "rolls": 3,
+            "chance": 0.2,
+            "result": {
+                "item": "silentgear:netherwood_stick"
+            }
+        },
+        {
+            "rolls": 2,
+            "chance": 0.15,
+            "result": {
+                "item": "silentgear:netherwood_leaves"
+            },
+            "requiresSilkTouch": true
+        },
+        {
+            "rolls": 1,
+            "chance": 0.05,
+            "result": {
+              "item": "silentgear:nether_banana"
+            },
+            "requiresBees": true
+          }
+    ],
+    "compatibleSoilTags": [
+        "netherrack"
+    ]
+}
