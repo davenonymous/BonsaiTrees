@@ -1,0 +1,78 @@
+{
+    "type": "bonsaitrees3:sapling/blue_skies/starlit",
+    "version": 3,
+    "ref": {
+      "a": {"block":"blue_skies:starlit_log","properties":{"axis":"y"}},
+      "b": {"block":"blue_skies:starlit_leaves","properties":{"distance":"2","persistent":"false","snowy":"false"}},
+      "c": {"block":"blue_skies:starlit_leaves","properties":{"distance":"1","persistent":"false","snowy":"false"}},
+      "d": {"block":"blue_skies:starlit_leaves","properties":{"distance":"3","persistent":"false","snowy":"false"}}
+    },
+    "shape": [
+      [
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "  b  ",
+        "     ",
+        "  b  ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "     ",
+        "     ",
+        "  b  ",
+        " bcb ",
+        " bcb ",
+        " bc  ",
+        " bcb ",
+        "  c  ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "  d  ",
+        "  b  ",
+        " bcb ",
+        " cac ",
+        "bcacb",
+        " cac ",
+        "bcacb",
+        " cac ",
+        "  a  ",
+        "  a  ",
+        "  a  "
+      ],
+      [
+        "     ",
+        "     ",
+        "  b  ",
+        " bcb ",
+        " bcb ",
+        " bcb ",
+        " bcb ",
+        "  c  ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "  b  ",
+        "     ",
+        "  b  ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ]
+    ]
+  }
+  

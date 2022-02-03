@@ -1,0 +1,124 @@
+{
+    "type": "bonsaitrees3:sapling/blue_skies/lunar",
+    "version": 3,
+    "ref": {
+      "a": {"block":"blue_skies:lunar_leaves","properties":{"distance":"2","persistent":"false","snowy":"false"}},
+      "b": {"block":"blue_skies:lunar_leaves","properties":{"distance":"1","persistent":"false","snowy":"false"}},
+      "c": {"block":"blue_skies:lunar_log","properties":{"axis":"z"}},
+      "d": {"block":"blue_skies:lunar_log","properties":{"axis":"y"}},
+      "e": {"block":"blue_skies:lunar_log","properties":{"axis":"x"}}
+    },
+    "shape": [
+      [
+        "           ",
+        "           ",
+        "     a     ",
+        "           ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "           ",
+        "     a     ",
+        "    aba    ",
+        "     a     ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "           ",
+        "    aba    ",
+        "   abeba   ",
+        "    aba    ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "           ",
+        "     a     ",
+        "    aba    ",
+        "  a  e  a  ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "     a     ",
+        "    aba    ",
+        "  a  b  a  ",
+        " aba   aba ",
+        "  a  e  a  ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "    aba    ",
+        "   abdba   ",
+        " ababdbaba ",
+        "abcbbdbbcba",
+        " abc d cba ",
+        "    cdc    ",
+        "     d     ",
+        "     d     "
+      ],
+      [
+        "     a     ",
+        "    aba    ",
+        "  a  b  a  ",
+        " aba e aba ",
+        "  a     a  ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "     a     ",
+        "    aba    ",
+        "     e     ",
+        "  a     a  ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "    aba    ",
+        "   abeba   ",
+        "    aba    ",
+        "           ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "     a     ",
+        "    aba    ",
+        "     a     ",
+        "           ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ],
+      [
+        "           ",
+        "     a     ",
+        "           ",
+        "           ",
+        "           ",
+        "           ",
+        "           ",
+        "           "
+      ]
+    ]
+  }
+  

@@ -1,0 +1,106 @@
+{
+    "type": "bonsaitrees3:sapling/blue_skies/dusk",
+    "version": 3,
+    "ref": {
+      "a": {"block":"blue_skies:dusk_leaves","properties":{"distance":"2","persistent":"false","snowy":"false"}},
+      "b": {"block":"blue_skies:dusk_leaves","properties":{"distance":"1","persistent":"false","snowy":"false"}},
+      "c": {"block":"blue_skies:dusk_leaves","properties":{"distance":"4","persistent":"false","snowy":"false"}},
+      "d": {"block":"blue_skies:dusk_leaves","properties":{"distance":"3","persistent":"false","snowy":"false"}},
+      "e": {"block":"blue_skies:dusk_leaves","properties":{"distance":"5","persistent":"false","snowy":"false"}},
+      "f": {"block":"blue_skies:dusk_log","properties":{"axis":"y"}},
+      "g": {"block":"blue_skies:dusk_log","properties":{"axis":"z"}}
+    },
+    "shape": [
+      [
+        "         ",
+        "   ece   ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "         ",
+        "  ccdcc  ",
+        "   e     ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "   cdc   ",
+        " cddaddc ",
+        " e     d ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "  ddadd  ",
+        "cdaabaadc",
+        "   ab  a ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "  aabaa  ",
+        "dabbfbbad",
+        "  f fbfb ",
+        "   gfg   ",
+        "    f    ",
+        "    f    ",
+        "    f    ",
+        "    f    "
+      ],
+      [
+        "  ddadd  ",
+        "cdaabaadc",
+        "  b b    ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "   cdc   ",
+        " cddaddc ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "         ",
+        "  ccdcc  ",
+        "   e  e  ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "         ",
+        "   ece   ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ]
+    ]
+  }
+  
