@@ -1,0 +1,49 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "mod": "hexerei",
+    "sapling": {
+        "item": "hexerei:willow_sapling"
+    },
+    "drops": [
+        {
+            "rolls": 1,
+            "chance": 0.05,
+            "result": {
+                "item": "hexerei:willow_sapling"
+            }
+        },
+        {
+            "rolls": 1,
+            "chance": 0.1,
+            "result": {
+                "item": "hexerei:willow_vines"
+            }
+        },
+        {
+            "rolls": 1,
+            "chance": 0.75,
+            "result": {
+                "item": "hexerei:willow_log"
+            }
+        },
+        {
+            "rolls": 3,
+            "chance": 0.2,
+            "result": {
+                "item": "minecraft:stick"
+            }
+        },
+        {
+            "rolls": 2,
+            "chance": 0.15,
+            "result": {
+                "item": "hexerei:willow_leaves"
+            },
+            "requiresSilkTouch": true
+        }
+    ],
+    "compatibleSoilTags": [
+        "dirt",
+        "grass"
+    ]
+}
