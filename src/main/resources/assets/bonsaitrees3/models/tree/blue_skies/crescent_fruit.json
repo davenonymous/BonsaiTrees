@@ -1,0 +1,78 @@
+{
+    "type": "bonsaitrees3:sapling/blue_skies/crescent_fruit",
+    "version": 3,
+    "ref": {
+      "a": {"block":"blue_skies:dusk_log","properties":{"axis":"y"}},
+      "b": {"block":"blue_skies:crescent_fruit_leaves","properties":{"distance":"2","mature":"true","persistent":"false","snowy":"false"}},
+      "c": {"block":"blue_skies:crescent_fruit_leaves","properties":{"distance":"3","mature":"false","persistent":"false","snowy":"false"}},
+      "d": {"block":"blue_skies:crescent_fruit_leaves","properties":{"distance":"2","mature":"false","persistent":"false","snowy":"false"}},
+      "e": {"block":"blue_skies:crescent_fruit_leaves","properties":{"distance":"1","mature":"false","persistent":"false","snowy":"false"}},
+      "f": {"block":"blue_skies:crescent_fruit_leaves","properties":{"distance":"3","mature":"true","persistent":"false","snowy":"false"}},
+      "g": {"block":"blue_skies:crescent_fruit_leaves","properties":{"distance":"4","mature":"false","persistent":"false","snowy":"false"}},
+      "h": {"block":"blue_skies:crescent_fruit_leaves","properties":{"distance":"1","mature":"true","persistent":"false","snowy":"false"}},
+      "i": {"block":"blue_skies:crescent_fruit_leaves","properties":{"distance":"4","mature":"true","persistent":"false","snowy":"false"}}
+    },
+    "shape": [
+      [
+        "     ",
+        "  b  ",
+        " cdf ",
+        " cdc ",
+        " i   ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "  d  ",
+        " deb ",
+        "fbedc",
+        "cbebf",
+        "  h  ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "  a  "
+      ],
+      [
+        " ded ",
+        "deaeb",
+        "dhahd",
+        "dhahb",
+        "  a  ",
+        "  a  ",
+        "  a  ",
+        "  a  ",
+        "  a  ",
+        " a a "
+      ],
+      [
+        "  d  ",
+        " deb ",
+        "cbhdc",
+        "fdhdf",
+        "g   i",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "  a  "
+      ],
+      [
+        "     ",
+        "  d  ",
+        " cbf ",
+        " cdc ",
+        "  f  ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ]
+    ]
+  }
+  

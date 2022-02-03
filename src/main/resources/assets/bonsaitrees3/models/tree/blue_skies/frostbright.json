@@ -1,0 +1,44 @@
+{
+    "type": "bonsaitrees3:sapling/blue_skies/frostbright",
+    "version": 3,
+    "ref": {
+      "a": {"block":"blue_skies:frostbright_log","properties":{"axis":"y"}},
+      "b": {"block":"blue_skies:frostbright_leaves","properties":{"distance":"1","persistent":"false","snowy":"false"}}
+    },
+    "shape": [
+      [
+        "   ",
+        " b ",
+        " b ",
+        "   ",
+        "   ",
+        "   ",
+        "   ",
+        "   ",
+        "   "
+      ],
+      [
+        " b ",
+        "bab",
+        "bab",
+        " a ",
+        " a ",
+        " a ",
+        " a ",
+        " a ",
+        " a "
+      ],
+      [
+        "   ",
+        " b ",
+        " b ",
+        "   ",
+        "   ",
+        "   ",
+        "   ",
+        "   ",
+        "   "
+      ]
+    ]
+  }
+  
