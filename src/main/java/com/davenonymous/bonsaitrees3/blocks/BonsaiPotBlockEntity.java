@@ -1,15 +1,15 @@
 package com.davenonymous.bonsaitrees3.blocks;
 
 import com.davenonymous.bonsaitrees3.config.CommonConfig;
+import com.davenonymous.bonsaitrees3.registry.SoilCompatibility;
+import com.davenonymous.bonsaitrees3.registry.sapling.SaplingInfo;
+import com.davenonymous.bonsaitrees3.registry.soil.SoilInfo;
+import com.davenonymous.bonsaitrees3.setup.Registration;
 import com.davenonymous.libnonymous.base.BaseBlockEntity;
 import com.davenonymous.libnonymous.helper.EnchantmentHelper;
 import com.davenonymous.libnonymous.helper.RedstoneMode;
 import com.davenonymous.libnonymous.helper.SpawnHelper;
 import com.davenonymous.libnonymous.serialization.Store;
-import com.davenonymous.bonsaitrees3.registry.SoilCompatibility;
-import com.davenonymous.bonsaitrees3.registry.sapling.SaplingInfo;
-import com.davenonymous.bonsaitrees3.registry.soil.SoilInfo;
-import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -566,6 +566,17 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
 				var saplingInfo = Registration.RECIPE_HELPER_SAPLING.getSaplingInfoForItem(level, stack);
 				return saplingInfo != null;
+			}
+
+			@Override
+			public void setStackInSlot(int slot, @Nonnull ItemStack stack) {
+				var previous = getStackInSlot(slot);
+				if(!ItemStack.isSameItemSameTags(previous, stack)) {
+					growTicks = 0;
+					setChanged();
+					notifyClients();
+				}
+				super.setStackInSlot(slot, stack);
 			}
 
 			@Override
