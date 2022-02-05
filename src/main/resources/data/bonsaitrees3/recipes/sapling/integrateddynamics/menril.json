@@ -38,7 +38,8 @@
             "chance": 0.2,
             "result": {
                 "item": "integrateddynamics:menril_berries"
-            }
+            },
+            "requiresBees": true
         },
         {
             "rolls": 2,
