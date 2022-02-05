@@ -1,0 +1,42 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "mod": "quark",
+  "sapling": {
+    "item": "quark:lavender_blossom_sapling"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "quark:lavender_blossom_sapling"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "minecraft:oak_log"
+      }
+    },
+    {
+      "rolls": 3,
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:stick"
+      }
+    },
+    {
+      "rolls": 2,
+      "chance": 0.15,
+      "result": {
+        "item": "quark:lavender_blossom_leaves"
+      },
+      "requiresSilkTouch": true
+    }
+  ],
+  "compatibleSoilTags": [
+    "dirt",
+    "grass"
+  ]
+}
