@@ -1,0 +1,15 @@
+{
+    "type": "bonsaitrees3:soil",
+    "mod": "tconstruct",
+    "tickModifier": 1.0,
+    "soil": {
+      "item": "tconstruct:blood_earth_slime_grass"
+    },
+    "compatibleSoilTags": [
+      "slimy_grass",
+      "slimy_nylium"
+    ],
+    "display": {
+      "block": "tconstruct:blood_earth_slime_grass"
+    }
+  }
