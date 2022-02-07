@@ -1,0 +1,43 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "mod": "tconstruct",
+    "sapling": {
+      "item": "tconstruct:sky_slime_sapling"
+    },
+    "drops": [
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "tconstruct:sky_slime_sapling"
+        }
+      },
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "tconstruct:skyroot_log"
+        }
+      },
+      {
+        "rolls": 2,
+        "chance": 0.15,
+        "result": {
+          "item": "tconstruct:sky_slime_leaves"
+        },
+        "requiresSilkTouch": true
+      },
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "tconstruct:sky_slime_ball"
+        },
+        "requiresBees": true
+      }
+    ],
+    "compatibleSoilTags": [
+      "slimy_dirt",
+      "slimy_grass"
+    ]
+  }

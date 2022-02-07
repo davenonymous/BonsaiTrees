@@ -1,0 +1,81 @@
+{
+  "type": "bonsaitrees3:sapling/tconstruct/blood_slime",
+  "version": 3,
+  "ref": {
+    "a": {"block":"tconstruct:bloodshroom_log","properties":{"axis":"y"}},
+    "b": {"block":"tconstruct:blood_slime_leaves"},
+    "c": {"block":"tconstruct:ichor_congealed_slime"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bbbbb",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      " bb  ",
+      "b cbb",
+      "b  cb",
+      "b   b",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      " bab ",
+      "b acb",
+      "bbabb",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      " bb  ",
+      " bb  ",
+      "bb cb",
+      "b  bb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbbb",
+      " bbbb",
+      "bb   ",
+      " b   ",
+      " b   ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}
