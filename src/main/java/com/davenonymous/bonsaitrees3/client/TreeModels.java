@@ -33,10 +33,8 @@ public class TreeModels {
 				InputStream is = Minecraft.getInstance().getResourceManager().getResource(resource).getInputStream();
 				MultiblockBlockModel model = GSON.fromJson(new JsonReader(new InputStreamReader(is)), MultiblockBlockModel.class);
 				if(model != null) {
-					LOGGER.info("Loaded tree model: {}", model.id);
+					LOGGER.debug("Loaded tree model: {}", model.id);
 					models.add(model);
-				} else {
-					LOGGER.warn("Unable to read model from: {}", resource);
 				}
 			} catch (IOException e) {
 				e.printStackTrace();

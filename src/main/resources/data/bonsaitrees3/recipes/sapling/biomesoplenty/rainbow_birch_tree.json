@@ -1,6 +1,6 @@
 {
   "type": "bonsaitrees3:sapling",
-  "mod": "biomesoplenty",
+  "conditions": [{ "condition": "forge:mod_loaded", "modid": "biomesoplenty" }],
   "sapling": {
     "item": "biomesoplenty:rainbow_birch_sapling"
   },

@@ -160,7 +160,10 @@ Create the soil recipe first. You can skip this if you don't have custom soil re
 ```js
 {
   "type": "bonsaitrees3:soil",                 // The recipe type. Must be "bonsaitrees3:soil"
-  "mod": "minecraft",                          // The mod required for this soil to get loaded
+  "conditions": [{                             // Conditions are optional
+    "condition": "forge:mod_loaded",
+    "modid": "tconstruct" }                    // The mod required for this soil to get loaded
+   ],
   "tickModifier": 1.0,                         // The time to grow a tree is multiplied by this value
   "soil": {
     "item": "minecraft:grass_block"            // The item that plants this soil in the bonsai pot
@@ -182,7 +185,10 @@ Create the sapling recipe:
 ```js
 {
   "type": "bonsaitrees3:sapling",               // The recipe type. Must be "bonsaitrees3:sapling"!
-  "mod": "minecraft",                           // The mod required for this tree to get loaded
+  "conditions": [{                             // Conditions are optional
+    "condition": "forge:mod_loaded",
+    "modid": "tconstruct" }                    // The mod required for this tree to get loaded
+   ],
   "sapling": { "item": "minecraft:azalea" },    // The item that grows this tree (or whatever)
   "drops": [                                    // An array of drops this tree produces each harvest
     {

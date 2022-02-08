@@ -1,6 +1,6 @@
 {
   "type": "bonsaitrees3:sapling",
-  "mod": "croptopia",
+  "conditions": [{ "condition": "forge:mod_loaded", "modid": "croptopia" }],
   "sapling": {
 	"item": "croptopia:coconut_sapling"
   },

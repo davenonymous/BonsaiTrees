@@ -1,15 +1,15 @@
 {
-    "type": "bonsaitrees3:soil",
-    "mod": "tconstruct",
-    "tickModifier": 1.0,
-    "soil": {
-      "item": "tconstruct:blood_ichor_slime_grass"
-    },
-    "compatibleSoilTags": [
-      "slimy_grass",
-      "slimy_nylium"
-    ],
-    "display": {
-      "block": "tconstruct:blood_ichor_slime_grass"
-    }
+  "type": "bonsaitrees3:soil",
+  "conditions": [{ "condition": "forge:mod_loaded", "modid": "tconstruct" }],
+  "tickModifier": 1.0,
+  "soil": {
+	"item": "tconstruct:blood_ichor_slime_grass"
+  },
+  "compatibleSoilTags": [
+	"slimy_grass",
+	"slimy_nylium"
+  ],
+  "display": {
+	"block": "tconstruct:blood_ichor_slime_grass"
   }
+}

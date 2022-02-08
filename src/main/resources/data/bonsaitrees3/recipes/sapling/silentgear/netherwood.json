@@ -1,6 +1,6 @@
 {
     "type": "bonsaitrees3:sapling",
-    "mod": "silentgear",
+    "conditions": [{ "condition": "forge:mod_loaded", "modid": "silentgear" }],
     "sapling": {
         "item": "silentgear:netherwood_sapling"
     },

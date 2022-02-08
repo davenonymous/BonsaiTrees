@@ -1,6 +1,6 @@
 {
     "type": "bonsaitrees3:sapling",
-    "mod": "ars_nouveau",
+    "conditions": [{ "condition": "forge:mod_loaded", "modid": "ars_nouveau" }],
     "sapling": {
         "item": "ars_nouveau:purple_archwood_sapling"
     },

@@ -1,14 +1,14 @@
 {
-    "type": "bonsaitrees3:soil",
-    "mod": "tconstruct",
-    "tickModifier": 1.0,
-    "soil": {
-      "item": "tconstruct:earth_sky_slime_grass"
-    },
-    "compatibleSoilTags": [
-      "slimy_grass"
-    ],
-    "display": {
-      "block": "tconstruct:earth_sky_slime_grass"
-    }
+  "type": "bonsaitrees3:soil",
+  "conditions": [{ "condition": "forge:mod_loaded", "modid": "tconstruct" }],
+  "tickModifier": 1.0,
+  "soil": {
+	"item": "tconstruct:earth_sky_slime_grass"
+  },
+  "compatibleSoilTags": [
+	"slimy_grass"
+  ],
+  "display": {
+	"block": "tconstruct:earth_sky_slime_grass"
   }
+}

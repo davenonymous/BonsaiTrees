@@ -1,6 +1,6 @@
 {
     "type": "bonsaitrees3:sapling",
-    "mod": "integrateddynamics:menril",
+    "conditions": [{ "condition": "forge:mod_loaded", "modid": "integrateddynamics:menril" }],
     "sapling": {
         "item": "integrateddynamics:menril_sapling"
     },

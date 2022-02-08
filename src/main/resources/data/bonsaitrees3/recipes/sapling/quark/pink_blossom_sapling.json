@@ -1,6 +1,6 @@
 {
   "type": "bonsaitrees3:sapling",
-  "mod": "quark",
+  "conditions": [{ "condition": "forge:mod_loaded", "modid": "quark" }],
   "sapling": {
     "item": "quark:pink_blossom_sapling"
   },

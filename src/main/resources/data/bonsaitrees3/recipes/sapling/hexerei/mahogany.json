@@ -1,6 +1,6 @@
 {
     "type": "bonsaitrees3:sapling",
-    "mod": "hexerei",
+    "conditions": [{ "condition": "forge:mod_loaded", "modid": "hexerei" }],
     "sapling": {
         "item": "hexerei:mahogany_sapling"
     },
