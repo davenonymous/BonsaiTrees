@@ -1,6 +1,6 @@
 {
   "type": "bonsaitrees3:soil",
-  "conditions": [{ "condition": "forge:mod_loaded", "modid": "tconstruct" }],
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "tconstruct" }],
   "tickModifier": 1.0,
   "soil": {
 	"item": "tconstruct:blood_earth_slime_grass"

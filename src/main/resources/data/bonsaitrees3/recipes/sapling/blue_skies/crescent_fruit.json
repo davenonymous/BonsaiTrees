@@ -1,6 +1,6 @@
 {
     "type": "bonsaitrees3:sapling",
-    "conditions": [{ "condition": "forge:mod_loaded", "modid": "blue_skies" }],
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "blue_skies" }],
     "sapling": {
         "item": "blue_skies:crescent_fruit_sapling"
     },

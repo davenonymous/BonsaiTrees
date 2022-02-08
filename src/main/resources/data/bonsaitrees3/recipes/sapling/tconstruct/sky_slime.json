@@ -1,6 +1,6 @@
 {
     "type": "bonsaitrees3:sapling",
-    "conditions": [{ "condition": "forge:mod_loaded", "modid": "tconstruct" }],
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "tconstruct" }],
     "sapling": {
       "item": "tconstruct:sky_slime_sapling"
     },
