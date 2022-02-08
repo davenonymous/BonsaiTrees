@@ -1,0 +1,14 @@
+{
+    "type": "bonsaitrees3:soil",
+    "mod": "tconstruct",
+    "tickModifier": 1.0,
+    "soil": {
+      "item": "tconstruct:sky_vanilla_slime_grass"
+    },
+    "compatibleSoilTags": [
+      "slimy_grass"
+    ],
+    "display": {
+      "block": "tconstruct:sky_vanilla_slime_grass"
+    }
+  }

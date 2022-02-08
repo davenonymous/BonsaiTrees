@@ -1,0 +1,91 @@
+{
+    "type": "bonsaitrees3:sapling/tconstruct/ender_slime",
+    "version": 3,
+    "ref": {
+      "a": {"block":"tconstruct:ender_slime_leaves","properties":{"distance":"3","persistent":"false"}},
+      "b": {"block":"tconstruct:greenheart_log","properties":{"axis":"y"}},
+      "c": {"block":"tconstruct:ender_slime_leaves","properties":{"distance":"1","persistent":"false"}},
+      "d": {"block":"tconstruct:ender_slime_leaves","properties":{"distance":"2","persistent":"false"}},
+      "e": {"block":"tconstruct:ender_slime_leaves","properties":{"distance":"4","persistent":"false"}}
+    },
+    "shape": [
+      [
+        "       ",
+        "       ",
+        "   a   ",
+        "  eae  ",
+        "   e   ",
+        "       ",
+        "       ",
+        "       ",
+        "       "
+      ],
+      [
+        "       ",
+        "   d   ",
+        "  ada  ",
+        " eadae ",
+        "       ",
+        "       ",
+        "       ",
+        "       ",
+        "       "
+      ],
+      [
+        "   d   ",
+        "  dcd  ",
+        " adcda ",
+        "eadcdae",
+        "    a  ",
+        "       ",
+        "       ",
+        "       ",
+        "       "
+      ],
+      [
+        "  dcd  ",
+        " dcbcd ",
+        "adcbcda",
+        "adcbcda",
+        "e  b  e",
+        "   b   ",
+        "   b   ",
+        "   b   ",
+        "   b   "
+      ],
+      [
+        "   d   ",
+        "  dcd  ",
+        " adcda ",
+        "eadcdae",
+        "  a a  ",
+        "       ",
+        "       ",
+        "       ",
+        "       "
+      ],
+      [
+        "       ",
+        "   d   ",
+        "  ada  ",
+        " eadae ",
+        "       ",
+        "       ",
+        "       ",
+        "       ",
+        "       "
+      ],
+      [
+        "       ",
+        "       ",
+        "   a   ",
+        "  eae  ",
+        "   e   ",
+        "       ",
+        "       ",
+        "       ",
+        "       "
+      ]
+    ]
+  }
+  

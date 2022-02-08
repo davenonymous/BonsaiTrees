@@ -1,0 +1,77 @@
+{
+    "type": "bonsaitrees3:sapling/tconstruct/earth_slime",
+    "version": 3,
+    "ref": {
+      "a": {"block":"tconstruct:earth_slime_leaves","properties":{"distance":"2","persistent":"false"}},
+      "b": {"block":"tconstruct:earth_slime_leaves","properties":{"distance":"1","persistent":"false"}},
+      "c": {"block":"tconstruct:earth_slime_leaves","properties":{"distance":"4","persistent":"false"}},
+      "d": {"block":"tconstruct:earth_slime_leaves","properties":{"distance":"3","persistent":"false"}},
+      "e": {"block":"tconstruct:greenheart_log","properties":{"axis":"y"}}
+    },
+    "shape": [
+      [
+        "       ",
+        "       ",
+        "   d   ",
+        "  cdc  ",
+        "   c   ",
+        "       ",
+        "       "
+      ],
+      [
+        "       ",
+        "   a   ",
+        "  dad  ",
+        " cdadc ",
+        "       ",
+        "       ",
+        "       "
+      ],
+      [
+        "   a   ",
+        "  aba  ",
+        " dabad ",
+        "cdabadc",
+        "    d  ",
+        "       ",
+        "       "
+      ],
+      [
+        "  aba  ",
+        " abeba ",
+        "dabebad",
+        "dabebad",
+        "c  e  c",
+        "   e   ",
+        "   e   "
+      ],
+      [
+        "   a   ",
+        "  aba  ",
+        " dabad ",
+        "cdabadc",
+        "  d d  ",
+        "       ",
+        "       "
+      ],
+      [
+        "       ",
+        "   a   ",
+        "  dad  ",
+        " cdadc ",
+        "       ",
+        "       ",
+        "       "
+      ],
+      [
+        "       ",
+        "       ",
+        "   d   ",
+        "  cdc  ",
+        "   c   ",
+        "       ",
+        "       "
+      ]
+    ]
+  }
+  
