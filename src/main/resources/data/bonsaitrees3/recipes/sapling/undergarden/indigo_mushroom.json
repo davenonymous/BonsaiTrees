@@ -1,0 +1,42 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [
+        {
+            "type": "forge:mod_loaded",
+            "modid": "undergarden"
+        }
+    ],
+    "sapling": {
+        "item": "undergarden:indigo_mushroom"
+    },
+    "drops": [
+        {
+            "rolls": 3,
+            "chance": 0.2,
+            "result": {
+                "item": "undergarden:indigo_mushroom"
+            }
+        },
+        {
+            "rolls": 1,
+            "chance": 0.75,
+            "result": {
+                "item": "undergarden:indigo_mushroom_stalk"
+            },
+            "requiresSilkTouch": true
+        },
+        {
+            "rolls": 2,
+            "chance": 0.2,
+            "result": {
+                "item": "undergarden:indigo_mushroom_cap"
+            },
+            "requiresSilkTouch": true
+        }
+    ],
+    "compatibleSoilTags": [
+        "deepsoil",
+        "deepturf"
+    ],
+    "ticks": 300
+}
