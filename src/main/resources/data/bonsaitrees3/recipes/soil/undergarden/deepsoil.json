@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "undergarden" }
+    ],
+    "tickModifier": 1.1,
+    "soil": {
+        "item": "undergarden:deepsoil"
+    },
+    "compatibleSoilTags": [
+        "deepsoil"
+    ],
+    "display": {
+        "block": "undergarden:deepsoil"
+    }
+}

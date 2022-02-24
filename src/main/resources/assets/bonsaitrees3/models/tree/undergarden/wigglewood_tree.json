@@ -1,0 +1,63 @@
+{
+  "type": "bonsaitrees3:sapling/undergarden/wigglewood_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"undergarden:wigglewood_leaves","properties":{"distance":"2","persistent":"false"}},
+    "b": {"block":"undergarden:wigglewood_leaves","properties":{"distance":"3","persistent":"false"}},
+    "c": {"block":"undergarden:wigglewood_leaves","properties":{"distance":"1","persistent":"false"}},
+    "d": {"block":"undergarden:wigglewood_leaves","properties":{"distance":"4","persistent":"false"}},
+    "e": {"block":"undergarden:wigglewood_log","properties":{"axis":"y"}},
+    "f": {"block":"undergarden:wigglewood_leaves","properties":{"distance":"5","persistent":"false"}}
+  },
+  "shape": [
+    [
+      " dbdf ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "dbabd ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "bacab ",
+      "  e   ",
+      "   e  ",
+      "    e ",
+      "    e "
+    ],
+    [
+      "dbabb ",
+      "      ",
+      "      ",
+      "    e ",
+      "      "
+    ],
+    [
+      "fdbbab",
+      "      ",
+      "    e ",
+      "      ",
+      "      "
+    ],
+    [
+      "   aca",
+      "    e ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "    ab",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ]
+  ]
+}
