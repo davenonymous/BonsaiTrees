@@ -54,7 +54,7 @@ public class DatagenSaplings extends BaseDataProvider {
 		addSapling(Items.JUNGLE_SAPLING, TreeFeatures.JUNGLE_TREE, fruitDrop(Items.COCOA_BEANS));
 		addSapling(Items.OAK_SAPLING, TreeFeatures.OAK, fruitDrop(Items.APPLE));
 		addSapling(Items.SPRUCE_SAPLING, TreeFeatures.SPRUCE);
-		addSapling(Items.AZALEA, getAsTreeConfiguration(TreeFeatures.AZALEA_TREE));
+		//addSapling(Items.AZALEA, getAsTreeConfiguration(TreeFeatures.AZALEA_TREE));
 
 		addFungus(Items.CRIMSON_FUNGUS, TreeFeatures.CRIMSON_FUNGUS, new String[]{"crimson"});
 		addFungus(Items.WARPED_FUNGUS, TreeFeatures.WARPED_FUNGUS, new String[]{"warped"});

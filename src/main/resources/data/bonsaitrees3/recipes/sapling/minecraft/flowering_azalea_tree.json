@@ -1,9 +1,10 @@
 {
   "type": "bonsaitrees3:sapling",
   "conditions": [{ "type": "forge:mod_loaded", "modid": "minecraft" }],
-  "sapling": {
-    "item": "minecraft:flowering_azalea"
-  },
+  "sapling": [
+    {"item": "minecraft:flowering_azalea"},
+    {"item": "minecraft:azalea"}
+  ],
   "drops": [
     {
       "rolls": 1,

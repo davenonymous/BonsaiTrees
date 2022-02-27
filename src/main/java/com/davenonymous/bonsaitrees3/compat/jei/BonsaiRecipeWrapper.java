@@ -116,7 +116,7 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 	@Override
 	public void setIngredients(IIngredients iIngredients) {
 		List<List<ItemStack>> inputs = new ArrayList<>();
-		inputs.add(Collections.singletonList(sapling.ingredient.getItems()[0]));
+		inputs.add(Arrays.stream(sapling.ingredient.getItems()).toList());
 
 		tickModifiers = new HashMap<>();
 		List<ItemStack> soilStacks = new ArrayList<>();

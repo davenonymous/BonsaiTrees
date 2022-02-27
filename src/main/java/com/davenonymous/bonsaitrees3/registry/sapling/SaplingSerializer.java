@@ -1,6 +1,7 @@
 package com.davenonymous.bonsaitrees3.registry.sapling;
 
 import com.davenonymous.libnonymous.json.MCJsonUtils;
+import com.davenonymous.libnonymous.serialization.JsonHelpers;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -33,12 +34,11 @@ public class SaplingSerializer extends ForgeRegistryEntry<RecipeSerializer<?>> i
 
 	@Override
 	public SaplingInfo fromJson(ResourceLocation recipeId, JsonObject json) {
-		if(!isValidIngredient(json.getAsJsonObject("sapling"))) {
+		final Ingredient sapling = JsonHelpers.getIngredientFromArrayOrSingle(json.get("sapling"));
+		if(sapling.isEmpty()) {
 			LOGGER.info("Skipping recipe '{}', contains unknown sapling.", recipeId);
 			return null;
 		}
-
-		final Ingredient sapling = Ingredient.fromJson(json.getAsJsonObject("sapling"));
 
 		int baseTicks = 200;
 		if(json.has("ticks")) {
@@ -60,9 +60,7 @@ public class SaplingSerializer extends ForgeRegistryEntry<RecipeSerializer<?>> i
 				}
 
 				SaplingDrop drop = new SaplingDrop(element.getAsJsonObject());
-				if(drop == null) {
-					continue;
-				}
+				// TODO: Add error handling
 
 				result.addDrop(drop);
 			}

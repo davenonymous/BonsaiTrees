@@ -1,7 +1,9 @@
 package com.davenonymous.bonsaitrees3.registry.soil;
 
+import com.davenonymous.bonsaitrees3.BonsaiTrees3;
 import com.davenonymous.libnonymous.helper.BlockStateSerializationHelper;
 import com.davenonymous.libnonymous.helper.FluidStateSerializationHelper;
+import com.davenonymous.libnonymous.serialization.JsonHelpers;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -20,7 +22,12 @@ public class SoilSerializer extends ForgeRegistryEntry<RecipeSerializer<?>> impl
 
 	@Override
 	public SoilInfo fromJson(ResourceLocation recipeId, JsonObject json) {
-		final Ingredient soil = Ingredient.fromJson(json.getAsJsonObject("soil"));
+		final Ingredient soil = JsonHelpers.getIngredientFromArrayOrSingle(json.get("soil"));
+		if(soil.isEmpty()) {
+			BonsaiTrees3.LOGGER.info("Skipping recipe '{}', contains unknown soil ingredient.", recipeId);
+			return null;
+		}
+
 		float tickModifier = 1.0f;
 		if(json.has("tickModifier")) {
 			tickModifier = json.get("tickModifier").getAsFloat();
