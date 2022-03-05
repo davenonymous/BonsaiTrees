@@ -19,6 +19,7 @@ public class DatagenRecipes extends RecipeProvider {
 
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
-		ShapedRecipeBuilder.shaped(Registration.BONSAI_POT.get()).pattern("b b").pattern("bbb").define('b', Tags.Items.INGOTS_BRICK).group(BonsaiTrees3.MODID).unlockedBy("bonsaipot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BRICK)).save(consumer);
+
+		//ShapedRecipeBuilder.shaped(Registration.BONSAI_POT.get()).pattern("b b").pattern("bbb").define('b', Tags.Items.INGOTS_BRICK).group(BonsaiTrees3.MODID).unlockedBy("bonsaipot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BRICK)).save(consumer);
 	}
 }

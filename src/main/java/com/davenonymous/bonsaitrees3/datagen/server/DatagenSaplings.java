@@ -48,19 +48,19 @@ public class DatagenSaplings extends BaseDataProvider {
 
 	@Override
 	public void addValues() {
-		addSapling(Items.ACACIA_SAPLING, TreeFeatures.ACACIA);
-		addSapling(Items.BIRCH_SAPLING, TreeFeatures.BIRCH);
-		addSapling(Items.DARK_OAK_SAPLING, TreeFeatures.DARK_OAK);
-		addSapling(Items.JUNGLE_SAPLING, TreeFeatures.JUNGLE_TREE, fruitDrop(Items.COCOA_BEANS));
-		addSapling(Items.OAK_SAPLING, TreeFeatures.OAK, fruitDrop(Items.APPLE));
-		addSapling(Items.SPRUCE_SAPLING, TreeFeatures.SPRUCE);
+		addSapling(Items.ACACIA_SAPLING, TreeFeatures.ACACIA.m_203334_());
+		addSapling(Items.BIRCH_SAPLING, TreeFeatures.BIRCH.m_203334_());
+		addSapling(Items.DARK_OAK_SAPLING, TreeFeatures.DARK_OAK.m_203334_());
+		addSapling(Items.JUNGLE_SAPLING, TreeFeatures.JUNGLE_TREE.m_203334_(), fruitDrop(Items.COCOA_BEANS));
+		addSapling(Items.OAK_SAPLING, TreeFeatures.OAK.m_203334_(), fruitDrop(Items.APPLE));
+		addSapling(Items.SPRUCE_SAPLING, TreeFeatures.SPRUCE.m_203334_());
 		//addSapling(Items.AZALEA, getAsTreeConfiguration(TreeFeatures.AZALEA_TREE));
 
-		addFungus(Items.CRIMSON_FUNGUS, TreeFeatures.CRIMSON_FUNGUS, new String[]{"crimson"});
-		addFungus(Items.WARPED_FUNGUS, TreeFeatures.WARPED_FUNGUS, new String[]{"warped"});
+		addFungus(Items.CRIMSON_FUNGUS, TreeFeatures.CRIMSON_FUNGUS.m_203334_(), new String[]{"crimson"});
+		addFungus(Items.WARPED_FUNGUS, TreeFeatures.WARPED_FUNGUS.m_203334_(), new String[]{"warped"});
 
-		addMushroom(Items.RED_MUSHROOM, TreeFeatures.HUGE_RED_MUSHROOM, new String[]{"mycelium"});
-		addMushroom(Items.BROWN_MUSHROOM, TreeFeatures.HUGE_BROWN_MUSHROOM, new String[]{"mycelium"});
+		addMushroom(Items.RED_MUSHROOM, TreeFeatures.HUGE_RED_MUSHROOM.m_203334_(), new String[]{"mycelium"});
+		addMushroom(Items.BROWN_MUSHROOM, TreeFeatures.HUGE_BROWN_MUSHROOM.m_203334_(), new String[]{"mycelium"});
 
 		addCoral(Items.BRAIN_CORAL, Items.DEAD_BRAIN_CORAL, Blocks.BRAIN_CORAL_BLOCK);
 		addCoral(Items.BUBBLE_CORAL, Items.DEAD_BUBBLE_CORAL, Blocks.BUBBLE_CORAL_BLOCK);

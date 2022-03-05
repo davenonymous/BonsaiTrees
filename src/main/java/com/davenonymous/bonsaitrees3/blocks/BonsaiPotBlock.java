@@ -10,6 +10,7 @@ import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerLevel;
@@ -65,7 +66,7 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 		var state = super.getStateForPlacement(context);
 
 		var offHandItemStack = context.getPlayer().getItemInHand(InteractionHand.OFF_HAND);
-		if(Tags.Items.DYES.contains(offHandItemStack.getItem())) {
+		if(offHandItemStack.m_204117_(Tags.Items.DYES)) {
 			var color = DyeColor.getColor(offHandItemStack);
 			if(color != null) {
 				state = state.setValue(CustomBlockStateProperties.COLOR, color.getId());
@@ -130,9 +131,8 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 			pot.setChanged();
 			return InteractionResult.SUCCESS;
 		}
-
-
-		if(Tags.Items.DYES.contains(playerStack.getItem())) {
+		
+		if(playerStack.m_204117_(Tags.Items.DYES)) {
 			var color = DyeColor.getColor(playerStack);
 			if(color != null) {
 				level.setBlock(pos, state.setValue(CustomBlockStateProperties.COLOR, color.getId()), UPDATE_CLIENTS);

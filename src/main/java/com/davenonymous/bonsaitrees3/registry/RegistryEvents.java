@@ -16,6 +16,8 @@ import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.registries.RegistryBuilder;
 
 import static com.davenonymous.bonsaitrees3.BonsaiTrees3.MODID;
 
@@ -23,24 +25,12 @@ import static com.davenonymous.bonsaitrees3.BonsaiTrees3.MODID;
 public class RegistryEvents {
 
 	@SubscribeEvent
-	public static void createNewRegistry(RegistryEvent.NewRegistry event) {
-		Registration.RECIPE_TYPE_SOIL = createRecipeType(SoilInfo.class, "soil");
-		Registration.RECIPE_TYPE_SAPLING = createRecipeType(SaplingInfo.class, "sapling");
+	static void onCommonSetup(FMLCommonSetupEvent event) {
+		Registration.RECIPE_TYPE_SOIL = RecipeType.register(new ResourceLocation(MODID, "soil").toString());
+		Registration.RECIPE_TYPE_SAPLING = RecipeType.register(new ResourceLocation(MODID, "sapling").toString());
 
 		Registration.RECIPE_HELPER_SOIL = new SoilRecipeHelper();
 		Registration.RECIPE_HELPER_SAPLING = new SaplingRecipeHelper();
-	}
-
-	private static <T extends RecipeData> RecipeType<T> createRecipeType(Class<T> type, String id) {
-		ResourceLocation recipeTypeResource = new ResourceLocation(MODID, id);
-		RecipeType<T> reg = Registry.register(Registry.RECIPE_TYPE, recipeTypeResource, new RecipeType<T>() {
-			@Override
-			public String toString() {
-				return recipeTypeResource.toString();
-			}
-		});
-
-		return reg;
 	}
 
 	@SubscribeEvent

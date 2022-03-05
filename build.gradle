@@ -141,7 +141,7 @@ dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.18.1-39.0.66'
+    minecraft 'net.minecraftforge:forge:1.18.2-40.0.4'
 
     // Real mod deobf dependency examples - these get remapped to your current mappings
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}:${jei_version}:api") // Adds JEI API as a compile dependency
@@ -154,7 +154,7 @@ dependencies {
     compileOnly fg.deobf("mezz.jei:jei-${jei_version}:api")
     implementation fg.deobf("mezz.jei:jei-${jei_version}")
 
-    implementation fg.deobf("curse.maven:the-one-probe-245211:3586969")
+    implementation fg.deobf("curse.maven:the-one-probe-245211:3671753")
     implementation fg.deobf("curse.maven:configured-457570:3559398")
 
     if (findProject(':libnonymous') != null) {
