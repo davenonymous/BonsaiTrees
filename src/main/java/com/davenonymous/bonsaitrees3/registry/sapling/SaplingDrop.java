@@ -2,10 +2,12 @@ package com.davenonymous.bonsaitrees3.registry.sapling;
 
 import com.davenonymous.bonsaitrees3.config.CommonConfig;
 import com.davenonymous.libnonymous.json.MCJsonUtils;
+import com.davenonymous.libnonymous.serialization.JsonHelpers;
 import com.google.gson.JsonObject;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 
 import java.util.Random;
 
@@ -15,21 +17,15 @@ public class SaplingDrop {
 	public int rolls;
 	public boolean requiresSilkTouch;
 	public boolean requiresBees;
+	public Ingredient requiredUpgrades;
 
-	public SaplingDrop(Item item, float chance, int rolls, boolean requiresSilkTouch, boolean requiresBees) {
+	public SaplingDrop(Item item, float chance, int rolls, boolean requiresSilkTouch, boolean requiresBees, Ingredient requiredUpgrades) {
 		this.resultStack = new ItemStack(item);
 		this.chance = chance;
 		this.rolls = rolls;
 		this.requiresSilkTouch = requiresSilkTouch;
 		this.requiresBees = requiresBees;
-	}
-
-	public SaplingDrop(ItemStack resultStack, float chance, int rolls, boolean requiresSilkTouch, boolean requiresBees) {
-		this.resultStack = resultStack;
-		this.chance = chance;
-		this.rolls = rolls;
-		this.requiresSilkTouch = requiresSilkTouch;
-		this.requiresBees = requiresBees;
+		this.requiredUpgrades = requiredUpgrades;
 	}
 
 	public SaplingDrop(JsonObject json) {
@@ -38,6 +34,11 @@ public class SaplingDrop {
 		this.rolls = json.get("rolls").getAsInt();
 		this.requiresSilkTouch = json.has("requiresSilkTouch") && json.get("requiresSilkTouch").getAsBoolean();
 		this.requiresBees = json.has("requiresBees") && json.get("requiresBees").getAsBoolean();
+		if(json.has("requiredUpgrades")) {
+			this.requiredUpgrades = JsonHelpers.getIngredientFromArrayOrSingle(json.get("requiredUpgrades"));
+		} else {
+			this.requiredUpgrades = Ingredient.EMPTY;
+		}
 	}
 
 	public SaplingDrop(FriendlyByteBuf buffer) {
@@ -46,6 +47,7 @@ public class SaplingDrop {
 		this.rolls = buffer.readInt();
 		this.requiresSilkTouch = buffer.readBoolean();
 		this.requiresBees = buffer.readBoolean();
+		this.requiredUpgrades = Ingredient.fromNetwork(buffer);
 	}
 
 	public void write(FriendlyByteBuf buffer) {
@@ -54,6 +56,7 @@ public class SaplingDrop {
 		buffer.writeInt(this.rolls);
 		buffer.writeBoolean(this.requiresSilkTouch);
 		buffer.writeBoolean(this.requiresBees);
+		this.requiredUpgrades.toNetwork(buffer);
 	}
 
 	public ItemStack getRandomDrop(Random rand, int fortuneLevel) {

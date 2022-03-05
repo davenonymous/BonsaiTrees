@@ -77,7 +77,7 @@ public class DatagenSaplings extends BaseDataProvider {
 	}
 
 	public static SaplingDrop fruitDrop(Item item) {
-		return new SaplingDrop(item, 0.05f, 1, false, true);
+		return new SaplingDrop(item, 0.05f, 1, false, true, Ingredient.EMPTY);
 	}
 
 	@SuppressWarnings("unchecked")

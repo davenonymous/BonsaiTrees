@@ -7,6 +7,7 @@ import com.davenonymous.bonsaitrees3.registry.soil.SoilInfo;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import com.davenonymous.libnonymous.base.BaseBlockEntity;
 import com.davenonymous.libnonymous.helper.EnchantmentHelper;
+import com.davenonymous.libnonymous.helper.InventoryHelper;
 import com.davenonymous.libnonymous.helper.RedstoneMode;
 import com.davenonymous.libnonymous.helper.SpawnHelper;
 import com.davenonymous.libnonymous.serialization.Store;
@@ -366,8 +367,8 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 				}
 			}
 		}
-
-		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(getLevel().random, fortune, hasSilkTouch, hasBeeHive);
+		List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
+		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(getLevel().random, fortune, hasSilkTouch, hasBeeHive, upgradeItems);
 
 		// Test if all stacks fit in the output slots
 		boolean allFit = true;

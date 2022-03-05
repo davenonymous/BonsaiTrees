@@ -59,7 +59,7 @@ public class SaplingInfo extends RecipeData {
 		return this.tags.contains(tag);
 	}
 
-	public List<ItemStack> getRandomizedDrops(Random rand, int fortune, boolean hasSilkTouch, boolean hasBeeHive) {
+	public List<ItemStack> getRandomizedDrops(Random rand, int fortune, boolean hasSilkTouch, boolean hasBeeHive, List<ItemStack> upgradeItems) {
 		ArrayList<ItemStack> result = new ArrayList<>();
 		for(SaplingDrop drop : this.drops) {
 			if(drop.requiresSilkTouch && !hasSilkTouch) {
@@ -68,6 +68,13 @@ public class SaplingInfo extends RecipeData {
 
 			if(drop.requiresBees && !hasBeeHive) {
 				continue;
+			}
+
+			if(!drop.requiredUpgrades.isEmpty()) {
+				var matchingUpgrade = upgradeItems.stream().filter(p -> drop.requiredUpgrades.test(p)).findAny();
+				if(!matchingUpgrade.isPresent()) {
+					continue;
+				}
 			}
 
 			ItemStack dropStack = drop.getRandomDrop(rand, fortune);
