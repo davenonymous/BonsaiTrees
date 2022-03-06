@@ -84,31 +84,60 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 		if(stack.isEmpty()) {
 			return;
 		}
-
 		if(isInput) {
 			if(slot == 0) {
 				// Sapling slot
 				String timeToGrow = TickTimeHelper.getDuration(sapling.baseTicks);
-				tooltip.add(tooltip.size() - 1, new TextComponent(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.growtime", timeToGrow)));
+				var toAdd = new TextComponent(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.growtime", timeToGrow));
+				if(!tooltip.contains(toAdd)) {
+					tooltip.add(tooltip.size() - 1, toAdd);
+				}
 			}
 
 			if(slot == 1) {
 				float tickModifier = tickModifiers.getOrDefault(stack.getItem().getRegistryName(), 1.0f);
 				String timeToGrow = TickTimeHelper.getDuration((int) (sapling.baseTicks * tickModifier));
-				tooltip.add(tooltip.size() - 1, new TextComponent(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.soiltime", timeToGrow)));
+				var toAdd = new TextComponent(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.soiltime", timeToGrow));
+				if(!tooltip.contains(toAdd)) {
+					tooltip.add(tooltip.size() - 1, toAdd);
+				}
 			}
 		} else {
 			// Some output slot
+			var drop = slotDrop[slot - 2];
 			if(CommonConfig.showChanceInJEI.get()) {
-				tooltip.add(tooltip.size() - 1, new TextComponent(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.chance", (int) (slotDrop[slot - 2].chance * 100))));
+				var toAdd = new TextComponent(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.chance", (int) (drop.chance * 100)));
+				if(!tooltip.contains(toAdd)) {
+					tooltip.add(tooltip.size() - 1, toAdd);
+				}
 			}
 
-			if(slotDrop[slot - 2].requiresSilkTouch) {
-				tooltip.add(tooltip.size() - 1, new TextComponent(ChatFormatting.RED + I18n.get("jei.bonsaitrees3.requiresSilkTouch")));
+			if(drop.requiresSilkTouch) {
+				var toAdd = new TextComponent(ChatFormatting.RED + I18n.get("jei.bonsaitrees3.requiresSilkTouch"));
+				if(!tooltip.contains(toAdd)) {
+					tooltip.add(tooltip.size() - 1, toAdd);
+				}
 			}
 
-			if(slotDrop[slot - 2].requiresBees) {
-				tooltip.add(tooltip.size() - 1, new TextComponent(ChatFormatting.RED + I18n.get("jei.bonsaitrees3.requiresBees")));
+			if(drop.requiresBees) {
+				var toAdd = new TextComponent(ChatFormatting.RED + I18n.get("jei.bonsaitrees3.requiresBees"));
+				if(!tooltip.contains(toAdd)) {
+					tooltip.add(tooltip.size() - 1, toAdd);
+				}
+			}
+
+			if(!drop.requiredUpgrades.isEmpty()) {
+				var toAdd = new TextComponent(ChatFormatting.RED + I18n.get("jei.bonsaitrees3.requiresUpgrade"));
+				if(!tooltip.contains(toAdd)) {
+					tooltip.add(tooltip.size() - 1, toAdd);
+
+					var items = drop.requiredUpgrades.getItems();
+					for(var item : items) {
+						var name = item.getItem().getName(item);
+						var itemLine = new TextComponent(ChatFormatting.AQUA + "- " + name.getString());
+						tooltip.add(tooltip.size() - 1, itemLine);
+					}
+				}
 			}
 		}
 	}
