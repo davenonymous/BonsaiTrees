@@ -514,6 +514,10 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			}
 		}
 
+		if(SoilCompatibility.INSTANCE.isUpgradeItem(stack)) {
+			return true;
+		}
+
 		return false;
 	}
 

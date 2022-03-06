@@ -189,7 +189,7 @@ Create the sapling recipe:
     "type": "forge:mod_loaded",
     "modid": "tconstruct" }                     // The mod required for this tree to get loaded
    ],
-  "sapling": { "item": "minecraft:azalea" },    // The item that grows this tree (or whatever)
+  "sapling": { "item": "minecraft:azalea" },    // The ingredient that grows this tree (or whatever). Can also be an array of ingredients!
   "drops": [                                    // An array of drops this tree produces each harvest
     {
       "rolls": 1, "chance": 0.05,               // The number of rolls and the chance for each roll for this drop
@@ -201,7 +201,10 @@ Create the sapling recipe:
     },
     {
       "rolls": 3, "chance": 0.2,
-      "result": { "item": "minecraft:stick" }
+      "result": { "item": "minecraft:stick" },
+      "requiredUpgrades": {                     // EXPERIMENTAL: This allows configuring additional upgrade item required for this drop
+        "tag": "forge:fences"                   // This is a bit of a stupid example: Sticks only drop if a fence is used as upgrade item.
+      }
     },
     {
       "rolls": 2, "chance": 0.15,

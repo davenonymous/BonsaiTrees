@@ -25,6 +25,8 @@ public class DatagenTranslations extends BaseLanguageProvider {
 
 		add("jei.bonsaitrees3.requiresSilkTouch", "Requires Silk Touch upgrade");
 		add("jei.bonsaitrees3.requiresBees", "Requires a Bee Hive upgrade");
+		add("jei.bonsaitrees3.requiresUpgrade", "Requires one of these upgrades:");
+
 		add("jei.bonsaitrees3.growtime", "Time to grow: %s");
 		add("jei.bonsaitrees3.soiltime", "Changes growtime to: %s");
 		add("jei.bonsaitrees3.chance", "Chance: %d%%");

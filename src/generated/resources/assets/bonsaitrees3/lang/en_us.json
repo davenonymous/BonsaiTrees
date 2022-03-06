@@ -14,6 +14,7 @@
   "jei.bonsaitrees3.recipes.title": "Growing in Bonsai Pots",
   "jei.bonsaitrees3.requiresBees": "Requires a Bee Hive upgrade",
   "jei.bonsaitrees3.requiresSilkTouch": "Requires Silk Touch upgrade",
+  "jei.bonsaitrees3.requiresUpgrade": "Requires one of these upgrades:",
   "jei.bonsaitrees3.soiltime": "Changes growtime to: %s",
   "jei.bonsaitrees3.upgrades.title": "Upgrading Bonsai Pots"
 }
