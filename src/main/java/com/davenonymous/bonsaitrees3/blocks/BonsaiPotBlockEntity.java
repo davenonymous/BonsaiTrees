@@ -317,6 +317,10 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			if(efficiency > 0) {
 				this.requiredTicks -= Math.floor(ticks * 0.05f * efficiency);
 			}
+
+			if(this.requiredTicks < CommonConfig.minimumRequiredTicks.get()) {
+				this.requiredTicks = CommonConfig.minimumRequiredTicks.get();
+			}
 		} else {
 			this.requiredTicks = Integer.MAX_VALUE;
 		}

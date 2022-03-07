@@ -30,6 +30,8 @@ public class CommonConfig {
 	public static ForgeConfigSpec.IntValue cuttingCooldown;
 	public static ForgeConfigSpec.DoubleValue autoCuttingDamageChance;
 
+	public static ForgeConfigSpec.IntValue minimumRequiredTicks;
+
 	public static void register() {
 		enableFortuneUpgrade = COMMON_BUILDER
 				.comment("Enable fortune upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
@@ -84,6 +86,10 @@ public class CommonConfig {
 		cuttingCooldown = COMMON_BUILDER
 				.comment("How many ticks to wait before trying to cut the tree automatically after failing to do so?")
 				.defineInRange("cuttingCooldown", 20 * 3, 20, 20 * 60);
+
+		minimumRequiredTicks = COMMON_BUILDER
+				.comment("Minimum amount of ticks for a bonsai to fully grow")
+				.defineInRange("minimumRequiredTicks", 1, 1, Integer.MAX_VALUE);
 
 		COMMON_CONFIG = COMMON_BUILDER.build();
 
