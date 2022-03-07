@@ -22,7 +22,7 @@ public class DatagenRecipes extends RecipeProvider {
 		ShapedRecipeBuilder.shaped(Registration.BONSAI_POT.get())
 				.pattern("b b")
 				.pattern("bbb")
-				.m_206416_('b', Tags.Items.INGOTS_BRICK)
+				.define('b', Tags.Items.INGOTS_BRICK)
 				.group(BonsaiTrees3.MODID)
 				.unlockedBy("bonsaipot", InventoryChangeTrigger.TriggerInstance.hasItems(Items.BRICK)).save(consumer);
 	}

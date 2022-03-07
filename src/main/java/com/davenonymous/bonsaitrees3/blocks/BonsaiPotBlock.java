@@ -66,7 +66,7 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 		var state = super.getStateForPlacement(context);
 
 		var offHandItemStack = context.getPlayer().getItemInHand(InteractionHand.OFF_HAND);
-		if(offHandItemStack.m_204117_(Tags.Items.DYES)) {
+		if(offHandItemStack.is(Tags.Items.DYES)) {
 			var color = DyeColor.getColor(offHandItemStack);
 			if(color != null) {
 				state = state.setValue(CustomBlockStateProperties.COLOR, color.getId());
@@ -131,8 +131,8 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 			pot.setChanged();
 			return InteractionResult.SUCCESS;
 		}
-		
-		if(playerStack.m_204117_(Tags.Items.DYES)) {
+
+		if(playerStack.is(Tags.Items.DYES)) {
 			var color = DyeColor.getColor(playerStack);
 			if(color != null) {
 				level.setBlock(pos, state.setValue(CustomBlockStateProperties.COLOR, color.getId()), UPDATE_CLIENTS);
