@@ -538,30 +538,42 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	}
 
 	public static boolean isUpgradeItem(ItemStack stack) {
-		if(stack.is(Blocks.HOPPER.asItem())) {
+		// TODO: Create tag to be used for hopping upgrades
+		if(CommonConfig.enableHoppingUpgrade.get() && stack.is(Blocks.HOPPER.asItem())) {
 			return true;
 		}
 
+		// TODO: Create tag to be used for bee type upgrades
 		if(stack.is(Blocks.BEEHIVE.asItem()) || stack.is(Blocks.BEE_NEST.asItem())) {
 			return true;
 		}
 
-		if(stack.getItem().canPerformAction(stack, ToolActions.AXE_DIG)) {
+		if(CommonConfig.enableAutoCuttingUpgrade.get() && stack.getItem().canPerformAction(stack, ToolActions.AXE_DIG)) {
 			return true;
 		}
 
-		if(stack.getItem() instanceof EnchantedBookItem) {
+		if(stack.isEnchanted()) {
 			var enchantments = new EnchantmentHelper(stack);
-			if(enchantments.hasAny(Enchantments.SILK_TOUCH, Enchantments.BLOCK_FORTUNE, Enchantments.BLOCK_EFFICIENCY)) {
+			if(enchantments.has(Enchantments.SILK_TOUCH)) {
+				return true;
+			}
+
+			if(CommonConfig.enableEfficiencyUpgrade.get() && enchantments.has(Enchantments.BLOCK_EFFICIENCY)) {
+				return true;
+			}
+
+			if(CommonConfig.enableFortuneUpgrade.get() && enchantments.has(Enchantments.BLOCK_FORTUNE)) {
 				return true;
 			}
 		}
 
-		var optEnergyCap = stack.getCapability(CapabilityEnergy.ENERGY);
-		if(optEnergyCap.isPresent()) {
-			var energyCap = optEnergyCap.resolve().get();
-			if(energyCap.canExtract()) {
-				return true;
+		if(CommonConfig.enableForgeEnergyUpgrade.get()) {
+			var optEnergyCap = stack.getCapability(CapabilityEnergy.ENERGY);
+			if(optEnergyCap.isPresent()) {
+				var energyCap = optEnergyCap.resolve().get();
+				if(energyCap.canExtract()) {
+					return true;
+				}
 			}
 		}
 

@@ -38,27 +38,27 @@ public class CommonConfig {
 
 	public static void register() {
 		enableFortuneUpgrade = COMMON_BUILDER
-				.comment("Enable fortune upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.comment("Enable fortune upgrades?")
 				.worldRestart()
 				.define("enableFortuneUpgrade", true);
 
 		enableEfficiencyUpgrade = COMMON_BUILDER
-				.comment("Enable efficiency upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.comment("Enable efficiency upgrades?")
 				.worldRestart()
 				.define("enableEfficiencyUpgrade", true);
 
 		enableHoppingUpgrade = COMMON_BUILDER
-				.comment("Enable hopping upgrade? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.comment("Enable hopping upgrade?")
 				.worldRestart()
 				.define("enableHoppingUpgrade", true);
 
 		enableAutoCuttingUpgrade = COMMON_BUILDER
-				.comment("Enable auto cutting upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.comment("Enable auto cutting upgrades?")
 				.worldRestart()
 				.define("enableAutoCuttingUpgrade", true);
 
 		enableForgeEnergyUpgrade = COMMON_BUILDER
-				.comment("Enable forge energy upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.comment("Enable forge energy upgrades?")
 				.worldRestart()
 				.define("enableForgeEnergyUpgrade", true);
 
