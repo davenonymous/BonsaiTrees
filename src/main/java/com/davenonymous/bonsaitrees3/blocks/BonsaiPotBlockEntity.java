@@ -29,6 +29,8 @@ import net.minecraftforge.client.model.data.ModelProperty;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -78,6 +80,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	private boolean hopping = false;
 	private boolean hasSilkTouch = false;
 	private boolean hasBeeHive = false;
+	private boolean hasEnergyUpgrade = false;
 	private int fortune = 0;
 	private int efficiency = 0;
 
@@ -263,6 +266,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		autoCut = false;
 		hasSilkTouch = false;
 		hasBeeHive = false;
+		hasEnergyUpgrade = false;
 		fortune = 0;
 		efficiency = 0;
 
@@ -286,6 +290,14 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 				}
 			}
 
+			var optEnergyCap = stack.getCapability(CapabilityEnergy.ENERGY).resolve();
+			if(optEnergyCap.isPresent()) {
+				var energyCap = optEnergyCap.get();
+				if(energyCap.canExtract()) {
+					hasEnergyUpgrade = true;
+				}
+			}
+
 			var enchantmentHelper = new EnchantmentHelper(stack);
 			if(CommonConfig.sumEnchantmentLevels.get()) {
 				fortune += enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE);
@@ -300,6 +312,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		hopping = CommonConfig.enableHoppingUpgrade.get() && hopping;
 		autoCut = CommonConfig.enableAutoCuttingUpgrade.get() && autoCut;
 		fortune = CommonConfig.enableFortuneUpgrade.get() ? fortune : 0;
+		hasEnergyUpgrade = CommonConfig.enableForgeEnergyUpgrade.get() && hasEnergyUpgrade;
 		efficiency = CommonConfig.enableEfficiencyUpgrade.get() ? efficiency : 0;
 	}
 
@@ -514,6 +527,14 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		if(stack.getItem() instanceof EnchantedBookItem) {
 			var enchantments = new EnchantmentHelper(stack);
 			if(enchantments.hasAny(Enchantments.SILK_TOUCH, Enchantments.BLOCK_FORTUNE, Enchantments.BLOCK_EFFICIENCY)) {
+				return true;
+			}
+		}
+
+		var optEnergyCap = stack.getCapability(CapabilityEnergy.ENERGY);
+		if(optEnergyCap.isPresent()) {
+			var energyCap = optEnergyCap.resolve().get();
+			if(energyCap.canExtract()) {
 				return true;
 			}
 		}

@@ -17,6 +17,7 @@ public class CommonConfig {
 	public static ForgeConfigSpec.BooleanValue enableHoppingUpgrade;
 	public static ForgeConfigSpec.BooleanValue enableAutoCuttingUpgrade;
 	public static ForgeConfigSpec.BooleanValue autoCuttingDamagesItems;
+	public static ForgeConfigSpec.BooleanValue enableForgeEnergyUpgrade;
 
 	public static ForgeConfigSpec.BooleanValue showChanceInJEI;
 
@@ -48,6 +49,10 @@ public class CommonConfig {
 		enableAutoCuttingUpgrade = COMMON_BUILDER
 				.comment("Enable auto cutting upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
 				.define("enableAutoCuttingUpgrade", true);
+
+		enableForgeEnergyUpgrade = COMMON_BUILDER
+				.comment("Enable forge energy upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.define("enableForgeEnergyUpgrade", true);
 
 		autoCuttingDamagesItems = COMMON_BUILDER
 				.comment("Auto-cutting does damage to the used axe upgrade")
