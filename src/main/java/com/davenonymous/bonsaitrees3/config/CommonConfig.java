@@ -33,25 +33,33 @@ public class CommonConfig {
 
 	public static ForgeConfigSpec.IntValue minimumRequiredTicks;
 
+	public static ForgeConfigSpec.IntValue maximumExtractedEnergyPerTick;
+	public static ForgeConfigSpec.DoubleValue extraGrowthRatioPerFE;
+
 	public static void register() {
 		enableFortuneUpgrade = COMMON_BUILDER
 				.comment("Enable fortune upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.worldRestart()
 				.define("enableFortuneUpgrade", true);
 
 		enableEfficiencyUpgrade = COMMON_BUILDER
 				.comment("Enable efficiency upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.worldRestart()
 				.define("enableEfficiencyUpgrade", true);
 
 		enableHoppingUpgrade = COMMON_BUILDER
 				.comment("Enable hopping upgrade? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.worldRestart()
 				.define("enableHoppingUpgrade", true);
 
 		enableAutoCuttingUpgrade = COMMON_BUILDER
 				.comment("Enable auto cutting upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.worldRestart()
 				.define("enableAutoCuttingUpgrade", true);
 
 		enableForgeEnergyUpgrade = COMMON_BUILDER
 				.comment("Enable forge energy upgrades? (Can still be inserted into upgrade slots, but effects are disabled.)")
+				.worldRestart()
 				.define("enableForgeEnergyUpgrade", true);
 
 		autoCuttingDamagesItems = COMMON_BUILDER
@@ -95,6 +103,14 @@ public class CommonConfig {
 		minimumRequiredTicks = COMMON_BUILDER
 				.comment("Minimum amount of ticks for a bonsai to fully grow")
 				.defineInRange("minimumRequiredTicks", 1, 1, Integer.MAX_VALUE);
+
+		maximumExtractedEnergyPerTick = COMMON_BUILDER
+				.comment("Maximum extracted Forge Energy from upgrade items per tick")
+				.defineInRange("maximumExtractedEnergyPerTick", 60, 0, Integer.MAX_VALUE);
+
+		extraGrowthRatioPerFE = COMMON_BUILDER
+				.comment("How much faster a tree grows per extracted Forge Energy. (Example: 1.0 + 60fe/t * 0.005 = 1.3x faster)")
+				.defineInRange("extraGrowthRatioPerFE", 0.005, 0.0, Double.MAX_VALUE);
 
 		COMMON_CONFIG = COMMON_BUILDER.build();
 

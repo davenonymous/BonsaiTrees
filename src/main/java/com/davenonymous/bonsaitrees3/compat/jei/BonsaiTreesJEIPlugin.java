@@ -3,6 +3,7 @@ package com.davenonymous.bonsaitrees3.compat.jei;
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
 import com.davenonymous.bonsaitrees3.blocks.BonsaiPotContainer;
 import com.davenonymous.bonsaitrees3.client.BonsaiPotScreen;
+import com.davenonymous.bonsaitrees3.config.CommonConfig;
 import com.davenonymous.libnonymous.helper.EnchantmentHelper;
 import com.davenonymous.libnonymous.helper.Translatable;
 import com.davenonymous.bonsaitrees3.registry.sapling.SaplingInfo;
@@ -13,11 +14,14 @@ import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ToolActions;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
@@ -37,6 +41,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 	public static final Translatable UPGRADE_TEXT_EFFICIENCY = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.efficiency");
 	public static final Translatable UPGRADE_TEXT_SILKTOUCH = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.silktouch");
 	public static final Translatable UPGRADE_TEXT_BEES = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.bees");
+	public static final Translatable UPGRADE_TEXT_ENERGY = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.energy");
 
 	@Override
 	public ResourceLocation getPluginUid() {
@@ -63,39 +68,73 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 		BonsaiTrees3.LOGGER.info("Registering {} saplings", saplings.size());
 		registration.addRecipes(asRecipes(saplings, BonsaiRecipeWrapper::new), BonsaiRecipeCategory.ID);
 
-		List<ItemStack> axeItems = new ArrayList<>();
-		for(var item : ForgeRegistries.ITEMS.getValues()) {
-			var stack = new ItemStack(item);
-			if(item.canPerformAction(stack, ToolActions.AXE_DIG)) {
-				axeItems.add(stack);
+		List<BonsaiUpgradeWrapper> upgradeRecipes = new ArrayList<>();
+
+		if(CommonConfig.enableAutoCuttingUpgrade.get()) {
+			List<ItemStack> axeItems = new ArrayList<>();
+			for(var item : ForgeRegistries.ITEMS.getValues()) {
+				var stack = new ItemStack(item);
+				if(item.canPerformAction(stack, ToolActions.AXE_DIG)) {
+					axeItems.add(stack);
+				}
+			}
+
+			upgradeRecipes.add(new BonsaiUpgradeWrapper(UPGRADE_TEXT_AUTOCUT, axeItems));
+		}
+
+		if(CommonConfig.enableFortuneUpgrade.get()) {
+			List<ItemStack> fortuneItems = new ArrayList<>(EnchantmentHelper.getEnchantmentBooks(Enchantments.BLOCK_FORTUNE));
+			if(!fortuneItems.isEmpty()) {
+				upgradeRecipes.add(new BonsaiUpgradeWrapper(UPGRADE_TEXT_FORTUNE, fortuneItems));
 			}
 		}
 
-		List<ItemStack> fortuneItems = new ArrayList<>();
-		fortuneItems.addAll(EnchantmentHelper.getEnchantmentBooks(Enchantments.BLOCK_FORTUNE));
-		fortuneItems.addAll(axeItems.stream().map(ItemStack::copy).peek(stack -> stack.enchant(Enchantments.BLOCK_FORTUNE, 1)).toList());
+		if(CommonConfig.enableEfficiencyUpgrade.get()) {
+			List<ItemStack> efficiencyItems = new ArrayList<>(EnchantmentHelper.getEnchantmentBooks(Enchantments.BLOCK_EFFICIENCY));
+			if(!efficiencyItems.isEmpty()) {
+				upgradeRecipes.add(new BonsaiUpgradeWrapper(UPGRADE_TEXT_EFFICIENCY, efficiencyItems));
+			}
+		}
 
-		List<ItemStack> efficiencyItems = new ArrayList<>();
-		efficiencyItems.addAll(EnchantmentHelper.getEnchantmentBooks(Enchantments.BLOCK_EFFICIENCY));
-		efficiencyItems.addAll(axeItems.stream().map(ItemStack::copy).peek(stack -> stack.enchant(Enchantments.BLOCK_EFFICIENCY, 1)).toList());
+		if(CommonConfig.enableForgeEnergyUpgrade.get()) {
+			var batteryItems = ForgeRegistries.ITEMS.getValues().stream().map(ItemStack::new).filter(item -> {
+				var cap = item.getCapability(CapabilityEnergy.ENERGY).resolve();
+				if(cap.isEmpty()) {
+					return false;
+				}
 
-		List<ItemStack> silkTouchItems = new ArrayList<>();
-		silkTouchItems.addAll(EnchantmentHelper.getEnchantmentBooks(Enchantments.SILK_TOUCH));
-		silkTouchItems.addAll(axeItems.stream().map(ItemStack::copy).peek(stack -> stack.enchant(Enchantments.SILK_TOUCH, 1)).toList());
+				var storage = cap.get();
+				if(storage.canExtract()) {
+					return true;
+				}
+
+				if(storage.canReceive()) {
+					storage.receiveEnergy(storage.getMaxEnergyStored(), false);
+					if(storage.canExtract()) {
+						return true;
+					}
+				}
+
+				return false;
+			}).toList();
+
+			if(!batteryItems.isEmpty()) {
+				upgradeRecipes.add(new BonsaiUpgradeWrapper(UPGRADE_TEXT_ENERGY, batteryItems));
+			}
+		}
+
+		if(CommonConfig.enableHoppingUpgrade.get()) {
+			upgradeRecipes.add(new BonsaiUpgradeWrapper(UPGRADE_TEXT_HOPPING, new ItemStack(Blocks.HOPPER)));
+		}
+
+		List<ItemStack> silkTouchItems = new ArrayList<>(EnchantmentHelper.getEnchantmentBooks(Enchantments.SILK_TOUCH));
+		upgradeRecipes.add(new BonsaiUpgradeWrapper(UPGRADE_TEXT_SILKTOUCH, silkTouchItems));
 
 		List<ItemStack> beeItems = new ArrayList<>();
 		beeItems.add(new ItemStack(Blocks.BEEHIVE));
 		beeItems.add(new ItemStack(Blocks.BEE_NEST));
+		upgradeRecipes.add(new BonsaiUpgradeWrapper(UPGRADE_TEXT_BEES, beeItems));
 
-
-		var upgradeRecipes = List.of(
-				new BonsaiUpgradeWrapper(UPGRADE_TEXT_HOPPING, new ItemStack(Blocks.HOPPER)),
-				new BonsaiUpgradeWrapper(UPGRADE_TEXT_AUTOCUT, axeItems),
-				new BonsaiUpgradeWrapper(UPGRADE_TEXT_FORTUNE, fortuneItems),
-				new BonsaiUpgradeWrapper(UPGRADE_TEXT_EFFICIENCY, efficiencyItems),
-				new BonsaiUpgradeWrapper(UPGRADE_TEXT_SILKTOUCH, silkTouchItems),
-				new BonsaiUpgradeWrapper(UPGRADE_TEXT_BEES, beeItems)
-		);
 		registration.addRecipes(upgradeRecipes, BonsaiUpgradeCategory.ID);
 	}
 

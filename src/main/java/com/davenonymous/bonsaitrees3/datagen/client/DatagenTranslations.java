@@ -37,6 +37,6 @@ public class DatagenTranslations extends BaseLanguageProvider {
 		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_HOPPING, "Export drops to the block below");
 		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_SILKTOUCH, "Be careful and get leaf drops");
 		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_BEES, "Pollinate and get fruit drops");
-
+		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_ENERGY, "Insert batteries to boost growth rate");
 	}
 }

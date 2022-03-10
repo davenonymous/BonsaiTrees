@@ -349,7 +349,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return false;
 		}
 
-		if(this.growTicks < this.requiredTicks) {
+		if(this.growTicks < this.requiredTicks * 1000) {
 			return false;
 		}
 
@@ -414,7 +414,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	}
 
 	public boolean isGrowing() {
-		return hasSapling() && this.growTicks < this.requiredTicks;
+		return hasSapling() && this.growTicks < this.requiredTicks * 1000;
 	}
 
 	public double getProgress() {
@@ -422,7 +422,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return 0;
 		}
 
-		return (double) this.growTicks / (double) this.requiredTicks;
+		return (double) this.growTicks / (double) (this.requiredTicks*1000);
 	}
 
 	public double getProgress(float partialTicks) {
@@ -430,7 +430,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return 0;
 		}
 
-		double result = ((double) this.growTicks + partialTicks) / (double) this.requiredTicks;
+		double result = ((double) this.growTicks + partialTicks) / (double) (this.requiredTicks*1000);
 		if(result >= 0.999) {
 			result = 1.0d;
 		}
@@ -460,12 +460,37 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		}
 
 		if(getProgress() < 1.0f) {
-			this.setGrowTicks(growTicks + 1);
+			int rate = 1000;
+			List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
+			for(var upgrade : upgradeItems) {
+				var optEnergyCap = upgrade.getCapability(CapabilityEnergy.ENERGY).resolve();
+				if(optEnergyCap.isPresent()) {
+					var energyCap = optEnergyCap.get();
+					if(energyCap.canExtract()) {
+						var extracted = energyCap.extractEnergy(CommonConfig.maximumExtractedEnergyPerTick.get(), true);
+						if(extracted > 0) {
+							extracted = energyCap.extractEnergy(extracted, false);
+						}
+						if(extracted > 0) {
+							rate *= 1.0d + (extracted * CommonConfig.extraGrowthRatioPerFE.get());
+						}
+					}
+				}
+			}
+
+			this.setGrowTicks(growTicks + rate);
 		}
 	}
 
 	public void setGrowTicks(int growTicks) {
+		if(growTicks == this.growTicks) {
+			return;
+		}
+
 		this.growTicks = growTicks;
+		if(this.growTicks > this.requiredTicks * 1000) {
+			this.growTicks = this.requiredTicks * 1000;
+		}
 		this.setChanged();
 	}
 
@@ -474,9 +499,10 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return;
 		}
 
-		this.growTicks += this.requiredTicks / 4;
-		if(this.growTicks >= this.requiredTicks) {
-			this.growTicks = this.requiredTicks;
+		var limit = this.requiredTicks * 1000;
+		this.growTicks += limit / 4;
+		if(this.growTicks >= limit) {
+			this.growTicks = limit;
 		}
 
 		notifyClients();
