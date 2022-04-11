@@ -7,6 +7,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.ContainerLevelAccess;
+import net.minecraft.world.level.Level;
 
 public class BonsaiPotContainer extends WidgetContainer {
 	public static int WIDTH = 176;
@@ -43,5 +45,17 @@ public class BonsaiPotContainer extends WidgetContainer {
 
 	public BonsaiPotBlockEntity getPot() {
 		return pot;
+	}
+
+	@Override
+	public boolean stillValid(Player playerEntity) {
+		if (pot != null) {
+			Level level = pot.getLevel();
+			if (level != null) {
+				ContainerLevelAccess callable = ContainerLevelAccess.create(level, pot.getBlockPos());
+				return stillValid(callable, playerEntity, Registration.BONSAI_POT.get());
+			}
+		}
+		return false;
 	}
 }
