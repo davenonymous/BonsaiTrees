@@ -16,7 +16,7 @@
       "rolls": 1,
       "chance": 0.75,
       "result": {
-        "item": "minecraft:oak_log"
+        "item": "quark:blossom_log"
       }
     },
     {
