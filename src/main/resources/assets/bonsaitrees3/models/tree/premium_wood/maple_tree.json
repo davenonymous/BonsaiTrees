@@ -1,0 +1,58 @@
+{
+    "type": "bonsaitrees3:sapling/premium_wood/maple_tree",
+    "version": 3,
+    "ref": {
+      "a": {"block":"premium_wood:maple_log","properties":{"axis":"y"}},
+      "b": {"block":"premium_wood:maple_leaves","properties":{"distance":"3","persistent":"false"}},
+      "c": {"block":"premium_wood:maple_leaves","properties":{"distance":"1","persistent":"false"}},
+      "d": {"block":"premium_wood:maple_leaves","properties":{"distance":"2","persistent":"false"}}
+    },
+    "shape": [
+      [
+        "     ",
+        " bdb ",
+        " bdb ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "  d  ",
+        "bdcdb",
+        "bdcdb",
+        "  c  ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        " dcd ",
+        "dcacd",
+        "dcacd",
+        " cac ",
+        "  a  ",
+        "  a  ",
+        "  a  "
+      ],
+      [
+        "  d  ",
+        "bdcdb",
+        "bdcdb",
+        "  c  ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "     ",
+        " bdb ",
+        " bdb ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ]
+    ]
+  }
+  

@@ -1,0 +1,68 @@
+{
+    "type": "bonsaitrees3:sapling/premium_wood/magic_tree",
+    "version": 3,
+    "ref": {
+      "a": {"block":"premium_wood:magic_log","properties":{"axis":"y"}},
+      "b": {"block":"premium_wood:magic_leaves","properties":{"distance":"2","persistent":"false"}},
+      "c": {"block":"premium_wood:magic_leaves","properties":{"distance":"3","persistent":"false"}},
+      "d": {"block":"premium_wood:magic_leaves","properties":{"distance":"1","persistent":"false"}}
+    },
+    "shape": [
+      [
+        "     ",
+        "     ",
+        " cbc ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "     ",
+        "  d  ",
+        "cbdbc",
+        "  d  ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "  d  ",
+        " dad ",
+        "bdadb",
+        " dad ",
+        "  a  ",
+        "  a  ",
+        "  a  ",
+        "  a  ",
+        "  a  "
+      ],
+      [
+        "     ",
+        "  d  ",
+        "cbdbc",
+        "  d  ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "     ",
+        "     ",
+        " cbc ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ]
+    ]
+  }
+  

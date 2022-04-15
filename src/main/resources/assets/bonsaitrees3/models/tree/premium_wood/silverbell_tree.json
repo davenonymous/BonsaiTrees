@@ -1,0 +1,71 @@
+{
+    "type": "bonsaitrees3:sapling/premium_wood/silverbell_tree",
+    "version": 3,
+    "ref": {
+      "a": {"block":"premium_wood:silverbell_log","properties":{"axis":"y"}},
+      "b": {"block":"premium_wood:silverbell_leaves","properties":{"distance":"3","persistent":"false"}},
+      "c": {"block":"premium_wood:silverbell_leaves","properties":{"distance":"4","persistent":"false"}},
+      "d": {"block":"premium_wood:silverbell_leaves","properties":{"distance":"5","persistent":"false"}},
+      "e": {"block":"premium_wood:silverbell_leaves","properties":{"distance":"2","persistent":"false"}},
+      "f": {"block":"premium_wood:silverbell_leaves","properties":{"distance":"1","persistent":"false"}},
+      "g": {"block":"premium_wood:silverbell_leaves","properties":{"distance":"6","persistent":"false"}}
+    },
+    "shape": [
+      [
+        "     ",
+        " dcd ",
+        " cbc ",
+        "cbebc",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        " dc  ",
+        "dcbcd",
+        "cbebc",
+        "befeb",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        " cbc ",
+        "cbebc",
+        "befeb",
+        "efafe",
+        "  a  ",
+        "  a  ",
+        "  a  ",
+        "  a  ",
+        "  a  "
+      ],
+      [
+        "  c  ",
+        "dcbcd",
+        "cbebc",
+        "befeb",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ],
+      [
+        "     ",
+        "gdcdg",
+        " cbc ",
+        " bebc",
+        "     ",
+        "     ",
+        "     ",
+        "     ",
+        "     "
+      ]
+    ]
+  }
+  

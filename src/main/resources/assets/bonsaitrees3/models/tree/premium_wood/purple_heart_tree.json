@@ -1,0 +1,147 @@
+{
+    "type": "bonsaitrees3:sapling/premium_wood/purple_heart_tree",
+    "version": 3,
+    "ref": {
+      "a": {"block":"premium_wood:purple_heart_log","properties":{"axis":"z"}},
+      "b": {"block":"premium_wood:purple_heart_leaves","properties":{"distance":"1","persistent":"false"}},
+      "c": {"block":"premium_wood:purple_heart_leaves","properties":{"distance":"2","persistent":"false"}},
+      "d": {"block":"premium_wood:purple_heart_leaves","properties":{"distance":"3","persistent":"false"}},
+      "e": {"block":"premium_wood:purple_heart_log","properties":{"axis":"y"}},
+      "f": {"block":"premium_wood:purple_heart_leaves","properties":{"distance":"4","persistent":"false"}},
+      "g": {"block":"premium_wood:purple_heart_log","properties":{"axis":"x"}},
+      "h": {"block":"premium_wood:purple_heart_leaves","properties":{"distance":"5","persistent":"false"}}
+    },
+    "shape": [
+      [
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "      f   ",
+        "          ",
+        "          ",
+        "          ",
+        "          "
+      ],
+      [
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "      c   ",
+        "    hfdfh ",
+        "          ",
+        "          ",
+        "          ",
+        "          "
+      ],
+      [
+        "          ",
+        "          ",
+        "     d c  ",
+        "          ",
+        "      c   ",
+        "     cbc  ",
+        "    fdcdf ",
+        "          ",
+        "          ",
+        "          ",
+        "          "
+      ],
+      [
+        "          ",
+        "     c c  ",
+        "   fdcbbc ",
+        "          ",
+        "     cbc  ",
+        "   dcbgbc ",
+        "   fdcbcdf",
+        "          ",
+        "          ",
+        "          ",
+        "          "
+      ],
+      [
+        "     c    ",
+        "    cbbbc ",
+        "   dcbgabc",
+        "   c      ",
+        "   c  b   ",
+        " hfdcbgb  ",
+        "    cbbcd ",
+        "          ",
+        "          ",
+        "          ",
+        "          "
+      ],
+      [
+        "    cbc   ",
+        "   cbebc  ",
+        "  dcbebbc ",
+        "  cbae    ",
+        "  cbae    ",
+        " fdcbeb   ",
+        "    bebcd ",
+        "     e    ",
+        "     e    ",
+        "     e    ",
+        "     e    "
+      ],
+      [
+        "     c    ",
+        "    cbc   ",
+        "  cbcbcc  ",
+        " cbabb    ",
+        " cbabb    ",
+        "fdcbcbc   ",
+        "      c   ",
+        "          ",
+        "          ",
+        "          ",
+        "          "
+      ],
+      [
+        "          ",
+        "     c    ",
+        "   cdcdd  ",
+        "  cbc     ",
+        "  cbc     ",
+        " fdcdc    ",
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "          "
+      ],
+      [
+        "          ",
+        "          ",
+        "     d    ",
+        "   c      ",
+        "   c      ",
+        " hfdfd    ",
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "          "
+      ],
+      [
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "   f      ",
+        "          ",
+        "          ",
+        "          ",
+        "          ",
+        "          "
+      ]
+    ]
+  }
+  
