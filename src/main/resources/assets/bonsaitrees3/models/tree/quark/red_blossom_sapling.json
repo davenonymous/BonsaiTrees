@@ -8,9 +8,9 @@
     "d": {"block":"quark:red_blossom_leaves","properties":{"distance":"1","persistent":"false"}},
     "e": {"block":"quark:red_blossom_leaves","properties":{"distance":"5","persistent":"false"}},
     "f": {"block":"quark:red_blossom_leaves","properties":{"distance":"6","persistent":"false"}},
-    "g": {"block":"minecraft:oak_log","properties":{"axis":"z"}},
-    "h": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
-    "i": {"block":"minecraft:oak_log","properties":{"axis":"x"}}
+    "g": {"block":"quark:blossom_log","properties":{"axis":"z"}},
+    "h": {"block":"quark:blossom_log","properties":{"axis":"y"}},
+    "i": {"block":"quark:blossom_log","properties":{"axis":"x"}}
   },
   "shape": [
     [
