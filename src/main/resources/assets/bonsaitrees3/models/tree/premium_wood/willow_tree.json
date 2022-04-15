@@ -1,0 +1,110 @@
+{
+    "type": "bonsaitrees3:sapling/premium_wood/willow_tree",
+    "version": 3,
+    "ref": {
+      "a": {"block":"premium_wood:willow_leaves","properties":{"distance":"4","persistent":"false","willow_distance":"4"}},
+      "b": {"block":"premium_wood:willow_leaves","properties":{"distance":"2","persistent":"false","willow_distance":"2"}},
+      "c": {"block":"premium_wood:willow_leaves","properties":{"distance":"7","persistent":"false","willow_distance":"10"}},
+      "d": {"block":"premium_wood:willow_leaves","properties":{"distance":"3","persistent":"false","willow_distance":"3"}},
+      "e": {"block":"premium_wood:willow_leaves","properties":{"distance":"1","persistent":"false","willow_distance":"1"}},
+      "f": {"block":"premium_wood:willow_leaves","properties":{"distance":"7","persistent":"false","willow_distance":"9"}},
+      "g": {"block":"premium_wood:willow_leaves","properties":{"distance":"5","persistent":"false","willow_distance":"5"}},
+      "h": {"block":"premium_wood:willow_leaves","properties":{"distance":"7","persistent":"false","willow_distance":"7"}},
+      "i": {"block":"premium_wood:willow_leaves","properties":{"distance":"6","persistent":"false","willow_distance":"6"}},
+      "j": {"block":"premium_wood:willow_leaves","properties":{"distance":"7","persistent":"false","willow_distance":"8"}},
+      "k": {"block":"premium_wood:willow_log","properties":{"axis":"y"}}
+    },
+    "shape": [
+      [
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "jhigagih ",
+        "     i j ",
+        "     h f ",
+        "     j c "
+      ],
+      [
+        "         ",
+        "         ",
+        "  gadagi ",
+        "  gadagi ",
+        "higadagih",
+        " h    ih ",
+        " j    hj ",
+        " f    jf "
+      ],
+      [
+        "   ada   ",
+        "  adbda  ",
+        " gadbdag ",
+        " gadbdag ",
+        "igadbdagi",
+        "hi     i ",
+        "jh     h ",
+        "fj     j "
+      ],
+      [
+        "  adbda  ",
+        "  dbebd  ",
+        " adbebda ",
+        " adbebda ",
+        "gadbebdag",
+        " g       ",
+        " i       ",
+        " h       "
+      ],
+      [
+        "  dbebd  ",
+        "  bekeb  ",
+        " dbekebd ",
+        " dbekebd ",
+        "adbekebda",
+        "g   k    ",
+        "i   k    ",
+        "h   k    "
+      ],
+      [
+        "  adbda  ",
+        "  dbebd  ",
+        " adbebda ",
+        " adbebda ",
+        "gadbebdag",
+        " g     g ",
+        " i     i ",
+        " h     h "
+      ],
+      [
+        "   ada   ",
+        "   dbd   ",
+        " gadbdag ",
+        " gadbdag ",
+        "igadbdagi",
+        "h        ",
+        "j        ",
+        "f        "
+      ],
+      [
+        "         ",
+        "         ",
+        "  gadagi ",
+        " igadagi ",
+        "higadagih",
+        "j ig gi j",
+        "f hi ih f",
+        "c jh hj c"
+      ],
+      [
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "jhigagihj",
+        "  hi     ",
+        "  jh     ",
+        "  fj     "
+      ]
+    ]
+  }
+  

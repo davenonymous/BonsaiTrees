@@ -1,0 +1,114 @@
+{
+    "type": "bonsaitrees3:sapling/premium_wood/tiger_tree",
+    "version": 3,
+    "ref": {
+      "a": {"block":"premium_wood:tiger_leaves","properties":{"distance":"2","persistent":"false"}},
+      "b": {"block":"premium_wood:tiger_leaves","properties":{"distance":"1","persistent":"false"}},
+      "c": {"block":"premium_wood:tiger_leaves","properties":{"distance":"3","persistent":"false"}},
+      "d": {"block":"premium_wood:tiger_leaves","properties":{"distance":"5","persistent":"false"}},
+      "e": {"block":"premium_wood:tiger_leaves","properties":{"distance":"4","persistent":"false"}},
+      "f": {"block":"premium_wood:tiger_log","properties":{"axis":"y"}}
+    },
+    "shape": [
+      [
+        "         ",
+        "         ",
+        "    e    ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "         ",
+        "    c    ",
+        "  deced  ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "    c    ",
+        "  ecace  ",
+        " decaced ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "   cac   ",
+        "  cabac  ",
+        " ecabace ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "  cabac  ",
+        " cabfbac ",
+        "ecabfbace",
+        "    f    ",
+        "    f    ",
+        "    f    ",
+        "    f    ",
+        "    f    ",
+        "    f    "
+      ],
+      [
+        "   cac   ",
+        "  cabac  ",
+        " ecabace ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "    c    ",
+        "  ecace  ",
+        " decaced ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "         ",
+        "    c    ",
+        "  deced  ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ],
+      [
+        "         ",
+        "         ",
+        "    e    ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         ",
+        "         "
+      ]
+    ]
+  }
+  

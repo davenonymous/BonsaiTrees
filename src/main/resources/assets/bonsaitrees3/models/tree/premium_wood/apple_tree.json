@@ -1,0 +1,52 @@
+{
+    "type": "bonsaitrees3:sapling/premium_wood/apple_tree",
+    "version": 3,
+    "ref": {
+      "a": {"block":"premium_wood:apple_leaves","properties":{"can_mature":"false","distance":"2","mature":"false","persistent":"false"}},
+      "b": {"block":"premium_wood:apple_leaves","properties":{"can_mature":"false","distance":"1","mature":"false","persistent":"false"}},
+      "c": {"block":"premium_wood:apple_leaves","properties":{"can_mature":"false","distance":"3","mature":"false","persistent":"false"}},
+      "d": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+      "e": {"block":"premium_wood:apple_leaves","properties":{"can_mature":"true","distance":"2","mature":"true","persistent":"false"}},
+      "f": {"block":"premium_wood:apple_leaves","properties":{"can_mature":"false","distance":"4","mature":"false","persistent":"false"}},
+      "g": {"block":"premium_wood:apple_leaves","properties":{"can_mature":"true","distance":"1","mature":"true","persistent":"false"}},
+      "h": {"block":"premium_wood:apple_leaves","properties":{"can_mature":"true","distance":"3","mature":"true","persistent":"false"}}
+    },
+    "shape": [
+      [
+        "     ",
+        "     ",
+        "fcec ",
+        " cacf",
+        "     "
+      ],
+      [
+        "  a  ",
+        "  ba ",
+        "habac",
+        "cabac",
+        "     "
+      ],
+      [
+        " aba ",
+        " bdb ",
+        "abdba",
+        "ebdba",
+        "  d  "
+      ],
+      [
+        "  e  ",
+        " aba ",
+        "cagac",
+        "cabac",
+        "     "
+      ],
+      [
+        "     ",
+        "     ",
+        " cecf",
+        " hacf",
+        "     "
+      ]
+    ]
+  }
+  
