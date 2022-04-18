@@ -1,0 +1,21 @@
+{
+    "block.bonsaitrees3.bonsaipot": "분재 화분",
+    "container.bonsaitrees3.bonsaipot": "분재 화분",
+    "gui.bonsaitrees3.label.button.cut_tree.tooltip.ok": "나무를 자르며면 클릭",
+    "gui.bonsaitrees3.label.button.cut_tree.tooltip.wait": "나무를 자르려면 완전히 자라야 합니다.",
+    "gui.bonsaitrees3.label.jei.upgrade.autocut": "자동적으로 나무를 자릅니다.",
+    "gui.bonsaitrees3.label.jei.upgrade.bees": "수분하고 과일 드롭을 얻습니다.",
+    "gui.bonsaitrees3.label.jei.upgrade.efficiency": "묘목이 자라는 시간을 줄입니다.",
+    "gui.bonsaitrees3.label.jei.upgrade.energy": "배터리를 넣어서 성장 속도를 늘입니다.",
+    "gui.bonsaitrees3.label.jei.upgrade.fortune": "드롭률과 횟수를 늘입니다.",
+    "gui.bonsaitrees3.label.jei.upgrade.hopper": "드롭들을 아래에 있는 블록으로 내보냅니다.",
+    "gui.bonsaitrees3.label.jei.upgrade.silktouch": "조심해서 나뭇잎을 얻습니다.",
+    "jei.bonsaitrees3.chance": "확률: %d%%",
+    "jei.bonsaitrees3.growtime": "키우는 데 걸리는 시간: %s",
+    "jei.bonsaitrees3.recipes.title": "분재 화분에서 키웁니다.",
+    "jei.bonsaitrees3.requiresBees": "벌집 업그레이드가 필요합니다.",
+    "jei.bonsaitrees3.requiresSilkTouch": "섬세한 손길 업그레이드가 필요합니다.",
+    "jei.bonsaitrees3.requiresUpgrade": "이 중에 한 가지의 업그레이드가 필요함.:",
+    "jei.bonsaitrees3.soiltime": "성장 시간을 다음과 같이 바꿈: %s",
+    "jei.bonsaitrees3.upgrades.title": "분재 화분 업그레이드"
+  }
