@@ -1,0 +1,20 @@
+{
+  "type": "bonsaitrees3:soil",                 // The recipe type. Must be "bonsaitrees3:soil"
+  "conditions": [{                             // Conditions are optional
+    "type": "forge:mod_loaded",
+    "modid": "snad" }                    // The mod required for this soil to get loaded
+   ],
+  "tickModifier": 2.15,                         // The time to grow a tree is multiplied by this value
+          //Should be twice red sand?
+  "soil": {
+    "item": "snad:red_snad"            // The item that plants this soil in the bonsai pot
+  },
+  "compatibleSoilTags": [
+    "red_sand"                                    // Only trees also having these tags can grow on this soil
+													// Would this be better as just sand?
+  ],
+  "display": {
+    "block": "minecraft:red_sand"            // The block that's being used to render the soil
+    // "fluid": "minecraft:lava"                // You can also use fluids here!
+  }
+}
