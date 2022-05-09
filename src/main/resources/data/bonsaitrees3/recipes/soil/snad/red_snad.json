@@ -10,8 +10,8 @@
     "item": "snad:red_snad"            // The item that plants this soil in the bonsai pot
   },
   "compatibleSoilTags": [
-    "red_sand"                                    // Only trees also having these tags can grow on this soil
-													// Would this be better as just sand?
+    "sand"                                    // Only trees also having these tags can grow on this soil
+													// Would this be better as red sand?
   ],
   "display": {
     "block": "minecraft:red_sand"            // The block that's being used to render the soil
