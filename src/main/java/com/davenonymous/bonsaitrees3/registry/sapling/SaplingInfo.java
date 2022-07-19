@@ -88,4 +88,13 @@ public class SaplingInfo extends RecipeData {
 		return result;
 	}
 
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof SaplingInfo other && other.id.equals(this.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
