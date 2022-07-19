@@ -10,6 +10,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class SoilInfo extends RecipeData {
@@ -64,5 +65,15 @@ public class SoilInfo extends RecipeData {
 
 	public float getTickModifier() {
 		return tickModifier;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		return o instanceof SoilInfo other && other.isFluid == this.isFluid && other.id.equals(this.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id, isFluid);
 	}
 }
