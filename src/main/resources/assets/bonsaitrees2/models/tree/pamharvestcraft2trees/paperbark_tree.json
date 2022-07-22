@@ -1,0 +1,57 @@
+{
+  "type": "bonsaitrees2:sapling/pamharvestcraft2trees/paperbark_tree",
+  "version": 3,
+  "ref": {
+    "b": {
+      "block": "minecraft:jungle_log"
+    },
+    "l": {
+      "block": "minecraft:jungle_leaves"
+    },
+    "f": {
+      "block": "pamhc2trees:pampaperbark"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "  l  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  l  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  l  ",
+      " lbl ",
+      "l f l",
+      "  f  ",
+      "  f  ",
+      "  f  "
+    ],
+    [
+      "     ",
+      "  l  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "  l  ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

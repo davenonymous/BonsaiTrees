@@ -1,0 +1,57 @@
+{
+  "type": "bonsaitrees2:sapling/pamharvestcraft2trees/lemon_tree",
+  "version": 3,
+  "ref": {
+    "b": {
+      "block": "minecraft:oak_log"
+    },
+    "l": {
+      "block": "minecraft:oak_leaves"
+    },
+    "f": {
+      "block": "pamhc2trees:pamlemon"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "llll ",
+      " lll ",
+      " f f ",
+      "     "
+    ],
+    [
+      "  l  ",
+      "  ll ",
+      "lllll",
+      "lllll",
+      "f f f",
+      "     "
+    ],
+    [
+      " lll ",
+      " lbl ",
+      "llbll",
+      "llbll",
+      " fbf ",
+      "  b  "
+    ],
+    [
+      "  l  ",
+      " lll ",
+      "lllll",
+      "lllll",
+      "f f f",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "lllll",
+      " llll",
+      " f f ",
+      "     "
+    ]
+  ]
+}

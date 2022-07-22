@@ -1,0 +1,54 @@
+{
+  "type": "bonsaitrees2:sapling/industrialreborn/rubber_tree",
+  "version": 3,
+  "ref": {
+    "a": {
+      "block": "indreb:rubber_log"
+    },
+    "b": {
+      "block": "indreb:rubber_leaves"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bbbb ",
+      " bbb ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "  bb ",
+      "bbbbb",
+      "bbbbb",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      " bab ",
+      "bbabb",
+      "bbabb",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      " bbb ",
+      "bbbbb",
+      "bbbbb",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bbbbb",
+      " bbbb",
+      "     ",
+      "     "
+    ]
+  ]
+}

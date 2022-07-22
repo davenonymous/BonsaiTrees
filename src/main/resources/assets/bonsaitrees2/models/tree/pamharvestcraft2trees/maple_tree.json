@@ -1,0 +1,57 @@
+{
+  "type": "bonsaitrees2:sapling/pamharvestcraft2trees/maple_tree",
+  "version": 3,
+  "ref": {
+    "b": {
+      "block": "minecraft:spruce_log"
+    },
+    "l": {
+      "block": "minecraft:spruce_leaves"
+    },
+    "f": {
+      "block": "pamhc2trees:pammaple"
+    }
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " lll ",
+      "lllll",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " lll ",
+      " lll ",
+      "lllll",
+      "     ",
+      "     "
+    ],
+    [
+      "  l  ",
+      " lbl ",
+      " lbl ",
+      "llbll",
+      "  f  ",
+      "  f  "
+    ],
+    [
+      "     ",
+      " lll ",
+      " lll ",
+      "lllll",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " lll ",
+      "lllll",
+      "     ",
+      "     "
+    ]
+  ]
+}
