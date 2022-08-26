@@ -1,0 +1,78 @@
+{
+  "type": "bonsaitrees3:sapling/byg/aspen_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"byg:aspen_log","properties":{"axis":"y"}},
+    "b": {"block":"byg:aspen_leaves","properties":{"distance":"2","persistent":"false"}},
+    "c": {"block":"byg:aspen_leaves","properties":{"distance":"1","persistent":"false"}},
+    "d": {"block":"byg:aspen_leaves","properties":{"distance":"3","persistent":"false"}},
+    "e": {"block":"byg:aspen_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "  bd  ",
+      " dd   ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      "      ",
+      "  d   ",
+      " dbd  ",
+      "dbcb  ",
+      " b  d ",
+      "  c   ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "  e   ",
+      " ed   ",
+      " dbd  ",
+      " bcb  ",
+      " cacb ",
+      "bcacbd",
+      " ca   ",
+      "  a   ",
+      "  a   ",
+      "  a   ",
+      "  a   "
+    ],
+    [
+      "      ",
+      "      ",
+      "  d   ",
+      " dbd  ",
+      "dbcbd ",
+      "  cb  ",
+      "      ",
+      "  c   ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      " dbd  ",
+      "edb   ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ]
+  ]
+}
