@@ -1,0 +1,89 @@
+{
+  "type": "bonsaitrees3:sapling/byg/palm_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"byg:palm_log","properties":{"axis":"y"}},
+    "b": {"block":"byg:palm_leaves","properties":{"distance":"2","persistent":"false"}},
+    "c": {"block":"byg:palm_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"byg:palm_leaves","properties":{"distance":"1","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "   c   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "   a   ",
+      "   a   "
+    ],
+    [
+      "       ",
+      "   d   ",
+      "   b   ",
+      "       ",
+      "       ",
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       "
+    ],
+    [
+      "   d   ",
+      "  dad  ",
+      "       ",
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ddd  ",
+      " daaad ",
+      "cb a bc",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   d   ",
+      "  dad  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   d   ",
+      "   b   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "   c   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}
