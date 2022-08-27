@@ -6,12 +6,12 @@
     ],
     "tickModifier": 1.1,
     "soil": {
-        "item": "byg:lush_grass"
+        "item": "byg:lush_grass_block"
     },
     "compatibleSoilTags": [
         "grass"
     ],
     "display": {
-        "block": "byg:lush_grass"
+        "block": "byg:lush_grass_block"
     }
 }
