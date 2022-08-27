@@ -1,0 +1,82 @@
+{
+  "type": "bonsaitrees3:sapling/byg/nightshade_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"byg:nightshade_leaves","properties":{"distance":"1","persistent":"false"}},
+    "b": {"block":"byg:nightshade_log","properties":{"axis":"y"}},
+    "c": {"block":"byg:nightshade_leaves","properties":{"distance":"2","persistent":"false"}},
+    "d": {"block":"byg:nightshade_leaves","properties":{"distance":"3","persistent":"false"}},
+    "e": {"block":"byg:flowering_nightshade_leaves","properties":{"distance":"3","persistent":"false"}},
+    "f": {"block":"byg:flowering_nightshade_leaves","properties":{"distance":"2","persistent":"false"}},
+    "g": {"block":"byg:imbued_nightshade_log","properties":{"axis":"y"}},
+    "h": {"block":"byg:flowering_nightshade_leaves","properties":{"distance":"1","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      " ecd ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " dc  ",
+      "dcafe",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " chf ",
+      "fabac",
+      "  b  ",
+      "  g  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      "ecafe",
+      "     ",
+      "   b ",
+      "   b ",
+      "   b ",
+      "     ",
+      " e   ",
+      " ca  "
+    ],
+    [
+      "     ",
+      " dcd ",
+      "     ",
+      "     ",
+      "     ",
+      "  b  ",
+      "  b  ",
+      "  b  ",
+      "  ba "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "   c "
+    ]
+  ]
+}
