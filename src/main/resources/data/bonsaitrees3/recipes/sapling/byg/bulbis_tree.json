@@ -26,8 +26,7 @@
         "item": "byg:bulbis_shell"
       },
       "requiresSilkTouch": true
-    }
-
+    },
     {
       "rolls": 2,
       "chance": 0.2,
@@ -36,9 +35,6 @@
       },
       "requiresBees": true
     }
-
   ],
-  "compatibleSoilTags": [
-    "end_stone",
-  ]
+  "compatibleSoilTags": ["end_stone"]
 }

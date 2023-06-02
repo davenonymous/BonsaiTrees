@@ -26,18 +26,15 @@
         "item": "byg:shulkren_wart_block"
       },
       "requiresSilkTouch": true
+    },
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "byg:purple_shroomlight"
+      },
+      "requiresBees": true
     }
-{
-	  "rolls": 1,
-	  "chance": 0.05,
-	  "result": {
-		"item": "byg:purple_shroomlight"
-	  },
-	  "requiresBees": true
-     }
-
   ],
-  "compatibleSoilTags": [
-    "end_stone",
-  ]
+  "compatibleSoilTags": ["end_stone"]
 }

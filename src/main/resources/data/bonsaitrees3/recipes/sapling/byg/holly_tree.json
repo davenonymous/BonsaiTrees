@@ -36,18 +36,13 @@
     },
 
     {
-	  "rolls": 1,
-	  "chance": 0.05,
-	  "result": {
-		"item": "byg:holly_berries"
-	  },
-	  "requiresBees": true
-     }
-
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "byg:holly_berries"
+      },
+      "requiresBees": true
+    }
   ],
-  "compatibleSoilTags": [
-    "dirt",
-    "grass",
-"podzol"
-  ]
+  "compatibleSoilTags": ["dirt", "grass", "podzol"]
 }

@@ -2,21 +2,21 @@
   "type": "bonsaitrees3:sapling",
   "conditions": [{ "type": "forge:mod_loaded", "modid": "byg" }],
   "sapling": {
-    "item": "byg:nightshade_sapling"
+    "item": "byg:mahogany_sapling"
   },
   "drops": [
     {
       "rolls": 1,
       "chance": 0.05,
       "result": {
-        "item": "byg:nightshade_sapling"
+        "item": "byg:mahogany_sapling"
       }
     },
     {
       "rolls": 1,
       "chance": 0.75,
       "result": {
-        "item": "byg:nightshade_log"
+        "item": "byg:mahogany_log"
       }
     },
     {
@@ -30,12 +30,10 @@
       "rolls": 2,
       "chance": 0.2,
       "result": {
-        "item": "byg:nightshade_leaves"
+        "item": "byg:mahogany_leaves"
       },
       "requiresSilkTouch": true
     }
   ],
-  "compatibleSoilTags": [
-    "end_stone",
-  ]
+  "compatibleSoilTags": ["dirt", "grass"]
 }

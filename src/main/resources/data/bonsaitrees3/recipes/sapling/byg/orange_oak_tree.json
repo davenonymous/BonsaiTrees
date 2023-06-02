@@ -26,17 +26,14 @@
         "item": "minecraft:stick"
       }
     },
-
-
     {
-	  "rolls": 1,
-	  "chance": 0.05,
-	  "result": {
-		"item": "minecraft:apple"
-	  },
-	  "requiresBees": true
-     },
-
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "minecraft:apple"
+      },
+      "requiresBees": true
+    },
     {
       "rolls": 2,
       "chance": 0.2,
@@ -46,8 +43,5 @@
       "requiresSilkTouch": true
     }
   ],
-  "compatibleSoilTags": [
-    "dirt",
-    "grass"
-  ]
+  "compatibleSoilTags": ["dirt", "grass"]
 }

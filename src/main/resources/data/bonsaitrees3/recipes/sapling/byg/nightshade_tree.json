@@ -42,8 +42,7 @@
         "item": "byg:nightshade_leaves"
       },
       "requiresSilkTouch": true
-    }
-
+    },
     {
       "rolls": 2,
       "chance": 0.2,
@@ -52,10 +51,6 @@
       },
       "requiresSilkTouch": true
     }
-
   ],
-  "compatibleSoilTags": [
-    "end_stone"
-    
-  ]
+  "compatibleSoilTags": ["end_stone"]
 }

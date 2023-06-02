@@ -19,7 +19,6 @@
         "item": "byg:embur_pedu"
       }
     },
-    },
     {
       "rolls": 2,
       "chance": 0.2,
@@ -27,18 +26,15 @@
         "item": "byg:embur__gel_block"
       },
       "requiresSilkTouch": true
-    }
-
+    },
     {
-	  "rolls": 1,
-	  "chance": 0.05,
-	  "result": {
-		"item": "byg:pollen_block"
-	  },
-	  "requiresBees": true
-     }
-
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "byg:pollen_block"
+      },
+      "requiresBees": true
+    }
   ],
-  "compatibleSoilTags": [
-    "netherrack"  ]
+  "compatibleSoilTags": ["netherrack"]
 }
