@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "byg" }
+    ],
+    "tickModifier": 1.1,
+    "soil": {
+        "item": "byg:shulkren_phylium"
+    },
+    "compatibleSoilTags": [
+        "end_stone"
+    ],
+    "display": {
+        "block": "byg:shulkren_phylium"
+    }
+}

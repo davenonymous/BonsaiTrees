@@ -1,0 +1,40 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "byg" }],
+  "sapling": {
+    "item": "byg:embur_wart"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "byg:embur_wart"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "byg:embur_pedu"
+      }
+    },
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "byg:embur__gel_block"
+      },
+      "requiresSilkTouch": true
+    },
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "byg:pollen_block"
+      },
+      "requiresBees": true
+    }
+  ],
+  "compatibleSoilTags": ["netherrack"]
+}

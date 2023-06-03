@@ -1,0 +1,48 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "byg" }],
+  "sapling": {
+    "item": "byg:orchard_sapling"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "byg:orchard_sapling"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "minecraft:oak_log"
+      }
+    },
+    {
+      "rolls": 3,
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:stick"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:apple"
+      },
+      "requiresBees": true
+    },
+
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "byg:orchard_leaves"
+      },
+      "requiresSilkTouch": true
+    }
+  ],
+  "compatibleSoilTags": ["dirt", "grass"]
+}

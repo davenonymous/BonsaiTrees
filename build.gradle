@@ -8,6 +8,7 @@ buildscript {
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
         classpath 'org.parchmentmc:librarian:1.+'
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -17,8 +18,8 @@ apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '3.1.0'
-group = 'com.davenonymous.bonsaitrees3' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = '3.1.0.1'
+group = 'com.jeremye.bonsaitrees3' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'bonsaitrees3'
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
@@ -156,26 +157,27 @@ dependencies {
 
     implementation fg.deobf("curse.maven:the-one-probe-245211:3671753")
     implementation fg.deobf("curse.maven:configured-457570:3559398")
-
-    if (findProject(':libnonymous') != null) {
-        implementation project(':libnonymous')
-    }// else {
-    //    implementation fg.deobf (project.dependencies.create("com.davenonymous.libnonymous:libnonymous:${libnonymous_version}") {
-    //        transitive = false
-    //    })
-    //}
+    implementation fg.deobf("curse.maven:libnonymous-357557:3677573")
+//    if (findProject(':libnonymous') != null) {
+//        implementation project(':libnonymous')
+//    } e//lse {
+//        def libnonymous_version = '2.1.0'
+//      implementation fg.deobf (project.dependencies.create("com.davenonymous.libnonymous:libnonymous:${libnonymous_version}") {
+//           transitive = false
+//       })
+//    }
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "Bonsai Trees 3",
-                "Specification-Vendor"    : "Davenonymous",
+                "Specification-Title"     : "Bonsai Trees 3 BYP Edition",
+                "Specification-Vendor"    : "Jeremy E.",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
-                "Implementation-Vendor"   : "Davenonymous",
+                "Implementation-Vendor"   : "Jeremy E.",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
