@@ -1,0 +1,108 @@
+{
+  "type": "bonsaitrees3:sapling/byg/indigo_jacaranda_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"byg:jacaranda_log","properties":{"axis":"y"}},
+    "b": {"block":"byg:flowering_indigo_jacaranda_leaves","properties":{"distance":"3","persistent":"false"}},
+    "c": {"block":"byg:indigo_jacaranda_leaves","properties":{"distance":"1","persistent":"false"}},
+    "d": {"block":"byg:flowering_indigo_jacaranda_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"byg:indigo_jacaranda_leaves","properties":{"distance":"4","persistent":"false"}},
+    "f": {"block":"byg:indigo_jacaranda_leaves","properties":{"distance":"2","persistent":"false"}},
+    "g": {"block":"byg:flowering_indigo_jacaranda_leaves","properties":{"distance":"2","persistent":"false"}},
+    "h": {"block":"byg:indigo_jacaranda_leaves","properties":{"distance":"3","persistent":"false"}},
+    "i": {"block":"byg:indigo_jacaranda_leaves","properties":{"distance":"7","persistent":"false"}},
+    "j": {"block":"byg:indigo_jacaranda_leaves","properties":{"distance":"5","persistent":"false"}},
+    "k": {"block":"byg:indigo_jacaranda_leaves","properties":{"distance":"6","persistent":"false"}},
+    "l": {"block":"byg:flowering_indigo_jacaranda_leaves","properties":{"distance":"4","persistent":"false"}}
+  },
+  "shape": [
+    [
+      "        ",
+      "    e   ",
+      "    j   ",
+      "    k   ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   he   ",
+      " ehfhl  ",
+      " hfd j  ",
+      " l   k  ",
+      " j      ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   f    ",
+      " hfcfb  ",
+      "hf a lh ",
+      "e       ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      " hbfbb  ",
+      "hf cff  ",
+      "fc df f ",
+      "   a  h ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      " ffcf   ",
+      " ccaccf ",
+      "cadadacf",
+      "f aaa  h",
+      "h ca   e",
+      "   a    ",
+      "   a    ",
+      "   a    ",
+      "   a    "
+    ],
+    [
+      "  hghh  ",
+      " gfcfgh ",
+      " cfc  f ",
+      " fca    ",
+      "   d    ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   f    ",
+      "  fcfh  ",
+      " fca lh ",
+      " hg  je ",
+      " eh  k  ",
+      "  e  i  ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "  hg    ",
+      "  fcfb  ",
+      "  h  e  ",
+      "     j  ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

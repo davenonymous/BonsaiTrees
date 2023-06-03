@@ -1,0 +1,103 @@
+{
+  "type": "bonsaitrees3:sapling/byg/lamet_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"byg:lament_leaves","properties":{"distance":"1","persistent":"false"}},
+    "b": {"block":"byg:lament_leaves","properties":{"distance":"2","persistent":"false"}},
+    "c": {"block":"byg:lament_leaves","properties":{"distance":"3","persistent":"false"}},
+    "d": {"block":"byg:lament_log","properties":{"axis":"y"}}
+  },
+  "shape": [
+    [
+      "      ",
+      "  cbc ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "   b  ",
+      "      "
+    ],
+    [
+      "   b  ",
+      " cbabc",
+      "    b ",
+      "      ",
+      "  bb  ",
+      "      ",
+      "      ",
+      "      ",
+      "   ab ",
+      "  babc",
+      "      "
+    ],
+    [
+      "  bab ",
+      " badab",
+      "   dab",
+      "   d  ",
+      " baab ",
+      "      ",
+      "  bba ",
+      "      ",
+      "   dab",
+      "  ada ",
+      "   d  "
+    ],
+    [
+      "   b  ",
+      "  babc",
+      "   a  ",
+      "  d   ",
+      "badab ",
+      "  daa ",
+      " baada",
+      "    d ",
+      "  bada",
+      " cbaa ",
+      "      "
+    ],
+    [
+      "      ",
+      "   bc ",
+      "      ",
+      "      ",
+      " baa  ",
+      "  ada ",
+      " badab",
+      "      ",
+      "  cbab",
+      "  cb  ",
+      "      "
+    ],
+    [
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "   ab ",
+      "  babc",
+      "      ",
+      "   cb ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "      ",
+      "   b  ",
+      "   bc ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ]
+  ]
+}
