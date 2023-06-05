@@ -1,11 +1,20 @@
 {
-  "type": "bonsaitrees3:sapling/byg/lamet_tree",
+  "type": "bonsaitrees3:sapling/byg/lament_tree",
   "version": 3,
   "ref": {
-    "a": {"block":"byg:lament_leaves","properties":{"distance":"1","persistent":"false"}},
-    "b": {"block":"byg:lament_leaves","properties":{"distance":"2","persistent":"false"}},
-    "c": {"block":"byg:lament_leaves","properties":{"distance":"3","persistent":"false"}},
-    "d": {"block":"byg:lament_log","properties":{"axis":"y"}}
+    "a": {
+      "block": "byg:lament_leaves",
+      "properties": { "distance": "1", "persistent": "false" }
+    },
+    "b": {
+      "block": "byg:lament_leaves",
+      "properties": { "distance": "2", "persistent": "false" }
+    },
+    "c": {
+      "block": "byg:lament_leaves",
+      "properties": { "distance": "3", "persistent": "false" }
+    },
+    "d": { "block": "byg:lament_log", "properties": { "axis": "y" } }
   },
   "shape": [
     [
