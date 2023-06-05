@@ -11,7 +11,7 @@ loaderVersion="[39,)" #mandatory This is typically bumped every Minecraft versio
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="MIT"
 # A URL to refer people to when problems occur with this mod
-issueTrackerURL="https://github.com/thraaawn/BonsaiTrees/issues" #optional
+issueTrackerURL="https://github.com/JeremyEffinger/BonsaiTrees/issues" #optional
 
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
@@ -26,16 +26,16 @@ displayName="Bonsai Trees 3" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="https://github.com/thraaawn/BonsaiTrees" #optional
+displayURL="https://github.com/JeremyEffinger/BonsaiTrees" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="bonsaitrees_logo.png" #optional
 # A text field displayed in the mod UI
-credits="" #optional
+credits="Davenonymous" #optional
 # A text field displayed in the mod UI
-authors="Davenonymous" #optional
+authors="Davenonymous, JeremyE" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Grow Trees in small pots like Mr. Miyagi!
+Grow Trees in small pots like Mr. Miyagi! Now supporting Oh the Biomes You'll go!
 '''
 
 [[dependencies.bonsaitrees3]] #optional
