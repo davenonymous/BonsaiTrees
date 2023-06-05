@@ -172,7 +172,7 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "Bonsai Trees 3 BYP Edition",
+                "Specification-Title"     : "Bonsai Trees 3 BYG Edition",
                 "Specification-Vendor"    : "Jeremy E.",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
