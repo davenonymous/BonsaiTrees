@@ -2,7 +2,7 @@
 
 # Bonsai Trees 3
 
-An enhanced Minecraft mod, based on the original Bonsai Trees 3 by thraaawn, that allows growing miniature versions of trees within a single block space, now with added compatibility for Oh the Biomes You'll Go (BYP) mod!
+An enhanced Minecraft mod, based on the original Bonsai Trees 3 by thraaawn, that allows growing miniature versions of trees within a single block space, now with added compatibility for Oh the Biomes You'll Go (BYG) mod!
 
 ## How to get started
 
