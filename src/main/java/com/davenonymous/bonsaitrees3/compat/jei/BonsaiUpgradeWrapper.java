@@ -2,8 +2,6 @@ package com.davenonymous.bonsaitrees3.compat.jei;
 
 import com.davenonymous.libnonymous.helper.Translatable;
 import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.gui.ingredient.ITooltipCallback;
-import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.extensions.IRecipeCategoryExtension;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
@@ -11,7 +9,7 @@ import net.minecraft.world.item.ItemStack;
 import java.util.Arrays;
 import java.util.List;
 
-public class BonsaiUpgradeWrapper implements IRecipeCategoryExtension, ITooltipCallback<ItemStack> {
+public class BonsaiUpgradeWrapper implements IRecipeCategoryExtension /*, ITooltipCallback<ItemStack> */{
 	List<ItemStack> upgradeItems;
 	Translatable upgradeDescription;
 
@@ -25,6 +23,7 @@ public class BonsaiUpgradeWrapper implements IRecipeCategoryExtension, ITooltipC
 		this.upgradeDescription = upgradeDescription;
 	}
 
+	/*
 	@Override
 	public void onTooltip(int slotIndex, boolean input, ItemStack ingredient, List<Component> tooltip) {
 
@@ -33,5 +32,5 @@ public class BonsaiUpgradeWrapper implements IRecipeCategoryExtension, ITooltipC
 	@Override
 	public void setIngredients(IIngredients ingredients) {
 		ingredients.setInputLists(VanillaTypes.ITEM, List.of(this.upgradeItems));
-	}
+	}*/
 }

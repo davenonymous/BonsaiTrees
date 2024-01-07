@@ -7,7 +7,7 @@ import net.minecraft.world.level.Level;
 
 public class SoilRecipeHelper extends BaseRecipeHelper<SoilInfo> {
 	public SoilRecipeHelper() {
-		super(Registration.RECIPE_TYPE_SOIL);
+		super(Registration.RECIPE_TYPE_SOIL.get());
 	}
 
 	public SoilInfo getSoilForItem(Level level, ItemStack stack) {

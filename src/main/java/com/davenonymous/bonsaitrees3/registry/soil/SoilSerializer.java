@@ -7,18 +7,18 @@ import com.davenonymous.libnonymous.serialization.JsonHelpers;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraftforge.registries.ForgeRegistryEntry;
 
 import javax.annotation.Nullable;
 
 
-public class SoilSerializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<SoilInfo> {
+public class SoilSerializer implements RecipeSerializer<SoilInfo> {
 
 	@Override
 	public SoilInfo fromJson(ResourceLocation recipeId, JsonObject json) {

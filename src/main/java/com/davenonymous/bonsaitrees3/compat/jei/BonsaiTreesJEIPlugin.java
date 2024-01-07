@@ -50,13 +50,13 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 
 	@Override
 	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-		registration.addRecipeCatalyst(new ItemStack(Registration.BONSAI_POT.get()), BonsaiRecipeCategory.ID);
-		registration.addRecipeCatalyst(new ItemStack(Registration.BONSAI_POT.get()), BonsaiUpgradeCategory.ID);
+		//registration.addRecipeCatalyst(new ItemStack(Registration.BONSAI_POT.get()), BonsaiRecipeCategory.ID);
+		//registration.addRecipeCatalyst(new ItemStack(Registration.BONSAI_POT.get()), BonsaiUpgradeCategory.ID);
 	}
 
 	@Override
 	public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-		registration.addRecipeClickArea(BonsaiPotScreen.class, 29, 19, BonsaiPotContainer.WIDTH - (20 + 34 + 8 + 3 * 18), 18, BonsaiRecipeCategory.ID, BonsaiUpgradeCategory.ID);
+		//registration.addRecipeClickArea(BonsaiPotScreen.class, 29, 19, BonsaiPotContainer.WIDTH - (20 + 34 + 8 + 3 * 18), 18, BonsaiRecipeCategory.ID, BonsaiUpgradeCategory.ID);
 	}
 
 	@Override
@@ -66,7 +66,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 		}
 
 		BonsaiTrees3.LOGGER.info("Registering {} saplings", saplings.size());
-		registration.addRecipes(asRecipes(saplings, BonsaiRecipeWrapper::new), BonsaiRecipeCategory.ID);
+		//registration.addRecipes(asRecipes(saplings, BonsaiRecipeWrapper::new), BonsaiRecipeCategory.ID);
 
 		List<BonsaiUpgradeWrapper> upgradeRecipes = new ArrayList<>();
 
@@ -135,7 +135,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 		beeItems.add(new ItemStack(Blocks.BEE_NEST));
 		upgradeRecipes.add(new BonsaiUpgradeWrapper(UPGRADE_TEXT_BEES, beeItems));
 
-		registration.addRecipes(upgradeRecipes, BonsaiUpgradeCategory.ID);
+		//registration.addRecipes(upgradeRecipes, BonsaiUpgradeCategory.ID);
 	}
 
 	/*
@@ -152,7 +152,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 	@Override
 	public void registerCategories(IRecipeCategoryRegistration registration) {
 		BonsaiRecipeWrapper.tickTimer = registration.getJeiHelpers().getGuiHelper().createTickTimer(360, 360, false);
-		registration.addRecipeCategories(new BonsaiRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
-		registration.addRecipeCategories(new BonsaiUpgradeCategory(registration.getJeiHelpers().getGuiHelper()));
+		//registration.addRecipeCategories(new BonsaiRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		//registration.addRecipeCategories(new BonsaiUpgradeCategory(registration.getJeiHelpers().getGuiHelper()));
 	}
 }

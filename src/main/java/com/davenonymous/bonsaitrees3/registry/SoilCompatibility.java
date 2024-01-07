@@ -68,8 +68,8 @@ public class SoilCompatibility {
 			return;
 		}
 
-		List<SaplingInfo> saplings = recipes.stream().filter(r -> r.getType() == Registration.RECIPE_TYPE_SAPLING).map(r -> (SaplingInfo) r).toList();
-		List<SoilInfo> soils = recipes.stream().filter(r -> r.getType() == Registration.RECIPE_TYPE_SOIL).map(r -> (SoilInfo) r).toList();
+		List<SaplingInfo> saplings = recipes.stream().filter(r -> r.getType() == Registration.RECIPE_TYPE_SAPLING.get()).map(r -> (SaplingInfo) r).toList();
+		List<SoilInfo> soils = recipes.stream().filter(r -> r.getType() == Registration.RECIPE_TYPE_SOIL.get()).map(r -> (SoilInfo) r).toList();
 
 		treeCompatibility = new HashMap<>();
 		soilCompatibility = new HashMap<>();

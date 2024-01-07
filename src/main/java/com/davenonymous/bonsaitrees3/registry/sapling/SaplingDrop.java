@@ -5,11 +5,10 @@ import com.davenonymous.libnonymous.json.MCJsonUtils;
 import com.davenonymous.libnonymous.serialization.JsonHelpers;
 import com.google.gson.JsonObject;
 import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
-
-import java.util.Random;
 
 public class SaplingDrop {
 	public ItemStack resultStack;
@@ -59,7 +58,7 @@ public class SaplingDrop {
 		this.requiredUpgrades.toNetwork(buffer);
 	}
 
-	public ItemStack getRandomDrop(Random rand, int fortuneLevel) {
+	public ItemStack getRandomDrop(RandomSource rand, int fortuneLevel) {
 		var extraRolls = CommonConfig.extraRollsPerFortuneLevel.get();
 		var extraChance = CommonConfig.extraChancePerFortuneLevel.get();
 

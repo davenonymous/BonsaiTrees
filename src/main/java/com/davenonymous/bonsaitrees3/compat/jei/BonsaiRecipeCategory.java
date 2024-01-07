@@ -1,15 +1,14 @@
 package com.davenonymous.bonsaitrees3.compat.jei;
 
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
-import com.mojang.blaze3d.vertex.PoseStack;
-import mezz.jei.api.gui.IRecipeLayout;
+import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.recipe.IFocusGroup;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 
 
@@ -23,7 +22,7 @@ public class BonsaiRecipeCategory implements IRecipeCategory<BonsaiRecipeWrapper
 		slotDrawable = guiHelper.getSlotDrawable();
 	}
 
-	@Override
+	/*@Override
 	public ResourceLocation getUid() {
 		return ID;
 	}
@@ -31,11 +30,11 @@ public class BonsaiRecipeCategory implements IRecipeCategory<BonsaiRecipeWrapper
 	@Override
 	public Class<? extends BonsaiRecipeWrapper> getRecipeClass() {
 		return BonsaiRecipeWrapper.class;
-	}
+	}*/
 
 	@Override
 	public Component getTitle() {
-		return new TranslatableComponent("jei.bonsaitrees3.recipes.title");
+		return Component.translatable("jei.bonsaitrees3.recipes.title");
 	}
 
 	@Override
@@ -48,7 +47,7 @@ public class BonsaiRecipeCategory implements IRecipeCategory<BonsaiRecipeWrapper
 		return null;
 	}
 
-	@Override
+	/*@Override
 	public void setIngredients(BonsaiRecipeWrapper bonsaiRecipeWrapper, IIngredients iIngredients) {
 		bonsaiRecipeWrapper.setIngredients(iIngredients);
 	}
@@ -87,5 +86,16 @@ public class BonsaiRecipeCategory implements IRecipeCategory<BonsaiRecipeWrapper
 
 		recipeLayout.getItemStacks().addTooltipCallback(recipeWrapper);
 		recipeLayout.getItemStacks().set(ingredients);
+	}*/
+
+	@Override
+	public RecipeType<BonsaiRecipeWrapper> getRecipeType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setRecipe(IRecipeLayoutBuilder builder, BonsaiRecipeWrapper recipe, IFocusGroup focuses) {
+		// TODO Auto-generated method stub
 	}
 }

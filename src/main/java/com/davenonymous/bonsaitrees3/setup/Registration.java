@@ -30,12 +30,15 @@ import net.minecraftforge.registries.RegistryObject;
 
 import static com.davenonymous.bonsaitrees3.BonsaiTrees3.MODID;
 
+import java.util.function.Supplier;
+
 public class Registration {
 	private static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
 	private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
-	private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, MODID);
-	private static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.CONTAINERS, MODID);
+	private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, MODID);
+	private static final DeferredRegister<MenuType<?>> CONTAINERS = DeferredRegister.create(ForgeRegistries.MENU_TYPES, MODID);
 	private static final DeferredRegister<RecipeSerializer<?>> RECIPE_SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, MODID);
+	private static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, MODID);
 
 
 	public static void init() {
@@ -44,17 +47,18 @@ public class Registration {
 		ITEMS.register(bus);
 		BLOCK_ENTITIES.register(bus);
 		CONTAINERS.register(bus);
+		RECIPE_TYPES.register(bus);
 		RECIPE_SERIALIZERS.register(bus);
 	}
 
 	public static final ResourceKey<Level> GROWTOWN = ResourceKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(MODID, "growtown"));
 
-	public static RecipeType<SoilInfo> RECIPE_TYPE_SOIL;
-	public static SoilRecipeHelper RECIPE_HELPER_SOIL;
+	public static final RegistryObject<RecipeType<SoilInfo>> RECIPE_TYPE_SOIL = RECIPE_TYPES.register("soil", () -> RecipeType.simple(new ResourceLocation(MODID, "soil")));
+	public static final Supplier<SoilRecipeHelper> RECIPE_HELPER_SOIL = () -> new SoilRecipeHelper();
 	public static final RegistryObject<RecipeSerializer<?>> SOIL_SERIALIZER = RECIPE_SERIALIZERS.register("soil", () -> new SoilSerializer());
 
-	public static RecipeType<SaplingInfo> RECIPE_TYPE_SAPLING;
-	public static SaplingRecipeHelper RECIPE_HELPER_SAPLING;
+	public static final RegistryObject<RecipeType<SaplingInfo>> RECIPE_TYPE_SAPLING = RECIPE_TYPES.register("sapling", () -> RecipeType.simple(new ResourceLocation(MODID, "sapling")));
+	public static final Supplier<SaplingRecipeHelper> RECIPE_HELPER_SAPLING = () -> new SaplingRecipeHelper();
 	public static final RegistryObject<RecipeSerializer<?>> SAPLING_SERIALIZER = RECIPE_SERIALIZERS.register("sapling", () -> new SaplingSerializer());
 
 

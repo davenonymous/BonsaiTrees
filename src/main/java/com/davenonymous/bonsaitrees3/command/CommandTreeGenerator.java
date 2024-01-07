@@ -18,15 +18,18 @@ import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.datafixers.util.Unit;
+
+import net.minecraft.SharedConstants;
 import net.minecraft.Util;
 import net.minecraft.client.Minecraft;
+import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.blocks.BlockStateArgument;
 import net.minecraft.core.BlockPos;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerChunkCache;
 import net.minecraft.server.level.ServerLevel;
@@ -72,12 +75,12 @@ public class CommandTreeGenerator implements Command<CommandSourceStack> {
 	boolean hasModFilter;
 	boolean setsCustomGround;
 
-	public static ArgumentBuilder<CommandSourceStack, ?> register(CommandDispatcher<CommandSourceStack> dispatcher) {
+	public static ArgumentBuilder<CommandSourceStack, ?> register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext pContext) {
 		return Commands.literal("generator").requires(cs -> cs.hasPermission(0))
 				.executes(SimpleCommandReply.error("This command can be used to mass generate sapling and model files.\nIt should not be used on actual game worlds!\nIf you know what you are doing, continue by appending 'yes' to the command!"))
 				.then(Commands.argument("confirm", StringArgumentType.word()).executes(CMD)
 						.then(Commands.argument("mod", ModIdArgument.modIdArgument()).executes(CMD_WITH_FILTER)
-								.then(Commands.argument("ground", BlockStateArgument.block()).executes(CMD_WITH_GROUND))
+								.then(Commands.argument("ground", BlockStateArgument.block(pContext)).executes(CMD_WITH_GROUND))
 						));
 	}
 
@@ -87,8 +90,8 @@ public class CommandTreeGenerator implements Command<CommandSourceStack> {
 		if(!player.getLevel().dimension().equals(Registration.GROWTOWN)) {
 			ServerLevel destination = player.getServer().getLevel(Registration.GROWTOWN);
 			TeleporterTools.teleport(player, destination, BlockPos.ZERO, true);
-			context.getSource().sendFailure(new TextComponent("Wrong dimension. Needed to teleport you there first. Please run the command again."));
-			context.getSource().sendFailure(new TextComponent("To get back to another dimension run: /execute in <dimension> run teleport <coordinates>"));
+			context.getSource().sendFailure(Component.literal("Wrong dimension. Needed to teleport you there first. Please run the command again."));
+			context.getSource().sendFailure(Component.literal("To get back to another dimension run: /execute in <dimension> run teleport <coordinates>"));
 			return 0;
 		}
 
@@ -101,14 +104,14 @@ public class CommandTreeGenerator implements Command<CommandSourceStack> {
 		modelSaveDir.mkdirs();
 		saplingSaveDir.mkdirs();
 
-		Map<Item, ConfiguredFeature> saplingMap = new HashMap<>();
+		Map<Item, ConfiguredFeature<?, ?>> saplingMap = new HashMap<>();
 
 		int count = 0;
 		int xOffset = 0;
 		var saplingBlocks = ForgeRegistries.BLOCKS.getValues().stream().filter(b -> b instanceof SaplingBlock).map(b -> (SaplingBlock) b).toList();
 		for(var saplingBlock : saplingBlocks) {
 			if(hasModFilter) {
-				var saplingMod = saplingBlock.getRegistryName().getNamespace();
+				var saplingMod = ForgeRegistries.BLOCKS.getKey(saplingBlock).getNamespace();
 				var wantedMod = context.getArgument("mod", String.class);
 
 				if(!saplingMod.equals(wantedMod)) {
@@ -117,7 +120,7 @@ public class CommandTreeGenerator implements Command<CommandSourceStack> {
 				}
 			}
 
-			context.getSource().sendSuccess(ComponentUtils.format("Found sapling block: %s", saplingBlock.getRegistryName()), false);
+			context.getSource().sendSuccess(ComponentUtils.format("Found sapling block: %s", ForgeRegistries.BLOCKS.getKey(saplingBlock)), false);
 
 			// Prepare the area for growth, i.e. clear the chunk, make sure the ground is the desired ground
 			BlockPos growPos = new BlockPos(7 + xOffset, 4, 7);
@@ -133,14 +136,14 @@ public class CommandTreeGenerator implements Command<CommandSourceStack> {
 
 			// Actually grow the tree feature
 			AbstractTreeGrower grower = SaplingBlockReflection.getTreeGrowerFromSaplingBlock(saplingBlock);
-			grower.growTree(player.getLevel(), player.getLevel().getChunkSource().getGenerator(), growPos, player.getLevel().getBlockState(growPos), player.getLevel().random);
+			grower.growTree(player.getLevel(), player.getLevel().getChunkSource().getGenerator(), growPos, player.getLevel().getBlockState(growPos), player.level.random);
 
 			var feature = AbstractTreeGrowerReflection.getConfiguredFeature(grower, player.getRandom(), false);
 			try {
 				BonsaiTrees3.LOGGER.info("Looking at configured feature: {}", feature);
 				if(feature != null && feature.config() instanceof TreeConfiguration tc) {
 					BonsaiTrees3.LOGGER.info(" --> TreeConfiguration: {}", tc);
-					var saplingItem = Item.byBlock(saplingBlock);
+					var saplingItem = saplingBlock.asItem();
 					saplingMap.put(saplingItem, feature);
 					BonsaiTrees3.LOGGER.info(" --> Sapling: {}", saplingItem);
 
@@ -159,7 +162,7 @@ public class CommandTreeGenerator implements Command<CommandSourceStack> {
 					model.setBlocksByFloodFill(context.getSource().getLevel(), growPos.above());
 
 					// Write model to disk
-					var modDir = new File(modelSaveDir, saplingBlock.getRegistryName().getNamespace());
+					var modDir = new File(modelSaveDir, ForgeRegistries.BLOCKS.getKey(saplingBlock).getNamespace());
 					modDir.mkdirs();
 
 					var modelFile = new File(modDir, featureName.getPath() + ".json");
@@ -174,7 +177,7 @@ public class CommandTreeGenerator implements Command<CommandSourceStack> {
 					}
 				}
 			} catch (Exception e) {
-				BonsaiTrees3.LOGGER.info("Something went wrong during generation of: {}", saplingBlock.getRegistryName());
+				BonsaiTrees3.LOGGER.info("Something went wrong during generation of: {}", ForgeRegistries.BLOCKS.getKey(saplingBlock).toString());
 				BonsaiTrees3.LOGGER.error("{}", e.getLocalizedMessage());
 				e.printStackTrace();
 			}
@@ -183,8 +186,8 @@ public class CommandTreeGenerator implements Command<CommandSourceStack> {
 		}
 
 		// Use the already existing data generator to generate sapling jsons
-		var dataGen = new DataGenerator(saplingSaveDir.toPath(), Collections.emptySet());
-		dataGen.addProvider(new DatagenSaplings(dataGen) {
+		var dataGen = new DataGenerator(saplingSaveDir.toPath(), Collections.emptySet(), SharedConstants.getCurrentVersion(), true);
+		dataGen.addProvider(true, new DatagenSaplings(dataGen) {
 			@Override
 			public void addValues() {
 				for(Item saplingItem : saplingMap.keySet()) {

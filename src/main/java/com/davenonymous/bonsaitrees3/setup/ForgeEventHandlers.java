@@ -10,7 +10,7 @@ public class ForgeEventHandlers {
 
 	@SubscribeEvent
 	public void onRegisterCommands(RegisterCommandsEvent event) {
-		ModCommands.register(event.getDispatcher());
+		ModCommands.register(event.getDispatcher(), event.getBuildContext());
 	}
 
 	@SubscribeEvent

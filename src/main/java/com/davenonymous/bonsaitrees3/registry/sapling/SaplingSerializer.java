@@ -10,14 +10,15 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraftforge.registries.ForgeRegistryEntry;
+import net.minecraftforge.registries.ForgeRegistries;
+//import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.annotation.Nullable;
 
 
-public class SaplingSerializer extends ForgeRegistryEntry<RecipeSerializer<?>> implements RecipeSerializer<SaplingInfo> {
+public class SaplingSerializer implements RecipeSerializer<SaplingInfo> {
 	private static final Logger LOGGER = LogManager.getLogger();
 
 	private boolean isValidIngredient(JsonObject obj) {
@@ -25,7 +26,7 @@ public class SaplingSerializer extends ForgeRegistryEntry<RecipeSerializer<?>> i
 			return false;
 		}
 		Item item = MCJsonUtils.getItem(obj, "item");
-		if(item.getRegistryName().toString().equals("minecraft:air")) {
+		if(ForgeRegistries.ITEMS.getKey(item).toString().equals("minecraft:air")) {
 			return false;
 		}
 

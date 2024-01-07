@@ -15,8 +15,9 @@ import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.ITickTimer;
-import mezz.jei.api.gui.ingredient.ITooltipCallback;
-import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.gui.ingredient.IRecipeSlotTooltipCallback;
+import mezz.jei.api.gui.ingredient.IRecipeSlotView;
+import mezz.jei.api.recipe.RecipeIngredientRole;
 import mezz.jei.api.recipe.category.extensions.IRecipeCategoryExtension;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -25,14 +26,15 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.registries.ForgeRegistries;
+
 import org.lwjgl.opengl.GL11;
 
 import java.util.*;
 
-public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCallback<ItemStack> {
+public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, IRecipeSlotTooltipCallback {
 	SaplingInfo sapling;
 	public float[] slotChances;
 	public SaplingDrop[] slotDrop;
@@ -80,30 +82,31 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 	}
 
 	@Override
-	public void onTooltip(int slot, boolean isInput, ItemStack stack, List<Component> tooltip) {
-		if(stack.isEmpty()) {
+	public void onTooltip(IRecipeSlotView recipeSlotView, List<Component> tooltip) {
+		if(recipeSlotView.isEmpty()) {
 			return;
 		}
-		if(isInput) {
-			if(slot == 0) {
+		if(recipeSlotView.getRole() == RecipeIngredientRole.CATALYST) {
+			if(recipeSlotView.getSlotName().equals("sapling")) {
 				// Sapling slot
 				String timeToGrow = TickTimeHelper.getDuration(sapling.baseTicks);
-				var toAdd = new TextComponent(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.growtime", timeToGrow));
+				var toAdd = Component.translatable("jei.bonsaitrees3.growtime", timeToGrow).withStyle(ChatFormatting.YELLOW);
 				if(!tooltip.contains(toAdd)) {
 					tooltip.add(tooltip.size() - 1, toAdd);
 				}
 			}
 
-			if(slot == 1) {
-				float tickModifier = tickModifiers.getOrDefault(stack.getItem().getRegistryName(), 1.0f);
+			if(recipeSlotView.getSlotName().equals("soil")) {
+				ResourceLocation rLoc = ForgeRegistries.ITEMS.getKey(recipeSlotView.getDisplayedItemStack().orElse(ItemStack.EMPTY).getItem());
+				float tickModifier = tickModifiers.getOrDefault(rLoc, 1.0f);
 				String timeToGrow = TickTimeHelper.getDuration((int) (sapling.baseTicks * tickModifier));
-				var toAdd = new TextComponent(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.soiltime", timeToGrow));
+				var toAdd = Component.translatable(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.soiltime", timeToGrow));
 				if(!tooltip.contains(toAdd)) {
 					tooltip.add(tooltip.size() - 1, toAdd);
 				}
 			}
 		} else {
-			// Some output slot
+			/*// Some output slot
 			var drop = slotDrop[slot - 2];
 			if(CommonConfig.showChanceInJEI.get()) {
 				var toAdd = new TextComponent(ChatFormatting.YELLOW + I18n.get("jei.bonsaitrees3.chance", (int) (drop.chance * 100)));
@@ -138,10 +141,10 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 						tooltip.add(tooltip.size() - 1, itemLine);
 					}
 				}
-			}
+			}*/
 		}
 	}
-
+/*
 	@Override
 	public void setIngredients(IIngredients iIngredients) {
 		List<List<ItemStack>> inputs = new ArrayList<>();
@@ -174,5 +177,5 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, ITooltipCa
 		}
 
 		iIngredients.setOutputs(VanillaTypes.ITEM, drops);
-	}
+	}*/
 }

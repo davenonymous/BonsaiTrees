@@ -10,11 +10,10 @@ import mcjty.theoneprobe.api.IProbeHitData;
 import mcjty.theoneprobe.api.IProbeInfo;
 import mcjty.theoneprobe.api.ProbeMode;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
@@ -43,7 +42,6 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.network.NetworkHooks;
 
 import javax.annotation.Nullable;
-import java.util.Random;
 
 public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITopInfoProvider {
 	private final VoxelShape shape = Shapes.box(0.065f, 0.005f, 0.065f, 0.935f, 0.185f, 0.935f);
@@ -91,7 +89,6 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 		super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult result) {
 		if(level.isClientSide()) {
@@ -106,7 +103,7 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 
 		var pot = (BonsaiPotBlockEntity) level.getBlockEntity(pos);
 
-		var soilInfo = Registration.RECIPE_HELPER_SOIL.getSoilForItem(level, playerStack);
+		var soilInfo = Registration.RECIPE_HELPER_SOIL.get().getSoilForItem(level, playerStack);
 		if(soilInfo != null && !pot.hasSoil()) {
 			if(player.isCreative()) {
 				ItemStack soilStack = playerStack.copy();
@@ -119,7 +116,7 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 			return InteractionResult.SUCCESS;
 		}
 
-		var saplingInfo = Registration.RECIPE_HELPER_SAPLING.getSaplingInfoForItem(level, playerStack);
+		var saplingInfo = Registration.RECIPE_HELPER_SAPLING.get().getSaplingInfoForItem(level, playerStack);
 		if(saplingInfo != null && !pot.hasSapling()) {
 			if(player.isCreative()) {
 				ItemStack saplingStack = playerStack.copy();
@@ -151,7 +148,7 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 		MenuProvider menuProvider = new MenuProvider() {
 			@Override
 			public Component getDisplayName() {
-				return new TranslatableComponent(BaseLanguageProvider.getContainerLanguageKey(Registration.BONSAI_POT_CONTAINER.get()));
+				return Component.translatable(BaseLanguageProvider.getContainerLanguageKey(Registration.BONSAI_POT_CONTAINER.get()));
 			}
 
 			@Nullable
@@ -160,7 +157,7 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 				return new BonsaiPotContainer(pContainerId, pos, pInventory, pPlayer);
 			}
 		};
-		NetworkHooks.openGui((ServerPlayer) player, menuProvider, pos);
+		NetworkHooks.openScreen((ServerPlayer) player, menuProvider, pos);
 		return InteractionResult.SUCCESS;
 	}
 
@@ -171,19 +168,16 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 		return new BonsaiPotBlockEntity(pos, state);
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public VoxelShape getOcclusionShape(BlockState p_60578_, BlockGetter p_60579_, BlockPos p_60580_) {
 		return shape;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public VoxelShape getCollisionShape(BlockState p_60572_, BlockGetter p_60573_, BlockPos p_60574_, CollisionContext p_60575_) {
 		return shape;
 	}
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public VoxelShape getShape(BlockState pState, BlockGetter pLevel, BlockPos pPos, CollisionContext pContext) {
 		return shape;
@@ -212,12 +206,12 @@ public class BonsaiPotBlock extends BaseBlock implements BonemealableBlock, ITop
 	}
 
 	@Override
-	public boolean isBonemealSuccess(Level pLevel, Random pRandom, BlockPos pPos, BlockState pState) {
+	public boolean isBonemealSuccess(Level pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
 		return pRandom.nextDouble() < CommonConfig.bonemealSuccessChance.get();
 	}
 
 	@Override
-	public void performBonemeal(ServerLevel pLevel, Random pRandom, BlockPos pPos, BlockState pState) {
+	public void performBonemeal(ServerLevel pLevel, RandomSource pRandom, BlockPos pPos, BlockState pState) {
 		var pot = (BonsaiPotBlockEntity) pLevel.getBlockEntity(pPos);
 		if(pot == null) {
 			return;

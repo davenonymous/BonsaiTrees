@@ -12,7 +12,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.coordinates.BlockPosArgument;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 
@@ -30,19 +30,19 @@ public class CommandTreeCreator implements Command<CommandSourceStack> {
 		BlockPos pos = BlockPosArgument.getLoadedBlockPos(context, "pos");
 		model.setBlocksByFloodFill(context.getSource().getLevel(), pos);
 
-		context.getSource().sendSuccess(new TextComponent(String.format("Model consists of %d blocks", model.getBlockCount())), false);
+		context.getSource().sendSuccess(Component.literal(String.format("Model consists of %d blocks", model.getBlockCount())), false);
 
 		for(var state : model.reverseBlocks.keySet()) {
 			int count = model.reverseBlocks.get(state).size();
-			context.getSource().sendSuccess(new TextComponent(String.format("%d %s", count, state)), false);
+			context.getSource().sendSuccess(Component.literal(String.format("%d %s", count, state)), false);
 		}
 
 		ServerPlayer player = context.getSource().getPlayerOrException();
 		Networking.sendModelToClipboard(player.connection.connection, model);
 
-		context.getSource().sendSuccess(new TextComponent("Model json copied to the clipboard!"), false);
+		context.getSource().sendSuccess(Component.literal("Model json copied to the clipboard!"), false);
 
-		context.getSource().sendSuccess(new TextComponent("JSON:" + model.serializePretty()), false);
+		context.getSource().sendSuccess(Component.literal("JSON:" + model.serializePretty()), false);
 
 		return 0;
 	}

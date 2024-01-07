@@ -3,20 +3,20 @@ package com.davenonymous.bonsaitrees3.compat.jei;
 import com.davenonymous.bonsaitrees3.BonsaiTrees3;
 import com.davenonymous.libnonymous.base.BaseLanguageProvider;
 import com.mojang.blaze3d.vertex.PoseStack;
-import mezz.jei.api.gui.IRecipeLayout;
+import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
 import mezz.jei.api.helpers.IGuiHelper;
-import mezz.jei.api.ingredients.IIngredients;
+import mezz.jei.api.recipe.IFocusGroup;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.Style;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.resources.ResourceLocation;
 
-public class BonsaiUpgradeCategory implements IRecipeCategory<BonsaiUpgradeWrapper> {
+public class BonsaiUpgradeCategory /*implements IRecipeCategory<BonsaiUpgradeWrapper>*/ {
 	public static final ResourceLocation ID = new ResourceLocation(BonsaiTrees3.MODID, "upgrades");
 	private final IDrawableStatic background;
 	private final IDrawableStatic slotDrawable;
@@ -27,7 +27,7 @@ public class BonsaiUpgradeCategory implements IRecipeCategory<BonsaiUpgradeWrapp
 
 	}
 
-	@Override
+	/*@Override
 	public void draw(BonsaiUpgradeWrapper recipe, PoseStack stack, double mouseX, double mouseY) {
 		var font = Minecraft.getInstance().font;
 		var text = I18n.get(BaseLanguageProvider.getTranslatableLanguageKey(recipe.upgradeDescription));
@@ -85,4 +85,16 @@ public class BonsaiUpgradeCategory implements IRecipeCategory<BonsaiUpgradeWrapp
 		recipeLayout.getItemStacks().addTooltipCallback(recipe);
 		recipeLayout.getItemStacks().set(ingredients);
 	}
+
+	@Override
+	public RecipeType<BonsaiUpgradeWrapper> getRecipeType() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void setRecipe(IRecipeLayoutBuilder builder, BonsaiUpgradeWrapper recipe, IFocusGroup focuses) {
+		// TODO Auto-generated method stub
+		
+	}*/
 }

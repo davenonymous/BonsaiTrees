@@ -15,7 +15,7 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraftforge.client.model.data.EmptyModelData;
+import net.minecraftforge.client.model.data.ModelData;
 
 public class BonsaiPotRenderer implements BlockEntityRenderer<BonsaiPotBlockEntity> {
 	public static final ResourceLocation WATER = new ResourceLocation("minecraft", "block/water_still");
@@ -59,14 +59,20 @@ public class BonsaiPotRenderer implements BlockEntityRenderer<BonsaiPotBlockEnti
 
 		float progress = (float) pPotBlock.getProgress(pPartialTick);
 		poseStack.scale(progress, progress, progress);
-
+		
+		var rendertype = RenderType.translucent();
+		var mc = Minecraft.getInstance();
+		if(mc.options.graphicsMode().get().getId() >= GraphicsStatus.FABULOUS.getId()) {
+			rendertype = RenderType.cutout();
+		}
+		
 		if(renderItemInstead) {
 			if(saplingInfo.ingredient != null && saplingInfo.ingredient.getItems().length > 0) {
 				Block blockToRender = Block.byItem(saplingInfo.ingredient.getItems()[0].getItem());
 				if(blockToRender != Blocks.AIR) {
 					poseStack.scale(maxSize, maxSize, maxSize);
 					poseStack.translate(-0.5f, 0.0f, -0.5f);
-					Minecraft.getInstance().getBlockRenderer().renderSingleBlock(blockToRender.defaultBlockState(), poseStack, pBufferSource, pPackedLight, pPackedOverlay, EmptyModelData.INSTANCE);
+					mc.getBlockRenderer().renderSingleBlock(blockToRender.defaultBlockState(), poseStack, pBufferSource, pPackedLight, pPackedOverlay, ModelData.EMPTY, rendertype);
 				}
 			}
 		} else {
@@ -78,10 +84,6 @@ public class BonsaiPotRenderer implements BlockEntityRenderer<BonsaiPotBlockEnti
 			float translateOffsetZ = (float) (multiBlock.depth + 1) / 2.0f;
 			poseStack.translate(-translateOffsetX, -translateOffsetY, -translateOffsetZ);
 
-			var rendertype = RenderType.translucent();
-			if(Minecraft.getInstance().options.graphicsMode.getId() >= GraphicsStatus.FABULOUS.getId()) {
-				rendertype = RenderType.cutout();
-			}
 			var buffer = pBufferSource.getBuffer(rendertype);
 			MultiModelBlockRenderer.renderMultiBlockModel(multiBlock, pPotBlock.getLevel(), buffer, poseStack, pPackedLight);
 		}

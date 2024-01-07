@@ -14,7 +14,7 @@ import com.davenonymous.libnonymous.serialization.Store;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.EnchantedBookItem;
+//import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
@@ -22,16 +22,20 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.client.model.ModelDataManager;
-import net.minecraftforge.client.model.data.IModelData;
-import net.minecraftforge.client.model.data.ModelDataMap;
+import net.minecraftforge.client.model.data.ModelData;
+//import net.minecraftforge.client.model.data.ModelDataManager;
+//import net.minecraftforge.client.model.ModelDataManager;
+//import net.minecraftforge.client.model.data.IModelData;
+//import net.minecraftforge.client.model.data.ModelDataMap;
 import net.minecraftforge.client.model.data.ModelProperty;
+//import net.minecraftforge.client.model.data.MultipartModelData;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.energy.IEnergyStorage;
-import net.minecraftforge.items.CapabilityItemHandler;
+//import net.minecraftforge.energy.CapabilityEnergy;
+//import net.minecraftforge.energy.IEnergyStorage;
+//import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.ItemStackHandler;
@@ -39,6 +43,7 @@ import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
 import java.util.List;
 
 import static net.minecraft.world.level.block.Block.UPDATE_ALL;
@@ -104,7 +109,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		}
 
 		if(this.modelRotation == -1) {
-			this.modelRotation = this.getLevel().random.nextInt(4);
+			this.modelRotation = this.level.random.nextInt(4);
 		}
 
 	}
@@ -167,8 +172,8 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 	@Nonnull
 	@Override
-	public IModelData getModelData() {
-		return new ModelDataMap.Builder().withInitial(SOIL_BLOCK, getSoilBlock()).withInitial(FLUID_BLOCK, getFluidBlock())
+	public ModelData getModelData() {
+		return ModelData.builder().with(SOIL_BLOCK, getSoilBlock()).with(FLUID_BLOCK, getFluidBlock())
 				.build();
 	}
 
@@ -190,7 +195,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return;
 		}
 
-		soilInfo = Registration.RECIPE_HELPER_SOIL.getSoilForItem(getLevel(), soilStack);
+		soilInfo = Registration.RECIPE_HELPER_SOIL.get().getSoilForItem(getLevel(), soilStack);
 	}
 
 	public ItemStack setSoil(ItemStack soilStack) {
@@ -238,7 +243,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return;
 		}
 
-		saplingInfo = Registration.RECIPE_HELPER_SAPLING.getSaplingInfoForItem(getLevel(), saplingStack);
+		saplingInfo = Registration.RECIPE_HELPER_SAPLING.get().getSaplingInfoForItem(getLevel(), saplingStack);
 	}
 
 	public ItemStack setSapling(ItemStack saplingStack) {
@@ -247,7 +252,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 		this.growTicks = 0;
 		if(getLevel() != null) {
-			this.modelRotation = getLevel().random.nextInt(4);
+			this.modelRotation = this.level.random.nextInt(4);
 		} else {
 			this.modelRotation = 0;
 		}
@@ -290,7 +295,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 				}
 			}
 
-			var optEnergyCap = stack.getCapability(CapabilityEnergy.ENERGY).resolve();
+			var optEnergyCap = stack.getCapability(ForgeCapabilities.ENERGY).resolve();
 			if(optEnergyCap.isPresent()) {
 				var energyCap = optEnergyCap.get();
 				if(energyCap.canExtract()) {
@@ -385,7 +390,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			}
 		}
 		List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
-		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(getLevel().random, fortune, hasSilkTouch, hasBeeHive, upgradeItems);
+		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(this.level.random, fortune, hasSilkTouch, hasBeeHive, upgradeItems);
 
 		// Test if all stacks fit in the output slots
 		boolean allFit = true;
@@ -403,7 +408,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			}
 
 			this.setGrowTicks(0);
-			this.modelRotation = this.getLevel().random.nextInt(4);
+			this.modelRotation = this.level.random.nextInt(4);
 			this.setChanged();
 			this.notifyClients();
 			return true;
@@ -463,7 +468,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			int rate = 1000;
 			List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
 			for(var upgrade : upgradeItems) {
-				var optEnergyCap = upgrade.getCapability(CapabilityEnergy.ENERGY).resolve();
+				var optEnergyCap = upgrade.getCapability(ForgeCapabilities.ENERGY).resolve();
 				if(optEnergyCap.isPresent()) {
 					var energyCap = optEnergyCap.get();
 					if(energyCap.canExtract()) {
@@ -514,7 +519,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		if(this.level != null) {
 			this.updateInfoObjects();
 			if(this.level instanceof ClientLevel) {
-				ModelDataManager.requestModelDataRefresh(this);
+				requestModelDataUpdate();
 			}
 
 			level.sendBlockUpdated(worldPosition, level.getBlockState(worldPosition), level.getBlockState(worldPosition), UPDATE_ALL);
@@ -568,7 +573,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		}
 
 		if(CommonConfig.enableForgeEnergyUpgrade.get()) {
-			var optEnergyCap = stack.getCapability(CapabilityEnergy.ENERGY);
+			var optEnergyCap = stack.getCapability(ForgeCapabilities.ENERGY);
 			if(optEnergyCap.isPresent()) {
 				var energyCap = optEnergyCap.resolve().get();
 				if(energyCap.canExtract()) {
@@ -587,7 +592,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	@Nonnull
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+		if(cap == ForgeCapabilities.ITEM_HANDLER) {
 			if(side == null) {
 				return combinedItemStackHandler.cast();
 			} else if(side == Direction.UP) {
@@ -608,7 +613,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 			@Override
 			public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-				var soilInfo = Registration.RECIPE_HELPER_SOIL.getSoilForItem(level, stack);
+				var soilInfo = Registration.RECIPE_HELPER_SOIL.get().getSoilForItem(level, stack);
 				return soilInfo != null;
 			}
 
@@ -632,7 +637,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 			@Override
 			public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-				var saplingInfo = Registration.RECIPE_HELPER_SAPLING.getSaplingInfoForItem(level, stack);
+				var saplingInfo = Registration.RECIPE_HELPER_SAPLING.get().getSaplingInfoForItem(level, stack);
 				return saplingInfo != null;
 			}
 

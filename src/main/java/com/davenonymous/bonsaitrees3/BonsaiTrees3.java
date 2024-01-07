@@ -2,16 +2,13 @@ package com.davenonymous.bonsaitrees3;
 
 import com.davenonymous.bonsaitrees3.config.ClientConfig;
 import com.davenonymous.bonsaitrees3.config.CommonConfig;
-import com.davenonymous.bonsaitrees3.registry.SoilCompatibility;
 import com.davenonymous.bonsaitrees3.setup.ClientSetup;
 import com.davenonymous.bonsaitrees3.setup.ForgeEventHandlers;
 import com.davenonymous.bonsaitrees3.setup.ModSetup;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;

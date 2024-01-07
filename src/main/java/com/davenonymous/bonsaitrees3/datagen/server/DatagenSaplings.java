@@ -26,6 +26,8 @@ import net.minecraft.world.level.levelgen.feature.configurations.TreeConfigurati
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraftforge.registries.ForgeRegistries;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -95,7 +97,7 @@ public class DatagenSaplings extends BaseDataProvider {
 		root.addProperty("mod", "minecraft");
 
 		JsonObject saplingObject = new JsonObject();
-		saplingObject.addProperty("item", chorusItem.getRegistryName().toString());
+		saplingObject.addProperty("item", ForgeRegistries.ITEMS.getKey(chorusItem).toString());
 		root.add("sapling", saplingObject);
 
 		JsonArray drops = new JsonArray();
@@ -120,7 +122,7 @@ public class DatagenSaplings extends BaseDataProvider {
 		root.addProperty("mod", "minecraft");
 
 		JsonObject saplingObject = new JsonObject();
-		saplingObject.addProperty("item", coralItem.getRegistryName().toString());
+		saplingObject.addProperty("item", ForgeRegistries.ITEMS.getKey(coralItem).toString());
 		root.add("sapling", saplingObject);
 
 		JsonArray drops = new JsonArray();
@@ -136,7 +138,7 @@ public class DatagenSaplings extends BaseDataProvider {
 
 		setTicks(root, 300);
 
-		var coralLocation = coralItem.getRegistryName();
+		var coralLocation = ForgeRegistries.ITEMS.getKey(coralItem);
 		add("recipes/sapling/" + coralLocation.getNamespace() + "/" + coralLocation.getPath(), root);
 		return root;
 	}
@@ -149,7 +151,7 @@ public class DatagenSaplings extends BaseDataProvider {
 		root.addProperty("mod", "minecraft");
 
 		JsonObject saplingObject = new JsonObject();
-		saplingObject.addProperty("item", mushroomItem.getRegistryName().toString());
+		saplingObject.addProperty("item", ForgeRegistries.ITEMS.getKey(mushroomItem).toString());
 		root.add("sapling", saplingObject);
 
 		JsonArray drops = new JsonArray();
@@ -180,7 +182,7 @@ public class DatagenSaplings extends BaseDataProvider {
 		root.addProperty("mod", "minecraft");
 
 		JsonObject saplingObject = new JsonObject();
-		saplingObject.addProperty("item", fungusItem.getRegistryName().toString());
+		saplingObject.addProperty("item", ForgeRegistries.ITEMS.getKey(fungusItem).toString());
 		root.add("sapling", saplingObject);
 
 		JsonArray drops = new JsonArray();
@@ -213,7 +215,7 @@ public class DatagenSaplings extends BaseDataProvider {
 	}
 
 	public JsonObject addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags) {
-		return addSapling(saplingItem, treeFeature, compatibleTags, null);
+		return addSapling(saplingItem, treeFeature, compatibleTags, new SaplingDrop[0]);
 	}
 
 	public JsonObject addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags, SaplingDrop... extraDrops) {
@@ -226,7 +228,7 @@ public class DatagenSaplings extends BaseDataProvider {
 
 
 		JsonObject saplingObject = new JsonObject();
-		saplingObject.addProperty("item", saplingItem.getRegistryName().toString());
+		saplingObject.addProperty("item", ForgeRegistries.ITEMS.getKey(saplingItem).toString());
 		root.add("sapling", saplingObject);
 
 		JsonArray drops = new JsonArray();

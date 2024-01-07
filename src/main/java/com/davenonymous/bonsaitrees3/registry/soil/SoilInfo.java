@@ -60,7 +60,7 @@ public class SoilInfo extends RecipeData {
 
 	@Override
 	public RecipeType<?> getType() {
-		return Registration.RECIPE_TYPE_SOIL;
+		return Registration.RECIPE_TYPE_SOIL.get();
 	}
 
 	public float getTickModifier() {
