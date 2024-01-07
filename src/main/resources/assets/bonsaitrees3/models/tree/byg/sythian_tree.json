@@ -1,0 +1,86 @@
+{
+  "type": "bonsaitrees3:sapling/byg/sythian_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"byg:sythian_stem","properties":{"axis":"y"}},
+    "b": {"block":"byg:sythian_wart_block"},
+    "c": {"block":"minecraft:shroomlight"}
+  },
+  "shape": [
+    [
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      " cc ",
+      "  c ",
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "    "
+    ],
+    [
+      "    ",
+      "bbb ",
+      "    ",
+      "bbb ",
+      "  c ",
+      "bbbc",
+      "    ",
+      "bbb ",
+      "    ",
+      "bbb ",
+      "    ",
+      "bbb ",
+      "    "
+    ],
+    [
+      " b  ",
+      "bab ",
+      " a  ",
+      "bab ",
+      " a  ",
+      "bab ",
+      " a  ",
+      "bab ",
+      " a  ",
+      "bab ",
+      " a  ",
+      "bab ",
+      " a  "
+    ],
+    [
+      "    ",
+      "bbb ",
+      "    ",
+      "bbb ",
+      " c  ",
+      "bbb ",
+      "    ",
+      "bbb ",
+      "c   ",
+      "bbb ",
+      "    ",
+      "bbb ",
+      "    "
+    ],
+    [
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      " c  ",
+      "cc  ",
+      "    ",
+      "    ",
+      "    "
+    ]
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "byg" }],
+  "sapling": {
+    "item": "byg:purple_bulbis_oddity"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "byg:purple_bulbis_oddity"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "byg:bulbis_wood"
+      }
+    },
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "byg:purple_bulbis_shell"
+      },
+      "requiresSilkTouch": true
+    },
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "byg:purple_shroomlight"
+      },
+      "requiresBees": true
+    }
+  ],
+  "compatibleSoilTags": ["end_stone"]
+}

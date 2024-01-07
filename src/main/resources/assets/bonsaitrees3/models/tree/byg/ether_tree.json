@@ -1,0 +1,80 @@
+{
+  "type": "bonsaitrees3:sapling/byg/ether_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"byg:ether_log","properties":{"axis":"y"}},
+    "b": {"block":"byg:ether_leaves","properties":{"distance":"3","persistent":"false"}},
+    "c": {"block":"byg:ether_bulbs_block","properties":{"age":"3"}},
+    "d": {"block":"byg:ether_leaves","properties":{"distance":"1","persistent":"false"}},
+    "e": {"block":"byg:ether_leaves","properties":{"distance":"2","persistent":"false"}},
+    "f": {"block":"byg:ether_bulbs_block","properties":{"age":"0"}}
+  },
+  "shape": [
+    [
+      "       ",
+      " ed    ",
+      " b     ",
+      " c     ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  d    ",
+      "edad   ",
+      "   dd  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   e   ",
+      " eddde ",
+      " edaad ",
+      "  dad  ",
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  dee  ",
+      "edadde ",
+      " edadc ",
+      "   d   ",
+      "   d   ",
+      "  a    ",
+      "  a    ",
+      "  a    ",
+      "       "
+    ],
+    [
+      "    d  ",
+      "beddade",
+      "c edd b",
+      "  c   c",
+      "       ",
+      "       ",
+      "       ",
+      "   a   ",
+      "   a   "
+    ],
+    [
+      "       ",
+      "  e de ",
+      "   e f ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}
