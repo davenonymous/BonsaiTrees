@@ -3,11 +3,13 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 	id 'org.parchmentmc.librarian.forgegradle' version '1.+'
     id 'eclipse'
+	id 'com.diffplug.eclipse.apt' version '3.43.0'
+	id 'org.spongepowered.mixin' version '0.7-SNAPSHOT'
 }
 
 group = "com.davenonymous.bonsaitrees3"
 version = mod_version
-archivesBaseName = mod_name
+archivesBaseName = "${mod_name}-${mc_version}"
 
 // Mojang ships Java 17 to end users in 1.18+, so your mod should target Java 17.
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -23,6 +25,9 @@ minecraft {
 			
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+			
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             mods {
                 bonsaitrees3 {
@@ -36,6 +41,9 @@ minecraft {
 			
             property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
             property 'forge.logging.console.level', 'debug'
+			
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             mods {
                 bonsaitrees3 {
@@ -83,20 +91,46 @@ repositories {
 dependencies {
 	// Minecraft
 	minecraft "net.minecraftforge:forge:${mc_version}-${forge_version}"
+	
+	// Mixins
+	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
 	// Libnonymous
 	implementation fg.deobf("com.davenonymous.libnonymous:libnonymous:${libnonymous_version}")
 	
-	// Just Enough Items
+	// Just Enough Items API
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
-	runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
 
 	// The One Probe
     implementation fg.deobf("curse.maven:the-one-probe-245211:${top_fileid}")
 	
+	
+	// Runtime Only
+	
+	// Just Enough Items
+	runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
+	
 	// Configured
-    implementation fg.deobf("curse.maven:configured-457570:${configured_fileid}")
+    runtimeOnly fg.deobf("curse.maven:configured-457570:${configured_fileid}")
+	
+	// Spark
+    runtimeOnly fg.deobf("curse.maven:spark-361579:${spark_fileid}")
+	
+	// Biomes O' Plenty
+    runtimeOnly fg.deobf("curse.maven:biomes-o-plenty-220318:${bop_fileid}")
+	
+	// Oh The Biomes You'll Go
+    runtimeOnly fg.deobf("curse.maven:oh-the-biomes-youll-go-247560:${byg_fileid}")
+	
+	// TerraBlender
+    runtimeOnly fg.deobf("curse.maven:terrablender-563928:${terrablender_fileid}")
+	
+	// GeckoLib
+    runtimeOnly fg.deobf("curse.maven:geckolib-388172:${geckolib_fileid}")
+	
+	// CorgiLib
+    runtimeOnly fg.deobf("curse.maven:corgilib-693313:${corgilib_fileid}")
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
