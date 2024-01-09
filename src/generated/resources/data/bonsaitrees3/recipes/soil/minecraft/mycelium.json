@@ -1,14 +1,14 @@
 {
   "type": "bonsaitrees3:soil",
-  "mod": "minecraft",
-  "tickModifier": 1.0,
-  "soil": {
-    "item": "minecraft:mycelium"
-  },
   "compatibleSoilTags": [
     "mycelium"
   ],
   "display": {
     "block": "minecraft:mycelium"
-  }
+  },
+  "mod": "minecraft",
+  "soil": {
+    "item": "minecraft:mycelium"
+  },
+  "tickModifier": 1.0
 }
