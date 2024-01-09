@@ -2,17 +2,17 @@
     "type": "bonsaitrees3:sapling/undergarden/ink_mushroom",
     "version": 3,
     "ref": {
-      "a": {"block":"undergarden:ink_mushroom_cap","properties":{"down":"true","east":"false","north":"false","south":"false","up":"true","west":"false"}},
-      "b": {"block":"undergarden:ink_mushroom_cap","properties":{"down":"true","east":"false","north":"false","south":"false","up":"true","west":"true"}},
-      "c": {"block":"undergarden:ink_mushroom_cap","properties":{"down":"true","east":"false","north":"false","south":"true","up":"true","west":"true"}},
-      "d": {"block":"minecraft:mushroom_stem","properties":{"down":"false","east":"true","north":"true","south":"true","up":"false","west":"true"}},
-      "e": {"block":"undergarden:ink_mushroom_cap","properties":{"down":"true","east":"false","north":"false","south":"true","up":"true","west":"false"}},
-      "f": {"block":"undergarden:ink_mushroom_cap","properties":{"down":"true","east":"true","north":"false","south":"false","up":"true","west":"false"}},
-      "g": {"block":"undergarden:ink_mushroom_cap","properties":{"down":"true","east":"true","north":"false","south":"true","up":"true","west":"false"}},
+      "a": {"block":"undergarden:ink_mushroom_cap"},
+      "b": {"block":"undergarden:ink_mushroom_cap"},
+      "c": {"block":"undergarden:ink_mushroom_cap"},
+      "d": {"block":"minecraft:mushroom_stem"},
+      "e": {"block":"undergarden:ink_mushroom_cap"},
+      "f": {"block":"undergarden:ink_mushroom_cap"},
+      "g": {"block":"undergarden:ink_mushroom_cap"},
       "h": {"block":"undergarden:seeping_ink"},
-      "i": {"block":"undergarden:ink_mushroom_cap","properties":{"down":"true","east":"false","north":"true","south":"false","up":"true","west":"true"}},
-      "j": {"block":"undergarden:ink_mushroom_cap","properties":{"down":"true","east":"true","north":"true","south":"false","up":"true","west":"false"}},
-      "k": {"block":"undergarden:ink_mushroom_cap","properties":{"down":"true","east":"false","north":"true","south":"false","up":"true","west":"false"}}
+      "i": {"block":"undergarden:ink_mushroom_cap"},
+      "j": {"block":"undergarden:ink_mushroom_cap"},
+      "k": {"block":"undergarden:ink_mushroom_cap"}
     },
     "shape": [
       [

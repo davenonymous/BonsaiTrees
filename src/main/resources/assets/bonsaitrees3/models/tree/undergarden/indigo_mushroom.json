@@ -2,16 +2,16 @@
     "type": "bonsaitrees3:sapling/undergarden/indigo_mushroom",
     "version": 3,
     "ref": {
-      "a": {"block":"undergarden:indigo_mushroom_cap","properties":{"down":"true","east":"false","north":"false","south":"false","up":"true","west":"false"}},
-      "b": {"block":"undergarden:indigo_mushroom_cap","properties":{"down":"true","east":"false","north":"false","south":"false","up":"true","west":"true"}},
-      "c": {"block":"undergarden:indigo_mushroom_cap","properties":{"down":"true","east":"false","north":"true","south":"false","up":"true","west":"false"}},
-      "d": {"block":"undergarden:indigo_mushroom_cap","properties":{"down":"true","east":"true","north":"true","south":"false","up":"true","west":"false"}},
-      "e": {"block":"undergarden:indigo_mushroom_cap","properties":{"down":"true","east":"false","north":"false","south":"true","up":"true","west":"true"}},
-      "f": {"block":"undergarden:indigo_mushroom_stalk","properties":{"down":"false","east":"true","north":"true","south":"true","up":"false","west":"true"}},
-      "g": {"block":"undergarden:indigo_mushroom_cap","properties":{"down":"true","east":"false","north":"false","south":"true","up":"true","west":"false"}},
-      "h": {"block":"undergarden:indigo_mushroom_cap","properties":{"down":"true","east":"true","north":"false","south":"false","up":"true","west":"false"}},
-      "i": {"block":"undergarden:indigo_mushroom_cap","properties":{"down":"true","east":"true","north":"false","south":"true","up":"true","west":"false"}},
-      "j": {"block":"undergarden:indigo_mushroom_cap","properties":{"down":"true","east":"false","north":"true","south":"false","up":"true","west":"true"}}
+      "a": {"block":"undergarden:indigo_mushroom_cap"},
+      "b": {"block":"undergarden:indigo_mushroom_cap"},
+      "c": {"block":"undergarden:indigo_mushroom_cap"},
+      "d": {"block":"undergarden:indigo_mushroom_cap"},
+      "e": {"block":"undergarden:indigo_mushroom_cap"},
+      "f": {"block":"undergarden:indigo_mushroom_stem"},
+      "g": {"block":"undergarden:indigo_mushroom_cap"},
+      "h": {"block":"undergarden:indigo_mushroom_cap"},
+      "i": {"block":"undergarden:indigo_mushroom_cap"},
+      "j": {"block":"undergarden:indigo_mushroom_cap"}
     },
     "shape": [
       [
