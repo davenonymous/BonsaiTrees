@@ -96,7 +96,7 @@ dependencies {
 	annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
 	// Libnonymous
-	implementation fg.deobf("com.davenonymous.libnonymous:libnonymous:${libnonymous_version}")
+	implementation fg.deobf("com.davenonymous.libnonymous:libnonymous:${mc_version}-${libnonymous_version}")
 	
 	// Just Enough Items API
     compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
