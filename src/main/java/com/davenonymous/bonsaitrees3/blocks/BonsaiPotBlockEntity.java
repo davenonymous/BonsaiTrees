@@ -14,8 +14,8 @@ import com.davenonymous.libnonymous.serialization.Store;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.EnchantedBookItem;
-//import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
@@ -24,23 +24,16 @@ import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.client.model.data.ModelData;
-//import net.minecraftforge.client.model.data.ModelDataManager;
-//import net.minecraftforge.client.model.ModelDataManager;
-//import net.minecraftforge.client.model.data.IModelData;
-//import net.minecraftforge.client.model.data.ModelDataMap;
 import net.minecraftforge.client.model.data.ModelProperty;
-//import net.minecraftforge.client.model.data.MultipartModelData;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-//import net.minecraftforge.energy.CapabilityEnergy;
-//import net.minecraftforge.energy.IEnergyStorage;
-//import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.CombinedInvWrapper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -196,7 +189,8 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return;
 		}
 
-		soilInfo = Registration.RECIPE_HELPER_SOIL.get().getSoilForItem(getLevel(), soilStack);
+		if (soilInfo == null || !soilInfo.ingredient.test(soilStack))
+			soilInfo = Registration.RECIPE_HELPER_SOIL.get().getSoilForItem(getLevel(), soilStack);
 	}
 
 	public ItemStack setSoil(ItemStack soilStack) {
@@ -244,7 +238,8 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return;
 		}
 
-		saplingInfo = Registration.RECIPE_HELPER_SAPLING.get().getSaplingInfoForItem(getLevel(), saplingStack);
+		if (saplingInfo == null || !saplingInfo.ingredient.test(saplingStack))
+			saplingInfo = Registration.RECIPE_HELPER_SAPLING.get().getSaplingInfoForItem(getLevel(), saplingStack);
 	}
 
 	public ItemStack setSapling(ItemStack saplingStack) {
@@ -303,16 +298,31 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 					hasEnergyUpgrade = true;
 				}
 			}
-
-			var enchantmentHelper = new EnchantmentHelper(stack);
-			if(CommonConfig.sumEnchantmentLevels.get()) {
-				fortune += enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE);
-				efficiency += enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY);
-			} else {
-				fortune = Math.max(fortune, enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE));
-				efficiency = Math.max(efficiency, enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY));
+			
+			if (stack.isEnchanted() || stack.getItem() instanceof EnchantedBookItem) {
+				var enchantments = stack.isEnchanted() ? stack.getEnchantmentTags() : EnchantedBookItem.getEnchantments(stack);
+				
+				for (var enchantment : enchantments) {
+					if (enchantment instanceof CompoundTag enchantmentTag) {
+						String id = enchantmentTag.getString("id");
+						int value = enchantmentTag.getShort("lvl");
+						
+						if (ForgeRegistries.ENCHANTMENTS.getKey(Enchantments.BLOCK_FORTUNE).toString().equals(id)) {
+							fortune = CommonConfig.sumEnchantmentLevels.get() ? fortune + value : Math.max(fortune, value);
+							continue;
+						}
+						
+						if (ForgeRegistries.ENCHANTMENTS.getKey(Enchantments.BLOCK_EFFICIENCY).toString().equals(id)) {
+							efficiency = CommonConfig.sumEnchantmentLevels.get() ? efficiency + value : Math.max(efficiency, value);
+							continue;
+						}
+						
+						if (ForgeRegistries.ENCHANTMENTS.getKey(Enchantments.SILK_TOUCH).toString().equals(id)) {
+							hasSilkTouch = true;
+						}
+					}
+				}
 			}
-			hasSilkTouch = hasSilkTouch || enchantmentHelper.has(Enchantments.SILK_TOUCH);
 		}
 
 		hopping = CommonConfig.enableHoppingUpgrade.get() && hopping;
@@ -519,6 +529,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	public void onDataLoaded() {
 		if(this.level != null) {
 			this.updateInfoObjects();
+			
 			if(this.level instanceof ClientLevel) {
 				requestModelDataUpdate();
 			}
