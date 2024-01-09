@@ -31,6 +31,8 @@ public class DatagenSoils extends BaseDataProvider {
 
 		addSoil(Items.DIRT, Blocks.DIRT, 1.1, new String[]{"dirt"});
 		addSoil(Items.GRASS_BLOCK, Blocks.GRASS_BLOCK, 1.0, new String[]{"grass"});
+		addSoil(Items.MOSS_BLOCK, Blocks.MOSS_BLOCK, 1.0, new String[]{"moss"});
+		addSoil(Items.MUD, Blocks.MUD, 1.0, new String[]{"mud"});
 
 		addSoil(Items.END_STONE, Blocks.END_STONE, 1.0, new String[]{"end_stone"});
 

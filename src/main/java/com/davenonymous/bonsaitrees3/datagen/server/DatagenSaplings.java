@@ -56,7 +56,7 @@ public class DatagenSaplings extends BaseDataProvider {
 		addSapling(Items.JUNGLE_SAPLING, TreeFeatures.JUNGLE_TREE.value(), fruitDrop(Items.COCOA_BEANS));
 		addSapling(Items.OAK_SAPLING, TreeFeatures.OAK.value(), fruitDrop(Items.APPLE));
 		addSapling(Items.SPRUCE_SAPLING, TreeFeatures.SPRUCE.value());
-		//addSapling(Items.AZALEA, getAsTreeConfiguration(TreeFeatures.AZALEA_TREE));
+		//addSapling(new Item[] {Items.AZALEA, Items.FLOWERING_AZALEA}, TreeFeatures.AZALEA_TREE.value(), new String[] {"dirt", "grass", "moss"});
 
 		addFungus(Items.CRIMSON_FUNGUS, TreeFeatures.CRIMSON_FUNGUS.value(), new String[]{"crimson"});
 		addFungus(Items.WARPED_FUNGUS, TreeFeatures.WARPED_FUNGUS.value(), new String[]{"warped"});
@@ -211,14 +211,22 @@ public class DatagenSaplings extends BaseDataProvider {
 	}
 
 	public JsonObject addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, SaplingDrop... extraDrops) {
+		return addSapling(new Item[]{saplingItem}, treeFeature, extraDrops);
+	}
+	
+	public JsonObject addSapling(Item[] saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, SaplingDrop... extraDrops) {
 		return addSapling(saplingItem, treeFeature, new String[]{"dirt", "grass"}, extraDrops);
 	}
 
 	public JsonObject addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags) {
+		return addSapling(new Item[]{saplingItem}, treeFeature, compatibleTags);
+	}
+	
+	public JsonObject addSapling(Item[] saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags) {
 		return addSapling(saplingItem, treeFeature, compatibleTags, new SaplingDrop[0]);
 	}
 
-	public JsonObject addSapling(Item saplingItem, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags, SaplingDrop... extraDrops) {
+	public JsonObject addSapling(Item[] saplingItems, ConfiguredFeature<TreeConfiguration, ?> treeFeature, String[] compatibleTags, SaplingDrop... extraDrops) {
 		var tc = treeFeature.config();
 
 		JsonObject root = new JsonObject();
@@ -227,13 +235,18 @@ public class DatagenSaplings extends BaseDataProvider {
 		root.addProperty("mod", mod);
 
 
-		JsonObject saplingObject = new JsonObject();
-		saplingObject.addProperty("item", ForgeRegistries.ITEMS.getKey(saplingItem).toString());
-		root.add("sapling", saplingObject);
-
 		JsonArray drops = new JsonArray();
-		addDrop(drops, saplingItem, 1, 0.05f);
+		JsonArray saplings = new JsonArray();
 
+		for (var saplingItem : saplingItems) {
+			JsonObject saplingObject = new JsonObject();
+			saplingObject.addProperty("item", ForgeRegistries.ITEMS.getKey(saplingItem).toString());
+			
+			saplings.add(saplingObject);
+			addDrop(drops, saplingItem, 1, 0.05f);
+		}
+		
+		root.add("sapling", saplings);
 
 		for(var trunkState : getProviderBlockStates(tc.trunkProvider)) {
 			var trunkItem = trunkState.getFirst().getBlock().asItem();
