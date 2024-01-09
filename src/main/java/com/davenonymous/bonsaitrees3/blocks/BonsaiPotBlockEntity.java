@@ -530,7 +530,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		if(this.level != null) {
 			this.updateInfoObjects();
 			
-			if(this.level instanceof ClientLevel) {
+			if(this.level.isClientSide) {
 				requestModelDataUpdate();
 			}
 
