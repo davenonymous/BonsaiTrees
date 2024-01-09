@@ -1,101 +1,63 @@
 package com.davenonymous.bonsaitrees3.compat.jei;
 
-import com.davenonymous.bonsaitrees3.BonsaiTrees3;
+import com.davenonymous.bonsaitrees3.setup.Registration;
+import com.mojang.blaze3d.vertex.PoseStack;
+
+import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
+import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 
 
 public class BonsaiRecipeCategory implements IRecipeCategory<BonsaiRecipeWrapper> {
-	public static final ResourceLocation ID = new ResourceLocation(BonsaiTrees3.MODID, "bonsais");
+	private final IGuiHelper guiHelper;
+	private final RecipeType<BonsaiRecipeWrapper> type;
 	private final IDrawableStatic background;
-	private final IDrawableStatic slotDrawable;
+	private final IDrawable icon;
+    private final Component localizedName;
 
-	public BonsaiRecipeCategory(IGuiHelper guiHelper) {
-		background = guiHelper.createBlankDrawable(155, 40);
-		slotDrawable = guiHelper.getSlotDrawable();
+	public BonsaiRecipeCategory(IGuiHelper guiHelper, RecipeType<BonsaiRecipeWrapper> type) {
+		this.guiHelper = guiHelper;
+		this.type = type;
+		this.background = guiHelper.createBlankDrawable(155, 40);
+		this.icon = guiHelper.createDrawableIngredient(VanillaTypes.ITEM_STACK, new ItemStack(Registration.BONSAI_POT_ITEM.get()));
+		this.localizedName = Component.translatable("jei.bonsaitrees3.recipes.title");
 	}
-
-	/*@Override
-	public ResourceLocation getUid() {
-		return ID;
-	}
+	
+    @Override
+    public void setRecipe(IRecipeLayoutBuilder builder, BonsaiRecipeWrapper recipe, IFocusGroup focuses) {
+        recipe.setRecipe(builder, focuses);
+    }
+    
+    @Override
+    public void draw(BonsaiRecipeWrapper recipe, IRecipeSlotsView view, PoseStack stack, double mouseX, double mouseY) {
+    	recipe.draw(view, stack, mouseX, mouseY, this.guiHelper);
+    }
 
 	@Override
-	public Class<? extends BonsaiRecipeWrapper> getRecipeClass() {
-		return BonsaiRecipeWrapper.class;
-	}*/
+	public RecipeType<BonsaiRecipeWrapper> getRecipeType() {
+		return this.type;
+	}
 
 	@Override
 	public Component getTitle() {
-		return Component.translatable("jei.bonsaitrees3.recipes.title");
+		return this.localizedName;
 	}
 
 	@Override
 	public IDrawable getBackground() {
-		return background;
+		return this.background;
 	}
 
 	@Override
 	public IDrawable getIcon() {
-		return null;
-	}
-
-	/*@Override
-	public void setIngredients(BonsaiRecipeWrapper bonsaiRecipeWrapper, IIngredients iIngredients) {
-		bonsaiRecipeWrapper.setIngredients(iIngredients);
-	}
-
-	@Override
-	public void draw(BonsaiRecipeWrapper recipe, PoseStack stack, double mouseX, double mouseY) {
-		slotDrawable.draw(stack, 0, 19 * 0);
-		slotDrawable.draw(stack, 0, 19 * 1);
-
-		slotDrawable.draw(stack, 80 + 19 * 0, 19 * 0);
-		slotDrawable.draw(stack, 80 + 19 * 1, 19 * 0);
-		slotDrawable.draw(stack, 80 + 19 * 2, 19 * 0);
-		slotDrawable.draw(stack, 80 + 19 * 3, 19 * 0);
-
-		slotDrawable.draw(stack, 80 + 19 * 0, 19 * 1);
-		slotDrawable.draw(stack, 80 + 19 * 1, 19 * 1);
-		slotDrawable.draw(stack, 80 + 19 * 2, 19 * 1);
-		slotDrawable.draw(stack, 80 + 19 * 3, 19 * 1);
-		recipe.drawInfo(getBackground().getWidth(), getBackground().getHeight(), stack, mouseX, mouseY);
-	}
-
-	@Override
-	public void setRecipe(IRecipeLayout recipeLayout, BonsaiRecipeWrapper recipeWrapper, IIngredients ingredients) {
-		recipeLayout.getItemStacks().init(0, true, 0, 19 * 0);
-		recipeLayout.getItemStacks().init(1, true, 0, 19 * 1);
-
-		recipeLayout.getItemStacks().init(2, false, 80 + 19 * 0, 19 * 0);
-		recipeLayout.getItemStacks().init(3, false, 80 + 19 * 1, 19 * 0);
-		recipeLayout.getItemStacks().init(4, false, 80 + 19 * 2, 19 * 0);
-		recipeLayout.getItemStacks().init(5, false, 80 + 19 * 3, 19 * 0);
-
-		recipeLayout.getItemStacks().init(6, false, 80 + 19 * 0, 19 * 1);
-		recipeLayout.getItemStacks().init(7, false, 80 + 19 * 1, 19 * 1);
-		recipeLayout.getItemStacks().init(8, false, 80 + 19 * 2, 19 * 1);
-		recipeLayout.getItemStacks().init(9, false, 80 + 19 * 3, 19 * 1);
-
-		recipeLayout.getItemStacks().addTooltipCallback(recipeWrapper);
-		recipeLayout.getItemStacks().set(ingredients);
-	}*/
-
-	@Override
-	public RecipeType<BonsaiRecipeWrapper> getRecipeType() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setRecipe(IRecipeLayoutBuilder builder, BonsaiRecipeWrapper recipe, IFocusGroup focuses) {
-		// TODO Auto-generated method stub
+		return this.icon;
 	}
 }
