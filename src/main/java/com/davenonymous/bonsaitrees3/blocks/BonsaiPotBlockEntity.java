@@ -11,7 +11,6 @@ import com.davenonymous.libnonymous.helper.InventoryHelper;
 import com.davenonymous.libnonymous.helper.RedstoneMode;
 import com.davenonymous.libnonymous.helper.SpawnHelper;
 import com.davenonymous.libnonymous.serialization.Store;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
