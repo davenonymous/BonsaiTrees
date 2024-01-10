@@ -84,6 +84,8 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 	private int hoppingCooldown = 0;
 	private int cuttingCooldown = 0;
+	
+	private boolean canSaplingGrow = false;
 
 	public static final ModelProperty<BlockState> SOIL_BLOCK = new ModelProperty<>();
 	public static final ModelProperty<FluidState> FLUID_BLOCK = new ModelProperty<>();
@@ -96,10 +98,16 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	@Override
 	protected void initialize() {
 		super.initialize();
-
-		if(getLevel() == null || getLevel().isClientSide()) {
+		
+		if (getLevel() == null)
 			return;
-		}
+		
+		this.updateSaplingInfo();	// ADDED
+		this.updateSoilBlock();		// ADDED
+		this.updateModules();		// ADDED
+
+		if(getLevel().isClientSide())
+			return;
 
 		if(this.modelRotation == -1) {
 			this.modelRotation = this.level.random.nextInt(4);
@@ -185,15 +193,19 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		var soilStack = soilItemStacks.getStackInSlot(0);
 		if(soilStack.isEmpty()) {
 			soilInfo = null;
+			canSaplingGrow = false;
 			return;
 		}
 
-		if (soilInfo == null || !soilInfo.ingredient.test(soilStack))
+		if (soilInfo == null || !soilInfo.ingredient.test(soilStack)) {
 			soilInfo = Registration.RECIPE_HELPER_SOIL.get().getSoilForItem(getLevel(), soilStack);
+			canSaplingGrow = SoilCompatibility.INSTANCE.isReady && SoilCompatibility.INSTANCE.canTreeGrowOnSoil(this.saplingInfo, this.soilInfo);
+		}
 	}
 
 	public ItemStack setSoil(ItemStack soilStack) {
 		var result = soilItemStacks.insertItem(0, soilStack, false);
+		updateSoilBlock();		// ADDED
 		updateInfoObjects();
 		this.setChanged();
 		this.notifyClients();
@@ -234,15 +246,19 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		var saplingStack = saplingItemStacks.getStackInSlot(0);
 		if(saplingStack.isEmpty()) {
 			saplingInfo = null;
+			canSaplingGrow = false;
 			return;
 		}
 
-		if (saplingInfo == null || !saplingInfo.ingredient.test(saplingStack))
+		if (saplingInfo == null || !saplingInfo.ingredient.test(saplingStack)) {
 			saplingInfo = Registration.RECIPE_HELPER_SAPLING.get().getSaplingInfoForItem(getLevel(), saplingStack);
+			canSaplingGrow = SoilCompatibility.INSTANCE.isReady && SoilCompatibility.INSTANCE.canTreeGrowOnSoil(this.saplingInfo, this.soilInfo);
+		}
 	}
 
 	public ItemStack setSapling(ItemStack saplingStack) {
 		var result = saplingItemStacks.insertItem(0, saplingStack, false);
+		updateSaplingInfo();	// ADDED
 		updateInfoObjects();
 
 		this.growTicks = 0;
@@ -333,9 +349,9 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 
 	protected void updateInfoObjects() {
-		updateSaplingInfo();
-		updateSoilBlock();
-		updateModules();
+		//updateSaplingInfo();		MOVED
+		//updateSoilBlock();		MOVED
+		//updateModules();			MOVED
 
 		if(this.soilInfo != null && this.saplingInfo != null) {
 			int ticks = this.saplingInfo.getRequiredTicks();
@@ -357,6 +373,9 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 	public boolean cutTree(boolean isAutoCut) {
 		if(this.saplingInfo == null || this.soilInfo == null) {
+			this.updateSaplingInfo();	// ADDED
+			this.updateSoilBlock();		// ADDED
+			this.updateModules();		// ADDED
 			this.updateInfoObjects();
 		}
 
@@ -453,15 +472,19 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	}
 
 	public void updateGrowth() {
-		if(!hasSapling() || !hasSoil()) {
+		if(!hasSapling() || !hasSoil() || !canSaplingGrow) {	// Added "canSaplingGrow" to save server ticks
 			this.setGrowTicks(0);
 			return;
 		}
 
+		/* 
+		 * THIS IS MOVED INTO "updateSaplingInfo" AND "updateSoilBlock"
+		
 		if(SoilCompatibility.INSTANCE.isReady && !SoilCompatibility.INSTANCE.canTreeGrowOnSoil(this.saplingInfo, this.soilInfo)) {
 			this.setGrowTicks(0);
 			return;
 		}
+		*/
 
 		if(getLevel() != null && getProgress() >= 1.0f && autoCut) {
 			if(this.cuttingCooldown > 0) {
@@ -498,15 +521,20 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	}
 
 	public void setGrowTicks(int growTicks) {
-		if(growTicks == this.growTicks) {
-			return;
+		int maxTicks = this.requiredTicks * 1000;
+		
+		if(growTicks > maxTicks)
+			growTicks = maxTicks;
+		
+		if(growTicks != this.growTicks) {
+			this.growTicks = growTicks;
+			
+			// Call "setChanged" only if grow state is either nothing or full to save server tick time
+			if (this.growTicks == 0 || this.growTicks == maxTicks)
+				this.setChanged();
+			
+			//this.setChanged();		DISABLED TO SAVE TICKS, ENABLE IF THERE'S SYNCHRONIZATION PORBLEMS
 		}
-
-		this.growTicks = growTicks;
-		if(this.growTicks > this.requiredTicks * 1000) {
-			this.growTicks = this.requiredTicks * 1000;
-		}
-		this.setChanged();
 	}
 
 	public void boostProgress() {
@@ -527,6 +555,9 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	@Override
 	public void onDataLoaded() {
 		if(this.level != null) {
+			this.updateSaplingInfo();	// ADDED
+			this.updateSoilBlock();		// ADDED
+			this.updateModules();		// ADDED
 			this.updateInfoObjects();
 			
 			if(this.level.isClientSide) {
@@ -636,6 +667,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			@Override
 			protected void onContentsChanged(int slot) {
 				setChanged();
+				updateSoilBlock();		// ADDED
 				updateInfoObjects();
 				notifyClients();
 			}
@@ -671,6 +703,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			@Override
 			protected void onContentsChanged(int slot) {
 				setChanged();
+				updateSaplingInfo();	// ADDED
 				updateInfoObjects();
 				notifyClients();
 			}
@@ -704,6 +737,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			@Override
 			protected void onContentsChanged(int slot) {
 				setChanged();
+				updateModules();		// ADDED
 				notifyClients();
 			}
 		};
