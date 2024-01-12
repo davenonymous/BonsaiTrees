@@ -95,7 +95,8 @@ public class CommandTreeGenerator implements Command<CommandSourceStack> {
 			return 0;
 		}
 
-		var generatorSaveDir = new File(Minecraft.getInstance().gameDirectory, "bonsai-generated");
+		var mc = Minecraft.getInstance();
+		var generatorSaveDir = new File(mc.gameDirectory, "bonsai-generated");
 		generatorSaveDir.delete();
 		generatorSaveDir.mkdirs();
 

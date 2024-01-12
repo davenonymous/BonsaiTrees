@@ -533,7 +533,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			if (this.growTicks == 0 || this.growTicks == maxTicks)
 				this.setChanged();
 			
-			//this.setChanged();		DISABLED TO SAVE TICKS, ENABLE IF THERE'S SYNCHRONIZATION PORBLEMS
+			//this.setChanged();		DISABLED TO SAVE TICKS, ENABLE IF THERE'S SYNCHRONIZATION PROBLEMS
 		}
 	}
 

@@ -22,7 +22,6 @@ import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
-import mezz.jei.api.recipe.category.extensions.IRecipeCategoryExtension;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.LightTexture;
@@ -37,7 +36,7 @@ import org.lwjgl.opengl.GL11;
 
 import java.util.*;
 
-public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, IRecipeSlotTooltipCallback {
+public class BonsaiRecipeWrapper implements IRecipeSlotTooltipCallback {
 	SaplingInfo sapling;
 	public Map<String, SaplingDrop> slotDrops;
 	public Map<ResourceLocation, Float> tickModifiers;
@@ -68,8 +67,8 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, IRecipeSlo
 		
 		slotDrops = new HashMap<String, SaplingDrop>();
 
-		int slot = 0;
-		for(SaplingDrop drop : sapling.drops) {
+		for (int slot = 0; slot < sapling.drops.size(); slot++) {
+			SaplingDrop drop = sapling.drops.get(slot);
 			ItemStack dropStack = drop.resultStack.copy();
 			dropStack.setCount(drop.rolls);
 			slotDrops.put("output_" + slot, drop);
@@ -77,32 +76,22 @@ public class BonsaiRecipeWrapper implements IRecipeCategoryExtension, IRecipeSlo
 			builder.addSlot(RecipeIngredientRole.OUTPUT, 81 + 19 * (slot % 4), 1 + 19 * (slot / 4))
 				.setSlotName("output_" + slot).addTooltipCallback(this)
 				.addItemStack(dropStack);
-			
-			slot++;
 		}
     }
 	
 	public void draw(IRecipeSlotsView view, PoseStack stack, double mouseX, double mouseY, IGuiHelper guiHelper) {
     	final IDrawableStatic slotDrawable = guiHelper.getSlotDrawable();
     	
-    	slotDrawable.draw(stack, 0, 19 * 0);
-		slotDrawable.draw(stack, 0, 19 * 1);
-
-		slotDrawable.draw(stack, 80 + 19 * 0, 19 * 0);
-		slotDrawable.draw(stack, 80 + 19 * 1, 19 * 0);
-		slotDrawable.draw(stack, 80 + 19 * 2, 19 * 0);
-		slotDrawable.draw(stack, 80 + 19 * 3, 19 * 0);
-
-		slotDrawable.draw(stack, 80 + 19 * 0, 19 * 1);
-		slotDrawable.draw(stack, 80 + 19 * 1, 19 * 1);
-		slotDrawable.draw(stack, 80 + 19 * 2, 19 * 1);
-		slotDrawable.draw(stack, 80 + 19 * 3, 19 * 1);
+    	slotDrawable.draw(stack, 0, 0);
+		slotDrawable.draw(stack, 0, 19);
 		
-		drawInfo(0, 0, stack, mouseX, mouseY);
+		for (int i = 0; i < 8; i++)
+			slotDrawable.draw(stack, 80 + 19 * (i % 4), 19 * (i / 4));
+		
+		drawBonsai(stack);
     }
 
-	@Override
-	public void drawInfo(int recipeWidth, int recipeHeight, PoseStack pose, double mouseX, double mouseY) {
+	private void drawBonsai(PoseStack pose) {
 		var model = TreeModels.get(sapling.getId());
 		if(model == null) {
 			return;
