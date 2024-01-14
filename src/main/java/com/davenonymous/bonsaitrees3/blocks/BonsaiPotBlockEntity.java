@@ -13,7 +13,6 @@ import com.davenonymous.libnonymous.helper.SpawnHelper;
 import com.davenonymous.libnonymous.serialization.Store;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.EnchantedBookItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
@@ -32,7 +31,6 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.wrapper.CombinedInvWrapper;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -315,28 +313,15 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			}
 			
 			if (stack.isEnchanted() || stack.getItem() instanceof EnchantedBookItem) {
-				var enchantments = stack.isEnchanted() ? stack.getEnchantmentTags() : EnchantedBookItem.getEnchantments(stack);
-				
-				for (var enchantment : enchantments) {
-					if (enchantment instanceof CompoundTag enchantmentTag) {
-						String id = enchantmentTag.getString("id");
-						int value = enchantmentTag.getShort("lvl");
-						
-						if (ForgeRegistries.ENCHANTMENTS.getKey(Enchantments.BLOCK_FORTUNE).toString().equals(id)) {
-							fortune = CommonConfig.sumEnchantmentLevels.get() ? fortune + value : Math.max(fortune, value);
-							continue;
-						}
-						
-						if (ForgeRegistries.ENCHANTMENTS.getKey(Enchantments.BLOCK_EFFICIENCY).toString().equals(id)) {
-							efficiency = CommonConfig.sumEnchantmentLevels.get() ? efficiency + value : Math.max(efficiency, value);
-							continue;
-						}
-						
-						if (ForgeRegistries.ENCHANTMENTS.getKey(Enchantments.SILK_TOUCH).toString().equals(id)) {
-							hasSilkTouch = true;
-						}
-					}
+				var enchantmentHelper = new EnchantmentHelper(stack);
+				if(CommonConfig.sumEnchantmentLevels.get()) {
+					fortune += enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE);
+					efficiency += enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY);
+				} else {
+					fortune = Math.max(fortune, enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE));
+					efficiency = Math.max(efficiency, enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY));
 				}
+				hasSilkTouch = hasSilkTouch || enchantmentHelper.has(Enchantments.SILK_TOUCH);
 			}
 		}
 
@@ -400,10 +385,45 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return false;
 		}
 
+		List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
+		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(this.level.random, fortune, hasSilkTouch, hasBeeHive, upgradeItems);
+		
+		boolean changed = false;
+		
+		// Test if any drop fits in internal output slots
+		for (int i = 0; i < drops.size(); i++) {
+			ItemStack drop = drops.get(i);
+			
+			ItemStack simulatedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, drop, true);
+			if (simulatedStack.equals(drop, false))
+				continue;
 
-		// If axes should take damage && this was an autocut && some random value
+			ItemStack insertedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, drop, false);
+			drops.set(i, insertedStack.copy());
+			changed = true;
+		}
+
+		// Test if any remaining drop fits in external inventory
+		IItemHandler belowHandler;
+		if (hopping && (belowHandler = getNeighborInventory(Direction.DOWN)) != null) {
+			for (int i = 0; i < drops.size(); i++) {
+				ItemStack drop = drops.get(i);
+				
+				if (drop.isEmpty())
+					continue;
+				
+				ItemStack simulatedStack = ItemHandlerHelper.insertItemStacked(belowHandler, drop, true);
+				if (simulatedStack.equals(drop, false))
+					continue;
+
+				ItemHandlerHelper.insertItemStacked(belowHandler, drop, false);
+				changed = true;
+			}
+		}
+		
+		// If axes should take damage && this was an autocut && the tree was cut
 		// Get axe with remaining durability
-		if(isAutoCut && CommonConfig.autoCuttingDamagesItems.get()) {
+		if(changed && isAutoCut && CommonConfig.autoCuttingDamagesItems.get()) {
 			boolean shouldTakeDamage = level.random.nextDouble() <= CommonConfig.autoCuttingDamageChance.get();
 			if(shouldTakeDamage) {
 				for(int slotNum = 0; slotNum < this.getUpgradeItemStacks().getSlots(); slotNum++) {
@@ -418,33 +438,17 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 				}
 			}
 		}
-		List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
-		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(this.level.random, fortune, hasSilkTouch, hasBeeHive, upgradeItems);
-
-		// Test if all stacks fit in the output slots
-		boolean allFit = true;
-		for(ItemStack stack : drops) {
-			ItemStack insertedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, stack, true);
-			if(insertedStack.is(stack.getItem()) && insertedStack.getCount() == stack.getCount()) {
-				allFit = false;
-				break;
-			}
-		}
-
-		if(allFit) {
-			for(ItemStack stack : drops) {
-				ItemHandlerHelper.insertItemStacked(outputItemStacks, stack, false);
-			}
-
+		
+		// If something changed, update
+		if (changed) {
 			this.setGrowTicks(0);
 			this.modelRotation = this.level.random.nextInt(4);
 			this.setChanged();
 			this.notifyClients();
-			return true;
-		} else {
-			return false;
 		}
-
+		
+		// Start growing again if any of the drop stacks fit
+		return changed;
 	}
 
 	public boolean isGrowing() {
