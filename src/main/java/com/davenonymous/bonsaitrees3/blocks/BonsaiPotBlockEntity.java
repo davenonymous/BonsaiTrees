@@ -388,37 +388,29 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
 		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(this.level.random, fortune, hasSilkTouch, hasBeeHive, upgradeItems);
 		
+		IItemHandler belowHandler = null;
 		boolean changed = false;
+		boolean canHop = hopping && (belowHandler = getNeighborInventory(Direction.DOWN)) != null;
 		
-		// Test if any drop fits in internal output slots
 		for (int i = 0; i < drops.size(); i++) {
 			ItemStack drop = drops.get(i);
-			
-			ItemStack simulatedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, drop, true);
-			if (simulatedStack.equals(drop, false))
-				continue;
+			ItemStack insertedStack = drop;
+			ItemStack simulatedStack;
 
-			ItemStack insertedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, drop, false);
-			drops.set(i, insertedStack.copy());
-			changed = true;
-		}
+			// Test if any drop fits in internal output slots
+			simulatedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, drop, true);
+			if (!simulatedStack.equals(drop, false))
+				insertedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, drop, false).copy();
 
-		// Test if any remaining drop fits in external inventory
-		IItemHandler belowHandler;
-		if (hopping && (belowHandler = getNeighborInventory(Direction.DOWN)) != null) {
-			for (int i = 0; i < drops.size(); i++) {
-				ItemStack drop = drops.get(i);
-				
-				if (drop.isEmpty())
-					continue;
-				
-				ItemStack simulatedStack = ItemHandlerHelper.insertItemStacked(belowHandler, drop, true);
-				if (simulatedStack.equals(drop, false))
-					continue;
-
-				ItemHandlerHelper.insertItemStacked(belowHandler, drop, false);
-				changed = true;
+			// Test if any remaining drop fits in external inventory
+			if (canHop && !insertedStack.isEmpty()) {
+				simulatedStack = ItemHandlerHelper.insertItemStacked(belowHandler, insertedStack, true);
+				if (!simulatedStack.equals(insertedStack, false))
+					insertedStack = ItemHandlerHelper.insertItemStacked(belowHandler, insertedStack, false).copy();
 			}
+			
+			// Set changed if any drop fit
+			changed = changed || !insertedStack.equals(drop, false);
 		}
 		
 		// If axes should take damage && this was an autocut && the tree was cut
