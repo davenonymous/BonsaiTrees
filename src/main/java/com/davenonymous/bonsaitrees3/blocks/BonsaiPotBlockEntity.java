@@ -35,6 +35,7 @@ import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static net.minecraft.world.level.block.Block.UPDATE_ALL;
@@ -76,9 +77,10 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	private boolean hopping = false;
 	private boolean hasSilkTouch = false;
 	private boolean hasBeeHive = false;
-	private boolean hasEnergyUpgrade = false;
+	//private boolean hasEnergyUpgrade = false;
 	private int fortune = 0;
 	private int efficiency = 0;
+	private List<ItemStack> energyUpgrades = new ArrayList<ItemStack>();
 
 	private int hoppingCooldown = 0;
 	private int cuttingCooldown = 0;
@@ -280,9 +282,10 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		autoCut = false;
 		hasSilkTouch = false;
 		hasBeeHive = false;
-		hasEnergyUpgrade = false;
+		//hasEnergyUpgrade = false;
 		fortune = 0;
 		efficiency = 0;
+		energyUpgrades.clear();
 
 		for(int slot = 0; slot < this.upgradeItemStacks.getSlots(); slot++) {
 			var stack = this.upgradeItemStacks.getStackInSlot(slot);
@@ -295,41 +298,44 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			}
 
 			if(stack.is(Blocks.HOPPER.asItem())) {
-				hopping = true;
+				hopping = CommonConfig.enableHoppingUpgrade.get();
 			}
 
 			if(stack.getItem().canPerformAction(stack, ToolActions.AXE_DIG)) {
 				if(!stack.isDamageableItem() || stack.getDamageValue() < stack.getMaxDamage()) {
-					autoCut = true;
+					autoCut = CommonConfig.enableAutoCuttingUpgrade.get();
 				}
 			}
 
-			var optEnergyCap = stack.getCapability(ForgeCapabilities.ENERGY).resolve();
-			if(optEnergyCap.isPresent()) {
-				var energyCap = optEnergyCap.get();
-				if(energyCap.canExtract()) {
-					hasEnergyUpgrade = true;
+			if (CommonConfig.enableForgeEnergyUpgrade.get()) {
+				var optEnergyCap = stack.getCapability(ForgeCapabilities.ENERGY).resolve();
+				if(optEnergyCap.isPresent()) {
+					var energyCap = optEnergyCap.get();
+					if(energyCap.canExtract()) {
+						energyUpgrades.add(stack);
+					}
 				}
 			}
 			
 			if (stack.isEnchanted() || stack.getItem() instanceof EnchantedBookItem) {
 				var enchantmentHelper = new EnchantmentHelper(stack);
-				if(CommonConfig.sumEnchantmentLevels.get()) {
-					fortune += enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE);
-					efficiency += enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY);
-				} else {
-					fortune = Math.max(fortune, enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE));
-					efficiency = Math.max(efficiency, enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY));
+				if (CommonConfig.enableFortuneUpgrade.get()) {
+					var level = enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE);
+					fortune = CommonConfig.sumEnchantmentLevels.get() ? fortune + level : Math.max(fortune, level);
+				}
+				if (CommonConfig.enableEfficiencyUpgrade.get()) {
+					var level = enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY);
+					efficiency = CommonConfig.sumEnchantmentLevels.get() ? efficiency + level : Math.max(efficiency, level);
 				}
 				hasSilkTouch = hasSilkTouch || enchantmentHelper.has(Enchantments.SILK_TOUCH);
 			}
 		}
 
-		hopping = CommonConfig.enableHoppingUpgrade.get() && hopping;
-		autoCut = CommonConfig.enableAutoCuttingUpgrade.get() && autoCut;
-		fortune = CommonConfig.enableFortuneUpgrade.get() ? fortune : 0;
-		hasEnergyUpgrade = CommonConfig.enableForgeEnergyUpgrade.get() && hasEnergyUpgrade;
-		efficiency = CommonConfig.enableEfficiencyUpgrade.get() ? efficiency : 0;
+		//hopping = CommonConfig.enableHoppingUpgrade.get() && hopping;
+		//autoCut = CommonConfig.enableAutoCuttingUpgrade.get() && autoCut;
+		//fortune = CommonConfig.enableFortuneUpgrade.get() ? fortune : 0;
+		//hasEnergyUpgrade = CommonConfig.enableForgeEnergyUpgrade.get() && hasEnergyUpgrade;
+		//efficiency = CommonConfig.enableEfficiencyUpgrade.get() ? efficiency : 0;
 	}
 
 
@@ -495,8 +501,8 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 		if(getProgress() < 1.0f) {
 			int rate = 1000;
-			List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
-			for(var upgrade : upgradeItems) {
+			for (int i = 0; i < energyUpgrades.size(); i++) {
+				var upgrade = energyUpgrades.get(i);
 				var optEnergyCap = upgrade.getCapability(ForgeCapabilities.ENERGY).resolve();
 				if(optEnergyCap.isPresent()) {
 					var energyCap = optEnergyCap.get();
@@ -504,8 +510,6 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 						var extracted = energyCap.extractEnergy(CommonConfig.maximumExtractedEnergyPerTick.get(), true);
 						if(extracted > 0) {
 							extracted = energyCap.extractEnergy(extracted, false);
-						}
-						if(extracted > 0) {
 							rate *= 1.0d + (extracted * CommonConfig.extraGrowthRatioPerFE.get());
 						}
 					}
