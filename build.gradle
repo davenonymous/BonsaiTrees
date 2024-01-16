@@ -105,6 +105,9 @@ dependencies {
 	// The One Probe
     implementation fg.deobf("curse.maven:the-one-probe-245211:${top_fileid}")
 	
+	// Jade
+	implementation fg.deobf("curse.maven:jade-324717:${jade_fileid}-api-sources")
+	
 	
 	// Runtime Only
 	

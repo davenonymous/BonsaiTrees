@@ -1,5 +1,6 @@
 {
   "block.bonsaitrees3.bonsaipot": "Bonsai Pot",
+  "config.jade.plugin_bonsaitrees3.bonsaipot": "Bonsai Pot",
   "container.bonsaitrees3.bonsaipot": "Bonsai Pot",
   "gui.bonsaitrees3.label.button.cut_tree.tooltip.ok": "Click to cut the tree",
   "gui.bonsaitrees3.label.button.cut_tree.tooltip.wait": "The tree needs to fully grow before you can cut it",
@@ -10,6 +11,7 @@
   "gui.bonsaitrees3.label.jei.upgrade.fortune": "Increase drop rolls and chances",
   "gui.bonsaitrees3.label.jei.upgrade.hopper": "Export drops to the block below",
   "gui.bonsaitrees3.label.jei.upgrade.silktouch": "Be careful and get leaf drops",
+  "jade.bonsaitrees3.bonsaipot.growing": "Growing: %d%%",
   "jei.bonsaitrees3.chance": "Chance: %d%%",
   "jei.bonsaitrees3.growtime": "Time to grow: %s",
   "jei.bonsaitrees3.recipes.title": "Growing in Bonsai Pots",
