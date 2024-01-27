@@ -3,6 +3,7 @@ package com.davenonymous.bonsaitrees3.registry.sapling;
 import com.davenonymous.libnonymous.base.RecipeData;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
@@ -39,7 +40,7 @@ public class SaplingInfo extends RecipeData {
 
 	@Override
 	public RecipeType<?> getType() {
-		return Registration.RECIPE_TYPE_SAPLING;
+		return Registration.RECIPE_TYPE_SAPLING.get();
 	}
 
 	public int getRequiredTicks() {
@@ -59,7 +60,7 @@ public class SaplingInfo extends RecipeData {
 		return this.tags.contains(tag);
 	}
 
-	public List<ItemStack> getRandomizedDrops(Random rand, int fortune, boolean hasSilkTouch, boolean hasBeeHive, List<ItemStack> upgradeItems) {
+	public List<ItemStack> getRandomizedDrops(RandomSource rand, int fortune, boolean hasSilkTouch, boolean hasBeeHive, List<ItemStack> upgradeItems) {
 		ArrayList<ItemStack> result = new ArrayList<>();
 		for(SaplingDrop drop : this.drops) {
 			if(drop.requiresSilkTouch && !hasSilkTouch) {

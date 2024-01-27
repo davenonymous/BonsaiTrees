@@ -24,6 +24,7 @@ public class PacketModelToJson extends BasePacket {
 
 	@Override
 	public void doWork(Supplier<NetworkEvent.Context> ctx) {
-		Minecraft.getInstance().keyboardHandler.setClipboard(model.serializePretty());
+		var mc = Minecraft.getInstance();
+		mc.keyboardHandler.setClipboard(model.serializePretty());
 	}
 }

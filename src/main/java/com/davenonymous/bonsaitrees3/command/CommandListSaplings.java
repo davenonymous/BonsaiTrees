@@ -11,7 +11,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -25,12 +25,12 @@ public class CommandListSaplings implements Command<CommandSourceStack> {
 
 	@Override
 	public int run(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
-		context.getSource().sendSuccess(new TextComponent("Registered saplings:"), false);
+		context.getSource().sendSuccess(Component.literal("Registered saplings:"), false);
 
-		Registration.RECIPE_HELPER_SAPLING.getRecipeStream(context.getSource().getLevel().getRecipeManager()).forEach(sapling -> {
+		Registration.RECIPE_HELPER_SAPLING.get().getRecipeStream(context.getSource().getLevel().getRecipeManager()).forEach(sapling -> {
 			Set<SoilInfo> soilInfo = SoilCompatibility.INSTANCE.getValidSoilsForSapling(sapling);
 			String soils = String.join(", ", soilInfo.stream().map(s -> s.getId().toString()).collect(Collectors.toList()));
-			TextComponent message = new TextComponent(String.format("%s <- %s [soils: %s]", sapling.getId(), sapling.ingredient.toJson(), soils));
+			Component message = Component.literal(String.format("%s <- %s [soils: %s]", sapling.getId(), sapling.ingredient.toJson(), soils));
 			context.getSource().sendSuccess(message, false);
 		});
 

@@ -7,6 +7,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
 import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.Resource;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,12 +27,12 @@ public class TreeModels {
 	private static HashMap<ResourceLocation, MultiblockBlockModel> treeModels;
 
 	public static void init() {
-		Collection<ResourceLocation> resources = Minecraft.getInstance().getResourceManager().listResources("models/tree", p -> p.endsWith(".json"));
+		Collection<Resource> resources = Minecraft.getInstance().getResourceManager().listResources("models/tree", p -> p.getPath().endsWith(".json")).values();
 
 		ArrayList<MultiblockBlockModel> models = new ArrayList<>();
-		for(ResourceLocation resource : resources) {
+		for(Resource resource : resources) {
 			try {
-				InputStream is = Minecraft.getInstance().getResourceManager().getResource(resource).getInputStream();
+				InputStream is = resource.open();
 				MultiblockBlockModel model = GSON.fromJson(new JsonReader(new InputStreamReader(is)), MultiblockBlockModel.class);
 				if(model != null) {
 					LOGGER.debug("Loaded tree model: {}", model.id);

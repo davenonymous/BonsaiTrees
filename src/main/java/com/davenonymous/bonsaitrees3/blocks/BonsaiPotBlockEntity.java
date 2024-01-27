@@ -11,7 +11,6 @@ import com.davenonymous.libnonymous.helper.InventoryHelper;
 import com.davenonymous.libnonymous.helper.RedstoneMode;
 import com.davenonymous.libnonymous.helper.SpawnHelper;
 import com.davenonymous.libnonymous.serialization.Store;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.EnchantedBookItem;
@@ -22,16 +21,12 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
-import net.minecraftforge.client.model.ModelDataManager;
-import net.minecraftforge.client.model.data.IModelData;
-import net.minecraftforge.client.model.data.ModelDataMap;
+import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.client.model.data.ModelProperty;
 import net.minecraftforge.common.ToolActions;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.energy.IEnergyStorage;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.items.ItemStackHandler;
@@ -39,6 +34,8 @@ import net.minecraftforge.items.wrapper.CombinedInvWrapper;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import static net.minecraft.world.level.block.Block.UPDATE_ALL;
@@ -80,12 +77,15 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	private boolean hopping = false;
 	private boolean hasSilkTouch = false;
 	private boolean hasBeeHive = false;
-	private boolean hasEnergyUpgrade = false;
+	//private boolean hasEnergyUpgrade = false;
 	private int fortune = 0;
 	private int efficiency = 0;
+	private List<ItemStack> energyUpgrades = new ArrayList<ItemStack>();
 
 	private int hoppingCooldown = 0;
 	private int cuttingCooldown = 0;
+	
+	private boolean canSaplingGrow = false;
 
 	public static final ModelProperty<BlockState> SOIL_BLOCK = new ModelProperty<>();
 	public static final ModelProperty<FluidState> FLUID_BLOCK = new ModelProperty<>();
@@ -98,13 +98,19 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	@Override
 	protected void initialize() {
 		super.initialize();
-
-		if(getLevel() == null || getLevel().isClientSide()) {
+		
+		if (getLevel() == null)
 			return;
-		}
+		
+		this.updateSaplingInfo();	// ADDED
+		this.updateSoilBlock();		// ADDED
+		this.updateModules();		// ADDED
+
+		if(getLevel().isClientSide())
+			return;
 
 		if(this.modelRotation == -1) {
-			this.modelRotation = this.getLevel().random.nextInt(4);
+			this.modelRotation = this.level.random.nextInt(4);
 		}
 
 	}
@@ -167,8 +173,8 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 	@Nonnull
 	@Override
-	public IModelData getModelData() {
-		return new ModelDataMap.Builder().withInitial(SOIL_BLOCK, getSoilBlock()).withInitial(FLUID_BLOCK, getFluidBlock())
+	public ModelData getModelData() {
+		return ModelData.builder().with(SOIL_BLOCK, getSoilBlock()).with(FLUID_BLOCK, getFluidBlock())
 				.build();
 	}
 
@@ -187,14 +193,19 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		var soilStack = soilItemStacks.getStackInSlot(0);
 		if(soilStack.isEmpty()) {
 			soilInfo = null;
+			canSaplingGrow = false;
 			return;
 		}
 
-		soilInfo = Registration.RECIPE_HELPER_SOIL.getSoilForItem(getLevel(), soilStack);
+		if (soilInfo == null || !soilInfo.ingredient.test(soilStack)) {
+			soilInfo = Registration.RECIPE_HELPER_SOIL.get().getSoilForItem(getLevel(), soilStack);
+			canSaplingGrow = SoilCompatibility.INSTANCE.isReady && SoilCompatibility.INSTANCE.canTreeGrowOnSoil(this.saplingInfo, this.soilInfo);
+		}
 	}
 
 	public ItemStack setSoil(ItemStack soilStack) {
 		var result = soilItemStacks.insertItem(0, soilStack, false);
+		updateSoilBlock();		// ADDED
 		updateInfoObjects();
 		this.setChanged();
 		this.notifyClients();
@@ -235,19 +246,24 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		var saplingStack = saplingItemStacks.getStackInSlot(0);
 		if(saplingStack.isEmpty()) {
 			saplingInfo = null;
+			canSaplingGrow = false;
 			return;
 		}
 
-		saplingInfo = Registration.RECIPE_HELPER_SAPLING.getSaplingInfoForItem(getLevel(), saplingStack);
+		if (saplingInfo == null || !saplingInfo.ingredient.test(saplingStack)) {
+			saplingInfo = Registration.RECIPE_HELPER_SAPLING.get().getSaplingInfoForItem(getLevel(), saplingStack);
+			canSaplingGrow = SoilCompatibility.INSTANCE.isReady && SoilCompatibility.INSTANCE.canTreeGrowOnSoil(this.saplingInfo, this.soilInfo);
+		}
 	}
 
 	public ItemStack setSapling(ItemStack saplingStack) {
 		var result = saplingItemStacks.insertItem(0, saplingStack, false);
+		updateSaplingInfo();	// ADDED
 		updateInfoObjects();
 
 		this.growTicks = 0;
 		if(getLevel() != null) {
-			this.modelRotation = getLevel().random.nextInt(4);
+			this.modelRotation = this.level.random.nextInt(4);
 		} else {
 			this.modelRotation = 0;
 		}
@@ -266,9 +282,10 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		autoCut = false;
 		hasSilkTouch = false;
 		hasBeeHive = false;
-		hasEnergyUpgrade = false;
+		//hasEnergyUpgrade = false;
 		fortune = 0;
 		efficiency = 0;
+		energyUpgrades.clear();
 
 		for(int slot = 0; slot < this.upgradeItemStacks.getSlots(); slot++) {
 			var stack = this.upgradeItemStacks.getStackInSlot(slot);
@@ -281,46 +298,51 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			}
 
 			if(stack.is(Blocks.HOPPER.asItem())) {
-				hopping = true;
+				hopping = CommonConfig.enableHoppingUpgrade.get();
 			}
 
 			if(stack.getItem().canPerformAction(stack, ToolActions.AXE_DIG)) {
 				if(!stack.isDamageableItem() || stack.getDamageValue() < stack.getMaxDamage()) {
-					autoCut = true;
+					autoCut = CommonConfig.enableAutoCuttingUpgrade.get();
 				}
 			}
 
-			var optEnergyCap = stack.getCapability(CapabilityEnergy.ENERGY).resolve();
-			if(optEnergyCap.isPresent()) {
-				var energyCap = optEnergyCap.get();
-				if(energyCap.canExtract()) {
-					hasEnergyUpgrade = true;
+			if (CommonConfig.enableForgeEnergyUpgrade.get()) {
+				var optEnergyCap = stack.getCapability(ForgeCapabilities.ENERGY).resolve();
+				if(optEnergyCap.isPresent()) {
+					var energyCap = optEnergyCap.get();
+					if(energyCap.canExtract()) {
+						energyUpgrades.add(stack);
+					}
 				}
 			}
-
-			var enchantmentHelper = new EnchantmentHelper(stack);
-			if(CommonConfig.sumEnchantmentLevels.get()) {
-				fortune += enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE);
-				efficiency += enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY);
-			} else {
-				fortune = Math.max(fortune, enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE));
-				efficiency = Math.max(efficiency, enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY));
+			
+			if (stack.isEnchanted() || stack.getItem() instanceof EnchantedBookItem) {
+				var enchantmentHelper = new EnchantmentHelper(stack);
+				if (CommonConfig.enableFortuneUpgrade.get()) {
+					var level = enchantmentHelper.getLevel(Enchantments.BLOCK_FORTUNE);
+					fortune = CommonConfig.sumEnchantmentLevels.get() ? fortune + level : Math.max(fortune, level);
+				}
+				if (CommonConfig.enableEfficiencyUpgrade.get()) {
+					var level = enchantmentHelper.getLevel(Enchantments.BLOCK_EFFICIENCY);
+					efficiency = CommonConfig.sumEnchantmentLevels.get() ? efficiency + level : Math.max(efficiency, level);
+				}
+				hasSilkTouch = hasSilkTouch || enchantmentHelper.has(Enchantments.SILK_TOUCH);
 			}
-			hasSilkTouch = hasSilkTouch || enchantmentHelper.has(Enchantments.SILK_TOUCH);
 		}
 
-		hopping = CommonConfig.enableHoppingUpgrade.get() && hopping;
-		autoCut = CommonConfig.enableAutoCuttingUpgrade.get() && autoCut;
-		fortune = CommonConfig.enableFortuneUpgrade.get() ? fortune : 0;
-		hasEnergyUpgrade = CommonConfig.enableForgeEnergyUpgrade.get() && hasEnergyUpgrade;
-		efficiency = CommonConfig.enableEfficiencyUpgrade.get() ? efficiency : 0;
+		//hopping = CommonConfig.enableHoppingUpgrade.get() && hopping;
+		//autoCut = CommonConfig.enableAutoCuttingUpgrade.get() && autoCut;
+		//fortune = CommonConfig.enableFortuneUpgrade.get() ? fortune : 0;
+		//hasEnergyUpgrade = CommonConfig.enableForgeEnergyUpgrade.get() && hasEnergyUpgrade;
+		//efficiency = CommonConfig.enableEfficiencyUpgrade.get() ? efficiency : 0;
 	}
 
 
 	protected void updateInfoObjects() {
-		updateSaplingInfo();
-		updateSoilBlock();
-		updateModules();
+		//updateSaplingInfo();		MOVED
+		//updateSoilBlock();		MOVED
+		//updateModules();			MOVED
 
 		if(this.soilInfo != null && this.saplingInfo != null) {
 			int ticks = this.saplingInfo.getRequiredTicks();
@@ -342,6 +364,9 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 	public boolean cutTree(boolean isAutoCut) {
 		if(this.saplingInfo == null || this.soilInfo == null) {
+			this.updateSaplingInfo();	// ADDED
+			this.updateSoilBlock();		// ADDED
+			this.updateModules();		// ADDED
 			this.updateInfoObjects();
 		}
 
@@ -366,10 +391,37 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return false;
 		}
 
+		List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
+		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(this.level.random, fortune, hasSilkTouch, hasBeeHive, upgradeItems);
+		
+		IItemHandler belowHandler = null;
+		boolean changed = false;
+		boolean canHop = hopping && (belowHandler = getNeighborInventory(Direction.DOWN)) != null;
+		
+		for (int i = 0; i < drops.size(); i++) {
+			ItemStack drop = drops.get(i);
+			ItemStack insertedStack = drop;
+			ItemStack simulatedStack;
 
-		// If axes should take damage && this was an autocut && some random value
+			// Test if any drop fits in internal output slots
+			simulatedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, drop, true);
+			if (!simulatedStack.equals(drop, false))
+				insertedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, drop, false).copy();
+
+			// Test if any remaining drop fits in external inventory
+			if (canHop && !insertedStack.isEmpty()) {
+				simulatedStack = ItemHandlerHelper.insertItemStacked(belowHandler, insertedStack, true);
+				if (!simulatedStack.equals(insertedStack, false))
+					insertedStack = ItemHandlerHelper.insertItemStacked(belowHandler, insertedStack, false).copy();
+			}
+			
+			// Set changed if any drop fit
+			changed = changed || !insertedStack.equals(drop, false);
+		}
+		
+		// If axes should take damage && this was an autocut && the tree was cut
 		// Get axe with remaining durability
-		if(isAutoCut && CommonConfig.autoCuttingDamagesItems.get()) {
+		if(changed && isAutoCut && CommonConfig.autoCuttingDamagesItems.get()) {
 			boolean shouldTakeDamage = level.random.nextDouble() <= CommonConfig.autoCuttingDamageChance.get();
 			if(shouldTakeDamage) {
 				for(int slotNum = 0; slotNum < this.getUpgradeItemStacks().getSlots(); slotNum++) {
@@ -384,33 +436,17 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 				}
 			}
 		}
-		List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
-		List<ItemStack> drops = this.saplingInfo.getRandomizedDrops(getLevel().random, fortune, hasSilkTouch, hasBeeHive, upgradeItems);
-
-		// Test if all stacks fit in the output slots
-		boolean allFit = true;
-		for(ItemStack stack : drops) {
-			ItemStack insertedStack = ItemHandlerHelper.insertItemStacked(outputItemStacks, stack, true);
-			if(insertedStack.is(stack.getItem()) && insertedStack.getCount() == stack.getCount()) {
-				allFit = false;
-				break;
-			}
-		}
-
-		if(allFit) {
-			for(ItemStack stack : drops) {
-				ItemHandlerHelper.insertItemStacked(outputItemStacks, stack, false);
-			}
-
+		
+		// If something changed, update
+		if (changed) {
 			this.setGrowTicks(0);
-			this.modelRotation = this.getLevel().random.nextInt(4);
+			this.modelRotation = this.level.random.nextInt(4);
 			this.setChanged();
 			this.notifyClients();
-			return true;
-		} else {
-			return false;
 		}
-
+		
+		// Start growing again if any of the drop stacks fit
+		return changed;
 	}
 
 	public boolean isGrowing() {
@@ -438,15 +474,19 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	}
 
 	public void updateGrowth() {
-		if(!hasSapling() || !hasSoil()) {
+		if(!hasSapling() || !hasSoil() || !canSaplingGrow) {	// Added "canSaplingGrow" to save server ticks
 			this.setGrowTicks(0);
 			return;
 		}
 
+		/* 
+		 * THIS IS MOVED INTO "updateSaplingInfo" AND "updateSoilBlock"
+		
 		if(SoilCompatibility.INSTANCE.isReady && !SoilCompatibility.INSTANCE.canTreeGrowOnSoil(this.saplingInfo, this.soilInfo)) {
 			this.setGrowTicks(0);
 			return;
 		}
+		*/
 
 		if(getLevel() != null && getProgress() >= 1.0f && autoCut) {
 			if(this.cuttingCooldown > 0) {
@@ -461,17 +501,15 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 		if(getProgress() < 1.0f) {
 			int rate = 1000;
-			List<ItemStack> upgradeItems = InventoryHelper.getStacks(this.getUpgradeItemStacks());
-			for(var upgrade : upgradeItems) {
-				var optEnergyCap = upgrade.getCapability(CapabilityEnergy.ENERGY).resolve();
+			for (int i = 0; i < energyUpgrades.size(); i++) {
+				var upgrade = energyUpgrades.get(i);
+				var optEnergyCap = upgrade.getCapability(ForgeCapabilities.ENERGY).resolve();
 				if(optEnergyCap.isPresent()) {
 					var energyCap = optEnergyCap.get();
 					if(energyCap.canExtract()) {
 						var extracted = energyCap.extractEnergy(CommonConfig.maximumExtractedEnergyPerTick.get(), true);
 						if(extracted > 0) {
 							extracted = energyCap.extractEnergy(extracted, false);
-						}
-						if(extracted > 0) {
 							rate *= 1.0d + (extracted * CommonConfig.extraGrowthRatioPerFE.get());
 						}
 					}
@@ -483,15 +521,20 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	}
 
 	public void setGrowTicks(int growTicks) {
-		if(growTicks == this.growTicks) {
-			return;
+		int maxTicks = this.requiredTicks * 1000;
+		
+		if(growTicks > maxTicks)
+			growTicks = maxTicks;
+		
+		if(growTicks != this.growTicks) {
+			this.growTicks = growTicks;
+			
+			// Call "setChanged" only if grow state is either nothing or full to save server tick time
+			if (this.growTicks == 0 || this.growTicks == maxTicks)
+				this.setChanged();
+			
+			//this.setChanged();		DISABLED TO SAVE TICKS, ENABLE IF THERE'S SYNCHRONIZATION PROBLEMS
 		}
-
-		this.growTicks = growTicks;
-		if(this.growTicks > this.requiredTicks * 1000) {
-			this.growTicks = this.requiredTicks * 1000;
-		}
-		this.setChanged();
 	}
 
 	public void boostProgress() {
@@ -512,9 +555,13 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	@Override
 	public void onDataLoaded() {
 		if(this.level != null) {
+			this.updateSaplingInfo();	// ADDED
+			this.updateSoilBlock();		// ADDED
+			this.updateModules();		// ADDED
 			this.updateInfoObjects();
-			if(this.level instanceof ClientLevel) {
-				ModelDataManager.requestModelDataRefresh(this);
+			
+			if(this.level.isClientSide) {
+				requestModelDataUpdate();
 			}
 
 			level.sendBlockUpdated(worldPosition, level.getBlockState(worldPosition), level.getBlockState(worldPosition), UPDATE_ALL);
@@ -552,7 +599,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			return true;
 		}
 
-		if(stack.isEnchanted()) {
+		if(stack.isEnchanted() || stack.getItem() instanceof EnchantedBookItem) {
 			var enchantments = new EnchantmentHelper(stack);
 			if(enchantments.has(Enchantments.SILK_TOUCH)) {
 				return true;
@@ -568,7 +615,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 		}
 
 		if(CommonConfig.enableForgeEnergyUpgrade.get()) {
-			var optEnergyCap = stack.getCapability(CapabilityEnergy.ENERGY);
+			var optEnergyCap = stack.getCapability(ForgeCapabilities.ENERGY);
 			if(optEnergyCap.isPresent()) {
 				var energyCap = optEnergyCap.resolve().get();
 				if(energyCap.canExtract()) {
@@ -587,7 +634,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 	@Nonnull
 	@Override
 	public <T> LazyOptional<T> getCapability(@Nonnull Capability<T> cap, @Nullable Direction side) {
-		if(cap == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+		if(cap == ForgeCapabilities.ITEM_HANDLER) {
 			if(side == null) {
 				return combinedItemStackHandler.cast();
 			} else if(side == Direction.UP) {
@@ -608,7 +655,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 			@Override
 			public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-				var soilInfo = Registration.RECIPE_HELPER_SOIL.getSoilForItem(level, stack);
+				var soilInfo = Registration.RECIPE_HELPER_SOIL.get().getSoilForItem(level, stack);
 				return soilInfo != null;
 			}
 
@@ -620,6 +667,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			@Override
 			protected void onContentsChanged(int slot) {
 				setChanged();
+				updateSoilBlock();		// ADDED
 				updateInfoObjects();
 				notifyClients();
 			}
@@ -632,7 +680,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 
 			@Override
 			public boolean isItemValid(int slot, @Nonnull ItemStack stack) {
-				var saplingInfo = Registration.RECIPE_HELPER_SAPLING.getSaplingInfoForItem(level, stack);
+				var saplingInfo = Registration.RECIPE_HELPER_SAPLING.get().getSaplingInfoForItem(level, stack);
 				return saplingInfo != null;
 			}
 
@@ -655,6 +703,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			@Override
 			protected void onContentsChanged(int slot) {
 				setChanged();
+				updateSaplingInfo();	// ADDED
 				updateInfoObjects();
 				notifyClients();
 			}
@@ -688,6 +737,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity<BonsaiPotBlockEntity> 
 			@Override
 			protected void onContentsChanged(int slot) {
 				setChanged();
+				updateModules();		// ADDED
 				notifyClients();
 			}
 		};

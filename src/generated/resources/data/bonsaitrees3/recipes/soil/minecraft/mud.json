@@ -1,0 +1,14 @@
+{
+  "type": "bonsaitrees3:soil",
+  "compatibleSoilTags": [
+    "mud"
+  ],
+  "display": {
+    "block": "minecraft:mud"
+  },
+  "mod": "minecraft",
+  "soil": {
+    "item": "minecraft:mud"
+  },
+  "tickModifier": 1.0
+}

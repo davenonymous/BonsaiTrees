@@ -5,6 +5,7 @@ import com.davenonymous.bonsaitrees3.setup.Registration;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class DatagenItemModels extends ItemModelProvider {
 	public DatagenItemModels(DataGenerator generator, ExistingFileHelper existingFileHelper) {
@@ -13,6 +14,6 @@ public class DatagenItemModels extends ItemModelProvider {
 
 	@Override
 	protected void registerModels() {
-		withExistingParent(Registration.BONSAI_POT_ITEM.get().getRegistryName().getPath(), modLoc("block/bonsaipot"));
+		withExistingParent(ForgeRegistries.ITEMS.getKey(Registration.BONSAI_POT_ITEM.get()).getPath(), modLoc("block/bonsaipot"));
 	}
 }

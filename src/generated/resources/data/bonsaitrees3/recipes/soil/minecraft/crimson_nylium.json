@@ -1,14 +1,14 @@
 {
   "type": "bonsaitrees3:soil",
-  "mod": "minecraft",
-  "tickModifier": 1.0,
-  "soil": {
-    "item": "minecraft:crimson_nylium"
-  },
   "compatibleSoilTags": [
     "crimson"
   ],
   "display": {
     "block": "minecraft:crimson_nylium"
-  }
+  },
+  "mod": "minecraft",
+  "soil": {
+    "item": "minecraft:crimson_nylium"
+  },
+  "tickModifier": 1.0
 }

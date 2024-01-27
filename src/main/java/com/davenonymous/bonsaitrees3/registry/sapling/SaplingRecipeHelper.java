@@ -7,7 +7,7 @@ import net.minecraft.world.level.Level;
 
 public class SaplingRecipeHelper extends BaseRecipeHelper<SaplingInfo> {
 	public SaplingRecipeHelper() {
-		super(Registration.RECIPE_TYPE_SAPLING);
+		super(Registration.RECIPE_TYPE_SAPLING.get());
 	}
 
 	public SaplingInfo getSaplingInfoForItem(Level level, ItemStack stack) {

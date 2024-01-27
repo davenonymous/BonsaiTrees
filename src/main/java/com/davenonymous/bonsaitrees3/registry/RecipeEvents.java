@@ -15,16 +15,16 @@ public class RecipeEvents {
 
 	@SubscribeEvent
 	public static void onRecipesUpdated(RecipesUpdatedEvent event) {
-		event.getRecipeManager().getAllRecipesFor(Registration.RECIPE_TYPE_SOIL).forEach(s -> {
+		event.getRecipeManager().getAllRecipesFor(Registration.RECIPE_TYPE_SOIL.get()).forEach(s -> {
 			LOGGER.info("Loaded soil recipe: {}", s.getId());
 		});
-		event.getRecipeManager().getAllRecipesFor(Registration.RECIPE_TYPE_SAPLING).forEach(s -> {
+		event.getRecipeManager().getAllRecipesFor(Registration.RECIPE_TYPE_SAPLING.get()).forEach(s -> {
 			LOGGER.info("Loaded sapling recipe: {}", s.getId());
 		});
 
 		SoilCompatibility.INSTANCE.update(event.getRecipeManager().getRecipes());
 		if(ModList.get().isLoaded("jei")) {
-			BonsaiTreesJEIPlugin.saplings = Registration.RECIPE_HELPER_SAPLING.getRecipesList(event.getRecipeManager());
+			BonsaiTreesJEIPlugin.saplings = Registration.RECIPE_HELPER_SAPLING.get().getRecipesList(event.getRecipeManager());
 		}
 
 	}

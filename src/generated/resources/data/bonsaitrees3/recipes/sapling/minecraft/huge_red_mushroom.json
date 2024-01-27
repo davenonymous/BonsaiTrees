@@ -1,36 +1,36 @@
 {
   "type": "bonsaitrees3:sapling",
+  "compatibleSoilTags": [
+    "mycelium"
+  ],
+  "drops": [
+    {
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:red_mushroom"
+      },
+      "rolls": 3
+    },
+    {
+      "chance": 0.75,
+      "requiresSilkTouch": true,
+      "result": {
+        "item": "minecraft:mushroom_stem"
+      },
+      "rolls": 1
+    },
+    {
+      "chance": 0.2,
+      "requiresSilkTouch": true,
+      "result": {
+        "item": "minecraft:red_mushroom_block"
+      },
+      "rolls": 2
+    }
+  ],
   "mod": "minecraft",
   "sapling": {
     "item": "minecraft:red_mushroom"
   },
-  "drops": [
-    {
-      "rolls": 3,
-      "chance": 0.2,
-      "result": {
-        "item": "minecraft:red_mushroom"
-      }
-    },
-    {
-      "rolls": 1,
-      "chance": 0.75,
-      "result": {
-        "item": "minecraft:mushroom_stem"
-      },
-      "requiresSilkTouch": true
-    },
-    {
-      "rolls": 2,
-      "chance": 0.2,
-      "result": {
-        "item": "minecraft:red_mushroom_block"
-      },
-      "requiresSilkTouch": true
-    }
-  ],
-  "compatibleSoilTags": [
-    "mycelium"
-  ],
   "ticks": 300
 }

@@ -8,8 +8,7 @@ import com.davenonymous.bonsaitrees3.client.TreeModels;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.client.model.ModelLoaderRegistry;
+import net.minecraftforge.client.event.ModelEvent.RegisterGeometryLoaders;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -30,7 +29,7 @@ public class ClientSetup {
 	}
 
 	@SubscribeEvent
-	public static void onModelRegistryEvent(ModelRegistryEvent event) {
-		ModelLoaderRegistry.registerLoader(BonsaiPotModelLoader.BONSAIPOT_LOADER, new BonsaiPotModelLoader());
+	public static void onModelRegistryEvent(RegisterGeometryLoaders event) {
+		event.register(BonsaiPotModelLoader.BONSAIPOT_LOADER.getPath(), new BonsaiPotModelLoader());
 	}
 }

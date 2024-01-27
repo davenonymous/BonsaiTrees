@@ -30,6 +30,9 @@ public class DatagenTranslations extends BaseLanguageProvider {
 		add("jei.bonsaitrees3.growtime", "Time to grow: %s");
 		add("jei.bonsaitrees3.soiltime", "Changes growtime to: %s");
 		add("jei.bonsaitrees3.chance", "Chance: %d%%");
+		
+		add("config.jade.plugin_bonsaitrees3.bonsaipot", "Bonsai Pot");
+		add("jade.bonsaitrees3.bonsaipot.growing", "Growing: %d%%");
 
 		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_AUTOCUT, "Automatically cut trees");
 		add(BonsaiTreesJEIPlugin.UPGRADE_TEXT_FORTUNE, "Increase drop rolls and chances");

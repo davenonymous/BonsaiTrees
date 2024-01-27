@@ -1,41 +1,41 @@
 {
   "type": "bonsaitrees3:sapling",
+  "compatibleSoilTags": [
+    "warped"
+  ],
+  "drops": [
+    {
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:warped_fungus"
+      },
+      "rolls": 3
+    },
+    {
+      "chance": 0.75,
+      "result": {
+        "item": "minecraft:warped_stem"
+      },
+      "rolls": 1
+    },
+    {
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:warped_wart_block"
+      },
+      "rolls": 2
+    },
+    {
+      "chance": 0.05,
+      "result": {
+        "item": "minecraft:shroomlight"
+      },
+      "rolls": 1
+    }
+  ],
   "mod": "minecraft",
   "sapling": {
     "item": "minecraft:warped_fungus"
   },
-  "drops": [
-    {
-      "rolls": 3,
-      "chance": 0.2,
-      "result": {
-        "item": "minecraft:warped_fungus"
-      }
-    },
-    {
-      "rolls": 1,
-      "chance": 0.75,
-      "result": {
-        "item": "minecraft:warped_stem"
-      }
-    },
-    {
-      "rolls": 2,
-      "chance": 0.2,
-      "result": {
-        "item": "minecraft:warped_wart_block"
-      }
-    },
-    {
-      "rolls": 1,
-      "chance": 0.05,
-      "result": {
-        "item": "minecraft:shroomlight"
-      }
-    }
-  ],
-  "compatibleSoilTags": [
-    "warped"
-  ],
   "ticks": 400
 }

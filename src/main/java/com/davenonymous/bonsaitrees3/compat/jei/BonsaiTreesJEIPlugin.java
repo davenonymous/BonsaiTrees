@@ -10,18 +10,18 @@ import com.davenonymous.bonsaitrees3.registry.sapling.SaplingInfo;
 import com.davenonymous.bonsaitrees3.setup.Registration;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.helpers.IGuiHelper;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IGuiHandlerRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
-import net.minecraft.core.RegistryAccess;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.ToolActions;
-import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.energy.IEnergyStorage;
+import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.ArrayList;
@@ -34,6 +34,9 @@ import java.util.stream.Collectors;
 public class BonsaiTreesJEIPlugin implements IModPlugin {
 	public static List<SaplingInfo> saplings;
 	private static final ResourceLocation PLUGIN_ID = new ResourceLocation(BonsaiTrees3.MODID, "jei");
+	
+    public static final RecipeType<BonsaiUpgradeWrapper> UPGRADES = RecipeType.create(BonsaiTrees3.MODID, "upgrades", BonsaiUpgradeWrapper.class);
+    public static final RecipeType<BonsaiRecipeWrapper> BONSAIS = RecipeType.create(BonsaiTrees3.MODID, "bonsais", BonsaiRecipeWrapper.class);
 
 	public static final Translatable UPGRADE_TEXT_HOPPING = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.hopper");
 	public static final Translatable UPGRADE_TEXT_AUTOCUT = new Translatable(BonsaiTrees3.MODID, "jei.upgrade.autocut");
@@ -49,14 +52,23 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 	}
 
 	@Override
+	public void registerCategories(IRecipeCategoryRegistration registration) {
+        final IGuiHelper gui = registration.getJeiHelpers().getGuiHelper();
+		BonsaiRecipeWrapper.tickTimer = gui.createTickTimer(360, 360, false);
+
+		registration.addRecipeCategories(new BonsaiRecipeCategory(gui, BONSAIS));
+		registration.addRecipeCategories(new BonsaiUpgradeCategory(gui, UPGRADES));
+	}
+
+	@Override
 	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-		registration.addRecipeCatalyst(new ItemStack(Registration.BONSAI_POT.get()), BonsaiRecipeCategory.ID);
-		registration.addRecipeCatalyst(new ItemStack(Registration.BONSAI_POT.get()), BonsaiUpgradeCategory.ID);
+		registration.addRecipeCatalyst(new ItemStack(Registration.BONSAI_POT.get()), BONSAIS);
+		registration.addRecipeCatalyst(new ItemStack(Registration.BONSAI_POT.get()), UPGRADES);
 	}
 
 	@Override
 	public void registerGuiHandlers(IGuiHandlerRegistration registration) {
-		registration.addRecipeClickArea(BonsaiPotScreen.class, 29, 19, BonsaiPotContainer.WIDTH - (20 + 34 + 8 + 3 * 18), 18, BonsaiRecipeCategory.ID, BonsaiUpgradeCategory.ID);
+		registration.addRecipeClickArea(BonsaiPotScreen.class, 29, 19, BonsaiPotContainer.WIDTH - (20 + 34 + 8 + 3 * 18), 18, BONSAIS, UPGRADES);
 	}
 
 	@Override
@@ -66,7 +78,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 		}
 
 		BonsaiTrees3.LOGGER.info("Registering {} saplings", saplings.size());
-		registration.addRecipes(asRecipes(saplings, BonsaiRecipeWrapper::new), BonsaiRecipeCategory.ID);
+		registration.addRecipes(BONSAIS, asRecipes(saplings, BonsaiRecipeWrapper::new));
 
 		List<BonsaiUpgradeWrapper> upgradeRecipes = new ArrayList<>();
 
@@ -98,7 +110,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 
 		if(CommonConfig.enableForgeEnergyUpgrade.get()) {
 			var batteryItems = ForgeRegistries.ITEMS.getValues().stream().map(ItemStack::new).filter(item -> {
-				var cap = item.getCapability(CapabilityEnergy.ENERGY).resolve();
+				var cap = item.getCapability(ForgeCapabilities.ENERGY).resolve();
 				if(cap.isEmpty()) {
 					return false;
 				}
@@ -135,7 +147,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 		beeItems.add(new ItemStack(Blocks.BEE_NEST));
 		upgradeRecipes.add(new BonsaiUpgradeWrapper(UPGRADE_TEXT_BEES, beeItems));
 
-		registration.addRecipes(upgradeRecipes, BonsaiUpgradeCategory.ID);
+		registration.addRecipes(UPGRADES, upgradeRecipes);
 	}
 
 	/*
@@ -145,14 +157,7 @@ public class BonsaiTreesJEIPlugin implements IModPlugin {
 		See license here:
 		https://github.com/way2muchnoise/JustEnoughResources/blob/d04c9a4a12/LICENSE.md
 	 */
-	private static <T, R> Collection<R> asRecipes(Collection<T> collection, Function<T, R> transformer) {
+	private static <T, R> List<R> asRecipes(Collection<T> collection, Function<T, R> transformer) {
 		return collection.stream().map(transformer).collect(Collectors.toList());
-	}
-
-	@Override
-	public void registerCategories(IRecipeCategoryRegistration registration) {
-		BonsaiRecipeWrapper.tickTimer = registration.getJeiHelpers().getGuiHelper().createTickTimer(360, 360, false);
-		registration.addRecipeCategories(new BonsaiRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
-		registration.addRecipeCategories(new BonsaiUpgradeCategory(registration.getJeiHelpers().getGuiHelper()));
 	}
 }

@@ -26,3 +26,5 @@ forge*changelog.txt
 
 # more build artifacts
 src/generated/resources/.cache
+/.apt_generated/
+/.apt_generated_tests/

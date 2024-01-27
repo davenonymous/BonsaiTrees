@@ -1,0 +1,35 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "byg" }],
+  "sapling": {
+    "item": "byg:green_mushroom"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "byg:green_mushroom"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "byg:white_mushroom_stem"
+      }
+    },
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "byg:green_mushroom_block"
+      },
+      "requiresSilkTouch": true
+    }
+  ],
+  "compatibleSoilTags": [
+    "dirt",
+    "grass"
+  ]
+}

@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Arrays;
 
@@ -30,6 +31,8 @@ public class DatagenSoils extends BaseDataProvider {
 
 		addSoil(Items.DIRT, Blocks.DIRT, 1.1, new String[]{"dirt"});
 		addSoil(Items.GRASS_BLOCK, Blocks.GRASS_BLOCK, 1.0, new String[]{"grass"});
+		addSoil(Items.MOSS_BLOCK, Blocks.MOSS_BLOCK, 1.0, new String[]{"moss"});
+		addSoil(Items.MUD, Blocks.MUD, 1.0, new String[]{"mud"});
 
 		addSoil(Items.END_STONE, Blocks.END_STONE, 1.0, new String[]{"end_stone"});
 
@@ -53,7 +56,7 @@ public class DatagenSoils extends BaseDataProvider {
 		root.addProperty("tickModifier", tickModifier);
 
 		JsonObject soilItem = new JsonObject();
-		soilItem.addProperty("item", item.getRegistryName().toString());
+		soilItem.addProperty("item", ForgeRegistries.ITEMS.getKey(item).toString());
 		root.add("soil", soilItem);
 
 		if(compatibleTags.length > 0) {
@@ -69,20 +72,22 @@ public class DatagenSoils extends BaseDataProvider {
 		var root = buildDefault(item, tickModifier, compatibleTags);
 
 		JsonObject displayObj = new JsonObject();
-		displayObj.addProperty("fluid", displayFluid.getRegistryName().toString());
+		displayObj.addProperty("fluid", ForgeRegistries.FLUIDS.getKey(displayFluid).toString());
 		root.add("display", displayObj);
 
-		add("recipes/soil/" + item.getRegistryName().getNamespace() + "/" + item.getRegistryName().getPath(), root);
+		var rLoc = ForgeRegistries.ITEMS.getKey(item);
+		add("recipes/soil/" + rLoc.getNamespace() + "/" + rLoc.getPath(), root);
 	}
 
 	private void addSoil(Item item, Block displayBlock, double tickModifier, String[] compatibleTags) {
 		var root = buildDefault(item, tickModifier, compatibleTags);
 
 		JsonObject displayObj = new JsonObject();
-		displayObj.addProperty("block", displayBlock.getRegistryName().toString());
+		displayObj.addProperty("block", ForgeRegistries.BLOCKS.getKey(displayBlock).toString());
 		root.add("display", displayObj);
 
-		add("recipes/soil/" + item.getRegistryName().getNamespace() + "/" + item.getRegistryName().getPath(), root);
+		var rLoc = ForgeRegistries.ITEMS.getKey(item);
+		add("recipes/soil/" + rLoc.getNamespace() + "/" + rLoc.getPath(), root);
 	}
 
 

@@ -1,0 +1,14 @@
+{
+  "type": "bonsaitrees3:soil",
+  "compatibleSoilTags": [
+    "moss"
+  ],
+  "display": {
+    "block": "minecraft:moss_block"
+  },
+  "mod": "minecraft",
+  "soil": {
+    "item": "minecraft:moss_block"
+  },
+  "tickModifier": 1.0
+}

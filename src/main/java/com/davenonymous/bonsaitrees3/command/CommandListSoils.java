@@ -9,7 +9,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
-import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.Component;
 
 public class CommandListSoils implements Command<CommandSourceStack> {
 	private static final CommandListSoils CMD = new CommandListSoils();
@@ -21,9 +21,9 @@ public class CommandListSoils implements Command<CommandSourceStack> {
 	@Override
 	public int run(CommandContext<CommandSourceStack> context) throws CommandSyntaxException {
 
-		context.getSource().sendSuccess(new TextComponent("Registered soils:"), false);
-		Registration.RECIPE_HELPER_SOIL.getRecipeStream(context.getSource().getLevel().getRecipeManager()).forEach(soil -> {
-			context.getSource().sendSuccess(new TextComponent(soil.getId().toString()), false);
+		context.getSource().sendSuccess(Component.literal("Registered soils:"), false);
+		Registration.RECIPE_HELPER_SOIL.get().getRecipeStream(context.getSource().getLevel().getRecipeManager()).forEach(soil -> {
+			context.getSource().sendSuccess(Component.literal(soil.getId().toString()), false);
 		});
 
 		return 0;

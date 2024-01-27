@@ -2,16 +2,18 @@ package com.davenonymous.bonsaitrees3.command;
 
 
 import com.mojang.brigadier.CommandDispatcher;
+
+import net.minecraft.commands.CommandBuildContext;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 
 public class ModCommands {
-	public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
+	public static void register(CommandDispatcher<CommandSourceStack> dispatcher, CommandBuildContext pContext) {
 
-		var cmdBonsai = dispatcher.register(
+		dispatcher.register(
 				Commands.literal("bonsai")
 						.then(CommandTreeCreator.register(dispatcher))
-						.then(CommandTreeGenerator.register(dispatcher))
+						.then(CommandTreeGenerator.register(dispatcher, pContext))
 						.then(Commands.literal("list")
 								.then(CommandListSoils.register(dispatcher))
 								.then(CommandListSaplings.register(dispatcher))

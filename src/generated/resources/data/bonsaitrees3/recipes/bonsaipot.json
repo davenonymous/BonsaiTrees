@@ -1,15 +1,15 @@
 {
   "type": "minecraft:crafting_shaped",
   "group": "bonsaitrees3",
-  "pattern": [
-    "b b",
-    "bbb"
-  ],
   "key": {
     "b": {
       "tag": "forge:ingots/brick"
     }
   },
+  "pattern": [
+    "b b",
+    "bbb"
+  ],
   "result": {
     "item": "bonsaitrees3:bonsaipot"
   }
