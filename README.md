@@ -427,7 +427,7 @@ be
 
 - `src/main/resources/assets/bonsaitrees3/models/tree/XXX/YYY.json` for the model
 - `src/main/resources/data/bonsaitrees3/recipes/sapling/XXX/YYY.json` for sapling recipes
-- `src/main/resources/data/bonsaitrees3/recipes/soil/XXX/YYY.json` for sapling recipes
+- `src/main/resources/data/bonsaitrees3/recipes/soil/XXX/YYY.json` for soil recipes
 
 If you create a datapack or resource pack your paths will be slightly different. Please read the
 [Open Loader](https://www.curseforge.com/minecraft/mc-mods/open-loader) description and the wiki pages it links to
