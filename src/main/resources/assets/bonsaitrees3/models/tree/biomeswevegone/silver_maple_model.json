@@ -1,0 +1,137 @@
+{
+  "type": "bonsaitrees3:sapling/biomeswevegone/silver_maple_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomeswevegone:silver_maple_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"biomeswevegone:silver_maple_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"biomeswevegone:maple_log","properties":{"axis":"z"}},
+    "d": {"block":"biomeswevegone:silver_maple_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"biomeswevegone:silver_maple_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"biomeswevegone:maple_log","properties":{"axis":"y"}},
+    "g": {"block":"biomeswevegone:maple_log","properties":{"axis":"x"}},
+    "h": {"block":"biomeswevegone:silver_maple_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"biomeswevegone:silver_maple_leaves","properties":{"distance":"6","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "           ",
+      "           ",
+      "           ",
+      "       e   ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "       b   ",
+      "    d bee  ",
+      "     beaae ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "   bddb eb ",
+      "    bbeaaeb",
+      "     eagcae",
+      "      a a  ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "   b  i    ",
+      "   eb  ea  ",
+      "  eaebeaga ",
+      "    beaaa b",
+      "      c    ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "   eb hd   ",
+      "  ea ddbeb ",
+      " eaga  ea  ",
+      "  eaebe    ",
+      "           ",
+      "     f     ",
+      "     f     ",
+      "     f     ",
+      "     f     ",
+      "     f     "
+    ],
+    [
+      "    d      ",
+      "hd ebb bb  ",
+      " bea ea eb ",
+      "  ac   b   ",
+      "    f      ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "  bd be    ",
+      " bebd aeb  ",
+      "b a  aga   ",
+      "eacaa aeb  ",
+      "  a ga     ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "   h b     ",
+      "hdb beeb   ",
+      "dbebeaae   ",
+      " eae cca   ",
+      " b  aa     ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      " hdhdb d   ",
+      "hdbdb e    ",
+      "  e  a     ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "  h h      ",
+      " hdh       ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ]
+}

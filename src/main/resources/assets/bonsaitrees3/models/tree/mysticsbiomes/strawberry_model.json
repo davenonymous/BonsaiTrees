@@ -1,0 +1,96 @@
+{
+  "type": "bonsaitrees3:sapling/mysticsbiomes/strawberry_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"mysticsbiomes:strawberry_blossoms","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"mysticsbiomes:strawberry_blossoms","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"mysticsbiomes:strawberry_blossoms","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"mysticsbiomes:strawberry_blossoms","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"mysticsbiomes:strawberry_blossoms","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"mysticsbiomes:strawberry_log","properties":{"axis":"z"}},
+    "g": {"block":"mysticsbiomes:strawberry_blossoms","properties":{"distance":"7","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"mysticsbiomes:strawberry_blossoms","properties":{"distance":"6","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"mysticsbiomes:strawberry_log","properties":{"axis":"y"}},
+    "j": {"block":"mysticsbiomes:strawberry_blossoms","properties":{"distance":"16","persistent":"false","waterlogged":"false"}},
+    "k": {"block":"mysticsbiomes:strawberry_log","properties":{"axis":"x"}}
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "         ",
+      "      ed ",
+      "    e ce ",
+      "   eca   ",
+      "    ec   ",
+      "    de   ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "d c  c   ",
+      "  aaccced",
+      "  cc aace",
+      "hdecabace",
+      "   e aced",
+      "   de e  ",
+      "         "
+    ],
+    [
+      "     e   ",
+      "d c   e  ",
+      "ecaacace ",
+      "cabbaaa e",
+      " caaabba ",
+      "g   bkba ",
+      "   cabace",
+      "    cace ",
+      "         "
+    ],
+    [
+      "     ce  ",
+      "  aacac  ",
+      " abbabac ",
+      "abffbbbac",
+      "ca bbbkba",
+      " ccabkba ",
+      "    abac ",
+      "   caba  ",
+      "         "
+    ],
+    [
+      "    cac  ",
+      "  ccaba  ",
+      " caabiba ",
+      "cabbbiba ",
+      " cabfiba ",
+      "  cabibac",
+      "     ibac",
+      "   e iba ",
+      "     i   "
+    ],
+    [
+      "    ec g ",
+      "j  ecac  ",
+      " e cabace",
+      "  aaabac ",
+      " ecabbace",
+      " de a a  ",
+      "    c a  ",
+      "         ",
+      "         "
+    ],
+    [
+      "     edh ",
+      "   dece  ",
+      "    c c  ",
+      "   c   e ",
+      "       e ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}

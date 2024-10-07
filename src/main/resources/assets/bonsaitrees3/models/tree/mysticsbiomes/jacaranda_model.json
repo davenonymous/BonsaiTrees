@@ -1,0 +1,90 @@
+{
+  "type": "bonsaitrees3:sapling/mysticsbiomes/jacaranda_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"mysticsbiomes:jacaranda_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"mysticsbiomes:jacaranda_blossoms","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"mysticsbiomes:jacaranda_log","properties":{"axis":"y"}},
+    "d": {"block":"mysticsbiomes:jacaranda_blossoms","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"mysticsbiomes:jacaranda_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"mysticsbiomes:jacaranda_blossoms","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"mysticsbiomes:jacaranda_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"mysticsbiomes:jacaranda_blossoms","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"mysticsbiomes:jacaranda_blossoms","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"mysticsbiomes:jacaranda_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "k": {"block":"mysticsbiomes:jacaranda_blossoms","properties":{"distance":"16","persistent":"false","waterlogged":"false"}},
+    "l": {"block":"mysticsbiomes:jacaranda_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "    k",
+      "     ",
+      "  af ",
+      "  g  ",
+      "   k ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "ljf k",
+      " gaf ",
+      "faba ",
+      "jfdf ",
+      " ig  ",
+      " i i ",
+      "     ",
+      "     "
+    ],
+    [
+      "ifd  ",
+      "fded ",
+      " ecba",
+      "gdedf",
+      "ifag ",
+      " gdfj",
+      " fd h",
+      "     "
+    ],
+    [
+      " fafj",
+      "faba ",
+      "abcbd",
+      "aecbd",
+      "gabag",
+      "fdeaf",
+      "gdb  ",
+      " dbd "
+    ],
+    [
+      "lj   ",
+      "jfdg ",
+      "faedg",
+      "gdbdf",
+      "dbcbd",
+      "abced",
+      "decbd",
+      "  ce "
+    ],
+    [
+      "     ",
+      " ig  ",
+      "i afj",
+      "jgdfi",
+      "gaedf",
+      "fabaf",
+      "g  ag",
+      "    i"
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "hi   ",
+      " fag ",
+      " gd i",
+      "jigf ",
+      "  j h"
+    ]
+  ]
+}

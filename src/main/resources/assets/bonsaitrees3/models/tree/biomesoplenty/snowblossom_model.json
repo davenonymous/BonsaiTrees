@@ -1,0 +1,100 @@
+{
+  "type": "bonsaitrees3:sapling/biomesoplenty/snowblossom_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomesoplenty:snowblossom_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"biomesoplenty:snowblossom_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"biomesoplenty:snowblossom_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"biomesoplenty:snowblossom_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"biomesoplenty:snowblossom_leaves","properties":{"distance":"6","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"biomesoplenty:snowblossom_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"minecraft:cherry_log","properties":{"axis":"z"}},
+    "h": {"block":"minecraft:cherry_log","properties":{"axis":"y"}}
+  },
+  "shape": [
+    [
+      "              ",
+      "              ",
+      "        fccfe ",
+      " efccf  caacf ",
+      " fca       f  ",
+      "              ",
+      "              ",
+      "              ",
+      "              ",
+      "              "
+    ],
+    [
+      "              ",
+      "         ccfe ",
+      "  fccf fcaacfe",
+      "efcaacfcaddac ",
+      "fcaddac adac  ",
+      "  cada        ",
+      "              ",
+      "              ",
+      "              ",
+      "              "
+    ],
+    [
+      "         ccf  ",
+      "  fcc   caacf ",
+      " fcaac caddacf",
+      "fcaddacadbbdac",
+      " adbbda dbdac ",
+      " cadbd      f ",
+      "              ",
+      "              ",
+      "              ",
+      "              "
+    ],
+    [
+      "         aac  ",
+      "  caa   addac ",
+      " cadda adbbdac",
+      "cadbbdadbhgbda",
+      " dbghbd bhbda ",
+      " adbhb  hg    ",
+      "    h  hg     ",
+      "    gggh      ",
+      "       h      ",
+      "       h      "
+    ],
+    [
+      "         ccf  ",
+      "   cc   caacf ",
+      " fcaac caddacf",
+      "fcaddacadbbdac",
+      " adbbda dbdacf",
+      " cadbd      f ",
+      "            e ",
+      "              ",
+      "              ",
+      "              "
+    ],
+    [
+      "              ",
+      "        fccfe ",
+      " efccf  caacfe",
+      "efcaacfcaddac ",
+      "fcaddac adacf ",
+      " fcadac       ",
+      " e  a         ",
+      "              ",
+      "              ",
+      "              "
+    ],
+    [
+      "              ",
+      "              ",
+      "        fccfe ",
+      " efccf  caa f ",
+      " fca c        ",
+      " e c          ",
+      "              ",
+      "              ",
+      "              ",
+      "              "
+    ]
+  ]
+}

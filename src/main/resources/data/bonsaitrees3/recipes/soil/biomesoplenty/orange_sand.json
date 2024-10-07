@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "biomesoplenty" }
+    ],
+    "tickModifier": 1.1,
+    "soil": {
+        "item": "biomesoplenty:orange_sand"
+    },
+    "compatibleSoilTags": [
+        "sand"
+    ],
+    "display": {
+        "block": "biomesoplenty:orange_sand"
+    }
+}

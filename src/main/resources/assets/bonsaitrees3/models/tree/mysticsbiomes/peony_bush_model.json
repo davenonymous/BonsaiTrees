@@ -1,0 +1,37 @@
+{
+  "type": "bonsaitrees3:sapling/mysticsbiomes/peony_bush_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"mysticsbiomes:budding_peony_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"mysticsbiomes:peony_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"mysticsbiomes:peony_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"mysticsbiomes:budding_peony_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"mysticsbiomes:budding_peony_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"mysticsbiomes:peony_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"mysticsbiomes:budding_peony_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "i": {"block":"mysticsbiomes:peony_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "igdbi"
+    ],
+    [
+      "  cb ",
+      "gdfcb"
+    ],
+    [
+      " ded ",
+      "dfhec"
+    ],
+    [
+      " bdb ",
+      "bcedg"
+    ],
+    [
+      "     ",
+      "abdba"
+    ]
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "type": "bonsaitrees3:sapling/ecologics/azalea_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"ecologics:flowering_azalea_log","properties":{"axis":"y"}},
+    "b": {"block":"minecraft:azalea_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"minecraft:azalea_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"ecologics:azalea_log","properties":{"axis":"y","persistent":"false"}},
+    "f": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"minecraft:azalea_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"minecraft:azalea_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "k": {"block":"minecraft:azalea_leaves","properties":{"distance":"7","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      " jci ",
+      "  fc ",
+      "  bc ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "jcf  ",
+      "cbgb ",
+      " bhbc",
+      "bhe  ",
+      "  e  ",
+      "  a  "
+    ],
+    [
+      "dbhfc",
+      "bhagb",
+      "fhehb",
+      "cb f ",
+      "     ",
+      "     "
+    ],
+    [
+      " bh d",
+      "fgehf",
+      " bhfc",
+      "j    ",
+      "     ",
+      "     "
+    ],
+    [
+      "cbgb ",
+      "fgahb",
+      "cbhfd",
+      " c c ",
+      "     ",
+      "     "
+    ],
+    [
+      "i  c ",
+      " fhbd",
+      "  f j",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  c  ",
+      " df  ",
+      "k    ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

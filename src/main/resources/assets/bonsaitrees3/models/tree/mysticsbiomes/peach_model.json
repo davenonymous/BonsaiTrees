@@ -1,0 +1,81 @@
+{
+  "type": "bonsaitrees3:sapling/mysticsbiomes/peach_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"mysticsbiomes:peach_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"mysticsbiomes:peach_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"mysticsbiomes:peach_plant","properties":{"age":"2","cropped":"false"}},
+    "d": {"block":"mysticsbiomes:peach_plant","properties":{"age":"3","cropped":"false"}},
+    "e": {"block":"mysticsbiomes:peach_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"mysticsbiomes:peach_plant","properties":{"age":"4","cropped":"false"}},
+    "g": {"block":"mysticsbiomes:peach_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"mysticsbiomes:peach_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"mysticsbiomes:peach_leaves","properties":{"distance":"16","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"mysticsbiomes:peach_log","properties":{"axis":"y"}},
+    "k": {"block":"mysticsbiomes:peach_log","properties":{"axis":"x"}},
+    "l": {"block":"mysticsbiomes:peach_log","properties":{"axis":"z"}},
+    "m": {"block":"mysticsbiomes:peach_plant","properties":{"age":"1","cropped":"false"}}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "   e   ",
+      "   eeg ",
+      "  gfac ",
+      "  cee  ",
+      "   cg  ",
+      "       "
+    ],
+    [
+      "   e   ",
+      "  eaeg ",
+      "  eaegh",
+      " geaaeg",
+      "hgeabae",
+      "feaaaec",
+      " geaeci",
+      "  c   c"
+    ],
+    [
+      "   ae  ",
+      " eabaeg",
+      " eabaeg",
+      " eabbae",
+      "gfabkba",
+      "fabbbae",
+      "geabaef",
+      "  m cc "
+    ],
+    [
+      "  abae ",
+      " ecjba ",
+      " abjbae",
+      "eabjlba",
+      "eabjbae",
+      "gcljbae",
+      "eabjbcf",
+      "d  jc  "
+    ],
+    [
+      "   aeg ",
+      " eabae ",
+      " eabae ",
+      " eabbae",
+      " eabaeg",
+      "eabbaeg",
+      "geabafc",
+      " c     "
+    ],
+    [
+      "  ge   ",
+      "  cae  ",
+      "  eaegh",
+      " geaaeg",
+      " ccaegf",
+      "geafech",
+      "fge f c",
+      "       "
+    ]
+  ]
+}

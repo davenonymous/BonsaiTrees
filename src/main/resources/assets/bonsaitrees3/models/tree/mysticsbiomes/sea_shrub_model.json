@@ -1,0 +1,41 @@
+{
+  "type": "bonsaitrees3:sapling/mysticsbiomes/sea_shrub_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"mysticsbiomes:sea_shrub_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"mysticsbiomes:sea_shrub_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"mysticsbiomes:sea_shrub_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"mysticsbiomes:sea_shrub_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"mysticsbiomes:sea_shrub_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"mysticsbiomes:sea_foam_log","properties":{"axis":"y"}},
+    "g": {"block":"mysticsbiomes:sea_shrub_leaves","properties":{"distance":"16","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"mysticsbiomes:sea_shrub_leaves","properties":{"distance":"6","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "  ae ",
+      " ab g",
+      " e   "
+    ],
+    [
+      " abae",
+      "  cb ",
+      "b dc "
+    ],
+    [
+      "abcb ",
+      "bcdcb",
+      "cdfd "
+    ],
+    [
+      " ab e",
+      "abcba",
+      " cd  "
+    ],
+    [
+      "h a  ",
+      "eabae",
+      " b   "
+    ]
+  ]
+}

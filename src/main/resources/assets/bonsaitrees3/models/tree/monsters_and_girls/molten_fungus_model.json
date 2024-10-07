@@ -1,0 +1,51 @@
+{
+  "type": "bonsaitrees3:sapling/monsters_and_girls/molten_fungus_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"monsters_and_girls:molten_shroomlight"},
+    "b": {"block":"monsters_and_girls:molten_stem","properties":{"axis":"y"}},
+    "c": {"block":"monsters_and_girls:molten_fungus_block"}
+  },
+  "shape": [
+    [
+      "     ",
+      " ccc ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ccc ",
+      "caaac",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ccc ",
+      "cabac",
+      "  b  ",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      " ccc ",
+      "caaac",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " ccc ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

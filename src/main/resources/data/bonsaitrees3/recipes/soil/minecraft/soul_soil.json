@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "minecraft" }
+    ],
+    "tickModifier": 1.0,
+    "soil": {
+        "item": "minecraft:soul_soil"
+    },
+    "compatibleSoilTags": [
+        "soul_sand"
+    ],
+    "display": {
+        "block": "minecraft:soul_soil"
+    }
+}

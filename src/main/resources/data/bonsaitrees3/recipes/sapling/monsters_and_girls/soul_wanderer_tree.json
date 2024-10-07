@@ -1,0 +1,43 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "monsters_and_girls" }],
+  "sapling": {
+    "item": "monsters_and_girls:soul_wanderer_mushroom"
+  },
+  "drops": [
+
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "monsters_and_girls:soul_wanderer_stem"
+        }
+      },
+      {
+        "rolls": 2,
+        "chance": 0.2,
+        "result": {
+          "item": "monsters_and_girls:soul_wanderer_block"
+        }
+      },
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "monsters_and_girls:soullight"
+        },
+        "requiresBees": true
+       },    
+       {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "monsters_and_girls:soul_wanderer_mushroom"
+        }
+      }
+  
+    ],
+  "compatibleSoilTags": [
+    "soul_sand"
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "type": "bonsaitrees3:sapling/ecologics/coconut_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"ecologics:coconut_leaves","properties":{"distance":"6","distance_9":"6","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"ecologics:coconut_log","properties":{"axis":"y"}},
+    "c": {"block":"ecologics:coconut_leaves","properties":{"distance":"5","distance_9":"5","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"ecologics:hanging_coconut","properties":{"age":"1"}},
+    "e": {"block":"ecologics:coconut_leaves","properties":{"distance":"7","distance_9":"8","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"ecologics:hanging_coconut","properties":{"age":"0"}},
+    "g": {"block":"ecologics:hanging_coconut","properties":{"age":"2"}},
+    "h": {"block":"ecologics:coconut_leaves","properties":{"distance":"7","distance_9":"7","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"ecologics:coconut_leaves","properties":{"distance":"3","distance_9":"3","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"ecologics:coconut_leaves","properties":{"distance":"2","distance_9":"2","persistent":"false","waterlogged":"false"}},
+    "k": {"block":"ecologics:coconut_log","properties":{"axis":"z"}},
+    "l": {"block":"ecologics:coconut_leaves","properties":{"distance":"4","distance_9":"4","persistent":"false","waterlogged":"false"}},
+    "m": {"block":"ecologics:coconut_leaves","properties":{"distance":"1","distance_9":"1","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "        ",
+      "   c    ",
+      "   a    ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   i    ",
+      " aclca  ",
+      " h   h  ",
+      " e   e  ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "  iji   ",
+      " c  gc  ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      " ijmji  ",
+      "clfbflc ",
+      "a  b  a ",
+      "    b   ",
+      "    b   ",
+      "    b   ",
+      "     b  ",
+      "     b  ",
+      "      b ",
+      "      b ",
+      "      bk"
+    ],
+    [
+      "  iji   ",
+      " cd  c  ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "      b "
+    ],
+    [
+      "   i    ",
+      " aclca  ",
+      " h   h  ",
+      " e   e  ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "   c    ",
+      "   a    ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

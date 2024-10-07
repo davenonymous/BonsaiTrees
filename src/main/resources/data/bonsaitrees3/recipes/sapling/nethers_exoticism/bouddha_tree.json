@@ -1,0 +1,50 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "nethers_exoticism" }],
+    "sapling": {
+      "item": "nethers_exoticism:bouddha_s_hand_sapling"
+    },
+    "drops": [
+
+        {
+          "rolls": 1,
+          "chance": 0.75,
+          "result": {
+            "item": "minecraft:bone_block"
+          }
+        },
+        {
+            "rolls": 1,
+            "chance": 0.5,
+            "result": {
+              "item": "nethers_exoticism:bone_column"
+            }
+          },
+        {
+          "rolls": 2,
+          "chance": 0.2,
+          "result": {
+            "item": "minecraft:soul_sand"
+          }
+        },
+        {
+          "rolls": 1,
+          "chance": 0.05,
+          "result": {
+            "item": "nethers_exoticism:bouddha_s_hand"
+          },
+          "requiresBees": true
+         },
+         {
+          "rolls": 1,
+          "chance": 0.05,
+          "result": {
+            "item": "nethers_exoticism:bouddha_s_hand_sapling"
+          }
+        }
+    
+      ],
+    "compatibleSoilTags": [
+      "soul_sand"
+    ]
+  }

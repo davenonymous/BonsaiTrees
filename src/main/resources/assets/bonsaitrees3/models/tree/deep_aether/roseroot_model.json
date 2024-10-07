@@ -1,0 +1,82 @@
+{
+  "type": "bonsaitrees3:sapling/deep_aether/roseroot_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"deep_aether:roseroot_log","properties":{"axis":"y","double_drops":"true"}},
+    "b": {"block":"deep_aether:roseroot_leaves","properties":{"distance":"4","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"deep_aether:roseroot_leaves","properties":{"distance":"1","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"deep_aether:roseroot_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"deep_aether:roseroot_leaves","properties":{"distance":"5","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"deep_aether:flowering_roseroot_leaves","properties":{"distance":"5","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"deep_aether:roseroot_leaves","properties":{"distance":"3","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"deep_aether:flowering_roseroot_leaves","properties":{"distance":"6","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"deep_aether:flowering_roseroot_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "  b ",
+      "  g ",
+      "  d ",
+      "    ",
+      "    ",
+      "    ",
+      "    "
+    ],
+    [
+      "    ",
+      "    ",
+      "    ",
+      " fb ",
+      "  g ",
+      " gdg",
+      "  cd",
+      "    ",
+      "  c ",
+      "    ",
+      "    "
+    ],
+    [
+      "  h ",
+      "  e ",
+      "  b ",
+      "ebgb",
+      "bgdg",
+      " dcd",
+      " cac",
+      "  a ",
+      " cac",
+      "  a ",
+      "  a "
+    ],
+    [
+      "    ",
+      "    ",
+      "    ",
+      " fbe",
+      " bg ",
+      " gd ",
+      " ic ",
+      "    ",
+      "  c ",
+      "    ",
+      "    "
+    ],
+    [
+      "    ",
+      "    ",
+      "    ",
+      "  e ",
+      "  b ",
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "    ",
+      "    "
+    ]
+  ]
+}

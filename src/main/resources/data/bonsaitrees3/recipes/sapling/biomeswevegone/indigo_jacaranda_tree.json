@@ -1,0 +1,50 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "biomeswevegone" }],
+    "sapling": {
+      "item": "biomeswevegone:indigo_jacaranda_sapling"
+    },
+    "drops": [
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "biomeswevegone:indigo_jacaranda_sapling"
+        }
+      },
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "biomeswevegone:jacaranda_log"
+        }
+      },
+      {
+        "rolls": 3,
+        "chance": 0.2,
+        "result": {
+          "item": "minecraft:stick"
+        }
+      },
+      {
+        "rolls": 2,
+        "chance": 0.2,
+        "result": {
+          "item": "biomeswevegone:indigo_jacaranda_leaves"
+        },
+        "requiresSilkTouch": true
+      },
+      {
+        "rolls": 2,
+        "chance": 0.2,
+        "result": {
+          "item": "biomeswevegone:flowering_indigo_jacaranda_leaves"
+        },
+        "requiresSilkTouch": true
+      }
+    ],
+    "compatibleSoilTags": [
+      "dirt",
+      "grass"
+    ]
+  }

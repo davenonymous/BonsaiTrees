@@ -1,0 +1,35 @@
+{
+  "type": "bonsaitrees3:sapling/nethers_exoticism/kiwano_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"nethers_exoticism:kiwano_leaves_stage_1","properties":{"facing":"west"}},
+    "b": {"block":"nethers_exoticism:kiwano_leaves"},
+    "c": {"block":"nethers_exoticism:kiwano_leaves_stage_1","properties":{"facing":"up"}},
+    "d": {"block":"minecraft:warped_stem","properties":{"axis":"y"}},
+    "e": {"block":"nethers_exoticism:kiwano_leaves_stage_1","properties":{"facing":"south"}},
+    "f": {"block":"nethers_exoticism:kiwano_leaves_stage_1","properties":{"facing":"east"}},
+    "g": {"block":"nethers_exoticism:kiwano_leaves_stage_1","properties":{"facing":"north"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "  f  ",
+      " f f "
+    ],
+    [
+      "  c  ",
+      " gbe ",
+      " bbbe"
+    ],
+    [
+      "   c ",
+      "gbbbe",
+      " bdb "
+    ],
+    [
+      "     ",
+      "  a  ",
+      " abbe"
+    ]
+  ]
+}

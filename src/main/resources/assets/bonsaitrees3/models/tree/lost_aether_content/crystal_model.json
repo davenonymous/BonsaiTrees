@@ -1,0 +1,63 @@
+{
+  "type": "bonsaitrees3:sapling/lost_aether_content/crystal_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"aether:crystal_leaves","properties":{"distance":"1","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"aether:skyroot_log","properties":{"axis":"y","double_drops":"true"}},
+    "c": {"block":"aether:crystal_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"aether:crystal_fruit_leaves","properties":{"distance":"1","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"aether:crystal_fruit_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "  c  ",
+      " cac ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  a  ",
+      " aba ",
+      "  d  ",
+      " cae ",
+      "eabac",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " dba ",
+      "abbba",
+      " aba ",
+      "cabae",
+      "abbbd",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "     ",
+      "  a  ",
+      " aba ",
+      "  a  ",
+      " cac ",
+      "cabac",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "  e  ",
+      " cac ",
+      "     ",
+      "     "
+    ]
+  ]
+}

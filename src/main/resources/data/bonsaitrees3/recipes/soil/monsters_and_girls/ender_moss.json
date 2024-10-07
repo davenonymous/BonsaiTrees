@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "monsters_and_girls" }
+    ],
+    "tickModifier": 1.1,
+    "soil": {
+        "item": "monsters_and_girls:ender_moss"
+    },
+    "compatibleSoilTags": [
+        "end_stone"
+    ],
+    "display": {
+        "block": "monsters_and_girls:ender_moss"
+    }
+}

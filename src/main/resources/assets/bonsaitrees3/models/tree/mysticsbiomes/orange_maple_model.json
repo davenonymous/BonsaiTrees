@@ -1,0 +1,126 @@
+{
+  "type": "bonsaitrees3:sapling/mysticsbiomes/orange_maple_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"mysticsbiomes:orange_maple_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"mysticsbiomes:orange_maple_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"mysticsbiomes:maple_log","properties":{"axis":"x"}},
+    "d": {"block":"mysticsbiomes:orange_maple_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"mysticsbiomes:maple_log","properties":{"axis":"y"}},
+    "f": {"block":"mysticsbiomes:orange_maple_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"mysticsbiomes:orange_maple_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"mysticsbiomes:orange_maple_leaves","properties":{"distance":"6","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"mysticsbiomes:maple_log","properties":{"axis":"z"}},
+    "j": {"block":"mysticsbiomes:orange_maple_leaves","properties":{"distance":"16","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "    fbfa",
+      "    afa ",
+      "       h",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "        ",
+      "      a ",
+      "   afbf ",
+      "    bdbf",
+      "    fbfa",
+      "    a ag",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "gafaa   ",
+      "afbffbf ",
+      " fbfbd f",
+      "  bbdidb",
+      "   dbd f",
+      "    fbf ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "  fag   ",
+      "afbf    ",
+      "fbdbbfa ",
+      "fbdbdb  ",
+      "fbddidbf",
+      " bdcdbf ",
+      " bddbfag",
+      "  dbf   ",
+      " b  f   ",
+      "        "
+    ],
+    [
+      "  b     ",
+      " bdb j  ",
+      "bdedb   ",
+      "bdedbfa ",
+      " deddbfa",
+      "  eidb g",
+      "  edbfag",
+      " dedbf  ",
+      " dedb   ",
+      "  e     "
+    ],
+    [
+      " aff    ",
+      "afbb    ",
+      "fbddbf  ",
+      "fbdcdb  ",
+      " bdddb  ",
+      "  ddidb ",
+      "  dcdbf ",
+      " bddbf  ",
+      "  d fa  ",
+      "        "
+    ],
+    [
+      "  af    ",
+      "  fb    ",
+      " fbdbf  ",
+      " bdcdb  ",
+      "afbdbf  ",
+      " fbbdbf ",
+      " fbdbfa ",
+      "  bbf   ",
+      " j f    ",
+      "        "
+    ],
+    [
+      "        ",
+      " ga ag  ",
+      "  fbf   ",
+      " fbdb   ",
+      " afbfa  ",
+      "  ffbf  ",
+      " afbfag ",
+      " af  gh ",
+      "  a     ",
+      "        "
+    ],
+    [
+      "        ",
+      "  ga    ",
+      "  afa   ",
+      " afbf   ",
+      "  afag  ",
+      "   a    ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "type": "bonsaitrees3:sapling/quark/azalea_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"minecraft:azalea_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"minecraft:azalea_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"quark:azalea_log","properties":{"axis":"y"}},
+    "e": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"minecraft:azalea_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"7","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"minecraft:azalea_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"6","persistent":"false","waterlogged":"false"}},
+    "k": {"block":"minecraft:azalea_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "l": {"block":"minecraft:azalea_leaves","properties":{"distance":"7","persistent":"false","waterlogged":"false"}},
+    "m": {"block":"minecraft:flowering_azalea_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "   h ",
+      "  c  ",
+      "  i  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "   fm",
+      "  bc ",
+      "   f ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "fcbcf",
+      " bdbc",
+      "fceci",
+      " f   ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "fcecf",
+      "cbde ",
+      "icbai",
+      "hicf ",
+      "   h ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "icbaf",
+      "cbdba",
+      "abdbc",
+      " ceai",
+      "  cf ",
+      " f   ",
+      "     ",
+      "     "
+    ],
+    [
+      "h a  ",
+      "fcbc ",
+      "fcbcf",
+      " bdb ",
+      " ceci",
+      "fce  ",
+      "     ",
+      "     "
+    ],
+    [
+      "   g ",
+      "h   l",
+      "hicf ",
+      "icb i",
+      "abdbc",
+      "cbd i",
+      "  d  ",
+      "  d  "
+    ],
+    [
+      "     ",
+      "     ",
+      "  fh ",
+      "hf kh",
+      "fcb i",
+      " a   ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "   j ",
+      "hf   ",
+      "hf   ",
+      "     ",
+      "     "
+    ]
+  ]
+}

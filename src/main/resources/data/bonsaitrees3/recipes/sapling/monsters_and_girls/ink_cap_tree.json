@@ -1,0 +1,55 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "monsters_and_girls" }],
+    "sapling": {
+      "item": "monsters_and_girls:ink_cap_mushroom"
+    },
+    "drops": [
+
+        {
+          "rolls": 1,
+          "chance": 0.75,
+          "result": {
+            "item": "minecraft:mushroom_stem"
+          },
+          "requiresSilkTouch": true
+        },
+        {
+          "rolls": 1,
+          "chance": 0.13,
+          "result": {
+            "item": "monsters_and_girls:inkcap_1"
+          },
+          "requiresSilkTouch": true
+        },
+        {
+          "rolls": 1,
+          "chance": 0.13,
+          "result": {
+            "item": "monsters_and_girls:inkcap_2"
+          },
+          "requiresSilkTouch": true
+        },
+        {
+          "rolls": 1,
+          "chance": 0.13,
+          "result": {
+            "item": "monsters_and_girls:inkcap_3"
+          },
+          "requiresSilkTouch": true
+        },    
+        {
+         "rolls": 1,
+         "chance": 0.05,
+         "result": {
+           "item": "monsters_and_girls:ink_cap_mushroom"
+         }
+       }
+    
+      ],
+    "compatibleSoilTags": [
+      "dirt",
+      "grass",
+      "mycelium"
+    ]
+  }

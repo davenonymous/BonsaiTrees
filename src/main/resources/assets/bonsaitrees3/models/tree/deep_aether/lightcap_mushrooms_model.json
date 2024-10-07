@@ -1,0 +1,71 @@
+{
+  "type": "bonsaitrees3:sapling/deep_aether/lightcap_mushrooms_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:mushroom_stem","properties":{"down":"false","east":"true","north":"true","south":"true","up":"false","west":"true"}},
+    "b": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"true","north":"false","south":"true","up":"true","west":"false"}},
+    "c": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"false","south":"true","up":"false","west":"true"}},
+    "d": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"false","south":"true","up":"false","west":"false"}},
+    "e": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"true","north":"false","south":"false","up":"false","west":"false"}},
+    "f": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"true","north":"false","south":"true","up":"false","west":"false"}},
+    "g": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"true","south":"false","up":"true","west":"true"}},
+    "h": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"false","south":"false","up":"true","west":"true"}},
+    "i": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"true","south":"false","up":"true","west":"false"}},
+    "j": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"true","south":"false","up":"false","west":"true"}},
+    "k": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"true","north":"true","south":"false","up":"true","west":"false"}},
+    "l": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"false","south":"true","up":"true","west":"true"}},
+    "m": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"false","south":"true","up":"true","west":"false"}},
+    "n": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"true","north":"false","south":"false","up":"true","west":"false"}},
+    "o": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"true","north":"true","south":"false","up":"false","west":"false"}},
+    "p": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"false","south":"false","up":"true","west":"false"}},
+    "q": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"true","south":"false","up":"false","west":"false"}},
+    "r": {"block":"deep_aether:lightcap_mushroom_block","properties":{"down":"false","east":"false","north":"false","south":"false","up":"false","west":"true"}}
+  },
+  "shape": [
+    [
+      "     ",
+      " knb ",
+      " oef ",
+      " oef ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " knb ",
+      "k   b",
+      "o   f",
+      "o   f",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ipm ",
+      "i a m",
+      "q a d",
+      "q a d",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      " ghl ",
+      "g   l",
+      "j   c",
+      "j   c",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " ghl ",
+      " jrc ",
+      " jrc ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

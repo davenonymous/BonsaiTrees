@@ -1,0 +1,61 @@
+{
+  "type": "bonsaitrees3:sapling/nethers_exoticism/ramboutan_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"nethers_exoticism:ramboutan_leaves"},
+    "b": {"block":"nethers_exoticism:ramboutan_log","properties":{"axis":"y"}},
+    "c": {"block":"nethers_exoticism:ramboutan_block","properties":{"waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      " aaaa",
+      "aaaac",
+      "cc   ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "aaaaa",
+      "aaaaa",
+      "  c  ",
+      " aa  ",
+      "  aa ",
+      "  c  ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "aabaa",
+      "aabaa",
+      "ccb c",
+      " aba ",
+      " aba ",
+      "  bc ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      "aaaaa",
+      "aaaaa",
+      "ccc  ",
+      "  aa ",
+      " aac ",
+      "  c  ",
+      "     "
+    ],
+    [
+      "     ",
+      "aaaa ",
+      "caaaa",
+      " c c ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

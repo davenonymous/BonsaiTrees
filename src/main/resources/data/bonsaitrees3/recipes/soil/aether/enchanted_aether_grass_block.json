@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "aether" }
+    ],
+    "tickModifier": 0.95,
+    "soil": {
+        "item": "aether:enchanted_aether_grass_block"
+    },
+    "compatibleSoilTags": [
+        "grass"
+    ],
+    "display": {
+        "block": "aether:enchanted_aether_grass_block"
+    }
+}

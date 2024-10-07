@@ -1,0 +1,61 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "deep_aether" }],
+  "sapling": {
+    "item": "deep_aether:roseroot_sapling"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "deep_aether:roseroot_sapling"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "deep_aether:roseroot_log"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "deep_aether:flowering_roseroot_leaves"
+      },
+      "requiresSilkTouch": true,
+      "requiresBees": true
+    },
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "deep_aether:roseroot_leaves"
+      },
+      "requiresSilkTouch": true
+    },
+    {
+      "rolls": 3,
+      "chance": 0.2,
+      "result": {
+        "item": "aether:skyroot_stick"
+      }
+    },
+
+
+    {
+      "rolls": 2,
+      "chance": 0.05,
+      "result": {
+        "item": "deep_aether:aerglow_blossom"
+      },
+      "requiresBees": true
+     }
+  ],
+  "compatibleSoilTags": [
+    "dirt",
+    "grass"
+  ]
+}

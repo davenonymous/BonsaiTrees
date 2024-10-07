@@ -1,0 +1,53 @@
+{
+  "type": "bonsaitrees3:sapling/nethers_exoticism/bouddha_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:bone_block","properties":{"axis":"y"}},
+    "b": {"block":"nethers_exoticism:bone_column","properties":{"axis":"z","waterlogged":"false"}},
+    "c": {"block":"nethers_exoticism:bouddha_s_hand_block","properties":{"waterlogged":"false"}},
+    "d": {"block":"minecraft:soul_sand"},
+    "e": {"block":"nethers_exoticism:bone_column","properties":{"axis":"x","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      " ddd ",
+      "     ",
+      "  e  ",
+      "  c  ",
+      "     ",
+      "     "
+    ],
+    [
+      "ddddd",
+      "     ",
+      "  e  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "ddddd",
+      "  a  ",
+      "  a  ",
+      " bab ",
+      " cac ",
+      "  a  "
+    ],
+    [
+      "ddddd",
+      "  e  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ddd ",
+      "  e  ",
+      "  c  ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

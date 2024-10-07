@@ -1,0 +1,68 @@
+{
+  "type": "bonsaitrees3:sapling/culturaldelights/avocado_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"culturaldelights:avocado_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"culturaldelights:avocado_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"culturaldelights:avocado_log","properties":{"axis":"y"}},
+    "d": {"block":"culturaldelights:avocado_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"culturaldelights:fruiting_avocado_leaves","properties":{"age":"4","distance":"4","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"culturaldelights:fruiting_avocado_leaves","properties":{"age":"4","distance":"3","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"culturaldelights:avocado_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"culturaldelights:avocado_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"culturaldelights:fruiting_avocado_leaves","properties":{"age":"4","distance":"2","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"culturaldelights:fruiting_avocado_leaves","properties":{"age":"0","distance":"1","persistent":"false","waterlogged":"false"}},
+    "k": {"block":"culturaldelights:fruiting_avocado_leaves","properties":{"age":"4","distance":"5","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "       ",
+      " dhahd ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "dhaiahk",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aba  ",
+      "haigbah",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " abgba ",
+      "abgcjba",
+      "   c   ",
+      "   c   ",
+      "   c   "
+    ],
+    [
+      "  aba  ",
+      "hfbgbah",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "deabahd",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " dhfhd ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

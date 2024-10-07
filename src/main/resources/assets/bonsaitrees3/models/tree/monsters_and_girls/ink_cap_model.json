@@ -1,0 +1,79 @@
+{
+  "type": "bonsaitrees3:sapling/monsters_and_girls/ink_cap_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:mushroom_stem","properties":{"down":"false","east":"true","north":"true","south":"true","up":"false","west":"true"}},
+    "b": {"block":"minecraft:mushroom_stem","properties":{"down":"true","east":"true","north":"true","south":"true","up":"false","west":"true"}},
+    "c": {"block":"monsters_and_girls:inkcap_1"},
+    "d": {"block":"monsters_and_girls:inkcap_3"},
+    "e": {"block":"minecraft:mushroom_stem","properties":{"down":"false","east":"false","north":"false","south":"false","up":"false","west":"false"}},
+    "f": {"block":"monsters_and_girls:inkcap_2"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "ccccc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " fdf ",
+      " cfc ",
+      "ceeec",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      " ddd ",
+      " fef ",
+      "ceeec",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  b  "
+    ],
+    [
+      "     ",
+      " fdf ",
+      " cfc ",
+      "ceeec",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "ccccc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

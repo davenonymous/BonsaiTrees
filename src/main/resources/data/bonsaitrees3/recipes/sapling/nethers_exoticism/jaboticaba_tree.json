@@ -1,0 +1,44 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "nethers_exoticism" }],
+    "sapling": {
+      "item": "nethers_exoticism:jaboticaba_sapling"
+    },
+    "drops": [
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "nethers_exoticism:jaboticaba_sapling"
+        }
+      },
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "nethers_exoticism:jaboticaba_branch_empty"
+        }
+      },
+      {
+        "rolls": 2,
+        "chance": 0.2,
+        "result": {
+          "item": "nethers_exoticism:jaboticaba_leaves"
+        },
+        "requiresSilkTouch": true
+      },
+  
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "nethers_exoticism:jaboticaba"
+        },
+        "requiresBees": true
+       }
+  
+    ],
+    "compatibleSoilTags": [
+      "basalt"
+    ]
+  }

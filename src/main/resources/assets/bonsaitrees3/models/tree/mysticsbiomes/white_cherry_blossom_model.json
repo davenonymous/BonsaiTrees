@@ -1,0 +1,127 @@
+{
+  "type": "bonsaitrees3:sapling/mysticsbiomes/white_cherry_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"mysticsbiomes:white_cherry_blossoms","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"mysticsbiomes:white_cherry_blossoms","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"mysticsbiomes:white_cherry_blossoms","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"mysticsbiomes:white_cherry_blossoms","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"mysticsbiomes:white_cherry_blossoms","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"mysticsbiomes:cherry_log","properties":{"axis":"y"}},
+    "g": {"block":"mysticsbiomes:white_cherry_blossoms","properties":{"distance":"6","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"mysticsbiomes:cherry_log","properties":{"axis":"z"}},
+    "i": {"block":"mysticsbiomes:white_cherry_blossoms","properties":{"distance":"7","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"mysticsbiomes:cherry_log","properties":{"axis":"x"}},
+    "k": {"block":"mysticsbiomes:white_cherry_blossoms","properties":{"distance":"16","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      " g ig   g g ",
+      "  a ba g ab ",
+      "bacaa  ba   ",
+      "   ccdca d  ",
+      "ac  a  a    ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            "
+    ],
+    [
+      " ba babgba  ",
+      "  caacabacab",
+      "acdc dcacdca",
+      " deddedcdedc",
+      "cded e c e  ",
+      "            ",
+      "            ",
+      "            ",
+      "            ",
+      "            "
+    ],
+    [
+      "bacaacabac  ",
+      " cdccdcacdc ",
+      "cdeddedcdedc",
+      "defeefedefed",
+      " efeefedefe ",
+      "  f  f   f  ",
+      "  f  fhhhh  ",
+      "  hhhf      ",
+      "     f      ",
+      "     f      "
+    ],
+    [
+      " babbab  abg",
+      "bacaac baca ",
+      "acdccdcacdca",
+      "cdedde c edc",
+      "  ed e  ded ",
+      "            ",
+      "            ",
+      "     j      ",
+      "            ",
+      "            "
+    ],
+    [
+      "igb g  ig   ",
+      " babba  b   ",
+      "b caacab ca ",
+      " c ccdc   c ",
+      " a ccdca    ",
+      "    cd a    ",
+      "            ",
+      "     j      ",
+      "            ",
+      "            "
+    ],
+    [
+      "            ",
+      "    b  g    ",
+      "    acab    ",
+      "   acdc     ",
+      "   cded     ",
+      "    de c    ",
+      "     f      ",
+      "     j      ",
+      "            ",
+      "            "
+    ],
+    [
+      "            ",
+      "    aca     ",
+      "    cdc     ",
+      "    ded     ",
+      "   defe     ",
+      "    efed    ",
+      "     j      ",
+      "            ",
+      "            ",
+      "            "
+    ],
+    [
+      "            ",
+      "    b b     ",
+      "    ac b    ",
+      "   acdca    ",
+      "   cded     ",
+      "   cdedc    ",
+      "            ",
+      "            ",
+      "            ",
+      "            "
+    ],
+    [
+      "            ",
+      "    gi      ",
+      "   gb k     ",
+      "   bac      ",
+      "   acdc     ",
+      "   ac       ",
+      "            ",
+      "            ",
+      "            ",
+      "            "
+    ]
+  ]
+}

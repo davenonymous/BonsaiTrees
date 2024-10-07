@@ -1,0 +1,46 @@
+{
+  "type": "bonsaitrees3:sapling/monsters_and_girls/soul_wanderer_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"monsters_and_girls:soul_wanderer_block"},
+    "b": {"block":"monsters_and_girls:soul_wanderer_stem","properties":{"axis":"y"}},
+    "c": {"block":"monsters_and_girls:soullight"}
+  },
+  "shape": [
+    [
+      "     ",
+      " aaa ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "accca",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " aaa ",
+      "acbca",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      " aaa ",
+      "accca",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " aaa ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

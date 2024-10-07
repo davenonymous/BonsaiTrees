@@ -1,0 +1,67 @@
+{
+  "type": "bonsaitrees3:sapling/biomeswevegone/yucca_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "b": {"block":"biomeswevegone:flowering_yucca_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"biomeswevegone:yucca_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"biomeswevegone:ripe_yucca_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"biomeswevegone:yucca_fruit","properties":{"age":"3"}}
+  },
+  "shape": [
+    [
+      "      ",
+      "  c   ",
+      "  c   ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "  b   ",
+      "  a   ",
+      " ca d ",
+      "    e ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      " c    ",
+      " ac b ",
+      "caa ac",
+      "  aa  ",
+      "  a   ",
+      "  a   ",
+      "  a   "
+    ],
+    [
+      "      ",
+      "      ",
+      "  a b ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "  c   ",
+      " cac  ",
+      "  a   ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      "  c   ",
+      "  d   ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ]
+  ]
+}

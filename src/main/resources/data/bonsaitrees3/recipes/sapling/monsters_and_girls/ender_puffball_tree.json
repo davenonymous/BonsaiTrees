@@ -1,0 +1,43 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "monsters_and_girls" }],
+  "sapling": {
+    "item": "monsters_and_girls:end_puffball"
+  },
+  "drops": [
+
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "monsters_and_girls:ender_mushroom_stem"
+        }
+      },
+      {
+        "rolls": 2,
+        "chance": 0.2,
+        "result": {
+          "item": "monsters_and_girls:blockof_ender_puffbal"
+        }
+      },
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "monsters_and_girls:ender_shroomlight"
+        },
+        "requiresBees": true
+       },    
+       {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "monsters_and_girls:end_puffball"
+        }
+      }
+  
+    ],
+  "compatibleSoilTags": [
+    "end_stone"
+  ]
+}

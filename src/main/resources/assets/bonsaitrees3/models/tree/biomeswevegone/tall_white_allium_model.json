@@ -1,0 +1,40 @@
+{
+  "type": "bonsaitrees3:sapling/biomeswevegone/tall_white_allium_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomeswevegone:florus_stem","properties":{"axis":"y"}},
+    "b": {"block":"biomeswevegone:white_allium_petal_block"}
+  },
+  "shape": [
+    [
+      " b ",
+      "bbb",
+      " b ",
+      "   ",
+      "   ",
+      "   ",
+      "   ",
+      "   "
+    ],
+    [
+      "bbb",
+      "bbb",
+      "bbb",
+      " a ",
+      " a ",
+      " a ",
+      " a ",
+      " a "
+    ],
+    [
+      " b ",
+      "bbb",
+      " b ",
+      "   ",
+      "   ",
+      "   ",
+      "   ",
+      "   "
+    ]
+  ]
+}

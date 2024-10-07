@@ -1,0 +1,53 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "lost_aether_content" }],
+  "sapling": {
+    "item": "lost_aether_content:holiday_sapling"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "lost_aether_content:holiday_sapling"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "aether:skyroot_log"
+      }
+    },
+    {
+      "rolls": 2,
+      "chance": 0.2,
+      "result": {
+        "item": "aether:holiday_leaves"
+      },
+      "requiresSilkTouch": true
+    },
+    {
+      "rolls": 3,
+      "chance": 0.2,
+      "result": {
+        "item": "aether:skyroot_stick"
+      }
+    },
+
+
+    {
+      "rolls": 1,
+      "chance": 0.1,
+      "result": {
+        "item": "aether:decorated_holiday_leaves"
+      },
+      "requiresBees": true,
+      "requiresSilkTouch": true
+     }
+  ],
+  "compatibleSoilTags": [
+    "dirt",
+    "grass"
+  ]
+}

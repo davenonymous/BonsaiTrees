@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "minecraft" }
+    ],
+    "tickModifier": 1.0,
+    "soil": {
+        "item": "minecraft:polished_basalt"
+    },
+    "compatibleSoilTags": [
+        "basalt"
+    ],
+    "display": {
+        "block": "minecraft:polished_basalt"
+    }
+}

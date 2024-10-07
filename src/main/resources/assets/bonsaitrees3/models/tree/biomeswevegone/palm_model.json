@@ -1,0 +1,113 @@
+{
+  "type": "bonsaitrees3:sapling/biomeswevegone/palm_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomeswevegone:palm_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"biomeswevegone:palm_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"biomeswevegone:palm_log","properties":{"axis":"y"}},
+    "d": {"block":"biomeswevegone:palm_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"biomeswevegone:palm_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"biomeswevegone:palm_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "    e    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    f    ",
+      "    d    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "  c      ",
+      "  c      ",
+      "  c      "
+    ],
+    [
+      "    b    ",
+      "   bab   ",
+      "         ",
+      "         ",
+      "   c     ",
+      "   c     ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "   bab   ",
+      " fbacabf ",
+      "ed  c  de",
+      "    c    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "    b    ",
+      "   bab   ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    b    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    f    ",
+      "    d    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "    e    ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "type": "bonsaitrees3:sapling/deep_aether/sunroot_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"deep_aether:sunroot_hanger","properties":{"bottom":"true"}},
+    "b": {"block":"deep_aether:sunroot_leaves","properties":{"distance":"3","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"deep_aether:sunroot_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"deep_aether:sunroot_hanger","properties":{"bottom":"false"}},
+    "e": {"block":"deep_aether:sunroot_leaves","properties":{"distance":"4","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"deep_aether:sunroot_leaves","properties":{"distance":"5","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"deep_aether:sunroot_log","properties":{"axis":"y","double_drops":"true"}},
+    "h": {"block":"deep_aether:sunroot_leaves","properties":{"distance":"1","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"deep_aether:sunroot_leaves","properties":{"distance":"6","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"deep_aether:sunroot_log","properties":{"axis":"z","double_drops":"true"}},
+    "k": {"block":"deep_aether:sunroot_log","properties":{"axis":"x","double_drops":"true"}}
+  },
+  "shape": [
+    [
+      "    ebe ",
+      "   i cb ",
+      "   febe ",
+      "    d d ",
+      "    d d ",
+      "    d d ",
+      "    d d ",
+      "    a a ",
+      "        "
+    ],
+    [
+      "     cb ",
+      "     hcb",
+      "    bcbe",
+      "      d ",
+      "      d ",
+      "      d ",
+      "      d ",
+      "      a ",
+      "        "
+    ],
+    [
+      "f   chcb",
+      "ebcchkhc",
+      "  bbchcb",
+      "  d    d",
+      "  d    d",
+      "  d    d",
+      "  d    d",
+      "  a    a",
+      "        "
+    ],
+    [
+      "ebcbbc e",
+      "dchcchcb",
+      "ddcbchcb",
+      "dd  dd  ",
+      "dd  dd  ",
+      "ad  dd  ",
+      " a  dd  ",
+      "    aa  ",
+      "     g  "
+    ],
+    [
+      " chcbcbe",
+      "chjhchcb",
+      "dchchghc",
+      "dd  dg  ",
+      "dd  dg  ",
+      "dd  dg  ",
+      "ad  dg  ",
+      " a  ag  ",
+      "    ggg "
+    ],
+    [
+      " bcb be ",
+      "bchcb b ",
+      " dcbchcb",
+      " d      ",
+      " d      ",
+      " d      ",
+      " a      ",
+      "        ",
+      "     g  "
+    ],
+    [
+      " eb fe  ",
+      " bcbeb  ",
+      "feb  cbe",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

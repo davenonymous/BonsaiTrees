@@ -1,0 +1,127 @@
+{
+  "type": "bonsaitrees3:sapling/lost_aether_content/holiday_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"aether:holiday_leaves","properties":{"distance":"5","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"aether:holiday_leaves","properties":{"distance":"3","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"aether:skyroot_log","properties":{"axis":"y","double_drops":"true"}},
+    "d": {"block":"aether:holiday_leaves","properties":{"distance":"4","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"aether:holiday_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"aether:holiday_leaves","properties":{"distance":"1","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"aether:decorated_holiday_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"aether:decorated_holiday_leaves","properties":{"distance":"5","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"aether:decorated_holiday_leaves","properties":{"distance":"4","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"aether:decorated_holiday_leaves","properties":{"distance":"3","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "k": {"block":"aether:decorated_holiday_leaves","properties":{"distance":"1","double_drops":"true","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "    i    ",
+      "   aih   ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "    d    ",
+      "   ada   ",
+      "  adbih  ",
+      "  adbda  ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "    j    ",
+      "  dbbbd  ",
+      "  adjih  ",
+      " adjgbda ",
+      " adbebda ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    f    ",
+      "   efe   ",
+      "   beb   ",
+      "  befeb  ",
+      " adbgjda ",
+      " djefebi ",
+      "adbekejda",
+      "         ",
+      "         "
+    ],
+    [
+      "    f    ",
+      "   fcf   ",
+      "   fcf   ",
+      "  beceb  ",
+      " bgfcfeb ",
+      " dbecgjd ",
+      "dbgfckebi",
+      "dbefcfebd",
+      "    c    ",
+      "    c    "
+    ],
+    [
+      "         ",
+      "    f    ",
+      "   gfe   ",
+      "   beb   ",
+      "  bgfeb  ",
+      " adjebda ",
+      " djgfgbd ",
+      "adbgfgbda",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "    b    ",
+      "  dbbbi  ",
+      "  adbia  ",
+      " hdbebda ",
+      " adjebdh ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "    d    ",
+      "   adh   ",
+      "  adjda  ",
+      "  adbia  ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "    i    ",
+      "   ada   ",
+      "         ",
+      "         "
+    ]
+  ]
+}

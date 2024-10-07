@@ -1,0 +1,15 @@
+{
+  "type": "bonsaitrees3:sapling/nethers_exoticism/pitaya_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"nethers_exoticism:pitaya_stem","properties":{"axis":"y","waterlogged":"false"}},
+    "b": {"block":"nethers_exoticism:pitaya_block","properties":{"waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "b",
+      "a",
+      "a"
+    ]
+  ]
+}

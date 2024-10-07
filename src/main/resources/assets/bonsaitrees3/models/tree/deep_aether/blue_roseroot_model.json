@@ -1,0 +1,79 @@
+{
+  "type": "bonsaitrees3:sapling/deep_aether/blue_roseroot_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"deep_aether:roseroot_log","properties":{"axis":"y","double_drops":"true"}},
+    "b": {"block":"deep_aether:blue_roseroot_leaves","properties":{"distance":"1","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"deep_aether:blue_roseroot_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"deep_aether:blue_roseroot_leaves","properties":{"distance":"4","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"deep_aether:blue_roseroot_leaves","properties":{"distance":"3","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"deep_aether:flowering_blue_roseroot_leaves","properties":{"distance":"4","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"deep_aether:flowering_blue_roseroot_leaves","properties":{"distance":"5","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"deep_aether:blue_roseroot_leaves","properties":{"distance":"5","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"deep_aether:flowering_blue_roseroot_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "j": {"block":"deep_aether:flowering_blue_roseroot_leaves","properties":{"distance":"1","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "k": {"block":"deep_aether:flowering_blue_roseroot_leaves","properties":{"distance":"3","double_drops":"true","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "  g  ",
+      "     ",
+      "     ",
+      "     ",
+      " ec  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  dh ",
+      " fkd ",
+      " ec  ",
+      " cb  ",
+      " ibi ",
+      "     ",
+      "  b  ",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      "hdedh",
+      "feied",
+      "eibc ",
+      "cbabc",
+      "cbaj ",
+      "  a  ",
+      " bab ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "     ",
+      " gdh ",
+      " dk  ",
+      " ec  ",
+      " ib  ",
+      "ecbi ",
+      "     ",
+      "  j  ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "  d  ",
+      "  e  ",
+      "     ",
+      " eie ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

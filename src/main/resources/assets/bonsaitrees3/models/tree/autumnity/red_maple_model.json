@@ -1,0 +1,63 @@
+{
+  "type": "bonsaitrees3:sapling/autumnity/red_maple_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"autumnity:maple_log","properties":{"axis":"y"}},
+    "b": {"block":"autumnity:red_maple_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"autumnity:red_maple_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"autumnity:red_maple_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"autumnity:red_maple_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "  b  ",
+      " bdb ",
+      " cbc ",
+      "  db ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      " bdb ",
+      "bdedb",
+      "cbdbc",
+      " dedb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bdb ",
+      "bdedb",
+      "deaed",
+      "bdadb",
+      "deaed",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      "cbdbc",
+      "bdedb",
+      "cbdbc",
+      "bded ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " cbc ",
+      " bdb ",
+      " cbc ",
+      "  d  ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

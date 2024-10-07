@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "aether" }
+    ],
+    "tickModifier": 1.1,
+    "soil": {
+        "item": "aether:aether_dirt"
+    },
+    "compatibleSoilTags": [
+        "dirt"
+    ],
+    "display": {
+        "block": "aether:aether_dirt"
+    }
+}

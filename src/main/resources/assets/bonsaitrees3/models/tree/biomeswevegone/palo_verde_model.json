@@ -1,0 +1,105 @@
+{
+  "type": "bonsaitrees3:sapling/biomeswevegone/palo_verde_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"biomeswevegone:palo_verde_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"biomeswevegone:palo_verde_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"biomeswevegone:palo_verde_log","properties":{"axis":"y"}},
+    "d": {"block":"biomeswevegone:palo_verde_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"biomeswevegone:palo_verde_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"biomeswevegone:palo_verde_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "g": {"block":"biomeswevegone:flowering_palo_verde_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "h": {"block":"biomeswevegone:flowering_palo_verde_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "i": {"block":"biomeswevegone:flowering_palo_verde_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "        ",
+      "  gebed ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "    b   ",
+      " debabid",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      " c      ",
+      " c      ",
+      " c      "
+    ],
+    [
+      "   bab  ",
+      "debafabe",
+      "    c   ",
+      "        ",
+      "        ",
+      "  c     ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "  ebaab ",
+      "debaffhb",
+      "    cc  ",
+      "        ",
+      "        ",
+      "  c     ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      " debbb  ",
+      "debaaabe",
+      "        ",
+      "   c    ",
+      "   c    ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "  bab   ",
+      "ebafabed",
+      "   c    ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   b    ",
+      "debabed ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      " debed  ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

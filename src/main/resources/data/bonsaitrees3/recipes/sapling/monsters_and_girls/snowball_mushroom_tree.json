@@ -1,0 +1,44 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "monsters_and_girls" }],
+    "sapling": {
+      "item": "monsters_and_girls:snowball_mushroom"
+    },
+    "drops": [
+
+        {
+          "rolls": 1,
+          "chance": 0.75,
+          "result": {
+            "item": "monsters_and_girls:snowball_log"
+          }
+        },
+        {
+          "rolls": 2,
+          "chance": 0.2,
+          "result": {
+            "item": "monsters_and_girls:block_of_snowball_mushroom"
+          }
+        },
+        {
+          "rolls": 1,
+          "chance": 0.05,
+          "result": {
+            "item": "monsters_and_girls:snowball_shroomlight"
+          },
+          "requiresBees": true
+         },    
+         {
+          "rolls": 1,
+          "chance": 0.05,
+          "result": {
+            "item": "monsters_and_girls:snowball_mushroom"
+          }
+        }
+    
+      ],
+    "compatibleSoilTags": [
+      "snow",
+      "mycelium"
+    ]
+  }

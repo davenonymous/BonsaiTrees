@@ -1,0 +1,101 @@
+{
+  "type": "bonsaitrees3:sapling/monsters_and_girls/snowball_mushroom_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"monsters_and_girls:snowball_log","properties":{"axis":"y"}},
+    "b": {"block":"monsters_and_girls:block_of_snowball_mushroom"},
+    "c": {"block":"minecraft:powder_snow"},
+    "d": {"block":"monsters_and_girls:snowball_fungal_slab","properties":{"type":"top","waterlogged":"false"}},
+    "e": {"block":"monsters_and_girls:snowball_shroomlight"}
+  },
+  "shape": [
+    [
+      "        ",
+      "  bbbb  ",
+      "  dddd  ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "  bbbb  ",
+      " beeeeb ",
+      " d    d ",
+      "        ",
+      "   aa   ",
+      "  aaaa  ",
+      "  aaaa  ",
+      "   aa   ",
+      "        "
+    ],
+    [
+      " bbbbbb ",
+      "beeeeeeb",
+      "d      d",
+      "   aa   ",
+      "  acca  ",
+      " acccca ",
+      " acccca ",
+      "  acca  ",
+      "   aa   "
+    ],
+    [
+      " bbbbbb ",
+      "beeaaeeb",
+      "d  aa  d",
+      "  aaaa  ",
+      " acccca ",
+      " acccca ",
+      " acccca ",
+      " acccca ",
+      "  aaaa  "
+    ],
+    [
+      " bbbbbb ",
+      "beeaaeeb",
+      "d  aa  d",
+      "  aaaa  ",
+      " acccca ",
+      " acccca ",
+      " acccca ",
+      " acccca ",
+      "  aaaa  "
+    ],
+    [
+      " bbbbbb ",
+      "beeeeeeb",
+      "d      d",
+      "   aa   ",
+      "  acca  ",
+      " acccca ",
+      " acccca ",
+      "  acca  ",
+      "   aa   "
+    ],
+    [
+      "  bbbb  ",
+      " beeeeb ",
+      " d    d ",
+      "        ",
+      "   aa   ",
+      "  aaaa  ",
+      "  aaaa  ",
+      "   aa   ",
+      "        "
+    ],
+    [
+      "        ",
+      "  bbbb  ",
+      "  dddd  ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

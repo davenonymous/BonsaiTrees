@@ -1,0 +1,44 @@
+{
+  "type": "bonsaitrees3:sapling/nethers_exoticism/jaboticaba_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"nethers_exoticism:jaboticaba_branch","properties":{"axis":"y","waterlogged":"false"}},
+    "b": {"block":"nethers_exoticism:jaboticaba_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"nethers_exoticism:jaboticaba_branch_empty","properties":{"axis":"y","waterlogged":"false"}},
+    "d": {"block":"nethers_exoticism:jaboticaba_leaves","properties":{"distance":"2","persistent":"true","waterlogged":"false"}},
+    "e": {"block":"nethers_exoticism:jaboticaba_leaves","properties":{"distance":"3","persistent":"true","waterlogged":"false"}},
+    "f": {"block":"nethers_exoticism:jaboticaba_branch_up","properties":{"facing":"west","waterlogged":"false"}},
+    "g": {"block":"nethers_exoticism:jaboticaba_branch_up","properties":{"facing":"north","waterlogged":"false"}},
+    "h": {"block":"nethers_exoticism:jaboticaba_branch_crossing","properties":{"axis":"y","waterlogged":"false"}},
+    "i": {"block":"nethers_exoticism:jaboticaba_branch_up","properties":{"facing":"south","waterlogged":"false"}},
+    "j": {"block":"nethers_exoticism:jaboticaba_branch_up","properties":{"facing":"east","waterlogged":"false"}},
+    "k": {"block":"nethers_exoticism:jaboticaba_leaves","properties":{"distance":"1","persistent":"true","waterlogged":"false"}},
+    "l": {"block":"nethers_exoticism:jaboticaba_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      " b ",
+      "blb",
+      " a ",
+      " a ",
+      " j ",
+      "   "
+    ],
+    [
+      "ded",
+      "kdk",
+      "a c",
+      "caa",
+      "ghi",
+      " c "
+    ],
+    [
+      " d ",
+      "dkd",
+      " a ",
+      " a ",
+      " f ",
+      "   "
+    ]
+  ]
+}

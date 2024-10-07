@@ -1,0 +1,49 @@
+{
+  "type": "bonsaitrees3:sapling/aether/skyroot_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"aether:skyroot_leaves","properties":{"distance":"3","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"aether:skyroot_leaves","properties":{"distance":"1","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"aether:skyroot_leaves","properties":{"distance":"4","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"aether:skyroot_leaves","properties":{"distance":"2","double_drops":"true","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"aether:skyroot_log","properties":{"axis":"y","double_drops":"true"}},
+    "f": {"block":"aether:skyroot_leaves","properties":{"distance":"5","double_drops":"true","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cacf",
+      " adac",
+      "     "
+    ],
+    [
+      "  d  ",
+      "  bd ",
+      "cadac",
+      "adbda",
+      "     "
+    ],
+    [
+      " dbd ",
+      " beb ",
+      "adeda",
+      "dbebd",
+      "  e  "
+    ],
+    [
+      "  d  ",
+      "  bd ",
+      "cadac",
+      "adbda",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cac ",
+      " ada ",
+      "     "
+    ]
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "type": "bonsaitrees3:sapling/monsters_and_girls/ender_puffball_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"monsters_and_girls:ender_mushroom_stem","properties":{"axis":"y"}},
+    "b": {"block":"monsters_and_girls:blockof_ender_puffbal"},
+    "c": {"block":"monsters_and_girls:ender_shroomlight"}
+  },
+  "shape": [
+    [
+      "     ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "bcccb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "bcacb",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      " bbb ",
+      "bcccb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

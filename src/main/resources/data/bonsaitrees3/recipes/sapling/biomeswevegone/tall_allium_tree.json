@@ -1,0 +1,34 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "biomeswevegone" }],
+    "sapling": {
+      "item": "biomeswevegone:tall_allium"
+    },
+    "drops": [
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "biomeswevegone:tall_allium"
+        }
+      },
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "biomeswevegone:florus_stem"
+        }
+      },
+      {
+        "rolls": 2,
+        "chance": 0.2,
+        "result": {
+          "item": "biomeswevegone:allium_petal_block"
+        }
+      }
+    ],
+    "compatibleSoilTags": [
+      "dirt",
+      "grass"
+    ]
+  }

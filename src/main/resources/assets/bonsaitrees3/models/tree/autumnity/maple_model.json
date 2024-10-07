@@ -1,0 +1,63 @@
+{
+  "type": "bonsaitrees3:sapling/autumnity/maple_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"autumnity:maple_log","properties":{"axis":"y"}},
+    "b": {"block":"autumnity:maple_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"autumnity:maple_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"autumnity:maple_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"autumnity:maple_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      " eb  ",
+      " bdb ",
+      " bdb ",
+      "  db ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  be ",
+      " bdbe",
+      "bdcdb",
+      "bdcdb",
+      "bdcdb",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bdb ",
+      "bdcdb",
+      "dcacd",
+      "dcacd",
+      "dcacd",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  be ",
+      "ebdb ",
+      "bdcdb",
+      "bdcdb",
+      "bdcd ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " ebe ",
+      " bdb ",
+      " bdb ",
+      " bdb ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

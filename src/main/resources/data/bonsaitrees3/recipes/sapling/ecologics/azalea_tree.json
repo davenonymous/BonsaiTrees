@@ -1,0 +1,60 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "ecologics" }],
+    "sapling": {
+      "item": "ecologics:azalea_flower"
+    },
+    "drops": [
+
+        {
+          "rolls": 1,
+          "chance": 0.75,
+          "result": {
+            "item": "ecologics:azalea_log"
+          }
+        },
+        {
+          "rolls": 2,
+          "chance": 0.2,
+          "result": {
+            "item": "minecraft:flowering_azalea_leaves"
+          },
+          "requiresSilkTouch": true
+        },
+        {
+          "rolls": 2,
+          "chance": 0.2,
+          "result": {
+            "item": "minecraft:azalea_leaves"
+          },
+          "requiresSilkTouch": true
+        },
+        {
+          "rolls": 1,
+          "chance": 0.05,
+          "result": {
+            "item": "ecologics:azalea_flower"
+          }
+        },    
+        {
+          "rolls": 3,
+          "chance": 0.2,
+          "result": {
+            "item": "minecraft:stick"
+          }
+        },
+        {
+          "rolls": 1,
+          "chance": 0.1,
+          "result": {
+            "item": "ecologics:flowering_azalea_log"
+          },
+          "requiresBees": true
+         }
+    
+      ],
+    "compatibleSoilTags": [
+      "dirt",
+      "grass"
+    ]
+  }

@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "mysticsbiomes" }
+    ],
+    "tickModifier": 1.1,
+    "soil": {
+        "item": "mysticsbiomes:lush_sand"
+    },
+    "compatibleSoilTags": [
+        "sand"
+    ],
+    "display": {
+        "block": "mysticsbiomes:lush_sand"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "biomeswevegone" }
+    ],
+    "tickModifier": 1.1,
+    "soil": {
+        "item": "biomeswevegone:podzol_dacite"
+    },
+    "compatibleSoilTags": [
+        "grass"
+    ],
+    "display": {
+        "block": "biomeswevegone:podzol_dacite"
+    }
+}

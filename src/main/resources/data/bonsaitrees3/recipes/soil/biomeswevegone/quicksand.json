@@ -1,0 +1,17 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "biomeswevegone" }
+    ],
+    "tickModifier": 1.5,
+    "soil": {
+        "item": "biomeswevegone:quicksand"
+    },
+    "compatibleSoilTags": [
+        "sand"
+    ],
+    "display": {
+        "block": "biomeswevegone:quicksand"
+    }
+}

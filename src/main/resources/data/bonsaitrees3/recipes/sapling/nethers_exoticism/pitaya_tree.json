@@ -1,0 +1,35 @@
+{
+    "type": "bonsaitrees3:sapling",
+    "conditions": [{ "type": "forge:mod_loaded", "modid": "nethers_exoticism" }],
+    "sapling": {
+      "item": "nethers_exoticism:pitaya_sapling"
+    },
+    "drops": [
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "nethers_exoticism:pitaya_stem"
+        }
+      },
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "nethers_exoticism:pitaya"
+        },
+        "requiresBees": true
+       },
+       {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "nethers_exoticism:pitaya_sapling"
+        }
+      }
+  
+    ],
+    "compatibleSoilTags": [
+      "netherrack"
+    ]
+  }
