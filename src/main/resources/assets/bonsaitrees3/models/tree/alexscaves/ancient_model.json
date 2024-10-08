@@ -1,0 +1,95 @@
+{
+  "type": "bonsaitrees3:sapling/alexscaves/ancient_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"alexscaves:ancient_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"alexscaves:ancient_leaves","properties":{"distance":"5","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"alexscaves:ancient_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"alexscaves:ancient_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"alexscaves:ancient_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "g": {"block":"alexscaves:tree_star","properties":{"facing":"south","waterlogged":"false"}},
+    "h": {"block":"minecraft:jungle_log","properties":{"axis":"z"}},
+    "i": {"block":"alexscaves:tree_star","properties":{"facing":"up","waterlogged":"false"}},
+    "j": {"block":"minecraft:jungle_log","properties":{"axis":"x"}}
+  },
+  "shape": [
+    [
+      "        ",
+      "        ",
+      "   cad  ",
+      "   e    ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "    d   ",
+      " dacadd ",
+      " acec ag",
+      "  efe   ",
+      "   f    ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "i bdb   ",
+      "dadadd d",
+      " cacaaca",
+      "  ceccec",
+      "        ",
+      "   j    ",
+      "        ",
+      "        ",
+      "   f    "
+    ],
+    [
+      "  dbbd  ",
+      "acaddac ",
+      " ecaacec",
+      " feccefe",
+      " f    f ",
+      "  hfhh  ",
+      "   f    ",
+      "   f    ",
+      "  fff   "
+    ],
+    [
+      "  bd    ",
+      " adadda ",
+      " cacaaca",
+      " ececc  ",
+      "        ",
+      "   j    ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "  d     ",
+      " iaca   ",
+      " acecaa ",
+      " cefe d ",
+      "   f    ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "  dad   ",
+      "   cad  ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}
