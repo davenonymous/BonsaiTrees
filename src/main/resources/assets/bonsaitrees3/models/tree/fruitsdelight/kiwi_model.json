@@ -1,0 +1,58 @@
+{
+  "type": "bonsaitrees3:sapling/fruitsdelight/kiwi_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "b": {"block":"fruitsdelight:kiwi_leaves","properties":{"distance":"4","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "c": {"block":"fruitsdelight:kiwi_leaves","properties":{"distance":"3","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "d": {"block":"fruitsdelight:kiwi_leaves","properties":{"distance":"1","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "e": {"block":"fruitsdelight:kiwi_leaves","properties":{"distance":"2","persistent":"false","type":"LEAVES","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "bcec ",
+      "bcec ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      " ede ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ede ",
+      " dad ",
+      "edade",
+      "edade",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  e  ",
+      " ede ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "bcec ",
+      " cecb",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

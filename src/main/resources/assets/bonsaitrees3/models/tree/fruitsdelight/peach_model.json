@@ -1,0 +1,58 @@
+{
+  "type": "bonsaitrees3:sapling/fruitsdelight/peach_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"fruitsdelight:peach_leaves","properties":{"distance":"4","fertile":"true","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "b": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "c": {"block":"fruitsdelight:peach_leaves","properties":{"distance":"3","fertile":"true","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "d": {"block":"fruitsdelight:peach_leaves","properties":{"distance":"1","fertile":"true","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "e": {"block":"fruitsdelight:peach_leaves","properties":{"distance":"2","fertile":"true","persistent":"false","type":"LEAVES","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " ceca",
+      "acec ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      " ed  ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ede ",
+      " dbd ",
+      "edbde",
+      "edbde",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  e  ",
+      "  de ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "aceca",
+      "acec ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

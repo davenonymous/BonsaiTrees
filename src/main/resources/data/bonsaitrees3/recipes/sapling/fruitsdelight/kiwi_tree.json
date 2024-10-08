@@ -1,0 +1,45 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "fruitsdelight" }],
+  "sapling": {
+    "item": "fruitsdelight:kiwi_sapling"
+  },
+  "drops": [
+
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "minecraft:jungle_log"
+        }
+      },
+      {
+        "rolls": 2,
+        "chance": 0.2,
+        "result": {
+          "item": "fruitsdelight:kiwi_leaves"
+        },
+        "requiresSilkTouch": true
+      },
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "fruitsdelight:kiwi_sapling"
+        }
+      },
+      {
+        "rolls": 1,
+        "chance": 0.05,
+        "result": {
+          "item": "fruitsdelight:kiwi"
+        },
+        "requiresBees": true
+       }
+  
+    ],
+  "compatibleSoilTags": [
+    "dirt",
+    "grass"
+  ]
+}

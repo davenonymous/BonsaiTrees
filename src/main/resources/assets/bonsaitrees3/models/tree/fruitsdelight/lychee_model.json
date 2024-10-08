@@ -1,0 +1,69 @@
+{
+  "type": "bonsaitrees3:sapling/fruitsdelight/lychee_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "b": {"block":"fruitsdelight:lychee_leaves","properties":{"distance":"3","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "c": {"block":"fruitsdelight:lychee_leaves","properties":{"distance":"1","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "d": {"block":"fruitsdelight:lychee_leaves","properties":{"distance":"4","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "e": {"block":"fruitsdelight:lychee_leaves","properties":{"distance":"5","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "f": {"block":"fruitsdelight:lychee_leaves","properties":{"distance":"2","persistent":"false","type":"LEAVES","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      " ede ",
+      " dbd ",
+      " bfb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      "edbde",
+      "dbfbd",
+      "bfcfb",
+      "  c  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " dbd ",
+      "dbfbd",
+      "bfcfb",
+      "fcacf",
+      " cac ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  d  ",
+      "edbde",
+      "dbfbd",
+      "bfcfb",
+      "  c  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " ede ",
+      " dbd ",
+      " bfb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

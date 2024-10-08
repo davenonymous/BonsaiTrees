@@ -1,0 +1,101 @@
+{
+  "type": "bonsaitrees3:sapling/fruitsdelight/mangosteen_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:oak_log","properties":{"axis":"z"}},
+    "b": {"block":"fruitsdelight:mangosteen_leaves","properties":{"distance":"2","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "c": {"block":"fruitsdelight:mangosteen_leaves","properties":{"distance":"4","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "d": {"block":"fruitsdelight:mangosteen_leaves","properties":{"distance":"1","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "e": {"block":"fruitsdelight:mangosteen_leaves","properties":{"distance":"3","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "f": {"block":"fruitsdelight:mangosteen_leaves","properties":{"distance":"5","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "g": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "h": {"block":"fruitsdelight:mangosteen_leaves","properties":{"distance":"6","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "i": {"block":"minecraft:oak_log","properties":{"axis":"x"}}
+  },
+  "shape": [
+    [
+      "        ",
+      "        ",
+      "        ",
+      "    cfh ",
+      "    ccf ",
+      "    cec ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "        ",
+      "     f  ",
+      "   cecfh",
+      "   ceecf",
+      "   eebec",
+      "     d  ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "   fcf  ",
+      " hfcecf ",
+      " fcebecf",
+      " ceebbec",
+      "   bbdbe",
+      "    did ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "    c   ",
+      "  fcecf ",
+      "hfcebec ",
+      "fcebdbec",
+      "cebbdbec",
+      "  ddddbe",
+      "     i  ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   cec  ",
+      " fcebec ",
+      "fcebdbe ",
+      "cebdgdb ",
+      "ebddgdb ",
+      " daagdb ",
+      "    g   ",
+      "    g   ",
+      "    g   ",
+      "    g   "
+    ],
+    [
+      "    c   ",
+      "  fcecf ",
+      "hfcebec ",
+      "fcebdbe ",
+      "cebbd   ",
+      "  d     ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "   fcf  ",
+      " hfcec  ",
+      " fcebe  ",
+      " cee    ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

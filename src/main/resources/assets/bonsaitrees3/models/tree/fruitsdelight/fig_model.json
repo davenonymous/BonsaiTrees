@@ -1,0 +1,58 @@
+{
+  "type": "bonsaitrees3:sapling/fruitsdelight/fig_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"fruitsdelight:fig_leaves","properties":{"distance":"4","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "b": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "c": {"block":"fruitsdelight:fig_leaves","properties":{"distance":"3","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "d": {"block":"fruitsdelight:fig_leaves","properties":{"distance":"1","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "e": {"block":"fruitsdelight:fig_leaves","properties":{"distance":"2","persistent":"false","type":"LEAVES","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cec ",
+      " cec ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      " ed  ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " ede ",
+      " dbd ",
+      "edbde",
+      "edbde",
+      "  b  ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  e  ",
+      "  d  ",
+      "cedec",
+      "cedec",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "aceca",
+      " cec ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

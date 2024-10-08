@@ -1,0 +1,38 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "fruitsdelight" }],
+  "sapling": {
+    "item": "fruitsdelight:durian_sapling"
+  },
+  "drops": [
+
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "minecraft:jungle_log"
+        }
+      },
+      {
+        "rolls": 2,
+        "chance": 0.2,
+        "result": {
+          "item": "fruitsdelight:durian_leaves"
+        },
+        "requiresSilkTouch": true
+      },
+      {
+        "rolls": 1,
+        "chance": 0.1,
+        "result": {
+          "item": "fruitsdelight:durian"
+        },
+        "requiresBees": true
+       }
+  
+    ],
+  "compatibleSoilTags": [
+    "dirt",
+    "grass"
+  ]
+}

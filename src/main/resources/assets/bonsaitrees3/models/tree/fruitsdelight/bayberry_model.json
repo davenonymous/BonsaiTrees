@@ -1,0 +1,74 @@
+{
+  "type": "bonsaitrees3:sapling/fruitsdelight/bayberry_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"minecraft:spruce_log","properties":{"axis":"y"}},
+    "b": {"block":"fruitsdelight:bayberry_leaves","properties":{"distance":"2","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "c": {"block":"fruitsdelight:bayberry_leaves","properties":{"distance":"3","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "d": {"block":"fruitsdelight:bayberry_leaves","properties":{"distance":"4","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "e": {"block":"fruitsdelight:bayberry_leaves","properties":{"distance":"1","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "f": {"block":"fruitsdelight:bayberry_leaves","properties":{"distance":"5","persistent":"false","type":"LEAVES","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      " fdf ",
+      " dcd ",
+      " cbc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      "fdcdf",
+      "dcbcd",
+      "cbebc",
+      "  e  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " dcd ",
+      "dcbcd",
+      "cbebc",
+      "beaeb",
+      " eae ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  d  ",
+      "fdcdf",
+      "dcbcd",
+      "cbebc",
+      "  e  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " fdf ",
+      " dcd ",
+      " cbc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "type": "bonsaitrees3:sapling/fruitsdelight/apple_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"fruitsdelight:apple_leaves","properties":{"distance":"2","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "b": {"block":"minecraft:oak_log","properties":{"axis":"y"}},
+    "c": {"block":"fruitsdelight:apple_leaves","properties":{"distance":"3","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "d": {"block":"fruitsdelight:apple_leaves","properties":{"distance":"1","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "e": {"block":"fruitsdelight:apple_leaves","properties":{"distance":"4","persistent":"false","type":"LEAVES","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " cace",
+      "ecac ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " ad  ",
+      "cadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      " ada ",
+      " dbd ",
+      "adbda",
+      "adbda",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      " ada ",
+      "cadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cace",
+      "ecac ",
+      "     ",
+      "     "
+    ]
+  ]
+}

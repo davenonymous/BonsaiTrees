@@ -1,0 +1,53 @@
+{
+  "type": "bonsaitrees3:sapling/fruitsdelight/mango_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"fruitsdelight:mango_leaves","properties":{"distance":"2","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "b": {"block":"minecraft:jungle_log","properties":{"axis":"y"}},
+    "c": {"block":"fruitsdelight:mango_leaves","properties":{"distance":"3","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "d": {"block":"fruitsdelight:mango_leaves","properties":{"distance":"1","persistent":"false","type":"LEAVES","waterlogged":"false"}},
+    "e": {"block":"fruitsdelight:mango_leaves","properties":{"distance":"4","persistent":"false","type":"LEAVES","waterlogged":"false"}}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "ecace",
+      "ecac ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  da ",
+      "cadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      " ada ",
+      " dbd ",
+      "adbda",
+      "adbda",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      "  da ",
+      "cadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cac ",
+      "ecace",
+      "     ",
+      "     "
+    ]
+  ]
+}
