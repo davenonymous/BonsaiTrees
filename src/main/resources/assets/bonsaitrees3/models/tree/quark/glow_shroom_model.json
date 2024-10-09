@@ -1,0 +1,42 @@
+{
+  "type": "bonsaitrees3:sapling/quark/glow_shroom_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"quark:glow_shroom_stem","properties":{"down":"false","east":"true","north":"true","south":"true","up":"true","west":"true"}},
+    "b": {"block":"quark:glow_shroom_stem","properties":{"down":"true","east":"true","north":"true","south":"true","up":"true","west":"true"}},
+    "c": {"block":"quark:glow_shroom_block","properties":{"down":"false","east":"false","north":"false","south":"true","up":"true","west":"false"}},
+    "d": {"block":"quark:glow_shroom_block","properties":{"down":"false","east":"true","north":"false","south":"false","up":"true","west":"false"}},
+    "e": {"block":"quark:glow_shroom_stem","properties":{"down":"true","east":"true","north":"true","south":"true","up":"false","west":"true"}},
+    "f": {"block":"quark:glow_shroom_ring","properties":{"facing":"south","waterlogged":"false"}},
+    "g": {"block":"quark:glow_shroom_ring","properties":{"facing":"east","waterlogged":"false"}},
+    "h": {"block":"quark:glow_shroom_block","properties":{"down":"false","east":"true","north":"false","south":"true","up":"true","west":"false"}},
+    "i": {"block":"quark:glow_shroom_block","properties":{"down":"false","east":"false","north":"true","south":"false","up":"true","west":"true"}},
+    "j": {"block":"quark:glow_shroom_block","properties":{"down":"false","east":"false","north":"false","south":"false","up":"true","west":"true"}},
+    "k": {"block":"quark:glow_shroom_block","properties":{"down":"false","east":"false","north":"true","south":"false","up":"true","west":"false"}},
+    "l": {"block":"quark:glow_shroom_ring","properties":{"facing":"west","waterlogged":"false"}},
+    "m": {"block":"quark:glow_shroom_block","properties":{"down":"false","east":"false","north":"false","south":"true","up":"true","west":"true"}},
+    "n": {"block":"quark:glow_shroom_ring","properties":{"facing":"north","waterlogged":"false"}},
+    "o": {"block":"quark:glow_shroom_block","properties":{"down":"false","east":"false","north":"false","south":"false","up":"true","west":"false"}},
+    "p": {"block":"quark:glow_shroom_block","properties":{"down":"false","east":"true","north":"true","south":"false","up":"true","west":"false"}}
+  },
+  "shape": [
+    [
+      "pdh",
+      " g ",
+      "   ",
+      "   "
+    ],
+    [
+      "koc",
+      "nbf",
+      "   ",
+      "   "
+    ],
+    [
+      "ijm",
+      " l ",
+      " a ",
+      " e "
+    ]
+  ]
+}
