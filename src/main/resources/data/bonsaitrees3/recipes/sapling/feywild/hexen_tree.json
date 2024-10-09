@@ -1,0 +1,80 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "feywild" }],
+  "sapling": {
+    "item": "feywild:hexen_tree_sapling"
+  },
+  "drops": [
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "feywild:hexen_tree_sapling"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.75,
+      "result": {
+        "item": "feywild:hexen_tree_log"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.5,
+      "result": {
+        "item": "feywild:hexen_tree_wood"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "feywild:hexen_tree_cracked_log"
+      }
+    },
+    {
+      "rolls": 2,
+      "chance": 0.1,
+      "result": {
+        "item": "feywild:hexen_tree_black_leaves"
+      },
+      "requiresSilkTouch": true
+    },
+    {
+      "rolls": 2,
+      "chance": 0.1,
+      "result": {
+        "item": "feywild:hexen_tree_purple_leaves"
+      },
+      "requiresSilkTouch": true
+    },
+    {
+      "rolls": 3,
+      "chance": 0.2,
+      "result": {
+        "item": "minecraft:stick"
+      }
+    },
+    {
+      "rolls": 1,
+      "chance": 0.05,
+      "result": {
+        "item": "feywild:mandrake_crop_seed"
+      },
+      "requiresBees": true
+     },
+     {
+       "rolls": 1,
+       "chance": 0.05,
+       "result": {
+         "item": "feywild:fey_dust"
+       },
+       "requiresBees": true
+      }
+  ],
+  "compatibleSoilTags": [
+    "dirt",
+    "grass"
+  ]
+}
