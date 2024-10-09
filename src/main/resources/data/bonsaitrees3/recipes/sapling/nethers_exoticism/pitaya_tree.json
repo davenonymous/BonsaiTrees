@@ -30,6 +30,7 @@
   
     ],
     "compatibleSoilTags": [
-      "netherrack"
+      "netherrack",
+      "crimson"
     ]
   }
