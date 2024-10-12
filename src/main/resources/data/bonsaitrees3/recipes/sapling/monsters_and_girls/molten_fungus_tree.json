@@ -24,7 +24,7 @@
           "rolls": 1,
           "chance": 0.05,
           "result": {
-            "item": "minecraft:shroomlight"
+            "item": "monsters_and_girls:molten_shroomlight"
           },
           "requiresBees": true
          },    
