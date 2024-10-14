@@ -1,0 +1,38 @@
+{
+  "type": "bonsaitrees3:sapling/twilightforest/sorting_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"twilightforest:sorting_log","properties":{"axis":"y"}},
+    "b": {"block":"twilightforest:sorting_leaves","properties":{"distance":"4","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"twilightforest:sorting_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "d": {"block":"twilightforest:sorting_leaves","properties":{"distance":"3","persistent":"false","waterlogged":"false"}},
+    "e": {"block":"twilightforest:sorting_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "f": {"block":"twilightforest:sorting_log_core","properties":{"active":"false","axis":"y"}}
+  },
+  "shape": [
+    [
+      " b ",
+      "bdb",
+      "ded",
+      " c ",
+      "   ",
+      "   "
+    ],
+    [
+      "bdb",
+      "ded",
+      "ece",
+      "cac",
+      " f ",
+      " a "
+    ],
+    [
+      " b ",
+      "bdb",
+      "ded",
+      " c ",
+      "   ",
+      "   "
+    ]
+  ]
+}

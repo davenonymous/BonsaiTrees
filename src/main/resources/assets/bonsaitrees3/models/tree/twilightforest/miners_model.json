@@ -1,0 +1,52 @@
+{
+  "type": "bonsaitrees3:sapling/twilightforest/miners_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"twilightforest:mining_leaves","properties":{"distance":"2","persistent":"false","waterlogged":"false"}},
+    "b": {"block":"twilightforest:mining_leaves","properties":{"distance":"1","persistent":"false","waterlogged":"false"}},
+    "c": {"block":"twilightforest:mining_log","properties":{"axis":"y"}},
+    "d": {"block":"twilightforest:mining_wood","properties":{"axis":"y"}},
+    "e": {"block":"twilightforest:mining_log_core","properties":{"active":"false","axis":"y"}}
+  },
+  "shape": [
+    [
+      "    aaaaa    ",
+      "   abbbbba   ",
+      "  abaabaaba  ",
+      " aba     aba ",
+      "aba       aba",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             "
+    ],
+    [
+      "   abbbbba   ",
+      "  abddcddba  ",
+      " abdbbcbbdba ",
+      "abdba c abdba",
+      "bdba  c  abdb",
+      "aba   c   aba",
+      "      c      ",
+      "      c      ",
+      "      c      ",
+      "      e      ",
+      "      c      "
+    ],
+    [
+      "    aaaaa    ",
+      "   abbbbba   ",
+      "  abaabaaba  ",
+      " aba     aba ",
+      "aba       aba",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             "
+    ]
+  ]
+}

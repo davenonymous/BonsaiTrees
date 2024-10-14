@@ -1,0 +1,37 @@
+{
+  "type": "bonsaitrees3:sapling",
+  "conditions": [{ "type": "forge:mod_loaded", "modid": "twilightforest" }],
+  "sapling": {
+    "item": "twilightforest:mushgloom"
+  },
+  "drops": [
+
+      {
+        "rolls": 1,
+        "chance": 0.75,
+        "result": {
+          "item": "twilightforest:huge_mushgloom_stem"
+        },
+        "requiresSilkTouch": true
+      },
+      {
+        "rolls": 2,
+        "chance": 0.2,
+        "result": {
+          "item": "twilightforest:huge_mushgloom"
+        },
+        "requiresSilkTouch": true
+      },  
+      {
+       "rolls": 1,
+       "chance": 0.05,
+       "result": {
+         "item": "twilightforest:mushgloom"
+       }
+     }
+  
+    ],
+  "compatibleSoilTags": [
+    "uberous_soil"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "type": "bonsaitrees3:sapling/twilightforest/mushgloom_tree",
+  "version": 3,
+  "ref": {
+    "a": {"block":"twilightforest:huge_mushgloom_stem","properties":{"down":"false","east":"true","north":"true","south":"true","up":"false","west":"true"}},
+    "b": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"false","south":"true","up":"false","west":"false"}},
+    "c": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"true","north":"false","south":"false","up":"false","west":"false"}},
+    "d": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"true","north":"false","south":"true","up":"true","west":"false"}},
+    "e": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"true","north":"false","south":"true","up":"false","west":"false"}},
+    "f": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"true","south":"false","up":"true","west":"true"}},
+    "g": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"true","south":"false","up":"false","west":"true"}},
+    "h": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"false","south":"false","up":"true","west":"true"}},
+    "i": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"true","south":"false","up":"true","west":"false"}},
+    "j": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"false","south":"false","up":"false","west":"true"}},
+    "k": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"true","south":"false","up":"false","west":"false"}},
+    "l": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"false","south":"true","up":"true","west":"true"}},
+    "m": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"false","south":"false","up":"true","west":"false"}},
+    "n": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"true","north":"true","south":"false","up":"true","west":"false"}},
+    "o": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"false","south":"true","up":"false","west":"true"}},
+    "p": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"false","south":"false","up":"false","west":"false"}},
+    "q": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"true","north":"true","south":"false","up":"false","west":"false"}},
+    "r": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"false","north":"false","south":"true","up":"true","west":"false"}},
+    "s": {"block":"twilightforest:huge_mushgloom","properties":{"down":"false","east":"true","north":"false","south":"false","up":"true","west":"false"}}
+  },
+  "shape": [
+    [
+      "nsd",
+      "qce",
+      "   ",
+      "   ",
+      "   "
+    ],
+    [
+      "imr",
+      "kpb",
+      " a ",
+      " a ",
+      " a "
+    ],
+    [
+      "fhl",
+      "gjo",
+      "   ",
+      "   ",
+      "   "
+    ]
+  ]
+}

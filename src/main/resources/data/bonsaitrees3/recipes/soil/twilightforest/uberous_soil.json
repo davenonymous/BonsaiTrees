@@ -1,0 +1,19 @@
+{
+    "type": "bonsaitrees3:soil",
+    "conditions": [{
+        "type": "forge:mod_loaded",
+        "modid": "twilightforest" }
+    ],
+    "tickModifier": 0.95,
+    "soil": {
+        "item": "twilightforest:uberous_soil"
+    },
+    "compatibleSoilTags": [
+        "dirt",
+        "mycelium",
+        "uberous_soil"
+    ],
+    "display": {
+        "block": "twilightforest:uberous_soil"
+    }
+}
