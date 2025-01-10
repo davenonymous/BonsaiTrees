@@ -1,0 +1,84 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"regions_unexplored:palm_leaves"},
+    "b": {"Properties":{"facing":"west"},"Name":"regions_unexplored:palm_beard"},
+    "c": {"Properties":{"facing":"north"},"Name":"regions_unexplored:palm_beard"},
+    "d": {"Properties":{"axis":"y"},"Name":"regions_unexplored:palm_log"},
+    "e": {"Properties":{"facing":"south"},"Name":"regions_unexplored:palm_beard"},
+    "f": {"Properties":{"facing":"east"},"Name":"regions_unexplored:palm_beard"}
+  },
+  "shape": [
+    [
+      "       ",
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   a   ",
+      "  aaa  ",
+      "  afa  ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " a   a ",
+      "aaa aaa",
+      "a aaa a",
+      "  cde  ",
+      "   d   ",
+      "   d   ",
+      "   d   ",
+      "   d   "
+    ],
+    [
+      "       ",
+      "   a   ",
+      "  aaa  ",
+      "  aba  ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   a   ",
+      "   a   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

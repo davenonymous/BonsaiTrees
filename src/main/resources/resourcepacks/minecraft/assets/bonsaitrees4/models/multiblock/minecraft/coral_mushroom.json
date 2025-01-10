@@ -1,0 +1,48 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"true","facing":"west"},"Name":"minecraft:horn_coral_wall_fan"},
+    "b": {"Name":"minecraft:brain_coral_block"},
+    "c": {"Properties":{"waterlogged":"true"},"Name":"minecraft:tube_coral_fan"},
+    "d": {"Properties":{"waterlogged":"true","facing":"east"},"Name":"minecraft:tube_coral_wall_fan"},
+    "e": {"Properties":{"waterlogged":"true"},"Name":"minecraft:horn_coral_fan"},
+    "f": {"Properties":{"waterlogged":"true","facing":"north"},"Name":"minecraft:horn_coral_wall_fan"},
+    "g": {"Properties":{"waterlogged":"true","facing":"south"},"Name":"minecraft:brain_coral_wall_fan"},
+    "h": {"Properties":{"waterlogged":"true","pickles":"3"},"Name":"minecraft:sea_pickle"},
+    "i": {"Properties":{"waterlogged":"true","facing":"north"},"Name":"minecraft:fire_coral_wall_fan"},
+    "j": {"Properties":{"waterlogged":"true","facing":"west"},"Name":"minecraft:brain_coral_wall_fan"},
+    "k": {"Properties":{"waterlogged":"true","facing":"south"},"Name":"minecraft:bubble_coral_wall_fan"},
+    "l": {"Properties":{"waterlogged":"true"},"Name":"minecraft:brain_coral_fan"},
+    "m": {"Properties":{"waterlogged":"true","pickles":"2"},"Name":"minecraft:sea_pickle"},
+    "n": {"Properties":{"waterlogged":"true"},"Name":"minecraft:bubble_coral_fan"},
+    "o": {"Properties":{"waterlogged":"true","facing":"south"},"Name":"minecraft:fire_coral_wall_fan"}
+  },
+  "shape": [
+    [
+      "      ",
+      "      ",
+      " bbg  "
+    ],
+    [
+      " e h  ",
+      " bob  ",
+      "bgj b "
+    ],
+    [
+      " c    ",
+      " bkb  ",
+      "d  ibk"
+    ],
+    [
+      "      ",
+      " bfbn ",
+      "bd fb "
+    ],
+    [
+      "      ",
+      " l m  ",
+      "abbb  "
+    ]
+  ]
+}

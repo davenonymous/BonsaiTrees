@@ -1,0 +1,24 @@
+{
+	"loader": "bonsaitrees4:multiblockmodel",
+	"version": 4,
+	"ref": {
+		"a": {"Name": "minecraft:andesite"}
+	},
+	"shape": [
+		[
+			"   ",
+			"   ",
+			"aaa"
+		],
+		[
+			"   ",
+			" a ",
+			"aaa"
+		],
+		[
+			"   ",
+			"   ",
+			"aaa"
+		]
+	]
+}

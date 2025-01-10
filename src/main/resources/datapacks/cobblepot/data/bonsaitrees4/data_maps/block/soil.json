@@ -1,0 +1,28 @@
+{
+	"values": {
+		"minecraft:oak_log": {
+			"soilType": "cobblepot:vanilla_tiers",
+			"extraRolls": 0
+		},
+		"minecraft:stone": {
+			"soilType": "cobblepot:vanilla_tiers",
+			"extraRolls": 1
+		},
+		"minecraft:iron_block": {
+			"soilType": "cobblepot:vanilla_tiers",
+			"extraRolls": 2
+		},
+		"minecraft:gold_block": {
+			"soilType": "cobblepot:vanilla_tiers",
+			"extraRolls": 4
+		},
+		"minecraft:diamond_block": {
+			"soilType": "cobblepot:vanilla_tiers",
+			"extraRolls": 8
+		},
+		"minecraft:netherite_block": {
+			"soilType": "cobblepot:vanilla_tiers",
+			"extraRolls": 16
+		}
+	}
+}

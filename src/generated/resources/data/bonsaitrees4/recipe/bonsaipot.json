@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "b": {
+      "tag": "c:bricks"
+    }
+  },
+  "pattern": [
+    "   ",
+    "b b",
+    "bbb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bonsaitrees4:bonsaipot"
+  }
+}

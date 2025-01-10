@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:lime_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:lime_fruit"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:lime_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:lime_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:lime_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:lime_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:lime_log"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:lime_leaves"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:lime_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "abbhba ",
+      " bbfec ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aba  ",
+      "  bhbb ",
+      "bbbdbab",
+      "bbabcbb",
+      "       ",
+      "       "
+    ],
+    [
+      " fbdbe ",
+      " ebbhf ",
+      "bcbidbb",
+      "aabdbce",
+      "       ",
+      "       "
+    ],
+    [
+      " hdibb ",
+      " bbgbb ",
+      "babgidh",
+      "bbbgdbf",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " fbbab ",
+      " ebbbb ",
+      "bcbibbf",
+      "ababbce",
+      "       ",
+      "       "
+    ],
+    [
+      "  aab  ",
+      " bbbb  ",
+      "babbbab",
+      "babaaac",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "abbbbb ",
+      "abbbaa ",
+      "       ",
+      "       "
+    ]
+  ]
+}

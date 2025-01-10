@@ -1,0 +1,74 @@
+{
+  "values": {
+    "biomesoplenty:cypress_sapling": {
+      "model": "biomesoplenty:cypress_tree"
+    },
+    "biomesoplenty:dead_sapling": {
+      "model": "biomesoplenty:dead_twiglet_tree",
+      "valid_soil_types": [
+        "bonsaitrees4:sand"
+      ]
+    },
+    "biomesoplenty:empyreal_sapling": {
+      "model": "biomesoplenty:empyreal_tree",
+      "valid_soil_types": [
+        "bonsaitrees4:sand"
+      ]
+    },
+    "biomesoplenty:fir_sapling": {
+      "model": "biomesoplenty:fir_tree"
+    },
+    "biomesoplenty:flowering_oak_sapling": {
+      "model": "biomesoplenty:flowering_oak_tree"
+    },
+    "biomesoplenty:hellbark_sapling": {
+      "model": "biomesoplenty:hellbark_tree"
+    },
+    "biomesoplenty:jacaranda_sapling": {
+      "model": "biomesoplenty:jacaranda_tree"
+    },
+    "biomesoplenty:magic_sapling": {
+      "model": "biomesoplenty:magic_tree"
+    },
+    "biomesoplenty:mahogany_sapling": {
+      "model": "biomesoplenty:mahogany_tree"
+    },
+    "biomesoplenty:orange_maple_sapling": {
+      "model": "biomesoplenty:orange_maple_tree"
+    },
+    "biomesoplenty:origin_sapling": {
+      "model": "biomesoplenty:origin_tree"
+    },
+    "biomesoplenty:palm_sapling": {
+      "model": "biomesoplenty:palm_tree",
+      "valid_soil_types": [
+        "bonsaitrees4:sand"
+      ]
+    },
+    "biomesoplenty:pine_sapling": {
+      "model": "biomesoplenty:pine_tree"
+    },
+    "biomesoplenty:rainbow_birch_sapling": {
+      "light_emission": 8,
+      "model": "biomesoplenty:rainbow_birch_tree"
+    },
+    "biomesoplenty:red_maple_sapling": {
+      "model": "biomesoplenty:red_maple_tree"
+    },
+    "biomesoplenty:redwood_sapling": {
+      "model": "biomesoplenty:redwood_tree"
+    },
+    "biomesoplenty:snowblossom_sapling": {
+      "model": "biomesoplenty:snowblossom_tree"
+    },
+    "biomesoplenty:umbran_sapling": {
+      "model": "biomesoplenty:umbran_tree"
+    },
+    "biomesoplenty:willow_sapling": {
+      "model": "biomesoplenty:willow_tree"
+    },
+    "biomesoplenty:yellow_maple_sapling": {
+      "model": "biomesoplenty:yellow_maple_tree"
+    }
+  }
+}

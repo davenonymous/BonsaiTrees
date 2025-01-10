@@ -1,0 +1,105 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:firecracker_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:firecracker_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:firecracker_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:firecracker_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:firecracker_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:firecracker_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:firecracker_log"},
+    "h": {"Properties":{"axis":"x"},"Name":"productivetrees:firecracker_log"},
+    "i": {"Properties":{"axis":"z"},"Name":"productivetrees:firecracker_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "  fcf  ",
+      "  cef  ",
+      "  eac  ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   c   ",
+      " fceff ",
+      " ceacf ",
+      " eabec ",
+      "   d   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  cef  ",
+      " ceacf ",
+      " eabec ",
+      " abdae ",
+      " bdhd  ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   fcf ",
+      " ffcec ",
+      "ffceee ",
+      "fceaaa ",
+      "eabba  ",
+      "  dhd  ",
+      "       ",
+      "       "
+    ],
+    [
+      "    c  ",
+      "  ffecf",
+      " fccaec",
+      "fceebae",
+      "ceaadb ",
+      "abdbba ",
+      " dihhb ",
+      "   d   ",
+      "       "
+    ],
+    [
+      "   cec ",
+      "  ceaec",
+      "  eabae",
+      "feabdba",
+      "cabdgd ",
+      "eeabgb ",
+      " bdbgd ",
+      "  big  ",
+      "    g  "
+    ],
+    [
+      "    c  ",
+      "  fcecf",
+      "  ceaec",
+      " ccabae",
+      " eebdb ",
+      " caaba ",
+      " abadb ",
+      "   d   ",
+      "       "
+    ],
+    [
+      "       ",
+      "   fcf ",
+      "   cec ",
+      "   eae ",
+      "  cab  ",
+      "  eea  ",
+      "  aeb  ",
+      "       ",
+      "       "
+    ]
+  ]
+}

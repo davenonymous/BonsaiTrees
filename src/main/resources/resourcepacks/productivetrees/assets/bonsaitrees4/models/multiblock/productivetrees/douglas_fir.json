@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:douglas_fir_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:douglas_fir_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:douglas_fir_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:douglas_fir_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:douglas_fir_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:douglas_fir_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:douglas_fir_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " aacae ",
+      " eacaee",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      " acbca ",
+      "eccbcae",
+      "eacbcae",
+      "       ",
+      "       "
+    ],
+    [
+      " abfba ",
+      " cbdbc ",
+      "abbfbca",
+      "ccbfbcc",
+      "       ",
+      "       "
+    ],
+    [
+      " cfdfc ",
+      " bdgdb ",
+      "cffgfbc",
+      "bbfgfbb",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " abfba ",
+      " cbdbc ",
+      "abffbba",
+      "ccbfbcc",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      "  cbc  ",
+      "accfcca",
+      "eabbbae",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " aabae ",
+      "eeccce ",
+      "       ",
+      "       "
+    ]
+  ]
+}

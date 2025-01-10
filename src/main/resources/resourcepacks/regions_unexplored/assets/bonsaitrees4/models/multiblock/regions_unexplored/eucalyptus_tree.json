@@ -1,0 +1,108 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"regions_unexplored:eucalyptus_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"regions_unexplored:eucalyptus_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      " bbbbb ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  bbb  ",
+      "bbbbbbb",
+      "  bbb  ",
+      "   b   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  bbb  ",
+      " bbbbb ",
+      "bbbbbbb",
+      " bbbbb ",
+      "  bbb  ",
+      "   b   ",
+      "   b   ",
+      "   b   ",
+      "       ",
+      "   a   ",
+      "   a   "
+    ],
+    [
+      "   b   ",
+      "  bbb  ",
+      " bbbbb ",
+      "bbbabbb",
+      " bbabb ",
+      " bbabb ",
+      "  bab  ",
+      "  bab  ",
+      "   a   ",
+      "   a   ",
+      "   a   ",
+      "  aa   "
+    ],
+    [
+      "       ",
+      "  bb   ",
+      " bbbbb ",
+      "bbbbbbb",
+      " bbbbb ",
+      "  bbb  ",
+      "   b   ",
+      "   b   ",
+      "   b   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  bbb  ",
+      "bbbbbbb",
+      "  bbb  ",
+      "   b   ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      " bbbbb ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

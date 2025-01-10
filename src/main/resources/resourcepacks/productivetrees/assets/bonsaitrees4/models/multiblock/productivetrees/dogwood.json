@@ -1,0 +1,120 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:dogwood_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:dogwood_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:dogwood_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:dogwood_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:dogwood_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:dogwood_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:dogwood_log"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:dogwood_leaves"}
+  },
+  "shape": [
+    [
+      "             ",
+      "             ",
+      "aaaaaabaaaaaa",
+      "aaaaaabaaaaa ",
+      "             ",
+      "             "
+    ],
+    [
+      "  aaaabaaaa  ",
+      " aaaabcbaaa  ",
+      "aaaaabbbaaaaa",
+      "aaaaabbbaaaaa",
+      "             ",
+      "             "
+    ],
+    [
+      " aaaabcbaaaa ",
+      " aaabbdbbaaa ",
+      "aaaabbcbbaaaa",
+      "aaaabbcbbaaaa",
+      "             ",
+      "             "
+    ],
+    [
+      " aaabbdbbaaa ",
+      " aabbcecbbaa ",
+      "aaabbcdcbbaaa",
+      "aaabbcdcbbaaa",
+      "             ",
+      "             "
+    ],
+    [
+      " aabbceccbaa ",
+      " abbddfddbba ",
+      "aabbcdedcbbaa",
+      "aabbcdedccbaa",
+      "             ",
+      "             "
+    ],
+    [
+      " abbdefedbba ",
+      " bccefhfeccb ",
+      "abbcdefedcbba",
+      "abcddefeddcba",
+      "             ",
+      "             "
+    ],
+    [
+      " bccefhfeccb ",
+      " bddfhghfddb ",
+      "bbcdefgfedcbb",
+      "bcdeffgfeedcb",
+      "      g      ",
+      "      g      "
+    ],
+    [
+      " abbdefedbba ",
+      " bccefhfeccb ",
+      "abbcdefedcbba",
+      "abcdeffeddcba",
+      "             ",
+      "             "
+    ],
+    [
+      " aabbceccbaa ",
+      " abbddfddbba ",
+      "aabbcdedcbbaa",
+      "aabcdefedcbaa",
+      "             ",
+      "             "
+    ],
+    [
+      " aaabbdbbaaa ",
+      " aabbcecbbaa ",
+      "aaabbcdcbbaaa",
+      "aaabcdedcbaaa",
+      "             ",
+      "             "
+    ],
+    [
+      " aaaabcbaaaa ",
+      " aaabbdbbaaa ",
+      "aaaabbcbbaaaa",
+      "aaaabcdcbaaaa",
+      "             ",
+      "             "
+    ],
+    [
+      "  aaaabaaaa  ",
+      " aaaabcbaaa  ",
+      "aaaaabbbaaaaa",
+      "aaaaabcbaaaaa",
+      "             ",
+      "             "
+    ],
+    [
+      "             ",
+      "             ",
+      "aaaaaabaaaaa ",
+      "aaaaaabaaaaa ",
+      "             ",
+      "             "
+    ]
+  ]
+}

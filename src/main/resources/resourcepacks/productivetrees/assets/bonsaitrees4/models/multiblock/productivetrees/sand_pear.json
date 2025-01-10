@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:sand_pear_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:sand_pear_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:sand_pear_fruit"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:sand_pear_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:sand_pear_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:sand_pear_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:sand_pear_log"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:sand_pear_leaves"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:sand_pear_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "ccacca ",
+      "cccaccc",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccd  ",
+      "  cdbc ",
+      "cccccac",
+      "cddcaca",
+      "       ",
+      "       "
+    ],
+    [
+      " accca ",
+      " cbcfc ",
+      "cbfibcc",
+      "ccbfcac",
+      "       ",
+      "       "
+    ],
+    [
+      " cecfc ",
+      " ccgif ",
+      "cfigfcc",
+      "accgcac",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " cdebc ",
+      " dbccc ",
+      "cbfcfcc",
+      "cccccac",
+      "       ",
+      "       "
+    ],
+    [
+      "  ecc  ",
+      "  dec  ",
+      "ccbdccc",
+      "cacccaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " cceca ",
+      " cahca ",
+      "       ",
+      "       "
+    ]
+  ]
+}

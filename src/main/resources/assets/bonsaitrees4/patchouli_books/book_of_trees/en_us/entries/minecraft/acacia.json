@@ -1,0 +1,35 @@
+{
+	"name": "Acacia",
+	"icon": "minecraft:acacia_sapling",
+	"category": "bonsaitrees4:minecraft",
+	"pages": [
+		{
+			"type": "bonsaitrees4:tree",
+			"tree_name": "Acacia",
+			"tree_sapling": "minecraft:acacia_sapling"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "In Minecraft",
+			"text": "An acacia is a tree with gray bark and orange wood found in the savanna biome. Acacias are around 8 blocks tall and feature distinct diagonal trunks and often multiple canopies.",
+			"url": "https://minecraft.wiki/w/Acacia",
+			"link_text": "Minecraft Wiki"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "On Earth",
+			"text": "In real life Acacia, commonly known as wattles, is a genera of trees. Acacias are shrubs or trees, belonging to the subfamily Mimosoideae of the family Fabaceae. Initially, it comprised a group of plant species native to Africa, South America, and Australasia, but is now reserved for species mainly from Australia.",
+			"url": "https://en.wikipedia.org/wiki/Acacia",
+			"link_text": "Wikipedia"
+		},
+		{
+			"type": "patchouli:image",
+			"border": true,
+			"images": [
+				"bonsaitrees4:textures/patchouli/acacia_tree.png",
+				"bonsaitrees4:textures/patchouli/acacia_leaves.png",
+				"bonsaitrees4:textures/patchouli/acacia_flower.png"
+			]
+		}
+	]
+}

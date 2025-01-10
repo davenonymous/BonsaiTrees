@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:white_poplar_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:white_poplar_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:white_poplar_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:white_poplar_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:white_poplar_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:white_poplar_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:white_poplar_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "deeaed ",
+      "ddeaedd",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "  abae ",
+      "daabaed",
+      "deabaed",
+      "       ",
+      "       "
+    ],
+    [
+      " ebfbe ",
+      " abcba ",
+      "ebbfbae",
+      "aabfbaa",
+      "       ",
+      "       "
+    ],
+    [
+      " afcfa ",
+      " bcgcb ",
+      "affgfba",
+      "bbfgfbb",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " aafbe ",
+      " bbcba ",
+      "eaffbbe",
+      "aabfbaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  eae  ",
+      " aaba  ",
+      "deafaae",
+      "eabbbed",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " deaed ",
+      " eabad ",
+      "       ",
+      "       "
+    ]
+  ]
+}

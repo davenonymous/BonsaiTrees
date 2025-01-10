@@ -1,0 +1,70 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"biomesoplenty:palm_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"biomesoplenty:palm_leaves"},
+    "c": {"Properties":{"axis":"y"},"Name":"biomesoplenty:palm_log"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"biomesoplenty:palm_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"biomesoplenty:palm_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"biomesoplenty:palm_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"biomesoplenty:palm_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "gb bg",
+      "e   e",
+      "  d  ",
+      "  b  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " b b ",
+      "bd db",
+      " afa ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  f  ",
+      " fcf ",
+      "aacad",
+      "d   b",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " b b ",
+      "bd db",
+      " afa ",
+      "  a  ",
+      "  c  ",
+      "  c  ",
+      "  c  ",
+      "  c  ",
+      "  c  "
+    ],
+    [
+      "     ",
+      "gb bg",
+      "e   e",
+      "  a  ",
+      "  f  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

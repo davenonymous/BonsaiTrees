@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:beliy_naliv_apple_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:beliy_naliv_apple_fruit"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:beliy_naliv_apple_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:beliy_naliv_apple_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:beliy_naliv_apple_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:beliy_naliv_apple_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:beliy_naliv_apple_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:beliy_naliv_apple_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:beliy_naliv_apple_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "bbbbceb",
+      " bcbcbc",
+      "       ",
+      "       "
+    ],
+    [
+      "  bfa  ",
+      " bbgfa ",
+      "cbcbbdb",
+      "cbbbbbb",
+      "       ",
+      "       "
+    ],
+    [
+      " bbbba ",
+      " cbibb ",
+      "bcbgfbb",
+      "bcbgfbc",
+      "       ",
+      "       "
+    ],
+    [
+      " bcbgf ",
+      " cbhib ",
+      "cbihbcb",
+      "bbbhbbc",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " bcbfb ",
+      " bbbgf ",
+      "bbgbfbb",
+      "cbbigbb",
+      "       ",
+      "       "
+    ],
+    [
+      "  cba  ",
+      " bbbba ",
+      "bbbbabb",
+      "bafgbbb",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "cbbbbbc",
+      "bbbfbbb",
+      "       ",
+      "       "
+    ]
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "values": {
+    "productivetrees:alder_sapling": {
+      "model": "productivetrees:alder"
+    },
+    "productivetrees:allspice_sapling": {
+      "model": "productivetrees:allspice"
+    },
+    "productivetrees:almond_sapling": {
+      "model": "productivetrees:almond"
+    },
+    "productivetrees:apricot_sapling": {
+      "model": "productivetrees:apricot"
+    },
+    "productivetrees:aquilaria_sapling": {
+      "model": "productivetrees:aquilaria"
+    },
+    "productivetrees:asai_palm_sapling": {
+      "model": "productivetrees:asai_palm"
+    },
+    "productivetrees:ash_sapling": {
+      "model": "productivetrees:ash"
+    },
+    "productivetrees:aspen_sapling": {
+      "model": "productivetrees:aspen"
+    },
+    "productivetrees:avocado_sapling": {
+      "model": "productivetrees:avocado"
+    },
+    "productivetrees:balsa_sapling": {
+      "model": "productivetrees:balsa"
+    },
+    "productivetrees:balsam_fir_sapling": {
+      "model": "productivetrees:balsam_fir"
+    },
+    "productivetrees:banana_sapling": {
+      "model": "productivetrees:banana"
+    },
+    "productivetrees:beech_sapling": {
+      "model": "productivetrees:beech"
+    },
+    "productivetrees:beliy_naliv_apple_sapling": {
+      "model": "productivetrees:beliy_naliv_apple"
+    },
+    "productivetrees:black_cherry_sapling": {
+      "model": "productivetrees:black_cherry"
+    },
+    "productivetrees:black_ember_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:black_ember"
+    },
+    "productivetrees:black_locust_sapling": {
+      "model": "productivetrees:black_locust"
+    },
+    "productivetrees:blackthorn_sapling": {
+      "model": "productivetrees:blackthorn"
+    },
+    "productivetrees:blue_mahoe_sapling": {
+      "model": "productivetrees:blue_mahoe"
+    },
+    "productivetrees:blue_yonder_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:blue_yonder"
+    },
+    "productivetrees:boxwood_sapling": {
+      "model": "productivetrees:boxwood"
+    },
+    "productivetrees:brazil_nut_sapling": {
+      "model": "productivetrees:brazil_nut"
+    },
+    "productivetrees:brazilwood_sapling": {
+      "model": "productivetrees:brazilwood"
+    },
+    "productivetrees:breadfruit_sapling": {
+      "model": "productivetrees:breadfruit"
+    },
+    "productivetrees:brown_amber_sapling": {
+      "model": "productivetrees:brown_amber"
+    },
+    "productivetrees:buddhas_hand_sapling": {
+      "model": "productivetrees:buddhas_hand"
+    },
+    "productivetrees:bull_pine_sapling": {
+      "model": "productivetrees:bull_pine"
+    },
+    "productivetrees:butternut_sapling": {
+      "model": "productivetrees:butternut"
+    },
+    "productivetrees:cacao_sapling": {
+      "model": "productivetrees:cacao"
+    },
+    "productivetrees:candlenut_sapling": {
+      "model": "productivetrees:candlenut"
+    },
+    "productivetrees:carob_sapling": {
+      "model": "productivetrees:carob"
+    },
+    "productivetrees:cashew_sapling": {
+      "model": "productivetrees:cashew"
+    },
+    "productivetrees:cave_dweller_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:cave_dweller"
+    },
+    "productivetrees:cedar_sapling": {
+      "model": "productivetrees:cedar"
+    },
+    "productivetrees:cempedak_sapling": {
+      "model": "productivetrees:cempedak"
+    },
+    "productivetrees:ceylon_ebony_sapling": {
+      "model": "productivetrees:ceylon_ebony"
+    },
+    "productivetrees:cherry_plum_sapling": {
+      "model": "productivetrees:cherry_plum"
+    },
+    "productivetrees:cinnamon_sapling": {
+      "model": "productivetrees:cinnamon"
+    },
+    "productivetrees:citron_sapling": {
+      "model": "productivetrees:citron"
+    },
+    "productivetrees:clove_sapling": {
+      "model": "productivetrees:clove"
+    },
+    "productivetrees:cocobolo_sapling": {
+      "model": "productivetrees:cocobolo"
+    },
+    "productivetrees:coconut_sapling": {
+      "model": "productivetrees:coconut"
+    },
+    "productivetrees:coffea_sapling": {
+      "model": "productivetrees:coffea"
+    },
+    "productivetrees:copoazu_sapling": {
+      "model": "productivetrees:copoazu"
+    },
+    "productivetrees:copper_beech_sapling": {
+      "model": "productivetrees:copper_beech"
+    },
+    "productivetrees:cork_oak_sapling": {
+      "model": "productivetrees:cork_oak"
+    },
+    "productivetrees:cultivated_pear_sapling": {
+      "model": "productivetrees:cultivated_pear"
+    },
+    "productivetrees:date_palm_sapling": {
+      "model": "productivetrees:date_palm"
+    },
+    "productivetrees:dogwood_sapling": {
+      "model": "productivetrees:dogwood"
+    },
+    "productivetrees:douglas_fir_sapling": {
+      "model": "productivetrees:douglas_fir"
+    },
+    "productivetrees:elderberry_sapling": {
+      "model": "productivetrees:elderberry"
+    },
+    "productivetrees:elm_sapling": {
+      "model": "productivetrees:elm"
+    },
+    "productivetrees:european_larch_sapling": {
+      "model": "productivetrees:european_larch"
+    },
+    "productivetrees:finger_lime_sapling": {
+      "model": "productivetrees:finger_lime"
+    },
+    "productivetrees:firecracker_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:firecracker"
+    },
+    "productivetrees:flickering_sun_sapling": {
+      "light_emission": 14,
+      "model": "productivetrees:flickering_sun"
+    },
+    "productivetrees:flowering_crabapple_sapling": {
+      "model": "productivetrees:flowering_crabapple"
+    },
+    "productivetrees:foggy_blast_sapling": {
+      "model": "productivetrees:foggy_blast"
+    },
+    "productivetrees:ginkgo_sapling": {
+      "model": "productivetrees:ginkgo"
+    },
+    "productivetrees:golden_delicious_apple_sapling": {
+      "model": "productivetrees:golden_delicious_apple"
+    },
+    "productivetrees:grandidiers_baobab_sapling": {
+      "model": "productivetrees:grandidiers_baobab"
+    },
+    "productivetrees:granny_smith_apple_sapling": {
+      "model": "productivetrees:granny_smith_apple"
+    },
+    "productivetrees:grapefruit_sapling": {
+      "model": "productivetrees:grapefruit"
+    },
+    "productivetrees:great_sallow_sapling": {
+      "model": "productivetrees:great_sallow"
+    },
+    "productivetrees:greenheart_sapling": {
+      "model": "productivetrees:greenheart"
+    },
+    "productivetrees:hawthorn_sapling": {
+      "model": "productivetrees:hawthorn"
+    },
+    "productivetrees:hazel_sapling": {
+      "model": "productivetrees:hazel"
+    },
+    "productivetrees:holly_sapling": {
+      "model": "productivetrees:holly"
+    },
+    "productivetrees:hornbeam_sapling": {
+      "model": "productivetrees:hornbeam"
+    },
+    "productivetrees:ipe_sapling": {
+      "model": "productivetrees:ipe"
+    },
+    "productivetrees:iroko_sapling": {
+      "model": "productivetrees:iroko"
+    },
+    "productivetrees:jackfruit_sapling": {
+      "model": "productivetrees:jackfruit"
+    },
+    "productivetrees:juniper_sapling": {
+      "model": "productivetrees:juniper"
+    },
+    "productivetrees:kapok_sapling": {
+      "model": "productivetrees:kapok"
+    },
+    "productivetrees:key_lime_sapling": {
+      "model": "productivetrees:key_lime"
+    },
+    "productivetrees:kumquat_sapling": {
+      "model": "productivetrees:kumquat"
+    },
+    "productivetrees:lawson_cypress_sapling": {
+      "model": "productivetrees:lawson_cypress"
+    },
+    "productivetrees:lemon_sapling": {
+      "model": "productivetrees:lemon"
+    },
+    "productivetrees:lime_sapling": {
+      "model": "productivetrees:lime"
+    },
+    "productivetrees:loblolly_pine_sapling": {
+      "model": "productivetrees:loblolly_pine"
+    },
+    "productivetrees:logwood_sapling": {
+      "model": "productivetrees:logwood"
+    },
+    "productivetrees:mahogany_sapling": {
+      "model": "productivetrees:mahogany"
+    },
+    "productivetrees:mandarin_sapling": {
+      "model": "productivetrees:mandarin"
+    },
+    "productivetrees:mango_sapling": {
+      "model": "productivetrees:mango"
+    },
+    "productivetrees:monkey_puzzle_sapling": {
+      "model": "productivetrees:monkey_puzzle"
+    },
+    "productivetrees:moonlight_magic_crepe_myrtle_sapling": {
+      "model": "productivetrees:moonlight_magic_crepe_myrtle"
+    },
+    "productivetrees:myrtle_ebony_sapling": {
+      "model": "productivetrees:myrtle_ebony"
+    },
+    "productivetrees:nectarine_sapling": {
+      "model": "productivetrees:nectarine"
+    },
+    "productivetrees:night_fuchsia_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:night_fuchsia"
+    },
+    "productivetrees:nutmeg_sapling": {
+      "model": "productivetrees:nutmeg"
+    },
+    "productivetrees:old_fustic_sapling": {
+      "model": "productivetrees:old_fustic"
+    },
+    "productivetrees:olive_sapling": {
+      "model": "productivetrees:olive"
+    },
+    "productivetrees:orange_sapling": {
+      "model": "productivetrees:orange"
+    },
+    "productivetrees:osage_orange_sapling": {
+      "model": "productivetrees:osage_orange"
+    },
+    "productivetrees:padauk_sapling": {
+      "model": "productivetrees:padauk"
+    },
+    "productivetrees:pandanus_sapling": {
+      "model": "productivetrees:pandanus"
+    },
+    "productivetrees:papaya_sapling": {
+      "model": "productivetrees:papaya"
+    },
+    "productivetrees:peach_sapling": {
+      "model": "productivetrees:peach"
+    },
+    "productivetrees:pecan_sapling": {
+      "model": "productivetrees:pecan"
+    },
+    "productivetrees:persimmon_sapling": {
+      "model": "productivetrees:persimmon"
+    },
+    "productivetrees:pink_ipe_sapling": {
+      "model": "productivetrees:pink_ipe"
+    },
+    "productivetrees:pink_ivory_sapling": {
+      "model": "productivetrees:pink_ivory"
+    },
+    "productivetrees:pistachio_sapling": {
+      "model": "productivetrees:pistachio"
+    },
+    "productivetrees:plantain_sapling": {
+      "model": "productivetrees:plantain"
+    },
+    "productivetrees:plum_sapling": {
+      "model": "productivetrees:plum"
+    },
+    "productivetrees:pomegranate_sapling": {
+      "model": "productivetrees:pomegranate"
+    },
+    "productivetrees:pomelo_sapling": {
+      "model": "productivetrees:pomelo"
+    },
+    "productivetrees:prairie_crabapple_sapling": {
+      "model": "productivetrees:prairie_crabapple"
+    },
+    "productivetrees:purple_blackthorn_sapling": {
+      "model": "productivetrees:purple_blackthorn"
+    },
+    "productivetrees:purple_crepe_myrtle_sapling": {
+      "model": "productivetrees:purple_crepe_myrtle"
+    },
+    "productivetrees:purple_ipe_sapling": {
+      "model": "productivetrees:purple_ipe"
+    },
+    "productivetrees:purple_spiral_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:purple_spiral"
+    },
+    "productivetrees:purpleheart_sapling": {
+      "model": "productivetrees:purpleheart"
+    },
+    "productivetrees:rainbow_gum_sapling": {
+      "model": "productivetrees:rainbow_gum"
+    },
+    "productivetrees:red_banana_sapling": {
+      "model": "productivetrees:red_banana"
+    },
+    "productivetrees:red_crepe_myrtle_sapling": {
+      "model": "productivetrees:red_crepe_myrtle"
+    },
+    "productivetrees:red_delicious_apple_sapling": {
+      "model": "productivetrees:red_delicious_apple"
+    },
+    "productivetrees:red_maple_sapling": {
+      "model": "productivetrees:red_maple"
+    },
+    "productivetrees:rippling_willow_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:rippling_willow"
+    },
+    "productivetrees:rose_gum_sapling": {
+      "model": "productivetrees:rose_gum"
+    },
+    "productivetrees:rosewood_sapling": {
+      "model": "productivetrees:rosewood"
+    },
+    "productivetrees:rowan_sapling": {
+      "model": "productivetrees:rowan"
+    },
+    "productivetrees:rubber_tree_sapling": {
+      "model": "productivetrees:rubber_tree"
+    },
+    "productivetrees:salak_sapling": {
+      "model": "productivetrees:salak"
+    },
+    "productivetrees:sand_pear_sapling": {
+      "model": "productivetrees:sand_pear"
+    },
+    "productivetrees:sandalwood_sapling": {
+      "model": "productivetrees:sandalwood"
+    },
+    "productivetrees:satsuma_sapling": {
+      "model": "productivetrees:satsuma"
+    },
+    "productivetrees:sequoia_sapling": {
+      "model": "productivetrees:sequoia"
+    },
+    "productivetrees:silver_fir_sapling": {
+      "model": "productivetrees:silver_fir"
+    },
+    "productivetrees:silver_lime_sapling": {
+      "model": "productivetrees:silver_lime"
+    },
+    "productivetrees:slimy_delight_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:slimy_delight"
+    },
+    "productivetrees:socotra_dragon_sapling": {
+      "model": "productivetrees:socotra_dragon"
+    },
+    "productivetrees:soul_tree_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:soul_tree"
+    },
+    "productivetrees:sour_cherry_sapling": {
+      "model": "productivetrees:sour_cherry"
+    },
+    "productivetrees:soursop_sapling": {
+      "model": "productivetrees:soursop"
+    },
+    "productivetrees:sparkle_cherry_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:sparkle_cherry"
+    },
+    "productivetrees:star_anise_sapling": {
+      "model": "productivetrees:star_anise"
+    },
+    "productivetrees:star_fruit_sapling": {
+      "model": "productivetrees:star_fruit"
+    },
+    "productivetrees:sugar_apple_sapling": {
+      "model": "productivetrees:sugar_apple"
+    },
+    "productivetrees:sugar_maple_sapling": {
+      "model": "productivetrees:sugar_maple"
+    },
+    "productivetrees:swamp_gum_sapling": {
+      "model": "productivetrees:swamp_gum"
+    },
+    "productivetrees:sweet_chestnut_sapling": {
+      "model": "productivetrees:sweet_chestnut"
+    },
+    "productivetrees:sweet_crabapple_sapling": {
+      "model": "productivetrees:sweet_crabapple"
+    },
+    "productivetrees:sweetgum_sapling": {
+      "model": "productivetrees:sweetgum"
+    },
+    "productivetrees:sycamore_fig_sapling": {
+      "model": "productivetrees:sycamore_fig"
+    },
+    "productivetrees:tangerine_sapling": {
+      "model": "productivetrees:tangerine"
+    },
+    "productivetrees:teak_sapling": {
+      "model": "productivetrees:teak"
+    },
+    "productivetrees:thunder_bolt_sapling": {
+      "model": "productivetrees:thunder_bolt"
+    },
+    "productivetrees:time_traveller_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:time_traveller"
+    },
+    "productivetrees:tuscarora_crepe_myrtle_sapling": {
+      "model": "productivetrees:tuscarora_crepe_myrtle"
+    },
+    "productivetrees:walnut_sapling": {
+      "model": "productivetrees:walnut"
+    },
+    "productivetrees:water_wonder_sapling": {
+      "light_emission": 11,
+      "model": "productivetrees:water_wonder"
+    },
+    "productivetrees:wenge_sapling": {
+      "model": "productivetrees:wenge"
+    },
+    "productivetrees:western_hemlock_sapling": {
+      "model": "productivetrees:western_hemlock"
+    },
+    "productivetrees:white_ipe_sapling": {
+      "model": "productivetrees:white_ipe"
+    },
+    "productivetrees:white_poplar_sapling": {
+      "model": "productivetrees:white_poplar"
+    },
+    "productivetrees:white_willow_sapling": {
+      "model": "productivetrees:white_willow"
+    },
+    "productivetrees:whitebeam_sapling": {
+      "model": "productivetrees:whitebeam"
+    },
+    "productivetrees:wild_cherry_sapling": {
+      "model": "productivetrees:wild_cherry"
+    },
+    "productivetrees:yellow_meranti_sapling": {
+      "model": "productivetrees:yellow_meranti"
+    },
+    "productivetrees:yew_sapling": {
+      "model": "productivetrees:yew"
+    },
+    "productivetrees:zebrano_sapling": {
+      "model": "productivetrees:zebrano"
+    }
+  }
+}

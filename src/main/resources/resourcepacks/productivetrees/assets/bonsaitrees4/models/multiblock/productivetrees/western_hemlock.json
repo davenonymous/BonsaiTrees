@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:western_hemlock_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:western_hemlock_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:western_hemlock_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:western_hemlock_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:western_hemlock_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:western_hemlock_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:western_hemlock_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "ffeaeff",
+      "ffeaef ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ece  ",
+      "  abaa ",
+      "feacaef",
+      "eeacaef",
+      "       ",
+      "       "
+    ],
+    [
+      " acbca ",
+      " cbdbc ",
+      "eacbcae",
+      "aacbcaa",
+      "       ",
+      "       "
+    ],
+    [
+      " cbdbc ",
+      " bdgdb ",
+      "acbgbca",
+      "cbbgbcc",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " acbca ",
+      " cbdbc ",
+      "eacbcae",
+      "acbbcaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  ece  ",
+      "  abaa ",
+      "feacaef",
+      "eacbcae",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "ffeaeff",
+      " eacae ",
+      "       ",
+      "       "
+    ]
+  ]
+}

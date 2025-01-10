@@ -1,0 +1,8 @@
+{
+  "values": {
+    "ars_elemental:yellow_archwood_sapling": {
+      "light_emission": 8,
+      "model": "ars_elemental:flashing_tree_sapling"
+    }
+  }
+}

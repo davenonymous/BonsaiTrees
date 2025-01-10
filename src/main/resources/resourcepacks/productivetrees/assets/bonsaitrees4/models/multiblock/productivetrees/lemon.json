@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:lemon_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:lemon_fruit"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:lemon_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:lemon_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:lemon_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:lemon_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:lemon_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:lemon_leaves"},
+    "i": {"Properties":{"axis":"y"},"Name":"productivetrees:lemon_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " ddbbbb",
+      " bbbdf ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ded  ",
+      "  bhba ",
+      "bbegbab",
+      "bdbhebb",
+      "       ",
+      "       "
+    ],
+    [
+      " bbbbb ",
+      " hbbbb ",
+      "fbhcbbb",
+      "deebbab",
+      "       ",
+      "       "
+    ],
+    [
+      " bgcba ",
+      " gciba ",
+      "abgibab",
+      "fbbicba",
+      "   i   ",
+      "   i   "
+    ],
+    [
+      " bbgba ",
+      " bbcgb ",
+      "aabghbb",
+      "bbbgheb",
+      "       ",
+      "       "
+    ],
+    [
+      "  bbb  ",
+      "  bbbf ",
+      "bbabbdb",
+      "babgbeb",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " ababbb",
+      " bbbfdf",
+      "       ",
+      "       "
+    ]
+  ]
+}

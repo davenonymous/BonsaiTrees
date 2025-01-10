@@ -1,0 +1,55 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"minecraft:oak_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"minecraft:oak_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"minecraft:oak_leaves"},
+    "d": {"Properties":{"age":"0"},"Name":"pamhc2trees:pamcherry"},
+    "e": {"Properties":{"axis":"y"},"Name":"minecraft:oak_log"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"minecraft:oak_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"minecraft:oak_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "ffafg",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " cbc ",
+      " aca ",
+      "aacaf",
+      " ddd "
+    ],
+    [
+      "  c  ",
+      "  b  ",
+      " beb ",
+      " cec ",
+      "cceca",
+      " ded "
+    ],
+    [
+      "     ",
+      "     ",
+      " cbc ",
+      " aca ",
+      "accaf",
+      " ddd "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "facaf",
+      "     "
+    ]
+  ]
+}

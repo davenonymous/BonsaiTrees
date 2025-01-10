@@ -1,0 +1,68 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"transition_block":"false","is_stripped":"false","axis":"y"},"Name":"regions_unexplored:pine_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"regions_unexplored:pine_leaves"},
+    "c": {"Properties":{"transition_block":"false","is_stripped":"false","axis":"z"},"Name":"regions_unexplored:pine_log"},
+    "d": {"Properties":{"facing":"east"},"Name":"regions_unexplored:pine_branch"}
+  },
+  "shape": [
+    [
+      "   ",
+      "   ",
+      "   ",
+      " b ",
+      "   ",
+      "   ",
+      "   ",
+      "   ",
+      "   ",
+      "   ",
+      " b ",
+      "   "
+    ],
+    [
+      "   ",
+      "   ",
+      " b ",
+      "bdb",
+      " b ",
+      " b ",
+      " b ",
+      "   ",
+      "   ",
+      " b ",
+      "bdb",
+      "   "
+    ],
+    [
+      " b ",
+      " b ",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      "bab",
+      " a ",
+      " ac",
+      " a ",
+      " a ",
+      " a "
+    ],
+    [
+      "   ",
+      "   ",
+      " b ",
+      " b ",
+      " b ",
+      "bb ",
+      " b ",
+      "   ",
+      "   ",
+      "   ",
+      "   ",
+      "   "
+    ]
+  ]
+}

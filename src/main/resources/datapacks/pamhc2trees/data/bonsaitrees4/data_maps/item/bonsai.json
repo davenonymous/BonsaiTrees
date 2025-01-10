@@ -1,0 +1,154 @@
+{
+  "values": {
+    "pamhc2trees:acorn_sapling": {
+      "model": "pamhc2trees:acorn"
+    },
+    "pamhc2trees:almond_sapling": {
+      "model": "pamhc2trees:almond"
+    },
+    "pamhc2trees:apple_sapling": {
+      "model": "pamhc2trees:apple"
+    },
+    "pamhc2trees:apricot_sapling": {
+      "model": "pamhc2trees:apricot"
+    },
+    "pamhc2trees:avocado_sapling": {
+      "model": "pamhc2trees:avocado"
+    },
+    "pamhc2trees:banana_sapling": {
+      "model": "pamhc2trees:banana"
+    },
+    "pamhc2trees:breadfruit_sapling": {
+      "model": "pamhc2trees:breadfruit"
+    },
+    "pamhc2trees:candlenut_sapling": {
+      "model": "pamhc2trees:candlenut"
+    },
+    "pamhc2trees:cashew_sapling": {
+      "model": "pamhc2trees:cashew"
+    },
+    "pamhc2trees:cherry_sapling": {
+      "model": "pamhc2trees:cherry"
+    },
+    "pamhc2trees:chestnut_sapling": {
+      "model": "pamhc2trees:chestnut"
+    },
+    "pamhc2trees:cinnamon_sapling": {
+      "model": "pamhc2trees:cinnamon"
+    },
+    "pamhc2trees:coconut_sapling": {
+      "model": "pamhc2trees:coconut"
+    },
+    "pamhc2trees:date_sapling": {
+      "model": "pamhc2trees:date"
+    },
+    "pamhc2trees:dragonfruit_sapling": {
+      "model": "pamhc2trees:dragonfruit"
+    },
+    "pamhc2trees:durian_sapling": {
+      "model": "pamhc2trees:durian"
+    },
+    "pamhc2trees:fig_sapling": {
+      "model": "pamhc2trees:fig"
+    },
+    "pamhc2trees:gooseberry_sapling": {
+      "model": "pamhc2trees:gooseberry"
+    },
+    "pamhc2trees:grapefruit_sapling": {
+      "model": "pamhc2trees:grapefruit"
+    },
+    "pamhc2trees:guava_sapling": {
+      "model": "pamhc2trees:gauva"
+    },
+    "pamhc2trees:hazelnut_sapling": {
+      "model": "pamhc2trees:hazelnut"
+    },
+    "pamhc2trees:jackfruit_sapling": {
+      "model": "pamhc2trees:jackfruit"
+    },
+    "pamhc2trees:lemon_sapling": {
+      "model": "pamhc2trees:lemon"
+    },
+    "pamhc2trees:lime_sapling": {
+      "model": "pamhc2trees:lime"
+    },
+    "pamhc2trees:lychee_sapling": {
+      "model": "pamhc2trees:lychee"
+    },
+    "pamhc2trees:mango_sapling": {
+      "model": "pamhc2trees:mango"
+    },
+    "pamhc2trees:maple_sapling": {
+      "model": "pamhc2trees:maple"
+    },
+    "pamhc2trees:nutmeg_sapling": {
+      "model": "pamhc2trees:nutmeg"
+    },
+    "pamhc2trees:olive_sapling": {
+      "model": "pamhc2trees:olive"
+    },
+    "pamhc2trees:orange_sapling": {
+      "model": "pamhc2trees:orange"
+    },
+    "pamhc2trees:papaya_sapling": {
+      "model": "pamhc2trees:papaya"
+    },
+    "pamhc2trees:paperbark_sapling": {
+      "model": "pamhc2trees:paperbark"
+    },
+    "pamhc2trees:passionfruit_sapling": {
+      "model": "pamhc2trees:passionfruit"
+    },
+    "pamhc2trees:pawpaw_sapling": {
+      "model": "pamhc2trees:pawpaw"
+    },
+    "pamhc2trees:peach_sapling": {
+      "model": "pamhc2trees:peach"
+    },
+    "pamhc2trees:pear_sapling": {
+      "model": "pamhc2trees:pear"
+    },
+    "pamhc2trees:pecan_sapling": {
+      "model": "pamhc2trees:pecan"
+    },
+    "pamhc2trees:peppercorn_sapling": {
+      "model": "pamhc2trees:peppercorn"
+    },
+    "pamhc2trees:persimmon_sapling": {
+      "model": "pamhc2trees:persimmon"
+    },
+    "pamhc2trees:pinenut_sapling": {
+      "model": "pamhc2trees:pinenut"
+    },
+    "pamhc2trees:pistachio_sapling": {
+      "model": "pamhc2trees:pistachio"
+    },
+    "pamhc2trees:plum_sapling": {
+      "model": "pamhc2trees:plum"
+    },
+    "pamhc2trees:pomegranate_sapling": {
+      "model": "pamhc2trees:pomegranate"
+    },
+    "pamhc2trees:rambutan_sapling": {
+      "model": "pamhc2trees:rambutan"
+    },
+    "pamhc2trees:soursop_sapling": {
+      "model": "pamhc2trees:soursop"
+    },
+    "pamhc2trees:spiderweb_sapling": {
+      "model": "pamhc2trees:spiderweb"
+    },
+    "pamhc2trees:starfruit_sapling": {
+      "model": "pamhc2trees:starfruit"
+    },
+    "pamhc2trees:tamarind_sapling": {
+      "model": "pamhc2trees:tamarind"
+    },
+    "pamhc2trees:vanillabean_sapling": {
+      "model": "pamhc2trees:vanillabean"
+    },
+    "pamhc2trees:walnut_sapling": {
+      "model": "pamhc2trees:walnut"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:blue_mahoe_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:blue_mahoe_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:blue_mahoe_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:blue_mahoe_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:blue_mahoe_leaves"},
+    "f": {"Properties":{"axis":"y"},"Name":"productivetrees:blue_mahoe_log"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:blue_mahoe_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "eeacae ",
+      "eaacaee",
+      "       ",
+      "       "
+    ],
+    [
+      "  cbc  ",
+      "  bdb  ",
+      "eacbcae",
+      "accbcae",
+      "       ",
+      "       "
+    ],
+    [
+      " abdba ",
+      " cdgdc ",
+      "acbdbca",
+      "cbbdbca",
+      "       ",
+      "       "
+    ],
+    [
+      " cdgdb ",
+      " bdfgd ",
+      "cbgfdbc",
+      "bddfdbc",
+      "   f   ",
+      "   f   "
+    ],
+    [
+      " abdba ",
+      " cbddc ",
+      "abbgbca",
+      "ccddbbc",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      "  cbc  ",
+      "accbcae",
+      "eabdbca",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " aabaee",
+      " eccca ",
+      "       ",
+      "       "
+    ]
+  ]
+}

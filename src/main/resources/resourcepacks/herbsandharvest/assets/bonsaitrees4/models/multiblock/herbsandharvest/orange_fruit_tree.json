@@ -1,0 +1,57 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3","age":"0"},"Name":"herbsandharvest:orange_fruit_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1","age":"0"},"Name":"herbsandharvest:orange_fruit_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"herbsandharvest:fruit_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2","age":"0"},"Name":"herbsandharvest:orange_fruit_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"herbsandharvest:fruit_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"herbsandharvest:fruit_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"minecraft:oak_log"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4","age":"0"},"Name":"herbsandharvest:orange_fruit_leaves"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"herbsandharvest:fruit_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      " hfc ",
+      " fdf ",
+      " cfh ",
+      "     ",
+      "     "
+    ],
+    [
+      "  f  ",
+      "cfefc",
+      "feief",
+      "cfefc",
+      "  e  ",
+      "     "
+    ],
+    [
+      " fdf ",
+      "febdf",
+      "dbgie",
+      "fdgef",
+      " ege ",
+      "  g  "
+    ],
+    [
+      "  a  ",
+      "hfdfc",
+      "feief",
+      "caefc",
+      "  e  ",
+      "     "
+    ],
+    [
+      "     ",
+      " cfc ",
+      " fdf ",
+      " cfc ",
+      "     ",
+      "     "
+    ]
+  ]
+}

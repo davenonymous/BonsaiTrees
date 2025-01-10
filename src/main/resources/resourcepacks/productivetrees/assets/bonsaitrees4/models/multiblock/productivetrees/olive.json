@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:olive_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:olive_fruit"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:olive_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:olive_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:olive_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:olive_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:olive_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:olive_leaves"},
+    "i": {"Properties":{"axis":"y"},"Name":"productivetrees:olive_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "ababbab",
+      " abbaab",
+      "       ",
+      "       "
+    ],
+    [
+      "  bbb  ",
+      " bbbbb ",
+      "abbhbab",
+      "babbbbb",
+      "       ",
+      "       "
+    ],
+    [
+      " bbabb ",
+      " bbbaa ",
+      "bbbcbaa",
+      "ebbbhbb",
+      "       ",
+      "       "
+    ],
+    [
+      " bbbbb ",
+      " hciba ",
+      "dfbibba",
+      "gdbicbb",
+      "   i   ",
+      "   i   "
+    ],
+    [
+      " dfhba ",
+      " bbcbb ",
+      "gbhhfba",
+      "bbfhfdb",
+      "       ",
+      "       "
+    ],
+    [
+      "  bbb  ",
+      "  abbb ",
+      "ebbhfbb",
+      "babfbbb",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " abbdgb",
+      " babge ",
+      "       ",
+      "       "
+    ]
+  ]
+}

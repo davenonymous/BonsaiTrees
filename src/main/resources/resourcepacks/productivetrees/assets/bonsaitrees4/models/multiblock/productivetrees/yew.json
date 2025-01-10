@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:yew_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:yew_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:yew_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:yew_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:yew_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:yew_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:yew_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " aacaee",
+      " eabca ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      " acbca ",
+      "eccbcae",
+      "eacfbca",
+      "       ",
+      "       "
+    ],
+    [
+      " abfba ",
+      " cbdbc ",
+      "abbfbca",
+      "ccbffbc",
+      "       ",
+      "       "
+    ],
+    [
+      " cfdfc ",
+      " bdgdb ",
+      "cffgfbc",
+      "bbfgffb",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " abfba ",
+      " cbdbc ",
+      "abffbba",
+      "ccbfbcc",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      "  cbc  ",
+      "accfcca",
+      "eabbbae",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " aabae ",
+      " ecccee",
+      "       ",
+      "       "
+    ]
+  ]
+}

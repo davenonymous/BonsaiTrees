@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:pecan_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:pecan_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:pecan_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:pecan_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:pecan_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:pecan_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:pecan_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:pecan_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:pecan_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "gdgaggg",
+      "aaaaggg",
+      "       ",
+      "       "
+    ],
+    [
+      "  cea  ",
+      "  ebag ",
+      "afaaaag",
+      "acagaaa",
+      "       ",
+      "       "
+    ],
+    [
+      " cebec ",
+      " abiba ",
+      "aceaefa",
+      "cebacad",
+      "       ",
+      "       "
+    ],
+    [
+      " ebiae ",
+      " aahib ",
+      "faahacf",
+      "ebihaad",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " cebac ",
+      " abiac ",
+      "ceebecf",
+      "acebafd",
+      "       ",
+      "       "
+    ],
+    [
+      "  aec  ",
+      " fcafa ",
+      "fcebeaf",
+      "aaaecfd",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "daaead ",
+      "gaacfd ",
+      "       ",
+      "       "
+    ]
+  ]
+}

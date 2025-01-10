@@ -1,0 +1,122 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"regions_unexplored:socotra_leaves"},
+    "b": {"Properties":{"axis":"z"},"Name":"regions_unexplored:socotra_log"},
+    "c": {"Properties":{"axis":"x"},"Name":"regions_unexplored:socotra_log"},
+    "d": {"Properties":{"axis":"y"},"Name":"regions_unexplored:socotra_log"}
+  },
+  "shape": [
+    [
+      "           ",
+      "           ",
+      "           ",
+      "     aa    ",
+      "    aaa    ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "   aaaa    ",
+      "   aacaa   ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "     a     ",
+      "   aaaaa   ",
+      "  aaaaaaa  ",
+      "   abcba   ",
+      "     c     ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "    aaa    ",
+      "  aaacaaa  ",
+      " aaba aca  ",
+      " aaaaaaaaa ",
+      "     c     ",
+      "           ",
+      "           "
+    ],
+    [
+      "     aa    ",
+      "   aaaaa   ",
+      "  aaacaaa  ",
+      " aaaa aaaa ",
+      "aacab cacaa",
+      "           ",
+      "     c     ",
+      "           "
+    ],
+    [
+      "    aaa    ",
+      "  aaadaaa  ",
+      "  abbdbba  ",
+      "aaaa d  aaa",
+      "abba d abba",
+      "  bb d bb  ",
+      "    bdb    ",
+      "     d     "
+    ],
+    [
+      "     a     ",
+      "   aaaaa   ",
+      "  aaacaaa  ",
+      " aaaa aaaaa",
+      "aacac bacaa",
+      "           ",
+      "     c     ",
+      "           "
+    ],
+    [
+      "           ",
+      "    aaa    ",
+      "  aaacaaa  ",
+      " aaca aba  ",
+      " aaaaaaaaa ",
+      "     c     ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "     a     ",
+      "   aaaaa   ",
+      "  aaaaaaa  ",
+      "   abcba   ",
+      "     c     ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "    aaa    ",
+      "   aacaa   ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "     a     ",
+      "    aaa    ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ]
+}

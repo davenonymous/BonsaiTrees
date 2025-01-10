@@ -1,0 +1,72 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:orange_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:orange_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:orange_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:orange_leaves"},
+    "e": {"Properties":{"axis":"y"},"Name":"productivetrees:orange_log"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:orange_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:orange_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:orange_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " aaada ",
+      " aaaaa ",
+      "       ",
+      "       "
+    ],
+    [
+      "  baa  ",
+      "  aaa  ",
+      "abacfda",
+      "abaaaab",
+      "       ",
+      "       "
+    ],
+    [
+      " aahca ",
+      " bagab ",
+      "aahhaab",
+      "bachcab",
+      "       ",
+      "       "
+    ],
+    [
+      " bbaab ",
+      " aaeab ",
+      "bbaeaba",
+      "bageaaa",
+      "   e   ",
+      "   e   "
+    ],
+    [
+      " bbaab ",
+      " bbaba ",
+      "aaaabba",
+      "achgaba",
+      "       ",
+      "       "
+    ],
+    [
+      "  bab  ",
+      " aabbb ",
+      "aaabaab",
+      "bacaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " aabba ",
+      "aaabba ",
+      "       ",
+      "       "
+    ]
+  ]
+}

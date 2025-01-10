@@ -1,0 +1,35 @@
+{
+	"name": "Spruce",
+	"icon": "minecraft:spruce_sapling",
+	"category": "bonsaitrees4:minecraft",
+	"pages": [
+		{
+			"type": "bonsaitrees4:tree",
+			"tree_name": "Spruce",
+			"tree_sapling": "minecraft:spruce_sapling"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "In Minecraft",
+			"text": "Spruces and pines are trees with dark bark and brown wood. They have growth patterns and requirements similar to birches, although they appear different. They are mainly found in the taiga biome.",
+			"url": "https://minecraft.wiki/w/Spruce",
+			"link_text": "Minecraft Wiki"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "On Earth",
+			"text": "A spruce is a tree of the genus Picea, a genus of about 40 species of coniferous evergreen trees in the family Pinaceae, found in the northern temperate and boreal (taiga) regions of the Earth. Spruces are large trees, from about 20 to 60 m (about 60–200 ft) tall when mature, and have whorled branches and conical form.",
+			"url": "https://en.wikipedia.org/wiki/Spruce",
+			"link_text": "Wikipedia"
+		},
+		{
+			"type": "patchouli:image",
+			"border": true,
+			"images": [
+				"bonsaitrees4:textures/patchouli/spruce_tree.png",
+				"bonsaitrees4:textures/patchouli/spruce_forest.png",
+				"bonsaitrees4:textures/patchouli/spruce_needles.png"
+			]
+		}
+	]
+}

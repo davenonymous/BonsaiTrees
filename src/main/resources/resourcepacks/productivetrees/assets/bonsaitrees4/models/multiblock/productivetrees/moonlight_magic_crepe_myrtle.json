@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:moonlight_magic_crepe_myrtle_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:moonlight_magic_crepe_myrtle_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:moonlight_magic_crepe_myrtle_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:moonlight_magic_crepe_myrtle_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:moonlight_magic_crepe_myrtle_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:moonlight_magic_crepe_myrtle_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:moonlight_magic_crepe_myrtle_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " feaef ",
+      "ffeaeff",
+      "       ",
+      "       "
+    ],
+    [
+      "  ece  ",
+      "  abaa ",
+      "feacaef",
+      "eeacaef",
+      "       ",
+      "       "
+    ],
+    [
+      " acbca ",
+      " cbdbc ",
+      "eacbcae",
+      "aacbcaa",
+      "       ",
+      "       "
+    ],
+    [
+      " cbdbc ",
+      " bdgdb ",
+      "acbgbca",
+      "cbbgbcc",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " acbca ",
+      " cbdbc ",
+      "eacbcae",
+      "acbbcaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  ece  ",
+      "  aba  ",
+      "feacaef",
+      "eacbcae",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "ffeaeff",
+      "feacae ",
+      "       ",
+      "       "
+    ]
+  ]
+}

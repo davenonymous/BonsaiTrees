@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:rowan_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:rowan_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:rowan_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:rowan_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:rowan_leaves"},
+    "f": {"Properties":{"axis":"y"},"Name":"productivetrees:rowan_log"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:rowan_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "baaaaa ",
+      " aaaaa ",
+      "       ",
+      "       "
+    ],
+    [
+      "  baa  ",
+      " aabaa ",
+      "abbaaaa",
+      "baaegaa",
+      "       ",
+      "       "
+    ],
+    [
+      " gaaaa ",
+      " edaaa ",
+      "aaacdaa",
+      "aaddeaa",
+      "       ",
+      "       "
+    ],
+    [
+      " adaaa ",
+      " dcfaa ",
+      "aaafcab",
+      "aaafdaa",
+      "   f   ",
+      "   f   "
+    ],
+    [
+      " aeaab ",
+      " aacda ",
+      "baaaeaa",
+      "abaaabb",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "  aaea ",
+      "abaaaaa",
+      "bababaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "bbaaaab",
+      "aabaaab",
+      "       ",
+      "       "
+    ]
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"minecraft:oak_leaves"},
+    "b": {"Properties":{"axis":"y"},"Name":"minecraft:oak_log"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"minecraft:oak_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"minecraft:oak_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"minecraft:oak_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"minecraft:oak_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "ccacf",
+      "fcacf",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      " ae  ",
+      "aadac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      " ded ",
+      " ebe ",
+      "ddbda",
+      "adbda",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  d  ",
+      " ae  ",
+      "addac",
+      "cadac",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " adac",
+      "ccac ",
+      "     ",
+      "     "
+    ]
+  ]
+}

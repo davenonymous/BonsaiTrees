@@ -1,0 +1,64 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"regions_unexplored:small_oak_leaves"},
+    "b": {"Properties":{"waterlogged":"false","axis":"y"},"Name":"regions_unexplored:small_oak_log"},
+    "c": {"Properties":{"facing":"west"},"Name":"regions_unexplored:oak_branch"},
+    "d": {"Properties":{"facing":"east"},"Name":"regions_unexplored:oak_branch"},
+    "e": {"Properties":{"facing":"north"},"Name":"regions_unexplored:oak_branch"},
+    "f": {"Properties":{"facing":"south"},"Name":"regions_unexplored:oak_branch"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  ",
+      " aaa ",
+      " ada ",
+      "  a  ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  a  ",
+      " aaa ",
+      " aba ",
+      "aebfa",
+      " aba ",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  ",
+      " aaa ",
+      " aca ",
+      "  a  ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     "
+    ]
+  ]
+}

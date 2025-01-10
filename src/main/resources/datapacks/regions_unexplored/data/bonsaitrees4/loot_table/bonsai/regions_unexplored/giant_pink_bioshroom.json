@@ -1,0 +1,43 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 1.5,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "regions_unexplored:blocks/pink_bioshroom_stem"
+        }
+      ],
+      "name": "log",
+      "rolls": 3.0
+    },
+    {
+      "bonus_rolls": 0.5,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "regions_unexplored:blocks/pink_bioshroom_block"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "regions_unexplored:blocks/glowing_pink_bioshroom_block"
+        }
+      ],
+      "name": "other",
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bonsaitrees4:bonsai/regions_unexplored/giant_pink_bioshroom"
+}

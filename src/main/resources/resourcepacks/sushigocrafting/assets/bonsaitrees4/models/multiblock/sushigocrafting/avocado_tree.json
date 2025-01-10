@@ -1,0 +1,28 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"stage":"0","persistent":"false","distance":"1"},"Name":"sushigocrafting:avocado_leaves"},
+    "b": {"Properties":{"stage":"1","persistent":"false","distance":"2"},"Name":"sushigocrafting:avocado_leaves"},
+    "c": {"Properties":{"axis":"y"},"Name":"sushigocrafting:avocado_log"},
+    "d": {"Properties":{"stage":"0","persistent":"false","distance":"2"},"Name":"sushigocrafting:avocado_leaves"},
+    "e": {"Properties":{"stage":"2","persistent":"false","distance":"2"},"Name":"sushigocrafting:avocado_leaves"}
+  },
+  "shape": [
+    [
+      " e ",
+      " ad",
+      "   "
+    ],
+    [
+      "dad",
+      "aca",
+      " c "
+    ],
+    [
+      " d ",
+      " ab",
+      "   "
+    ]
+  ]
+}

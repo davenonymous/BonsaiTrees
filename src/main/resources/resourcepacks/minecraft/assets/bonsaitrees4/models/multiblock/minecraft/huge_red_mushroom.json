@@ -1,0 +1,66 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"west":"true","up":"false","south":"true","north":"true","east":"true","down":"false"},"Name":"minecraft:mushroom_stem"},
+    "b": {"Properties":{"west":"true","up":"false","south":"true","north":"false","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "c": {"Properties":{"west":"true","up":"true","south":"true","north":"false","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "d": {"Properties":{"west":"false","up":"true","south":"true","north":"false","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "e": {"Properties":{"west":"false","up":"true","south":"false","north":"false","east":"true","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "f": {"Properties":{"west":"false","up":"false","south":"false","north":"true","east":"true","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "g": {"Properties":{"west":"false","up":"true","south":"true","north":"false","east":"true","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "h": {"Properties":{"west":"false","up":"false","south":"true","north":"false","east":"true","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "i": {"Properties":{"west":"true","up":"false","south":"false","north":"true","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "j": {"Properties":{"west":"true","up":"true","south":"false","north":"false","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "k": {"Properties":{"west":"false","up":"true","south":"false","north":"false","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "l": {"Properties":{"west":"true","up":"true","south":"false","north":"true","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "m": {"Properties":{"west":"true","up":"false","south":"false","north":"false","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "n": {"Properties":{"west":"false","up":"false","south":"false","north":"true","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "o": {"Properties":{"west":"false","up":"true","south":"false","north":"true","east":"true","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "p": {"Properties":{"west":"false","up":"false","south":"true","north":"false","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "q": {"Properties":{"west":"false","up":"false","south":"false","north":"false","east":"true","down":"false"},"Name":"minecraft:red_mushroom_block"},
+    "r": {"Properties":{"west":"false","up":"true","south":"false","north":"true","east":"false","down":"false"},"Name":"minecraft:red_mushroom_block"}
+  },
+  "shape": [
+    [
+      "     ",
+      " oeg ",
+      " fqh ",
+      " fqh ",
+      "     ",
+      "     "
+    ],
+    [
+      " oeg ",
+      "o   g",
+      "f   h",
+      "f   h",
+      "     ",
+      "     "
+    ],
+    [
+      " rkd ",
+      "r a d",
+      "n a p",
+      "n a p",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      " ljc ",
+      "l   c",
+      "i   b",
+      "i   b",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " ljc ",
+      " imb ",
+      " imb ",
+      "     ",
+      "     "
+    ]
+  ]
+}

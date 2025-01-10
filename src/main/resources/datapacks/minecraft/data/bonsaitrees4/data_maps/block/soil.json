@@ -1,0 +1,28 @@
+{
+  "values": {
+    "#c:dirts": {
+      "soilType": "bonsaitrees4:dirt"
+    },
+    "#c:end_stones": {
+      "soilType": "bonsaitrees4:end_stone"
+    },
+    "#minecraft:base_stone_nether": {
+      "soilType": "bonsaitrees4:nether_stone"
+    },
+    "#minecraft:base_stone_overworld": {
+      "soilType": "bonsaitrees4:stone"
+    },
+    "#minecraft:dirt": {
+      "soilType": "bonsaitrees4:dirt"
+    },
+    "#minecraft:mushroom_grow_block": {
+      "soilType": "bonsaitrees4:mycelium"
+    },
+    "#minecraft:nylium": {
+      "soilType": "bonsaitrees4:nylium"
+    },
+    "#minecraft:sand": {
+      "soilType": "bonsaitrees4:sand"
+    }
+  }
+}

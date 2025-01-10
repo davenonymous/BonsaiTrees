@@ -1,0 +1,59 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"minecraft:spruce_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"minecraft:spruce_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"minecraft:spruce_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"minecraft:spruce_leaves"},
+    "e": {"Properties":{"age":"0"},"Name":"pamhc2trees:pampinenut"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"minecraft:spruce_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      " fdf ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "     ",
+      "  c  ",
+      "ddbdf",
+      "  b  ",
+      "  e  ",
+      "     "
+    ],
+    [
+      " bcb ",
+      "  a  ",
+      " cac ",
+      "bbabd",
+      " bab ",
+      " eae ",
+      "  a  "
+    ],
+    [
+      "  b  ",
+      "     ",
+      "  c  ",
+      "dbbdf",
+      "  b  ",
+      "  e  ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      " dbd ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

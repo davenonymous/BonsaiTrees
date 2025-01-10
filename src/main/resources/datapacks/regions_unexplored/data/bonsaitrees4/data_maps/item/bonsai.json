@@ -1,0 +1,134 @@
+{
+  "values": {
+    "regions_unexplored:alpha_sapling": {
+      "model": "regions_unexplored:alpha_oak_tree"
+    },
+    "regions_unexplored:apple_oak_sapling": {
+      "model": "regions_unexplored:apple_oak_tree"
+    },
+    "regions_unexplored:ashen_sapling": {
+      "model": "regions_unexplored:ashen_tree"
+    },
+    "regions_unexplored:bamboo_sapling": {
+      "model": "regions_unexplored:bamboo_tree"
+    },
+    "regions_unexplored:blackwood_sapling": {
+      "model": "regions_unexplored:big_blackwood_tree"
+    },
+    "regions_unexplored:blue_bioshroom": {
+      "light_emission": 15,
+      "model": "regions_unexplored:giant_blue_bioshroom",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    },
+    "regions_unexplored:blue_magnolia_sapling": {
+      "model": "regions_unexplored:blue_magnolia_tree"
+    },
+    "regions_unexplored:brimwood_sapling": {
+      "model": "regions_unexplored:brim_willow_tree"
+    },
+    "regions_unexplored:cactus_flower": {
+      "model": "regions_unexplored:saguaro_cactus",
+      "valid_soil_types": [
+        "bonsaitrees4:sand"
+      ]
+    },
+    "regions_unexplored:cobalt_sapling": {
+      "model": "regions_unexplored:cobalt_tree"
+    },
+    "regions_unexplored:cypress_sapling": {
+      "model": "regions_unexplored:cypress_tree"
+    },
+    "regions_unexplored:dead_pine_sapling": {
+      "model": "regions_unexplored:dead_pine_tree"
+    },
+    "regions_unexplored:dead_sapling": {
+      "model": "regions_unexplored:dead_tree"
+    },
+    "regions_unexplored:enchanted_birch_sapling": {
+      "model": "regions_unexplored:enchanted_birch_tree"
+    },
+    "regions_unexplored:eucalyptus_sapling": {
+      "model": "regions_unexplored:eucalyptus_tree"
+    },
+    "regions_unexplored:flowering_sapling": {
+      "model": "regions_unexplored:flowering_oak_tree"
+    },
+    "regions_unexplored:golden_larch_sapling": {
+      "model": "regions_unexplored:larch_golden_tree"
+    },
+    "regions_unexplored:green_bioshroom": {
+      "light_emission": 15,
+      "model": "regions_unexplored:giant_green_bioshroom",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    },
+    "regions_unexplored:joshua_sapling": {
+      "model": "regions_unexplored:medium_joshua_tree",
+      "valid_soil_types": [
+        "bonsaitrees4:sand"
+      ]
+    },
+    "regions_unexplored:larch_sapling": {
+      "model": "regions_unexplored:larch_tree"
+    },
+    "regions_unexplored:magnolia_sapling": {
+      "model": "regions_unexplored:magnolia_tree"
+    },
+    "regions_unexplored:maple_sapling": {
+      "model": "regions_unexplored:maple_tree"
+    },
+    "regions_unexplored:mauve_sapling": {
+      "model": "regions_unexplored:mauve_oak"
+    },
+    "regions_unexplored:orange_maple_sapling": {
+      "model": "regions_unexplored:orange_maple_tree"
+    },
+    "regions_unexplored:palm_sapling": {
+      "model": "regions_unexplored:palm_tree",
+      "valid_soil_types": [
+        "bonsaitrees4:sand"
+      ]
+    },
+    "regions_unexplored:pine_sapling": {
+      "model": "regions_unexplored:pine_tree"
+    },
+    "regions_unexplored:pink_bioshroom": {
+      "light_emission": 15,
+      "model": "regions_unexplored:giant_pink_bioshroom",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    },
+    "regions_unexplored:pink_magnolia_sapling": {
+      "model": "regions_unexplored:pink_magnolia_tree"
+    },
+    "regions_unexplored:red_maple_sapling": {
+      "model": "regions_unexplored:red_maple_tree"
+    },
+    "regions_unexplored:silver_birch_sapling": {
+      "model": "regions_unexplored:silver_birch_tree"
+    },
+    "regions_unexplored:small_oak_sapling": {
+      "model": "regions_unexplored:small_oak_tree"
+    },
+    "regions_unexplored:socotra_sapling": {
+      "model": "regions_unexplored:large_socotra_tree"
+    },
+    "regions_unexplored:white_magnolia_sapling": {
+      "model": "regions_unexplored:white_magnolia_tree"
+    },
+    "regions_unexplored:willow_sapling": {
+      "model": "regions_unexplored:willow_tree"
+    },
+    "regions_unexplored:yellow_bioshroom": {
+      "light_emission": 15,
+      "model": "regions_unexplored:giant_yellow_bioshroom",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    }
+  }
+}

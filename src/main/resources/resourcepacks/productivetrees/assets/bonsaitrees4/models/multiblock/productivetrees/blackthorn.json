@@ -1,0 +1,68 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:blackthorn_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:blackthorn_leaves"},
+    "c": {"Properties":{"axis":"y"},"Name":"productivetrees:blackthorn_log"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:blackthorn_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "aabbbb ",
+      " aabbb ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "  aaa  ",
+      "baababa",
+      "aabaaba",
+      "       ",
+      "       "
+    ],
+    [
+      " aaaab ",
+      " aadab ",
+      "baaabbb",
+      "bababab",
+      "       ",
+      "       "
+    ],
+    [
+      " aaaba ",
+      " bacab ",
+      "badcabb",
+      "abacaba",
+      "   c   ",
+      "   c   "
+    ],
+    [
+      " aaaaa ",
+      " aaaba ",
+      "aaaaaba",
+      "bbbaabb",
+      "       ",
+      "       "
+    ],
+    [
+      "  aab  ",
+      "  aaab ",
+      "aaababa",
+      "baaaaba",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "aabaaba",
+      " aaaaba",
+      "       ",
+      "       "
+    ]
+  ]
+}

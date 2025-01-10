@@ -1,0 +1,121 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Name":"minecraft:moss_carpet"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"minecraft:mangrove_leaves"},
+    "c": {"Properties":{"waterlogged":"false"},"Name":"minecraft:mangrove_roots"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"minecraft:mangrove_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"minecraft:mangrove_leaves"},
+    "f": {"Properties":{"west":"false","up":"false","south":"true","north":"false","east":"false"},"Name":"minecraft:vine"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"minecraft:mangrove_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"minecraft:mangrove_log"},
+    "i": {"Properties":{"west":"false","up":"false","south":"false","north":"false","east":"true"},"Name":"minecraft:vine"},
+    "j": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"minecraft:mangrove_leaves"},
+    "k": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"minecraft:mangrove_leaves"},
+    "l": {"Properties":{"west":"false","up":"false","south":"false","north":"true","east":"false"},"Name":"minecraft:vine"},
+    "m": {"Properties":{"waterlogged":"false","stage":"0","hanging":"true","age":"0"},"Name":"minecraft:mangrove_propagule"},
+    "n": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"minecraft:mangrove_leaves"}
+  },
+  "shape": [
+    [
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "      a   ",
+      "      c   ",
+      "      c   "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "      a   ",
+      "      c   ",
+      "      c   ",
+      "      c   "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "      a   ",
+      "      c   ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "      c   ",
+      "          ",
+      "          "
+    ],
+    [
+      "     b    ",
+      "    beg n ",
+      "       b  ",
+      "       m  ",
+      "      c   ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "    egkg  ",
+      "    mkae  ",
+      "      c   ",
+      "      c   ",
+      "          ",
+      "          "
+    ],
+    [
+      "     gkge ",
+      "     kjkg ",
+      " a fkjhae ",
+      " ccccchc  ",
+      "ac    cc  ",
+      "cc     cc ",
+      "cc      cc"
+    ],
+    [
+      "     e eb ",
+      "   feg ge ",
+      "   f  a i ",
+      "   f  c i ",
+      "   f    i ",
+      "   f    i ",
+      "        i "
+    ],
+    [
+      "     b bl ",
+      "     ebel ",
+      "     fd l ",
+      "     fc l ",
+      "     f  l ",
+      "     f    ",
+      "     f    "
+    ],
+    [
+      "          ",
+      "          ",
+      "      a   ",
+      "      c   ",
+      "          ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "      a   ",
+      "      c   ",
+      "      c   ",
+      "      c   ",
+      "      c   "
+    ]
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:foggy_blast_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:foggy_blast_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:foggy_blast_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:foggy_blast_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:foggy_blast_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:foggy_blast_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:foggy_blast_log"},
+    "h": {"Properties":{"axis":"x"},"Name":"productivetrees:foggy_blast_log"},
+    "i": {"Properties":{"axis":"z"},"Name":"productivetrees:foggy_blast_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "  fcf  ",
+      "  feff ",
+      "  cbcc ",
+      "   aec ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   c   ",
+      " fcecf ",
+      " ccbccf",
+      " eeaeec",
+      " ebdbee",
+      " ebaa  ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  cec  ",
+      " cebec ",
+      " ebabec",
+      "cbadabe",
+      "ebdgdab",
+      "ebagid ",
+      "  ag   ",
+      "   g   ",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      "   c   ",
+      " fcecf ",
+      " cebccf",
+      "cebaeec",
+      "ebadbee",
+      "badaa  ",
+      " dha   ",
+      "       ",
+      "   h   ",
+      "       "
+    ],
+    [
+      "       ",
+      "  fcf  ",
+      "  feff ",
+      "ffcbcc ",
+      "fcebec ",
+      "cebbb  ",
+      "ebabe  ",
+      "  a    ",
+      "  h    ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      " cce   ",
+      "cebee  ",
+      "ebaeb  ",
+      "badae  ",
+      " dhd   ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "  c    ",
+      "fcecc  ",
+      "cebce  ",
+      "ebabc  ",
+      "  d    ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      " fcf   ",
+      " cec   ",
+      " ebe   ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

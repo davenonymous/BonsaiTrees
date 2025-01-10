@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:yellow_meranti_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:yellow_meranti_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:yellow_meranti_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:yellow_meranti_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:yellow_meranti_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:yellow_meranti_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:yellow_meranti_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "eaacae ",
+      " eacae ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      "  cbca ",
+      "eccbcae",
+      "eacbcae",
+      "       ",
+      "       "
+    ],
+    [
+      " abfba ",
+      " cbdbc ",
+      "abbfbca",
+      "ccbfbcc",
+      "       ",
+      "       "
+    ],
+    [
+      " cfdfc ",
+      " bdgdb ",
+      "cffgfbc",
+      "bbfgfbb",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " abfba ",
+      " cbdbc ",
+      "abffbba",
+      "ccbfbcc",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      " acbca ",
+      "accfcca",
+      "eabbbae",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "eaabaee",
+      "eeccce ",
+      "       ",
+      "       "
+    ]
+  ]
+}

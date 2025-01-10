@@ -1,0 +1,105 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:cave_dweller_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:cave_dweller_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:cave_dweller_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:cave_dweller_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:cave_dweller_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:cave_dweller_leaves"},
+    "g": {"Properties":{"axis":"z"},"Name":"productivetrees:cave_dweller_log"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:cave_dweller_log"},
+    "i": {"Properties":{"axis":"x"},"Name":"productivetrees:cave_dweller_log"}
+  },
+  "shape": [
+    [
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "    cfc   ",
+      "    fff   ",
+      "    cfc   ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "    bcb   ",
+      "    bfb   ",
+      "    cec   ",
+      "   cfefc  ",
+      "   ceaef  ",
+      "   cfeff  ",
+      "     d    ",
+      "          "
+    ],
+    [
+      "     c    ",
+      "   bcfcb  ",
+      "   cceccb ",
+      "   ffaffc ",
+      "   feaeff ",
+      "   fadae  ",
+      "   feaee  ",
+      "    did   ",
+      "          "
+    ],
+    [
+      "    cfc   ",
+      "   cfefc  ",
+      "   feaefcb",
+      " bceadaefc",
+      " cfeahdaef",
+      " feadhgd  ",
+      "   eahda  ",
+      "     h    ",
+      "     h    "
+    ],
+    [
+      "     c    ",
+      "   bcfcfc ",
+      "  bbcecefc",
+      "bcccfafaef",
+      "cfefeaedae",
+      "feaeadagd ",
+      "  d dae   ",
+      "   gi     ",
+      "          "
+    ],
+    [
+      "          ",
+      "    bcbc  ",
+      " cfcbfcfcb",
+      "cfefcefefc",
+      "feaffaeaef",
+      "eadae  d  ",
+      " dgd      ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "  c   bcb ",
+      "bcfcb cfc ",
+      "cfecc fef ",
+      "feaef     ",
+      "  d       ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      " bcb      ",
+      " cfc      ",
+      " fef      ",
+      "          ",
+      "          ",
+      "          "
+    ]
+  ]
+}

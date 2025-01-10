@@ -1,0 +1,64 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"regions_unexplored:orange_maple_leaves"},
+    "b": {"Properties":{"axis":"y"},"Name":"regions_unexplored:maple_log"},
+    "c": {"Properties":{"facing":"north"},"Name":"regions_unexplored:maple_branch"},
+    "d": {"Properties":{"facing":"south"},"Name":"regions_unexplored:maple_branch"},
+    "e": {"Properties":{"facing":"west"},"Name":"regions_unexplored:maple_branch"},
+    "f": {"Properties":{"facing":"east"},"Name":"regions_unexplored:maple_branch"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      " aaaa",
+      " aaaa",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  aa ",
+      "  a  ",
+      " aaa ",
+      "aaaaa",
+      "aafaa",
+      "  a  ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " aaa ",
+      " aba ",
+      "aabaa",
+      "aabaa",
+      "acbda",
+      " aba ",
+      "  b  "
+    ],
+    [
+      "     ",
+      "  a  ",
+      "  aa ",
+      " aaa ",
+      "aaaaa",
+      "aaeaa",
+      "  a  ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      " aaa ",
+      " aaa ",
+      "     ",
+      "     "
+    ]
+  ]
+}

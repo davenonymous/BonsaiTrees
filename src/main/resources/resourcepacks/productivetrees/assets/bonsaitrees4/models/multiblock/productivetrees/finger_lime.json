@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:finger_lime_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:finger_lime_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:finger_lime_fruit"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:finger_lime_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:finger_lime_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:finger_lime_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:finger_lime_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:finger_lime_leaves"},
+    "i": {"Properties":{"axis":"y"},"Name":"productivetrees:finger_lime_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " dcccg ",
+      " cccgc ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccd  ",
+      " ccccc ",
+      "ccccgag",
+      "cdccafc",
+      "       ",
+      "       "
+    ],
+    [
+      " ddccd ",
+      " cccbc ",
+      "cdcccfa",
+      "dcchcef",
+      "       ",
+      "       "
+    ],
+    [
+      " dchcc ",
+      " ccihc ",
+      "cchiccc",
+      "cdcihbc",
+      "   i   ",
+      "   i   "
+    ],
+    [
+      " ccccc ",
+      " cbhcd ",
+      "gceccdc",
+      "ccccccc",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      " accdc ",
+      "afefccc",
+      "gafcdcd",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " ccccd ",
+      "cgagdc ",
+      "       ",
+      "       "
+    ]
+  ]
+}

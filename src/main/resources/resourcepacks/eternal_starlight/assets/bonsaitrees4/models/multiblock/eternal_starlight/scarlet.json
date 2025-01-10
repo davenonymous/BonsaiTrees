@@ -1,0 +1,116 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"eternal_starlight:scarlet_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"eternal_starlight:scarlet_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"eternal_starlight:scarlet_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"eternal_starlight:scarlet_leaves"},
+    "e": {"Properties":{"axis":"y"},"Name":"eternal_starlight:scarlet_log"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"eternal_starlight:scarlet_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"eternal_starlight:scarlet_leaves"},
+    "h": {"Name":"minecraft:cobweb"}
+  },
+  "shape": [
+    [
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "     f    ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "   f af   ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "     ba   ",
+      "     ba   ",
+      "   fabaf  ",
+      "   f bff  ",
+      "          "
+    ],
+    [
+      "     a    ",
+      "     bb   ",
+      "    bc    ",
+      "   bbcbb  ",
+      "  fabcba  ",
+      "  aabcbaff",
+      "       ff ",
+      "          "
+    ],
+    [
+      "          ",
+      "   acdca  ",
+      "    cgc   ",
+      "   ccdcc  ",
+      "  abcdcba ",
+      " abbcdcbb ",
+      "      b   ",
+      "          "
+    ],
+    [
+      "   a  c   ",
+      "  bbdgdb  ",
+      "  bcgegcb ",
+      "  bddeddb ",
+      " abcdedcba",
+      "abccdedccb",
+      " ab he    ",
+      "     e    "
+    ],
+    [
+      "          ",
+      "    cdca  ",
+      "    cgcb  ",
+      "  accdcc  ",
+      "  abcdcb  ",
+      " abcdddcb ",
+      "    cd  a ",
+      "          "
+    ],
+    [
+      "     a    ",
+      "    bb    ",
+      "     cba  ",
+      "   bbdbb  ",
+      "   abcba  ",
+      "  abcdcba ",
+      "   a      ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "     b    ",
+      "     c a  ",
+      "    aba   ",
+      "  fabcbaf ",
+      "          ",
+      "          "
+    ],
+    [
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "          ",
+      "     b    ",
+      "          ",
+      "          "
+    ]
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:cempedak_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:cempedak_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:cempedak_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:cempedak_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:cempedak_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:cempedak_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:cempedak_log"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:cempedak_fruit"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " deaed ",
+      "ddeaedd",
+      "       ",
+      "       "
+    ],
+    [
+      "  ebe  ",
+      " eabae ",
+      "eeabaed",
+      "deabaed",
+      "     h ",
+      "       "
+    ],
+    [
+      " aafaa ",
+      " abcba ",
+      "aabfbaa",
+      "eabfbae",
+      "     h ",
+      "       "
+    ],
+    [
+      " bfcfb ",
+      " bcgcb ",
+      "bffgfbb",
+      "abfgfba",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " eafaa ",
+      " abcba ",
+      "aaffbaa",
+      "ebbfbbe",
+      "       ",
+      "       "
+    ],
+    [
+      "  ebe  ",
+      " eaba  ",
+      "debfbed",
+      "eaabaad",
+      "     h ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "ddaaae ",
+      "deebedd",
+      "       ",
+      "       "
+    ]
+  ]
+}

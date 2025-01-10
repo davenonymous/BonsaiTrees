@@ -1,0 +1,169 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"west":"true","up":"true","south":"false","north":"true","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "b": {"Properties":{"west":"false","up":"false","south":"false","north":"true","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "c": {"Properties":{"west":"true","up":"true","south":"false","north":"false","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "d": {"Properties":{"west":"false","up":"false","south":"false","north":"false","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "e": {"Properties":{"west":"true","up":"true","south":"false","north":"true","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "f": {"Properties":{"west":"false","up":"true","south":"false","north":"true","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "g": {"Properties":{"west":"true","up":"true","south":"false","north":"false","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "h": {"Properties":{"west":"false","up":"true","south":"false","north":"true","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "i": {"Properties":{"west":"true","up":"true","south":"true","north":"false","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "j": {"Properties":{"west":"false","up":"true","south":"true","north":"false","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "k": {"Properties":{"west":"true","up":"true","south":"true","north":"false","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "l": {"Properties":{"west":"false","up":"true","south":"false","north":"false","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "m": {"Properties":{"west":"false","up":"true","south":"false","north":"false","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "n": {"Properties":{"west":"true","up":"true","south":"false","north":"true","east":"true","down":"true"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "o": {"Properties":{"west":"true","up":"false","south":"false","north":"false","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "p": {"Properties":{"west":"false","up":"true","south":"true","north":"false","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "q": {"Properties":{"west":"true","up":"false","south":"false","north":"false","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "r": {"Properties":{"west":"true","up":"true","south":"true","north":"true","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "s": {"Properties":{"west":"true","up":"true","south":"true","north":"false","east":"false","down":"true"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "t": {"Properties":{"west":"true","up":"false","south":"true","north":"true","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_stem"},
+    "u": {"Properties":{"west":"true","up":"false","south":"true","north":"false","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "v": {"Properties":{"west":"false","up":"false","south":"true","north":"false","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "w": {"Properties":{"west":"false","up":"false","south":"true","north":"false","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "x": {"Properties":{"west":"true","up":"true","south":"true","north":"true","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "y": {"Properties":{"west":"false","up":"false","south":"false","north":"false","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "z": {"Properties":{"west":"true","up":"false","south":"false","north":"true","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "A": {"Properties":{"west":"false","up":"false","south":"true","north":"true","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "B": {"Properties":{"west":"false","up":"true","south":"true","north":"true","east":"false","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "C": {"Properties":{"west":"false","up":"true","south":"true","north":"true","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "D": {"Properties":{"west":"false","up":"true","south":"false","north":"true","east":"true","down":"true"},"Name":"eternal_starlight:glowing_mushroom_block"},
+    "E": {"Properties":{"west":"true","up":"false","south":"true","north":"false","east":"true","down":"false"},"Name":"eternal_starlight:glowing_mushroom_block"}
+  },
+  "shape": [
+    [
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "   C  hj     ",
+      "             ",
+      "             "
+    ],
+    [
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "   hmmj      ",
+      "   byydlmj   ",
+      "   d         ",
+      "             "
+    ],
+    [
+      "             ",
+      "             ",
+      "             ",
+      "    hmj      ",
+      "   fdddmmmj  ",
+      "  hdddddddw  ",
+      "     d  d d  ",
+      "             "
+    ],
+    [
+      "             ",
+      "     Dj      ",
+      "      A      ",
+      "   hlldmj    ",
+      "  hddddddllk ",
+      " hdddddddddw ",
+      "             ",
+      "             "
+    ],
+    [
+      "      C      ",
+      "    hldmj    ",
+      "   hyydyw    ",
+      "  eddddddj   ",
+      "  bdddddddp  ",
+      " fdddddddddp ",
+      "             ",
+      "             "
+    ],
+    [
+      "      B      ",
+      "    fldlp    ",
+      "   fddddv    ",
+      "   bdddddlj  ",
+      " hldddddddv  ",
+      " bdddddddddp ",
+      "   d    d    ",
+      "             "
+    ],
+    [
+      "      r x    ",
+      "  nclltldj   ",
+      "   bddtddqk  ",
+      "  edddtddddk ",
+      " fddddtddddE ",
+      "hdddddtdddddk",
+      "    d td   d ",
+      "      t      "
+    ],
+    [
+      "       x     ",
+      "    flldls   ",
+      "   addddv    ",
+      "   bdddddli  ",
+      " fldddddddv  ",
+      "addddddddddp ",
+      "      d d    ",
+      "             "
+    ],
+    [
+      "      x      ",
+      "    agdgi    ",
+      "    zoddu    ",
+      "   adddddp   ",
+      " aldddddddp  ",
+      " bdddddddddp ",
+      "  dd  dd dd  ",
+      "             "
+    ],
+    [
+      "             ",
+      "      r      ",
+      "      zi     ",
+      "    agdoli   ",
+      "  flddddddp  ",
+      " adddddddddp ",
+      "         dd  ",
+      "             "
+    ],
+    [
+      "             ",
+      "             ",
+      "             ",
+      "      r r    ",
+      "  alggdldgi  ",
+      "  bddddddddi ",
+      "   d dd  d   ",
+      "             "
+    ],
+    [
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "   r  agi    ",
+      "  aoggdoogi  ",
+      "       dd    ",
+      "             "
+    ],
+    [
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "             ",
+      "      r      ",
+      "             ",
+      "             "
+    ]
+  ]
+}

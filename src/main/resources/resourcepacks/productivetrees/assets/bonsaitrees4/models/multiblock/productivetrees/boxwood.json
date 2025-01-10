@@ -1,0 +1,64 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:boxwood_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:boxwood_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:boxwood_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:boxwood_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:boxwood_leaves"},
+    "f": {"Properties":{"axis":"y"},"Name":"productivetrees:boxwood_log"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:boxwood_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " eacae ",
+      "eaacae ",
+      "       "
+    ],
+    [
+      "  cbc  ",
+      " abdba ",
+      "eacbcae",
+      "accbcae",
+      "       "
+    ],
+    [
+      " abdba ",
+      " cdgdc ",
+      "acbdbca",
+      "cbbdbca",
+      "       "
+    ],
+    [
+      " bdgdb ",
+      " dgfgd ",
+      "cbdfdbc",
+      "bddfdbc",
+      "   f   "
+    ],
+    [
+      " abdba ",
+      " cdgdc ",
+      "acbdbca",
+      "cbddbbc",
+      "       "
+    ],
+    [
+      "  cbc  ",
+      " abdb  ",
+      "eacbcae",
+      "acbdbca",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "eeacaee",
+      "eacbca ",
+      "       "
+    ]
+  ]
+}

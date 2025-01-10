@@ -1,0 +1,66 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:slimy_delight_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:slimy_delight_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:slimy_delight_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:slimy_delight_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:slimy_delight_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:slimy_delight_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:slimy_delight_log"},
+    "h": {"Properties":{"axis":"z"},"Name":"productivetrees:slimy_delight_log"}
+  },
+  "shape": [
+    [
+      "        ",
+      "    efe ",
+      " bebfdf ",
+      " efedad ",
+      " fde    ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "     f  ",
+      "  ebfdfe",
+      "befedadf",
+      "efdfacad",
+      "fdafda  ",
+      "  c     ",
+      "        ",
+      "        "
+    ],
+    [
+      "    fdf ",
+      " efedadf",
+      "efdfacad",
+      "fdadcgca",
+      "dacdaga ",
+      " chc g  ",
+      "   hhg  ",
+      "     g  "
+    ],
+    [
+      "     f  ",
+      "  ebfdfe",
+      "befedadf",
+      "efdfacad",
+      "fdadda  ",
+      "  c     ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      "    efe ",
+      " bebfdf ",
+      " efedad ",
+      " fdf    ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

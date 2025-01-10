@@ -1,0 +1,28 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"regions_unexplored:cobalt_webbing"},
+    "b": {"Properties":{"axis":"y"},"Name":"regions_unexplored:cobalt_log"}
+  },
+  "shape": [
+    [
+      " a ",
+      "aaa",
+      "   ",
+      "   "
+    ],
+    [
+      "aaa",
+      "aba",
+      " b ",
+      " b "
+    ],
+    [
+      " a ",
+      "aaa",
+      "   ",
+      "   "
+    ]
+  ]
+}

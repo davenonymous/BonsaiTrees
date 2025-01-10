@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:tuscarora_crepe_myrtle_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:tuscarora_crepe_myrtle_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:tuscarora_crepe_myrtle_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:tuscarora_crepe_myrtle_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:tuscarora_crepe_myrtle_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:tuscarora_crepe_myrtle_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:tuscarora_crepe_myrtle_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " feaeff",
+      " eeaef ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aca  ",
+      " ecbc  ",
+      "feacaef",
+      "eaacaef",
+      "       ",
+      "       "
+    ],
+    [
+      " ecbce ",
+      " abdba ",
+      "eacbcae",
+      "accbcae",
+      "       ",
+      "       "
+    ],
+    [
+      " cbdbc ",
+      " bdgdb ",
+      "acbgbca",
+      "cbbgbca",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " ecbce ",
+      " abdba ",
+      "eacbcae",
+      "acbbcca",
+      "       ",
+      "       "
+    ],
+    [
+      "  aca  ",
+      "  cbc  ",
+      "feacaef",
+      "eacbcae",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "ffeaeff",
+      " eacaef",
+      "       ",
+      "       "
+    ]
+  ]
+}

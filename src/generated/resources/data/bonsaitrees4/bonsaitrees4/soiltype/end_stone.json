@@ -1,0 +1,8 @@
+{
+  "defaultItem": {
+    "count": 1,
+    "id": "minecraft:end_stone"
+  },
+  "id": "bonsaitrees4:end_stone",
+  "translationKey": "bonsaitrees4.tooltip.soil.bonsaitrees4.end_stone"
+}

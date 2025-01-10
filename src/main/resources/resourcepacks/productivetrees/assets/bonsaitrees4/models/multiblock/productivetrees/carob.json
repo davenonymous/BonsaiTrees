@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:carob_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:carob_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:carob_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:carob_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:carob_leaves"},
+    "f": {"Properties":{"axis":"y"},"Name":"productivetrees:carob_log"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:carob_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:carob_leaves"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:carob_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " aaaaab",
+      "aaabbab",
+      "       ",
+      "       "
+    ],
+    [
+      "  baa  ",
+      " abaea ",
+      "aahigab",
+      "aaahaab",
+      "       ",
+      "       "
+    ],
+    [
+      " abaaa ",
+      " aacda ",
+      "bbbaaaa",
+      "babaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      " aacde ",
+      " dcfcd ",
+      "aaafdaa",
+      "aaafdaa",
+      "   f   ",
+      "   f   "
+    ],
+    [
+      " aadaa ",
+      " aacde ",
+      "baaaaab",
+      "abaadaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      " aaae  ",
+      "baaaaaa",
+      "aaageaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " aaabab",
+      " baaaba",
+      "       ",
+      "       "
+    ]
+  ]
+}

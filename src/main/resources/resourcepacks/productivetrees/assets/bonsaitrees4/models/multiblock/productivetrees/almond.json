@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:almond_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:almond_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:almond_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:almond_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:almond_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:almond_fruit"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:almond_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:almond_leaves"},
+    "i": {"Properties":{"axis":"y"},"Name":"productivetrees:almond_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " fgfhh ",
+      " hfeff ",
+      "       ",
+      "       "
+    ],
+    [
+      "  hfh  ",
+      " fffh  ",
+      "ggagffe",
+      "efaeffg",
+      "       ",
+      "       "
+    ],
+    [
+      " afffa ",
+      " fbdfg ",
+      "facfhff",
+      "fffffca",
+      "       ",
+      "       "
+    ],
+    [
+      " cbdbc ",
+      " bdidf ",
+      "ccbifag",
+      "fcbidbc",
+      "   i   ",
+      "   i   "
+    ],
+    [
+      " acbca ",
+      " cbdff ",
+      "fafbcag",
+      "fcbfcaf",
+      "       ",
+      "       "
+    ],
+    [
+      "  aca  ",
+      " acff  ",
+      "ggabagf",
+      "eacaage",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "fgacag ",
+      " ffffe ",
+      "       ",
+      "       "
+    ]
+  ]
+}

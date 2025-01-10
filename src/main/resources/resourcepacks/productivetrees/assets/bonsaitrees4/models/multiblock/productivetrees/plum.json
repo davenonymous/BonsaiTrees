@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:plum_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:plum_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:plum_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:plum_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:plum_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:plum_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:plum_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:plum_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:plum_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " aaaeaa",
+      " eaeaee",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      " gdbaa ",
+      "eagaeae",
+      "aeaeeae",
+      "       ",
+      "       "
+    ],
+    [
+      " aaada ",
+      " aaibd ",
+      "eabaaga",
+      "aaaacfa",
+      "       ",
+      "       "
+    ],
+    [
+      " fcabd ",
+      " gahib ",
+      "caihaae",
+      "eaahace",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " gaada ",
+      " dbiba ",
+      "cfabaaa",
+      "acaaeea",
+      "       ",
+      "       "
+    ],
+    [
+      "  eea  ",
+      " aaad  ",
+      "fgdbgfa",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " aaagf ",
+      "aaaaaae",
+      "       ",
+      "       "
+    ]
+  ]
+}

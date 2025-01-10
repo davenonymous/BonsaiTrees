@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:nectarine_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:nectarine_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:nectarine_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:nectarine_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:nectarine_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:nectarine_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:nectarine_log"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:nectarine_leaves"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:nectarine_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " ccacaa",
+      " caaac ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aef  ",
+      " faah  ",
+      "aaaciaa",
+      "ccaaaca",
+      "       ",
+      "       "
+    ],
+    [
+      " aadaa ",
+      " eabaa ",
+      "hfeaaaa",
+      "aadbaac",
+      "       ",
+      "       "
+    ],
+    [
+      " edaaa ",
+      " dbgbd ",
+      "feagaaa",
+      "aaagaac",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " facca ",
+      " eaaaa ",
+      "aaaacaa",
+      "caaaaca",
+      "       ",
+      "       "
+    ],
+    [
+      "  aca  ",
+      " aacc  ",
+      "aaaccca",
+      "aaaaccc",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " caaaca",
+      "acacac ",
+      "       ",
+      "       "
+    ]
+  ]
+}

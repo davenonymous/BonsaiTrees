@@ -1,0 +1,79 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"minecraft:dark_oak_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"minecraft:dark_oak_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"minecraft:dark_oak_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"minecraft:dark_oak_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"minecraft:dark_oak_leaves"},
+    "f": {"Properties":{"axis":"y"},"Name":"minecraft:dark_oak_log"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"minecraft:dark_oak_leaves"}
+  },
+  "shape": [
+    [
+      "        ",
+      " cdddc  ",
+      " ebe    ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   dd   ",
+      " deeed  ",
+      "ebabedc ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "  eeed  ",
+      "debbbedc",
+      "bafabed ",
+      "  f     ",
+      "  f     ",
+      "        "
+    ],
+    [
+      " debbed ",
+      "debffbed",
+      "deaffbe ",
+      "   ff   ",
+      "   ff   ",
+      "   ff   "
+    ],
+    [
+      " deabee ",
+      "debffbee",
+      "ebfffab ",
+      "  fff   ",
+      "   ff   ",
+      "   ff   "
+    ],
+    [
+      "  bebd  ",
+      "ebabbedc",
+      "baffabe ",
+      "  ff    ",
+      "        ",
+      "        "
+    ],
+    [
+      "   de   ",
+      "deeeedcg",
+      "ebabeed ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      " ddedc  ",
+      " eebe   ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

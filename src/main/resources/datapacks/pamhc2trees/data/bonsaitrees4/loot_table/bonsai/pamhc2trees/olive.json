@@ -1,0 +1,56 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 1.5,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:blocks/jungle_log"
+        }
+      ],
+      "name": "log",
+      "rolls": 3.0
+    },
+    {
+      "bonus_rolls": 1.0,
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:blocks/jungle_leaves"
+        }
+      ],
+      "name": "leaves",
+      "rolls": 2.0
+    },
+    {
+      "bonus_rolls": 0.5,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "pamhc2trees:blocks/pamolive"
+        }
+      ],
+      "name": "other",
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bonsaitrees4:bonsai/pamhc2trees/olive"
+}

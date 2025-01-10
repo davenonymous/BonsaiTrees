@@ -1,0 +1,170 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"biomesoplenty:snowblossom_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"biomesoplenty:snowblossom_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"biomesoplenty:snowblossom_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"biomesoplenty:snowblossom_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"biomesoplenty:snowblossom_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"biomesoplenty:snowblossom_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"minecraft:cherry_log"},
+    "h": {"Properties":{"axis":"x"},"Name":"minecraft:cherry_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " ffccf ",
+      "  cec  ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " ffcc  ",
+      "ffceeff",
+      " ceaecf",
+      " ceae  ",
+      " f e   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  fec  ",
+      " fcaef ",
+      "ccedacc",
+      "ceabaee",
+      " eadaa ",
+      " e     ",
+      " c     ",
+      "       ",
+      "       "
+    ],
+    [
+      "  eae  ",
+      " cadac ",
+      "eedbdee",
+      " abgbaa",
+      " ddgdd ",
+      " a h   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   e   ",
+      " fcaef ",
+      "ccedacc",
+      " eabae ",
+      " eadaa ",
+      "   g   ",
+      "   g   ",
+      "   h   ",
+      "       "
+    ],
+    [
+      "       ",
+      " ffcf  ",
+      "ffcecff",
+      "fceaecf",
+      " eadae ",
+      " c  e  ",
+      "       ",
+      "   h   ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  eaec ",
+      " ea cc ",
+      "       ",
+      "       ",
+      "   g   ",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      "       ",
+      "       ",
+      " eadae ",
+      " adg   ",
+      "   g   ",
+      "   g   ",
+      "   h   ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " ceaec ",
+      "ceadaec",
+      "eadhda ",
+      " eadae ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  cec  ",
+      " ceaec ",
+      "ceadaec",
+      "eadhdaa",
+      " eadae ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  eae  ",
+      " eadae ",
+      "eadbdae",
+      "adbhbd ",
+      " adbda ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   ec  ",
+      " ceaec ",
+      "ceadaec",
+      " adbdae",
+      " eadae ",
+      " c     ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " fcecf ",
+      " ceaecf",
+      " eadaec",
+      " ceaec ",
+      " f e   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  cec  ",
+      " ce ec ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

@@ -1,0 +1,26 @@
+{
+	"components": [
+		{
+			"type": "patchouli:header",
+			"text": "#tree_name",
+			"centered": false,
+			"x": 28,
+			"y": 5,
+			"scale": 1.8
+		},
+		{
+			"type": "patchouli:item",
+			"item": "#tree_sapling",
+			"framed": true,
+			"x": 5,
+			"y": 3
+		},
+		{
+			"type": "patchouli:custom",
+			"class": "com.davenonymous.bonsaitrees.compatibility.patchouli.TreeRenderComponent",
+			"item": "#tree_sapling",
+			"x": 8,
+			"y": 40
+		}
+	]
+}

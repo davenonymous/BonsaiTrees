@@ -1,0 +1,91 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","mossy":"false","distance":"5"},"Name":"biomesoplenty:willow_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","mossy":"false","distance":"3"},"Name":"biomesoplenty:willow_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","mossy":"false","distance":"4"},"Name":"biomesoplenty:willow_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","mossy":"false","distance":"2"},"Name":"biomesoplenty:willow_leaves"},
+    "e": {"Properties":{"west":"false","up":"false","south":"false","north":"false","east":"true"},"Name":"biomesoplenty:willow_vine"},
+    "f": {"Properties":{"west":"false","up":"false","south":"true","north":"false","east":"false"},"Name":"biomesoplenty:willow_vine"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","mossy":"false","distance":"6"},"Name":"biomesoplenty:willow_leaves"},
+    "h": {"Properties":{"west":"false","up":"false","south":"false","north":"true","east":"false"},"Name":"biomesoplenty:willow_vine"},
+    "i": {"Properties":{"west":"true","up":"false","south":"false","north":"false","east":"false"},"Name":"biomesoplenty:willow_vine"},
+    "j": {"Properties":{"axis":"y"},"Name":"biomesoplenty:willow_log"},
+    "k": {"Properties":{"waterlogged":"false","persistent":"false","mossy":"false","distance":"1"},"Name":"biomesoplenty:willow_leaves"}
+  },
+  "shape": [
+    [
+      "   i i   ",
+      "  ii i   ",
+      " ggacagi ",
+      " ggacagg ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "  iaba   ",
+      "  ccdcc  ",
+      " gacbcagh",
+      " aacbcagh",
+      "        h",
+      "        h",
+      "        h"
+    ],
+    [
+      " fcbdbc  ",
+      " fbdkdb  ",
+      "facbdbca ",
+      "fccbdbcc ",
+      "f        ",
+      "f        ",
+      "f        "
+    ],
+    [
+      "  bdkdb  ",
+      "  dkjkdh ",
+      " cbdjdbc ",
+      " bddjdbb ",
+      "    j    ",
+      "    j    ",
+      "    j    "
+    ],
+    [
+      "  cbdbch ",
+      "  bdkdbh ",
+      " acbdbcah",
+      " cbddbcch",
+      "        h",
+      "        h",
+      "        h"
+    ],
+    [
+      "  faba   ",
+      " fccdcc  ",
+      "fgacbcag ",
+      "facbdbca ",
+      "f        ",
+      "f        ",
+      "f        "
+    ],
+    [
+      "         ",
+      "         ",
+      " ggacag  ",
+      " gacbca  ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "      e  ",
+      " e  e e  ",
+      " e  e e  ",
+      " e  e e  ",
+      " e  e e  "
+    ]
+  ]
+}

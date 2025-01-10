@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_components",
+              "include": [
+                "minecraft:custom_name",
+                "bonsaitrees4:camouflage",
+                "bonsaitrees4:soil",
+                "bonsaitrees4:sapling",
+                "bonsaitrees4:tool",
+                "bonsaitrees4:redstone_mode"
+              ],
+              "source": "block_entity"
+            }
+          ],
+          "name": "bonsaitrees4:bonsaipot"
+        },
+        {
+          "type": "bonsaitrees4:drop_inventory",
+          "side": "down"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bonsaitrees4:blocks/bonsaipot"
+}

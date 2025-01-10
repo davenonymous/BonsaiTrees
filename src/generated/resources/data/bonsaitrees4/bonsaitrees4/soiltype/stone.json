@@ -1,0 +1,8 @@
+{
+  "defaultItem": {
+    "count": 1,
+    "id": "minecraft:stone"
+  },
+  "id": "bonsaitrees4:stone",
+  "translationKey": "bonsaitrees4.tooltip.soil.bonsaitrees4.stone"
+}

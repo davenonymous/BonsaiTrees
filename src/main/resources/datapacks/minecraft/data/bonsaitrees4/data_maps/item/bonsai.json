@@ -1,0 +1,86 @@
+{
+  "values": {
+    "minecraft:acacia_sapling": {
+      "model": "minecraft:acacia"
+    },
+    "minecraft:azalea": {
+      "model": "minecraft:azalea_tree"
+    },
+    "minecraft:birch_sapling": {
+      "model": "minecraft:birch"
+    },
+    "minecraft:brain_coral": {
+      "model": "minecraft:coral_claw",
+      "valid_soil_types": [
+        "bonsaitrees4:water"
+      ]
+    },
+    "minecraft:brown_mushroom": {
+      "model": "minecraft:huge_brown_mushroom",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    },
+    "minecraft:bubble_coral": {
+      "light_emission": 12,
+      "model": "minecraft:coral_mushroom",
+      "valid_soil_types": [
+        "bonsaitrees4:water"
+      ]
+    },
+    "minecraft:cherry_sapling": {
+      "model": "minecraft:cherry"
+    },
+	"minecraft:chorus_fruit": {
+	  "model": "minecraft:chorus_flower",
+	  "valid_soil_types": [
+	    "bonsaitrees4:end_stone"
+	  ]
+	},
+    "minecraft:crimson_fungus": {
+      "light_emission": 15,
+      "model": "minecraft:crimson_fungus_planted",
+      "valid_soil_types": [
+        "bonsaitrees4:nylium"
+      ]
+    },
+    "minecraft:dark_oak_sapling": {
+      "model": "minecraft:dark_oak"
+    },
+    "minecraft:flowering_azalea": {
+      "model": "minecraft:azalea_tree"
+    },
+    "minecraft:horn_coral": {
+      "light_emission": 12,
+      "model": "minecraft:coral_tree",
+      "valid_soil_types": [
+        "bonsaitrees4:water"
+      ]
+    },
+    "minecraft:jungle_sapling": {
+      "model": "minecraft:mega_jungle_tree"
+    },
+    "minecraft:mangrove_propagule": {
+      "model": "minecraft:mangrove"
+    },
+    "minecraft:oak_sapling": {
+      "model": "minecraft:oak"
+    },
+    "minecraft:red_mushroom": {
+      "model": "minecraft:huge_red_mushroom",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    },
+    "minecraft:spruce_sapling": {
+      "model": "minecraft:spruce"
+    },
+    "minecraft:warped_fungus": {
+      "light_emission": 15,
+      "model": "minecraft:warped_fungus_planted",
+      "valid_soil_types": [
+        "bonsaitrees4:nylium"
+      ]
+    }
+  }
+}

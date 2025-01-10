@@ -1,0 +1,11 @@
+{
+  "type": "bonsaitrees4:crafting_special_copycomponents",
+  "category": "misc",
+  "input": {
+    "item": "bonsaitrees4:bonsaipot_small"
+  },
+  "output": {
+    "count": 1,
+    "id": "bonsaitrees4:bonsaipot"
+  }
+}

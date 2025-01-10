@@ -1,0 +1,104 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"regions_unexplored:enchanted_birch_leaves"},
+    "b": {"Properties":{"is_base":"false","axis":"y"},"Name":"regions_unexplored:silver_birch_log"},
+    "c": {"Properties":{"is_base":"true","axis":"y"},"Name":"regions_unexplored:silver_birch_log"},
+    "d": {"Properties":{"is_base":"false","axis":"x"},"Name":"regions_unexplored:silver_birch_log"},
+    "e": {"Properties":{"facing":"east"},"Name":"regions_unexplored:silver_birch_branch"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      " aaa ",
+      " aaa ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "  aa ",
+      " aaa ",
+      " aaa ",
+      "aadaa",
+      "  a  ",
+      " aea ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  a  ",
+      " aaa ",
+      " aaa ",
+      " aaa ",
+      " aba ",
+      "  b  ",
+      "  b  ",
+      "  b  ",
+      "  b  ",
+      "  c  "
+    ],
+    [
+      "  a  ",
+      " aaa ",
+      " aaa ",
+      "aabaa",
+      "  b  ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  a  ",
+      " aaa ",
+      " aaa ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

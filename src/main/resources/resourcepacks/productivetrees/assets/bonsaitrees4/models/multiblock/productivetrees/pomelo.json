@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:pomelo_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:pomelo_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:pomelo_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:pomelo_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:pomelo_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:pomelo_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:pomelo_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:pomelo_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:pomelo_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "aaaaba ",
+      "aaaafba",
+      "       ",
+      "       "
+    ],
+    [
+      "  fea  ",
+      " caaa  ",
+      "aaaaaaa",
+      "acaaefb",
+      "       ",
+      "       "
+    ],
+    [
+      " cadea ",
+      " aaaae ",
+      "aadaeaa",
+      "caaadef",
+      "       ",
+      "       "
+    ],
+    [
+      " aagda ",
+      " eahgd ",
+      "adghaaa",
+      "aaahgda",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " badaa ",
+      " fbaae ",
+      "caaaaac",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  caa  ",
+      "  iaca ",
+      "acccacc",
+      "cacaaac",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "ccacacc",
+      " aacaa ",
+      "       ",
+      "       "
+    ]
+  ]
+}

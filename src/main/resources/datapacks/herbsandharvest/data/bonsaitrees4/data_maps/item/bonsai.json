@@ -1,0 +1,28 @@
+{
+  "values": {
+    "herbsandharvest:avocado_fruit_sapling": {
+      "model": "herbsandharvest:avocado_fruit_tree"
+    },
+    "herbsandharvest:cherry_fruit_sapling": {
+      "model": "herbsandharvest:cherry_fruit_tree"
+    },
+    "herbsandharvest:lemon_fruit_sapling": {
+      "model": "herbsandharvest:lemon_fruit_tree"
+    },
+    "herbsandharvest:lime_fruit_sapling": {
+      "model": "herbsandharvest:lime_fruit_tree"
+    },
+    "herbsandharvest:orange_fruit_sapling": {
+      "model": "herbsandharvest:orange_fruit_tree"
+    },
+    "herbsandharvest:peach_fruit_sapling": {
+      "model": "herbsandharvest:peach_fruit_tree"
+    },
+    "herbsandharvest:pear_fruit_sapling": {
+      "model": "herbsandharvest:pear_fruit_tree"
+    },
+    "herbsandharvest:plum_fruit_sapling": {
+      "model": "herbsandharvest:plum_fruit_tree"
+    }
+  }
+}

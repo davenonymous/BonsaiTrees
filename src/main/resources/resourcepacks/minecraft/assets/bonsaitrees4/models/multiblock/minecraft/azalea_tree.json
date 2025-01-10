@@ -1,0 +1,84 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"minecraft:azalea_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"minecraft:flowering_azalea_leaves"},
+    "c": {"Properties":{"axis":"y"},"Name":"minecraft:oak_log"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"minecraft:azalea_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"minecraft:azalea_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"minecraft:azalea_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"minecraft:azalea_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"minecraft:flowering_azalea_leaves"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"minecraft:flowering_azalea_leaves"},
+    "j": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"minecraft:flowering_azalea_leaves"},
+    "k": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"minecraft:flowering_azalea_leaves"},
+    "l": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"minecraft:flowering_azalea_leaves"},
+    "m": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"minecraft:azalea_leaves"}
+  },
+  "shape": [
+    [
+      "  hg ",
+      " fa j",
+      " k   ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  ifg",
+      " de  ",
+      "g a m",
+      " hd g",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "hibdf",
+      "iacai",
+      "fded ",
+      "g adh",
+      "  d  ",
+      "     ",
+      "     "
+    ],
+    [
+      " aeb ",
+      "alcea",
+      "iacad",
+      "iaead",
+      " daif",
+      "     ",
+      "     "
+    ],
+    [
+      "f ai ",
+      "daeai",
+      "  adf",
+      " ece ",
+      "aacai",
+      "  c  ",
+      "  c  "
+    ],
+    [
+      "  if ",
+      " dad ",
+      " hifg",
+      "j eb ",
+      " a d ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " fd  ",
+      " g df",
+      "j    ",
+      "     ",
+      "     "
+    ]
+  ]
+}

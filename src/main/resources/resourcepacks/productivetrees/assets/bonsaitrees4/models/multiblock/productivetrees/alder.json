@@ -1,0 +1,115 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:alder_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:alder_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:alder_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:alder_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:alder_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:alder_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:alder_log"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:alder_leaves"}
+  },
+  "shape": [
+    [
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "aaaabbbaaa ",
+      " aaabbbaaaa",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "  abbcbbaa ",
+      " aabbcbbaa ",
+      "aaabbcbbaaa",
+      "aaabbcbbaaa",
+      "           "
+    ],
+    [
+      "   bbcbb   ",
+      "   ccdccb  ",
+      " abbcdcbba ",
+      " abbcdcbba ",
+      "aabbcdcbbaa",
+      "aabbcdccbaa",
+      "           "
+    ],
+    [
+      "  bcceccb  ",
+      "  bddfddb  ",
+      " bbcdedcbb ",
+      " bccdedcbb ",
+      "abbcdedcbba",
+      "abbcdeddcba",
+      "           "
+    ],
+    [
+      "  bddfddb  ",
+      "  ceeheec  ",
+      " bcdefedcb ",
+      " bddefedcb ",
+      "bbcdefedcbb",
+      "bccdefeedcb",
+      "           "
+    ],
+    [
+      "  cefhfec  ",
+      "  dfhghfd  ",
+      " cdefgfedc ",
+      " ceefgfedc ",
+      "bcdefgfedcb",
+      "cdeffgffedc",
+      "     g     "
+    ],
+    [
+      "  bddfddb  ",
+      "  ceeheec  ",
+      " bcdefedcb ",
+      " bddfffdcb ",
+      "bbcdefedcbb",
+      "bccdefeedcb",
+      "           "
+    ],
+    [
+      "  bcceccb  ",
+      "  bddfddb  ",
+      " bbcdedcbb ",
+      " bccdeecbb ",
+      "abbcdedcbba",
+      "abcdefedcba",
+      "           "
+    ],
+    [
+      "   bbcbb   ",
+      "   ccdcc   ",
+      " abbcdcbba ",
+      " abbcddbba ",
+      "aabbcdcbbaa",
+      "aabcdedcbaa",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "  abbcbbaa ",
+      "  abbccbaa ",
+      "aaabbcbbaaa",
+      "aaabcdcbaaa",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "aaaabbbaaaa",
+      "aaaabcbaaaa",
+      "           "
+    ]
+  ]
+}

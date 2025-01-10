@@ -1,0 +1,49 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"biomesoplenty:jacaranda_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"biomesoplenty:jacaranda_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"biomesoplenty:jacaranda_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"biomesoplenty:jacaranda_leaves"},
+    "e": {"Properties":{"axis":"y"},"Name":"biomesoplenty:jacaranda_log"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"biomesoplenty:jacaranda_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "fcac ",
+      "fcacf",
+      " f   "
+    ],
+    [
+      "  d  ",
+      " dbd ",
+      "cadac",
+      "aadac",
+      "    c"
+    ],
+    [
+      " dbd ",
+      " beb ",
+      "adeda",
+      "ddeda",
+      " deda"
+    ],
+    [
+      "  d  ",
+      "  b  ",
+      "cadac",
+      "addac",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "ccacf",
+      "fada ",
+      "   c "
+    ]
+  ]
+}

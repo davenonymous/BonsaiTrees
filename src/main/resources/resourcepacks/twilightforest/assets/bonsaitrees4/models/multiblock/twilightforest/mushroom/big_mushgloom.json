@@ -1,0 +1,33 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"west":"true","up":"true","south":"true","north":"false","east":"false","down":"false"},"Name":"twilightforest:huge_mushgloom"},
+    "b": {"Properties":{"west":"false","up":"true","south":"false","north":"false","east":"false","down":"false"},"Name":"twilightforest:huge_mushgloom"},
+    "c": {"Properties":{"west":"false","up":"true","south":"false","north":"true","east":"true","down":"false"},"Name":"twilightforest:huge_mushgloom"},
+    "d": {"Properties":{"west":"true","up":"false","south":"true","north":"true","east":"true","down":"false"},"Name":"twilightforest:huge_mushgloom_stem"},
+    "e": {"Properties":{"west":"false","up":"true","south":"false","north":"false","east":"true","down":"false"},"Name":"twilightforest:huge_mushgloom"},
+    "f": {"Properties":{"west":"false","up":"true","south":"true","north":"false","east":"false","down":"false"},"Name":"twilightforest:huge_mushgloom"},
+    "g": {"Properties":{"west":"false","up":"true","south":"true","north":"false","east":"true","down":"false"},"Name":"twilightforest:huge_mushgloom"},
+    "h": {"Properties":{"west":"true","up":"true","south":"false","north":"true","east":"false","down":"false"},"Name":"twilightforest:huge_mushgloom"},
+    "i": {"Properties":{"west":"true","up":"true","south":"false","north":"false","east":"false","down":"false"},"Name":"twilightforest:huge_mushgloom"},
+    "j": {"Properties":{"west":"false","up":"true","south":"false","north":"true","east":"false","down":"false"},"Name":"twilightforest:huge_mushgloom"}
+  },
+  "shape": [
+    [
+      "ceg",
+      "   ",
+      "   "
+    ],
+    [
+      "jbf",
+      " d ",
+      " d "
+    ],
+    [
+      "hia",
+      "   ",
+      "   "
+    ]
+  ]
+}

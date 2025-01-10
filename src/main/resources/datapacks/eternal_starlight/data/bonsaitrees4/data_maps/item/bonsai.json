@@ -1,0 +1,27 @@
+{
+  "values": {
+    "eternal_starlight:glowing_mushroom": {
+      "light_emission": 15,
+      "model": "eternal_starlight:huge_glowing_mushroom",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    },
+    "eternal_starlight:lunar_sapling": {
+      "model": "eternal_starlight:lunar"
+    },
+    "eternal_starlight:northland_sapling": {
+      "model": "eternal_starlight:northland"
+    },
+    "eternal_starlight:scarlet_sapling": {
+      "model": "eternal_starlight:scarlet"
+    },
+    "eternal_starlight:starlight_mangrove_sapling": {
+      "model": "eternal_starlight:starlight_mangrove"
+    },
+    "eternal_starlight:torreya_sapling": {
+      "light_emission": 15,
+      "model": "eternal_starlight:torreya"
+    }
+  }
+}

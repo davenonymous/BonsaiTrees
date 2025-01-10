@@ -1,0 +1,87 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:night_fuchsia_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:night_fuchsia_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:night_fuchsia_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:night_fuchsia_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:night_fuchsia_leaves"},
+    "f": {"Properties":{"axis":"y"},"Name":"productivetrees:night_fuchsia_log"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:night_fuchsia_leaves"},
+    "h": {"Properties":{"axis":"x"},"Name":"productivetrees:night_fuchsia_log"},
+    "i": {"Properties":{"axis":"z"},"Name":"productivetrees:night_fuchsia_log"}
+  },
+  "shape": [
+    [
+      "      ",
+      "  ddg ",
+      "  eee ",
+      " debe ",
+      " eeb  ",
+      " deb  ",
+      "      ",
+      "      "
+    ],
+    [
+      "   e  ",
+      " gebed",
+      " dbabe",
+      "debcbb",
+      "dbbab ",
+      "debab ",
+      "  c   ",
+      "      "
+    ],
+    [
+      "  ebe ",
+      " dbabe",
+      " eacab",
+      "ebcfca",
+      "eaafa ",
+      "ebafa ",
+      " cif  ",
+      "   f  "
+    ],
+    [
+      "   e  ",
+      " gdbed",
+      "gdeabe",
+      "debcbb",
+      "ebaab ",
+      "bachc ",
+      "  a   ",
+      "      "
+    ],
+    [
+      "      ",
+      " dedg ",
+      "debee ",
+      "ebabe ",
+      "bacab ",
+      " chc  ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      "  d   ",
+      "gdedg ",
+      "deeed ",
+      "ebabe ",
+      "  c   ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      "      ",
+      " gdg  ",
+      " ddd  ",
+      " ebe  ",
+      "      ",
+      "      ",
+      "      "
+    ]
+  ]
+}

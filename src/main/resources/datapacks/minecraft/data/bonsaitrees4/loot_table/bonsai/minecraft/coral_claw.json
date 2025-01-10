@@ -1,0 +1,38 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.5,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:blocks/brain_coral_block"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:blocks/fire_coral_fan"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:blocks/tube_coral_fan"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:blocks/bubble_coral_fan"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:blocks/horn_coral_fan"
+        }
+      ],
+      "name": "other",
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bonsaitrees4:bonsai/minecraft/coral_claw"
+}

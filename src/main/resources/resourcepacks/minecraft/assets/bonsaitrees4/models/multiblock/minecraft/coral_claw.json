@@ -1,0 +1,31 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Name":"minecraft:brain_coral_block"},
+    "b": {"Properties":{"waterlogged":"true","facing":"south"},"Name":"minecraft:tube_coral_wall_fan"},
+    "c": {"Properties":{"waterlogged":"true","facing":"north"},"Name":"minecraft:bubble_coral_wall_fan"},
+    "d": {"Properties":{"waterlogged":"true","facing":"south"},"Name":"minecraft:horn_coral_wall_fan"},
+    "e": {"Properties":{"waterlogged":"true","facing":"east"},"Name":"minecraft:fire_coral_wall_fan"}
+  },
+  "shape": [
+    [
+      "   ",
+      " ab",
+      "a  ",
+      "   "
+    ],
+    [
+      "   ",
+      "e  ",
+      "   ",
+      "a  "
+    ],
+    [
+      "cad",
+      "a  ",
+      "a  ",
+      "   "
+    ]
+  ]
+}

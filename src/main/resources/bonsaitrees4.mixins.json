@@ -1,0 +1,16 @@
+{
+	"required": true,
+	"minVersion": "0.8",
+	"package": "com.davenonymous.bonsaitrees.mixins",
+	"compatibilityLevel": "JAVA_21",
+	"refmap": "bonsaitrees4.refmap.json",
+	"mixins": [
+		"MixinJeiEnchantmentFix",
+		"MixinLootItemBlockStatePropertyCondition"
+	],
+	"client": [
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}

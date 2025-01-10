@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:black_cherry_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:black_cherry_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:black_cherry_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:black_cherry_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:black_cherry_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:black_cherry_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:black_cherry_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:black_cherry_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:black_cherry_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " ddaaa ",
+      "aaaadaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  aad  ",
+      " adda  ",
+      "daaabad",
+      "adaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      " daaaa ",
+      " aaabf ",
+      "afacead",
+      "aababad",
+      "       ",
+      "       "
+    ],
+    [
+      " aeada ",
+      " echaa ",
+      "bbehaad",
+      "fbehaaa",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " aaaad ",
+      " baaad ",
+      "faaadda",
+      "abeaaad",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "  iaad ",
+      "iafaadd",
+      "gabaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " aaddd ",
+      "daaaad ",
+      "       ",
+      "       "
+    ]
+  ]
+}

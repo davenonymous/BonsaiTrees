@@ -1,0 +1,35 @@
+{
+	"name": "Dark Oak",
+	"icon": "minecraft:dark_oak_sapling",
+	"category": "bonsaitrees4:minecraft",
+	"pages": [
+		{
+			"type": "bonsaitrees4:tree",
+			"tree_name": "Dark Oak",
+			"tree_sapling": "minecraft:dark_oak_sapling"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "In Minecraft",
+			"text": "A dark oak is a tree with dark bark and wood. It is a dark variant of the oak. Dark oaks have thick trunks and are found in the dark forest biome.",
+			"url": "https://minecraft.wiki/w/Dark_oak",
+			"link_text": "Minecraft Wiki"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "On Earth",
+			"text": "Oaks are important components of hardwood forests; some species grow in associations with members of the Ericaceae in oak–heath forests. Fossil oaks date back to the Middle Eocene. In culture, the oak tree is a symbol of strength and serves as the national tree of many countries.",
+			"url": "https://en.wikipedia.org/wiki/Oak",
+			"link_text": "Wikipedia"
+		},
+		{
+			"type": "patchouli:image",
+			"border": true,
+			"images": [
+				"bonsaitrees4:textures/patchouli/dark_oak_tree.png",
+				"bonsaitrees4:textures/patchouli/dark_oak_leaves.png",
+				"bonsaitrees4:textures/patchouli/dark_oak_tree_2.png"
+			]
+		}
+	]
+}

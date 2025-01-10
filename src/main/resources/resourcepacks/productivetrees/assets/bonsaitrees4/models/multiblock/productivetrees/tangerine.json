@@ -1,0 +1,72 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:tangerine_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:tangerine_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:tangerine_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:tangerine_leaves"},
+    "e": {"Properties":{"axis":"y"},"Name":"productivetrees:tangerine_log"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:tangerine_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:tangerine_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:tangerine_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "cacacc ",
+      " aaaaac",
+      "       ",
+      "       "
+    ],
+    [
+      "  caa  ",
+      " accac ",
+      "ccaacaa",
+      "aaaccca",
+      "       ",
+      "       "
+    ],
+    [
+      " aabaa ",
+      " ccaba ",
+      "caaaaac",
+      "caaacac",
+      "       ",
+      "       "
+    ],
+    [
+      " fbhbf ",
+      " aaehb ",
+      "aaaeaaa",
+      "abheaca",
+      "   e   ",
+      "   e   "
+    ],
+    [
+      " aabaa ",
+      " aahaa ",
+      "aabbfaa",
+      "caabaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  dfa  ",
+      "  fbfd ",
+      "aadaaac",
+      "caabaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "acaaga ",
+      "acafda ",
+      "       ",
+      "       "
+    ]
+  ]
+}

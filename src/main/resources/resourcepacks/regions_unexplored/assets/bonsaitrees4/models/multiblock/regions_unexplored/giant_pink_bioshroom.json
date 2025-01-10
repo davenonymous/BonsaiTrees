@@ -1,0 +1,44 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"regions_unexplored:pink_bioshroom_stem"},
+    "b": {"Name":"regions_unexplored:pink_bioshroom_block"},
+    "c": {"Name":"regions_unexplored:glowing_pink_bioshroom_block"}
+  },
+  "shape": [
+    [
+      "   ",
+      " b ",
+      " b ",
+      "bbb",
+      "bcb",
+      "b b",
+      "   ",
+      "   ",
+      "   "
+    ],
+    [
+      " b ",
+      "bbb",
+      "bbb",
+      "bbb",
+      "cac",
+      " a ",
+      " a ",
+      " a ",
+      " a "
+    ],
+    [
+      "   ",
+      " b ",
+      " b ",
+      "bbb",
+      "bcb",
+      "b b",
+      "   ",
+      "   ",
+      "   "
+    ]
+  ]
+}

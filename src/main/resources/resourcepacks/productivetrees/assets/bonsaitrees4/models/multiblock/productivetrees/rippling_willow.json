@@ -1,0 +1,137 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:rippling_willow_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:rippling_willow_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:rippling_willow_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:rippling_willow_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:rippling_willow_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:rippling_willow_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:rippling_willow_log"},
+    "h": {"Properties":{"axis":"x"},"Name":"productivetrees:rippling_willow_log"},
+    "i": {"Properties":{"axis":"z"},"Name":"productivetrees:rippling_willow_log"}
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "     eee ",
+      "     ebe ",
+      "     bcb ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "      e  ",
+      "    eebee",
+      " ebeebcbe",
+      " bcebcacb",
+      " cab  f  ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    eebe ",
+      "  b ebcbe",
+      "ebcbbaacb",
+      "bcabcadac",
+      "cadcadhf ",
+      "  f      ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "     e   ",
+      "   ebbbe ",
+      " bcbbacbe",
+      "bcaccdacb",
+      "cadcaddaa",
+      "adfadfh  ",
+      " fifadd  ",
+      "   ifda  ",
+      "         ",
+      "         "
+    ],
+    [
+      "    bce  ",
+      "   bcabe ",
+      "  bccdcc ",
+      "ebcaafaa ",
+      "bcaadgda ",
+      "cadafgfa ",
+      "  fddgda ",
+      "   figfd ",
+      "     g   ",
+      "     g   "
+    ],
+    [
+      "     b   ",
+      "   ebcbe ",
+      "   bbabb ",
+      " ebccdcc ",
+      " bccada  ",
+      " cacdfdc ",
+      "  daadac ",
+      "   dddaa ",
+      "    hhf  ",
+      "         "
+    ],
+    [
+      "         ",
+      "    ebe  ",
+      "    ecb  ",
+      "   bbac  ",
+      " ebbca   ",
+      " bcccaab ",
+      " cadaacb ",
+      "   fdacc ",
+      "    hf   ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "  bce    ",
+      " bcabc   ",
+      " cadacc  ",
+      " adfdab  ",
+      "  fhfda  ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "   b     ",
+      " ebceb   ",
+      " bcabb   ",
+      " cadac   ",
+      "   f     ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "  ebe    ",
+      "  bcb    ",
+      "  cac    ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}

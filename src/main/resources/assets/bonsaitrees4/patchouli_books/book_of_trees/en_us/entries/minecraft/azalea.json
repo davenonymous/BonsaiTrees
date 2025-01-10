@@ -1,0 +1,35 @@
+{
+	"name": "Azalea",
+	"icon": "minecraft:flowering_azalea",
+	"category": "bonsaitrees4:minecraft",
+	"pages": [
+		{
+			"type": "bonsaitrees4:tree",
+			"tree_name": "Azalea",
+			"tree_sapling": "minecraft:flowering_azalea"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "In Minecraft",
+			"text": "An azalea tree is a rare tree that can generate above a lush cave biome, marking the biome's presence aboveground. They extend their roots underground into the cave beneath.",
+			"url": "https://minecraft.wiki/w/Azalea_tree",
+			"link_text": "Minecraft Wiki"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "On Earth",
+			"text": "Azaleas are flowering shrubs in the genus Rhododendron. Azaleas bloom in the spring, their flowers often lasting several weeks. Shade tolerant, they prefer living near or under trees. They are part of the family Ericaceae. Plant enthusiasts have selectively bred azaleas for hundreds of years.",
+			"url": "https://en.wikipedia.org/wiki/Azalea",
+			"link_text": "Wikipedia"
+		},
+		{
+			"type": "patchouli:image",
+			"border": true,
+			"images": [
+				"bonsaitrees4:textures/patchouli/azalea_shrub.png",
+				"bonsaitrees4:textures/patchouli/azalea_flower.png",
+				"bonsaitrees4:textures/patchouli/azalea_garden.png"
+			]
+		}
+	]
+}

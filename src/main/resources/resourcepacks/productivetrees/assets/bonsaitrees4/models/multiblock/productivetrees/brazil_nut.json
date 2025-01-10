@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:brazil_nut_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:brazil_nut_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:brazil_nut_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:brazil_nut_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:brazil_nut_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:brazil_nut_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:brazil_nut_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:brazil_nut_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:brazil_nut_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "abaeag ",
+      "baaabab",
+      "       ",
+      "       "
+    ],
+    [
+      "  baa  ",
+      "  aaa  ",
+      "aaccafa",
+      "baeaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      " badca ",
+      " aaidc ",
+      "bbadaef",
+      "baaaaag",
+      "       ",
+      "       "
+    ],
+    [
+      " abaaa ",
+      " aahaa ",
+      "baahida",
+      "abahdca",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " abaab ",
+      " ababb ",
+      "bbaiaaf",
+      "aaaaace",
+      "       ",
+      "       "
+    ],
+    [
+      "  baa  ",
+      "  baab ",
+      "aaadcaa",
+      "aaaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "aaecaa ",
+      " baaaab",
+      "       ",
+      "       "
+    ]
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:white_ipe_leaves"},
+    "b": {"Properties":{"axis":"y"},"Name":"productivetrees:white_ipe_log"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:white_ipe_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:white_ipe_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:white_ipe_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:white_ipe_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " ecef",
+      " ecef",
+      "     ",
+      "     "
+    ],
+    [
+      "  a  ",
+      " ad  ",
+      "ecace",
+      "ccace",
+      "     ",
+      "     "
+    ],
+    [
+      " ada ",
+      " dbd ",
+      "cabac",
+      "aabac",
+      "  b  ",
+      "  b  "
+    ],
+    [
+      "  a  ",
+      "  da ",
+      "ecace",
+      "caace",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " ecef",
+      "ecac ",
+      "     ",
+      "     "
+    ]
+  ]
+}

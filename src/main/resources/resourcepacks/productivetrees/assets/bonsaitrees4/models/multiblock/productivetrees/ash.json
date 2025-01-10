@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:ash_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:ash_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:ash_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:ash_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:ash_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:ash_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:ash_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "ddeaed ",
+      " daaed ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ebe  ",
+      " eafaa ",
+      "eeabaed",
+      "debbaed",
+      "       ",
+      "       "
+    ],
+    [
+      " aafba ",
+      " abffb ",
+      "aabcbae",
+      "eaffbaa",
+      "       ",
+      "       "
+    ],
+    [
+      " bfcfb ",
+      " bcgff ",
+      "bffgcba",
+      "abfgfbb",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " aafaa ",
+      " abcba ",
+      "aaffbae",
+      "ebbffba",
+      "       ",
+      "       "
+    ],
+    [
+      "  ebe  ",
+      " eaba  ",
+      "eebfbed",
+      "daabaae",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " eaaae ",
+      " debedd",
+      "       ",
+      "       "
+    ]
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"biomesoplenty:umbran_leaves"},
+    "b": {"Properties":{"axis":"y"},"Name":"biomesoplenty:umbran_log"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"biomesoplenty:umbran_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"biomesoplenty:umbran_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"biomesoplenty:umbran_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"biomesoplenty:umbran_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"biomesoplenty:umbran_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  fa   ",
+      "  g    ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  cdc  ",
+      "   c   ",
+      "       ",
+      " aaca  ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "   e   ",
+      "   d   ",
+      "       ",
+      " cdedc ",
+      " a   a ",
+      "   e   ",
+      " ccdcaf",
+      "      g",
+      "       "
+    ],
+    [
+      "   d   ",
+      "   e   ",
+      "   b   ",
+      "  ebe  ",
+      "  dbd  ",
+      "   b   ",
+      " debed ",
+      " c b c ",
+      "  ebe  ",
+      "cddbdca",
+      "   b  f",
+      "   b   "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "   e   ",
+      "   d   ",
+      "       ",
+      " cdedc ",
+      "     a ",
+      "   e   ",
+      "acddca ",
+      "f      ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "  cdc  ",
+      "   ca  ",
+      "       ",
+      " acdc  ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "   c   ",
+      "   a   ",
+      "       "
+    ]
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:avocado_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:avocado_fruit"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:avocado_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:avocado_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:avocado_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:avocado_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:avocado_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:avocado_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:avocado_leaves"}
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      " faaaaaff",
+      "ffaddaafb",
+      "         ",
+      "         "
+    ],
+    [
+      "  bdcda  ",
+      " abcebda ",
+      "faaaddaaf",
+      "fadccdaaf",
+      "         ",
+      "         "
+    ],
+    [
+      " adcecbf ",
+      " adegecb ",
+      "bdcdbcbaa",
+      "aabeecdaa",
+      "         ",
+      "         "
+    ],
+    [
+      " bbegecb ",
+      " dcgggec ",
+      "bcebiecda",
+      "ddbggbbdb",
+      "         ",
+      "         "
+    ],
+    [
+      " fbgigec ",
+      " bbihgbb ",
+      "bbgghieba",
+      "beeghgecb",
+      "    h    ",
+      "    h    "
+    ],
+    [
+      " aabgebd ",
+      " dcbigec ",
+      "bcegbbbda",
+      "bdceigecd",
+      "         ",
+      "         "
+    ],
+    [
+      " bdcebda ",
+      " abbgecd ",
+      "adcbbcdaf",
+      "badegecda",
+      "         ",
+      "         "
+    ],
+    [
+      "  bdcba  ",
+      "  acecb  ",
+      "fbadcbaff",
+      "fadcecdbb",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      " faadbbb ",
+      " fadbdabf",
+      "         ",
+      "         "
+    ]
+  ]
+}

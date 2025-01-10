@@ -1,0 +1,7 @@
+{
+  "values": {
+	"minecraft:jungle_sapling": {
+	  "preferredFeature": "MegaTree"
+	}
+  }
+}

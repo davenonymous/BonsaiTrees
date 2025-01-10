@@ -1,0 +1,35 @@
+{
+	"name": "Mangrove",
+	"icon": "minecraft:mangrove_propagule",
+	"category": "bonsaitrees4:minecraft",
+	"pages": [
+		{
+			"type": "bonsaitrees4:tree",
+			"tree_name": "Mangrove",
+			"tree_sapling": "minecraft:mangrove_propagule"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "In Minecraft",
+			"text": "A mangrove is a tree with large canopies and aerial root systems found in mangrove swamps. They can grow in water or on land, and their wood color is vermillion.",
+			"url": "https://minecraft.wiki/w/Mangrove",
+			"link_text": "Minecraft Wiki"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "On Earth",
+			"text": "A mangrove is a shrub or tree that grows mainly in coastal saline or brackish water. Mangroves grow in an equatorial climate, typically along coastlines and tidal rivers. They have special adaptations to take in extra oxygen and to remove salt, which allow them to tolerate conditions that would kill most plants.",
+			"url": "https://en.wikipedia.org/wiki/Mangrove",
+			"link_text": "Wikipedia"
+		},
+		{
+			"type": "patchouli:image",
+			"border": true,
+			"images": [
+				"bonsaitrees4:textures/patchouli/mangrove_tree.png",
+				"bonsaitrees4:textures/patchouli/mangrove_roots.png",
+				"bonsaitrees4:textures/patchouli/mangrove_leaves.png"
+			]
+		}
+	]
+}

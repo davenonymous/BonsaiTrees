@@ -1,0 +1,35 @@
+{
+	"name": "Cherry",
+	"icon": "minecraft:cherry_sapling",
+	"category": "bonsaitrees4:minecraft",
+	"pages": [
+		{
+			"type": "bonsaitrees4:tree",
+			"tree_name": "Cherry",
+			"tree_sapling": "minecraft:cherry_sapling"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "In Minecraft",
+			"text": "Cherry blossoms have distinct pink leaves and curved branches bearing some similarity to acacias. They spawn naturally only in the cherry grove biome.",
+			"url": "https://minecraft.wiki/w/Cherry",
+			"link_text": "Minecraft Wiki"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "On Earth",
+			"text": "The cherry blossom, or sakura, is the flower of trees in Prunus subgenus Cerasus. \"Sakura\" usually refers to flowers of ornamental cherry trees, such as cultivars of Prunus serrulata, not trees grown for their fruit. They are common in East Asia, especially in Japan, where they have been cultivated, producing many varieties.",
+			"url": "https://en.wikipedia.org/wiki/Cherry_blossom",
+			"link_text": "Wikipedia"
+		},
+		{
+			"type": "patchouli:image",
+			"border": true,
+			"images": [
+				"bonsaitrees4:textures/patchouli/cherry_tree.png",
+				"bonsaitrees4:textures/patchouli/cherry_leaves.png",
+				"bonsaitrees4:textures/patchouli/cherry_tea.png"
+			]
+		}
+	]
+}

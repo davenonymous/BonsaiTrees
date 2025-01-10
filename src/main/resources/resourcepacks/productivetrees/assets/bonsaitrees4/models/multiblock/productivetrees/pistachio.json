@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:pistachio_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:pistachio_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:pistachio_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:pistachio_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:pistachio_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:pistachio_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:pistachio_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:pistachio_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:pistachio_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " daadg ",
+      "dcdaag ",
+      "       ",
+      "       "
+    ],
+    [
+      "  fcd  ",
+      "  eaa  ",
+      "dafcddd",
+      "cfaadga",
+      "       ",
+      "       "
+    ],
+    [
+      " ceaaf ",
+      " fbiaa ",
+      "gaeaaac",
+      "aeeaaac",
+      "       ",
+      "       "
+    ],
+    [
+      " caaae ",
+      " fahib ",
+      "abihbea",
+      "aabhbef",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " febef ",
+      " ebiaa ",
+      "afabefa",
+      "acaaeaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  fea  ",
+      "  aafa ",
+      "aaaaefc",
+      "gaggacd",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " gaafca",
+      " aadcd ",
+      "       ",
+      "       "
+    ]
+  ]
+}

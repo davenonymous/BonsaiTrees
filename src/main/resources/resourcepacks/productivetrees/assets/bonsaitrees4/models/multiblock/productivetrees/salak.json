@@ -1,0 +1,59 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:salak_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:salak_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:salak_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:salak_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:salak_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:salak_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:salak_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:salak_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:salak_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " aaaba ",
+      "aabaaa "
+    ],
+    [
+      "  abb  ",
+      "  aaa  ",
+      "bbbaaaa",
+      "aaaaaaa"
+    ],
+    [
+      " baaba ",
+      " acfab ",
+      "aaacaaa",
+      "baaacgd"
+    ],
+    [
+      " aaaab ",
+      " cfhaa ",
+      "bachcca",
+      "abahfea"
+    ],
+    [
+      " baaaa ",
+      " aaaea ",
+      "baafcaa",
+      "aaaceaa"
+    ],
+    [
+      "  bad  ",
+      "  bagd ",
+      "aaaaeab",
+      "bbacabb"
+    ],
+    [
+      "       ",
+      "       ",
+      "aaidgaa",
+      "aabaabb"
+    ]
+  ]
+}

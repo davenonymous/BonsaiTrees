@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:peach_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:peach_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:peach_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:peach_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:peach_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:peach_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:peach_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:peach_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:peach_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " daadad",
+      " aaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  agi  ",
+      "  aiad ",
+      "aaaaaaa",
+      "adaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      " aebaa ",
+      " aaadd ",
+      "aaaaaaa",
+      "aadadda",
+      "       ",
+      "       "
+    ],
+    [
+      " afaaa ",
+      " fchad ",
+      "aafhaad",
+      "gaahaad",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " daadd ",
+      " aaaad ",
+      "aefaaaa",
+      "bbecada",
+      "       ",
+      "       "
+    ],
+    [
+      "  dda  ",
+      "  aaad ",
+      "aaebgaa",
+      "aaaaada",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "adagid ",
+      "ddaada ",
+      "       ",
+      "       "
+    ]
+  ]
+}

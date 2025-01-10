@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:flowering_crabapple_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:flowering_crabapple_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:flowering_crabapple_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:flowering_crabapple_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:flowering_crabapple_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:flowering_crabapple_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:flowering_crabapple_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:flowering_crabapple_leaves"},
+    "i": {"Properties":{"axis":"y"},"Name":"productivetrees:flowering_crabapple_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " aabbb ",
+      "hbaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      " efaaa ",
+      "ageaaab",
+      "haedeab",
+      "       ",
+      "       "
+    ],
+    [
+      " aaaab ",
+      " adaaa ",
+      "effadfa",
+      "gefcfab",
+      "       ",
+      "       "
+    ],
+    [
+      " adcaa ",
+      " aciaa ",
+      "gadicda",
+      "hadidaa",
+      "   i   ",
+      "   i   "
+    ],
+    [
+      " efaab ",
+      " aacaa ",
+      "haadfea",
+      "hbadaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "  aaa  ",
+      "bafdaaa",
+      "baaabab",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "ageaab ",
+      "ahabaa ",
+      "       ",
+      "       "
+    ]
+  ]
+}

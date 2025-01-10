@@ -1,0 +1,54 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"productivetrees:plantain_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:plantain_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:plantain_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:plantain_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:plantain_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:plantain_fruit"}
+  },
+  "shape": [
+    [
+      " bcb ",
+      "bcec ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "bcecb",
+      "cedec",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "cedec",
+      "edade",
+      " fa  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "bcecb",
+      "cedec",
+      " f   ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bcb ",
+      "bcec ",
+      "   f ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

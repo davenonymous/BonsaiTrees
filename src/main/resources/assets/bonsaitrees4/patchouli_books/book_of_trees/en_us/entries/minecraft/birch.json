@@ -1,0 +1,35 @@
+{
+	"name": "Birch",
+	"icon": "minecraft:birch_sapling",
+	"category": "bonsaitrees4:minecraft",
+	"pages": [
+		{
+			"type": "bonsaitrees4:tree",
+			"tree_name": "Birch",
+			"tree_sapling": "minecraft:birch_sapling"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "In Minecraft",
+			"text": "A birch is a tree that appears similar to a common oak in terms of height and leaves, but with light bark and pale wood. A taller, rare tree can be found in old growth birch forests.",
+			"url": "https://minecraft.wiki/w/Birch",
+			"link_text": "Minecraft Wiki"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "On Earth",
+			"text": "A birch is a thin-leaved hardwood tree of the genus Betula in the family Betulaceae, which also includes alders, hazels, and hornbeams. They are typically short-lived pioneer species and are widespread in the Northern Hemisphere, particularly in northern areas of temperate climates and in boreal climates.",
+			"url": "https://en.wikipedia.org/wiki/Birch",
+			"link_text": "Wikipedia"
+		},
+		{
+			"type": "patchouli:image",
+			"border": true,
+			"images": [
+				"bonsaitrees4:textures/patchouli/birch_forest.png",
+				"bonsaitrees4:textures/patchouli/birch_leaves.png",
+				"bonsaitrees4:textures/patchouli/birch_seeds.png"
+			]
+		}
+	]
+}

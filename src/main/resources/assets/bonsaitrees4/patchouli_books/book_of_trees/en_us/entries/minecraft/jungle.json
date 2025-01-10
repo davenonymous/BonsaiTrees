@@ -1,0 +1,35 @@
+{
+	"name": "Jungle",
+	"icon": "minecraft:jungle_sapling",
+	"category": "bonsaitrees4:minecraft",
+	"pages": [
+		{
+			"type": "bonsaitrees4:tree",
+			"tree_name": "Jungle",
+			"tree_sapling": "minecraft:jungle_sapling"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "In Minecraft",
+			"text": "Jungle trees range from short bushes to tall trees that reach up to 31 blocks in height. Their wood is of a pale brownish color.",
+			"url": "https://minecraft.wiki/w/Jungle_tree",
+			"link_text": "Minecraft Wiki"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "On Earth",
+			"text": "Dipterocarpaceae is a family of 16 genera and about 695 known species of mainly lowland tropical forest trees. Their distribution is pantropical, from northern South America to Africa, the Seychelles, India, Indochina, Indonesia, Malaysia and Philippines.",
+			"url": "https://en.wikipedia.org/wiki/Dipterocarpaceae",
+			"link_text": "Wikipedia"
+		},
+		{
+			"type": "patchouli:image",
+			"border": true,
+			"images": [
+				"bonsaitrees4:textures/patchouli/jungle_forest.png",
+				"bonsaitrees4:textures/patchouli/jungle_size.png",
+				"bonsaitrees4:textures/patchouli/jungle_climber.png"
+			]
+		}
+	]
+}

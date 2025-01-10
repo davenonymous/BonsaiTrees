@@ -1,0 +1,40 @@
+{
+  "values": {
+    "twilightforest:canopy_sapling": {
+      "light_emission": 15,
+      "model": "twilightforest:tree/canopy_tree"
+    },
+    "twilightforest:darkwood_sapling": {
+      "model": "twilightforest:tree/homegrown_darkwood_tree"
+    },
+    "twilightforest:mangrove_sapling": {
+      "light_emission": 15,
+      "model": "twilightforest:tree/mangrove_tree"
+    },
+    "twilightforest:mining_sapling": {
+      "model": "twilightforest:tree/mining_tree"
+    },
+    "twilightforest:mushgloom": {
+      "light_emission": 5,
+      "model": "twilightforest:mushroom/big_mushgloom",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    },
+    "twilightforest:rainbow_oak_sapling": {
+      "model": "twilightforest:tree/rainbow_oak"
+    },
+    "twilightforest:sorting_sapling": {
+      "model": "twilightforest:tree/sorting_tree"
+    },
+    "twilightforest:time_sapling": {
+      "model": "twilightforest:tree/time_tree"
+    },
+    "twilightforest:transformation_sapling": {
+      "model": "twilightforest:tree/transformation_tree"
+    },
+    "twilightforest:twilight_oak_sapling": {
+      "model": "twilightforest:tree/twilight_oak_tree"
+    }
+  }
+}

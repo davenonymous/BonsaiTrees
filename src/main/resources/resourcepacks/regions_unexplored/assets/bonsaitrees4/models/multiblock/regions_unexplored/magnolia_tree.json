@@ -1,0 +1,131 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"regions_unexplored:magnolia_leaves"},
+    "b": {"Properties":{"axis":"y"},"Name":"regions_unexplored:magnolia_log"},
+    "c": {"Properties":{"axis":"x"},"Name":"regions_unexplored:magnolia_log"}
+  },
+  "shape": [
+    [
+      "           ",
+      " aaaaa     ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "  aa       ",
+      "aaaaaaa    ",
+      "  aa       ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "  aaaa     ",
+      "aaaaaaa    ",
+      "  aaaa     ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      " aaaaa     ",
+      "aaaaaaa    ",
+      " aabaa     ",
+      "   b       ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      " aaaa      ",
+      "aaaaaaa    ",
+      " aaaa      ",
+      "    b      ",
+      "    b      ",
+      "    b      ",
+      "           ",
+      "     c     "
+    ],
+    [
+      "   aa      ",
+      "aaaaaaa    ",
+      "   aaaaaaa ",
+      "           ",
+      "           ",
+      "     b     ",
+      "     b     ",
+      "     b     "
+    ],
+    [
+      "           ",
+      " aaaaa aa  ",
+      "    aaaaaaa",
+      "       aa  ",
+      "      c    ",
+      "           ",
+      "           ",
+      "    b      "
+    ],
+    [
+      "           ",
+      "     aaaa  ",
+      "    aaaaaaa",
+      "     aaaa  ",
+      "      c    ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "     aaaaa ",
+      "    aaaaaaa",
+      "     aacaa ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "      aaaa ",
+      "    aaaaaaa",
+      "      aaaa ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "      aa   ",
+      "    aaaaaaa",
+      "      aa   ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "     aaaaa ",
+      "           ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:osage_orange_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:osage_orange_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:osage_orange_fruit"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:osage_orange_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:osage_orange_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:osage_orange_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:osage_orange_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:osage_orange_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:osage_orange_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " bcaccc",
+      " ccdcc ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccb  ",
+      "  cbc  ",
+      "bcccbcc",
+      "ccdgcbc",
+      "       ",
+      "       "
+    ],
+    [
+      " ccbca ",
+      " ccccc ",
+      "ccdccae",
+      "cdgigcc",
+      "       ",
+      "       "
+    ],
+    [
+      " ccccd ",
+      " bchig ",
+      "ccchgdc",
+      "ccihccc",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " bbcca ",
+      " cbcgd ",
+      "bfcccac",
+      "bcgigcb",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      "  ccd  ",
+      "feccccb",
+      "cadgcbb",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "bcbbcb ",
+      "feccccb",
+      "       ",
+      "       "
+    ]
+  ]
+}

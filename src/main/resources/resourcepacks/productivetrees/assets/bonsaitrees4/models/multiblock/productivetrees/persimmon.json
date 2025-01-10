@@ -1,0 +1,68 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:persimmon_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:persimmon_leaves"},
+    "c": {"Properties":{"axis":"y"},"Name":"productivetrees:persimmon_log"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:persimmon_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " abbaba",
+      " aaaaab",
+      "       ",
+      "       "
+    ],
+    [
+      "  bba  ",
+      " babbb ",
+      "aababba",
+      "babaaab",
+      "       ",
+      "       "
+    ],
+    [
+      " aaaab ",
+      " baaaa ",
+      "baadaab",
+      "aabaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      " bbaab ",
+      " aacda ",
+      "baacaba",
+      "bbacaaa",
+      "   c   ",
+      "   c   "
+    ],
+    [
+      " bbbab ",
+      " abaaa ",
+      "abaaaba",
+      "bbaaaab",
+      "       ",
+      "       "
+    ],
+    [
+      "  aab  ",
+      "  bbba ",
+      "aaabaaa",
+      "baaaaaa",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "abaaaaa",
+      "aaabbb ",
+      "       ",
+      "       "
+    ]
+  ]
+}

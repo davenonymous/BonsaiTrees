@@ -1,0 +1,78 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"minecraft:crimson_stem"},
+    "b": {"Name":"minecraft:nether_wart_block"},
+    "c": {"Name":"minecraft:weeping_vines_plant"},
+    "d": {"Properties":{"age":"25"},"Name":"minecraft:weeping_vines"},
+    "e": {"Name":"minecraft:shroomlight"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "bbbb ",
+      "b  bb",
+      "b   b",
+      "b    ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      " db  ",
+      " ebb ",
+      "b   b",
+      "b    ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "  ab ",
+      " bab ",
+      "b abb",
+      "b a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      " bb  ",
+      " bb  ",
+      " bb  ",
+      "b   b",
+      "b   b",
+      "b   b",
+      "    b",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "bbb b",
+      "c b b",
+      "c b b",
+      "c b b",
+      "c    ",
+      "c    ",
+      "d    ",
+      "     "
+    ]
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:logwood_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:logwood_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:logwood_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:logwood_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:logwood_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:logwood_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:logwood_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " deaed ",
+      " deaedd",
+      "       ",
+      "       "
+    ],
+    [
+      "  ebe  ",
+      " eaba  ",
+      "eeabaed",
+      "deabaed",
+      "       ",
+      "       "
+    ],
+    [
+      " aafaa ",
+      " abcba ",
+      "aabfbaa",
+      "eabfbae",
+      "       ",
+      "       "
+    ],
+    [
+      " bfcfb ",
+      " bcgcb ",
+      "bffgfbb",
+      "abfgfba",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " aafaa ",
+      " abcba ",
+      "aaffbaa",
+      "ebbfbbe",
+      "       ",
+      "       "
+    ],
+    [
+      "  ebe  ",
+      "  aba  ",
+      "eebfbed",
+      "daabaad",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "deaaaed",
+      " debedd",
+      "       ",
+      "       "
+    ]
+  ]
+}

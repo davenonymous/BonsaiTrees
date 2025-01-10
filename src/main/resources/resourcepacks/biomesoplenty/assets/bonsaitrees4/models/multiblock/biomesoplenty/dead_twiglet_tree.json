@@ -1,0 +1,30 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"biomesoplenty:dead_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"biomesoplenty:dead_leaves"},
+    "c": {"Properties":{"facing":"north"},"Name":"biomesoplenty:dead_branch"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"biomesoplenty:dead_leaves"}
+  },
+  "shape": [
+    [
+      "  ",
+      " b",
+      "  ",
+      "  ",
+      "  ",
+      "  ",
+      "  "
+    ],
+    [
+      " b",
+      "ba",
+      "ca",
+      "ba",
+      "da",
+      "ca",
+      " a"
+    ]
+  ]
+}

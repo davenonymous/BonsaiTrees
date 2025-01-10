@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:sweet_chestnut_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:sweet_chestnut_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:sweet_chestnut_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:sweet_chestnut_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:sweet_chestnut_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:sweet_chestnut_leaves"},
+    "g": {"Properties":{"axis":"y"},"Name":"productivetrees:sweet_chestnut_log"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:sweet_chestnut_leaves"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:sweet_chestnut_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "adacde ",
+      " eaaee ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      " aaafa ",
+      "acafada",
+      "adaaaab",
+      "       ",
+      "       "
+    ],
+    [
+      " afhfa ",
+      " caihf ",
+      "afhhfcd",
+      "acahfca",
+      "       ",
+      "       "
+    ],
+    [
+      " baaad ",
+      " aagac ",
+      "baigaaa",
+      "baagaaa",
+      "   g   ",
+      "   g   "
+    ],
+    [
+      " aaaaa ",
+      " abaad ",
+      "baaabaa",
+      "bbaabaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  abb  ",
+      "  aaae ",
+      "baaaaba",
+      "baaaabb",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "babbbab",
+      "abbaba ",
+      "       ",
+      "       "
+    ]
+  ]
+}

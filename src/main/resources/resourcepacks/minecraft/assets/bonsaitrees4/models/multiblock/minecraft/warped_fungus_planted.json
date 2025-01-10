@@ -1,0 +1,56 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"minecraft:warped_stem"},
+    "b": {"Name":"minecraft:warped_wart_block"},
+    "c": {"Name":"minecraft:shroomlight"}
+  },
+  "shape": [
+    [
+      "     ",
+      "bbbbb",
+      "bbbbb",
+      " bbb ",
+      "b    ",
+      "b    ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "b c b",
+      "b   b",
+      "b   b",
+      "    b",
+      "    b",
+      "     "
+    ],
+    [
+      " bbb ",
+      "b a b",
+      "  a b",
+      "bca b",
+      "  a b",
+      "  a b",
+      "  a  "
+    ],
+    [
+      " bbb ",
+      "b   b",
+      "bccbb",
+      "b b b",
+      "b    ",
+      "b    ",
+      "     "
+    ],
+    [
+      "     ",
+      "bbbbb",
+      "bbbb ",
+      " bbbb",
+      "   b ",
+      "   b ",
+      "   b "
+    ]
+  ]
+}

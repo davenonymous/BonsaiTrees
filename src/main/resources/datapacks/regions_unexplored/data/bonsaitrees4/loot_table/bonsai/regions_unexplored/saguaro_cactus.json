@@ -1,0 +1,26 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.5,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "regions_unexplored:blocks/saguaro_cactus"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "regions_unexplored:blocks/cactus_flower"
+        }
+      ],
+      "name": "other",
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bonsaitrees4:bonsai/regions_unexplored/saguaro_cactus"
+}

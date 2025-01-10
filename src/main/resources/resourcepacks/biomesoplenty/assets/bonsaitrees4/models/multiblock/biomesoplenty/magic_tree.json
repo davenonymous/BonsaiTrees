@@ -1,0 +1,68 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"biomesoplenty:magic_leaves"},
+    "b": {"Properties":{"axis":"y"},"Name":"biomesoplenty:magic_log"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"biomesoplenty:magic_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"biomesoplenty:magic_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"biomesoplenty:magic_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      " eae ",
+      "  a  ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  e  ",
+      "     ",
+      "  c  ",
+      " ada ",
+      "aacae",
+      " aca ",
+      "  c  ",
+      "     "
+    ],
+    [
+      "  e  ",
+      " eae ",
+      "  c  ",
+      " cdc ",
+      "adbda",
+      "ccbca",
+      "acbca",
+      " cbc ",
+      "  b  "
+    ],
+    [
+      "     ",
+      "  e  ",
+      "     ",
+      "  c  ",
+      " ada ",
+      "accae",
+      " aca ",
+      "  c  ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      " aca ",
+      "  a  ",
+      "     ",
+      "     "
+    ]
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:juniper_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:juniper_fruit"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:juniper_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:juniper_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:juniper_leaves"},
+    "f": {"Properties":{"axis":"y"},"Name":"productivetrees:juniper_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      " bbabb "
+    ],
+    [
+      "       ",
+      "       ",
+      " babb  ",
+      " bbbbb ",
+      "aaaaaaa"
+    ],
+    [
+      "   d   ",
+      "  bba  ",
+      " bbbba ",
+      " babba ",
+      "ababbbb"
+    ],
+    [
+      "  bed  ",
+      "  efb  ",
+      " ddfbb ",
+      " cbfbb ",
+      "bbbfbba"
+    ],
+    [
+      "   d   ",
+      "   bb  ",
+      " cdbbb ",
+      " bcbbb ",
+      "babebbb"
+    ],
+    [
+      "       ",
+      "       ",
+      "  bbb  ",
+      " bbbab ",
+      "babbabb"
+    ],
+    [
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "aabbaa "
+    ]
+  ]
+}

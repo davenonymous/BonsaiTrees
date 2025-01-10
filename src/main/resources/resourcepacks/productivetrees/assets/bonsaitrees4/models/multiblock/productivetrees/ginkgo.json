@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:ginkgo_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:ginkgo_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:ginkgo_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:ginkgo_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:ginkgo_fruit"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:ginkgo_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:ginkgo_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:ginkgo_leaves"},
+    "i": {"Properties":{"axis":"y"},"Name":"productivetrees:ginkgo_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      " eheeh ",
+      "hehehe ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ehe  ",
+      " aceh  ",
+      "gfeehee",
+      "heehhge",
+      "       ",
+      "       "
+    ],
+    [
+      " heehe ",
+      " ebdee ",
+      "heceeee",
+      "eeeeege",
+      "       ",
+      "       "
+    ],
+    [
+      " ebdee ",
+      " edidb ",
+      "eeeieaf",
+      "eeeiefe",
+      "   i   ",
+      "   i   "
+    ],
+    [
+      " acbea ",
+      " ebdbc ",
+      "eaebcae",
+      "ecbbceh",
+      "       ",
+      "       "
+    ],
+    [
+      "  eca  ",
+      "  cbce ",
+      "heaeafg",
+      "eaeeeee",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "hefgefg",
+      " fehee ",
+      "       ",
+      "       "
+    ]
+  ]
+}

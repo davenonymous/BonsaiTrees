@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:mandarin_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:mandarin_fruit"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:mandarin_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:mandarin_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:mandarin_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:mandarin_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:mandarin_leaves"},
+    "h": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:mandarin_leaves"},
+    "i": {"Properties":{"axis":"y"},"Name":"productivetrees:mandarin_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "bbbfbb ",
+      "dbbefbb",
+      "       ",
+      "       "
+    ],
+    [
+      "  bbb  ",
+      " bbcbb ",
+      "bafbdbb",
+      "gbbcbfa",
+      "       ",
+      "       "
+    ],
+    [
+      " feceb ",
+      " echbd ",
+      "bfebbbb",
+      "aabhcef",
+      "       ",
+      "       "
+    ],
+    [
+      " bbhcb ",
+      " bbihb ",
+      "bchibbb",
+      "bbbihba",
+      "   i   ",
+      "   i   "
+    ],
+    [
+      " dbbbb ",
+      " bbhbb ",
+      "bebbddd",
+      "dbbbbdg",
+      "       ",
+      "       "
+    ],
+    [
+      "  ddd  ",
+      "  bbb  ",
+      "bfbbbdd",
+      "gabbbbd",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " abbbdb",
+      "bgbbbbb",
+      "       ",
+      "       "
+    ]
+  ]
+}

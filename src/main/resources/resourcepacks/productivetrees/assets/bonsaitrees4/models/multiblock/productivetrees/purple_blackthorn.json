@@ -1,0 +1,73 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:purple_blackthorn_fruit"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:purple_blackthorn_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:purple_blackthorn_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:purple_blackthorn_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:purple_blackthorn_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:purple_blackthorn_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:purple_blackthorn_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:purple_blackthorn_log"},
+    "i": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:purple_blackthorn_leaves"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "eaaaaa ",
+      " aaeaee",
+      "       ",
+      "       "
+    ],
+    [
+      "  gae  ",
+      " adaee ",
+      "eaiaeea",
+      "eeaeaaa",
+      "       ",
+      "       "
+    ],
+    [
+      " aaaee ",
+      " aaaaa ",
+      "aafaaae",
+      "aacaaea",
+      "       ",
+      "       "
+    ],
+    [
+      " acbae ",
+      " abhba ",
+      "afahcae",
+      "acbhaea",
+      "   h   ",
+      "   h   "
+    ],
+    [
+      " eaaaa ",
+      " aaaaa ",
+      "eaabaee",
+      "aaccfaa",
+      "       ",
+      "       "
+    ],
+    [
+      "  eee  ",
+      " eaea  ",
+      "eaaaeae",
+      "aaacaea",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "aeeaaae",
+      "eaaaeaa",
+      "       ",
+      "       "
+    ]
+  ]
+}

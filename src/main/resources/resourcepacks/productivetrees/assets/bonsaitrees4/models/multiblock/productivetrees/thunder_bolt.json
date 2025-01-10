@@ -1,0 +1,76 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"productivetrees:thunder_bolt_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:thunder_bolt_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:thunder_bolt_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:thunder_bolt_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:thunder_bolt_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:thunder_bolt_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:thunder_bolt_leaves"},
+    "h": {"Properties":{"axis":"x"},"Name":"productivetrees:thunder_bolt_log"}
+  },
+  "shape": [
+    [
+      "      ",
+      "      ",
+      "  bdg ",
+      "  fbd ",
+      "  bbd ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      " dbd  ",
+      " bfbdg",
+      " fefbd",
+      " bffbd",
+      "   c  ",
+      "      ",
+      "      "
+    ],
+    [
+      "  b   ",
+      "dbfbd ",
+      "bfefbd",
+      "fecefb",
+      " feefb",
+      "  ehc ",
+      "      ",
+      "      "
+    ],
+    [
+      " bfb  ",
+      "bfefb ",
+      "fecefb",
+      "ecacef",
+      " eaefb",
+      "  ae  ",
+      "  a   ",
+      "  a   "
+    ],
+    [
+      "  b   ",
+      "dbfbd ",
+      "bfefb ",
+      "fecef ",
+      "  efb ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      " dbd  ",
+      " bfb  ",
+      " fef  ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ]
+  ]
+}

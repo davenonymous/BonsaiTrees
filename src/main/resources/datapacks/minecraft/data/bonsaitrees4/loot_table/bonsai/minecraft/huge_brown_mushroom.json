@@ -1,0 +1,26 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.5,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:blocks/mushroom_stem"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "minecraft:blocks/brown_mushroom_block"
+        }
+      ],
+      "name": "other",
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bonsaitrees4:bonsai/minecraft/huge_brown_mushroom"
+}

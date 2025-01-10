@@ -1,0 +1,102 @@
+{
+	"loader": "bonsaitrees4:multiblockmodel",
+	"version": 4,
+	"ref": {
+		"a": {"Properties":{"age":"0"},"Name":"minecraft:chorus_flower"},
+		"b": {"Properties":{"west":"true","up":"true","south":"false","north":"false","east":"false","down":"true"},"Name":"minecraft:chorus_plant"},
+		"c": {"Properties":{"west":"false","up":"false","south":"false","north":"true","east":"true","down":"false"},"Name":"minecraft:chorus_plant"},
+		"d": {"Properties":{"west":"true","up":"true","south":"false","north":"false","east":"true","down":"false"},"Name":"minecraft:chorus_plant"},
+		"e": {"Properties":{"west":"true","up":"false","south":"false","north":"false","east":"true","down":"false"},"Name":"minecraft:chorus_plant"},
+		"f": {"Properties":{"west":"false","up":"true","south":"true","north":"false","east":"false","down":"true"},"Name":"minecraft:chorus_plant"},
+		"g": {"Properties":{"west":"true","up":"false","south":"true","north":"false","east":"false","down":"false"},"Name":"minecraft:chorus_plant"},
+		"h": {"Properties":{"west":"true","up":"true","south":"true","north":"false","east":"false","down":"true"},"Name":"minecraft:chorus_plant"},
+		"i": {"Properties":{"west":"false","up":"true","south":"false","north":"true","east":"false","down":"false"},"Name":"minecraft:chorus_plant"},
+		"j": {"Properties":{"west":"false","up":"false","south":"true","north":"false","east":"false","down":"true"},"Name":"minecraft:chorus_plant"},
+		"k": {"Properties":{"west":"false","up":"false","south":"true","north":"true","east":"false","down":"false"},"Name":"minecraft:chorus_plant"},
+		"l": {"Properties":{"west":"false","up":"true","south":"false","north":"false","east":"true","down":"true"},"Name":"minecraft:chorus_plant"},
+		"m": {"Properties":{"west":"false","up":"false","south":"false","north":"false","east":"true","down":"true"},"Name":"minecraft:chorus_plant"},
+		"n": {"Properties":{"west":"false","up":"true","south":"true","north":"true","east":"true","down":"false"},"Name":"minecraft:chorus_plant"},
+		"o": {"Properties":{"west":"true","up":"false","south":"false","north":"false","east":"false","down":"true"},"Name":"minecraft:chorus_plant"},
+		"p": {"Properties":{"west":"true","up":"true","south":"false","north":"true","east":"false","down":"false"},"Name":"minecraft:chorus_plant"},
+		"q": {"Properties":{"west":"false","up":"true","south":"false","north":"false","east":"false","down":"true"},"Name":"minecraft:chorus_plant"},
+		"r": {"Properties":{"west":"false","up":"false","south":"true","north":"true","east":"true","down":"false"},"Name":"minecraft:chorus_plant"},
+		"s": {"Properties":{"west":"true","up":"true","south":"false","north":"false","east":"false","down":"false"},"Name":"minecraft:chorus_plant"},
+		"t": {"Properties":{"west":"false","up":"false","south":"true","north":"true","east":"false","down":"true"},"Name":"minecraft:chorus_plant"},
+		"u": {"Properties":{"age":"5"},"Name":"minecraft:chorus_flower"},
+		"v": {"Properties":{"west":"false","up":"true","south":"false","north":"false","east":"false","down":"false"},"Name":"minecraft:chorus_plant"},
+		"w": {"Properties":{"west":"true","up":"false","south":"false","north":"true","east":"true","down":"false"},"Name":"minecraft:chorus_plant"},
+		"x": {"Properties":{"west":"false","up":"true","south":"false","north":"true","east":"true","down":"true"},"Name":"minecraft:chorus_plant"},
+		"y": {"Properties":{"west":"false","up":"true","south":"true","north":"false","east":"false","down":"false"},"Name":"minecraft:chorus_plant"},
+		"z": {"Properties":{"west":"true","up":"false","south":"true","north":"false","east":"true","down":"false"},"Name":"minecraft:chorus_plant"},
+		"A": {"Properties":{"west":"true","up":"true","south":"false","north":"true","east":"false","down":"true"},"Name":"minecraft:chorus_plant"},
+		"B": {"Properties":{"west":"true","up":"false","south":"false","north":"true","east":"false","down":"false"},"Name":"minecraft:chorus_plant"}
+	},
+	"shape": [
+		[
+			"      ",
+			"      ",
+			"    a ",
+			"    q ",
+			"  a ha",
+			"   ji ",
+			" gui  ",
+			"  s aB",
+			"      "
+		],
+		[
+			"      ",
+			"   a  ",
+			"      ",
+			"      ",
+			"atc e ",
+			" b    ",
+			" d    ",
+			"  a  e",
+			"      "
+		],
+		[
+			"   a  ",
+			"   l  ",
+			"   b  ",
+			"   s  ",
+			"    a ",
+			" m o  ",
+			" a fka",
+			" yrA d",
+			"   v  "
+		],
+		[
+			"      ",
+			"      ",
+			"   a  ",
+			" akx a",
+			"   q q",
+			"  ankp",
+			"      ",
+			"   zkc",
+			"      "
+		],
+		[
+			"      ",
+			"      ",
+			"      ",
+			"      ",
+			"      ",
+			" jw  a",
+			" a    ",
+			"   u  ",
+			"      "
+		],
+		[
+			"      ",
+			"      ",
+			"      ",
+			"   a  ",
+			"   q  ",
+			"  ui  ",
+			"      ",
+			"      ",
+			"      "
+		]
+	]
+}

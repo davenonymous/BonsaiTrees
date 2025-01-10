@@ -1,0 +1,203 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"productivetrees:elm_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:elm_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:elm_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:elm_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:elm_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:elm_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:elm_leaves"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:elm_log"}
+  },
+  "shape": [
+    [
+      "                 ",
+      "                 ",
+      "                 ",
+      "                 ",
+      "                 ",
+      "                 ",
+      "aaaaaaaaaaaaaaaa ",
+      " aaaaaaaaaaaaaaa ",
+      "                 "
+    ],
+    [
+      "                 ",
+      "                 ",
+      "                 ",
+      "                 ",
+      "  aaaaaaaaaaaaa  ",
+      " aaaaaaaaaaaaaaa ",
+      "aaaaaaaaaaaaaaaaa",
+      "aaaaaaaaaaaaaaaaa",
+      "                 "
+    ],
+    [
+      "                 ",
+      "                 ",
+      "   aaaaabaaaaa   ",
+      "   aaaaabaaaaaa  ",
+      " aaaaaaabaaaaaaa ",
+      " aaaaaaabaaaaaaa ",
+      "aaaaaaaabaaaaaaaa",
+      "aaaaaaaabaaaaaaaa",
+      "                 "
+    ],
+    [
+      "    aaaabaaaa    ",
+      "    aaabbbaaaa   ",
+      "  aaaaabbbaaaaa  ",
+      "  aaaaabbbaaaaa  ",
+      " aaaaaabbbaaaaaa ",
+      " aaaaaabbbaaaaaa ",
+      "aaaaaaabbbaaaaaaa",
+      "aaaaaaabbbaaaaaaa",
+      "                 "
+    ],
+    [
+      "   aaaabbbaaaa   ",
+      "   aaabbcbbaaa   ",
+      "  aaaabbcbbaaaa  ",
+      "  aaaabbcbbaaaa  ",
+      " aaaaabbcbbaaaaa ",
+      " aaaaabbcbbaaaaa ",
+      "aaaaaabbccbaaaaaa",
+      "aaaaaabbcbbaaaaaa",
+      "                 "
+    ],
+    [
+      "   aaabbcbbaaa   ",
+      "   aabbcdcbbaa   ",
+      "  aaabbcdcbbaaa  ",
+      "  aaabbcdcbbaaa  ",
+      " aaaabbcdccbaaaa ",
+      " aaaabbcdcbbaaaa ",
+      "aaaaabbcddbbaaaaa",
+      "aaaaabbcdccbaaaaa",
+      "                 "
+    ],
+    [
+      "   aabbcecbbaa   ",
+      "   abbcdedcbba   ",
+      "  aabbceedccbaa  ",
+      "  aabbcdedcbbaa  ",
+      " aaabbcdfddbbaaa ",
+      " aaabbcdedcbbaaa ",
+      "aaaabbcdeecbbaaaa",
+      "aaaabbcdeddcbaaaa",
+      "                 "
+    ],
+    [
+      "   abbcdfdcbba   ",
+      "   bbcdefedcbb   ",
+      "  abbcdfgfddbba  ",
+      "  abbcdefedcbba  ",
+      " aabbceegeecbbaa ",
+      " aabbcdefedcbbaa ",
+      "aaabbcdfgfdcbbaaa",
+      "aaabbcdefeedcbaaa",
+      "                 "
+    ],
+    [
+      "   bbcdegedccb   ",
+      "   ccdefhfedcb   ",
+      "  bbcdeghgeecbb  ",
+      "  bbcdefhfedcbb  ",
+      " abbcdfghgfdcbba ",
+      " abbcdefhfedcbba ",
+      "aabbceeghgedcbbaa",
+      "aabbcdffhffedcbaa",
+      "        h        "
+    ],
+    [
+      "   abbcdfdcbba   ",
+      "   bbcdefedcbb   ",
+      "  abbcdfgfddbba  ",
+      "  abbcdefedcbba  ",
+      " aabbceegeecbbaa ",
+      " aabbcdefedcbbaa ",
+      "aaabbcdfgfdcbbaaa",
+      "aaabbcdefeedcbaaa",
+      "                 "
+    ],
+    [
+      "   aabbcecbbaa   ",
+      "   abbcdedcbba   ",
+      "  aabbceedccbaa  ",
+      "  aabbcdedcbbaa  ",
+      " aaabbcdfddbbaaa ",
+      " aaabbcdedcbbaaa ",
+      "aaaabbcdeecbbaaaa",
+      "aaaabcdefddcbaaaa",
+      "                 "
+    ],
+    [
+      "   aaabbcbbaaa   ",
+      "   aabbcdcbbaa   ",
+      "  aaabbcdcbbaaa  ",
+      "  aaabbcdcbbaaa  ",
+      " aaaabbcdccbaaaa ",
+      " aaaabbcdcbbaaaa ",
+      "aaaaabbcddbbaaaaa",
+      "aaaaabcdeccbaaaaa",
+      "                 "
+    ],
+    [
+      "   aaaabbbaaaa   ",
+      "   aaabbcbbaaa   ",
+      "  aaaabbcbbaaaa  ",
+      "  aaaabbcbbaaaa  ",
+      " aaaaabbcbbaaaaa ",
+      " aaaaabbcbbaaaaa ",
+      "aaaaaabbccbaaaaaa",
+      "aaaaaabcdbbaaaaaa",
+      "                 "
+    ],
+    [
+      "    aaaabaaaa    ",
+      "    aaabbbaaa    ",
+      "  aaaaabbbaaaaa  ",
+      "  aaaaabbbaaaaa  ",
+      " aaaaaabbbaaaaaa ",
+      " aaaaaabbbaaaaaa ",
+      "aaaaaaabbbaaaaaaa",
+      "aaaaaaabcbaaaaaaa",
+      "                 "
+    ],
+    [
+      "                 ",
+      "                 ",
+      "   aaaaabaaaaaa  ",
+      "  aaaaaabaaaaaa  ",
+      " aaaaaaabaaaaaaa ",
+      " aaaaaaabaaaaaaa ",
+      "aaaaaaaabaaaaaaaa",
+      "aaaaaaaabaaaaaaaa",
+      "                 "
+    ],
+    [
+      "                 ",
+      "                 ",
+      "                 ",
+      "                 ",
+      "  aaaaaaaaaaaaaa ",
+      " aaaaaaaaaaaaaaa ",
+      "aaaaaaaaaaaaaaaaa",
+      "aaaaaaaaaaaaaaaaa",
+      "                 "
+    ],
+    [
+      "                 ",
+      "                 ",
+      "                 ",
+      "                 ",
+      "                 ",
+      "                 ",
+      "aaaaaaaaaaaaaaaaa",
+      "aaaaaaaaaaaaaaaaa",
+      "                 "
+    ]
+  ]
+}

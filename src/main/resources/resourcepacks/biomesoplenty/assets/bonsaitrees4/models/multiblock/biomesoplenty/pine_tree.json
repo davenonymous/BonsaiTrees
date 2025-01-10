@@ -1,0 +1,113 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"biomesoplenty:pine_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"biomesoplenty:pine_leaves"},
+    "c": {"Properties":{"axis":"y"},"Name":"biomesoplenty:pine_log"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"biomesoplenty:pine_leaves"},
+    "e": {"Properties":{"axis":"x"},"Name":"biomesoplenty:pine_log"},
+    "f": {"Properties":{"axis":"z"},"Name":"biomesoplenty:pine_log"}
+  },
+  "shape": [
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "    b    ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "   d d   ",
+      "   bab   ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "    b    ",
+      "         ",
+      "   d d   ",
+      "         ",
+      "    a    ",
+      "  baeab  ",
+      "    a    ",
+      "         "
+    ],
+    [
+      "    b    ",
+      "   bab   ",
+      "         ",
+      "  dbabd  ",
+      "    b    ",
+      " d d d d ",
+      " bababab ",
+      "    e    ",
+      "         "
+    ],
+    [
+      "   bab   ",
+      "  bacab  ",
+      "    c    ",
+      "   aca   ",
+      "   bcb   ",
+      "  a c a  ",
+      "bafacafab",
+      "  afcfa  ",
+      "    c    "
+    ],
+    [
+      "    b    ",
+      "   bab   ",
+      "         ",
+      "  dbabd  ",
+      "    b    ",
+      " d d d d ",
+      " bababab ",
+      "    e    ",
+      "         "
+    ],
+    [
+      "         ",
+      "    b    ",
+      "         ",
+      "   d d   ",
+      "         ",
+      "    a    ",
+      "  baeab  ",
+      "    a    ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "   d d   ",
+      "   bab   ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "    b    ",
+      "         ",
+      "         "
+    ]
+  ]
+}

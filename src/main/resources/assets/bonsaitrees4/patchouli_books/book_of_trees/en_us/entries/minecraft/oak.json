@@ -1,0 +1,35 @@
+{
+	"name": "Oak",
+	"icon": "minecraft:oak_sapling",
+	"category": "bonsaitrees4:minecraft",
+	"pages": [
+		{
+			"type": "bonsaitrees4:tree",
+			"tree_name": "Oak",
+			"tree_sapling": "minecraft:oak_sapling"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "In Minecraft",
+			"text": "An oak is the most common tree in the game, found in a variety of biomes and available in several variants. Oaks come in several variants with different properties.",
+			"url": "https://minecraft.wiki/w/Oak",
+			"link_text": "Minecraft Wiki"
+		},
+		{
+			"type": "patchouli:link",
+			"title": "On Earth",
+			"text": "Oaks are hardwood trees or shrubs in the genus Quercus of the beech family. They have spirally arranged leaves, often with lobed edges, and a nut called an acorn. It is widely distributed in the Northern Hemisphere. Ecologically, oaks are keystone species in habitats from Mediterranean semi-desert to subtropical rainforest.",
+			"url": "https://en.wikipedia.org/wiki/Oak",
+			"link_text": "Wikipedia"
+		},
+		{
+			"type": "patchouli:image",
+			"border": true,
+			"images": [
+				"bonsaitrees4:textures/patchouli/oak_tree.png",
+				"bonsaitrees4:textures/patchouli/oak_acorns.png",
+				"bonsaitrees4:textures/patchouli/oak_tree_2.png"
+			]
+		}
+	]
+}

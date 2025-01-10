@@ -1,0 +1,72 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"productivetrees:breadfruit_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"productivetrees:breadfruit_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"productivetrees:breadfruit_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"productivetrees:breadfruit_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"productivetrees:breadfruit_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"productivetrees:breadfruit_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7","age":"0"},"Name":"productivetrees:breadfruit_fruit"},
+    "h": {"Properties":{"axis":"y"},"Name":"productivetrees:breadfruit_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "eaacaee",
+      " eacae ",
+      "       ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      " acbca ",
+      "eccbcae",
+      "eacbcae",
+      "       ",
+      "       "
+    ],
+    [
+      " abfba ",
+      " cbdbc ",
+      "abbfbca",
+      "ccbfbcc",
+      "    g  ",
+      "       "
+    ],
+    [
+      " cfdfc ",
+      " bdhdb ",
+      "cffhfbc",
+      "bbfhfbb",
+      "g  h   ",
+      "   h   "
+    ],
+    [
+      " abfba ",
+      " cbdbc ",
+      "abffbba",
+      "ccbfbcc",
+      "g      ",
+      "       "
+    ],
+    [
+      "  ccc  ",
+      "  cbca ",
+      "accfcca",
+      "eabbbae",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      " aabaee",
+      "eeccce ",
+      "   gg  ",
+      "       "
+    ]
+  ]
+}
