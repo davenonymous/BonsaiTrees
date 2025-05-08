@@ -27,7 +27,7 @@ import java.util.Optional;
 @EventBusSubscriber(modid = BonsaiTrees.MODID, bus = EventBusSubscriber.Bus.MOD)
 public class ModDataPacks {
 	private static final PackSelectionConfig REQUIRED_SELECTION_CONFIG = new PackSelectionConfig(true, Pack.Position.BOTTOM, false);
-	private static final PackSelectionConfig OPTIONAL_SELECTION_CONFIG = new PackSelectionConfig(true, Pack.Position.BOTTOM, false);
+	private static final PackSelectionConfig OPTIONAL_SELECTION_CONFIG = new PackSelectionConfig(false, Pack.Position.BOTTOM, false);
 
 	@SubscribeEvent
 	public static void addPackFinder(AddPackFindersEvent event) {

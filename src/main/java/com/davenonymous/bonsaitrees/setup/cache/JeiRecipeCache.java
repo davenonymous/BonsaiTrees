@@ -33,6 +33,10 @@ public class JeiRecipeCache {
 			RECIPES_BY_INPUT.get(item).add(recipe);
 
 			bonsai.validSoilTypes(registryAccess).forEach(soilType -> {
+				if(soilType == null) {
+					return;
+				}
+
 				if(!RECIPES_BY_SOILTYPE.containsKey(soilType)) {
 					RECIPES_BY_SOILTYPE.put(soilType, new HashSet<>());
 				}
