@@ -7,7 +7,6 @@
 - Try/catch soil and camouflage rendering and disable that particular block if it fails
 - Add a tick rate game server test, i.e. place n^2 pots with random saplings and check if the server
   can handle it
-- Fix some camouflages not rendering at all
 - Why are there two pots per fluid in the soil tests?
 
 # Optional

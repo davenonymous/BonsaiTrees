@@ -5,6 +5,7 @@ import com.davenonymous.bonsaitrees.datacomponents.SaplingDataComponent;
 import com.davenonymous.bonsaitrees.datacomponents.SoilDataComponent;
 import com.davenonymous.bonsaitrees.datacomponents.ToolDataComponent;
 import com.davenonymous.bonsaitrees.setup.ModDataComponents;
+import com.davenonymous.bonsaitrees.setup.ModTags;
 import com.davenonymous.bonsaitrees.setup.cache.BonsaiCache;
 import com.davenonymous.bonsaitrees.setup.cache.SoilCache;
 import net.minecraft.core.Holder;
@@ -224,6 +225,11 @@ public class BonsaiPotBlockInventories implements INBTSerializable<CompoundTag> 
 				if(stack.getItem() instanceof BlockItem item) {
 					Block block = item.getBlock();
 					BlockState state = block.defaultBlockState();
+					boolean isBlocked = state.is(ModTags.NO_CAMOUFLAGE);
+					if(isBlocked) {
+						return false;
+					}
+
 					boolean isSolid = state.isSolidRender(potBlock.getLevel(), potBlock.getBlockPos());
 					boolean isFullCollision = state.isCollisionShapeFullBlock(potBlock.getLevel(), potBlock.getBlockPos());
 					return isSolid && isFullCollision;

@@ -9,8 +9,7 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
 
-	public static final TagKey<Block> DIRTS = createBlockTag("dirts", true);
-
+	public static final TagKey<Block> NO_CAMOUFLAGE = createBlockTag("no_camouflage");
 
 	private static TagKey<Block> createBlockTag(String name) {
 		return createBlockTag(name, false);
