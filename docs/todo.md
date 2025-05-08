@@ -1,4 +1,3 @@
-- Finish documentation
 - Fix item visibility in GUI slots (they have no lighting)
 - Add The End trees (and those from mods extending The End)
 - Try/catch soil and camouflage rendering and disable that particular block if it fails

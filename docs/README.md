@@ -5,8 +5,6 @@
 1. [Introduction](#introduction)
 2. [Changes from Bonsai Trees 3](#changes-from-bonsai-trees-3)
 3. [Auto-Generation](#auto-generation)
-    1. [Pull-Requests / Using the game test framework](#pull-requests--using-the-game-test-framework)
-    2. [In-Game](#in-game)
 4. [Bonsais](#bonsais)
     1. [Basic Example](#basic-example)
     2. [Additional Properties](#additional-properties)
@@ -18,7 +16,7 @@
     1. [Blocks Soils](#block-soils)
     2. [Fluid Soils](#fluid-soils)
     3. [Item Soils](#item-soils)
-8. Tree Models
+8. [Tree Models](#tree-models)
 
 ## Introduction
 
@@ -108,11 +106,13 @@ The main changes are:
   The loot tables for the bonsais use the tool in the Bonsai Pot to generate the outcome. Enchantments and other tool
   properties are taken into account when generating the loot.
 
+
 ## Auto-Generation
 
 Bonsai Trees 4 supports full and easy auto-generation of resource and data packs for mods that
-use the vanilla tree grower system. This means that most mods should work out of the box with
-no additional configuration needed.
+use the vanilla tree grower system. This means that most mods should work out of the box with no
+additional configuration needed.
+To avoid unnecessary clutter in the mod itself, the auto-generation is done using a separate mod.
 
 The auto-generation takes care of creating:
 
@@ -122,99 +122,8 @@ The auto-generation takes care of creating:
 - The pack meta-data and folder structure
 - Zipped and ready to use data and resource packs
 
-There are two ways to include support for a mod:
+For more details head over to the [BonsaiGen](github.com/davenonymous/BonsaiGen) repository.
 
-### Pull-Requests / Using the game test framework
-
-This is the recommended way to add support for a mod as it includes the mod in the next Bonsai
-Trees 4 release automatically. It requires you to edit some files and know how to create forks
-and pull requests on GitHub.
-
-The game test framework is a system that allows you to run tests in a short-lived server instance
-of the game. It is (ab)used by Bonsai Trees 4 to generate the data and resource packs for all
-loaded mods. Work has been done to ensure that most mods work out of the box with this system,
-but there are some mods that require manual intervention and require opening an issue on the
-Bonsai Trees 4 GitHub repository.
-
-If we managed to set up everything correctly on GitHub it should be enough to create a pull
-request with the mod added to the `dependencies` list in the `build.gradle` file. The rest should
-be handled automatically.
-
-#### Example
-
-**Step 0**: Get the project name, project id and file id of the mod you want to add.
-You can find this information on the CurseForge page of the mod. [Where?](curseforge_file_data.png)
-
-**Step 1**: Fork the `1.21.1` branch of the [Bonsai Trees repository](https://github.com/davenonymous/BonsaiTrees)
-
-**Step 2**: Edit the `build.gradle` file and add the mod to the `dependencies` list
-
-```gradle
-dependencies {
-    ...
-
-    // Only used for the data and resource pack generation
-    runtimeOnly "curse.maven:biomes-o-plenty-220318:${biomesoplenty_fileid}"
-    runtimeOnly "curse.maven:regions-unexplored-659110:${regionsunexplored_fileid}"
-
-    // Add your mod here, e.g. for twilight forest:
-    runtimeOnly "curse.maven:the-twilight-forest-227639:${twilightforest_fileid}"
-    ...
-}
-```
-
-**Step 3**: Edit the `gradle.properties` file and add the file ID for the mod to the bottom of the file
-
-```ini
-...
-curios_fileid=6076118
-titanium_fileid=5897690
-geckolib_fileid=6027599
-
-# Add the latest file id here, e.g. for twilight forest:
-twilightforest_fileid=6070226
-```
-
-**Step 4**: Make sure the tree generation action has been executed after your changes. Maybe you need to
-trigger the GitHub action manually. It should have created a new commit with the generated data and
-resource packs.
-
-**Step 5**: Create a pull request with your changes.
-
-### In-Game
-
-If you don't want to create a pull request or the mod you want to add is not available via Maven you
-can use an in-game command to generate the data and resource packs for the mod you want to add.
-
-If you want to automatically generate zip files for the packs or export them to a specific path you
-can tweak some settings in the Pack Generation config available in the mod options or config file.
-
-**Step 1**: Start a new superflat world with both mods (bonsai trees and yours) installed.
-
-**Step 2**: Run the command `/bonsai generate-data-pack <modid>`, e.g. `/bonsai generate-data-pack twilightforest`.
-
-**Step 3**: You can find the generated data and resource packs in your Minecraft instance folder
-under `bonsai-generated/` or in the path you specified in the config.
-
-**Step 4**: Add the generated data and resource packs to your mod pack or corresponding instance folders.
-Make sure they are being loaded!
-
-You can also specify `--all` as mod id to generate data and resource packs for all loaded mods.
-
-### Influencing the Generation
-
-Sometimes trees don't generate correctly or look weird and you want to tweak the generation a bit.
-Common issues include root blocks being generated below the tree line or the sapling requiring a
-specific soil block or medium to grow on.
-
-There are two more data maps you can use to influence the generation of the tree model and the
-details of the bonsais. These are the `fixed_tree_generation.json` and `bonsai_generation.json`
-data maps.
-
-- The `fixed_tree_generation.json` data map is used to modify the generated model.
-- The `bonsai_generation.json` data map is used to modify the bonsais, e.g. their valid soil types.
-
-// TODO: Add examples and explanations for these data maps
 
 ## Bonsais
 
@@ -466,3 +375,41 @@ All together you should now see something like this in JEI:
 ![New Recipes](jei_recipes.png)
 
 ## Tree Models
+
+You really don't want to define tree models by hand. The BonsaiGen mod will help you with that.
+Nonetheless, here is a short overview of how the tree models are defined:
+
+```json
+{
+	"loader": "bonsaitrees4:multiblockmodel",
+	"version": 4,
+	"ref": {
+		"a": {"Name": "minecraft:cobblestone"}
+	},
+	"shape": [
+		[
+			"   ",
+			"   ",
+			"aaa"
+		],
+		[
+			"   ",
+			" a ",
+			"aaa"
+		],
+		[
+			"   ",
+			"   ",
+			"aaa"
+		]
+	]
+}
+```
+
+- `ref`: A list of references from characters to blocks. The keys are the characters used in
+  the shape and the values are the blocks used for that character.
+- `shape`: The shape of the tree. Each character in the string is replaced with the block
+  defined in the `ref` section. The shape is a list of lists, where each list is a slice of
+  the tree. We are viewing the tree from the front, so the first slice is the one closest to us.
+- `loader`: The loader used to load the model. This should always be `bonsaitrees4:multiblockmodel`.
+- `version`: The version of the model. This should always be `4`.
