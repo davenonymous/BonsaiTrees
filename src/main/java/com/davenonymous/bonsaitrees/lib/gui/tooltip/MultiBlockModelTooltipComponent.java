@@ -28,10 +28,16 @@ public class MultiBlockModelTooltipComponent implements TooltipComponent, Client
 
 	public MultiBlockModelTooltipComponent(ResourceLocation modelId, int width, int height) {
 		this.modelId = modelId;
-		ModelResourceLocation treeModelId = ModModelLoaders.MODEL_MAP.get(modelId);
-		this.multiBlockModel = (MultiBlockModel) Minecraft.getInstance().getModelManager().getModel(treeModelId);
-		this.width = width;
-		this.height = height;
+		if(ModModelLoaders.MODEL_MAP.containsKey(modelId)) {
+			ModelResourceLocation treeModelId = ModModelLoaders.MODEL_MAP.get(modelId);
+			this.multiBlockModel = (MultiBlockModel) Minecraft.getInstance().getModelManager().getModel(treeModelId);
+			this.width = width;
+			this.height = height;
+		} else {
+			this.multiBlockModel = null;
+			this.width = 0;
+			this.height = 0;
+		}
 	}
 
 	@Override
@@ -46,6 +52,10 @@ public class MultiBlockModelTooltipComponent implements TooltipComponent, Client
 
 	@Override
 	public void renderImage(Font font, int x, int y, GuiGraphics guiGraphics) {
+		if(multiBlockModel == null) {
+			return;
+		}
+
 		guiGraphics.pose().pushPose();
 
 		guiGraphics.pose().translate(x, y, 100.0f);

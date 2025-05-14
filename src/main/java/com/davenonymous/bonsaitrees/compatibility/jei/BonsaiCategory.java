@@ -168,6 +168,10 @@ public class BonsaiCategory implements IRecipeCategory<BonsaiRecipe> {
 
 
 		ResourceLocation modelId = BonsaiCache.BONSAI_BY_ITEM.get(recipe.sapling()).model();
+		if(!ModModelLoaders.MODEL_MAP.containsKey(modelId)) {
+			return;
+		}
+
 		ModelResourceLocation treeModelId = ModModelLoaders.MODEL_MAP.get(modelId);
 		MultiBlockModel multiBlockModel = (MultiBlockModel) Minecraft.getInstance().getModelManager().getModel(treeModelId);
 
