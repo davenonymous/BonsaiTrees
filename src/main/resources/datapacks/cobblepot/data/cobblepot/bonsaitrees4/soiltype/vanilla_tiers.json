@@ -1,7 +1,0 @@
-{
-	"id": "cobblepot:vanilla_tiers",
-	"defaultItem": {
-		"id": "minecraft:iron_block"
-	},
-	"translationKey": "cobblepot.soil.vanilla_tiers"
-}
