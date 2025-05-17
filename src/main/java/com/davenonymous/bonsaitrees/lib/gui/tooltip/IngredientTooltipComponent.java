@@ -40,9 +40,12 @@ public class IngredientTooltipComponent implements TooltipComponent, ClientToolt
 	}
 
 	private ItemStack activeItem() {
+		ItemStack[] items = this.items.getItems();
+		if(items.length == 0) {
+			return ItemStack.EMPTY;
+		}
 		long time = Minecraft.getInstance().level.getGameTime();
 		long displayTime = time >> 4;
-		ItemStack[] items = this.items.getItems();
 		int i = (int) (displayTime % items.length);
 		return items[i];
 	}
@@ -50,6 +53,10 @@ public class IngredientTooltipComponent implements TooltipComponent, ClientToolt
 	@Override
 	public void renderImage(Font font, int x, int y, GuiGraphics guiGraphics) {
 		ItemStack item = activeItem();
+		if(item.isEmpty()) {
+			return;
+		}
+
 		guiGraphics.renderItem(item, x, y);
 		guiGraphics.renderItemDecorations(font, item, x, y);
 		if(showLabel) {
