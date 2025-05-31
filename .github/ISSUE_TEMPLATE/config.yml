@@ -1,1 +1,5 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Request support for a mod
+    about: Links to the Bonsai Gen repository. Easy and automagical mod support.
+    url: https://github.com/davenonymous/BonsaiGen?tab=readme-ov-file#example
