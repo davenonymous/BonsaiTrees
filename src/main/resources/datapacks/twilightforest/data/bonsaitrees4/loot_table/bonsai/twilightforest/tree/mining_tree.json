@@ -37,6 +37,23 @@
       ],
       "name": "leaves",
       "rolls": 2.0
+    },
+    {
+      "bonus_rolls": 0.5,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "twilightforest:blocks/mining_log_core"
+        }
+      ],
+      "name": "other",
+      "rolls": 1.0
     }
   ],
   "random_sequence": "bonsaitrees4:bonsai/twilightforest/tree/mining_tree"

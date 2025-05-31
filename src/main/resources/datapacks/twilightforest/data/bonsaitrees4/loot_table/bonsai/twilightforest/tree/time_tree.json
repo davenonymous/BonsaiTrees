@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "value": "twilightforest:blocks/time_log"
+          "value": "twilightforest:blocks/time_wood"
         },
         {
           "type": "minecraft:loot_table",
-          "value": "twilightforest:blocks/time_wood"
+          "value": "twilightforest:blocks/time_log"
         }
       ],
       "name": "log",
@@ -47,6 +47,10 @@
         }
       ],
       "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "twilightforest:blocks/time_log_core"
+        },
         {
           "type": "minecraft:loot_table",
           "value": "minecraft:blocks/vine"

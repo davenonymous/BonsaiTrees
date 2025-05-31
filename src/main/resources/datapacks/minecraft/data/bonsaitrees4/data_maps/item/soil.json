@@ -1,9 +1,0 @@
-{
-  "values": {
-    "minecraft:ender_eye": {
-      "extraRolls": 1,
-      "soilType": "bonsaitrees4:end_stone",
-      "texture": "minecraft:block/end_portal_frame_top"
-    }
-  }
-}

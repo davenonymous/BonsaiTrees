@@ -11,11 +11,11 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "value": "eternal_starlight:blocks/glowing_mushroom_block"
+          "value": "eternal_starlight:blocks/glowing_mushroom_stem"
         },
         {
           "type": "minecraft:loot_table",
-          "value": "eternal_starlight:blocks/glowing_mushroom_stem"
+          "value": "eternal_starlight:blocks/glowing_mushroom_block"
         }
       ],
       "name": "other",

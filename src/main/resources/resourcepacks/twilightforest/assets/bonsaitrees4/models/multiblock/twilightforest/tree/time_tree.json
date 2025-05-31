@@ -6,7 +6,8 @@
     "b": {"Properties":{"axis":"y"},"Name":"twilightforest:time_wood"},
     "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"7"},"Name":"twilightforest:time_leaves"},
     "d": {"Properties":{"axis":"y"},"Name":"twilightforest:time_log"},
-    "e": {"Properties":{"west":"false","up":"false","south":"false","north":"false","east":"true"},"Name":"minecraft:vine"}
+    "e": {"Properties":{"axis":"y","active":"false"},"Name":"twilightforest:time_log_core"},
+    "f": {"Properties":{"west":"false","up":"false","south":"false","north":"false","east":"true"},"Name":"minecraft:vine"}
   },
   "shape": [
     [
@@ -17,6 +18,7 @@
       "  aaa        ",
       "  aaa        ",
       "  aa         ",
+      "             ",
       "             ",
       "             ",
       "             ",
@@ -35,6 +37,7 @@
       "             ",
       "             ",
       "             ",
+      "             ",
       "             "
     ],
     [
@@ -48,6 +51,7 @@
       "  aaa     a  ",
       "         aaa ",
       "          aa ",
+      "             ",
       "             ",
       "             "
     ],
@@ -63,6 +67,7 @@
       "   aac aaaaaa",
       "   aa   aaaaa",
       "         aaa ",
+      "             ",
       "             "
     ],
     [
@@ -77,7 +82,8 @@
       " aaaadddaabaa",
       " aaaadddabaaa",
       "   aadddaaaa ",
-      "     ddd     "
+      "     ddd     ",
+      "     bdd     "
     ],
     [
       "  aaa        ",
@@ -90,8 +96,9 @@
       "aaaaadadaaaaa",
       "aaaabdadbaaaa",
       "aaabbdcdbbaac",
-      " aaaadedaaac ",
-      "     ded     "
+      " aaaadfdaaac ",
+      "     dfd     ",
+      "     dfd     "
     ],
     [
       "  caa        ",
@@ -105,7 +112,8 @@
       "aabbadddaaaa ",
       "aaabadddaaac ",
       " aaacdddac   ",
-      "     ddd     "
+      "     ddd     ",
+      "     bed     "
     ],
     [
       "     aaa     ",
@@ -119,6 +127,7 @@
       "aaaaaaaaaa   ",
       "aaaaaaaaac   ",
       " ac   ac     ",
+      "             ",
       "             "
     ],
     [
@@ -133,6 +142,7 @@
       " aaa  aac    ",
       "  ac   c     ",
       "             ",
+      "             ",
       "             "
     ],
     [
@@ -144,6 +154,7 @@
       "       aaabaa",
       "       aaaaaa",
       "        aaaa ",
+      "             ",
       "             ",
       "             ",
       "             ",
@@ -161,6 +172,7 @@
       "             ",
       "             ",
       "             ",
+      "             ",
       "             "
     ],
     [
@@ -171,6 +183,7 @@
       "         aaa ",
       "         aaa ",
       "         aac ",
+      "             ",
       "             ",
       "             ",
       "             ",
