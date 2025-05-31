@@ -3,6 +3,7 @@ package com.davenonymous.bonsaitrees.blocks;
 import com.davenonymous.bonsaitrees.setup.ModBlocks;
 import com.davenonymous.bonsaitrees.setup.ModDataComponents;
 import com.davenonymous.bonsaitrees.setup.data.BonsaiInfo;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
@@ -177,6 +178,11 @@ public class BonsaiPotBlock extends Block implements EntityBlock, Equipable {
 	@Override
 	protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
 		return SHAPE;
+	}
+
+	@Override
+	protected MapCodec<? extends Block> codec() {
+		return ModBlocks.BONSAI_POT_TYPE.get();
 	}
 
 	@Override

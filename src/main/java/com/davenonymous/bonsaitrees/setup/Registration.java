@@ -7,6 +7,7 @@ public class Registration {
 	public static void register(IEventBus modbus) {
 		ModBlocks.BLOCKS.register(modbus);
 		ModBlocks.BLOCK_ENTITIES.register(modbus);
+		ModBlocks.BLOCK_TYPES.register(modbus);
 		ModItems.ITEMS.register(modbus);
 		ModRecipes.RECIPE_TYPES.register(modbus);
 		ModRecipes.RECIPE_SERIALIZERS.register(modbus);

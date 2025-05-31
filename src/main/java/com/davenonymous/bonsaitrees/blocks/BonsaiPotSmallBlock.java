@@ -1,7 +1,10 @@
 package com.davenonymous.bonsaitrees.blocks;
 
+import com.davenonymous.bonsaitrees.setup.ModBlocks;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -13,6 +16,11 @@ public class BonsaiPotSmallBlock extends BonsaiPotBlock {
 
 	public BonsaiPotSmallBlock(Properties properties) {
 		super(properties);
+	}
+
+	@Override
+	protected MapCodec<? extends Block> codec() {
+		return ModBlocks.BONSAI_POT_SMALL_TYPE.get();
 	}
 
 	@Override
