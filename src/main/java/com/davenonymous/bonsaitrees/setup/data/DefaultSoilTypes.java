@@ -1,15 +1,13 @@
 package com.davenonymous.bonsaitrees.setup.data;
 
 import com.davenonymous.bonsaitrees.BonsaiTrees;
-import net.minecraft.core.Registry;
+import com.davenonymous.bonsaitrees.setup.ModRegistries;
 import net.minecraft.resources.ResourceKey;
 
 public class DefaultSoilTypes {
-	public static final ResourceKey<Registry<SoilType>> SOILTYPE_REGISTRY_KEY = ResourceKey.createRegistryKey(
-		BonsaiTrees.resource("soiltype"));
 
 	private static ResourceKey<SoilType> builtIn(String name) {
-		return ResourceKey.create(SOILTYPE_REGISTRY_KEY, BonsaiTrees.resource(name));
+		return ResourceKey.create(ModRegistries.SOILTYPE_REGISTRY_KEY, BonsaiTrees.resource(name));
 	}
 
 	public static final ResourceKey<SoilType> DIRT = builtIn("dirt");

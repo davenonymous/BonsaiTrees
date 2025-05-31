@@ -64,7 +64,7 @@ public class MultiBlockGeometryBase {
 		return ref.keySet().size();
 	}
 
-	private static Map<BlockPos, Voxel> castVoxelMap(Map<BlockPos, BlockState> blocks) {
+	public static Map<BlockPos, Voxel> castVoxelMap(Map<BlockPos, BlockState> blocks) {
 		Map<BlockPos, Voxel> voxels = new HashMap<>();
 		for(var entry : blocks.entrySet()) {
 			BlockPos pos = entry.getKey();
