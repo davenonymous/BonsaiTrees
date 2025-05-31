@@ -51,9 +51,14 @@ public class DGBlockLoot extends BlockLootSubProvider {
 								.include(ModDataComponents.REDSTONEMODE_COMPONENT.get())
 							)
 						)
-						.add(DropInventoryLootEntry.dropInventory(Direction.DOWN))
 				)
-			);
+			)
+			.withPool(this.applyExplosionCondition(
+				block,
+				LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+					.add(DropInventoryLootEntry.dropInventory(Direction.DOWN))
+			));
 		this.add(block, table);
 	}
 }

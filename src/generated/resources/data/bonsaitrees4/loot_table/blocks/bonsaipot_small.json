@@ -26,7 +26,18 @@
             }
           ],
           "name": "bonsaitrees4:bonsaipot_small"
-        },
+        }
+      ],
+      "rolls": 1.0
+    },
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
         {
           "type": "bonsaitrees4:drop_inventory",
           "side": "down"
