@@ -5,8 +5,7 @@
 	"compatibilityLevel": "JAVA_21",
 	"refmap": "bonsaitrees4.refmap.json",
 	"mixins": [
-		"MixinJeiEnchantmentFix",
-		"MixinLootItemBlockStatePropertyCondition"
+		"MixinJeiEnchantmentFix"
 	],
 	"client": [
 	],
