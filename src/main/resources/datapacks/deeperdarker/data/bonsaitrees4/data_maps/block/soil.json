@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "deeperdarker"
+    }
+  ],
+  "values": {
+    "deeperdarker:echo_soil": {
+      "soilType": "deeperdarker:echo_soil"
+    }
+  }
+}

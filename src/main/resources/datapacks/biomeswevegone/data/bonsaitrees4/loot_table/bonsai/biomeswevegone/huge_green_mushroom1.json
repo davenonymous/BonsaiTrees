@@ -1,0 +1,26 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.5,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "biomeswevegone:blocks/green_mushroom_block"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "biomeswevegone:blocks/white_mushroom_stem"
+        }
+      ],
+      "name": "other",
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bonsaitrees4:bonsai/biomeswevegone/huge_green_mushroom1"
+}

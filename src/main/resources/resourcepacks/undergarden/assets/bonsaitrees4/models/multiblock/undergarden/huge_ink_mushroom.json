@@ -1,0 +1,74 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Name":"undergarden:ink_mushroom_cap"},
+    "b": {"Name":"undergarden:seeping_ink"},
+    "c": {"Name":"undergarden:ink_mushroom_stem"}
+  },
+  "shape": [
+    [
+      "       ",
+      " aaaaa ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "   a   ",
+      "aaaaaaa",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "aaaaaaa",
+      "b      ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      " aaaaa ",
+      "aaacaaa",
+      "  b  b ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "  aaa  ",
+      "aaaaaaa",
+      "   c   ",
+      "   c   ",
+      "   c   ",
+      "   c   ",
+      "   c   "
+    ],
+    [
+      "   a   ",
+      "aaaaaaa",
+      "  b    ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      " aaaaa ",
+      "       ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

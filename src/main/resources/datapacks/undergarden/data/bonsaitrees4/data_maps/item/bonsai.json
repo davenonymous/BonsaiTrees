@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "undergarden"
+    }
+  ],
+  "values": {
+    "undergarden:blood_mushroom": {
+      "model": "undergarden:huge_blood_mushroom",
+      "valid_soil_types": [
+        "undergarden:deepsoil"
+      ]
+    },
+    "undergarden:grongle_sapling": {
+      "model": "undergarden:small_grongle_tree",
+      "valid_soil_types": [
+        "undergarden:deepsoil"
+      ]
+    },
+    "undergarden:indigo_mushroom": {
+      "model": "undergarden:huge_indigo_mushroom",
+      "valid_soil_types": [
+        "undergarden:deepsoil"
+      ]
+    },
+    "undergarden:ink_mushroom": {
+      "model": "undergarden:huge_ink_mushroom",
+      "valid_soil_types": [
+        "undergarden:deepsoil"
+      ]
+    },
+    "undergarden:smogstem_sapling": {
+      "model": "undergarden:smogstem_tree",
+      "valid_soil_types": [
+        "undergarden:deepsoil"
+      ]
+    },
+    "undergarden:veil_mushroom": {
+      "light_emission": 7,
+      "model": "undergarden:huge_veil_mushroom",
+      "valid_soil_types": [
+        "undergarden:deepsoil"
+      ]
+    },
+    "undergarden:wigglewood_sapling": {
+      "model": "undergarden:wigglewood_tree",
+      "valid_soil_types": [
+        "undergarden:deepsoil"
+      ]
+    }
+  }
+}

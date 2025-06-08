@@ -1,0 +1,30 @@
+{
+  "pools": [
+    {
+      "bonus_rolls": 0.5,
+      "conditions": [
+        {
+          "chance": 0.2,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "undergarden:blocks/blood_mushroom_stem"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "undergarden:blocks/blood_mushroom_cap"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "undergarden:blocks/engorged_blood_mushroom_cap"
+        }
+      ],
+      "name": "other",
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bonsaitrees4:bonsai/undergarden/huge_blood_mushroom"
+}

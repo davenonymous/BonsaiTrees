@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"allthemodium:demonic_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"allthemodium:demonic_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"allthemodium:demonic_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"allthemodium:demonic_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"allthemodium:demonic_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"allthemodium:demonic_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"allthemodium:demonic_leaves"},
+    "h": {"Properties":{"axis":"z"},"Name":"allthemodium:demonic_log"}
+  },
+  "shape": [
+    [
+      "      ",
+      " fdf  ",
+      " dbdf ",
+      " bgbd ",
+      "  egb ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "  d   ",
+      "fdbdf ",
+      "dbgbdf",
+      "bgegbd",
+      " ecegb",
+      "   c  ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      " dbd  ",
+      "dbgbd ",
+      "bgegbd",
+      "gecegb",
+      " caceg",
+      "  ahc ",
+      "  a   ",
+      "  a   ",
+      "  a   "
+    ],
+    [
+      "  d   ",
+      "fdbdf ",
+      "dbgbdf",
+      "bgegbd",
+      " ecegb",
+      "   c  ",
+      "      ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      " fdf  ",
+      " dbdf ",
+      " bgbd ",
+      "  egb ",
+      "      ",
+      "      ",
+      "      ",
+      "      "
+    ]
+  ]
+}

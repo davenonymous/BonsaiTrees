@@ -1,0 +1,54 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"undergarden:wigglewood_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"undergarden:wigglewood_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"undergarden:wigglewood_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"undergarden:wigglewood_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"undergarden:wigglewood_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"undergarden:wigglewood_leaves"}
+  },
+  "shape": [
+    [
+      "bcdc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "cdedc",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "defed",
+      "  a  ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "cdedc",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     "
+    ],
+    [
+      "bcdc ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  "
+    ]
+  ]
+}

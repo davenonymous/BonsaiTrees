@@ -1,0 +1,58 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"allthemodium:soul_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"allthemodium:soul_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"allthemodium:soul_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"allthemodium:soul_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"allthemodium:soul_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      " beb ",
+      " beb ",
+      " beb ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  e  ",
+      "beceb",
+      "bedeb",
+      "eeceb",
+      "  c  ",
+      "     ",
+      "     "
+    ],
+    [
+      " ece ",
+      "ecdce",
+      "edade",
+      "ccace",
+      " cac ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "  e  ",
+      "beceb",
+      "bedeb",
+      "ecceb",
+      "  c  ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " beb ",
+      " beb ",
+      " ece ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

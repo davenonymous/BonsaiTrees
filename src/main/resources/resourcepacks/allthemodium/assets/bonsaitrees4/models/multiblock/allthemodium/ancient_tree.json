@@ -1,0 +1,77 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"allthemodium:ancient_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"allthemodium:ancient_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"allthemodium:ancient_leaves"},
+    "d": {"Properties":{"axis":"y"},"Name":"allthemodium:ancient_log_0"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"allthemodium:ancient_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"allthemodium:ancient_leaves"}
+  },
+  "shape": [
+    [
+      "         ",
+      "   febef ",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "     b   ",
+      "  febcbef",
+      "         ",
+      "         ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "    bcb  ",
+      "  ebcacbe",
+      "         ",
+      " bcb     ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "   bcacb ",
+      "  bcadacb",
+      " bcb d   ",
+      "bcacad   ",
+      "     d   ",
+      "         ",
+      "         "
+    ],
+    [
+      "    bcb  ",
+      "  cbcacbe",
+      " cac     ",
+      "cadac    ",
+      "   d     ",
+      "    dd   ",
+      "     d   "
+    ],
+    [
+      "     b   ",
+      "  bebcbef",
+      " bcb     ",
+      "bcacb    ",
+      "         ",
+      "         ",
+      "         "
+    ],
+    [
+      "         ",
+      "   febef ",
+      "         ",
+      " bcb     ",
+      "         ",
+      "         ",
+      "         "
+    ]
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"axis":"y"},"Name":"integrateddynamics:menril_log"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"integrateddynamics:menril_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"integrateddynamics:menril_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"integrateddynamics:menril_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"integrateddynamics:menril_leaves"},
+    "f": {"Properties":{"facing":"east","axis":"y"},"Name":"integrateddynamics:menril_log_filled"}
+  },
+  "shape": [
+    [
+      "     ",
+      " ded ",
+      " bdb ",
+      " ded ",
+      " cbc ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  d  ",
+      "deaed",
+      "bdadb",
+      "deaed",
+      "bbdbc",
+      "  e  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  "
+    ],
+    [
+      " edd ",
+      "eaaae",
+      "daaad",
+      "eaaae",
+      "ddfdb",
+      " eae ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      " aaa "
+    ],
+    [
+      "  e  ",
+      "deaed",
+      "bdadb",
+      "deaed",
+      "bddbc",
+      "  e  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  "
+    ],
+    [
+      "     ",
+      " ded ",
+      " bdb ",
+      " ded ",
+      " bdb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

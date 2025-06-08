@@ -1,0 +1,14 @@
+{
+   "defaultItem" : {
+      "count" : 1,
+      "id" : "deeperdarker:echo_soil"
+   },
+   "id" : "deeperdarker:echo_soil",
+   "neoforge:conditions" : [
+      {
+         "modid" : "deeperdarker",
+         "type" : "neoforge:mod_loaded"
+      }
+   ],
+   "translationKey" : "bonsaitrees4.tooltip.soil.deeperdarker.echo_soil"
+}

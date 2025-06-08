@@ -1,0 +1,83 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Name":"undergarden:engorged_blood_mushroom_cap"},
+    "b": {"Name":"undergarden:blood_mushroom_cap"},
+    "c": {"Name":"undergarden:blood_mushroom_stem"}
+  },
+  "shape": [
+    [
+      "        ",
+      " bbbaa  ",
+      "  bbab  ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   bb   ",
+      " bbbab  ",
+      " bbbbbb ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "  bbbb  ",
+      "bbbbabba",
+      " bccbbb ",
+      "  cc    ",
+      "   c    ",
+      "   c    ",
+      "        "
+    ],
+    [
+      " bbbbbb ",
+      "babccbbb",
+      " bccbbbb",
+      "  cc    ",
+      "  cc    ",
+      "  cc    ",
+      "  cc    "
+    ],
+    [
+      " bbbbbb ",
+      "bbbccbbb",
+      "bacccbab",
+      "  ccc   ",
+      "  ccc   ",
+      "  ccc   ",
+      "  cc    "
+    ],
+    [
+      "  bbab  ",
+      "abbbbbbb",
+      "bcabbbab",
+      " c      ",
+      " c      ",
+      " c      ",
+      "        "
+    ],
+    [
+      "   ab   ",
+      "bbbabbab",
+      "bbabbbb ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      " bbabb  ",
+      " aba    ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

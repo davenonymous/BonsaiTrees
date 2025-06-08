@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "undergarden"
+    }
+  ],
+  "values": {
+    "undergarden:coarse_deepsoil": {
+      "soilType": "undergarden:deepsoil"
+    },
+    "undergarden:deepsoil": {
+      "soilType": "undergarden:deepsoil"
+    },
+    "undergarden:deepsoil_farmland": {
+      "soilType": "undergarden:deepsoil"
+    }
+  }
+}

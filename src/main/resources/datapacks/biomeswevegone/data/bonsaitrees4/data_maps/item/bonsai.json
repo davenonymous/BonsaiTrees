@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "biomeswevegone"
+    }
+  ],
+  "values": {
+    "biomeswevegone:araucaria_sapling": {
+      "model": "biomeswevegone:araucaria_tree1"
+    },
+    "biomeswevegone:blue_enchanted_sapling": {
+      "light_emission": 8,
+      "model": "biomeswevegone:blue_enchanted_sapling_tree2"
+    },
+    "biomeswevegone:cika_sapling": {
+      "model": "biomeswevegone:cika_tree1"
+    },
+    "biomeswevegone:green_enchanted_sapling": {
+      "light_emission": 8,
+      "model": "biomeswevegone:green_enchanted_sapling_tree2"
+    },
+    "biomeswevegone:green_mushroom": {
+      "model": "biomeswevegone:huge_green_mushroom1",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    },
+    "biomeswevegone:pine_sapling": {
+      "model": "biomeswevegone:pine_tree1"
+    },
+    "biomeswevegone:rainbow_eucalyptus_sapling": {
+      "model": "biomeswevegone:rainbow_eucalyptus_tree1"
+    },
+    "biomeswevegone:weeping_milkcap": {
+      "model": "biomeswevegone:huge_weeping_milkcap1"
+    },
+    "biomeswevegone:witch_hazel_sapling": {
+      "light_emission": 10,
+      "model": "biomeswevegone:witch_hazel3"
+    },
+    "biomeswevegone:wood_blewit": {
+      "model": "biomeswevegone:huge_wood_blewit1"
+    }
+  }
+}

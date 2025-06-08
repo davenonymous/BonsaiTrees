@@ -1,0 +1,85 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"biomeswevegone:pine_leaves"},
+    "b": {"Properties":{"axis":"y"},"Name":"biomeswevegone:pine_log"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "  a  ",
+      "  aa ",
+      " aba ",
+      "     ",
+      "     ",
+      " aa  ",
+      "  aa ",
+      " aba ",
+      "     ",
+      " aa  ",
+      "  aa ",
+      "     "
+    ],
+    [
+      "  a  ",
+      "  ba ",
+      " abba",
+      " aba ",
+      " aba ",
+      " ab  ",
+      "abba ",
+      " abba",
+      " aba ",
+      " ab  ",
+      "abba ",
+      "  bba",
+      "  b  "
+    ],
+    [
+      "     ",
+      "  a  ",
+      "  aa ",
+      "  a  ",
+      " aba ",
+      "  a  ",
+      " aa  ",
+      "  aa ",
+      " aba ",
+      "     ",
+      " aa  ",
+      "  aa ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}

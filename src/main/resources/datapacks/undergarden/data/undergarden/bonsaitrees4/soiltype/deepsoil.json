@@ -1,0 +1,14 @@
+{
+   "defaultItem" : {
+      "count" : 1,
+      "id" : "undergarden:deepsoil"
+   },
+   "id" : "undergarden:deepsoil",
+   "neoforge:conditions" : [
+      {
+         "modid" : "undergarden",
+         "type" : "neoforge:mod_loaded"
+      }
+   ],
+   "translationKey" : "bonsaitrees4.tooltip.soil.undergarden.deepsoil"
+}
