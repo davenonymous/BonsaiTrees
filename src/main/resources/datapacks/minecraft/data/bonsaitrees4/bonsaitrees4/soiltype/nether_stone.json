@@ -1,0 +1,14 @@
+{
+   "defaultItem" : {
+      "count" : 1,
+      "id" : "minecraft:netherrack"
+   },
+   "id" : "bonsaitrees4:nether_stone",
+   "neoforge:conditions" : [
+      {
+         "modid" : "minecraft",
+         "type" : "neoforge:mod_loaded"
+      }
+   ],
+   "translationKey" : "bonsaitrees4.tooltip.soil.bonsaitrees4.nether_stone"
+}

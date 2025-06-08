@@ -1,8 +1,0 @@
-{
-  "defaultItem": {
-    "count": 1,
-    "id": "minecraft:lava_bucket"
-  },
-  "id": "bonsaitrees4:lava",
-  "translationKey": "bonsaitrees4.tooltip.soil.bonsaitrees4.lava"
-}

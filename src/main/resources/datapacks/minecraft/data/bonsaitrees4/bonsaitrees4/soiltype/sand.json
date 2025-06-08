@@ -1,0 +1,14 @@
+{
+   "defaultItem" : {
+      "count" : 1,
+      "id" : "minecraft:sand"
+   },
+   "id" : "bonsaitrees4:sand",
+   "neoforge:conditions" : [
+      {
+         "modid" : "minecraft",
+         "type" : "neoforge:mod_loaded"
+      }
+   ],
+   "translationKey" : "bonsaitrees4.tooltip.soil.bonsaitrees4.sand"
+}

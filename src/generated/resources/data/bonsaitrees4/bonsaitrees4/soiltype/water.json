@@ -1,8 +1,0 @@
-{
-  "defaultItem": {
-    "count": 1,
-    "id": "minecraft:water_bucket"
-  },
-  "id": "bonsaitrees4:water",
-  "translationKey": "bonsaitrees4.tooltip.soil.bonsaitrees4.water"
-}

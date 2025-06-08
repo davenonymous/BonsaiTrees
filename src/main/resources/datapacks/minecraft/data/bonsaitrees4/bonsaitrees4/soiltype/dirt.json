@@ -1,0 +1,14 @@
+{
+   "defaultItem" : {
+      "count" : 1,
+      "id" : "minecraft:grass_block"
+   },
+   "id" : "bonsaitrees4:dirt",
+   "neoforge:conditions" : [
+      {
+         "modid" : "minecraft",
+         "type" : "neoforge:mod_loaded"
+      }
+   ],
+   "translationKey" : "bonsaitrees4.tooltip.soil.bonsaitrees4.dirt"
+}

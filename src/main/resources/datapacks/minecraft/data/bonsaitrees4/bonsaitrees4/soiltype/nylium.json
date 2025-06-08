@@ -1,0 +1,14 @@
+{
+   "defaultItem" : {
+      "count" : 1,
+      "id" : "minecraft:warped_nylium"
+   },
+   "id" : "bonsaitrees4:nylium",
+   "neoforge:conditions" : [
+      {
+         "modid" : "minecraft",
+         "type" : "neoforge:mod_loaded"
+      }
+   ],
+   "translationKey" : "bonsaitrees4.tooltip.soil.bonsaitrees4.nylium"
+}
