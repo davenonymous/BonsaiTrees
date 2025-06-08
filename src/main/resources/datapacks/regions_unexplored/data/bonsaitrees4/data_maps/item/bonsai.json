@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "regions_unexplored"
+    }
+  ],
   "values": {
     "regions_unexplored:alpha_sapling": {
       "model": "regions_unexplored:alpha_oak_tree"

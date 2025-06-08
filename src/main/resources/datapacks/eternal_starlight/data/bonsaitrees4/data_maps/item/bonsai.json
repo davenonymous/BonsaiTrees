@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "eternal_starlight"
+    }
+  ],
   "values": {
     "eternal_starlight:glowing_mushroom": {
       "light_emission": 15,

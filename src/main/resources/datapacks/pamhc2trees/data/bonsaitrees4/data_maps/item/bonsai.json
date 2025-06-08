@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "pamhc2trees"
+    }
+  ],
   "values": {
     "pamhc2trees:acorn_sapling": {
       "model": "pamhc2trees:acorn"

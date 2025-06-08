@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "sushigocrafting"
+    }
+  ],
   "values": {
     "sushigocrafting:avocado_sapling": {
       "model": "sushigocrafting:avocado_tree"

@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "ars_nouveau"
+    }
+  ],
   "values": {
     "ars_nouveau:blue_archwood_sapling": {
       "model": "ars_nouveau:cascading_tree"

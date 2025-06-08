@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "minecraft"
+    }
+  ],
   "values": {
     "minecraft:acacia_sapling": {
       "model": "minecraft:acacia"

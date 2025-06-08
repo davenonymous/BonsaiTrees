@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "herbsandharvest"
+    }
+  ],
   "values": {
     "herbsandharvest:avocado_fruit_sapling": {
       "model": "herbsandharvest:avocado_fruit_tree"
