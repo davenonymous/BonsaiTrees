@@ -2,73 +2,55 @@
   "loader": "bonsaitrees4:multiblockmodel",
   "version": 4,
   "ref": {
-    "a": {"Name":"regions_unexplored:yellow_bioshroom_block"},
-    "b": {"Name":"regions_unexplored:glowing_yellow_bioshroom_block"},
-    "c": {"Properties":{"axis":"y"},"Name":"regions_unexplored:yellow_bioshroom_stem"}
+    "a": {"Properties":{"axis":"y"},"Name":"regions_unexplored:yellow_bioshroom_stem"},
+    "b": {"Name":"regions_unexplored:yellow_bioshroom_block"},
+    "c": {"Name":"regions_unexplored:glowing_yellow_bioshroom_block"}
   },
   "shape": [
     [
-      " aaaaa ",
-      "       ",
-      "       ",
-      "       ",
-      "       ",
-      "       ",
-      "       "
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
     ],
     [
-      "aaaaaaa",
-      "       ",
-      "       ",
-      "       ",
-      "       ",
-      "       ",
-      "       "
+      "bbbbb",
+      "     ",
+      "  cc ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  "
     ],
     [
-      "aaaaaaa",
-      "       ",
-      "       ",
-      "       ",
-      "  bb   ",
-      "       ",
-      "       "
+      "bbbbb",
+      "  a  ",
+      "  ac ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "  aa "
     ],
     [
-      "aaaaaaa",
-      "   c   ",
-      "   c   ",
-      "   c   ",
-      "  bcb  ",
-      "   c   ",
-      "   c   "
+      "bbbbb",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
     ],
     [
-      "aaaaaaa",
-      "       ",
-      "       ",
-      "       ",
-      "   bb  ",
-      "       ",
-      "   c   "
-    ],
-    [
-      "aaaaaaa",
-      "       ",
-      "       ",
-      "       ",
-      "       ",
-      "       ",
-      "       "
-    ],
-    [
-      " aaaaa ",
-      "       ",
-      "       ",
-      "       ",
-      "       ",
-      "       ",
-      "       "
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
     ]
   ]
 }

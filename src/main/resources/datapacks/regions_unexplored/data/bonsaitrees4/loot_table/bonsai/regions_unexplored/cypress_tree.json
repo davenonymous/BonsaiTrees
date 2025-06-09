@@ -12,6 +12,10 @@
         {
           "type": "minecraft:loot_table",
           "value": "regions_unexplored:blocks/cypress_log"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "regions_unexplored:blocks/cypress_branch"
         }
       ],
       "name": "log",

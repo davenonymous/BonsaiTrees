@@ -25,7 +25,7 @@
       "       "
     ],
     [
-      "   b   ",
+      "       ",
       " bbbbb ",
       "bcccccb",
       "b     b",
@@ -42,7 +42,7 @@
       "       "
     ],
     [
-      "  bbb  ",
+      "   b   ",
       "bbbabbb",
       "bccaccb",
       "   a   ",
@@ -59,33 +59,33 @@
       "   a   "
     ],
     [
-      " bbbbb ",
+      "  bbb  ",
       "bbaaabb",
       "bcaaacb",
       "  aaa  ",
       "  ba   ",
       "   a   ",
       "  ba   ",
-      "   a   ",
-      "  ba   ",
       "   ab  ",
       "  ba   ",
       "   a   ",
       "  ba   ",
-      "   ab  ",
+      "   a   ",
+      "  ba   ",
+      "   aa  ",
       "  aaa  "
     ],
     [
-      "  bbb  ",
+      "   b   ",
       "bbbabbb",
       "bccaccb",
       "   a   ",
       "       ",
       "   b   ",
       "       ",
+      "       ",
+      "       ",
       "   b   ",
-      "       ",
-      "       ",
       "       ",
       "   b   ",
       "       ",
@@ -93,7 +93,7 @@
       "   a   "
     ],
     [
-      "   b   ",
+      "       ",
       " bbbbb ",
       "bcccccb",
       "b     b",

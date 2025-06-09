@@ -12,6 +12,10 @@
         {
           "type": "minecraft:loot_table",
           "value": "regions_unexplored:blocks/eucalyptus_log"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "regions_unexplored:blocks/eucalyptus_branch"
         }
       ],
       "name": "log",

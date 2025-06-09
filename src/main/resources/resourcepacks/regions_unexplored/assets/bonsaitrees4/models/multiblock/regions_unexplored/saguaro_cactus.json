@@ -2,49 +2,54 @@
   "loader": "bonsaitrees4:multiblockmodel",
   "version": 4,
   "ref": {
-    "a": {"Properties":{"cactus_shape":"up_down"},"Name":"regions_unexplored:saguaro_cactus"},
-    "b": {"Properties":{"cactus_shape":"east_up"},"Name":"regions_unexplored:saguaro_cactus"},
-    "c": {"Properties":{"cactus_shape":"south_up"},"Name":"regions_unexplored:saguaro_cactus"},
-    "d": {"Properties":{"stage":"0"},"Name":"regions_unexplored:cactus_flower"},
-    "e": {"Properties":{"cactus_shape":"east_west"},"Name":"regions_unexplored:saguaro_cactus"},
-    "f": {"Properties":{"cactus_shape":"north_south"},"Name":"regions_unexplored:saguaro_cactus"},
+    "a": {"Properties":{"cactus_shape":"east_up"},"Name":"regions_unexplored:saguaro_cactus"},
+    "b": {"Properties":{"cactus_shape":"south_up"},"Name":"regions_unexplored:saguaro_cactus"},
+    "c": {"Properties":{"cactus_shape":"up_down"},"Name":"regions_unexplored:saguaro_cactus"},
+    "d": {"Properties":{"cactus_shape":"east_west"},"Name":"regions_unexplored:saguaro_cactus"},
+    "e": {"Properties":{"cactus_shape":"north_south"},"Name":"regions_unexplored:saguaro_cactus"},
+    "f": {"Properties":{"cactus_shape":"west_up"},"Name":"regions_unexplored:saguaro_cactus"},
     "g": {"Properties":{"cactus_shape":"north_up"},"Name":"regions_unexplored:saguaro_cactus"},
-    "h": {"Properties":{"cactus_shape":"west_up"},"Name":"regions_unexplored:saguaro_cactus"}
+    "h": {"Properties":{"stage":"0"},"Name":"regions_unexplored:cactus_flower"}
   },
   "shape": [
     [
       "     ",
-      "  a  ",
-      "  a  ",
-      "  h  ",
+      "  c  ",
+      "  c  ",
+      "  f  ",
+      "     ",
       "     "
     ],
     [
       "     ",
       "     ",
       "     ",
-      "  e  ",
+      "  d  ",
+      "     ",
       "     "
     ],
     [
-      "  a d",
-      "a a a",
-      "a a a",
-      "cfafg",
-      "  a  "
+      "h c  ",
+      "c c  ",
+      "c c c",
+      "bec c",
+      "  ceg",
+      "  c  "
     ],
     [
       "     ",
       "     ",
       "     ",
-      "  e  ",
+      "  d  ",
+      "     ",
       "     "
     ],
     [
       "     ",
+      "  c  ",
+      "  c  ",
       "  a  ",
-      "  a  ",
-      "  b  ",
+      "     ",
       "     "
     ]
   ]
