@@ -10,5 +10,5 @@
          "type" : "neoforge:mod_loaded"
       }
    ],
-   "translationKey" : "bonsaitrees4.tooltip.soil.bonsaitrees4.mycelium"
+   "translationKey" : "block.minecraft.mycelium"
 }

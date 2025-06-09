@@ -10,5 +10,5 @@
          "type" : "neoforge:mod_loaded"
       }
    ],
-   "translationKey" : "bonsaitrees4.tooltip.soil.deeperdarker.echo_soil"
+   "translationKey" : "block.deeperdarker.echo_soil"
 }
