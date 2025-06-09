@@ -9,12 +9,39 @@
     "biomeswevegone:araucaria_sapling": {
       "model": "biomeswevegone:araucaria_tree1"
     },
+    "biomeswevegone:aspen_sapling": {
+      "model": "biomeswevegone:aspen_tree4"
+    },
+    "biomeswevegone:baobab_sapling": {
+      "model": "biomeswevegone:baobab_tree1"
+    },
     "biomeswevegone:blue_enchanted_sapling": {
       "light_emission": 8,
       "model": "biomeswevegone:blue_enchanted_sapling_tree2"
     },
+    "biomeswevegone:blue_spruce_sapling": {
+      "model": "biomeswevegone:spruce_blue_tree_medium2"
+    },
+    "biomeswevegone:brown_birch_sapling": {
+      "model": "biomeswevegone:brown_birch_tree3"
+    },
+    "biomeswevegone:brown_oak_sapling": {
+      "model": "biomeswevegone:large_brown_oak_tree1"
+    },
+    "biomeswevegone:brown_zelkova_sapling": {
+      "model": "biomeswevegone:brown_zelkova_tree1"
+    },
     "biomeswevegone:cika_sapling": {
       "model": "biomeswevegone:cika_tree1"
+    },
+    "biomeswevegone:cypress_sapling": {
+      "model": "biomeswevegone:cypress_tree1"
+    },
+    "biomeswevegone:ebony_sapling": {
+      "model": "biomeswevegone:ebony_bush1"
+    },
+    "biomeswevegone:fir_sapling": {
+      "model": "biomeswevegone:conifer_tree5"
     },
     "biomeswevegone:green_enchanted_sapling": {
       "light_emission": 8,
@@ -26,14 +53,84 @@
         "bonsaitrees4:mycelium"
       ]
     },
+    "biomeswevegone:holly_sapling": {
+      "model": "biomeswevegone:holly_tree1"
+    },
+    "biomeswevegone:indigo_jacaranda_sapling": {
+      "model": "biomeswevegone:indigo_jacaranda_tree1"
+    },
+    "biomeswevegone:ironwood_sapling": {
+      "model": "biomeswevegone:flowering_ironwood_tree2"
+    },
+    "biomeswevegone:jacaranda_sapling": {
+      "model": "biomeswevegone:indigo_jacaranda_tree1"
+    },
+    "biomeswevegone:mahogany_sapling": {
+      "model": "biomeswevegone:mahogany_tree1"
+    },
+    "biomeswevegone:maple_sapling": {
+      "model": "biomeswevegone:maple_tree1"
+    },
+    "biomeswevegone:orange_birch_sapling": {
+      "model": "biomeswevegone:orange_birch_tree3"
+    },
+    "biomeswevegone:orange_oak_sapling": {
+      "model": "biomeswevegone:large_orange_oak_tree1"
+    },
+    "biomeswevegone:orange_spruce_sapling": {
+      "model": "biomeswevegone:spruce_orange_tree_medium2"
+    },
+    "biomeswevegone:orchard_sapling": {
+      "model": "biomeswevegone:orchard_tree1"
+    },
+    "biomeswevegone:palm_sapling": {
+      "model": "biomeswevegone:palm_tree1"
+    },
+    "biomeswevegone:palo_verde_sapling": {
+      "model": "biomeswevegone:palo_verde_tree1"
+    },
     "biomeswevegone:pine_sapling": {
       "model": "biomeswevegone:pine_tree1"
     },
     "biomeswevegone:rainbow_eucalyptus_sapling": {
       "model": "biomeswevegone:rainbow_eucalyptus_tree1"
     },
+    "biomeswevegone:red_birch_sapling": {
+      "model": "biomeswevegone:red_birch_tree3"
+    },
+    "biomeswevegone:red_maple_sapling": {
+      "model": "biomeswevegone:red_maple_tree4"
+    },
+    "biomeswevegone:red_oak_sapling": {
+      "model": "biomeswevegone:large_red_oak_tree1"
+    },
+    "biomeswevegone:red_spruce_sapling": {
+      "model": "biomeswevegone:spruce_red_tree_medium2"
+    },
+    "biomeswevegone:redwood_sapling": {
+      "model": "biomeswevegone:redwood_tree1"
+    },
+    "biomeswevegone:silver_maple_sapling": {
+      "model": "biomeswevegone:silver_maple_tree4"
+    },
+    "biomeswevegone:skyris_sapling": {
+      "model": "biomeswevegone:skyris_tree1"
+    },
+    "biomeswevegone:spirit_sapling": {
+      "light_emission": 6,
+      "model": "biomeswevegone:base_spirit_tree3"
+    },
     "biomeswevegone:weeping_milkcap": {
       "model": "biomeswevegone:huge_weeping_milkcap1"
+    },
+    "biomeswevegone:white_mangrove_sapling": {
+      "model": "biomeswevegone:white_mangrove_tree1"
+    },
+    "biomeswevegone:white_sakura_sapling": {
+      "model": "biomeswevegone:white_sakura_tree3"
+    },
+    "biomeswevegone:willow_sapling": {
+      "model": "biomeswevegone:willow_tree3"
     },
     "biomeswevegone:witch_hazel_sapling": {
       "light_emission": 10,
@@ -41,6 +138,21 @@
     },
     "biomeswevegone:wood_blewit": {
       "model": "biomeswevegone:huge_wood_blewit1"
+    },
+    "biomeswevegone:yellow_birch_sapling": {
+      "model": "biomeswevegone:yellow_birch_tree3"
+    },
+    "biomeswevegone:yellow_sakura_sapling": {
+      "model": "biomeswevegone:yellow_sakura_tree3"
+    },
+    "biomeswevegone:yellow_spruce_sapling": {
+      "model": "biomeswevegone:spruce_yellow_tree_medium2"
+    },
+    "biomeswevegone:yucca_sapling": {
+      "model": "biomeswevegone:yucca_tree1"
+    },
+    "biomeswevegone:zelkova_sapling": {
+      "model": "biomeswevegone:brown_zelkova_tree1"
     }
   }
 }
