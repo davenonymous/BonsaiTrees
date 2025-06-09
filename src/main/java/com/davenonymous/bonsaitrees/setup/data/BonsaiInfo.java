@@ -66,8 +66,11 @@ public record BonsaiInfo(ResourceLocation model, Optional<List<ResourceLocation>
 	public List<Item> validSoilItems(RegistryAccess registryAccess) {
 		Set<Item> result = new HashSet<>();
 		for(SoilType soil : validSoilTypes(registryAccess)) {
-			Map<Item, SoilInfo> foo = SoilCache.SOIL_BY_TYPE.get(soil.id());
-			result.addAll(foo.keySet());
+			Map<Item, SoilInfo> soilInfoMap = SoilCache.SOIL_BY_TYPE.get(soil.id());
+			if(soilInfoMap == null || soilInfoMap.isEmpty()) {
+				continue;
+			}
+			result.addAll(soilInfoMap.keySet());
 		}
 		return new ArrayList<>(result);
 	}
