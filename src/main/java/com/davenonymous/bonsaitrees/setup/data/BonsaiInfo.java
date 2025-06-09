@@ -37,6 +37,28 @@ public record BonsaiInfo(ResourceLocation model, Optional<List<ResourceLocation>
 		return requiredTicks.orElse(GameplayConfig.baseGrowTicks);
 	}
 
+	public Optional<SoilInfo> firstMatchingSoil(Set<SoilInfo> soilInfos, BonsaiInfo bonsaiInfo) {
+		if(soilInfos == null || soilInfos.isEmpty()) {
+			return Optional.empty();
+		}
+
+		if(bonsaiInfo == null || bonsaiInfo.validSoils.isEmpty() || bonsaiInfo.validSoils.get().isEmpty()) {
+			return Optional.empty();
+		}
+
+		return soilInfos.stream()
+				.filter(soilInfo -> bonsaiInfo.canGrowOnSoil(soilInfo.soilType()))
+				.findFirst();
+	}
+
+	public boolean canGrowOnSoil(List<ResourceLocation> soilInfos) {
+		return soilInfos.stream().anyMatch(this::canGrowOnSoil);
+	}
+
+	public boolean canGrowOnSoil(Set<SoilInfo> soilInfos) {
+		return soilInfos.stream().anyMatch(soilInfo -> canGrowOnSoil(soilInfo.soilType()));
+	}
+
 	public boolean canGrowOnSoil(ResourceLocation soilTypeId) {
 		if(validSoils.isEmpty() && soilTypeId.equals(BonsaiTrees.resource("dirt"))) {
 			return true;
@@ -66,7 +88,7 @@ public record BonsaiInfo(ResourceLocation model, Optional<List<ResourceLocation>
 	public List<Item> validSoilItems(RegistryAccess registryAccess) {
 		Set<Item> result = new HashSet<>();
 		for(SoilType soil : validSoilTypes(registryAccess)) {
-			Map<Item, SoilInfo> soilInfoMap = SoilCache.SOIL_BY_TYPE.get(soil.id());
+			Map<Item, Set<SoilInfo>> soilInfoMap = SoilCache.SOIL_BY_TYPE.get(soil.id());
 			if(soilInfoMap == null || soilInfoMap.isEmpty()) {
 				continue;
 			}

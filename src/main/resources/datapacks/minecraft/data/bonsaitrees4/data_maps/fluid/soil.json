@@ -7,10 +7,14 @@
   ],
   "values": {
     "#minecraft:lava": {
-      "soilType": "bonsaitrees4:lava"
+      "soilTypes": [
+        "bonsaitrees4:lava"
+      ]
     },
     "#minecraft:water": {
-      "soilType": "bonsaitrees4:water"
+      "soilTypes": [
+        "bonsaitrees4:water"
+      ]
     }
   }
 }

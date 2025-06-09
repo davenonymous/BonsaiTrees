@@ -19,17 +19,19 @@ import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.registries.datamaps.DataMapsUpdatedEvent;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class SoilCache {
-	public static final Map<Block, SoilInfo> SOIL_BY_BLOCK = new HashMap<>();
-	public static final Map<Fluid, SoilInfo> SOIL_BY_FLUID = new HashMap<>();
-	public static final Map<Item, SoilInfoWithTexture> SOIL_BY_ITEM = new HashMap<>();
-	public static final Map<ItemStack, SoilInfo> SOILS = new HashMap<>();
+	public static final Map<Block, Set<SoilInfo>> SOIL_BY_BLOCK = new HashMap<>();
+	public static final Map<Fluid, Set<SoilInfo>> SOIL_BY_FLUID = new HashMap<>();
+	public static final Map<Item, Set<SoilInfoWithTexture>> SOIL_BY_ITEM = new HashMap<>();
+	public static final Map<ItemStack, Set<SoilInfo>> SOILS = new HashMap<>();
 
-	public static final Map<ResourceLocation, Map<Item, SoilInfo>> SOIL_BY_TYPE = new HashMap<>();
+	public static final Map<ResourceLocation, Map<Item, Set<SoilInfo>>> SOIL_BY_TYPE = new HashMap<>();
 	public static final Map<ResourceLocation, Set<Item>> BONSAIS_BY_SOIL = new HashMap<>();
 
 	public static void dataMapsUpdated(DataMapsUpdatedEvent event) {
+		// TODO: Can this be a reload listener instead?
 		Registry<Block> blockRegistry = event.getRegistries().registryOrThrow(Registries.BLOCK);
 		Registry<Fluid> fluidRegistry = event.getRegistries().registryOrThrow(Registries.FLUID);
 		Registry<Item> itemRegistry = event.getRegistries().registryOrThrow(Registries.ITEM);
@@ -51,20 +53,15 @@ public class SoilCache {
 			Item soilItem = soilBlock.asItem();
 			SoilInfo soilInfo = entry.getValue();
 
-			SOIL_BY_BLOCK.put(soilBlock, soilInfo);
+			SOIL_BY_BLOCK.computeIfAbsent(soilBlock, k -> new HashSet<>()).add(soilInfo);
 
-			ResourceLocation type = soilInfo.soilType();
-			if(!SOIL_BY_TYPE.containsKey(type)) {
-				SOIL_BY_TYPE.put(type, new HashMap<>());
+			List<ResourceLocation> types = soilInfo.soilType();
+			for(var type : types) {
+				var byTypeMap = SOIL_BY_TYPE.computeIfAbsent(type, k -> new HashMap<>());
+				byTypeMap.computeIfAbsent(soilItem, k -> new HashSet<>()).add(soilInfo);
 			}
 
-			if(SOIL_BY_TYPE.get(type).containsKey(soilItem)) {
-				BonsaiTrees.LOGGER.warn("Soil type {} already has an entry for item {}, overwriting it.", type, soilItem);
-			}
-
-			SOIL_BY_TYPE.get(type).put(soilItem, soilInfo);
-			SOILS.put(new ItemStack(soilBlock), soilInfo);
-			BonsaiTrees.LOGGER.debug("Registered Soil Type for Block: {} -> {}", key.location(), soilInfo.soilType());
+			SOILS.computeIfAbsent(new ItemStack(soilBlock), k -> new HashSet<>()).add(soilInfo);
 		}
 
 
@@ -78,17 +75,15 @@ public class SoilCache {
 			}
 
 			SoilInfo soilInfo = entry.getValue();
+			SOIL_BY_FLUID.computeIfAbsent(fluidRegistry.get(key), k -> new HashSet<>()).add(soilInfo);
 
-			SOIL_BY_FLUID.put(fluidRegistry.get(key), soilInfo);
-
-			ResourceLocation type = soilInfo.soilType();
-			if(!SOIL_BY_TYPE.containsKey(type)) {
-				SOIL_BY_TYPE.put(type, new HashMap<>());
+			List<ResourceLocation> types = soilInfo.soilType();
+			for(var type : types) {
+				var byTypeMap = SOIL_BY_TYPE.computeIfAbsent(type, k -> new HashMap<>());
+				byTypeMap.computeIfAbsent(fluidRegistry.get(key).getBucket(), k -> new HashSet<>()).add(soilInfo);
 			}
 
-			SOIL_BY_TYPE.get(type).put(fluidRegistry.get(key).getBucket(), soilInfo);
-			SOILS.put(new ItemStack(fluidRegistry.get(key).getBucket()), soilInfo);
-			BonsaiTrees.LOGGER.debug("Registered Soil Type for Fluid: {} -> {}", key.location(), soilInfo.soilType());
+			SOILS.computeIfAbsent(new ItemStack(fluidRegistry.get(key).getBucket()), k -> new HashSet<>()).add(soilInfo);
 		}
 
 
@@ -101,21 +96,20 @@ public class SoilCache {
 				continue;
 			}
 
+			Item item = itemRegistry.get(key);
+
 			SoilInfoWithTexture soilInfoWithTexture = entry.getValue();
-			SOIL_BY_ITEM.put(itemRegistry.get(key), soilInfoWithTexture);
-			ResourceLocation type = soilInfoWithTexture.soilType();
-			if(!SOIL_BY_TYPE.containsKey(type)) {
-				SOIL_BY_TYPE.put(type, new HashMap<>());
+			SOIL_BY_ITEM.computeIfAbsent(item, k -> new HashSet<>()).add(soilInfoWithTexture);
+
+			SoilInfo soilInfo = SoilInfo.fromSoilInfoWithTexture(soilInfoWithTexture);
+
+			List<ResourceLocation> types = soilInfo.soilType();
+			for(var type : types) {
+				var byTypeMap = SOIL_BY_TYPE.computeIfAbsent(type, k -> new HashMap<>());
+				byTypeMap.computeIfAbsent(item, k -> new HashSet<>()).add(soilInfo);
 			}
 
-			if(SOIL_BY_TYPE.get(type).containsKey(itemRegistry.get(key))) {
-				BonsaiTrees.LOGGER.warn("Soil type {} already has an entry for item {}, overwriting it.", type, itemRegistry.get(key));
-			}
-
-			SoilInfo soilInfo = SoilInfo.fromSoilInfoWithTexture(entry.getValue());
-			SOIL_BY_TYPE.get(type).put(itemRegistry.get(key), soilInfo);
-			SOILS.put(new ItemStack(itemRegistry.get(key)), soilInfo);
-			BonsaiTrees.LOGGER.debug("Registered Soil Type for Item: {} -> {}", key.location(), soilInfo.soilType());
+			SOILS.computeIfAbsent(new ItemStack(item), k -> new HashSet<>()).add(soilInfo);
 		}
 
 		BONSAIS_BY_SOIL.clear();
@@ -142,7 +136,7 @@ public class SoilCache {
 		return getSoilInfo(soilStack).isPresent();
 	}
 
-	public static Optional<SoilInfo> getSoilInfo(ItemStack soilStack) {
+	public static Optional<Set<SoilInfo>> getSoilInfo(ItemStack soilStack) {
 		if(!soilStack.isEmpty() && soilStack.getItem() instanceof BlockItem item) {
 			return Optional.ofNullable(SoilCache.SOIL_BY_BLOCK.get(item.getBlock()));
 		}
@@ -152,11 +146,12 @@ public class SoilCache {
 		}
 
 		if(!soilStack.isEmpty() && SoilCache.SOIL_BY_ITEM.containsKey(soilStack.getItem())) {
-			SoilInfoWithTexture soilInfoWithTexture = SoilCache.SOIL_BY_ITEM.get(soilStack.getItem());
-			if(soilInfoWithTexture == null) {
+			Set<SoilInfoWithTexture> texturedSoilInfos = SoilCache.SOIL_BY_ITEM.get(soilStack.getItem());
+			if(texturedSoilInfos == null || texturedSoilInfos.isEmpty()) {
 				return Optional.empty();
 			}
-			return Optional.of(SoilInfo.fromSoilInfoWithTexture(soilInfoWithTexture));
+			Set<SoilInfo> soilInfos = texturedSoilInfos.stream().map(SoilInfo::fromSoilInfoWithTexture).collect(Collectors.toSet());
+			return Optional.of(soilInfos);
 		}
 
 		return Optional.empty();

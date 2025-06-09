@@ -25,10 +25,7 @@ import net.neoforged.neoforge.client.model.data.ModelData;
 import net.neoforged.neoforge.common.util.TriState;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.davenonymous.bonsaitrees.lib.BakedModelHelper.*;
 
@@ -128,12 +125,14 @@ public class PotModel extends BakedModelWrapper<BakedModel> {
 			Item item = extraData.get(BonsaiPotBlock.ITEM_SOIL);
 			if(SoilCache.SOIL_BY_ITEM.containsKey(item)) {
 				if(!itemSoilQuads.containsKey(item)) {
-					SoilInfoWithTexture itemDetails = SoilCache.SOIL_BY_ITEM.get(item);
+					Set<SoilInfoWithTexture> itemDetails = SoilCache.SOIL_BY_ITEM.get(item);
+					Optional<SoilInfoWithTexture> itemDetailsFirst = itemDetails.stream().findFirst();
+					if(itemDetailsFirst.isPresent()) {
+						TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(itemDetailsFirst.get().texture());
+						int tintColor = 0xFFFFFFFF;
 
-					TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(itemDetails.texture());
-					int tintColor = 0xFFFFFFFF;
-
-					itemSoilQuads.put(item, getSoilQuadsWithTexture(sprite, 0, tintColor));
+						itemSoilQuads.put(item, getSoilQuadsWithTexture(sprite, 0, tintColor));
+					}
 				}
 
 				finalQuads.addAll(itemSoilQuads.get(item));

@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.Map;
+import java.util.Set;
 
 public record SoilType(ResourceLocation id, ItemStack defaultItem, String translationKey) {
 
@@ -34,7 +35,7 @@ public record SoilType(ResourceLocation id, ItemStack defaultItem, String transl
 			return false;
 		}
 
-		Map<Item, SoilInfo> mySoils = SoilCache.SOIL_BY_TYPE.get(this.id());
+		Map<Item, Set<SoilInfo>> mySoils = SoilCache.SOIL_BY_TYPE.get(this.id());
 		return !mySoils.isEmpty();
 	}
 

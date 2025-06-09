@@ -7,13 +7,19 @@
   ],
   "values": {
     "undergarden:coarse_deepsoil": {
-      "soilType": "undergarden:deepsoil"
+      "soilTypes": [
+        "undergarden:deepsoil"
+      ]
     },
     "undergarden:deepsoil": {
-      "soilType": "undergarden:deepsoil"
+      "soilTypes": [
+        "undergarden:deepsoil"
+      ]
     },
     "undergarden:deepsoil_farmland": {
-      "soilType": "undergarden:deepsoil"
+      "soilTypes": [
+        "undergarden:deepsoil"
+      ]
     }
   }
 }

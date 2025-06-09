@@ -42,7 +42,7 @@ public class JeiRecipeCache {
 				}
 				RECIPES_BY_SOILTYPE.get(soilType).add(recipe);
 
-				Map<Item, SoilInfo> soilItems = SoilCache.SOIL_BY_TYPE.get(soilType.id());
+				Map<Item, Set<SoilInfo>> soilItems = SoilCache.SOIL_BY_TYPE.get(soilType.id());
 				if(soilItems == null) {
 					return;
 				}

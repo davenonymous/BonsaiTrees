@@ -7,7 +7,9 @@
   ],
   "values": {
     "deeperdarker:echo_soil": {
-      "soilType": "deeperdarker:echo_soil"
+      "soilTypes": [
+        "deeperdarker:echo_soil"
+      ]
     }
   }
 }

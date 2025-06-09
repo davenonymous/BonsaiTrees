@@ -30,6 +30,7 @@ import org.jetbrains.annotations.UnknownNullability;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 	protected BonsaiPotBlockEntity potBlock;
@@ -133,9 +134,9 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 			int extraRools = 0;
 			ItemStack soil = potBlock.inventories.getSoilStack();
 			if(SoilCache.isSoil(soil)) {
-				SoilInfo soilInfo = SoilCache.getSoilInfo(soil).get();
-				if(soilInfo.extraRolls().isPresent()) {
-					extraRools = soilInfo.extraRolls().get();
+				Optional<SoilInfo> soilInfo = getBonsaiInfo().get().firstMatchingSoil(SoilCache.getSoilInfo(soil).get(), getBonsaiInfo().get());
+				if(soilInfo.isPresent() && soilInfo.get().extraRolls().isPresent()) {
+					extraRools = soilInfo.get().extraRolls().get();
 				}
 			}
 
@@ -228,11 +229,11 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 		}
 
 		BonsaiInfo bonsaiInfo = getBonsaiInfo().get();
-		SoilInfo soilInfo = getSoilInfo().get();
-		return bonsaiInfo.canGrowOnSoil(soilInfo.soilType());
+		Set<SoilInfo> soilInfo = getSoilInfo().get();
+		return bonsaiInfo.canGrowOnSoil(soilInfo);
 	}
 
-	public Optional<SoilInfo> getSoilInfo() {
+	public Optional<Set<SoilInfo>> getSoilInfo() {
 		ItemStack soil = potBlock.inventories.getSoilStack();
 		if(soil.isEmpty()) {
 			return Optional.empty();
