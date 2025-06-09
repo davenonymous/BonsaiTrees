@@ -28,11 +28,11 @@
       "entries": [
         {
           "type": "minecraft:loot_table",
-          "value": "biomeswevegone:blocks/ripe_baobab_leaves"
+          "value": "biomeswevegone:blocks/baobab_leaves"
         },
         {
           "type": "minecraft:loot_table",
-          "value": "biomeswevegone:blocks/baobab_leaves"
+          "value": "biomeswevegone:blocks/ripe_baobab_leaves"
         },
         {
           "type": "minecraft:loot_table",

@@ -46,10 +46,6 @@
         {
           "type": "minecraft:loot_table",
           "value": "minecraft:blocks/vine"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:blocks/moss_carpet"
         }
       ],
       "name": "other",
