@@ -39,6 +39,6 @@ public record SoilType(ResourceLocation id, ItemStack defaultItem, String transl
 	}
 
 	public boolean hasBonsais() {
-		return SoilCache.BONSAIS_BY_SOIL.containsKey(this) && !SoilCache.BONSAIS_BY_SOIL.get(this).isEmpty();
+		return SoilCache.BONSAIS_BY_SOIL.containsKey(this.id()) && !SoilCache.BONSAIS_BY_SOIL.get(this.id()).isEmpty();
 	}
 }

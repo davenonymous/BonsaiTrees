@@ -94,8 +94,8 @@ public class SoilTypeCategory implements IRecipeCategory<SoilType> {
 
 	@Override
 	public void setRecipe(IRecipeLayoutBuilder builder, SoilType recipe, IFocusGroup focuses) {
-		if(SoilCache.BONSAIS_BY_SOIL.containsKey(recipe)) {
-			Set<Item> bonsais = SoilCache.BONSAIS_BY_SOIL.get(recipe);
+		if(SoilCache.BONSAIS_BY_SOIL.containsKey(recipe.id())) {
+			Set<Item> bonsais = SoilCache.BONSAIS_BY_SOIL.get(recipe.id());
 			addItemLine(builder, 14, bonsais);
 		}
 
