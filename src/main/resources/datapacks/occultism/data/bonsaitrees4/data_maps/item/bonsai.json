@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "occultism"
+    }
+  ],
+  "values": {
+    "occultism:otherworld_sapling": {
+      "model": "occultism:tree_otherworld"
+    },
+    "occultism:otherworld_sapling_natural": {
+      "model": "occultism:tree_otherworld_natural"
+    }
+  }
+}

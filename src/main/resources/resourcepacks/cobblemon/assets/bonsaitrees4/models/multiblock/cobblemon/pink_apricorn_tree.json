@@ -1,0 +1,64 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"cobblemon:apricorn_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"cobblemon:apricorn_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"cobblemon:apricorn_leaves"},
+    "d": {"Properties":{"axis":"y"},"Name":"cobblemon:apricorn_log"},
+    "e": {"Properties":{"facing":"west","age":"0"},"Name":"cobblemon:pink_apricorn"},
+    "f": {"Properties":{"facing":"north","age":"0"},"Name":"cobblemon:pink_apricorn"},
+    "g": {"Properties":{"facing":"south","age":"0"},"Name":"cobblemon:pink_apricorn"},
+    "h": {"Properties":{"facing":"east","age":"0"},"Name":"cobblemon:pink_apricorn"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "   e   ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  aca  ",
+      " eaca  ",
+      "  acaf ",
+      "   ca  ",
+      "       "
+    ],
+    [
+      "   c   ",
+      "  cbc  ",
+      " acbca ",
+      " acbcaf",
+      "  cbc  ",
+      "       "
+    ],
+    [
+      "  cbc  ",
+      "  bdb  ",
+      "gcbdbcf",
+      " cbdbc ",
+      "  bdb  ",
+      "   d   "
+    ],
+    [
+      "   c   ",
+      "  cbc  ",
+      " acbca ",
+      " acbcaf",
+      "  cbc  ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  aca  ",
+      " haca  ",
+      "       ",
+      "       "
+    ]
+  ]
+}

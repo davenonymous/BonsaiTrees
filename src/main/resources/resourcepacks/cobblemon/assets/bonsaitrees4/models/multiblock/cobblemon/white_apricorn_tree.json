@@ -1,0 +1,71 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"cobblemon:apricorn_leaves"},
+    "b": {"Properties":{"facing":"east","age":"0"},"Name":"cobblemon:white_apricorn"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"cobblemon:apricorn_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"cobblemon:apricorn_leaves"},
+    "e": {"Properties":{"axis":"y"},"Name":"cobblemon:apricorn_log"},
+    "f": {"Properties":{"facing":"south","age":"0"},"Name":"cobblemon:white_apricorn"},
+    "g": {"Properties":{"facing":"west","age":"0"},"Name":"cobblemon:white_apricorn"}
+  },
+  "shape": [
+    [
+      "      ",
+      "      ",
+      "   g  ",
+      "    g ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      "   a  ",
+      " fcac ",
+      "  cac ",
+      "      ",
+      "      "
+    ],
+    [
+      "   a  ",
+      " cada ",
+      " cadac",
+      " cadac",
+      "  ada ",
+      "      "
+    ],
+    [
+      "  ada ",
+      "  ded ",
+      "fadeda",
+      " adeda",
+      "  deda",
+      "   e  "
+    ],
+    [
+      "   a  ",
+      "  ada ",
+      "fcadac",
+      " cadac",
+      "  adac",
+      "      "
+    ],
+    [
+      "      ",
+      "      ",
+      "  cacb",
+      "  cac ",
+      "      ",
+      "      "
+    ],
+    [
+      "      ",
+      "      ",
+      "      ",
+      "  bb  ",
+      "      ",
+      "      "
+    ]
+  ]
+}

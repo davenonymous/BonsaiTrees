@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "paganbless"
+    }
+  ],
+  "values": {
+    "paganbless:black_thorn_sapling": {
+      "model": "paganbless:black_thorn_tree"
+    }
+  }
+}

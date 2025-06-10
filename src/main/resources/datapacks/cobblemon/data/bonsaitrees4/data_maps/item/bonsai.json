@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "cobblemon"
+    }
+  ],
+  "values": {
+    "cobblemon:black_apricorn_seed": {
+      "model": "cobblemon:black_apricorn_tree"
+    },
+    "cobblemon:blue_apricorn_seed": {
+      "model": "cobblemon:blue_apricorn_tree"
+    },
+    "cobblemon:green_apricorn_seed": {
+      "model": "cobblemon:green_apricorn_tree"
+    },
+    "cobblemon:pink_apricorn_seed": {
+      "model": "cobblemon:pink_apricorn_tree"
+    },
+    "cobblemon:red_apricorn_seed": {
+      "model": "cobblemon:red_apricorn_tree"
+    },
+    "cobblemon:white_apricorn_seed": {
+      "model": "cobblemon:white_apricorn_tree"
+    },
+    "cobblemon:yellow_apricorn_seed": {
+      "model": "cobblemon:yellow_apricorn_tree"
+    }
+  }
+}

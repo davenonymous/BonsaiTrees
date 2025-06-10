@@ -1,0 +1,72 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"cobblemon:apricorn_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"cobblemon:apricorn_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"cobblemon:apricorn_leaves"},
+    "d": {"Properties":{"facing":"north","age":"0"},"Name":"cobblemon:blue_apricorn"},
+    "e": {"Properties":{"axis":"y"},"Name":"cobblemon:apricorn_log"},
+    "f": {"Properties":{"facing":"west","age":"0"},"Name":"cobblemon:blue_apricorn"},
+    "g": {"Properties":{"facing":"east","age":"0"},"Name":"cobblemon:blue_apricorn"},
+    "h": {"Properties":{"facing":"south","age":"0"},"Name":"cobblemon:blue_apricorn"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "   f   ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  bab  ",
+      "  babd ",
+      "  ba   ",
+      "       "
+    ],
+    [
+      "   a   ",
+      " baca  ",
+      " bacab ",
+      "hbacab ",
+      "  aca  ",
+      "       "
+    ],
+    [
+      "  aca  ",
+      " acec  ",
+      " aceca ",
+      " acecad",
+      "  cec  ",
+      "   e   "
+    ],
+    [
+      "   a   ",
+      "  acab ",
+      "hbacabd",
+      " bacab ",
+      "  aca  ",
+      "       "
+    ],
+    [
+      "       ",
+      "   a   ",
+      "  bab  ",
+      "  babd ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "   g   ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

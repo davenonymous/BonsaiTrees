@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "silentgear"
+    }
+  ],
+  "values": {
+    "silentgear:netherwood_sapling": {
+      "model": "silentgear:netherwood"
+    }
+  }
+}

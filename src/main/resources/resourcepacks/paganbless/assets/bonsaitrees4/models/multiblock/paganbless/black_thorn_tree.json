@@ -1,0 +1,43 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"paganbless:black_thorn_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"paganbless:black_thorn_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"paganbless:black_thorn_leaves"},
+    "d": {"Properties":{"axis":"y"},"Name":"paganbless:black_thorn_log"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"paganbless:black_thorn_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      " abae",
+      "     "
+    ],
+    [
+      "     ",
+      "  ba ",
+      "abcba",
+      "     "
+    ],
+    [
+      "  b  ",
+      " bcb ",
+      "bcdcb",
+      "  d  "
+    ],
+    [
+      "     ",
+      " aba ",
+      "abcba",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      " abae",
+      "     "
+    ]
+  ]
+}
