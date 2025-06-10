@@ -146,7 +146,7 @@ public class GUI extends WidgetPanel {
 		RenderSystem.setShaderTexture(0, tabIcons);
 		pGuiGraphics.blit(tabIcons, slot.x, slot.y, texOffsetX, texOffsetY, 18, 18);
 
-		//RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 		pGuiGraphics.pose().popPose();
 	}
 

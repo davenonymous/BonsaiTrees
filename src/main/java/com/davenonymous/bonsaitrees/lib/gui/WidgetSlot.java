@@ -16,12 +16,19 @@ public class WidgetSlot extends SlotItemHandler {
 	private boolean enabled;
 	private final ResourceLocation id;
 	private boolean locked = false;
+	private int maxStackSize = 64;
+	private boolean blockManualInsert = false;
 
 	public WidgetSlot(ResourceLocation slotId, IItemHandler itemHandler, int index, int xPosition, int yPosition) {
 		super(itemHandler, index, xPosition, yPosition);
 
 		this.id = slotId;
 		this.enabled = true;
+	}
+
+	public WidgetSlot setMaxStackSize(int maxStackSize) {
+		this.maxStackSize = maxStackSize;
+		return this;
 	}
 
 	public void bindToWidget(Widget widget) {
@@ -37,6 +44,15 @@ public class WidgetSlot extends SlotItemHandler {
 
 	public boolean matches(ResourceLocation slotId) {
 		return this.id.equals(slotId);
+	}
+
+	public boolean blocksManualInsert() {
+		return blockManualInsert;
+	}
+
+	public WidgetSlot setBlockManualInsert(boolean blockManualInsert) {
+		this.blockManualInsert = blockManualInsert;
+		return this;
 	}
 
 	public boolean isEnabled() {
@@ -84,13 +100,18 @@ public class WidgetSlot extends SlotItemHandler {
 	}
 
 	@Override
+	public boolean mayPlace(ItemStack stack) {
+		return !this.blockManualInsert;
+	}
+
+	@Override
 	public boolean allowModification(Player player) {
 		if(locked || !enabled) {
 			return false;
 		}
 
 		if(player != null) {
-			ItemStack mouseStack = player.getInventory().getSelected();
+			ItemStack mouseStack = player.containerMenu.getCarried();
 			if(mouseStack.isEmpty()) {
 				return true;
 			}
@@ -103,6 +124,6 @@ public class WidgetSlot extends SlotItemHandler {
 
 	@Override
 	public int getMaxStackSize(@Nonnull ItemStack stack) {
-		return 64;
+		return this.maxStackSize;
 	}
 }

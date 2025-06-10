@@ -16,7 +16,7 @@ public class BonsaiPotContainer extends WidgetBlockEntityContainer<BonsaiPotBloc
 	public static ResourceLocation SLOTGROUP_SOIL = BonsaiTrees.resource("input_soil");
 	public static ResourceLocation SLOTGROUP_SAPLING = BonsaiTrees.resource("input_sapling");
 	public static ResourceLocation SLOTGROUP_CAMOUFLAGE = BonsaiTrees.resource("camouflage");
-	public static ResourceLocation SLOTGROUP_TOOL = BonsaiTrees.resource("output");
+	public static ResourceLocation SLOTGROUP_TOOL = BonsaiTrees.resource("tool");
 	public static ResourceLocation SLOTGROUP_OUTPUT = BonsaiTrees.resource("output");
 
 	private final BonsaiPotBlockEntity pot;
@@ -45,5 +45,10 @@ public class BonsaiPotContainer extends WidgetBlockEntityContainer<BonsaiPotBloc
 		this.allowSlotGroupMovement(SLOTGROUP_PLAYER, SLOTGROUP_TOOL, true);
 		this.allowSlotGroupMovement(SLOTGROUP_OUTPUT, SLOTGROUP_PLAYER, false);
 
+		this.getSlotsForGroup(SLOTGROUP_SAPLING).forEach(slot -> slot.setMaxStackSize(1));
+		this.getSlotsForGroup(SLOTGROUP_SOIL).forEach(slot -> slot.setMaxStackSize(1));
+		this.getSlotsForGroup(SLOTGROUP_CAMOUFLAGE).forEach(slot -> slot.setMaxStackSize(1));
+		this.getSlotsForGroup(SLOTGROUP_TOOL).forEach(slot -> slot.setMaxStackSize(1));
+		this.getSlotsForGroup(SLOTGROUP_OUTPUT).forEach(slot -> slot.setBlockManualInsert(true));
 	}
 }

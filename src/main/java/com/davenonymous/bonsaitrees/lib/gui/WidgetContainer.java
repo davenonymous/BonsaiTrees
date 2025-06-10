@@ -55,6 +55,16 @@ public class WidgetContainer extends AbstractContainerMenu {
 		return super.addSlot(slotIn);
 	}
 
+	public List<WidgetSlot> getSlotsForGroup(ResourceLocation groupId) {
+		List<WidgetSlot> result = new ArrayList<>();
+		if(this.slotGroupMap.containsKey(groupId)) {
+			for(int slotIndex : this.slotGroupMap.get(groupId)) {
+				result.add((WidgetSlot) this.slots.get(slotIndex));
+			}
+		}
+		return result;
+	}
+
 	protected void allowSlotGroupMovement(ResourceLocation from, ResourceLocation to, boolean bidirectional) {
 		allowSlotGroupMovement(from, to);
 		if(bidirectional) {
@@ -193,6 +203,8 @@ public class WidgetContainer extends AbstractContainerMenu {
 		remainingStack.setCount(remaining);
 		return remainingStack;
 	}
+
+
 
 
 	// We are relying on the client to tell the server which slots are currently enabled,
