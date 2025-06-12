@@ -2,8 +2,10 @@ package com.davenonymous.bonsaitrees.client;
 
 import com.davenonymous.bonsaitrees.blocks.BonsaiPotBlock;
 import com.davenonymous.bonsaitrees.blocks.BonsaiPotBlockEntity;
+import com.davenonymous.bonsaitrees.blocks.BonsaiPotSmallBlock;
 import com.davenonymous.bonsaitrees.client.multiblock.MultiBlockFakeLevel;
 import com.davenonymous.bonsaitrees.client.multiblock.MultiBlockModel;
+import com.davenonymous.bonsaitrees.lib.util.EasingFunction;
 import com.davenonymous.bonsaitrees.setup.ModModelLoaders;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -43,6 +45,18 @@ public class BonsaiPotBlockRenderer implements BlockEntityRenderer<BonsaiPotBloc
 
 		float progress = pPotBlock.getTreeGrowthProgress(pPartialTick);
 
+		EasingFunction easingFunction;
+		if(pPotBlock.getBlockState().getBlock() instanceof BonsaiPotSmallBlock) {
+			easingFunction = EasingFunction.chained(
+				EasingFunction.easeInOutCubic(),
+				EasingFunction.easeInOutCubic(),
+				EasingFunction.easeInOutCubic()
+			);
+		} else {
+			easingFunction = EasingFunction.easeInOutSquare();
+		}
+		float scale = (float)easingFunction.apply(progress);
+
 		ModelData modelData = pPotBlock.getModelData();
 		ResourceLocation saplingId = modelData.get(BonsaiPotBlock.SAPLING);
 		if(saplingId != null && ModModelLoaders.MODEL_MAP.containsKey(saplingId)) {
@@ -56,7 +70,7 @@ public class BonsaiPotBlockRenderer implements BlockEntityRenderer<BonsaiPotBloc
 
 					poseStack.translate(treeOffset.x / 16.0, treeOffset.y / 16.0, treeOffset.z / 16.0);
 					poseStack.scale(treeMaxScale, treeMaxScale, treeMaxScale);
-					poseStack.scale(progress, progress, progress);
+					poseStack.scale(scale, scale, scale);
 					Matrix4f modelMatrix = poseStack.last().pose();
 
 					// Combine the camera transformation with the poseStack transformation
