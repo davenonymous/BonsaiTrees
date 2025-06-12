@@ -1,16 +1,12 @@
 package com.davenonymous.bonsaitrees.lib.gui.widgets;
 
-import com.davenonymous.bonsaitrees.lib.gui.GUI;
 import com.davenonymous.bonsaitrees.lib.gui.GUIHelper;
-import com.davenonymous.bonsaitrees.lib.gui.event.MouseClickEvent;
 import com.davenonymous.bonsaitrees.lib.gui.event.TabChangedEvent;
 import com.davenonymous.bonsaitrees.lib.gui.event.WidgetEventResult;
-import com.mojang.blaze3d.systems.RenderSystem;
+import com.davenonymous.bonsaitrees.lib.gui.event.WidgetSizeChangeEvent;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,15 +14,31 @@ import java.util.List;
 import java.util.Map;
 
 public class WidgetTabsPanel extends WidgetPanel {
-	private final List<WidgetPanel> pages = new ArrayList<>();
-	private final Map<WidgetPanel, ItemStack> pageStacks = new HashMap<>();
-	private final Map<WidgetPanel, List<Component>> pageTooltips = new HashMap<>();
-	private TabDockEdge edge = TabDockEdge.WEST;
+	protected final List<WidgetPanel> pages = new ArrayList<>();
+	protected final Map<WidgetPanel, Widget> pageButtonWidget = new HashMap<>();
+	protected final Map<WidgetPanel, List<Component>> pageTooltips = new HashMap<>();
+	protected TabDockEdge edge = TabDockEdge.WEST;
 
-	private WidgetPanel activePanel = null;
+	protected WidgetPanel activePanel = null;
+	protected WidgetPanel buttonsPanel = null;
 
 	public WidgetTabsPanel() {
 		super();
+
+		this.buttonsPanel = new WidgetPanel();
+		this.buttonsPanel.setSize(200, 32);
+		this.add(buttonsPanel);
+
+		this.addListener(
+			WidgetSizeChangeEvent.class, (event, widget) -> {
+				this.buttonsPanel.setDimensions(0, 0, event.newWidth(), 32);
+				for(var page : pages) {
+					page.setWidth(this.width);
+					page.setHeight(this.height - 32);
+				}
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			}
+		);
 	}
 
 	public WidgetTabsPanel setEdge(TabDockEdge edge) {
@@ -34,17 +46,29 @@ public class WidgetTabsPanel extends WidgetPanel {
 		return this;
 	}
 
-	public void addPage(WidgetPanel panel, ItemStack buttonStack) {
+	@Override
+	public void clear() {
+		super.clear();
+		this.pages.clear();
+		this.pageButtonWidget.clear();
+		this.pageTooltips.clear();
+		this.children.clear();
+
+		this.add(buttonsPanel);
+	}
+
+	public void addPage(WidgetPanel panel, Widget buttonStack) {
 		this.addPage(panel, buttonStack, null);
 	}
 
-	public void addPage(WidgetPanel panel, ItemStack buttonStack, List<Component> tooltip) {
+	public void addPage(WidgetPanel panel, Widget buttonStack, List<Component> tooltip) {
 		panel.setWidth(this.width);
-		panel.setHeight(this.height);
+		panel.setHeight(this.height - 32);
+		panel.setY(32);
 		panel.parent = this;
 
 		pages.add(panel);
-		pageStacks.put(panel, buttonStack);
+		pageButtonWidget.put(panel, buttonStack);
 
 		if(activePanel == null) {
 			activePanel = panel;
@@ -58,6 +82,16 @@ public class WidgetTabsPanel extends WidgetPanel {
 		}
 
 		this.add(panel);
+
+		updateButtonsPanel();
+	}
+
+	public void setActivePage(WidgetPanel page) {
+		if(!pages.contains(page)) {
+			return;
+		}
+
+		setActivePage(pages.indexOf(page));
 	}
 
 	public void setActivePage(int page) {
@@ -65,21 +99,22 @@ public class WidgetTabsPanel extends WidgetPanel {
 			return;
 		}
 
+		var oldPage = activePanel;
+		var newPage = pages.get(page);
 		activePanel.setVisible(false);
-		pages.get(page).setVisible(true);
+		newPage.setVisible(true);
+		activePanel = newPage;
 
-		WidgetPanel tmpOld = activePanel;
-		activePanel = pages.get(page);
-
-		this.fireEvent(new TabChangedEvent(tmpOld, pages.get(page)));
+		this.fireEvent(new TabChangedEvent(oldPage, newPage));
 	}
 
-	public WidgetPanel getButtonsPanel() {
-		WidgetPanel result = new WidgetPanel();
+	public void updateButtonsPanel() {
+		this.buttonsPanel.clear();
+
 		int y = 0;
 		int x = edge == TabDockEdge.NORTH ? 4 : 0;
 		for(WidgetPanel page : pages) {
-			WidgetTabsButton button = new WidgetTabsButton(this, page, pageStacks.get(page), edge);
+			WidgetTabsButton button = new WidgetTabsButton(this, page, pageButtonWidget.get(page), edge);
 			button.setPosition(x, y);
 			switch(edge) {
 				default:
@@ -92,107 +127,22 @@ public class WidgetTabsPanel extends WidgetPanel {
 					x += 31;
 					break;
 			}
-			result.add(button);
+			buttonsPanel.add(button);
 
 			if(pageTooltips.containsKey(page)) {
 				button.addTooltipLine(pageTooltips.get(page));
 			}
 		}
+	}
 
-		return result;
+	@Override
+	public void draw(GuiGraphics guiGraphics, Screen screen) {
+		GUIHelper.drawWindow(guiGraphics, this.width, this.height - 28, false, this.x - 9, this.y + 19);
+		super.draw(guiGraphics, screen);
 	}
 
 	public enum TabDockEdge {
 		WEST, NORTH
 	}
 
-	private static class WidgetTabsButton extends Widget {
-		WidgetTabsPanel parent;
-		WidgetPanel page;
-		ItemStack pageStack;
-		TabDockEdge edge;
-
-		public WidgetTabsButton(WidgetTabsPanel parent, WidgetPanel page, ItemStack pageStack, TabDockEdge edge) {
-			this.parent = parent;
-			this.page = page;
-			this.pageStack = pageStack;
-			this.edge = edge;
-
-			this.addListener(MouseClickEvent.class, (event, widget) -> {
-				setActive(true);
-				return WidgetEventResult.HANDLED;
-			});
-		}
-
-		public void setActive(boolean fireEvent) {
-			parent.activePanel.setVisible(false);
-			page.setVisible(true);
-			WidgetPanel tmpOld = parent.activePanel;
-			parent.activePanel = page;
-
-			if(fireEvent) {
-				this.parent.fireEvent(new TabChangedEvent(tmpOld, page));
-			}
-		}
-
-		private boolean isActive() {
-			return this.parent.activePanel == this.page;
-		}
-
-		private boolean isFirst() {
-			return this.parent.pages.indexOf(this.page) == 0;
-		}
-
-		@Override
-		public void draw(GuiGraphics pGuiGraphics, Screen screen) {
-			pGuiGraphics.pose().pushPose();
-
-			RenderSystem.setShader(GameRenderer::getPositionTexShader);
-			RenderSystem.setShaderTexture(0, GUI.tabIcons);
-			RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
-
-			// Defaults are for the West edge
-			int buttonWidth = 32;
-			if(!isActive()) {
-				buttonWidth = 28;
-			}
-
-			int buttonHeight = 28;
-
-			int textureY = isFirst() ? 28 : 28 * 2;
-			int textureX = isActive() ? 32 : 0;
-
-			int x = 0;
-			int y = 0;
-
-			int iconX = 9;
-			int iconY = 5;
-
-			if(edge == TabDockEdge.NORTH) {
-				buttonHeight = 31;
-				buttonWidth = 31;
-
-				if(isActive()) {
-					textureY = 104;
-					textureX = 0;
-				} else {
-					textureY = 104;
-					textureX = 31;
-				}
-
-				iconX = 7;
-				iconY = 7;
-			}
-
-			if(!isActive()) {
-				iconY += 2;
-			}
-
-			pGuiGraphics.blit(GUI.tabIcons, x, y, textureX, textureY, buttonWidth, buttonHeight);
-
-			GUIHelper.renderGuiItem(pGuiGraphics, pageStack, getActualX() + iconX, getActualY() + iconY, false);
-
-			pGuiGraphics.pose().popPose();
-		}
-	}
 }

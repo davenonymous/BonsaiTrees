@@ -20,9 +20,11 @@ public class WidgetListEntry extends WidgetPanel implements ISelectable {
 	}
 
 	public void bindTo(Widget boundWidget) {
-		this.addListener(ListEntrySelectionEvent.class, (event, widget) -> {
-			boundWidget.setVisible(event.selected);
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
+		this.addListener(
+			ListEntrySelectionEvent.class, (event, widget) -> {
+				boundWidget.setVisible(event.selected);
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			}
+		);
 	}
 }

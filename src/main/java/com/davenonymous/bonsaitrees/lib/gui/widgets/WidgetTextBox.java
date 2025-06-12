@@ -1,14 +1,22 @@
 package com.davenonymous.bonsaitrees.lib.gui.widgets;
 
 
+import com.davenonymous.bonsaitrees.lib.gui.GUIHelper;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.FormattedText;
+import net.minecraft.network.chat.Style;
+
+import java.util.function.Function;
 
 public class WidgetTextBox extends Widget {
 	private String text;
 	private int textColor = 0xFFFFFF;
 	private boolean dropShadow = false;
+	private boolean wordWrap = false;
+	protected Style style = Style.EMPTY;
 
 	public WidgetTextBox(String text) {
 		this.text = text;
@@ -21,6 +29,28 @@ public class WidgetTextBox extends Widget {
 		this.textColor = textColor;
 		this.setWidth(100);
 		this.setHeight(9);
+	}
+
+	public void autoWidth() {
+		this.setWidth(Minecraft.getInstance().font.width(FormattedText.of(text, style)) + 2);
+	}
+
+	public void autoWidth(int maxWidth) {
+		this.setWidth(Math.min(Minecraft.getInstance().font.width(FormattedText.of(text, style)) + 2, maxWidth));
+	}
+
+	public WidgetTextBox setStyle(Function<Style, Style> style) {
+		this.style = style.apply(this.style);
+		return this;
+	}
+
+	public boolean isWordWrap() {
+		return wordWrap;
+	}
+
+	public WidgetTextBox setWordWrap(boolean wordWrap) {
+		this.wordWrap = wordWrap;
+		return this;
 	}
 
 	public void setText(String text) {
@@ -63,8 +93,12 @@ public class WidgetTextBox extends Widget {
 			heightTmp = 0;
 		}
 
-		RenderSystem.enableScissor(getActualX() * scale, bottomOffset + 2, width * scale, heightTmp);
-		pGuiGraphics.drawString(screen.getMinecraft().font, text, 0, 0, textColor, dropShadow);
+		RenderSystem.enableScissor(getActualX() * scale - 3, bottomOffset + 2, width * scale, heightTmp);
+		if(wordWrap) {
+			GUIHelper.drawWordWrap(pGuiGraphics, screen.getMinecraft().font, FormattedText.of(text, style), 0, 0, width, textColor);
+		} else {
+			GUIHelper.drawWordWrap(pGuiGraphics, screen.getMinecraft().font, FormattedText.of(text, style), 0, 0, Integer.MAX_VALUE, textColor);
+		}
 		RenderSystem.disableScissor();
 
 		RenderSystem.disableBlend();

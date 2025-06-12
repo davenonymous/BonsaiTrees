@@ -27,7 +27,7 @@ public enum RedstoneMode implements StringRepresentable {
 			ByIdMap.OutOfBoundsStrategy.ZERO
 		);
 
-	public static final StringRepresentable.EnumCodec<RedstoneMode> CODEC = StringRepresentable.fromEnum(RedstoneMode::values);
+	public static final EnumCodec<RedstoneMode> CODEC = StringRepresentable.fromEnum(RedstoneMode::values);
 
 	public static final StreamCodec<ByteBuf, RedstoneMode> STREAM_CODEC =
 		ByteBufCodecs.idMapper(RedstoneMode.BY_ID, RedstoneMode::getId);

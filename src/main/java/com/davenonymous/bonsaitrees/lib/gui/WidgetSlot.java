@@ -32,10 +32,12 @@ public class WidgetSlot extends SlotItemHandler {
 	}
 
 	public void bindToWidget(Widget widget) {
-		widget.addListener(VisibilityChangedEvent.class, (event, widget1) -> {
-			this.setEnabled(event.newValue && widget.areAllParentsVisible());
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
+		widget.addListener(
+			VisibilityChangedEvent.class, (event, widget1) -> {
+				this.setEnabled(event.newValue && widget.areAllParentsVisible());
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			}
+		);
 	}
 
 	public ResourceLocation getGroupId() {
@@ -111,7 +113,7 @@ public class WidgetSlot extends SlotItemHandler {
 		}
 
 		if(player != null) {
-			ItemStack mouseStack = player.containerMenu.getCarried();
+			ItemStack mouseStack = player.getInventory().getSelected();
 			if(mouseStack.isEmpty()) {
 				return true;
 			}

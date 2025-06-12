@@ -1,22 +1,23 @@
 package com.davenonymous.bonsaitrees.lib.gui.widgets;
 
 
-import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.gui.screens.Screen;
+import com.davenonymous.bonsaitrees.lib.gui.GUI;
 
-public class WidgetCheckbox extends WidgetSelectButton<Boolean> {
+public class WidgetCheckbox extends WidgetSpriteSelect<Boolean> {
 	public WidgetCheckbox() {
-		this.addChoice(true, false);
-		this.setWidth(10);
-		this.setHeight(10);
+		this.setSize(14, 11);
 
-		this.addClickListener();
+		this.addChoiceWithSprite(
+			false,
+			new WidgetSpriteSelect.SpriteData(GUI.tabIcons, 104, 0, 14, 11)
+		);
+
+		this.addChoiceWithSprite(
+			true,
+			new WidgetSpriteSelect.SpriteData(GUI.tabIcons, 76, 0, 14, 11)
+		);
+
+		this.setValue(false);
 	}
 
-	@Override
-	protected void drawButtonContent(GuiGraphics pGuiGraphics, Screen screen) {
-		if(this.getValue()) {
-			drawString(pGuiGraphics, screen, "x");
-		}
-	}
 }

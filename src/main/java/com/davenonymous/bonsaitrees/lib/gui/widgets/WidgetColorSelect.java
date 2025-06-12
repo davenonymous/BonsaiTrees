@@ -20,14 +20,18 @@ public class WidgetColorSelect extends WidgetWithChoiceValue<Color> {
 		this.setHeight(20);
 		this.setWidth(20);
 
-		this.addListener(MouseEnterEvent.class, (event, widget) -> {
-			((WidgetColorSelect) widget).hovered = true;
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
-		this.addListener(MouseExitEvent.class, (event, widget) -> {
-			((WidgetColorSelect) widget).hovered = false;
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
+		this.addListener(
+			MouseEnterEvent.class, (event, widget) -> {
+				((WidgetColorSelect) widget).hovered = true;
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			}
+		);
+		this.addListener(
+			MouseExitEvent.class, (event, widget) -> {
+				((WidgetColorSelect) widget).hovered = false;
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			}
+		);
 
 		this.addClickListener();
 	}

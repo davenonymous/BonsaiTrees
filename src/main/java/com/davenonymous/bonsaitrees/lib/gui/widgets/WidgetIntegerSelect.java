@@ -31,32 +31,38 @@ public class WidgetIntegerSelect extends WidgetPanelWithValue<Integer> {
 
 			return validChars;
 		});
-		input.addListener(ValueChangedEvent.class, (event, widget) -> {
-			String newValue = (String) event.newValue;
-			if(newValue == null || newValue.length() == 0) {
-				this.number = 0;
-			} else {
-				this.number = Integer.parseInt(newValue);
+		input.addListener(
+			ValueChangedEvent.class, (event, widget) -> {
+				String newValue = (String) event.newValue;
+				if(newValue == null || newValue.length() == 0) {
+					this.number = 0;
+				} else {
+					this.number = Integer.parseInt(newValue);
+				}
+				return WidgetEventResult.HANDLED;
 			}
-			return WidgetEventResult.HANDLED;
-		});
+		);
 
 		less = new WidgetButton("-");
-		less.addListener(MouseClickEvent.class, (event, widget) -> {
-			if(number - 1 >= min) {
-				this.setNumber(number - 1);
-			}
+		less.addListener(
+			MouseClickEvent.class, (event, widget) -> {
+				if(number - 1 >= min) {
+					this.setNumber(number - 1);
+				}
 
-			return WidgetEventResult.HANDLED;
-		});
+				return WidgetEventResult.HANDLED;
+			}
+		);
 		more = new WidgetButton("+");
-		more.addListener(MouseClickEvent.class, (event, widget) -> {
-			if(number + 1 <= max) {
-				this.setNumber(number + 1);
-			}
+		more.addListener(
+			MouseClickEvent.class, (event, widget) -> {
+				if(number + 1 <= max) {
+					this.setNumber(number + 1);
+				}
 
-			return WidgetEventResult.HANDLED;
-		});
+				return WidgetEventResult.HANDLED;
+			}
+		);
 
 		this.add(less);
 		this.add(input);
@@ -73,7 +79,7 @@ public class WidgetIntegerSelect extends WidgetPanelWithValue<Integer> {
 	}
 
 	@Override
-	public void setSize(int width, int height) {
+	public WidgetIntegerSelect setSize(int width, int height) {
 		super.setSize(width, height);
 
 		int buttonWidth = 10;
@@ -81,6 +87,8 @@ public class WidgetIntegerSelect extends WidgetPanelWithValue<Integer> {
 		less.setDimensions(0, -1, buttonWidth, height + 2);
 		input.setDimensions(buttonWidth + 2, 0, width - ((2 * buttonWidth) + 4), height);
 		more.setDimensions(width - (buttonWidth), -1, buttonWidth, height + 2);
+
+		return this;
 	}
 
 	@Override

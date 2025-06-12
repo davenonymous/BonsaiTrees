@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees.lib.gui.widgets;
 
-import com.davenonymous.bonsaitrees.lib.gui.GUI;
+import com.davenonymous.bonsaitrees.lib.gui.GUIHelper;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 
@@ -21,9 +21,9 @@ public class WidgetProgressArrow extends WidgetWithRangeValue<Double> {
 		int progressSpriteX = 102;
 
 		//pGuiGraphics.blitSprite(GUI.tabIcons, spriteWidth, spriteHeight, bgSpriteX, spriteY, this.x, this.y, spriteWidth, spriteHeight);
-		pGuiGraphics.blit(GUI.tabIcons, 0, 0, bgSpriteX, spriteY, spriteWidth, spriteHeight);
+		pGuiGraphics.blit(GUIHelper.tabIcons, 0, 0, bgSpriteX, spriteY, spriteWidth, spriteHeight);
 
 		int progressWidth = (int) (spriteWidth * (this.value - this.rangeMin) / (this.rangeMax - this.rangeMin));
-		pGuiGraphics.blit(GUI.tabIcons, 0, 0, progressSpriteX, spriteY, progressWidth, spriteHeight + 1);
+		pGuiGraphics.blit(GUIHelper.tabIcons, 0, 0, progressSpriteX, spriteY, progressWidth, spriteHeight + 1);
 	}
 }

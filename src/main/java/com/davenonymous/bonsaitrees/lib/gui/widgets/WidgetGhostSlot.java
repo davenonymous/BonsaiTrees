@@ -12,13 +12,17 @@ public class WidgetGhostSlot extends WidgetItemStack {
 	public WidgetGhostSlot(ItemStack stack) {
 		super(stack, true);
 
-		this.addListener(MouseClickEvent.class, (event, widget) -> {
-			ItemStack playerStack = Minecraft.getInstance().player.getInventory().getSelected().copy();
-			this.setValue(playerStack);
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
-		this.addListener(MouseReleasedEvent.class, ((event, widget) -> {
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		}));
+		this.addListener(
+			MouseClickEvent.class, (event, widget) -> {
+				ItemStack playerStack = Minecraft.getInstance().player.getInventory().getSelected().copy();
+				this.setValue(playerStack);
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			}
+		);
+		this.addListener(
+			MouseReleasedEvent.class, ((event, widget) -> {
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			})
+		);
 	}
 }

@@ -2,6 +2,7 @@ package com.davenonymous.bonsaitrees.lib.gui.widgets;
 
 
 import com.davenonymous.bonsaitrees.lib.gui.CircularPointedArrayList;
+import com.davenonymous.bonsaitrees.lib.gui.IClientTooltipProvider;
 import com.davenonymous.bonsaitrees.lib.gui.event.MouseClickEvent;
 import com.davenonymous.bonsaitrees.lib.gui.event.ValueChangedEvent;
 import com.davenonymous.bonsaitrees.lib.gui.event.WidgetEventResult;
@@ -27,6 +28,9 @@ public class WidgetWithChoiceValue<T> extends Widget {
 	public void setValue(T choice, boolean fireEvent) {
 		T oldValue = choices.getPointedElement();
 		choices.setPointerTo(choice);
+		if(choice instanceof IClientTooltipProvider tooltipProvider) {
+			this.setTooltipElements(tooltipProvider.getClientTooltip());
+		}
 		if(fireEvent) {
 			this.fireEvent(new ValueChangedEvent<T>(oldValue, choice));
 		}
@@ -47,24 +51,32 @@ public class WidgetWithChoiceValue<T> extends Widget {
 	public void next() {
 		T oldValue = choices.getPointedElement();
 		T newValue = choices.next();
+		if(newValue instanceof IClientTooltipProvider tooltipProvider) {
+			this.setTooltipElements(tooltipProvider.getClientTooltip());
+		}
 		this.fireEvent(new ValueChangedEvent<T>(oldValue, newValue));
 	}
 
 	public void prev() {
 		T oldValue = choices.getPointedElement();
 		T newValue = choices.prev();
+		if(newValue instanceof IClientTooltipProvider tooltipProvider) {
+			this.setTooltipElements(tooltipProvider.getClientTooltip());
+		}
 		this.fireEvent(new ValueChangedEvent<T>(oldValue, newValue));
 	}
 
 	public void addClickListener() {
-		this.addListener(MouseClickEvent.class, (event, widget) -> {
-			if(event.isLeftClick()) {
-				((WidgetWithChoiceValue<T>) widget).next();
-			} else {
-				((WidgetWithChoiceValue<T>) widget).prev();
-			}
+		this.addListener(
+			MouseClickEvent.class, (event, widget) -> {
+				if(event.isLeftClick()) {
+					((WidgetWithChoiceValue<T>) widget).next();
+				} else {
+					((WidgetWithChoiceValue<T>) widget).prev();
+				}
 
-			return WidgetEventResult.HANDLED;
-		});
+				return WidgetEventResult.HANDLED;
+			}
+		);
 	}
 }

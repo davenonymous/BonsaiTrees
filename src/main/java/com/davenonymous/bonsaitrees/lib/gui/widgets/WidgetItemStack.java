@@ -1,6 +1,6 @@
 package com.davenonymous.bonsaitrees.lib.gui.widgets;
 
-import com.davenonymous.bonsaitrees.lib.gui.GUI;
+import com.davenonymous.bonsaitrees.lib.gui.GUIHelper;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
@@ -71,6 +71,9 @@ public class WidgetItemStack extends WidgetWithValue<ItemStack> {
 			return;
 		}
 
+		if(!visible || !areAllParentsVisible()) {
+			return;
+		}
 
 		if(drawSlot && grayOut) {
 			float r = 0.0f;
@@ -97,18 +100,18 @@ public class WidgetItemStack extends WidgetWithValue<ItemStack> {
 	}
 
 	private void drawSlot(GuiGraphics pGuiGraphics, Screen screen) {
-		RenderSystem.setShaderTexture(0, GUI.tabIcons);
+		RenderSystem.setShaderTexture(0, GUIHelper.tabIcons);
 
 		int texOffsetY = 84;
 		int texOffsetX = 84;
-		pGuiGraphics.blit(GUI.tabIcons, -1, -1, texOffsetX, texOffsetY, 18, 18);
+		pGuiGraphics.blit(GUIHelper.tabIcons, -1, -1, texOffsetX, texOffsetY, 18, 18);
 	}
 
 	private void drawOverlay(GuiGraphics pGuiGraphics, Screen screen) {
-		RenderSystem.setShaderTexture(0, GUI.tabIcons);
+		RenderSystem.setShaderTexture(0, GUIHelper.tabIcons);
 
 		int texOffsetY = 85;
 		int texOffsetX = 85;
-		pGuiGraphics.blit(GUI.tabIcons, 0, 0, texOffsetX, texOffsetY, 16, 16);
+		pGuiGraphics.blit(GUIHelper.tabIcons, 0, 0, texOffsetX, texOffsetY, 16, 16);
 	}
 }

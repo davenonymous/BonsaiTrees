@@ -38,20 +38,26 @@ public class WidgetInputField extends WidgetWithValue<String> {
 		this.lineScrollOffset = 0;
 		this.value = "";
 
-		this.addListener(KeyPressedEvent.class, (event, widget) -> {
-			boolean result = this.onKeyPressed(event.keyCode, event.scanCode, event.modifiers);
-			return !result ? WidgetEventResult.CONTINUE_PROCESSING : WidgetEventResult.HANDLED;
-		});
+		this.addListener(
+			KeyPressedEvent.class, (event, widget) -> {
+				boolean result = this.onKeyPressed(event.keyCode, event.scanCode, event.modifiers);
+				return !result ? WidgetEventResult.CONTINUE_PROCESSING : WidgetEventResult.HANDLED;
+			}
+		);
 
-		this.addListener(MouseClickEvent.class, ((event, widget) -> {
-			boolean result = this.mouseClicked(event.x, event.y, event.button);
-			return !result ? WidgetEventResult.CONTINUE_PROCESSING : WidgetEventResult.HANDLED;
-		}));
+		this.addListener(
+			MouseClickEvent.class, ((event, widget) -> {
+				boolean result = this.mouseClicked(event.x, event.y, event.button);
+				return !result ? WidgetEventResult.CONTINUE_PROCESSING : WidgetEventResult.HANDLED;
+			})
+		);
 
-		this.addListener(CharTypedEvent.class, (event, widget) -> {
-			boolean result = this.charTyped(event.chr, event.scanCode);
-			return !result ? WidgetEventResult.CONTINUE_PROCESSING : WidgetEventResult.HANDLED;
-		});
+		this.addListener(
+			CharTypedEvent.class, (event, widget) -> {
+				boolean result = this.charTyped(event.chr, event.scanCode);
+				return !result ? WidgetEventResult.CONTINUE_PROCESSING : WidgetEventResult.HANDLED;
+			}
+		);
 	}
 
 	public WidgetInputField setValidator(Predicate<String> validator) {

@@ -51,6 +51,7 @@ public class SpriteTooltipComponent implements TooltipComponent, ClientTooltipCo
 	public void renderImage(Font font, int x, int y, GuiGraphics guiGraphics) {
 		int xOffset = x + (width - textureWidth) / 2;
 		int yOffset = y + (height - textureHeight) / 2;
+		guiGraphics.fillGradient(xOffset, yOffset, xOffset + textureWidth, yOffset + textureHeight, 0xFFFFFF00, 0xFF00FFFF);
 		guiGraphics.blit(sprite, xOffset, yOffset, textureX, textureY, textureWidth, textureHeight);
 	}
 

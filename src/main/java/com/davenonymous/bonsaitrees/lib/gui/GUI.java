@@ -6,6 +6,7 @@ import com.davenonymous.bonsaitrees.lib.gui.widgets.IValueProvider;
 import com.davenonymous.bonsaitrees.lib.gui.widgets.Widget;
 import com.davenonymous.bonsaitrees.lib.gui.widgets.WidgetPanel;
 import com.mojang.blaze3d.systems.RenderSystem;
+import com.mojang.logging.LogUtils;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
@@ -13,17 +14,25 @@ import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
+import org.slf4j.Logger;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class GUI extends WidgetPanel {
 	public static ResourceLocation tabIcons = BonsaiTrees.resource("textures/gui/tabicons.png");
+	public static ResourceLocation windowBackground = BonsaiTrees.resource("textures/gui/window.png");
 	public static ResourceLocation defaultButtonTexture = BonsaiTrees.resource("textures/gui/button_background.png");
+
+	public static final Logger LOGGER = LogUtils.getLogger();
 
 	public boolean hasTabs = false;
 	private final Map<ResourceLocation, IValueProvider> valueMap = new HashMap<>();
 	private WidgetContainer container;
+	private boolean isDragging = false;
+	private final Set<Integer> pressedKeys = new HashSet<>();
 
 	public GUI(int x, int y, int width, int height) {
 		this.setX(x);
@@ -31,6 +40,7 @@ public class GUI extends WidgetPanel {
 		this.setWidth(width);
 		this.setHeight(height);
 	}
+
 
 	public void findValueWidgets() {
 		this.findValueWidgets(this);
@@ -64,52 +74,8 @@ public class GUI extends WidgetPanel {
 
 	@Override
 	public void draw(GuiGraphics pGuiGraphics, Screen screen) {
-		drawWindow(pGuiGraphics, screen);
+		GUIHelper.drawWindow(pGuiGraphics, this.width, this.height, this.hasTabs);
 		super.draw(pGuiGraphics, screen);
-	}
-
-	protected void drawWindow(GuiGraphics pGuiGraphics, Screen screen) {
-		int texOffsetY = 11;
-		int texOffsetX = 64;
-
-		int width = this.width;
-		int xOffset = 0;
-
-		if(hasTabs) {
-			width -= 32;
-			xOffset += 32;
-		}
-
-		RenderSystem.setShader(GameRenderer::getPositionTexShader);
-		RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
-		RenderSystem.setShaderTexture(0, tabIcons);
-
-		// Top Left corner
-		pGuiGraphics.blit(tabIcons, xOffset, 0, texOffsetX, texOffsetY, 4, 4);
-
-		// Top right corner
-		pGuiGraphics.blit(tabIcons, xOffset + width - 4, 0, texOffsetX + 4 + 64, texOffsetY, 4, 4);
-
-		// Bottom Left corner
-		pGuiGraphics.blit(tabIcons, xOffset, this.height - 4, texOffsetX, texOffsetY + 4 + 64, 4, 4);
-
-		// Bottom Right corner
-		pGuiGraphics.blit(tabIcons, xOffset + width - 4, this.height - 4, texOffsetX + 4 + 64, texOffsetY + 4 + 64, 4, 4);
-
-
-		// Top edge
-		GUIHelper.drawStretchedTexture(pGuiGraphics, xOffset + 4, 0, width - 8, 4, texOffsetX + 4, texOffsetY, 64, 4);
-
-		// Bottom edge
-		GUIHelper.drawStretchedTexture(pGuiGraphics, xOffset + 4, this.height - 4, width - 8, 4, texOffsetX + 4, texOffsetY + 4 + 64, 64, 4);
-
-		// Left edge
-		GUIHelper.drawStretchedTexture(pGuiGraphics, xOffset, 4, 4, this.height - 8, texOffsetX, texOffsetY + 4, 4, 64);
-
-		// Right edge
-		GUIHelper.drawStretchedTexture(pGuiGraphics, xOffset + width - 4, 4, 4, this.height - 8, texOffsetX + 64 + 4, texOffsetY + 3, 4, 64);
-
-		GUIHelper.drawStretchedTexture(pGuiGraphics, xOffset + 4, 4, width - 8, this.height - 8, texOffsetX + 4, texOffsetY + 4, 64, 64);
 	}
 
 	public void drawTooltips(GuiGraphics pGuiGraphics, Screen screen, int mouseX, int mouseY) {
@@ -143,10 +109,10 @@ public class GUI extends WidgetPanel {
 		int texOffsetX = 84;
 
 		RenderSystem.setShader(GameRenderer::getPositionTexShader);
-		RenderSystem.setShaderTexture(0, tabIcons);
-		pGuiGraphics.blit(tabIcons, slot.x, slot.y, texOffsetX, texOffsetY, 18, 18);
+		RenderSystem.setShaderTexture(0, GUIHelper.tabIcons);
+		pGuiGraphics.blit(GUIHelper.tabIcons, slot.x, slot.y, texOffsetX, texOffsetY, 18, 18);
 
-		RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
+		//RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
 		pGuiGraphics.pose().popPose();
 	}
 
@@ -157,4 +123,41 @@ public class GUI extends WidgetPanel {
 	public WidgetContainer getContainer() {
 		return container;
 	}
+
+	public void setDragging(boolean dragging) {
+		this.isDragging = dragging;
+	}
+
+	public boolean isDragging() {
+		return isDragging;
+	}
+
+	public void keyDown(int scanCode) {
+		this.pressedKeys.add(scanCode);
+	}
+
+	public void keyUp(int scanCode) {
+		this.pressedKeys.remove(scanCode);
+	}
+
+	public boolean isKeyPressed(int scanCode) {
+		return this.pressedKeys.contains(scanCode);
+	}
+
+	private static final int SCAN_CODE_CTRL = 29;
+	private static final int SCAN_CODE_CTRL_LEFT = 157;
+	private static final int SCAN_CODE_CTRL_RIGHT = 197;
+
+	private static final int SCAN_CODE_SHIFT = 42;
+	private static final int SCAN_CODE_SHIFT_LEFT = 54;
+	private static final int SCAN_CODE_SHIFT_RIGHT = 55;
+
+	public boolean isCtrlDown() {
+		return this.isKeyPressed(SCAN_CODE_CTRL) || this.isKeyPressed(SCAN_CODE_CTRL_LEFT) || this.isKeyPressed(SCAN_CODE_CTRL_RIGHT);
+	}
+
+	public boolean isShiftDown() {
+		return this.isKeyPressed(SCAN_CODE_SHIFT) || this.isKeyPressed(SCAN_CODE_SHIFT_LEFT) || this.isKeyPressed(SCAN_CODE_SHIFT_RIGHT);
+	}
+
 }

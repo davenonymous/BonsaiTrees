@@ -1,13 +1,12 @@
 package com.davenonymous.bonsaitrees.lib.gui.widgets;
 
 
+import com.davenonymous.bonsaitrees.lib.gui.GUI;
 import com.davenonymous.bonsaitrees.lib.gui.ISelectable;
-import com.davenonymous.bonsaitrees.lib.gui.event.ListSelectionEvent;
-import com.davenonymous.bonsaitrees.lib.gui.event.MouseClickEvent;
-import com.davenonymous.bonsaitrees.lib.gui.event.MouseScrollEvent;
-import com.davenonymous.bonsaitrees.lib.gui.event.WidgetEventResult;
+import com.davenonymous.bonsaitrees.lib.gui.event.*;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.world.phys.Vec2;
 
 
 public class WidgetList extends WidgetPanel {
@@ -20,79 +19,127 @@ public class WidgetList extends WidgetPanel {
 
 	protected int selected = -1;
 
+	boolean showSelection = true;
+	boolean drawBackground = true;
 	boolean autoSelectFirstEntry = false;
+	int totalHeight = 0;
+
+	Vec2 dragStart = new Vec2(0, 0);
 
 	public WidgetList() {
 		super();
 
-		this.addListener(MouseScrollEvent.class, (event, widget) -> {
-			if(widget.isPosInside(event.mouseX, event.mouseY)) {
-				if(event.up) {
-					this.scrollUp();
-				} else {
-					this.scrollDown();
-				}
+		this.addListener(
+			MouseReleasedEvent.class, (event, widget) -> {
+				getGUI().setDragging(false);
+				return WidgetEventResult.CONTINUE_PROCESSING;
 			}
+		);
 
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
-	}
-
-	public Widget getScrollUpButton(int color) {
-		WidgetTextBox box = new WidgetTextBox("<") {
-			@Override
-			public void draw(GuiGraphics pGuiGraphics, Screen screen) {
-				if(lineOffset == 0) {
+		this.addListener(
+			WidgetSizeChangeEvent.class, ((event, widget) -> {
+				if(event.changedWidget() == widget) {
+					this.width = event.newWidth();
+					this.height = event.newHeight();
+					updateWidgets();
+					return WidgetEventResult.HANDLED;
 				}
 
-                /*
-                RenderSystem.pushMatrix();
-                RenderSystem.translatef(7.0f, 0.0f, 0.0f);
-                RenderSystem.rotatef(90.0f, 0.0f, 0.0f, 1.0f);
-                super.draw(screen);
-                RenderSystem.popMatrix();
-                 */
-			}
-		};
-		box.setTextColor(color);
-		box.setDimensions(0, 0, 7, 6);
-		box.addListener(MouseClickEvent.class, (event, widget) -> {
-			this.scrollUp();
-			return WidgetEventResult.HANDLED;
-		});
-		return box;
-	}
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			})
+		);
 
-	public Widget getScrollDownButton(int color) {
-		WidgetTextBox box = new WidgetTextBox(">") {
-			@Override
-			public void draw(GuiGraphics pGuiGraphics, Screen screen) {
-				if(lastVisibleLine == getTotalLines() - 1) {
+		this.addListener(
+			MouseScrollEvent.class, (event, widget) -> {
+				if(!this.areAllParentsVisible()) {
+					return WidgetEventResult.CONTINUE_PROCESSING;
 				}
 
-                /*
-                RenderSystem.pushMatrix();
-                RenderSystem.translatef(7.0f, 0.0f, 0.0f);
-                RenderSystem.rotatef(90.0f, 0.0f, 0.0f, 1.0f);
-                super.draw(screen);
-                RenderSystem.popMatrix();
-                 */
+				if(widget.isPosInside(event.mouseX, event.mouseY)) {
+					var scrollValue = Math.abs((int) Math.ceil(event.rawScrollValue));
+					if(event.up) {
+						this.scrollUp(scrollValue);
+					} else {
+						this.scrollDown(scrollValue);
+					}
+
+					return WidgetEventResult.HANDLED;
+				}
+
+				return WidgetEventResult.CONTINUE_PROCESSING;
 			}
-		};
-		box.setTextColor(color);
-		box.setDimensions(0, 0, 7, 6);
-		box.addListener(MouseClickEvent.class, (event, widget) -> {
-			this.scrollDown();
-			return WidgetEventResult.HANDLED;
-		});
-		return box;
+		);
+
+		this.addListener(
+			MouseDraggedEvent.class, (event, widget) -> {
+				if(!getGUI().isDragging()) {
+					getGUI().setDragging(true);
+					dragStart = new Vec2((float) event.mouseX(), (float) event.mouseY());
+				}
+
+
+				boolean drawScrollbar = visibleWidgets < getTotalLines();
+				if(!drawScrollbar) {
+					return WidgetEventResult.CONTINUE_PROCESSING;
+				}
+
+				int scrollbarWidth = 8;
+				int scrollBarX = this.getActualX() + this.width - scrollbarWidth + 1;
+				if(dragStart.x < scrollBarX || dragStart.x > scrollBarX + scrollbarWidth) {
+					return WidgetEventResult.CONTINUE_PROCESSING;
+				}
+
+				if(!this.isPosInside(event.mouseX(), event.mouseY())) {
+					return WidgetEventResult.CONTINUE_PROCESSING;
+				}
+
+				int scrollBarY = this.getActualY();
+				int scrollBarHeight = this.height;
+				float ratio = (float) (event.mouseY() - scrollBarY) / scrollBarHeight;
+
+				int newOffset = (int) (ratio * getTotalLines());
+				if(newOffset != lineOffset) {
+					lineOffset = Math.min(newOffset, getTotalLines() - visibleWidgets);
+					updateWidgets();
+				}
+
+				return WidgetEventResult.HANDLED;
+			}
+		);
+
+		this.addListener(
+			MouseClickEvent.class, (event, widget) -> {
+				boolean drawScrollbar = visibleWidgets < getTotalLines();
+				if(!drawScrollbar) {
+					return WidgetEventResult.CONTINUE_PROCESSING;
+				}
+
+				int scrollbarWidth = 8;
+				int scrollBarX = this.getActualX() + this.width - scrollbarWidth + 1;
+				if(event.x < scrollBarX || event.x > scrollBarX + scrollbarWidth) {
+					return WidgetEventResult.CONTINUE_PROCESSING;
+				}
+
+				int scrollBarY = this.getActualY();
+				int scrollBarHeight = this.height;
+				float ratio = (float) (event.y - scrollBarY) / scrollBarHeight;
+
+				int newOffset = (int) (ratio * getTotalLines());
+				if(newOffset != lineOffset) {
+					lineOffset = Math.min(newOffset, getTotalLines() - visibleWidgets);
+					updateWidgets();
+				}
+
+				return WidgetEventResult.HANDLED;
+			}
+		);
 	}
 
 	@Override
 	public void clear() {
 		super.clear();
 		this.selected = -1;
-		this.fireEvent(new ListSelectionEvent(this.selected));
+		this.fireEvent(new ListSelectionEvent(this.selected, (Widget) getSelectedWidget()));
 	}
 
 	public void scrollToTop() {
@@ -100,21 +147,25 @@ public class WidgetList extends WidgetPanel {
 	}
 
 	public void scrollUp() {
-		this.lineOffset = Math.max(0, this.lineOffset - this.scrollLines);
+		scrollUp(1);
+	}
+
+	public void scrollUp(int lines) {
+		this.lineOffset = Math.max(0, this.lineOffset - lines);
 		this.updateWidgets();
 	}
 
 	public void scrollDown() {
-		if(lastVisibleLine == getTotalLines() - 1) {
-			return;
-		}
+		scrollDown(1);
+	}
 
-		this.lineOffset += this.scrollLines;
+	public void scrollDown(int lines) {
+		this.lineOffset = Math.min(this.lineOffset + lines, getTotalLines() - visibleWidgets);
 		this.updateWidgets();
 	}
 
-	private ISelectable getSelectedWidget() {
-		if(this.selected == -1) {
+	public ISelectable getSelectedWidget() {
+		if(this.selected == -1 || this.children == null || this.selected >= this.children.size()) {
 			return null;
 		}
 		return (ISelectable) this.children.get(this.selected);
@@ -127,7 +178,7 @@ public class WidgetList extends WidgetPanel {
 
 		this.getSelectedWidget().setSelected(false);
 		this.selected = -1;
-		this.fireEvent(new ListSelectionEvent(this.selected));
+		this.fireEvent(new ListSelectionEvent(this.selected, (Widget) getSelectedWidget()));
 	}
 
 	public void select(int index) {
@@ -140,8 +191,14 @@ public class WidgetList extends WidgetPanel {
 			this.getSelectedWidget().setSelected(false);
 		}
 		this.selected = index;
-		this.getSelectedWidget().setSelected(true);
-		this.fireEvent(new ListSelectionEvent(this.selected));
+		if(this.getSelectedWidget() != null) {
+			this.getSelectedWidget().setSelected(true);
+		}
+		this.fireEvent(new ListSelectionEvent(this.selected, (Widget) getSelectedWidget()));
+	}
+
+	public int getTotalHeight() {
+		return Math.max(0, this.totalHeight - padding);
 	}
 
 	public int getTotalLines() {
@@ -156,91 +213,114 @@ public class WidgetList extends WidgetPanel {
 		return this.children.get(line).height;
 	}
 
+	public boolean shouldDrawBackground() {
+		return drawBackground;
+	}
+
+	public WidgetList setDrawBackground(boolean drawBackground) {
+		this.drawBackground = drawBackground;
+		return this;
+	}
+
+	public boolean isShowSelection() {
+		return showSelection;
+	}
+
+	public WidgetList setShowSelection(boolean showSelection) {
+		this.showSelection = showSelection;
+		return this;
+	}
+
 	@Override
 	public void draw(GuiGraphics pGuiGraphics, Screen screen) {
 		int backgroundColor = 0xFF333333;
 		int borderColor = 0xFF000000;
-		int selectedBackgroundColor = 0xFF555555;
+		int selectedBackgroundColor = 0xFF225522;
 
 
-/*
-        // Draw background
-        boolean drawScrollbar = visibleWidgets < getTotalLines();
-        int scrollbarWidth = drawScrollbar ? 8 : 0;
+		// Draw background
+		boolean drawScrollbar = visibleWidgets < getTotalLines();
+		int scrollbarWidth = drawScrollbar ? 8 : 0;
 
-        int listWidth = width-scrollbarWidth;
-        GuiUtils.drawGradientRect(0, 0, 0, listWidth, height, borderColor, borderColor);
-        GuiUtils.drawGradientRect(0, 1, 1, listWidth-1, height-1, backgroundColor, backgroundColor);
+		int listWidth = width;
+		if(this.shouldDrawBackground()) {
+			pGuiGraphics.fill(0, 0, listWidth, height, borderColor);
+			pGuiGraphics.fill(1, 1, listWidth - 1, height - 1, backgroundColor);
+		}
 
-        // Draw scrollbars
-        if(drawScrollbar) {
-            int scrollBarX = listWidth + 1;
-            GuiUtils.drawGradientRect(0, scrollBarX, 0, listWidth + scrollbarWidth, height, backgroundColor, backgroundColor);
+		if(isShowSelection() && selected >= lineOffset && selected <= lastVisibleLine) {
+			// We need to high-light a specific line
+			int yOffset = padding;
+			for(int line = lineOffset; line < selected; line++) {
+				Widget widget = this.children.get(line);
+				yOffset += widget.height;
+			}
 
-            int linesBefore = lineOffset;
-            int linesAfter = getTotalLines() - lastVisibleLine - 1;
+			Widget selectedWidget = this.children.get(selected);
 
-            int scrollColor = 0xFF666666;
+			pGuiGraphics.fill(1, yOffset, listWidth - 2 - scrollbarWidth, yOffset + 1 + selectedWidget.height - 1, selectedBackgroundColor);
+		}
 
-            float ratioBefore = (float)linesBefore / getTotalLines();
-            float ratioSize = (float)visibleWidgets / getTotalLines();
+		// Draw scrollbars
+		if(drawScrollbar) {
+			int scrollBarX = listWidth - scrollbarWidth - 1;
 
-            int topOffset = (int) (height * ratioBefore);
-            int paddleHeight = (int) (height * ratioSize);
+			int linesBefore = lineOffset;
+			int linesAfter = getTotalLines() - lastVisibleLine - 1;
 
-            if(topOffset == 0) {
-                topOffset = 1;
-            }
-            GuiUtils.drawGradientRect(0, scrollBarX+1, topOffset, listWidth + scrollbarWidth -1, topOffset+paddleHeight, scrollColor, scrollColor);
-        }
+			int scrollColor = 0xFF666666;
 
-        //Logz.info("Rendering lines %d to %d", lineOffset, lastVisibleLine);
+			float ratioBefore = (float) linesBefore / getTotalLines();
+			float ratioSize = (float) visibleWidgets / getTotalLines();
 
-        if(selected >= lineOffset && selected <= lastVisibleLine) {
-            // We need to high-light a specific line
-            int yOffset = 0;
-            for(int line = lineOffset; line < selected; line++) {
-                Widget widget = this.children.get(line);
-                yOffset += widget.height;
-            }
+			int topOffset = (int) (height * ratioBefore);
+			int paddleHeight = (int) (height * ratioSize);
 
-            Widget selectedWidget = this.children.get(selected);
+			if(topOffset < 2) {
+				topOffset = 2;
+			}
+			int maxPaddleHeight = topOffset + paddleHeight;
+			if(maxPaddleHeight > height - 2) {
+				maxPaddleHeight = height - 2;
+			}
+			pGuiGraphics.fill(scrollBarX + 1, topOffset, scrollBarX + scrollbarWidth - 1, maxPaddleHeight, scrollColor);
+		}
 
-            GuiUtils.drawGradientRect(0, 1, yOffset+1, listWidth-1, yOffset+1+selectedWidget.height-1, selectedBackgroundColor, selectedBackgroundColor);
-        }
-
-*/
 		super.draw(pGuiGraphics, screen);
 	}
 
 	public <T extends Widget & ISelectable> void addListEntry(T widget) {
 		if(widget.height <= 0) {
-			// Logz.warn("Heightless widget [%s] added to list. This will cause problems.", widget);
+			GUI.LOGGER.warn("Height-less widget [{}] added to list. This will cause problems.", widget);
 		}
 		if(widget.height > this.height) {
-			// Logz.warn("List has an entry larger than the list itself. This will cause problems.", widget);
+			GUI.LOGGER.warn("List has an entry [{}]={}px larger than the list={}px itself. This will cause problems.", widget, widget.height, this.height);
 		}
 
-		widget.addListener(MouseClickEvent.class, (event, clickedWidget) -> {
-			if(this.selected == this.children.indexOf(widget)) {
-				this.selected = -1;
-				widget.setSelected(false);
-			} else {
-				if(this.selected != -1 && this.selected < this.children.size()) {
-					Widget oldSelection = this.children.get(selected);
-					if(oldSelection instanceof ISelectable) {
-						((ISelectable) oldSelection).setSelected(false);
+		this.totalHeight += widget.height + padding;
+
+		widget.addListener(
+			MouseClickEvent.class, (event, clickedWidget) -> {
+				if(this.selected == this.children.indexOf(widget)) {
+					this.selected = -1;
+					widget.setSelected(false);
+				} else {
+					if(this.selected != -1 && this.selected < this.children.size()) {
+						Widget oldSelection = this.children.get(selected);
+						if(oldSelection instanceof ISelectable) {
+							((ISelectable) oldSelection).setSelected(false);
+						}
 					}
+
+					this.selected = this.children.indexOf(widget);
+					widget.setSelected(true);
 				}
 
-				this.selected = this.children.indexOf(widget);
-				widget.setSelected(true);
+				this.fireEvent(new ListSelectionEvent(this.selected, (Widget) getSelectedWidget()));
+
+				return WidgetEventResult.HANDLED;
 			}
-
-			this.fireEvent(new ListSelectionEvent(this.selected));
-
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
+		);
 
 		super.add(widget);
 
@@ -259,6 +339,14 @@ public class WidgetList extends WidgetPanel {
 		visibleWidgets = 0;
 		for(int line = 0; line < this.children.size(); line++) {
 			Widget widget = this.children.get(line);
+			if(widget instanceof WidgetTextBox tb) {
+				tb.autoWidth();
+				if(tb.width > this.width - 11 - padding * 2) {
+					tb.setWidth(this.width - 11 - padding * 2);
+				}
+			} else {
+				widget.setWidth(this.width - 11 - padding * 2);
+			}
 
 			if(line < lineOffset) {
 				// Widget is scrolled past -> hide
@@ -283,6 +371,7 @@ public class WidgetList extends WidgetPanel {
 			widget.setVisible(true);
 			widget.setY(visibleHeight);
 			widget.setX(padding);
+
 			visibleHeight += widget.height;
 			lastVisibleLine = line;
 			visibleWidgets++;

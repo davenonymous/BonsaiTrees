@@ -17,58 +17,87 @@ public class Widget {
 	public int y;
 	public int width;
 	public int height;
+	public float scale = 1.0F;
+	public float zLevel = 0.0F;
 
 	boolean enabled = true;
 	boolean focused = false;
 	boolean visible = true;
 	boolean hovered = false;
+	boolean renderDebugOutlines = false;
 	Widget parent;
 
-	List<Either<Component, TooltipComponent>> tooltipElements;
+	List<Either<Component, TooltipComponent>> tooltipElements = new ArrayList<>();
 
 	Map<Class<? extends IEvent>, List<IWidgetListener>> eventListeners = new HashMap<>();
 	List<IWidgetListener> anyEventListener = new ArrayList<>();
 
 	public Widget() {
-		this.addListener(MouseClickEvent.class, (event, widget) -> {
-			widget.getRootWidget().fireEvent(new FocusChangedEvent());
+		this.addListener(
+			KeyReleasedEvent.class, (event, widget) -> {
+				int keyCode = event.keyCode;
+				// On F3, toggle debug outlines
+				if(keyCode == 292) {
+					renderDebugOutlines = !renderDebugOutlines;
+				}
 
-			if(widget.focusable()) {
-				widget.focused = true;
+				return WidgetEventResult.CONTINUE_PROCESSING;
 			}
+		);
+		this.addListener(
+			MouseClickEvent.class, (event, widget) -> {
+				widget.getRootWidget().fireEvent(new FocusChangedEvent());
 
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
+				if(widget.focusable()) {
+					widget.focused = true;
+				}
 
-		this.addListener(FocusChangedEvent.class, ((event, widget) -> {
-			widget.focused = false;
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		}));
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			}
+		);
 
-		this.addListener(MouseEnterEvent.class, (event, widget) -> {
-			widget.hovered = true;
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
-		this.addListener(MouseExitEvent.class, (event, widget) -> {
-			widget.hovered = false;
-			return WidgetEventResult.CONTINUE_PROCESSING;
-		});
+		this.addListener(
+			FocusChangedEvent.class, ((event, widget) -> {
+				widget.focused = false;
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			})
+		);
+
+		this.addListener(
+			MouseEnterEvent.class, (event, widget) -> {
+				widget.hovered = true;
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			}
+		);
+		this.addListener(
+			MouseExitEvent.class, (event, widget) -> {
+				widget.hovered = false;
+				return WidgetEventResult.CONTINUE_PROCESSING;
+			}
+		);
 
 	}
 
-	public void setPosition(int x, int y) {
+	public Widget setPosition(int x, int y) {
 		this.setX(x);
 		this.setY(y);
+		return this;
 	}
 
-	public void setSize(int width, int height) {
+	public Widget setSize(int width, int height) {
 		this.setWidth(width);
 		this.setHeight(height);
+		return this;
 	}
 
-	public void setDimensions(int x, int y, int width, int height) {
+	public Widget setDimensions(int x, int y, int width, int height) {
 		this.setSize(width, height);
 		this.setPosition(x, y);
+		return this;
+	}
+
+	public boolean isHovered() {
+		return this.hovered;
 	}
 
 	public boolean hasToolTip() {
@@ -120,7 +149,7 @@ public class Widget {
 		return this;
 	}
 
-	public Widget setTooltipElements(List<TooltipComponent> tooltipElements) {
+	public Widget setTooltipElements(List<? extends TooltipComponent> tooltipElements) {
 		this.tooltipElements = new ArrayList<>();
 		for(TooltipComponent line : tooltipElements) {
 			this.tooltipElements.add(Either.right(line));
@@ -265,11 +294,15 @@ public class Widget {
 	}
 
 	public void setWidth(int width) {
+		int oldWidth = this.width;
 		this.width = width;
+		this.fireEvent(new WidgetSizeChangeEvent(oldWidth, this.height, width, this.height, this));
 	}
 
 	public void setHeight(int height) {
+		int oldHeight = this.height;
 		this.height = height;
+		this.fireEvent(new WidgetSizeChangeEvent(this.width, oldHeight, this.width, height, this));
 	}
 
 	public void setVisible(boolean visible) {
@@ -324,9 +357,30 @@ public class Widget {
 		this.drawBeforeShift(pGuiGraphics, screen);
 
 		pGuiGraphics.pose().pushPose();
-		pGuiGraphics.pose().translate(this.x, this.y, 0);
+		pGuiGraphics.pose().translate(this.x, this.y, this.zLevel);
+		pGuiGraphics.pose().scale(this.scale, this.scale, this.scale);
 		this.draw(pGuiGraphics, screen);
+
+		if(renderDebugOutlines) {
+			pGuiGraphics.renderOutline(-1, -1, this.width + 1, this.height + 1, 0xFF000000 + (this.getClass().getSimpleName().hashCode() & 0xFFFFFF));
+
+			if(isHovered()) {
+				if(!(this instanceof WidgetPanel) || (this instanceof WidgetPanel panel && !panel.children().stream().anyMatch(w -> w.isHovered() && w.isVisible()))) {
+					String what = String.format("%s", this.getClass().getSimpleName());
+					String pos = String.format("x=%d y=%d", this.x, this.y);
+					String size = String.format("w=%d h=%d", this.width, this.height);
+					pGuiGraphics.drawString(screen.getMinecraft().font, what, 0, 0, 0xFF8000);
+					pGuiGraphics.drawString(screen.getMinecraft().font, pos, 0, 10, 0xFF8000);
+					pGuiGraphics.drawString(screen.getMinecraft().font, size, 0, 20, 0xFF8000);
+
+					this.renderExtraDebugInfo(pGuiGraphics, screen);
+				}
+			}
+		}
 		pGuiGraphics.pose().popPose();
+	}
+
+	public void renderExtraDebugInfo(GuiGraphics pGuiGraphics, Screen screen) {
 	}
 
 	/**

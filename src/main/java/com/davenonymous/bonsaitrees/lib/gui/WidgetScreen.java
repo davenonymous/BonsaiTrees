@@ -11,6 +11,7 @@ public abstract class WidgetScreen extends Screen {
 	protected GUI gui;
 	private int previousMouseX = Integer.MAX_VALUE;
 	private int previousMouseY = Integer.MAX_VALUE;
+	private float partialTicks = 0;
 
 	protected ResourceLocation id;
 
@@ -26,6 +27,18 @@ public abstract class WidgetScreen extends Screen {
 			this.gui.setVisible(true);
 		}
 		return gui;
+	}
+
+	public int mouseX() {
+		return this.previousMouseX;
+	}
+
+	public int mouseY() {
+		return this.previousMouseY;
+	}
+
+	public float partialTicks() {
+		return this.partialTicks;
 	}
 
 	@Override
@@ -56,6 +69,9 @@ public abstract class WidgetScreen extends Screen {
 
 	@Override
 	public boolean keyReleased(int keyCode, int scanCode, int modifiers) {
+		GUI gui = getOrCreateGui();
+		gui.keyUp(scanCode);
+
 		if(getOrCreateGui().fireEvent(new KeyReleasedEvent(keyCode, scanCode, modifiers)) == WidgetEventResult.CONTINUE_PROCESSING) {
 			return super.keyReleased(keyCode, scanCode, modifiers);
 		}
@@ -72,8 +88,18 @@ public abstract class WidgetScreen extends Screen {
 
 	@Override
 	public boolean keyPressed(int keyCode, int scanCode, int modifiers) {
-		if(getOrCreateGui().fireEvent(new KeyPressedEvent(keyCode, scanCode, modifiers)) == WidgetEventResult.CONTINUE_PROCESSING) {
+		GUI gui = getOrCreateGui();
+		gui.keyDown(scanCode);
+		if(gui.fireEvent(new KeyPressedEvent(keyCode, scanCode, modifiers)) == WidgetEventResult.CONTINUE_PROCESSING) {
 			return super.keyPressed(keyCode, scanCode, modifiers);
+		}
+		return false;
+	}
+
+	@Override
+	public boolean mouseDragged(double mouseX, double mouseY, int button, double dragX, double dragY) {
+		if(getOrCreateGui().fireEvent(new MouseDraggedEvent(mouseX, mouseY, button, dragX, dragY)) == WidgetEventResult.CONTINUE_PROCESSING) {
+			return super.mouseDragged(mouseX, mouseY, button, dragX, dragY);
 		}
 		return false;
 	}
@@ -97,6 +123,7 @@ public abstract class WidgetScreen extends Screen {
 			previousMouseY = mouseY;
 		}
 
+		this.partialTicks = partialTicks;
 		getOrCreateGui().drawGUI(pGuiGraphics, this);
 		getOrCreateGui().drawTooltips(pGuiGraphics, this, mouseX, mouseY);
 		//renderHoveredToolTip(mouseX, mouseY);
@@ -117,5 +144,10 @@ public abstract class WidgetScreen extends Screen {
 	@Override
 	public boolean isPauseScreen() {
 		return false;
+	}
+
+	@Override
+	public void onClose() {
+		super.onClose();
 	}
 }
