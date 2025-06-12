@@ -7,17 +7,26 @@ import com.davenonymous.bonsaitrees.lib.gui.event.UpdateScreenEvent;
 import com.davenonymous.bonsaitrees.lib.gui.event.ValueChangedEvent;
 import com.davenonymous.bonsaitrees.lib.gui.event.WidgetEventResult;
 import com.davenonymous.bonsaitrees.lib.gui.tooltip.IngredientBoxTooltipComponent;
+import com.davenonymous.bonsaitrees.lib.gui.tooltip.StringTooltipComponent;
 import com.davenonymous.bonsaitrees.lib.gui.tooltip.TranslatableTooltipComponent;
+import com.davenonymous.bonsaitrees.lib.gui.tooltip.VBoxTooltipComponent;
 import com.davenonymous.bonsaitrees.lib.gui.widgets.WidgetItemStack;
 import com.davenonymous.bonsaitrees.lib.gui.widgets.WidgetProgressArrow;
 import com.davenonymous.bonsaitrees.lib.gui.widgets.WidgetRedstoneMode;
 import com.davenonymous.bonsaitrees.networking.SetRedstoneMode;
 import com.davenonymous.bonsaitrees.setup.cache.BonsaiCache;
 import com.davenonymous.bonsaitrees.setup.cache.SoilCache;
+import com.davenonymous.bonsaitrees.setup.data.BonsaiInfo;
+import com.davenonymous.bonsaitrees.setup.data.SoilInfo;
+import com.davenonymous.bonsaitrees.setup.data.SoilType;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.resources.language.I18n;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.ItemEnchantments;
@@ -26,12 +35,14 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.network.PacketDistributor;
 
-import java.util.Collections;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 	public BonsaiPotScreen(BonsaiPotContainer container, Inventory inv, Component name) {
 		super(container, inv, name);
 	}
+	private List<Item> allSoilsSorted;
 
 	@Override
 	protected GUI createGUI() {
@@ -39,6 +50,12 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 		gui.setContainer(this.menu);
 
 		BonsaiPotBlockEntity pot = this.menu.getBlockEntity();
+
+		this.allSoilsSorted = SoilCache.SOILS.keySet().stream()
+			.map(ItemStack::getItem)
+			.collect(Collectors.toSet()).stream()
+			.sorted(Comparator.comparing(item -> item.getDescriptionId(), Comparator.naturalOrder()))
+			.toList();
 
 		if(pot != null) {
 			BlockState potState = pot.getBlockState();
@@ -80,7 +97,7 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 		fakeSoil.setDrawTooltip(false);
 		fakeSoil.setTooltipElements(
 			new TranslatableTooltipComponent("bonsaitrees4.tooltip.soil_required"),
-			new IngredientBoxTooltipComponent(SoilCache.SOILS.keySet().stream().map(ItemStack::getItem).toList())
+			new IngredientBoxTooltipComponent(allSoilsSorted)
 		);
 		gui.add(fakeSoil);
 
@@ -146,14 +163,56 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 
 			if(pot.inventories.getSaplingStack().isEmpty()) {
 				fakeSapling.setVisible(true);
+				fakeSoil.setTooltipElements(
+					new TranslatableTooltipComponent("bonsaitrees4.tooltip.soil_required"),
+					new IngredientBoxTooltipComponent(allSoilsSorted)
+				);
 			} else {
+				Optional<BonsaiInfo> bonsaiInfo = pot.production.getBonsaiInfo();
+				if(bonsaiInfo.isPresent()) {
+					RegistryAccess registryAccess = pot.getLevel().registryAccess();
+					BonsaiInfo info = bonsaiInfo.get();
+					List<SoilType> validSoilTypes = info.validSoilTypes(registryAccess);
+					String joinedSoilNames = validSoilTypes.stream()
+						.map(type -> I18n.get(type.translationKey()))
+						.distinct()
+						.sorted()
+						.collect(Collectors.joining(", "));
+
+					VBoxTooltipComponent fakeSoilTooltip = new VBoxTooltipComponent().setPadding(2);
+					fakeSoilTooltip.add(
+						new TranslatableTooltipComponent("bonsaitrees4.tooltip.valid_soils"),
+						new IngredientBoxTooltipComponent(info.validSoilItems(registryAccess)),
+						StringTooltipComponent.gray(joinedSoilNames)
+					);
+					fakeSoil.setTooltipElements(fakeSoilTooltip);
+				}
 				fakeSapling.setVisible(false);
 			}
 
 			if(pot.inventories.getSoilStack().isEmpty()) {
 				fakeSoil.setVisible(true);
+				fakeSapling.setTooltipElements(
+					new TranslatableTooltipComponent("bonsaitrees4.tooltip.sapling_required"),
+					new IngredientBoxTooltipComponent(BonsaiCache.BONSAI_BY_ITEM.keySet())
+				);
 			} else {
 				fakeSoil.setVisible(false);
+				Optional<Set<SoilInfo>> soilInfos = pot.production.getSoilInfo();
+				if(soilInfos.isPresent()) {
+					Set<Item> validBonsais = new HashSet<>();
+					for(SoilInfo soilInfo : soilInfos.get()) {
+						for(ResourceLocation soilTypeId : soilInfo.soilType()) {
+							Set<Item> matchingBonsais = SoilCache.BONSAIS_BY_SOIL.get(soilTypeId);
+							validBonsais.addAll(matchingBonsais);
+						}
+					}
+
+					fakeSapling.setTooltipElements(
+						new TranslatableTooltipComponent("bonsaitrees4.tooltip.valid_saplings"),
+						new IngredientBoxTooltipComponent(validBonsais)
+					);
+				}
 			}
 
 			if(pot.inventories.getCamouflageStack().isEmpty()) {
@@ -169,6 +228,8 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 				canProduceArrow.setValue(100D);
 				fakeTool.setVisible(false);
 			}
+
+			progressArrow.setDisabled(!pot.production.canGrow());
 
 			return WidgetEventResult.CONTINUE_PROCESSING;
 		});

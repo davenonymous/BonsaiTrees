@@ -32,7 +32,9 @@
 	"bonsaitrees4.tooltip.painted": "Painted",
 
 	"bonsaitrees4.tooltip.sapling_required": "Requires a sapling.",
+	"bonsaitrees4.tooltip.valid_saplings": "Valid saplings:",
 	"bonsaitrees4.tooltip.soil_required": "Requires soil.",
+	"bonsaitrees4.tooltip.valid_soils": "Valid soils:",
 	"bonsaitrees4.tooltip.tool_required": "Insert a tool to harvest.",
 	"bonsaitrees4.tooltip.camouflage_optional": "Optional pot decoration.",
 	"bonsaitrees4.tooltip.and_more": "+%d",
