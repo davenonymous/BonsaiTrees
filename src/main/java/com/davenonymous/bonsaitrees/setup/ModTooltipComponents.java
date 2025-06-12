@@ -18,10 +18,13 @@ public class ModTooltipComponents {
 		event.register(VBoxTooltipComponent.class, Function.identity());
 		event.register(SpriteTooltipComponent.class, Function.identity());
 		event.register(StringTooltipComponent.class, Function.identity());
+		event.register(WrappedStringTooltipComponent.class, Function.identity());
 		event.register(IngredientTooltipComponent.class, Function.identity());
 		event.register(IngredientBoxTooltipComponent.class, Function.identity());
 		event.register(TranslatableTooltipComponent.class, Function.identity());
 		event.register(MultiBlockModelTooltipComponent.class, Function.identity());
 		event.register(RedstoneModeTooltipComponent.class, Function.identity());
+		event.register(ScrollableTooltipComponent.class, Function.identity());
+		event.register(ColorDisplayTooltipComponent.class, Function.identity());
 	}
 }

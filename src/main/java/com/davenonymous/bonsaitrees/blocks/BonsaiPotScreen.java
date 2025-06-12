@@ -6,10 +6,7 @@ import com.davenonymous.bonsaitrees.lib.gui.event.GuiDataUpdatedEvent;
 import com.davenonymous.bonsaitrees.lib.gui.event.UpdateScreenEvent;
 import com.davenonymous.bonsaitrees.lib.gui.event.ValueChangedEvent;
 import com.davenonymous.bonsaitrees.lib.gui.event.WidgetEventResult;
-import com.davenonymous.bonsaitrees.lib.gui.tooltip.IngredientBoxTooltipComponent;
-import com.davenonymous.bonsaitrees.lib.gui.tooltip.StringTooltipComponent;
-import com.davenonymous.bonsaitrees.lib.gui.tooltip.TranslatableTooltipComponent;
-import com.davenonymous.bonsaitrees.lib.gui.tooltip.VBoxTooltipComponent;
+import com.davenonymous.bonsaitrees.lib.gui.tooltip.*;
 import com.davenonymous.bonsaitrees.lib.gui.widgets.WidgetItemStack;
 import com.davenonymous.bonsaitrees.lib.gui.widgets.WidgetProgressArrow;
 import com.davenonymous.bonsaitrees.lib.gui.widgets.WidgetRedstoneMode;
@@ -122,6 +119,16 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 		);
 		gui.add(fakeCamo);
 
+		var fakeEnchantment = new WidgetItemStack(new ItemStack(Items.BOOK), false);
+		fakeEnchantment.setPosition(62, 60);
+		fakeEnchantment.setVisible(false);
+		fakeEnchantment.setGrayOut(true);
+		fakeEnchantment.setDrawTooltip(false);
+		fakeEnchantment.setTooltipElements(
+			WrappedStringTooltipComponent.white(I18n.get("bonsaitrees4.tooltip.enchantment_hint"))
+		);
+		gui.add(fakeEnchantment);
+
 		var enchantmentsDisplay = new WidgetItemStack(new ItemStack(Items.ENCHANTED_BOOK), false);
 		enchantmentsDisplay.setPosition(62, 60);
 		enchantmentsDisplay.setVisible(false);
@@ -148,8 +155,10 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 
 			if(pot.inventories.enchantments.isEmpty()) {
 				enchantmentsDisplay.setVisible(false);
+				fakeEnchantment.setVisible(true);
 			} else {
 				enchantmentsDisplay.setVisible(true);
+				fakeEnchantment.setVisible(false);
 				enchantmentsDisplay.setTooltipLines(Component.translatable("bonsaitrees4.tooltip.enchantments"));
 				for(var enchantmentHolder : pot.inventories.enchantments.keySet()) {
 					int level = pot.inventories.enchantments.getLevel(enchantmentHolder);

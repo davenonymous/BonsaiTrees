@@ -94,6 +94,13 @@ public class WidgetItemStack extends WidgetWithValue<ItemStack> {
 			pGuiGraphics.pose().popPose();
 
 			RenderSystem.setShaderColor(oldColor[0], oldColor[1], oldColor[2], oldColor[3]);
+		} else if(grayOut) {
+			float r = 0.0f;
+			float g = 0.0f;
+			float b = 0.0f;
+			pGuiGraphics.setColor(r, g, b, 0.3f);
+			pGuiGraphics.renderItem(this.value, 0, 0);
+			pGuiGraphics.setColor(1.0f, 1.0f, 1.0f, 0.8f);
 		} else {
 			pGuiGraphics.renderItem(this.value, 0, 0);
 		}
