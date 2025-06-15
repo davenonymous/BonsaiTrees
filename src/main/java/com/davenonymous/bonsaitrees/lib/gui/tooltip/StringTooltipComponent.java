@@ -23,6 +23,10 @@ public record StringTooltipComponent(String message, int color) implements Seria
 		return new StringTooltipComponent(message, ChatFormatting.GRAY.getColor());
 	}
 
+	public static final StringTooltipComponent warn(String message) {
+		return new StringTooltipComponent(message, 0xFFB54747);
+	}
+
 	@Override
 	public int getHeight() {
 		return 10;

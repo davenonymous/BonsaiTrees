@@ -240,6 +240,22 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 
 			progressArrow.setDisabled(!pot.production.canGrow());
 
+			if(!pot.production.lootQueue.isEmpty()) {
+				VBoxTooltipComponent lootQueueItemBox = new VBoxTooltipComponent().setPadding(3);
+				for(ItemStack lootItem : pot.production.lootQueue) {
+					lootQueueItemBox.add(new ItemStackTooltipComponent(lootItem).setShowLabel(true).setLabelColor(ChatFormatting.WHITE));
+				}
+				canProduceArrow.setTooltipElements(
+					WrappedStringTooltipComponent.warn(I18n.get("bonsaitrees4.tooltip.unable_to_insert")),
+					WrappedStringTooltipComponent.warn(I18n.get("bonsaitrees4.tooltip.production_on_hold")),
+					lootQueueItemBox
+				);
+				canProduceArrow.setDisabled(true);
+			} else {
+				canProduceArrow.setTooltipElements();
+				canProduceArrow.setDisabled(false);
+			}
+
 			return WidgetEventResult.CONTINUE_PROCESSING;
 		});
 		this.fireDataUpdateEvent();

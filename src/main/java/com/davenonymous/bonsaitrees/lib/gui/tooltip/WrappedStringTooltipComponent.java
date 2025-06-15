@@ -19,6 +19,15 @@ public record WrappedStringTooltipComponent(String message, int color, int maxWi
 		WrappedStringTooltipComponent::new
 	);
 
+	public static WrappedStringTooltipComponent warn(String message) {
+		return warn(message, Minecraft.getInstance().getWindow().getGuiScaledWidth() / 2);
+	}
+
+	public static WrappedStringTooltipComponent warn(String message, int maxWidth) {
+		return new WrappedStringTooltipComponent(message, 0xFFB54747, maxWidth);
+	}
+
+
 	public static WrappedStringTooltipComponent white(String message) {
 		return white(message, Minecraft.getInstance().getWindow().getGuiScaledWidth() / 2);
 	}

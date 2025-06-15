@@ -40,7 +40,7 @@ public class ItemStackTooltipComponent implements TooltipComponent, ClientToolti
 		if(!showLabel) {
 			return 16;
 		}
-		return 16 + 2 + font.width(stack.getHoverName());
+		return 16 + 3 + font.width(stack.getHoverName());
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class ItemStackTooltipComponent implements TooltipComponent, ClientToolti
 		guiGraphics.renderItem(stack, x, y);
 		guiGraphics.renderItemDecorations(font, stack, x, y);
 		if(showLabel) {
-			guiGraphics.drawString(font, stack.getHoverName(), x + 18, y + 4, this.labelColor.getColor());
+			guiGraphics.drawString(font, stack.getHoverName(), x + 19, y + 4, this.labelColor.getColor());
 		}
 	}
 

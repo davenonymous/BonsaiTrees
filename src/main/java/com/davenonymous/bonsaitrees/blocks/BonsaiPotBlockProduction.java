@@ -1,5 +1,7 @@
 package com.davenonymous.bonsaitrees.blocks;
 
+import com.davenonymous.bonsaitrees.BonsaiTrees;
+import com.davenonymous.bonsaitrees.lib.util.StackHelper;
 import com.davenonymous.bonsaitrees.setup.cache.BonsaiCache;
 import com.davenonymous.bonsaitrees.setup.cache.SoilCache;
 import com.davenonymous.bonsaitrees.setup.config.GameplayConfig;
@@ -7,6 +9,8 @@ import com.davenonymous.bonsaitrees.setup.data.BonsaiInfo;
 import com.davenonymous.bonsaitrees.setup.data.SoilInfo;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.BlockItem;
@@ -42,8 +46,11 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 
 	public ItemStack saplingStack = ItemStack.EMPTY;
 
+	List<ItemStack> lootQueue;
+
 	public BonsaiPotBlockProduction(BonsaiPotBlockEntity potBlock) {
 		this.potBlock = potBlock;
+		this.lootQueue = new ArrayList<>();
 	}
 
 	public void init() {
@@ -63,7 +70,6 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 		}
 
 		if(cutCooldown > 0) {
-			// BonsaiTrees.LOGGER.debug("Cooldown to cutting the tree: " + cutCooldown);
 			cutCooldown--;
 			return;
 		}
@@ -106,88 +112,103 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 		}
 
 		if(potBlock.getLevel() instanceof ServerLevel serverLevel) {
-			ItemStack originalToolStack = potBlock.inventories.getToolStack();
-			ItemStack toolStack = originalToolStack.copy();
-			LootParams.Builder lootParams = new LootParams.Builder(serverLevel)
-				.withParameter(LootContextParams.BLOCK_ENTITY, potBlock)
-				.withParameter(LootContextParams.BLOCK_STATE, potBlock.getBlockState())
-				.withParameter(LootContextParams.ORIGIN, potBlock.getBlockPos().getCenter());
-
-			ItemEnchantments enchantments = potBlock.inventories.enchantments;
-			float extraLuck = 0.0f;
-			for(var enchantment : enchantments.keySet()) {
-				if(enchantment.is(Enchantments.FORTUNE)) {
-					extraLuck = enchantments.getLevel(enchantment);
-				} else if(!enchantment.is(Enchantments.EFFICIENCY)) {
-					toolStack.enchant(enchantment, enchantments.getLevel(enchantment));
-				}
-			}
-
-			if(extraLuck > 0) {
-				lootParams.withLuck(extraLuck);
-			}
-			lootParams.withParameter(LootContextParams.TOOL, toolStack);
-
-			ResourceKey<LootTable> lootTableId = getBonsaiInfo().get().lootTable();
-			LootTable lootTable = serverLevel.getServer().reloadableRegistries().getLootTable(lootTableId);
-
-			int extraRools = 0;
-			ItemStack soil = potBlock.inventories.getSoilStack();
-			if(SoilCache.isSoil(soil)) {
-				Optional<SoilInfo> soilInfo = getBonsaiInfo().get().firstMatchingSoil(SoilCache.getSoilInfo(soil).get(), getBonsaiInfo().get());
-				if(soilInfo.isPresent() && soilInfo.get().extraRolls().isPresent()) {
-					extraRools = soilInfo.get().extraRolls().get();
-				}
-			}
-
-			LootContext lootContext = new LootContext.Builder(lootParams.create(LootContextParamSets.BLOCK)).create(lootTable.randomSequence);
-			NumberProvider originalRolls[] = new NumberProvider[lootTable.pools.size()];
-			int index = 0;
-			for(var pool : lootTable.pools) {
-				originalRolls[index] = pool.getRolls();
-				pool.setRolls(ConstantValue.exactly(pool.getRolls().getInt(lootContext) + extraRools));
-				index++;
-			}
 
 			List<ItemStack> newRolledItems = new ArrayList<>();
-			lootTable.getRandomItems(
-				lootContext, stack -> {
-					if(stack.getItem() instanceof BlockItem blockItem) {
-						Block block = blockItem.getBlock();
-						BlockState state = block.defaultBlockState();
-						if(state.requiresCorrectToolForDrops() && !toolStack.isCorrectToolForDrops(state)) {
+			ItemStack originalToolStack = potBlock.inventories.getToolStack();
+
+			if(!lootQueue.isEmpty()) {
+				newRolledItems.addAll(lootQueue);
+			} else {
+				ItemStack toolStack = originalToolStack.copy();
+				LootParams.Builder lootParams = new LootParams.Builder(serverLevel)
+					.withParameter(LootContextParams.BLOCK_ENTITY, potBlock)
+					.withParameter(LootContextParams.BLOCK_STATE, potBlock.getBlockState())
+					.withParameter(LootContextParams.ORIGIN, potBlock.getBlockPos().getCenter());
+
+				ItemEnchantments enchantments = potBlock.inventories.enchantments;
+				float extraLuck = 0.0f;
+				for(var enchantment : enchantments.keySet()) {
+					if(enchantment.is(Enchantments.FORTUNE)) {
+						extraLuck = enchantments.getLevel(enchantment);
+					} else if(!enchantment.is(Enchantments.EFFICIENCY)) {
+						toolStack.enchant(enchantment, enchantments.getLevel(enchantment));
+					}
+				}
+
+				if(extraLuck > 0) {
+					lootParams.withLuck(extraLuck);
+				}
+				lootParams.withParameter(LootContextParams.TOOL, toolStack);
+
+				ResourceKey<LootTable> lootTableId = getBonsaiInfo().get().lootTable();
+				LootTable lootTable = serverLevel.getServer().reloadableRegistries().getLootTable(lootTableId);
+
+				int extraRools = 0;
+				ItemStack soil = potBlock.inventories.getSoilStack();
+				if(SoilCache.isSoil(soil)) {
+					Optional<SoilInfo> soilInfo = getBonsaiInfo().get().firstMatchingSoil(SoilCache.getSoilInfo(soil).get(), getBonsaiInfo().get());
+					if(soilInfo.isPresent() && soilInfo.get().extraRolls().isPresent()) {
+						extraRools = soilInfo.get().extraRolls().get();
+					}
+				}
+
+				LootContext lootContext = new LootContext.Builder(lootParams.create(LootContextParamSets.BLOCK)).create(lootTable.randomSequence);
+				NumberProvider originalRolls[] = new NumberProvider[lootTable.pools.size()];
+				int index = 0;
+				for(var pool : lootTable.pools) {
+					originalRolls[index] = pool.getRolls();
+					pool.setRolls(ConstantValue.exactly(pool.getRolls().getInt(lootContext) + extraRools));
+					index++;
+				}
+
+
+				lootTable.getRandomItems(
+					lootContext, stack -> {
+						if(stack.isEmpty()) {
 							return;
 						}
-					}
 
-					newRolledItems.add(stack);
-				}
-			);
+						if(stack.getItem() instanceof BlockItem blockItem) {
+							Block block = blockItem.getBlock();
+							BlockState state = block.defaultBlockState();
+							if(state.requiresCorrectToolForDrops() && !toolStack.isCorrectToolForDrops(state)) {
+								return;
+							}
+						}
 
-			index = 0;
-			for(var pool : lootTable.pools) {
-				pool.setRolls(originalRolls[index]);
-				index++;
-			}
-
-			int toolRemainingDurability = originalToolStack.getMaxDamage() - originalToolStack.getDamageValue();
-			boolean toolHasEnoughDurability =
-				GameplayConfig.toolDamageChance == 0 ||
-					toolRemainingDurability >= GameplayConfig.toolDamagePerCut;
-			if(!toolHasEnoughDurability) {
-				originalToolStack.hurtAndBreak(
-					GameplayConfig.toolDamagePerCut, serverLevel, null, item -> {
+						newRolledItems.add(stack);
 					}
 				);
 
-				this.potBlock.setChanged();
-				this.potBlock.notifyClients(false);
-				return;
+				index = 0;
+				for(var pool : lootTable.pools) {
+					pool.setRolls(originalRolls[index]);
+					index++;
+				}
+
+				int toolRemainingDurability = originalToolStack.getMaxDamage() - originalToolStack.getDamageValue();
+				boolean toolHasEnoughDurability = GameplayConfig.toolDamageChance == 0 || toolRemainingDurability >= GameplayConfig.toolDamagePerCut;
+				if(!toolHasEnoughDurability) {
+					originalToolStack.hurtAndBreak(
+						GameplayConfig.toolDamagePerCut, serverLevel, null, item -> {
+						}
+					);
+
+					this.potBlock.setChanged();
+					this.potBlock.notifyClients(false);
+					return;
+				}
 			}
 
-			boolean canInsert = canInsertAllIntoOutput(newRolledItems);
+			List<ItemStack> mergedItems = StackHelper.mergeStacks(newRolledItems);
+			boolean canInsert = canInsertAllIntoOutput(mergedItems);
 			if(!canInsert) {
+				if(this.lootQueue.isEmpty()) {
+					this.lootQueue.addAll(mergedItems);
+				}
+
 				this.cutCooldown = GameplayConfig.cutCooldown;
+				this.growTicks = getRequiredGrowTicks();
 			} else {
 				if(GameplayConfig.toolDamageChance > serverLevel.random.nextDouble() && GameplayConfig.toolDamagePerCut > 0) {
 					originalToolStack.hurtAndBreak(
@@ -197,6 +218,7 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 				}
 
 				insertAllIntoOutput(newRolledItems);
+				this.lootQueue.clear();
 				this.cutCooldown = 0;
 				this.growTicks = 0;
 			}
@@ -273,12 +295,33 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 	public @UnknownNullability CompoundTag serializeNBT(HolderLookup.Provider provider) {
 		CompoundTag compoundTag = new CompoundTag();
 		compoundTag.putInt("growTicks", growTicks);
+		if(!lootQueue.isEmpty()) {
+			ListTag lootList = new ListTag();
+			for(ItemStack stack : lootQueue) {
+				if(stack.isEmpty()) {
+					continue;
+				}
+				lootList.add(stack.save(provider));
+			}
+			compoundTag.put("lootQueue", lootList);
+		}
+
 		return compoundTag;
 	}
 
 	@Override
 	public void deserializeNBT(HolderLookup.Provider provider, CompoundTag compoundTag) {
 		growTicks = compoundTag.getInt("growTicks");
+		lootQueue.clear();
+		ListTag lootList = compoundTag.getList("lootQueue", Tag.TAG_COMPOUND);
+		for(Tag lootEntry : lootList) {
+			Optional<ItemStack> stack = ItemStack.parse(provider, lootEntry);
+			if(stack.isPresent()) {
+				lootQueue.add(stack.get());
+			} else {
+				BonsaiTrees.LOGGER.warn("Failed to parse ItemStack in Loot Queue from NBT: " + lootEntry);
+			}
+		}
 	}
 
 

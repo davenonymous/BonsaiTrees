@@ -39,6 +39,8 @@
 	"bonsaitrees4.tooltip.camouflage_optional": "Optional pot decoration.",
 	"bonsaitrees4.tooltip.enchantment_hint": "Enchant the pot to improve its performance.",
 	"bonsaitrees4.tooltip.and_more": "+%d",
+	"bonsaitrees4.tooltip.unable_to_insert": "Can not insert these items.",
+	"bonsaitrees4.tooltip.production_on_hold": "Production is on hold.",
 
 	"bonsaitrees4.tooltip.redstone_active": "Current Status: Enabled",
 	"bonsaitrees4.tooltip.redstone_inactive": "Current Status: Disabled",
