@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "roots"
+    }
+  ],
+  "values": {
+    "roots:bafflecap": {
+      "model": "roots:huge_bafflecap",
+      "valid_soil_types": [
+        "bonsaitrees4:mycelium"
+      ]
+    },
+    "roots:wildwood_sapling": {
+      "model": "roots:wildwood_tree"
+    }
+  }
+}

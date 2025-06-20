@@ -30,6 +30,9 @@
         "undergarden:deepsoil"
       ]
     },
+    "undergarden:puff_mushroom": {
+      "model": "undergarden:huge_puff_mushroom"
+    },
     "undergarden:smogstem_sapling": {
       "model": "undergarden:smogstem_tree",
       "valid_soil_types": [
@@ -37,7 +40,6 @@
       ]
     },
     "undergarden:veil_mushroom": {
-      "light_emission": 7,
       "model": "undergarden:huge_veil_mushroom",
       "valid_soil_types": [
         "undergarden:deepsoil"

@@ -1,0 +1,97 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"enchanted:alder_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"enchanted:alder_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"enchanted:alder_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"enchanted:alder_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"enchanted:alder_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"enchanted:alder_leaves"},
+    "g": {"Properties":{"axis":"z"},"Name":"enchanted:alder_log"},
+    "h": {"Properties":{"axis":"y"},"Name":"enchanted:alder_log"},
+    "i": {"Properties":{"axis":"x"},"Name":"enchanted:alder_log"}
+  },
+  "shape": [
+    [
+      "           ",
+      "   bdb     ",
+      "   dcd     ",
+      "       bbf ",
+      "       ddb ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "    d      ",
+      "  bdcdb    ",
+      "  dcacb b  ",
+      "    e ddddb",
+      " bdc  dacdd",
+      " bdc    e  ",
+      "           ",
+      "           "
+    ],
+    [
+      "   dcd     ",
+      "  dcacd    ",
+      "  caeadddd ",
+      "  aeheacccd",
+      "bdcah ceacc",
+      "bdcah  gge ",
+      "  eghgg    ",
+      "    h      "
+    ],
+    [
+      "    d      ",
+      "  bbcdb    ",
+      "  bdacb b  ",
+      " bdce dcddb",
+      "bdcca cacdd",
+      "dcaai   e  ",
+      " ega       ",
+      "           "
+    ],
+    [
+      "           ",
+      "   bbf     ",
+      " bdcdb     ",
+      " dcacd dbf ",
+      "dcaec  dcd ",
+      "caeie      ",
+      "  a        ",
+      "           "
+    ],
+    [
+      "           ",
+      "  dcd      ",
+      " dcacd     ",
+      " caeac     ",
+      " aeie      ",
+      " cae       ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "   d       ",
+      " bdcdb     ",
+      " dcacd     ",
+      "   e       ",
+      "           ",
+      "           ",
+      "           "
+    ],
+    [
+      "           ",
+      "           ",
+      "  bdb      ",
+      "  dcd      ",
+      "           ",
+      "           ",
+      "           ",
+      "           "
+    ]
+  ]
+}

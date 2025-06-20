@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "malum"
+    }
+  ],
+  "values": {
+    "malum:azure_runewood_sapling": {
+      "model": "malum:azure_runewood_tree"
+    },
+    "malum:runewood_sapling": {
+      "model": "malum:runewood_tree"
+    },
+    "malum:soulwood_sapling": {
+      "model": "malum:soulwood_tree"
+    }
+  }
+}

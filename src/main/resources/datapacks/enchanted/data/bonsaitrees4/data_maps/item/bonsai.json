@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "enchanted"
+    }
+  ],
+  "values": {
+    "enchanted:alder_sapling": {
+      "model": "enchanted:alder_tree"
+    },
+    "enchanted:hawthorn_sapling": {
+      "model": "enchanted:hawthorn_tree"
+    },
+    "enchanted:rowan_sapling": {
+      "model": "enchanted:rowan_tree"
+    }
+  }
+}

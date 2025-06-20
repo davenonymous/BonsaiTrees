@@ -1,0 +1,126 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"enchanted:hawthorn_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"enchanted:hawthorn_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"enchanted:hawthorn_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"enchanted:hawthorn_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"enchanted:hawthorn_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"enchanted:hawthorn_leaves"},
+    "g": {"Properties":{"axis":"x"},"Name":"enchanted:hawthorn_log"},
+    "h": {"Properties":{"axis":"y"},"Name":"enchanted:hawthorn_log"}
+  },
+  "shape": [
+    [
+      "       ",
+      "       ",
+      "       ",
+      "   ece ",
+      "   ebc ",
+      "   cdb ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "    c  ",
+      "  ecbce",
+      "  ecdbc",
+      "  cbadb",
+      "    f  ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "   cbc ",
+      "  ebdbc",
+      " ecbadb",
+      " cbdfad",
+      " bdfgf ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  ece  ",
+      "  ebe  ",
+      "  cdcce",
+      "ecbdbcc",
+      "ccbadbb",
+      "cbddf  ",
+      "  f g  ",
+      "       "
+    ],
+    [
+      "   c   ",
+      " ecbce ",
+      " ccdcc ",
+      " bbabb ",
+      "cbdadb ",
+      "bbdfad ",
+      "bdaad  ",
+      " fgg   ",
+      "       "
+    ],
+    [
+      "  cbc  ",
+      " cbdbc ",
+      " bdadb ",
+      " dafad ",
+      "bdaha  ",
+      "ddahf  ",
+      "bdaha  ",
+      "  fh   ",
+      "   h   "
+    ],
+    [
+      "   e   ",
+      " eecee ",
+      " ecbce ",
+      " cbdbc ",
+      " bdadb ",
+      " aag   ",
+      " ddf   ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "  cbc  ",
+      " cbdbc ",
+      " bdadb ",
+      " dafad ",
+      "  fgf  ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "   c   ",
+      " ecbce ",
+      " cbdbc ",
+      " bdadb ",
+      "   f   ",
+      "       ",
+      "       ",
+      "       "
+    ],
+    [
+      "       ",
+      "       ",
+      "  ece  ",
+      "  cbc  ",
+      "  bdb  ",
+      "       ",
+      "       ",
+      "       ",
+      "       "
+    ]
+  ]
+}

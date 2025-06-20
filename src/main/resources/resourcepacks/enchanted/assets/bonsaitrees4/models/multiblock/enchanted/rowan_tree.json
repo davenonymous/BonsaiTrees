@@ -1,0 +1,49 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"enchanted:rowan_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"enchanted:rowan_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"enchanted:rowan_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"enchanted:rowan_leaves"},
+    "e": {"Properties":{"axis":"y"},"Name":"enchanted:rowan_log"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"enchanted:rowan_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "fcac ",
+      "fcacf",
+      "     "
+    ],
+    [
+      "  d  ",
+      "  bd ",
+      "cadac",
+      "aadac",
+      "     "
+    ],
+    [
+      " dbd ",
+      " beb ",
+      "adeda",
+      "ddeda",
+      "  e  "
+    ],
+    [
+      "  d  ",
+      " db  ",
+      "cadac",
+      "addac",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "ccacf",
+      " ada ",
+      "     "
+    ]
+  ]
+}

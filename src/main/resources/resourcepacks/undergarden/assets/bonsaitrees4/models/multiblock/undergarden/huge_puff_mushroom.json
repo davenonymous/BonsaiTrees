@@ -1,0 +1,153 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Name":"undergarden:puff_mushroom_stem"},
+    "b": {"Name":"undergarden:puff_mushroom_cap"}
+  },
+  "shape": [
+    [
+      "     ",
+      " bbb ",
+      " bbb ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "bbbbb",
+      "bbbbb",
+      "bbbbb",
+      "  b  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "bbbbb",
+      "bbbbb",
+      "bbbbb",
+      " bbb ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "bbbbb",
+      "bbbbb",
+      "bbbbb",
+      "  b  ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " bbb ",
+      " bbb ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  ",
+      "  a  "
+    ],
+    [
+      "     ",
+      " bbb ",
+      " bbb ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "  a  ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "bbbbb",
+      "bbbbb",
+      "bbbbb",
+      "  b  ",
+      "     ",
+      "     ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "     "
+    ],
+    [
+      " bbb ",
+      "bbbbb",
+      "bbbbb",
+      "bbbbb",
+      " bbb ",
+      "  a  ",
+      "  a  ",
+      "  a  ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "  b  ",
+      "bbbbb",
+      "bbbbb",
+      "bbbbb",
+      "  b  ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ],
+    [
+      "     ",
+      " bbb ",
+      " bbb ",
+      " bbb ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     ",
+      "     "
+    ]
+  ]
+}
