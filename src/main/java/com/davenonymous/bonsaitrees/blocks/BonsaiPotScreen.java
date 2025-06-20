@@ -213,14 +213,23 @@ public class BonsaiPotScreen extends WidgetContainerScreen<BonsaiPotContainer> {
 					for(SoilInfo soilInfo : soilInfos.get()) {
 						for(ResourceLocation soilTypeId : soilInfo.soilType()) {
 							Set<Item> matchingBonsais = SoilCache.BONSAIS_BY_SOIL.get(soilTypeId);
+							if(matchingBonsais == null) {
+								continue;
+							}
 							validBonsais.addAll(matchingBonsais);
 						}
 					}
 
-					fakeSapling.setTooltipElements(
-						new TranslatableTooltipComponent("bonsaitrees4.tooltip.valid_saplings"),
-						new IngredientBoxTooltipComponent(validBonsais)
-					);
+					if(validBonsais.isEmpty()) {
+						fakeSapling.setTooltipElements(
+							new TranslatableTooltipComponent("bonsaitrees4.tooltip.no_valid_saplings")
+						);
+					} else {
+						fakeSapling.setTooltipElements(
+							new TranslatableTooltipComponent("bonsaitrees4.tooltip.valid_saplings"),
+							new IngredientBoxTooltipComponent(validBonsais)
+						);
+					}
 				}
 			}
 

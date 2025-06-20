@@ -35,6 +35,8 @@
 	"bonsaitrees4.tooltip.valid_saplings": "Valid saplings:",
 	"bonsaitrees4.tooltip.soil_required": "Requires soil.",
 	"bonsaitrees4.tooltip.valid_soils": "Valid soils:",
+	"bonsaitrees4.tooltip.no_valid_soils": "No valid soils for this sapling",
+	"bonsaitrees4.tooltip.no_valid_saplings": "No valid bonsais for this soil",
 	"bonsaitrees4.tooltip.tool_required": "Insert a tool to harvest.",
 	"bonsaitrees4.tooltip.camouflage_optional": "Optional pot decoration.",
 	"bonsaitrees4.tooltip.enchantment_hint": "Enchant the pot to improve its performance.",
