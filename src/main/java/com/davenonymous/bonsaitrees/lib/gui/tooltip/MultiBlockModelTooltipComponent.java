@@ -11,6 +11,7 @@ import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.renderer.ShaderInstance;
+import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
@@ -30,6 +31,16 @@ public class MultiBlockModelTooltipComponent implements TooltipComponent, Client
 		this.modelId = modelId;
 		if(ModModelLoaders.MODEL_MAP.containsKey(modelId)) {
 			ModelResourceLocation treeModelId = ModModelLoaders.MODEL_MAP.get(modelId);
+			// Fix #367: Some mods intercept model creation and wrap them in some other model type.
+			//           We simply bow down to that and skip rendering the tooltip
+			BakedModel model = Minecraft.getInstance().getModelManager().getModel(treeModelId);
+			if(!(model instanceof MultiBlockModel)) {
+				this.multiBlockModel = null;
+				this.width = 0;
+				this.height = 0;
+				return;
+			}
+
 			this.multiBlockModel = (MultiBlockModel) Minecraft.getInstance().getModelManager().getModel(treeModelId);
 			this.width = width;
 			this.height = height;
