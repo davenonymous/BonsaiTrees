@@ -42,6 +42,7 @@ public class BonsaiPotBlockInventories implements INBTSerializable<CompoundTag> 
 	public ItemStackHandler camouflageInventory;
 	public ItemStackHandler toolInventory;
 	public ItemStackHandler outputInventory;
+	public CombinedInvWrapper noInsertOutputInventory;
 	public CombinedInvWrapper accessibleInventories;
 	public ItemEnchantments enchantments;
 	private final BiConsumer<ItemStackHandler, Integer> onChangeHandler;
@@ -53,6 +54,7 @@ public class BonsaiPotBlockInventories implements INBTSerializable<CompoundTag> 
 		this.camouflageInventory = createCamouflageInventory();
 		this.toolInventory = createToolInventory();
 		this.outputInventory = createOutputInventory();
+		this.noInsertOutputInventory = createNoInsertOutputInventory();
 		this.accessibleInventories = createCombinedInventory();
 		this.onChangeHandler = onChangeHandler;
 		this.enchantments = ItemEnchantments.EMPTY;
@@ -104,6 +106,15 @@ public class BonsaiPotBlockInventories implements INBTSerializable<CompoundTag> 
 
 	public ItemStack getToolStack() {
 		return toolInventory.getStackInSlot(0);
+	}
+
+	private CombinedInvWrapper createNoInsertOutputInventory() {
+		return new CombinedInvWrapper(outputInventory) {
+			@Override
+			public ItemStack insertItem(int slot, ItemStack stack, boolean simulate) {
+				return stack;
+			}
+		};
 	}
 
 	private CombinedInvWrapper createCombinedInventory() {

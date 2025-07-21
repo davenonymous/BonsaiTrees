@@ -157,7 +157,7 @@ public class BonsaiPotBlockEntity extends BaseBlockEntity {
 	public static IItemHandler getCapability(Level level, BlockPos pos, BlockState state, BlockEntity entity, Direction side) {
 		if(entity instanceof BonsaiPotBlockEntity bonsaiPot) {
 			if(side == Direction.DOWN) {
-				return bonsaiPot.inventories.outputInventory;
+				return bonsaiPot.inventories.noInsertOutputInventory;
 			}
 
 			return bonsaiPot.inventories.accessibleInventories;

@@ -104,7 +104,7 @@ public class WidgetSlot extends SlotItemHandler {
 	@Override
 	public boolean mayPlace(ItemStack stack) {
 		if(this.blockManualInsert) {
-			return true;
+			return false;
 		}
 		return super.mayPlace(stack);
 	}
