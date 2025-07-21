@@ -17,4 +17,14 @@ public record SoilDataComponent(ItemStack soil) {
 		ItemStack.STREAM_CODEC, SoilDataComponent::soil,
 		SoilDataComponent::new
 	);
+
+	@Override
+	public boolean equals(Object o) {
+		return o instanceof SoilDataComponent(ItemStack thatSoil) && ItemStack.isSameItemSameComponents(this.soil, thatSoil);
+	}
+
+	@Override
+	public int hashCode() {
+		return ItemStack.hashItemAndComponents(soil);
+	}
 }

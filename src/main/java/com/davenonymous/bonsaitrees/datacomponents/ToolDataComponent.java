@@ -17,4 +17,14 @@ public record ToolDataComponent(ItemStack tool) {
 		ItemStack.STREAM_CODEC, ToolDataComponent::tool,
 		ToolDataComponent::new
 	);
+
+	@Override
+	public boolean equals(Object o) {
+		return o instanceof ToolDataComponent(ItemStack thatTool) && ItemStack.isSameItemSameComponents(this.tool, thatTool);
+	}
+
+	@Override
+	public int hashCode() {
+		return ItemStack.hashItemAndComponents(tool);
+	}
 }
