@@ -186,17 +186,19 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 					index++;
 				}
 
-				int toolRemainingDurability = originalToolStack.getMaxDamage() - originalToolStack.getDamageValue();
-				boolean toolHasEnoughDurability = GameplayConfig.toolDamageChance == 0 || toolRemainingDurability >= GameplayConfig.toolDamagePerCut;
-				if(!toolHasEnoughDurability) {
-					originalToolStack.hurtAndBreak(
-						GameplayConfig.toolDamagePerCut, serverLevel, null, item -> {
-						}
-					);
+				if(originalToolStack.isDamageableItem()) {
+					int toolRemainingDurability = originalToolStack.getMaxDamage() - originalToolStack.getDamageValue();
+					boolean toolHasEnoughDurability = GameplayConfig.toolDamageChance == 0 || toolRemainingDurability >= GameplayConfig.toolDamagePerCut;
+					if(!toolHasEnoughDurability) {
+						originalToolStack.hurtAndBreak(
+							GameplayConfig.toolDamagePerCut, serverLevel, null, item -> {
+							}
+						);
 
-					this.potBlock.setChanged();
-					this.potBlock.notifyClients(false);
-					return;
+						this.potBlock.setChanged();
+						this.potBlock.notifyClients(false);
+						return;
+					}
 				}
 			}
 
@@ -210,7 +212,7 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 				this.cutCooldown = GameplayConfig.cutCooldown;
 				this.growTicks = getRequiredGrowTicks();
 			} else {
-				if(GameplayConfig.toolDamageChance > serverLevel.random.nextDouble() && GameplayConfig.toolDamagePerCut > 0) {
+				if(originalToolStack.isDamageableItem() && GameplayConfig.toolDamageChance > serverLevel.random.nextDouble() && GameplayConfig.toolDamagePerCut > 0) {
 					originalToolStack.hurtAndBreak(
 						GameplayConfig.toolDamagePerCut, serverLevel, null, item -> {
 						}

@@ -8,6 +8,7 @@ import com.davenonymous.bonsaitrees.setup.ModDataComponents;
 import com.davenonymous.bonsaitrees.setup.ModTags;
 import com.davenonymous.bonsaitrees.setup.cache.BonsaiCache;
 import com.davenonymous.bonsaitrees.setup.cache.SoilCache;
+import com.davenonymous.bonsaitrees.setup.config.GameplayConfig;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponentMap;
@@ -147,7 +148,9 @@ public class BonsaiPotBlockInventories implements INBTSerializable<CompoundTag> 
 
 			@Override
 			public boolean isItemValid(int slot, ItemStack stack) {
-				return stack.isDamageableItem() && BONSAI_ACTIONS.stream().anyMatch(stack::canPerformAction);
+				boolean isValid = stack.has(DataComponents.TOOL);
+				boolean configAllowed = GameplayConfig.toolAllowIndestructible || stack.isDamageableItem();
+				return isValid && configAllowed && BONSAI_ACTIONS.stream().anyMatch(stack::canPerformAction);
 			}
 		};
 	}
