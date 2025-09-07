@@ -25,7 +25,7 @@ import net.neoforged.neoforge.client.model.data.ModelData;
 import java.util.HashMap;
 import java.util.Map;
 
-@EventBusSubscriber(modid = BonsaiTrees.MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = BonsaiTrees.MODID, value = Dist.CLIENT)
 public class ModModelLoaders {
 	public static final Map<ResourceLocation, VertexBuffer> MULTIBLOCK_VBOS = new HashMap<>();
 	public static Map<ResourceLocation, ModelResourceLocation> MODEL_MAP = new HashMap<>();

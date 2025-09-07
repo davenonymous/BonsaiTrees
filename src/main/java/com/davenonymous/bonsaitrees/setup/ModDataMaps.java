@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@EventBusSubscriber(modid = BonsaiTrees.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = BonsaiTrees.MODID)
 public class ModDataMaps {
 	public static final DataMapType<Item, BonsaiInfo> BONSAI = DataMapType
 		.builder(

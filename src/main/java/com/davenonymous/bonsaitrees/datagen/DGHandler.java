@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD, modid = BonsaiTrees.MODID)
+@EventBusSubscriber(modid = BonsaiTrees.MODID)
 public class DGHandler {
 	@SuppressWarnings("ConstantConditions")
 	@SubscribeEvent

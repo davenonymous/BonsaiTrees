@@ -17,7 +17,7 @@ import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-@EventBusSubscriber(modid = BonsaiTrees.MODID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = BonsaiTrees.MODID)
 public class ModCommands {
 	public static final DeferredRegister<ArgumentTypeInfo<?, ?>> ARGUMENT_TYPES = DeferredRegister.create(BuiltInRegistries.COMMAND_ARGUMENT_TYPE, BonsaiTrees.MODID);
 

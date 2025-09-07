@@ -24,7 +24,7 @@ import java.nio.file.Path;
 import java.util.Comparator;
 import java.util.Optional;
 
-@EventBusSubscriber(modid = BonsaiTrees.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = BonsaiTrees.MODID)
 public class ModDataPacks {
 	private static final PackSelectionConfig REQUIRED_SELECTION_CONFIG = new PackSelectionConfig(true, Pack.Position.BOTTOM, false);
 	private static final PackSelectionConfig OPTIONAL_SELECTION_CONFIG = new PackSelectionConfig(false, Pack.Position.BOTTOM, false);

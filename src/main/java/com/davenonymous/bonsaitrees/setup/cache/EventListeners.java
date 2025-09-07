@@ -10,7 +10,7 @@ import net.neoforged.neoforge.event.OnDatapackSyncEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.registries.datamaps.DataMapsUpdatedEvent;
 
-@EventBusSubscriber(modid = BonsaiTrees.MODID, bus = EventBusSubscriber.Bus.GAME)
+@EventBusSubscriber(modid = BonsaiTrees.MODID)
 public class EventListeners {
 	@SubscribeEvent
 	public static void dataMapsUpdated(DataMapsUpdatedEvent event) {
