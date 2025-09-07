@@ -261,12 +261,16 @@ public class BonsaiPotBlockInventories implements INBTSerializable<CompoundTag> 
 		}
 
 		if(componentInput.get(ModDataComponents.SOIL_COMPONENT) instanceof SoilDataComponent(ItemStack soil)) {
-			this.setSoilStack(soil);
+			this.setSoilStack(soil.copy());
 		}
 
 		if(componentInput.get(ModDataComponents.SAPLING_COMPONENT) instanceof SaplingDataComponent saplingDataComponent) {
-			Block saplingBlock = BuiltInRegistries.BLOCK.get(saplingDataComponent.sapling());
-			this.setSaplingStack(saplingBlock);
+			if(BuiltInRegistries.BLOCK.containsKey(saplingDataComponent.sapling())) {
+				Block saplingBlock = BuiltInRegistries.BLOCK.get(saplingDataComponent.sapling());
+				this.setSaplingStack(saplingBlock);
+			} else if(BuiltInRegistries.ITEM.containsKey(saplingDataComponent.sapling())) {
+				this.setSaplingStack(new ItemStack(BuiltInRegistries.ITEM.get(saplingDataComponent.sapling())));
+			}
 		}
 
 		if(componentInput.get(ModDataComponents.TOOL_COMPONENT) instanceof ToolDataComponent(ItemStack tool)) {
@@ -281,7 +285,7 @@ public class BonsaiPotBlockInventories implements INBTSerializable<CompoundTag> 
 	protected void collectImplicitComponents(DataComponentMap.Builder components) {
 		ItemStack soil = this.getSoilStack();
 		if(!soil.isEmpty()) {
-			components.set(ModDataComponents.SOIL_COMPONENT, new SoilDataComponent(soil));
+			components.set(ModDataComponents.SOIL_COMPONENT, new SoilDataComponent(soil.copy()));
 		}
 
 		ItemStack sapling = this.getSaplingStack();

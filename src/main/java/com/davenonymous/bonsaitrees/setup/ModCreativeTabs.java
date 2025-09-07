@@ -48,10 +48,15 @@ public class ModCreativeTabs {
 				Sorting.toSortedList(BonsaiCache.BONSAI_BY_ITEM.keySet()).forEach(sapling -> {
 					BonsaiInfo bonsai = BonsaiCache.BONSAI_BY_ITEM.get(sapling);
 					ItemStack stack = new ItemStack(ModBlocks.BONSAI_POT.get());
+					var soilType = bonsai.validSoilTypes(Minecraft.getInstance().level.registryAccess()).getFirst();
+					if(soilType != null && soilType.hasSoils()) {
+						ItemStack soilStack = soilType.defaultItem();
+						stack.set(ModDataComponents.SOIL_COMPONENT.get(), new SoilDataComponent(soilStack));
+					} else {
+						ItemStack soilStack = new ItemStack(Items.GRASS_BLOCK);
+						stack.set(ModDataComponents.SOIL_COMPONENT.get(), new SoilDataComponent(soilStack));
+					}
 
-					ItemStack soilStack = new ItemStack(Items.GRASS_BLOCK);
-
-					stack.set(ModDataComponents.SOIL_COMPONENT.get(), new SoilDataComponent(soilStack));
 					stack.set(
 						ModDataComponents.SAPLING_COMPONENT.get(),
 						new SaplingDataComponent(sapling.builtInRegistryHolder().getKey().location(), Optional.of(1F))
