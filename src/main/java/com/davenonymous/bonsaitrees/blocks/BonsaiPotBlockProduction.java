@@ -1,6 +1,7 @@
 package com.davenonymous.bonsaitrees.blocks;
 
 import com.davenonymous.bonsaitrees.BonsaiTrees;
+import com.davenonymous.bonsaitrees.lib.util.LootHelper;
 import com.davenonymous.bonsaitrees.lib.util.StackHelper;
 import com.davenonymous.bonsaitrees.setup.cache.BonsaiCache;
 import com.davenonymous.bonsaitrees.setup.cache.SoilCache;
@@ -143,47 +144,44 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 				ResourceKey<LootTable> lootTableId = getBonsaiInfo().get().lootTable();
 				LootTable lootTable = serverLevel.getServer().reloadableRegistries().getLootTable(lootTableId);
 
-				int extraRools = 0;
+
+				int extraRolls = 0;
 				ItemStack soil = potBlock.inventories.getSoilStack();
 				if(SoilCache.isSoil(soil)) {
 					Optional<SoilInfo> soilInfo = getBonsaiInfo().get().firstMatchingSoil(SoilCache.getSoilInfo(soil).get(), getBonsaiInfo().get());
 					if(soilInfo.isPresent() && soilInfo.get().extraRolls().isPresent()) {
-						extraRools = soilInfo.get().extraRolls().get();
+						extraRolls = soilInfo.get().extraRolls().get();
 					}
 				}
+
+
 
 				LootContext lootContext = new LootContext.Builder(lootParams.create(LootContextParamSets.BLOCK)).create(lootTable.randomSequence);
-				NumberProvider originalRolls[] = new NumberProvider[lootTable.pools.size()];
-				int index = 0;
-				for(var pool : lootTable.pools) {
-					originalRolls[index] = pool.getRolls();
-					pool.setRolls(ConstantValue.exactly(pool.getRolls().getInt(lootContext) + extraRools));
-					index++;
-				}
-
-
-				lootTable.getRandomItems(
-					lootContext, stack -> {
-						if(stack.isEmpty()) {
-							return;
+				var drops = LootHelper.getLootTableDrops(lootTableId, serverLevel, lootContext);
+				for(var drop : drops) {
+					var stack = drop.stack().copy();
+					if(stack.getItem() instanceof BlockItem blockItem) {
+						BlockState state = blockItem.getBlock().defaultBlockState();
+						if(state.requiresCorrectToolForDrops() && !toolStack.isCorrectToolForDrops(state)) {
+							continue;
 						}
-
-						if(stack.getItem() instanceof BlockItem blockItem) {
-							Block block = blockItem.getBlock();
-							BlockState state = block.defaultBlockState();
-							if(state.requiresCorrectToolForDrops() && !toolStack.isCorrectToolForDrops(state)) {
-								return;
-							}
-						}
-
-						newRolledItems.add(stack);
 					}
-				);
 
-				index = 0;
-				for(var pool : lootTable.pools) {
-					pool.setRolls(originalRolls[index]);
-					index++;
+					int rolledCount = 0;
+					for(int roll = 0; roll < stack.getCount() + extraRolls; roll++) {
+						var include = drop.conditions().stream().allMatch(condition -> condition.test(lootContext));
+						if(!include) {
+							continue;
+						}
+						rolledCount++;
+					}
+
+					if(rolledCount == 0) {
+						continue;
+					}
+
+					stack.setCount(rolledCount);
+					newRolledItems.add(stack);
 				}
 
 				if(originalToolStack.isDamageableItem()) {

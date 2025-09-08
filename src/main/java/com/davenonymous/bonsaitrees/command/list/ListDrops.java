@@ -57,6 +57,13 @@ public class ListDrops implements Command<CommandSourceStack> {
 		for(var lootDrop : drops) {
 			var drop = lootDrop.stack();
 			context.getSource().sendSuccess(drop::getHoverName, false);
+			var conditions = lootDrop.conditions();
+			if(!conditions.isEmpty()) {
+				context.getSource().sendSuccess(() -> Component.literal("  Conditions:"), false);
+				for(var condition : conditions) {
+					context.getSource().sendSuccess(() -> Component.literal("   - " + condition.getClass().getSimpleName()), false);
+				}
+			}
 		}
 
 		return 0;

@@ -14,6 +14,7 @@ import com.davenonymous.bonsaitrees.setup.ModDataComponents;
 import com.davenonymous.bonsaitrees.setup.ModModelLoaders;
 import com.davenonymous.bonsaitrees.setup.cache.BonsaiCache;
 import com.davenonymous.bonsaitrees.setup.cache.LootCache;
+import com.davenonymous.bonsaitrees.setup.config.DebugConfig;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.VertexBuffer;
 import com.mojang.blaze3d.vertex.VertexFormat;
@@ -32,6 +33,7 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.renderer.ShaderInstance;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -41,6 +43,10 @@ import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.storage.loot.predicates.BonusLevelTableCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import org.jetbrains.annotations.Nullable;
 import org.joml.AxisAngle4f;
 import org.joml.Matrix4f;
@@ -119,6 +125,10 @@ public class BonsaiCategory implements IRecipeCategory<BonsaiRecipe> {
 			LootHelper.LootTableDrop lootDrop = drops.get(slot);
 			ItemStack drop = lootDrop.stack().copy();
 
+			if(!DebugConfig.showRollsAsCountInJEI) {
+				drop.setCount(1);
+			}
+
 			builder.addOutputSlot(81 + 19 * (targetSlot % 4), 1 + 19 * (targetSlot / 4))
 				.setSlotName("output_" + targetSlot)
 				.addItemStack(drop)
@@ -136,14 +146,33 @@ public class BonsaiCategory implements IRecipeCategory<BonsaiRecipe> {
 		}
 
 		List<TooltipComponent> conditionTooltips = new LinkedList<>();
-		lootDrop.conditions().forEach(condition -> {
+		float totalRandomChance = 1.0f;
+		for(var condition : lootDrop.conditions()) {
+			if(condition instanceof LootItemRandomChanceCondition(NumberProvider chanceProvider) && chanceProvider instanceof ConstantValue(float value)) {
+				totalRandomChance *= value;
+				continue;
+			}
+
+			if(condition instanceof BonusLevelTableCondition bonusCondition) {
+				// Ignore bonus level conditions
+				continue;
+			}
+
 			TooltipComponent conditionTooltip = LootHelper.interpretCondition(condition);
 			if(conditionTooltip == null) {
-				return;
+				continue;
 			}
 
 			conditionTooltips.add(conditionTooltip);
-		});
+		}
+
+		if(DebugConfig.showChances) {
+			int chancePercent = Math.round(Math.clamp(totalRandomChance, 0f, 1f) * 100.0f);
+			tooltip.add(StringTooltipComponent.gray(I18n.get("jei.bonsaitrees4.recipes.chance", chancePercent)));
+
+			int rolls = lootDrop.stack().getCount();
+			tooltip.add(StringTooltipComponent.gray(I18n.get("jei.bonsaitrees4.recipes.rolls", rolls)));
+		}
 
 		if(conditionTooltips.isEmpty()) {
 			return;
