@@ -186,7 +186,14 @@ public class BonsaiPotBlockProduction implements INBTSerializable<CompoundTag> {
 
 				if(originalToolStack.isDamageableItem()) {
 					int toolRemainingDurability = originalToolStack.getMaxDamage() - originalToolStack.getDamageValue();
-					boolean toolHasEnoughDurability = GameplayConfig.toolDamageChance == 0 || toolRemainingDurability >= GameplayConfig.toolDamagePerCut;
+					if(originalToolStack.getItem().builtInRegistryHolder().getKey().location().getNamespace().equals("silentgear")) {
+						// If a silent gear tool is broken, it is stuck at 1 durability until repaired
+						// We need to make sure count that tool has broken!
+						toolRemainingDurability--;
+					}
+
+					boolean toolHasEnoughDurability = GameplayConfig.toolDamageChance == 0.0f || toolRemainingDurability >= GameplayConfig.toolDamagePerCut;
+
 					if(!toolHasEnoughDurability) {
 						originalToolStack.hurtAndBreak(
 							GameplayConfig.toolDamagePerCut, serverLevel, null, item -> {
