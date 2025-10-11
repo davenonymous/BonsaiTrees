@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "vanillabackport"
+    }
+  ],
+  "values": {
+    "vanillabackport:pale_oak_sapling": {
+      "model": "vanillabackport:pale_oak_bonemeal"
+    }
+  }
+}

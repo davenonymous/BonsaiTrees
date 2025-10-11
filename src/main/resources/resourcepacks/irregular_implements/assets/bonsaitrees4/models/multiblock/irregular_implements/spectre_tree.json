@@ -1,0 +1,49 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"irregular_implements:spectre_leaves"},
+    "b": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"irregular_implements:spectre_leaves"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"irregular_implements:spectre_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"irregular_implements:spectre_leaves"},
+    "e": {"Properties":{"axis":"y"},"Name":"irregular_implements:spectre_log"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"irregular_implements:spectre_leaves"}
+  },
+  "shape": [
+    [
+      "     ",
+      "     ",
+      "fcac ",
+      " cac ",
+      "     "
+    ],
+    [
+      "  d  ",
+      "  b  ",
+      "cadac",
+      "aadac",
+      "     "
+    ],
+    [
+      " dbd ",
+      " beb ",
+      "adeda",
+      "ddeda",
+      "  e  "
+    ],
+    [
+      "  d  ",
+      " db  ",
+      "cadac",
+      "addac",
+      "     "
+    ],
+    [
+      "     ",
+      "     ",
+      "ccac ",
+      " adac",
+      "     "
+    ]
+  ]
+}
