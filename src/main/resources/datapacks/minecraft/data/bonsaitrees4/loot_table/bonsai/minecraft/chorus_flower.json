@@ -1,26 +1,32 @@
 {
-  "pools": [
-    {
-      "bonus_rolls": 0.5,
-      "conditions": [
-        {
-          "chance": 0.2,
-          "condition": "minecraft:random_chance"
-        }
-      ],
-      "entries": [
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:blocks/chorus_plant"
-        },
-        {
-          "type": "minecraft:loot_table",
-          "value": "minecraft:blocks/chorus_flower"
-        }
-      ],
-      "name": "other",
-      "rolls": 1.0
-    }
-  ],
-  "random_sequence": "bonsaitrees4:bonsai/minecraft/chorus_flower"
+   "neoforge:conditions" : [
+      {
+         "modid" : "minecraft",
+         "type" : "neoforge:mod_loaded"
+      }
+   ],
+   "pools" : [
+      {
+         "bonus_rolls" : 0.5,
+         "conditions" : [
+            {
+               "chance" : 0.2,
+               "condition" : "minecraft:random_chance"
+            }
+         ],
+         "entries" : [
+            {
+               "type" : "minecraft:loot_table",
+               "value" : "minecraft:blocks/chorus_plant"
+            },
+            {
+               "type" : "minecraft:loot_table",
+               "value" : "minecraft:blocks/chorus_flower"
+            }
+         ],
+         "name" : "other",
+         "rolls" : 1
+      }
+   ],
+   "random_sequence" : "bonsaitrees4:bonsai/minecraft/chorus_flower"
 }
