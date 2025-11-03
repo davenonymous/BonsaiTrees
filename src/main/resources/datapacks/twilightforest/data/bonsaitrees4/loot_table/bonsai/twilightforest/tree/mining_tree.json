@@ -1,7 +1,7 @@
 {
    "neoforge:conditions" : [
       {
-         "modid" : "bonsaitrees4",
+         "modid" : "twilightforest",
          "type" : "neoforge:mod_loaded"
       }
    ],

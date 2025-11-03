@@ -21,10 +21,6 @@
             },
             {
                "type" : "minecraft:loot_table",
-               "value" : "irregular_implements:blocks/sakanade_spores"
-            },
-            {
-               "type" : "minecraft:loot_table",
                "value" : "minecraft:blocks/brown_mushroom_block"
             }
          ],
