@@ -1,0 +1,109 @@
+{
+	"itemGroup.bonsaitrees4": "Бонсай-деревья",
+
+	"block.bonsaitrees4.bonsaipot": "Горшок для бонсай",
+	"block.bonsaitrees4.bonsaipot.enchanted": "Зачарованный горшок для бонсай",
+	"block.bonsaitrees4.bonsaipot_small": "Маленький горшок для бонсай",
+	"block.bonsaitrees4.bonsaipot_small.enchanted": "Маленький зачарованный горшок для бонсай",
+
+	"jei.bonsaitrees4.bonsais.title": "Бонсай-деревья",
+	"jei.bonsaitrees4.soiltypes.title": "Почвы для бонсай",
+	"jei.bonsaitrees4.recipes.requires": "Условия:",
+	"jei.bonsaitrees4.recipes.chance": "Шанс: §e%.1f%%§r",
+	"jei.bonsaitrees4.recipes.rolls": "Попыток: §e%d§r",
+	"jei.bonsaitrees4.recipes.unknown_condition": "Неизвестное условие:",
+
+	"commands.bonsaitrees4.generate.model.flood_fill.too_large": "Модель содержит слишком много блоков. Максимум — %d.",
+	"commands.bonsaitrees4.generate.model.flood_fill.too_many_states": "Модель содержит слишком много состояний блоков. Максимум — %d.",
+	"commands.bonsaitrees4.generate.model.copied_to_clipboard": "Модель скопирована в буфер обмена!",
+
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.dirt": "Земля",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.sand": "Песок",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.water": "Вода",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.lava": "Лава",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.stone": "Камень",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.nether_stone": "Незерский камень",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.end_stone": "Камень Края",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.mycelium": "Мицелий",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.nylium": "Нилиум",
+
+	"bonsaitrees4.tooltip.camouflage": "Внешний вид:",
+	"bonsaitrees4.tooltip.soil": "Почва:",
+	"bonsaitrees4.tooltip.sapling": "Дерево:",
+
+	"bonsaitrees4.tooltip.painted": "Раскрашен",
+
+	"bonsaitrees4.tooltip.sapling_required": "Требуется саженец.",
+	"bonsaitrees4.tooltip.valid_saplings": "Подходящие саженцы:",
+	"bonsaitrees4.tooltip.soil_required": "Требуется почва.",
+	"bonsaitrees4.tooltip.valid_soils": "Подходящие почвы:",
+	"bonsaitrees4.tooltip.no_valid_soils": "Нет подходящих почв для этого саженца",
+	"bonsaitrees4.tooltip.no_valid_saplings": "Нет подходящих бонсай для этой почвы",
+	"bonsaitrees4.tooltip.tool_required": "Вставьте инструмент для сбора урожая.",
+	"bonsaitrees4.tooltip.camouflage_optional": "Дополнительное украшение горшка.",
+	"bonsaitrees4.tooltip.enchantment_hint": "Зачаруйте горшок, чтобы улучшить его характеристики.",
+	"bonsaitrees4.tooltip.and_more": "+%d",
+	"bonsaitrees4.tooltip.unable_to_insert": "Невозможно поместить эти предметы.",
+	"bonsaitrees4.tooltip.production_on_hold": "Производство приостановлено.",
+
+	"bonsaitrees4.tooltip.redstone_active": "Текущий статус: Включено",
+	"bonsaitrees4.tooltip.redstone_inactive": "Текущий статус: Выключено",
+
+	"bonsaitrees4.tooltip.enchantments": "Зачарования горшка:",
+
+	"bonsaitrees4.configuration.title": "Настройки бонсай",
+
+	"bonsaitrees4.configuration.debug": "Отладка",
+	"bonsaitrees4.configuration.debug.tooltip": "Параметры, связанные с отладкой и разработкой деревьев.",
+
+	"bonsaitrees4.configuration.debug.show_chances": "Показывать шансы",
+	"bonsaitrees4.configuration.debug.show_chances.tooltip": "Эти шансы рассчитаны на основе таблиц лута и не являются надёжными. На реальные шансы влияет множество факторов, которые здесь не учитываются.",
+
+	"bonsaitrees4.configuration.debug.show_unknown_loot_conditions": "Показывать неизвестные условия лута",
+	"bonsaitrees4.configuration.debug.show_unknown_loot_conditions.tooltip": "Может помочь выявить проблемы с таблицами лута.",
+
+	"bonsaitrees4.configuration.debug.show_unused_soil_recipes_in_jei": "Показывать неиспользуемые почвы в JEI",
+	"bonsaitrees4.configuration.debug.show_unused_soil_recipes_in_jei.tooltip": "Может помочь выявить проблемы с почвами.",
+
+	"bonsaitrees4.configuration.debug.show_rolls_as_count_in_jei": "Отображать попытки как количество предметов в JEI",
+	"bonsaitrees4.configuration.debug.show_rolls_as_count_in_jei.tooltip": "Показывает, сколько раз предмет выпадает при генерации лута.",
+
+	"bonsaitrees4.configuration.gameplay": "Игровой процесс",
+	"bonsaitrees4.configuration.gameplay.tooltip": "Параметры, связанные с игровым процессом, балансом и функционалом.",
+
+	"bonsaitrees4.configuration.gameplay.baseGrowTicks": "Базовое время роста (в тиках)",
+	"bonsaitrees4.configuration.gameplay.baseGrowTicks.tooltip": "Если у бонсай-дерева нет собственного времени роста, будет использовано это значение.",
+
+	"bonsaitrees4.configuration.gameplay.cutCooldown": "Задержка при переполнении вывода",
+	"bonsaitrees4.configuration.gameplay.cutCooldown.tooltip": "В основном предотвращает перегрузку сервера из-за частых попыток сбора урожая при заполненном выводе. Задержка (в тиках) перед повторной попыткой сбора урожая.",
+
+	"bonsaitrees4.configuration.gameplay.toolDamagePerCut": "Урон инструменту за сбор",
+	"bonsaitrees4.configuration.gameplay.toolDamagePerCut.tooltip": "При каждом сборе урожая с бонсай существует шанс, что использованный инструмент получит указанный урон.",
+
+	"bonsaitrees4.configuration.gameplay.toolDamageChance": "Шанс повреждения инструмента",
+	"bonsaitrees4.configuration.gameplay.toolDamageChance.tooltip": "Вероятность того, что инструмент получит урон при сборе урожая с бонсай.",
+
+	"bonsaitrees4.configuration.gameplay.toolAllowIndestructible": "Разрешить неуничтожимые инструменты",
+	"bonsaitrees4.configuration.gameplay.toolAllowIndestructible.tooltip": "Если включено, можно использовать инструменты, не теряющие прочность (например, топор Supreme из Mystical Agriculture) для сбора урожая с бонсай.",
+
+	"bonsaitrees4.configuration.client": "Клиент",
+	"bonsaitrees4.configuration.client.tooltip": "Параметры, связанные с отображением и визуальной информацией.",
+
+	"bonsaitrees4.configuration.client.minimal_quads": "Отображать только внешние грани",
+	"bonsaitrees4.configuration.client.minimal_quads.tooltip": "Если включено, будут отрисовываться только внешние грани горшка для бонсай. Может улучшить производительность на очень слабых ПК.",
+
+	"bonsaitrees4.configuration.client.disable_model_cache": "Отключить кэш моделей",
+	"bonsaitrees4.configuration.client.disable_model_cache.tooltip": "Если включено, кэш моделей будет отключён. Полезно при разработке и отладке, но сильно снижает производительность даже на мощных ПК.",
+
+	"bonsaitrees4.configuration.client.show_jei_subtypes": "Показывать все бонсай в JEI",
+	"bonsaitrees4.configuration.client.show_jei_subtypes.tooltip": "Одновременное отображение всех бонсай может перегружать слабые ПК и загромождать список ингредиентов JEI.",
+
+	"bonsaitrees4.configuration.client.show_tree_in_sapling_tooltip": "Показывать дерево во всплывающей подсказке саженца",
+	"bonsaitrees4.configuration.client.show_tree_in_sapling_tooltip.tooltip": "Если включено, дерево будет отображаться во всплывающей подсказке предмета саженца.",
+
+	"bonsaitrees4.redstone_mode.ignore_power": "Игнорировать сигнал редстоуна",
+	"bonsaitrees4.redstone_mode.stop_on_power": "Останавливать работу при наличии сигнала редстоуна",
+	"bonsaitrees4.redstone_mode.require_power": "Работать только при наличии сигнала редстоуна",
+
+	"config.jade.plugin_bonsaitrees4.jade/bonsai_pot": "Горшок для бонсай"
+}
