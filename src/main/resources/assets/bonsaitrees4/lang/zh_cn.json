@@ -10,7 +10,7 @@
   "jei.bonsaitrees4.soiltypes.title": "盆栽土壤",
   "jei.bonsaitrees4.recipes.requires": "条件：",
   "jei.bonsaitrees4.recipes.chance": "概率：§e%.1f%%§r",
-  "jei.bonsaitrees4.recipes.rolls": "Rolls: §e%d§r",
+  "jei.bonsaitrees4.recipes.rolls": "抽选次数：§e%d§r",
   "jei.bonsaitrees4.recipes.unknown_condition": "未知条件：",
 
   "commands.bonsaitrees4.generate.model.flood_fill.too_large": "该模型包含方块过多。最大数量为：%d。",
