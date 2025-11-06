@@ -8,7 +8,9 @@
 
   "jei.bonsaitrees4.bonsais.title": "盆栽树",
   "jei.bonsaitrees4.soiltypes.title": "盆栽土壤",
-  "jei.bonsaitrees4.recipes.requires": "需要：",
+  "jei.bonsaitrees4.recipes.requires": "条件：",
+  "jei.bonsaitrees4.recipes.chance": "概率：§e%.1f%%§r",
+  "jei.bonsaitrees4.recipes.rolls": "Rolls: §e%d§r",
   "jei.bonsaitrees4.recipes.unknown_condition": "未知条件：",
 
   "commands.bonsaitrees4.generate.model.flood_fill.too_large": "该模型包含方块过多。最大数量为：%d。",
@@ -60,6 +62,12 @@
   "bonsaitrees4.configuration.debug.show_unknown_loot_conditions": "显示未知的战利品条件",
   "bonsaitrees4.configuration.debug.show_unknown_loot_conditions.tooltip": "能帮助确定战利品表相关问题。",
 
+  "bonsaitrees4.configuration.debug.show_unused_soil_recipes_in_jei": "在JEI中显示未被使用的土壤",
+  "bonsaitrees4.configuration.debug.show_unused_soil_recipes_in_jei.tooltip": "能帮助确定土壤相关问题。",
+
+  "bonsaitrees4.configuration.debug.show_rolls_as_count_in_jei": "在JEI中以物品数量形式显示抽选次数",
+  "bonsaitrees4.configuration.debug.show_rolls_as_count_in_jei.tooltip": "显示战利品生成时物品被抽选中的的概率。",
+
   "bonsaitrees4.configuration.gameplay": "游戏机制",
   "bonsaitrees4.configuration.gameplay.tooltip": "游戏机制、平衡性以及特性相关的选项。",
 
@@ -75,6 +83,8 @@
   "bonsaitrees4.configuration.gameplay.toolDamageChance": "工具耐久度消耗概率",
   "bonsaitrees4.configuration.gameplay.toolDamageChance.tooltip": "砍伐盆栽时，工具消耗耐久度的概率。",
 
+  "bonsaitrees4.configuration.gameplay.toolAllowIndestructible": "允许使用无法破坏的工具",
+  "bonsaitrees4.configuration.gameplay.toolAllowIndestructible.tooltip": "启用后，可使用无法破坏的工具（例如：神秘农业模组的终极精华斧）在盆栽盆中砍伐树木。",
 
   "bonsaitrees4.configuration.client": "客户端",
   "bonsaitrees4.configuration.client.tooltip": "渲染和信息显示相关的选项。",
