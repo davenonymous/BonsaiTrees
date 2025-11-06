@@ -15,7 +15,7 @@ import net.neoforged.neoforge.client.event.RenderTooltipEvent;
 
 import java.util.List;
 
-@EventBusSubscriber(modid = BonsaiTrees.MODID, bus = EventBusSubscriber.Bus.GAME, value = Dist.CLIENT)
+@EventBusSubscriber(modid = BonsaiTrees.MODID, value = Dist.CLIENT)
 public class BonsaiTooltip {
 
 	@SubscribeEvent

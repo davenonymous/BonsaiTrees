@@ -1,0 +1,87 @@
+{
+  "loader": "bonsaitrees4:multiblockmodel",
+  "version": 4,
+  "ref": {
+    "a": {"Properties":{"waterlogged":"false","persistent":"false","distance":"1"},"Name":"vanillabackport:pale_oak_leaves"},
+    "b": {"Properties":{"axis":"y"},"Name":"vanillabackport:pale_oak_log"},
+    "c": {"Properties":{"waterlogged":"false","persistent":"false","distance":"2"},"Name":"vanillabackport:pale_oak_leaves"},
+    "d": {"Properties":{"waterlogged":"false","persistent":"false","distance":"3"},"Name":"vanillabackport:pale_oak_leaves"},
+    "e": {"Properties":{"waterlogged":"false","persistent":"false","distance":"6"},"Name":"vanillabackport:pale_oak_leaves"},
+    "f": {"Properties":{"waterlogged":"false","persistent":"false","distance":"4"},"Name":"vanillabackport:pale_oak_leaves"},
+    "g": {"Properties":{"waterlogged":"false","persistent":"false","distance":"5"},"Name":"vanillabackport:pale_oak_leaves"}
+  },
+  "shape": [
+    [
+      "        ",
+      " ffffg  ",
+      "  cfg   ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   ff   ",
+      " ddddf  ",
+      " cadfge ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "  dddf  ",
+      "dccccdfg",
+      "cabcdfg ",
+      "  b     ",
+      "  b     ",
+      "        ",
+      "        "
+    ],
+    [
+      " cdccdf ",
+      "cacbbcdf",
+      "abbbcdf ",
+      " bbb    ",
+      " bbb    ",
+      " bbb    ",
+      "  bb    "
+    ],
+    [
+      " dcacdd ",
+      "dcabbacd",
+      "cabbacd ",
+      "  bb    ",
+      "  bb    ",
+      "  bb    ",
+      "  bb    "
+    ],
+    [
+      "  dcdf  ",
+      "fdcacdfg",
+      " cacddf ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "   fd   ",
+      "gffdddfg",
+      " dcdfge ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ],
+    [
+      "        ",
+      " gfdfg  ",
+      "        ",
+      "        ",
+      "        ",
+      "        ",
+      "        "
+    ]
+  ]
+}

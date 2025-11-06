@@ -8,7 +8,7 @@ import net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactori
 
 import java.util.function.Function;
 
-@EventBusSubscriber(modid = BonsaiTrees.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = BonsaiTrees.MODID)
 public class ModTooltipComponents {
 
 	@SubscribeEvent

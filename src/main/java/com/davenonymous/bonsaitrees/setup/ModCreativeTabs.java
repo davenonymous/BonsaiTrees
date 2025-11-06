@@ -46,11 +46,8 @@ public class ModCreativeTabs {
 				output.accept(ModItems.BONSAI_POT_ITEM.get());
 				output.accept(ModItems.BONSAI_POT_SMALL_ITEM.get());
 				Sorting.toSortedList(BonsaiCache.BONSAI_BY_ITEM.keySet()).forEach(sapling -> {
-					BonsaiInfo bonsai = BonsaiCache.BONSAI_BY_ITEM.get(sapling);
 					ItemStack stack = new ItemStack(ModBlocks.BONSAI_POT.get());
-
 					ItemStack soilStack = new ItemStack(Items.GRASS_BLOCK);
-
 					stack.set(ModDataComponents.SOIL_COMPONENT.get(), new SoilDataComponent(soilStack));
 					stack.set(
 						ModDataComponents.SAPLING_COMPONENT.get(),

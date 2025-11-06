@@ -7,11 +7,13 @@ public class GameplayConfig {
 	public final ModConfigSpec.IntValue CUT_COOLDOWN;
 	public final ModConfigSpec.IntValue TOOL_DAMAGE_PER_CUT;
 	public final ModConfigSpec.DoubleValue TOOL_DAMAGE_CHANCE;
+	public final ModConfigSpec.BooleanValue TOOL_ALLOW_INDESTRUCTIBLE;
 
 	public static int baseGrowTicks;
 	public static int cutCooldown;
 	public static int toolDamagePerCut;
 	public static double toolDamageChance;
+	public static boolean toolAllowIndestructible;
 
 	public GameplayConfig(ModConfigSpec.Builder builder) {
 		builder.push("gameplay");
@@ -36,6 +38,11 @@ public class GameplayConfig {
 			.translation("bonsaitrees4.configuration.gameplay.toolDamageChance")
 			.defineInRange("toolDamageChance", 1.0f / 3, 0, 1);
 
+		TOOL_ALLOW_INDESTRUCTIBLE = builder
+			.comment("If true, indestructible tools (like those from Mystical Agriculture) can be used in bonsai pots.")
+			.translation("bonsaitrees4.configuration.gameplay.toolAllowIndestructible")
+			.define("toolAllowIndestructible", true);
+
 		builder.pop();
 	}
 
@@ -44,5 +51,6 @@ public class GameplayConfig {
 		cutCooldown = CUT_COOLDOWN.get();
 		toolDamagePerCut = TOOL_DAMAGE_PER_CUT.get();
 		toolDamageChance = TOOL_DAMAGE_CHANCE.get();
+		toolAllowIndestructible = TOOL_ALLOW_INDESTRUCTIBLE.get();
 	}
 }

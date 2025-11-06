@@ -36,41 +36,41 @@ import net.minecraft.world.level.storage.loot.providers.number.NumberProvider;
 import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.common.loot.CanItemPerformAbility;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Queue;
+import java.util.*;
 
 public class LootHelper {
 
 	public static List<LootTableDrop> getLootTableDrops(Either<ResourceKey<LootTable>, LootTable> lootTable, ServerLevel level, LootContext lootContext) {
-		return getLootTableDrops(lootTable, new LinkedList<>(), level, lootContext);
+		return getLootTableDrops(lootTable, new LinkedList<>(), 1, level, lootContext);
 	}
 
-	public static List<LootTableDrop> getLootTableDrops(Either<ResourceKey<LootTable>, LootTable> lootTable, List<LootItemCondition> conditions, ServerLevel level, LootContext lootContext) {
+	public static List<LootTableDrop> getLootTableDrops(Either<ResourceKey<LootTable>, LootTable> lootTable, List<LootItemCondition> conditions, int rolls, ServerLevel level,
+		LootContext lootContext) {
 		if(lootTable.left().isPresent()) {
-			return getLootTableDrops(lootTable.left().get(), conditions, level, lootContext);
+			return getLootTableDrops(lootTable.left().get(), conditions, rolls, level, lootContext);
 		} else if(lootTable.right().isPresent()) {
-			return getLootTableDrops(lootTable.right().get(), conditions, level, lootContext);
+			return getLootTableDrops(lootTable.right().get(), conditions, rolls, level, lootContext);
 		}
 
 		return new LinkedList<>();
 	}
 
 	public static List<LootTableDrop> getLootTableDrops(ResourceKey<LootTable> lootTableId, ServerLevel level, LootContext lootContext) {
-		return getLootTableDrops(lootTableId, new LinkedList<>(), level, lootContext);
+		return getLootTableDrops(lootTableId, new LinkedList<>(), 1, level, lootContext);
 	}
 
-	public static List<LootTableDrop> getLootTableDrops(ResourceKey<LootTable> lootTableId, List<LootItemCondition> conditions, ServerLevel level, LootContext lootContext) {
+	public static List<LootTableDrop> getLootTableDrops(ResourceKey<LootTable> lootTableId, List<LootItemCondition> conditions, int rolls, ServerLevel level,
+		LootContext lootContext) {
 		LootTable lootTable = level.getServer().reloadableRegistries().getLootTable(lootTableId);
-		return getLootTableDrops(lootTable, conditions, level, lootContext);
+		return getLootTableDrops(lootTable, conditions, rolls, level, lootContext);
 	}
 
-	public static List<LootTableDrop> getLootTableDrops(LootTable lootTable, List<LootItemCondition> inheritedConditions, ServerLevel level, LootContext lootContext) {
+	public static List<LootTableDrop> getLootTableDrops(LootTable lootTable, List<LootItemCondition> inheritedConditions, int rolls, ServerLevel level, LootContext lootContext) {
 		List<LootTableDrop> drops = new LinkedList<>();
 		for(LootPool pool : lootTable.pools) {
 			List<LootItemCondition> conditionsForPool = new LinkedList<>(pool.conditions);
 			Queue<LootPoolEntryContainer> entryQueue = new LinkedList<>(pool.entries);
+			int poolRolls = (int)Math.floor(pool.getRolls().getFloat(lootContext));
 			while(!entryQueue.isEmpty()) {
 				LootPoolEntryContainer entry = entryQueue.poll();
 				List<LootItemCondition> conditionsForEntry = new LinkedList<>(inheritedConditions);
@@ -79,7 +79,7 @@ public class LootHelper {
 
 				if(entry instanceof NestedLootTable nestedEntry) {
 					Either<ResourceKey<LootTable>, LootTable> nestedTable = nestedEntry.contents;
-					var nestedDrops = getLootTableDrops(nestedTable, conditionsForEntry, level, lootContext);
+					var nestedDrops = getLootTableDrops(nestedTable, conditionsForEntry, poolRolls * rolls, level, lootContext);
 					for(LootTableDrop nestedDrop : nestedDrops) {
 						if(drops.stream().anyMatch(drop -> ItemStack.isSameItem(nestedDrop.stack(), drop.stack()))) {
 							continue;
@@ -99,7 +99,19 @@ public class LootHelper {
 								return;
 							}
 
-							drops.add(new LootTableDrop(itemStack, conditionsForEntry));
+							Set<Class<? extends LootItemCondition>> conditionClasses = Set.of(
+								ExplosionCondition.class,
+								LootItemBlockStatePropertyCondition.class,
+								LootItemEntityPropertyCondition.class,
+								LootItemKilledByPlayerCondition.class
+							);
+							List<LootItemCondition> filteredConditions = new LinkedList<>(conditionsForEntry.stream()
+								.filter(cond -> !conditionClasses.contains(cond.getClass()))
+								.toList());
+
+							var dropItem = itemStack.copy();
+							dropItem.setCount(rolls);
+							drops.add(new LootTableDrop(dropItem, filteredConditions));
 						}, lootContext
 					);
 				} else {
@@ -122,21 +134,19 @@ public class LootHelper {
 	}
 
 	public static TooltipComponent interpretCondition(LootItemCondition pCondition) {
-		if(pCondition instanceof InvertedLootItemCondition condition) {
-			var nested = interpretCondition(condition.term());
+		if(pCondition instanceof InvertedLootItemCondition(LootItemCondition term)) {
+			var nested = interpretCondition(term);
 			if(nested == null) {
 				return null;
 			}
 			var sprite = new SpriteTooltipComponent(GUI.tabIcons, 14, 11, 118, 0);
 			return new HBoxTooltipComponent(sprite, nested).setAlignment(BoxAlignment.CENTER);
-		} else if(pCondition instanceof LootItemRandomChanceCondition condition) {
+		} else if(pCondition instanceof LootItemRandomChanceCondition(NumberProvider chance)) {
 			if(DebugConfig.showChances) {
-				NumberProvider chanceProvider = condition.chance();
-				if(chanceProvider instanceof ConstantValue constantValue) {
-					float chance = constantValue.value();
-					return StringTooltipComponent.gray("Chance: " + chance);
+				if(chance instanceof ConstantValue(float value)) {
+					return StringTooltipComponent.gray("Chance: " + value * 100 + "%");
 				}
-				return StringTooltipComponent.gray("UnknownChance: " + chanceProvider.getClass().getSimpleName());
+				return StringTooltipComponent.gray("UnknownChance: " + chance.getClass().getSimpleName());
 			}
 			return null;
 		} else if(pCondition instanceof AnyOfCondition condition) {

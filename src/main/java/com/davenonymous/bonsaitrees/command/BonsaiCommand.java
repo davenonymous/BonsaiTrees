@@ -13,7 +13,7 @@ import net.minecraft.commands.Commands;
 public class BonsaiCommand {
 
 	public static boolean canDestroyWorld(CommandSourceStack source) {
-		if(!source.hasPermission(4)) {
+		if(!source.hasPermission(source.getServer().getOperatorUserPermissionLevel())) {
 			return false;
 		}
 		if(source.getServer().isDedicatedServer()) {
