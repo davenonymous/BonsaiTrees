@@ -130,12 +130,7 @@ public class BonsaiPotBlock extends Block implements EntityBlock, Equipable, Sim
 	@Override
 	public int getLightEmission(BlockState state, BlockGetter level, BlockPos pos) {
 		if(level.getBlockEntity(pos) instanceof BonsaiPotBlockEntity bonsaiPot) {
-			if(bonsaiPot.production.getBonsaiInfo().isPresent()) {
-				BonsaiInfo info = bonsaiPot.production.getBonsaiInfo().get();
-				if(info.lightEmission().isPresent()) {
-					return info.lightEmission().get();
-				}
-			}
+			return bonsaiPot.production.getBonsaiInfo().flatMap(BonsaiInfo::lightEmission).orElse(0);
 		}
 		return 0;
 	}
