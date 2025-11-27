@@ -1,0 +1,109 @@
+{
+	"itemGroup.bonsaitrees4": "Bonsai Trees",
+
+	"block.bonsaitrees4.bonsaipot": "Vaso de Bonsai",
+	"block.bonsaitrees4.bonsaipot.enchanted": "Vaso de Bonsai Encantado",
+	"block.bonsaitrees4.bonsaipot_small": "Vaso de Bonsai Pequeno",
+	"block.bonsaitrees4.bonsaipot_small.enchanted": "Vaso de Bonsai Pequeno Encantado",
+
+	"jei.bonsaitrees4.bonsais.title": "Árvores de Bonsai",
+	"jei.bonsaitrees4.soiltypes.title": "Solos de Bonsai",
+	"jei.bonsaitrees4.recipes.requires": "Condições:",
+	"jei.bonsaitrees4.recipes.chance": "Chance: §e%.1f%%§r",
+	"jei.bonsaitrees4.recipes.rolls": "Rolagens: §e%d§r",
+	"jei.bonsaitrees4.recipes.unknown_condition": "Condição desconhecida:",
+
+	"commands.bonsaitrees4.generate.model.flood_fill.too_large": "O modelo contém muitos blocos. O máximo é %d.",
+	"commands.bonsaitrees4.generate.model.flood_fill.too_many_states": "O modelo contém muitos estados de bloco. O máximo é %d.",
+	"commands.bonsaitrees4.generate.model.copied_to_clipboard": "Modelo copiado para a área de transferência!",
+
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.dirt": "Terra",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.sand": "Areia",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.water": "Água",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.lava": "Lava",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.stone": "Pedra",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.nether_stone": "Pedra do Nether",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.end_stone": "Pedra do End",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.mycelium": "Micélio",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.nylium": "Nílio",
+
+	"bonsaitrees4.tooltip.camouflage": "Visual:",
+	"bonsaitrees4.tooltip.soil": "Solo:",
+	"bonsaitrees4.tooltip.sapling": "Árvore:",
+
+	"bonsaitrees4.tooltip.painted": "Pintado",
+
+	"bonsaitrees4.tooltip.sapling_required": "Requer uma muda.",
+	"bonsaitrees4.tooltip.valid_saplings": "Mudas válidas:",
+	"bonsaitrees4.tooltip.soil_required": "Requer solo.",
+	"bonsaitrees4.tooltip.valid_soils": "Solos válidos:",
+	"bonsaitrees4.tooltip.no_valid_soils": "Nenhum solo válido para esta muda",
+	"bonsaitrees4.tooltip.no_valid_saplings": "Nenhum bonsai válido para este solo",
+	"bonsaitrees4.tooltip.tool_required": "Insira uma ferramenta para colher.",
+	"bonsaitrees4.tooltip.camouflage_optional": "Decoração de vaso opcional.",
+	"bonsaitrees4.tooltip.enchantment_hint": "Encante o vaso para melhorar seu desempenho.",
+	"bonsaitrees4.tooltip.and_more": "+%d",
+	"bonsaitrees4.tooltip.unable_to_insert": "Não é possível inserir estes itens.",
+	"bonsaitrees4.tooltip.production_on_hold": "A produção está em espera.",
+
+	"bonsaitrees4.tooltip.redstone_active": "Status atual: Ativado",
+	"bonsaitrees4.tooltip.redstone_inactive": "Status atual: Desativado",
+
+	"bonsaitrees4.tooltip.enchantments": "Encantamentos do vaso:",
+
+	"bonsaitrees4.configuration.title": "Configuração do bonsai",
+
+	"bonsaitrees4.configuration.debug": "Depuração",
+	"bonsaitrees4.configuration.debug.tooltip": "Opções relacionadas à depuração e desenvolvimento de árvores.",
+
+	"bonsaitrees4.configuration.debug.show_chances": "Mostrar chances",
+	"bonsaitrees4.configuration.debug.show_chances.tooltip": "Essas são chances estimadas das tabelas de saque e não são confiáveis. Existem muitos fatores que podem afetar as chances reais, que não são levados em consideração.",
+
+	"bonsaitrees4.configuration.debug.show_unknown_loot_conditions": "Mostrar condições de saque desconhecidas",
+	"bonsaitrees4.configuration.debug.show_unknown_loot_conditions.tooltip": "Isso pode ajudar a identificar problemas com tabelas de saque.",
+
+	"bonsaitrees4.configuration.debug.show_unused_soil_recipes_in_jei": "Mostrar Solos não utilizados no JEI",
+	"bonsaitrees4.configuration.debug.show_unused_soil_recipes_in_jei.tooltip": "Isso pode ajudar a identificar problemas com solos.",
+
+	"bonsaitrees4.configuration.debug.show_rolls_as_count_in_jei": "Mostrar rolagens como contagem de itens no JEI",
+	"bonsaitrees4.configuration.debug.show_rolls_as_count_in_jei.tooltip": "Mostra quantas vezes um item é rolado durante a geração de saque.",
+
+	"bonsaitrees4.configuration.gameplay": "Jogabilidade",
+	"bonsaitrees4.configuration.gameplay.tooltip": "Opções relacionadas a jogabilidade, balanceamento e recursos.",
+
+	"bonsaitrees4.configuration.gameplay.baseGrowTicks": "Ticks padrão para crescer",
+	"bonsaitrees4.configuration.gameplay.baseGrowTicks.tooltip": "Se uma árvore de bonsai não tiver um tempo de crescimento personalizado, este valor será usado.",
+
+	"bonsaitrees4.configuration.gameplay.cutCooldown": "Tempo de recarga de excesso de saída",
+	"bonsaitrees4.configuration.gameplay.cutCooldown.tooltip": "Principalmente para evitar sobrecarga do servidor ao fazer spam da ação de corte se a saída estiver cheia. O tempo de recarga em ticks antes que o servidor tente cortar o bonsai novamente.",
+
+	"bonsaitrees4.configuration.gameplay.toolDamagePerCut": "Dano na ferramenta por corte",
+	"bonsaitrees4.configuration.gameplay.toolDamagePerCut.tooltip": "Toda vez que um bonsai é cortado, há uma chance de que a ferramenta usada receba essa quantidade de dano.",
+
+	"bonsaitrees4.configuration.gameplay.toolDamageChance": "Chance de dano na ferramenta",
+	"bonsaitrees4.configuration.gameplay.toolDamageChance.tooltip": "A chance de que a ferramenta receba dano ao cortar um bonsai.",
+
+	"bonsaitrees4.configuration.gameplay.toolAllowIndestructible": "Permitir ferramentas indestrutíveis",
+	"bonsaitrees4.configuration.gameplay.toolAllowIndestructible.tooltip": "Quando ativado, ferramentas que não recebem dano (ex: Machado de Suprêmium da Mystical Agriculture) podem ser usadas para cortar bonsais.",
+
+	"bonsaitrees4.configuration.client": "Cliente",
+	"bonsaitrees4.configuration.client.tooltip": "Opções relacionadas à renderização e exibição de informações.",
+
+	"bonsaitrees4.configuration.client.minimal_quads": "Renderizar apenas faces do casco",
+	"bonsaitrees4.configuration.client.minimal_quads.tooltip": "Quando ativado, apenas as faces do casco do vaso de bonsai serão renderizadas. Isso pode ajudar no desempenho em máquinas muito fracas.",
+
+	"bonsaitrees4.configuration.client.disable_model_cache": "Desativar cache de modelo",
+	"bonsaitrees4.configuration.client.disable_model_cache.tooltip": "Quando ativado, o cache de modelo será desativado. Isso é útil para desenvolvimento e depuração, mas causa impacto significativo no desempenho, mesmo em máquinas potentes.",
+
+	"bonsaitrees4.configuration.client.show_jei_subtypes": "Mostrar todos os bonsais no JEI",
+	"bonsaitrees4.configuration.client.show_jei_subtypes.tooltip": "Mostrar todos os bonsais ao mesmo tempo pode ser pesado para máquinas fracas. Também polui a lista de ingredientes do JEI.",
+
+	"bonsaitrees4.configuration.client.show_tree_in_sapling_tooltip": "Mostrar árvore na descrição da muda",
+	"bonsaitrees4.configuration.client.show_tree_in_sapling_tooltip.tooltip": "Quando ativado, a árvore será renderizada na tooltip (descrição) dos itens de muda.",
+
+	"bonsaitrees4.redstone_mode.ignore_power": "Ignorar sinais de redstone próximos",
+	"bonsaitrees4.redstone_mode.stop_on_power": "Parar com sinal de redstone próximo",
+	"bonsaitrees4.redstone_mode.require_power": "Funcionar apenas com sinal de redstone próximo",
+
+	"config.jade.plugin_bonsaitrees4.jade/bonsai_pot": "Bonsai Pot"
+}
