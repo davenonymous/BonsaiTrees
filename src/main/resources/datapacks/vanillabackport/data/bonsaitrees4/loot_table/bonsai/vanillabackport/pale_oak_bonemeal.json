@@ -17,7 +17,7 @@
          "entries" : [
             {
                "type" : "minecraft:loot_table",
-               "value" : "vanillabackport:blocks/pale_oak_log"
+               "value" : "minecraft:blocks/pale_oak_log"
             }
          ],
          "name" : "log",
@@ -34,7 +34,7 @@
          "entries" : [
             {
                "type" : "minecraft:loot_table",
-               "value" : "vanillabackport:blocks/pale_oak_leaves"
+               "value" : "minecraft:blocks/pale_oak_leaves"
             }
          ],
          "name" : "leaves",
