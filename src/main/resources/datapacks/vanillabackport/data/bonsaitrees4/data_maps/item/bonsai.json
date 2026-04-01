@@ -6,7 +6,7 @@
     }
   ],
   "values": {
-    "vanillabackport:pale_oak_sapling": {
+    "minecraft:pale_oak_sapling": {
       "model": "vanillabackport:pale_oak_bonemeal"
     }
   }
