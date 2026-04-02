@@ -2,15 +2,15 @@
   "type": "bonsaitrees3:sapling/vinery/dark_cherry",
   "version": 3,
   "ref": {
-	"a": {"block":"vinery:dark_cherry_leaves","properties":{"can_have_cherries":"false","distance":"4","has_cherries":"false","persistent":"false","waterlogged":"false"}},
+	"a": {"block":"vinery:dark_cherry_leaves","properties":{"can_grow_cherries":"false","distance":"4","has_cherries":"false","persistent":"false","waterlogged":"false"}},
 	"b": {"block":"vinery:dark_cherry_log","properties":{"axis":"y"}},
-	"c": {"block":"vinery:dark_cherry_leaves","properties":{"can_have_cherries":"true","distance":"4","has_cherries":"true","persistent":"false","waterlogged":"false"}},
-	"d": {"block":"vinery:dark_cherry_leaves","properties":{"can_have_cherries":"true","distance":"2","has_cherries":"true","persistent":"false","waterlogged":"false"}},
-	"e": {"block":"vinery:dark_cherry_leaves","properties":{"can_have_cherries":"true","distance":"3","has_cherries":"true","persistent":"false","waterlogged":"false"}},
-	"f": {"block":"vinery:dark_cherry_leaves","properties":{"can_have_cherries":"false","distance":"1","has_cherries":"false","persistent":"false","waterlogged":"false"}},
-	"g": {"block":"vinery:dark_cherry_leaves","properties":{"can_have_cherries":"false","distance":"2","has_cherries":"false","persistent":"false","waterlogged":"false"}},
-	"h": {"block":"vinery:dark_cherry_leaves","properties":{"can_have_cherries":"false","distance":"3","has_cherries":"false","persistent":"false","waterlogged":"false"}},
-	"i": {"block":"vinery:dark_cherry_leaves","properties":{"can_have_cherries":"true","distance":"1","has_cherries":"true","persistent":"false","waterlogged":"false"}}
+	"c": {"block":"vinery:dark_cherry_leaves","properties":{"can_grow_cherries":"true","distance":"4","has_cherries":"true","persistent":"false","waterlogged":"false"}},
+	"d": {"block":"vinery:dark_cherry_leaves","properties":{"can_grow_cherries":"true","distance":"2","has_cherries":"true","persistent":"false","waterlogged":"false"}},
+	"e": {"block":"vinery:dark_cherry_leaves","properties":{"can_grow_cherries":"true","distance":"3","has_cherries":"true","persistent":"false","waterlogged":"false"}},
+	"f": {"block":"vinery:dark_cherry_leaves","properties":{"can_grow_cherries":"false","distance":"1","has_cherries":"false","persistent":"false","waterlogged":"false"}},
+	"g": {"block":"vinery:dark_cherry_leaves","properties":{"can_grow_cherries":"false","distance":"2","has_cherries":"false","persistent":"false","waterlogged":"false"}},
+	"h": {"block":"vinery:dark_cherry_leaves","properties":{"can_grow_cherries":"false","distance":"3","has_cherries":"false","persistent":"false","waterlogged":"false"}},
+	"i": {"block":"vinery:dark_cherry_leaves","properties":{"can_grow_cherries":"true","distance":"1","has_cherries":"true","persistent":"false","waterlogged":"false"}}
   },
   "shape": [
 	[
