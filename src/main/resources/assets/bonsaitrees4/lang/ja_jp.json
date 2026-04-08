@@ -1,0 +1,109 @@
+{
+	"itemGroup.bonsaitrees4": "Bonsai Trees",
+
+	"block.bonsaitrees4.bonsaipot": "盆栽ポット",
+	"block.bonsaitrees4.bonsaipot.enchanted": "エンチャントされた盆栽ポット",
+	"block.bonsaitrees4.bonsaipot_small": "小さな盆栽ポット",
+	"block.bonsaitrees4.bonsaipot_small.enchanted": "エンチャントされた小さな盆栽ポット",
+
+	"jei.bonsaitrees4.bonsais.title": "植林",
+	"jei.bonsaitrees4.soiltypes.title": "植林の土壌",
+	"jei.bonsaitrees4.recipes.requires": "条件:",
+	"jei.bonsaitrees4.recipes.chance": "確率: §e%.1f%%§r",
+	"jei.bonsaitrees4.recipes.rolls": "最大個数: §e%d§r",
+	"jei.bonsaitrees4.recipes.unknown_condition": "不明な条件:",
+
+	"commands.bonsaitrees4.generate.model.flood_fill.too_large": "モデルに含まれるブロック数が多すぎます、最大数は %d です。",
+	"commands.bonsaitrees4.generate.model.flood_fill.too_many_states": "モデルに含まれるブロック情報が多すぎます、最大数は %d です。",
+	"commands.bonsaitrees4.generate.model.copied_to_clipboard": "モデルがクリップボードにコピーされました！",
+
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.dirt": "土",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.sand": "砂",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.water": "水",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.lava": "溶岩",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.stone": "石",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.nether_stone": "ネザーの石",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.end_stone": "エンドストーン",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.mycelium": "菌糸",
+	"bonsaitrees4.tooltip.soil.bonsaitrees4.nylium": "ナイリウム",
+
+	"bonsaitrees4.tooltip.camouflage": "ペイント:",
+	"bonsaitrees4.tooltip.soil": "土壌:",
+	"bonsaitrees4.tooltip.sapling": "苗木:",
+
+	"bonsaitrees4.tooltip.painted": "ペイントされた",
+
+	"bonsaitrees4.tooltip.sapling_required": "苗木が必要です。",
+	"bonsaitrees4.tooltip.valid_saplings": "有効な苗木:",
+	"bonsaitrees4.tooltip.soil_required": "土壌が必要です。",
+	"bonsaitrees4.tooltip.valid_soils": "有効な土壌:",
+	"bonsaitrees4.tooltip.no_valid_soils": "有効な苗木がありません。",
+	"bonsaitrees4.tooltip.no_valid_saplings": "有効な土壌がありません。",
+	"bonsaitrees4.tooltip.tool_required": "収穫に使うツールを入れてください。",
+	"bonsaitrees4.tooltip.camouflage_optional": "オプションでポットを装飾できます。",
+	"bonsaitrees4.tooltip.enchantment_hint": "ポットにエンチャントをすると、性能が向上します。",
+	"bonsaitrees4.tooltip.and_more": "+%d",
+	"bonsaitrees4.tooltip.unable_to_insert": "これらのアイテムを入れることができません。",
+	"bonsaitrees4.tooltip.production_on_hold": "生産が一時停止しています。",
+
+	"bonsaitrees4.tooltip.redstone_active": "現在の状態: 有効",
+	"bonsaitrees4.tooltip.redstone_inactive": "現在の状態: 無効",
+
+	"bonsaitrees4.tooltip.enchantments": "有効なエンチャント:",
+
+	"bonsaitrees4.configuration.title": "盆栽ポット コンフィグ",
+
+	"bonsaitrees4.configuration.debug": "デバッグ",
+	"bonsaitrees4.configuration.debug.tooltip": "バグや開発に関係するオプション",
+
+	"bonsaitrees4.configuration.debug.show_chances": "確率を表示",
+	"bonsaitrees4.configuration.debug.show_chances.tooltip": "これらはドロップテーブルから推定された確率であり、正確な数値ではありません。実際の確率には多くの要素が影響しますが、それらは考慮されていません。",
+
+	"bonsaitrees4.configuration.debug.show_unknown_loot_conditions": "不明なドロップの条件を表示",
+	"bonsaitrees4.configuration.debug.show_unknown_loot_conditions.tooltip": "ドロップテーブルのバグを特定するのに役立ちます。",
+
+	"bonsaitrees4.configuration.debug.show_unused_soil_recipes_in_jei": "JEIで使用されていない土壌を表示",
+	"bonsaitrees4.configuration.debug.show_unused_soil_recipes_in_jei.tooltip": "土壌のバグを特定するのに役立ちます。",
+
+	"bonsaitrees4.configuration.debug.show_rolls_as_count_in_jei": "JEIで最大個数をアイテム数で表示",
+	"bonsaitrees4.configuration.debug.show_rolls_as_count_in_jei.tooltip": "アイテムが生産されたとき、各アイテムがどれくらいの確率で出現するか表示します。",
+
+	"bonsaitrees4.configuration.gameplay": "ゲームプレイ",
+	"bonsaitrees4.configuration.gameplay.tooltip": "ゲームプレイ、バランス、機能に関係するオプション",
+
+	"bonsaitrees4.configuration.gameplay.baseGrowTicks": "デフォルトの成長に必要なtick数",
+	"bonsaitrees4.configuration.gameplay.baseGrowTicks.tooltip": "植林されている苗木に生育期間が設定されていない場合に使用される値。",
+
+	"bonsaitrees4.configuration.gameplay.cutCooldown": "収穫処理のクールダウン",
+	"bonsaitrees4.configuration.gameplay.cutCooldown.tooltip": "主に、出力先が満杯の場合に、収穫の処理の連続によるサーバーへの過負荷を防ぐための設定です。サーバーが再び収穫しようとするまでのクールダウン時間（tick単位）です。",
+
+	"bonsaitrees4.configuration.gameplay.toolDamagePerCut": "ツールの耐久力が減少する頻度",
+	"bonsaitrees4.configuration.gameplay.toolDamagePerCut.tooltip": "ポットで収穫するたびに、セットされているツールの耐久力が減る頻度",
+
+	"bonsaitrees4.configuration.gameplay.toolDamageChance": "ツールの耐久力が減少する確率",
+	"bonsaitrees4.configuration.gameplay.toolDamageChance.tooltip": "ポットで収穫するたびに、セットされているツールの耐久力が減る確率",
+
+	"bonsaitrees4.configuration.gameplay.toolAllowIndestructible": "耐久力が減らないツールの有効化",
+	"bonsaitrees4.configuration.gameplay.toolAllowIndestructible.tooltip": "この機能を有効にすると、耐久力が減らないツール（例：ミスティカル・アグリカルチャーのスプレミウムの斧）を使ってポットで収穫することができます。",
+
+	"bonsaitrees4.configuration.client": "クライアント",
+	"bonsaitrees4.configuration.client.tooltip": "レンダリングおよび情報の表示に関係するオプション。",
+
+	"bonsaitrees4.configuration.client.minimal_quads": "外側のみのレンダリング",
+	"bonsaitrees4.configuration.client.minimal_quads.tooltip": "このオプションを有効にすると、盆栽ポットの外側のみがレンダリングされます。これにより、非常に低スペックのマシンでもパフォーマンスを向上させることができます。",
+
+	"bonsaitrees4.configuration.client.disable_model_cache": "モデルキャッシュの無効化",
+	"bonsaitrees4.configuration.client.disable_model_cache.tooltip": "有効にすると、モデルキャッシュが無効になります。これは開発やデバッグには役立ちますが、高性能マシンであってもパフォーマンスに大きな影響を与えます。",
+
+	"bonsaitrees4.configuration.client.show_jei_subtypes": "JEIの一覧にすべてのポットを表示",
+	"bonsaitrees4.configuration.client.show_jei_subtypes.tooltip": "すべてのポットを一度に表示すると、性能の低いマシンでは処理が追いつかない可能性があります。また、JEIの一覧もごちゃついてしまいます。",
+
+	"bonsaitrees4.configuration.client.show_tree_in_sapling_tooltip": "苗木のツールチップにモデルを表示",
+	"bonsaitrees4.configuration.client.show_tree_in_sapling_tooltip.tooltip": "有効にすると、苗木アイテムのツールチップに成長したモデルが表示されます。",
+
+	"bonsaitrees4.redstone_mode.ignore_power": "レッドストーン信号に影響されません",
+	"bonsaitrees4.redstone_mode.stop_on_power": "レッドストーン信号があると無効化される",
+	"bonsaitrees4.redstone_mode.require_power": "レッドストーン信号があると有効化される",
+
+	"config.jade.plugin_bonsaitrees4.jade/bonsai_pot": "盆栽ポット"
+}
